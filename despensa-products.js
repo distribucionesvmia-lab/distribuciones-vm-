@@ -38,7 +38,7 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'editorial', family: 'Helios', color: '#c7c9b3', ink: '#2a5a35', columns: 3,
+      template: 'editorial', family: 'Helios', color: '#c7c9b3', ink: '#1b3d25', columns: 3,
       eyebrow: 'Helios', title: 'El sabor del origen.',
       description: 'Porque, para Helios, origen es sinónimo de calidad. Por eso seleccionan solo las mejores materias primas procedentes de cultivo local.',
       products: [

@@ -14,7 +14,7 @@ window.ProductWorld.init({
       description:'Una botella para compartir y otra para llevar. Elige el formato que encaja con cada servicio.',
       products:[
         {name:'1,5 litros',description:'Formato para compartir.',image:'assets/agua/aquarel-15.webp',width:1200,height:1200,alt:'Botella Nestlé Aquarel de 1,5 litros'},
-        {name:'50 cl',description:'Formato individual.',image:'assets/agua/aquarel-50.jpg',width:600,height:600,alt:'Botella Nestlé Aquarel de 50 centilitros'}
+        {name:'50 cl',description:'Formato individual.',image:'assets/agua/aquarel-50.webp',width:600,height:600,alt:'Botella Nestlé Aquarel de 50 centilitros'}
       ]
     },
     {

@@ -30,3 +30,22 @@
 }
 /* las secciones fijadas con scroll cuelgan de la cabecera cuando es de dos filas */
 @media(max-width:1350px){.pw-sticky{top:111px;height:calc(100svh - 111px)}}
+/* Botón fijo «Llamar»: solo en móvil (se genera con _herramientas/cabecera.py) */
+.call-float{display:none}
+@media(max-width:760px){
+  .call-float{position:fixed;z-index:70;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));display:inline-flex;align-items:center;gap:9px;min-height:50px;padding:0 20px 0 16px;border-radius:999px;background:#c61819;color:#fff;text-decoration:none;font:600 .95rem/1 Jost,Arial,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+  .call-float:focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px #c61819}
+}
+
+/* Índice de marcas de las páginas largas (lo crea site-header.js) */
+.idx-btn{position:fixed;z-index:70;left:max(16px,env(safe-area-inset-left));bottom:max(16px,env(safe-area-inset-bottom));display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 18px 0 14px;border:0;border-radius:999px;background:#251d1a;color:#fff;font:600 .9rem/1 Jost,Arial,sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.idx-btn:focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px #251d1a}
+.idx-panel{position:fixed;z-index:71;left:max(16px,env(safe-area-inset-left));bottom:calc(max(16px,env(safe-area-inset-bottom)) + 58px);width:min(300px,calc(100vw - 32px));max-height:min(60vh,520px);overflow:auto;padding:16px 8px 8px;border-radius:18px;background:#f7f3ea;color:#251d1a;box-shadow:0 14px 40px rgba(0,0,0,.32);font-family:Jost,Arial,sans-serif}
+.idx-panel[hidden]{display:none}
+.idx-title{margin:0 0 6px 12px;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+.idx-panel ul{list-style:none;margin:0;padding:0}
+.idx-panel a{display:block;padding:11px 12px;border-radius:10px;color:inherit;text-decoration:none;font-size:1rem;font-weight:500}
+.idx-panel a:focus-visible{outline:2px solid #c61819;outline-offset:-2px}
+@media(hover:hover) and (pointer:fine){.idx-panel a:hover{background:rgba(37,29,26,.08)}}
+/* el botón de animaciones (motion-pref.js) y el índice comparten esquina: el de animaciones sube */
+.vm-motion-btn{bottom:72px!important}

@@ -2,7 +2,7 @@ name: Publicar en GitHub Pages
 
 on:
   push:
-    branches: [claude/sweet-bohr-lergl3, claude/funny-shannon-8m2ip8]
+    branches: [claude/sweet-bohr-lergl3]
   workflow_dispatch:
 
 permissions:
@@ -28,7 +28,7 @@ jobs:
       - name: Preparar sitio
         run: |
           mkdir _site
-          rsync -a --exclude='.git*' --exclude='_site' --exclude='_herramientas' --exclude='*.md' ./ _site/
+          rsync -a --exclude='.git*' --exclude='.claude' --exclude='.taste-skill' --exclude='_site' --exclude='_herramientas' --exclude='_version-3d' --exclude='_version-anterior' --exclude='_sin-usar' --exclude='*.md' --exclude='*.zip' ./ _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
