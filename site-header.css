@@ -49,3 +49,4 @@
 @media(hover:hover) and (pointer:fine){.idx-panel a:hover{background:rgba(37,29,26,.08)}}
 /* el botón de animaciones (motion-pref.js) y el índice comparten esquina: el de animaciones sube */
 .vm-motion-btn{bottom:72px!important}
+@media(min-width:761px){.idx-btn{width:46px;padding:0;justify-content:center}.idx-btn span{display:none}.idx-panel{bottom:calc(max(16px,env(safe-area-inset-bottom)) + 58px)}}

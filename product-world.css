@@ -182,3 +182,10 @@
 @media(max-width:760px){
   .pw-scene .pw-sticky{position:relative;top:auto;height:auto;min-height:0;overflow:visible}
 }
+/* Precios de tarifa (los pinta product-world.js si hay precios.js) */
+.pw-price{display:block;margin-top:.6em;font-size:1rem;line-height:1.2}
+.pw-price-n{font-size:1.25em;font-weight:700;letter-spacing:-.01em}
+.pw-price-u{font-size:.85em;opacity:.85}
+.pw-e-list .pw-price{display:block;margin:4px 0 0}
+.pw-e-list li.is-current small{max-height:8em}
+.pw-price-note{margin:0;padding:18px var(--side,22px);text-align:center;font-size:.9rem;background:var(--paper,#f3f2ef);color:#4a4541}

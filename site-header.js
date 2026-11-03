@@ -29,7 +29,7 @@
   if (groups.length < 4) return;
 
   var btn = document.createElement('button');
-  btn.type = 'button'; btn.className = 'idx-btn'; btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', 'idx-panel');
+  btn.type = 'button'; btn.className = 'idx-btn'; btn.setAttribute('aria-label', 'Índice de marcas'); btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', 'idx-panel');
   btn.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg><span>Marcas</span>';
   var panel = document.createElement('nav');
   panel.id = 'idx-panel'; panel.className = 'idx-panel'; panel.setAttribute('aria-label', 'Índice de marcas'); panel.hidden = true;

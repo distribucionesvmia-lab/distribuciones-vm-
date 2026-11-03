@@ -60,7 +60,7 @@ window.ProductWorld.init({
       description:'Perrier en botella de vidrio, en dos formatos.',
       products:[
         {name:'33 cl',description:'Botella de vidrio individual.',image:'assets/agua/perrier-33cl.webp',width:328,height:900,alt:'Botella de vidrio Perrier de 33 centilitros'},
-        {name:'Formato grande',description:'Botella de vidrio alargada.',image:'assets/agua/perrier-botella-grande.webp',width:286,height:900,alt:'Botella de vidrio Perrier de formato grande'}
+        {name:'75 cl',description:'Botella de vidrio de 75 cl.',image:'assets/agua/perrier-botella-grande.webp',width:286,height:900,alt:'Botella de vidrio Perrier de 75 centilitros'}
       ]
     }
   ]
