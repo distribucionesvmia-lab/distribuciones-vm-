@@ -55,7 +55,7 @@ BUSINESS = {
     ],
 }
 
-BLOCK_RE = re.compile(r'\n?<!-- seo -->.*?<!-- /seo -->', re.S)
+BLOCK_RE = re.compile(r'\n*<!-- seo -->.*?<!-- /seo -->', re.S)
 
 
 def esc(t):
@@ -88,7 +88,7 @@ def block(page, html):
     if page == 'index.html':
         lines.append('<script type="application/ld+json">' + json.dumps(BUSINESS, ensure_ascii=False, separators=(',', ':')) + '</script>')
     lines.append('<!-- /seo -->')
-    return '\n' + '\n'.join(lines)
+    return '\n'.join(lines)
 
 
 for page in PAGES:
