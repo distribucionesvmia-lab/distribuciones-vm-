@@ -174,50 +174,6 @@
     // vídeo: el reproductor de YouTube se carga solo al pulsar play
     try { armVideo();     } catch (e) { window.__err = 'vid: ' + e.message; }
 
-    // recorrido: escenas ilustradas con zoom y fundido controlados por el scroll
-    (function () {
-      var reco = document.getElementById('recorrido');
-      if (!reco) return;
-      var imgs = Array.prototype.slice.call(reco.querySelectorAll('.reco-scene img'));
-      var left = imgs.length, okAll = true;
-      function done() {
-        if (--left > 0) return;
-        if (!okAll) return; // faltan imágenes: la sección permanece oculta
-        reco.hidden = false;
-        var scenes = gsap.utils.toArray('.reco-scene'), caps = gsap.utils.toArray('.reco-cap'), dots = gsap.utils.toArray('.reco-dots i');
-        gsap.set(scenes, { autoAlpha: 0 });
-        gsap.set(caps, { autoAlpha: 0 });
-        var mm = gsap.matchMedia();
-        mm.add('(min-width: 0px)', function () {
-          var tl = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: reco, start: 'top top', end: '+=' + (scenes.length * 170) + '%', pin: '.reco-stage', scrub: 0.8, invalidateOnRefresh: true } });
-          tl.from('.reco-title', { y: 40, autoAlpha: 0, duration: 0.6, ease: 'power3.out' }, 0);
-          scenes.forEach(function (s, i) {
-            var t = i * 3;
-            // entra desde lejos (escala menor) y se acerca; al final se agranda y se funde con la siguiente
-            tl.fromTo(s, { autoAlpha: i === 0 ? 1 : 0, scale: i === 0 ? 1 : 0.78 }, { autoAlpha: 1, scale: 1, duration: i === 0 ? 0.01 : 1, ease: 'power2.out' }, t);
-            tl.fromTo(caps[i], { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.8, ease: 'power3.out' }, t + 0.4);
-            tl.to(s, { scale: 1.12, duration: 2, ease: 'none' }, t + 0.6);
-            tl.call(function () { dots.forEach(function (d, k) { d.classList.toggle('on', k === i); }); }, null, t + 0.2);
-            if (i < scenes.length - 1) {
-              tl.to(s, { autoAlpha: 0, scale: 1.4, duration: 0.9, ease: 'power2.in' }, t + 2.1);
-              tl.to(caps[i], { autoAlpha: 0, y: -24, duration: 0.6 }, t + 2.3);
-            } else {
-              tl.to({}, { duration: 1 }, t + 2.4);
-            }
-          });
-        });
-        var dr = (/[?&]reco=([0-9.]+)/.exec(dbg) || [])[1];
-        if (dr) { var sr = document.createElement('style'); sr.textContent = 'main>section:not(#recorrido),.site-header,.foot{display:none!important}'; document.head.appendChild(sr); var st = ScrollTrigger.getAll().filter(function (x) { return x.trigger === reco; })[0]; if (st) { var an = st.animation; st.kill(true); an.progress(parseFloat(dr)); } }
-        ScrollTrigger.refresh();
-      }
-      imgs.forEach(function (im) {
-        var probe = new Image();
-        probe.onload = function () { done(); };
-        probe.onerror = function () { okAll = false; done(); };
-        probe.src = im.getAttribute('src');
-      });
-    })();
-
     // del almacén a tu negocio: la furgoneta entra, presenta el servicio y sale
     var vs = document.querySelector('.van-stage');
     if (vs) {
