@@ -87,11 +87,14 @@ window.ProductWorld.init({
   let active = 'Todos';
 
   filters.innerHTML = groups.map(g => `<button type="button" data-group="${esc(g)}" aria-pressed="${g==='Todos'}">${esc(g)}</button>`).join('');
-  const card = p => `<article class="cold-item"><div class="cold-item-head"><span class="cold-brand">${esc(p.brand)}</span><span class="cold-category">${esc(p.group)}</span></div>${p.image ? `<div class="cold-item-image"><img src="${esc(p.image)}" alt="${esc(p.imageAlt)}" loading="lazy"></div><p class="cold-image-caption">${esc(p.imageCaption)}</p>` : ''}<h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p>${p.note ? `<p>${esc(p.note)}</p>` : ''}<div class="cold-item-footer">${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">Ver ${p.source.toLowerCase()} ↗</a>` : '<span>Consultar disponibilidad</span>'}<span>${['Ficha exacta','Ficha de producto','Ficha de 2 kg'].includes(p.source)?'Formato documentado':'Formato por confirmar'}</span></div></article>`;
+  const fmtPrice = n => Number(n).toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const price = p => { const e = window.PRECIOS && window.PRECIOS[`refrigerados|${p.group}|${p.name}`]; return e ? `<p class="cold-price"><b>${fmtPrice(e.p)} €</b> <small>${esc(e.u || 'ud.')}</small></p>` : ''; };
+  const card = p => `<article class="cold-item"><div class="cold-item-head"><span class="cold-brand">${esc(p.brand)}</span><span class="cold-category">${esc(p.group)}</span></div>${p.image ? `<div class="cold-item-image"><img src="${esc(p.image)}" alt="${esc(p.imageAlt)}" loading="lazy"></div><p class="cold-image-caption">${esc(p.imageCaption)}</p>` : ''}<h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p>${p.note ? `<p>${esc(p.note)}</p>` : ''}${price(p)}<div class="cold-item-footer">${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">Ver ${p.source.toLowerCase()} ↗</a>` : '<span>Consultar disponibilidad</span>'}<span>${['Ficha exacta','Ficha de producto','Ficha de 2 kg'].includes(p.source)?'Formato documentado':'Formato por confirmar'}</span></div></article>`;
   function render(){
     const q=search.value.trim().toLocaleLowerCase('es');
     const matches=products.filter(p=>(active==='Todos'||p.group===active)&&(!q||`${p.brand} ${p.name} ${p.desc}`.toLocaleLowerCase('es').includes(q)));
     grid.innerHTML=matches.map(card).join('')||'<p>No hay referencias con ese filtro. Prueba otra búsqueda.</p>';
+    if (!document.querySelector('.cold-price-note') && grid.querySelector('.cold-price')) grid.insertAdjacentHTML('afterend', '<p class="cold-price-note">Precios de tarifa por formato de venta. Pide tu tarifa personalizada, sin compromiso.</p>');
     count.textContent=`${matches.length} ${matches.length===1?'referencia':'referencias'}`;
   }
   filters.addEventListener('click',event=>{

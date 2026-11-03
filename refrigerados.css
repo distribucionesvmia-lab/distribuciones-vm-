@@ -64,3 +64,7 @@
   .cold-filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-22px;padding-right:22px}
   .cold-filters button{flex:none}
 }
+.cold-price{margin:10px 0 0;font-size:1rem}
+.cold-price b{font-size:1.2rem}
+.cold-price small{font-size:.85rem;opacity:.8}
+.cold-price-note{margin:24px 0 0;font-size:.9rem;opacity:.8}

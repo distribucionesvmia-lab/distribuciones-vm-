@@ -51,6 +51,102 @@
   "cod": "22009",
   "u": "botella"
  },
+ "cafe-mocay|Infusiones clásicas|Manzanilla": {
+  "cod": "11633",
+  "u": "caja de 100 sobres"
+ },
+ "cafe-mocay|Infusiones clásicas|Menta poleo": {
+  "cod": "11635",
+  "u": "caja de 100 sobres"
+ },
+ "cafe-mocay|Infusiones clásicas|Tila": {
+  "cod": "11636",
+  "u": "caja de 100 sobres"
+ },
+ "cafe-mocay|Infusiones clásicas|Té negro": {
+  "cod": "11634",
+  "u": "caja de 100 sobres"
+ },
+ "cafe-mocay|Infusiones clásicas|Té rojo": {
+  "cod": "11649",
+  "u": "caja de 100 sobres"
+ },
+ "cafe-mocay|Infusiones clásicas|Té verde": {
+  "cod": "11654",
+  "u": "caja de 100 sobres"
+ },
+ "cafe-mocay|Infusiones pirámide|English Breakfast": {
+  "cod": "11761",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Flor de manzanilla": {
+  "cod": "11758",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Frutas del bosque": {
+  "cod": "117361",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Infusión Piruleta": {
+  "cod": "11755",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Menta poleo": {
+  "cod": "11759",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Ratafía": {
+  "cod": "11756",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Regaliz y menta": {
+  "cod": "11737",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Rooibos con flores": {
+  "cod": "117452",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Rooibos tropical": {
+  "cod": "117451",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Tila": {
+  "cod": "11760",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Té azul Oolong": {
+  "cod": "11738",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Té blanco Fresh-Lemon": {
+  "cod": "11757",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Té blanco canela": {
+  "cod": "117362",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Té negro chai": {
+  "cod": "11762",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Té rojo Pu-Erh": {
+  "cod": "116991",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Té rojo Pu-Erh con frutas": {
+  "cod": "116992",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Té verde con flores": {
+  "cod": "11736",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Té verde hierba buena": {
+  "cod": "117360",
+  "u": "lata de 20 dosis"
+ },
  "congelados|Congelados · Bollería dulce|Berlina Blanca Rayada · 115 g": {
   "cod": "9124",
   "u": "ud."
@@ -986,6 +1082,110 @@
  "pascual|Yogures Pascual|Yogur natural azucarado": {
   "cod": "11048",
   "u": "pack de 4"
+ },
+ "refrigerados|Otros|Margarina vegetal · 1 kg": {
+  "cod": "2037",
+  "u": "ud."
+ },
+ "refrigerados|Otros|Queso fundido en lonchas · 131 g": {
+  "cod": "30000",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Huevo cocido · cubo de 70 unidades": {
+  "cod": "11054",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Huevo líquido · 1 kg": {
+  "cod": "110575",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Mantequilla Original · tarrina de 250 g": {
+  "cod": "110105",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Mantequilla · bloque de 5 kg": {
+  "cod": "11012",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Mantequilla · microtarrinas de 10 g": {
+  "cod": "11008",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Mantequilla · pastilla de 250 g": {
+  "cod": "11278",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Mantequilla · pastilla de 500 g": {
+  "cod": "11013",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Nata en spray · 500 g": {
+  "cod": "110095",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Nata ligera 18 % · 500 ml": {
+  "cod": "11279",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Nata ligera para cocinar · 1 l": {
+  "cod": "110067",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Nata ligera para cocinar · 200 ml": {
+  "cod": "110077",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Nata montada en spray · 250 g": {
+  "cod": "11210",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Nata para montar · 500 ml": {
+  "cod": "110066",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Yema líquida": {
+  "cod": "110576",
+  "u": "ud."
+ },
+ "refrigerados|Preparados|Callos a la madrileña · 2,5 kg": {
+  "cod": "14001",
+  "u": "ud."
+ },
+ "refrigerados|Preparados|Gazpacho Original · 1 l": {
+  "cod": "26700",
+  "u": "ud."
+ },
+ "refrigerados|Preparados|Morro de cerdo cocido · 500 g": {
+  "cod": "5003",
+  "u": "ud."
+ },
+ "refrigerados|Preparados|Oreja de cerdo cocida · 1 kg": {
+  "cod": "5001",
+  "u": "ud."
+ },
+ "refrigerados|Preparados|Oreja de cerdo cocida · 500 g": {
+  "cod": "5002",
+  "u": "ud."
+ },
+ "refrigerados|Preparados|Rabo de cerdo cocido · 500 g": {
+  "cod": "5011",
+  "u": "ud."
+ },
+ "refrigerados|Preparados|Salmorejo Original · 1 l": {
+  "cod": "26701",
+  "u": "ud."
+ },
+ "refrigerados|Preparados|Tortilla de patata con cebolla · 500 g": {
+  "cod": "261181",
+  "u": "ud."
+ },
+ "refrigerados|Reny Picot|Mozzarella · 150 g": {
+  "cod": "17004",
+  "u": "ud."
+ },
+ "refrigerados|Reny Picot|Nata para montar · 200 ml": {
+  "cod": "17056",
+  "u": "ud."
  },
  "vinos|Bornos · Ribera del Duero|Dominio de Bornos Roble · 2024": {
   "cod": "10010",

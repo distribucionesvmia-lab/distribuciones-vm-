@@ -133,3 +133,24 @@
 
   window.addEventListener('load', function () { window.ScrollTrigger.refresh(); measure(); });
 })();
+
+/* Precios de tarifa de las infusiones: salen de precios.js (lo genera _herramientas/precios.py) */
+(function () {
+  'use strict';
+  var P = window.PRECIOS;
+  if (!P) return;
+  var shown = 0;
+  Array.prototype.forEach.call(document.querySelectorAll('.m-inf-card[data-precio]'), function (li) {
+    var e = P[li.getAttribute('data-precio')];
+    if (!e) return;
+    var s = document.createElement('span');
+    s.className = 'm-inf-price';
+    s.innerHTML = '<b>' + Number(e.p).toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €</b> <small>' + String(e.u || 'ud.').replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</small>';
+    li.appendChild(s);
+    shown++;
+  });
+  if (shown) {
+    var sec = document.getElementById('infusiones');
+    if (sec) { var n = document.createElement('p'); n.className = 'm-inf-note'; n.textContent = 'Precios de tarifa por formato de venta. Pide tu tarifa personalizada, sin compromiso.'; sec.appendChild(n); }
+  }
+})();
