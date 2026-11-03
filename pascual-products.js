@@ -36,13 +36,6 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'hero', family: 'Leche Pascual', color: '#f4efe7', ink: '#271e1b',
-      eyebrow: 'La barra empieza aquí', title: 'Intense. La leche entra en escena.',
-      description: 'Leche Pascual Intense para hostelería, en botella de 1,5 litros. Un producto protagonista para descubrir de cerca.',
-      backword: 'INTENSE', bottom: '02 — Leche para hostelería',
-      product: {name:'Leche Pascual Intense · 1,5 L', image:'assets/pascual/intense-cutout.webp', width:240, height:688, alt:'Botella original Leche Pascual Intense para hostelería de 1,5 litros'}
-    },
-    {
       template: 'range', family: 'Vivesoy Barista', color: '#e9eacb', ink: '#214b32',
       eyebrow: 'Tres variedades, una misma barra', title: 'Vegetal, en movimiento.',
       description: 'Tres bebidas vegetales Vivesoy Barista para descubrir en la barra.',
