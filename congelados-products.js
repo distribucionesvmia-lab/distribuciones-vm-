@@ -1,6 +1,7 @@
 /* Congelados (Panamar). Generado con _herramientas/congelados/build.py */
 window.ProductWorld.init({
   mount: '#familias',
+  order: ['Bollería', 'Panes', 'Croissants', 'Snacks', 'Pastelería'],
   sections: [
  {
   "template": "lineup",

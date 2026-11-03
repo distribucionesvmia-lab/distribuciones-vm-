@@ -1,0 +1,1282 @@
+{
+ "agua|Bezoya|Bezoya · 1,5 L": {
+  "cod": "11029",
+  "u": "botella"
+ },
+ "agua|Nestlé Aquarel|1,5 litros": {
+  "cod": "22015",
+  "u": "botella"
+ },
+ "agua|Nestlé Aquarel|50 cl": {
+  "cod": "22016",
+  "u": "botella"
+ },
+ "agua|Pedras|Frutos vermelhos": {
+  "cod": "111923",
+  "u": "pack de 4"
+ },
+ "agua|Pedras|Pedras Limão": {
+  "cod": "111921",
+  "u": "pack de 4"
+ },
+ "agua|Pedras|Pedras Salgadas": {
+  "cod": "11191",
+  "u": "botella"
+ },
+ "agua|Pedras|Pedras Tangerina": {
+  "cod": "111922",
+  "u": "pack de 4"
+ },
+ "agua|Perrier|33 cl": {
+  "cod": "22003",
+  "u": "botella"
+ },
+ "agua|Perrier|75 cl": {
+  "cod": "22002",
+  "u": "botella"
+ },
+ "agua|S.Pellegrino|25 cl": {
+  "cod": "22008",
+  "u": "botella"
+ },
+ "agua|S.Pellegrino|50 cl": {
+  "cod": "22007",
+  "u": "botella"
+ },
+ "agua|S.Pellegrino|75 cl": {
+  "cod": "22009",
+  "u": "botella"
+ },
+ "agua|S.Pellegrino|S.Pellegrino · 75 cl": {
+  "cod": "22009",
+  "u": "botella"
+ },
+ "cafe-mocay|Infusiones clásicas|Manzanilla": {
+  "cod": "11633",
+  "u": "caja de 100 sobres"
+ },
+ "cafe-mocay|Infusiones clásicas|Menta poleo": {
+  "cod": "11635",
+  "u": "caja de 100 sobres"
+ },
+ "cafe-mocay|Infusiones clásicas|Tila": {
+  "cod": "11636",
+  "u": "caja de 100 sobres"
+ },
+ "cafe-mocay|Infusiones clásicas|Té negro": {
+  "cod": "11634",
+  "u": "caja de 100 sobres"
+ },
+ "cafe-mocay|Infusiones clásicas|Té rojo": {
+  "cod": "11649",
+  "u": "caja de 100 sobres"
+ },
+ "cafe-mocay|Infusiones clásicas|Té verde": {
+  "cod": "11654",
+  "u": "caja de 100 sobres"
+ },
+ "cafe-mocay|Infusiones pirámide|English Breakfast": {
+  "cod": "11761",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Flor de manzanilla": {
+  "cod": "11758",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Frutas del bosque": {
+  "cod": "117361",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Infusión Piruleta": {
+  "cod": "11755",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Menta poleo": {
+  "cod": "11759",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Ratafía": {
+  "cod": "11756",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Regaliz y menta": {
+  "cod": "11737",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Rooibos con flores": {
+  "cod": "117452",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Rooibos tropical": {
+  "cod": "117451",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Tila": {
+  "cod": "11760",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Té azul Oolong": {
+  "cod": "11738",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Té blanco Fresh-Lemon": {
+  "cod": "11757",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Té blanco canela": {
+  "cod": "117362",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Té negro chai": {
+  "cod": "11762",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Té rojo Pu-Erh": {
+  "cod": "116991",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Té rojo Pu-Erh con frutas": {
+  "cod": "116992",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Té verde con flores": {
+  "cod": "11736",
+  "u": "lata de 20 dosis"
+ },
+ "cafe-mocay|Infusiones pirámide|Té verde hierba buena": {
+  "cod": "117360",
+  "u": "lata de 20 dosis"
+ },
+ "congelados|Congelados · Bollería dulce|Berlina Blanca Rayada · 115 g": {
+  "cod": "9124",
+  "u": "ud."
+ },
+ "congelados|Congelados · Bollería dulce|Berlina Súper Choco · 90 g": {
+  "cod": "91241",
+  "u": "ud."
+ },
+ "congelados|Congelados · Bollería dulce|Cookie Doble Chocolate · 80 g": {
+  "cod": "9107",
+  "u": "ud."
+ },
+ "congelados|Congelados · Bollería dulce|Ensaimada Grande · 95 g": {
+  "cod": "9320",
+  "u": "ud."
+ },
+ "congelados|Congelados · Bollería dulce|Herradura de Chocolate · 170 g": {
+  "cod": "9203",
+  "u": "ud."
+ },
+ "congelados|Congelados · Bollería dulce|Hoops Relleno de Caramelo · 82 g": {
+  "cod": "94103",
+  "u": "ud."
+ },
+ "congelados|Congelados · Bollería dulce|Maxi Hoops Bombón · 80 g": {
+  "cod": "94102",
+  "u": "ud."
+ },
+ "congelados|Congelados · Bollería dulce|Maxi Hoops Glaseados · 70 g": {
+  "cod": "94101",
+  "u": "ud."
+ },
+ "congelados|Congelados · Bollería dulce|Napolitana Decorada de Chocolate · 118 g": {
+  "cod": "94091",
+  "u": "ud."
+ },
+ "congelados|Congelados · Bollería dulce|Napolitana Decorada de Crema · 118 g": {
+  "cod": "9409",
+  "u": "ud."
+ },
+ "congelados|Congelados · Bollería dulce|Napolitana Mixta · 140 g": {
+  "cod": "9402",
+  "u": "ud."
+ },
+ "congelados|Congelados · Bollería dulce|Napolitana Súper de Chocolate · 135 g": {
+  "cod": "9408",
+  "u": "ud."
+ },
+ "congelados|Congelados · Bollería dulce|Napolitana de Chocolate Fermentada · 115 g": {
+  "cod": "94081",
+  "u": "ud."
+ },
+ "congelados|Congelados · Bollería dulce|Napolitana de Crema Fermentada · 115 g": {
+  "cod": "94071",
+  "u": "ud."
+ },
+ "congelados|Congelados · Bollería dulce|Pepito de Chocolate Azucarado · 110 g": {
+  "cod": "9603",
+  "u": "ud."
+ },
+ "congelados|Congelados · Bollería dulce|Pepito de Crema Azucarado · 110 g": {
+  "cod": "9700",
+  "u": "ud."
+ },
+ "congelados|Congelados · Bollería dulce|Trenza Maple · 95 g": {
+  "cod": "9117",
+  "u": "ud."
+ },
+ "congelados|Congelados · Croissants|Croissant Art Supreme de Mantequilla · 80 g": {
+  "cod": "9503",
+  "u": "ud."
+ },
+ "congelados|Congelados · Croissants|Croissant Recto Supreme de Mantequilla · 60 g": {
+  "cod": "9306",
+  "u": "ud."
+ },
+ "congelados|Congelados · Croissants|Croissant Recto de Mantequilla · 70 g": {
+  "cod": "9304",
+  "u": "ud."
+ },
+ "congelados|Congelados · Croissants|Croissant de Margarina Fermentado · 120 g": {
+  "cod": "9300",
+  "u": "ud."
+ },
+ "congelados|Congelados · Croissants|Croissant de Margarina · 120 g": {
+  "cod": "9311",
+  "u": "ud."
+ },
+ "congelados|Congelados · Croissants|Palmera Croissant · 160 g": {
+  "cod": "9204",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Baguette R · 250 g": {
+  "cod": "9041",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Barra Larga Croustillante Tradición · 260 g": {
+  "cod": "90024",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Barra Larga · 285 g": {
+  "cod": "9002",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Barra Riquiña · 270 g": {
+  "cod": "90022",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Barra Verité · 250 g": {
+  "cod": "90105",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Bocadillo de Agua · 140 g": {
+  "cod": "90771",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Bocatín Rústico Express · 75 g": {
+  "cod": "9077",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Chapata Gourmet · 90 g": {
+  "cod": "9090",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Flauta Súper · 140 g": {
+  "cod": "9024",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Mini Flauta Express · 50 g": {
+  "cod": "9079",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Pan Castilla Redondo · 450 g": {
+  "cod": "9092",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Pan Castilla Redondo · 450 g · caja de 20": {
+  "cod": "90295",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Pan Labriego · 300 g": {
+  "cod": "90691",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Pan de Molde · 800 g": {
+  "cod": "9029",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Pan de Payés Rebanado · 800 g": {
+  "cod": "9051",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Panecillo sin Gluten para Hostelería · 66 g": {
+  "cod": "9070",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Rebanada de Pan de Payés · 63 g": {
+  "cod": "9069",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Rustic Cristal Burger · 110 g": {
+  "cod": "9038",
+  "u": "ud."
+ },
+ "congelados|Congelados · Panes y barras|Súper Barra Rústica Mediterránea · 380 g": {
+  "cod": "9025",
+  "u": "ud."
+ },
+ "congelados|Congelados · Pastelería|Lámina de Hojaldre · 60 × 40 cm": {
+  "cod": "9510",
+  "u": "ud."
+ },
+ "congelados|Congelados · Pastelería|Tarta Red Velvet · 1,2 kg": {
+  "cod": "9400",
+  "u": "ud."
+ },
+ "congelados|Congelados · Snacks salados|Bocapizza de Atún y Queso · 150 g": {
+  "cod": "9404",
+  "u": "ud."
+ },
+ "congelados|Congelados · Snacks salados|Bocapizza de Bacon y Queso · 150 g": {
+  "cod": "9403",
+  "u": "ud."
+ },
+ "congelados|Congelados · Snacks salados|Bocapizza de York y Queso · 150 g": {
+  "cod": "9086",
+  "u": "ud."
+ },
+ "congelados|Congelados · Snacks salados|Empanadilla Selecta de Pisto · 125 g": {
+  "cod": "91541",
+  "u": "ud."
+ },
+ "congelados|Congelados · Snacks salados|Empanadilla de Tomate y Atún · 125 g": {
+  "cod": "9154",
+  "u": "ud."
+ },
+ "congelados|Congelados · Snacks salados|Panini Kebab · 175 g": {
+  "cod": "90851",
+  "u": "ud."
+ },
+ "congelados|Congelados · Snacks salados|Panini de Barbacoa · 175 g": {
+  "cod": "9023",
+  "u": "ud."
+ },
+ "congelados|Congelados · Snacks salados|Panini de Verduras · 175 g": {
+  "cod": "9085",
+  "u": "ud."
+ },
+ "despensa|Borges · Hostelería|Almendra tostada · 1 kg": {
+  "cod": "11152",
+  "u": "ud."
+ },
+ "despensa|Borges · Hostelería|Cacahuete frito · 1 kg": {
+  "cod": "11153",
+  "u": "ud."
+ },
+ "despensa|Borges · Hostelería|Cacahuetes · cubo de 2,5 kg": {
+  "cod": "2241",
+  "u": "ud."
+ },
+ "despensa|Borges · Hostelería|Cóctel barbacoa · 1 kg": {
+  "cod": "11169",
+  "u": "ud."
+ },
+ "despensa|Borges · Hostelería|Cóctel para ensaladas · 1 kg": {
+  "cod": "11157",
+  "u": "ud."
+ },
+ "despensa|Borges · Hostelería|Mix barbacoa · cubo de 1,75 kg": {
+  "cod": "2242",
+  "u": "ud."
+ },
+ "despensa|Borges · Hostelería|Mix frito · cubo de 2 kg": {
+  "cod": "2240",
+  "u": "ud."
+ },
+ "despensa|Borges · Hostelería|Nuez en grano · 1 kg": {
+  "cod": "11154",
+  "u": "ud."
+ },
+ "despensa|Borges · Hostelería|Pasas sultanas · 1 kg": {
+  "cod": "11155",
+  "u": "ud."
+ },
+ "despensa|Borges · Siropes|Sirope de caramelo y mantequilla salada · 1 kg": {
+  "cod": "2248",
+  "u": "ud."
+ },
+ "despensa|Borges · Siropes|Sirope de caramelo · 1 kg": {
+  "cod": "2243",
+  "u": "ud."
+ },
+ "despensa|Borges · Siropes|Sirope de chocolate · 1 kg": {
+  "cod": "2244",
+  "u": "ud."
+ },
+ "despensa|Borges · Siropes|Sirope de frutos rojos · 1 kg": {
+  "cod": "2245",
+  "u": "ud."
+ },
+ "despensa|Borges · Siropes|Sirope de galleta caramelizada · 1 kg": {
+  "cod": "2247",
+  "u": "ud."
+ },
+ "despensa|Borges · Siropes|Sirope de moka · 1 kg": {
+  "cod": "2246",
+  "u": "ud."
+ },
+ "despensa|Calvo|La colección completa": {
+  "cod": "32530",
+  "u": "ud."
+ },
+ "despensa|Calvo|Mejillones al albariño": {
+  "cod": "32500",
+  "u": "ud."
+ },
+ "despensa|Calvo|Mejillones en salsa gallega": {
+  "cod": "32501",
+  "u": "ud."
+ },
+ "despensa|Calvo|Sardinillas con cebolla pochada": {
+  "cod": "32520",
+  "u": "ud."
+ },
+ "despensa|Calvo|Sardinillas con tomate seco": {
+  "cod": "32521",
+  "u": "ud."
+ },
+ "despensa|Calvo|Ventresca escabechada": {
+  "cod": "32510",
+  "u": "ud."
+ },
+ "despensa|Carbonell · Koipe|Virgen Extra · 5 L": {
+  "cod": "34012",
+  "u": "ud."
+ },
+ "despensa|Carmencita|Ajo en polvo · 625 g": {
+  "cod": "21052",
+  "u": "ud."
+ },
+ "despensa|Carmencita|Bicarbonato · 1 kg": {
+  "cod": "21072",
+  "u": "ud."
+ },
+ "despensa|Carmencita|Canela en rama · 170 g": {
+  "cod": "21075",
+  "u": "ud."
+ },
+ "despensa|Carmencita|Canela molida · 410 g": {
+  "cod": "21076",
+  "u": "ud."
+ },
+ "despensa|Carmencita|Clavo en grano · 550 g": {
+  "cod": "21074",
+  "u": "ud."
+ },
+ "despensa|Carmencita|Colorante alimentario · 625 g": {
+  "cod": "21058",
+  "u": "ud."
+ },
+ "despensa|Carmencita|Comino en grano · 390 g": {
+  "cod": "21062",
+  "u": "ud."
+ },
+ "despensa|Carmencita|Comino molido · 440 g": {
+  "cod": "21063",
+  "u": "ud."
+ },
+ "despensa|Carmencita|Guindilla cayena · 160 g": {
+  "cod": "21053",
+  "u": "ud."
+ },
+ "despensa|Carmencita|Laurel en hojas · 40 g": {
+  "cod": "21060",
+  "u": "ud."
+ },
+ "despensa|Carmencita|Orégano · 95 g": {
+  "cod": "21050",
+  "u": "ud."
+ },
+ "despensa|Carmencita|Perejil · 110 g": {
+  "cod": "21055",
+  "u": "ud."
+ },
+ "despensa|Carmencita|Pimentón dulce · 490 g": {
+  "cod": "21056",
+  "u": "ud."
+ },
+ "despensa|Carmencita|Pimienta blanca molida · 510 g": {
+  "cod": "21057",
+  "u": "ud."
+ },
+ "despensa|Carmencita|Pimienta negra en grano · 500 g": {
+  "cod": "21064",
+  "u": "ud."
+ },
+ "despensa|Carmencita|Pimienta negra molida · 510 g": {
+  "cod": "21054",
+  "u": "ud."
+ },
+ "despensa|Helios · Confitados y encurtidos|Alcaparras en vinagre · 145 g": {
+  "cod": "25600",
+  "u": "ud."
+ },
+ "despensa|Helios · Confitados y encurtidos|Banderillas en vinagre · 330 g": {
+  "cod": "25608",
+  "u": "ud."
+ },
+ "despensa|Helios · Confitados y encurtidos|Cebolla confitada · 230 g": {
+  "cod": "25951",
+  "u": "ud."
+ },
+ "despensa|Helios · Confitados y encurtidos|Cebollitas en vinagre · 345 g": {
+  "cod": "25602",
+  "u": "ud."
+ },
+ "despensa|Helios · Confitados y encurtidos|Cóctel de encurtidos · 345 g": {
+  "cod": "25603",
+  "u": "ud."
+ },
+ "despensa|Helios · Confitados y encurtidos|Guindillas en vinagre · 345 g": {
+  "cod": "25604",
+  "u": "ud."
+ },
+ "despensa|Helios · Confitados y encurtidos|Pepinillos en vinagre · 345 g": {
+  "cod": "25605",
+  "u": "ud."
+ },
+ "despensa|Helios · Confitados y encurtidos|Pimiento confitado · 230 g": {
+  "cod": "25952",
+  "u": "ud."
+ },
+ "despensa|Helios · Dulces y untables|Dulce de membrillo · 400 g": {
+  "cod": "25037",
+  "u": "ud."
+ },
+ "despensa|Helios · Dulces y untables|Miel antigoteo · 300 g": {
+  "cod": "25565",
+  "u": "ud."
+ },
+ "despensa|Helios · Dulces y untables|Picos de fruta · fresa · 170 g": {
+  "cod": "25104",
+  "u": "ud."
+ },
+ "despensa|Helios · Dulces y untables|Picos de fruta · melocotón · 170 g": {
+  "cod": "251041",
+  "u": "ud."
+ },
+ "despensa|Helios · Dulces y untables|Picos de fruta · membrillo · 170 g": {
+  "cod": "251042",
+  "u": "ud."
+ },
+ "despensa|Helios · Formato individual|Confitura de ciruela · 28 g": {
+  "cod": "25062",
+  "u": "ud."
+ },
+ "despensa|Helios · Formato individual|Confitura de fresa · 28 g": {
+  "cod": "25061",
+  "u": "ud."
+ },
+ "despensa|Helios · Formato individual|Confitura de melocotón · 28 g": {
+  "cod": "25060",
+  "u": "ud."
+ },
+ "despensa|Helios · Formato individual|Confitura de naranja · 28 g": {
+  "cod": "25063",
+  "u": "ud."
+ },
+ "despensa|Helios · Formato individual|Crema de cacao · 20 g": {
+  "cod": "25090",
+  "u": "ud."
+ },
+ "despensa|Helios · Formato individual|Kétchup · 30 g": {
+  "cod": "25091",
+  "u": "ud."
+ },
+ "despensa|Helios · Formato individual|Mayonesa · 25 g": {
+  "cod": "25093",
+  "u": "ud."
+ },
+ "despensa|Helios · Formato individual|Mermelada de arándanos · porciones de 25 g": {
+  "cod": "251091",
+  "u": "pack"
+ },
+ "despensa|Helios · Formato individual|Mermelada de ciruela · porciones de 25 g": {
+  "cod": "251111",
+  "u": "pack"
+ },
+ "despensa|Helios · Formato individual|Mermelada de fresa · porciones de 25 g": {
+  "cod": "251121",
+  "u": "pack"
+ },
+ "despensa|Helios · Formato individual|Mermelada de melocotón · porciones de 25 g": {
+  "cod": "251051",
+  "u": "pack"
+ },
+ "despensa|Helios · Formato individual|Miel · 28 g": {
+  "cod": "25064",
+  "u": "ud."
+ },
+ "despensa|Helios · Formato individual|Mostaza · 30 g": {
+  "cod": "25092",
+  "u": "ud."
+ },
+ "despensa|Helios · Formato individual|Tumaca · 45 porciones de 20 g": {
+  "cod": "25204",
+  "u": "caja de 45"
+ },
+ "despensa|Helios · Fruta en conserva|Cerezas rojas · 160 g": {
+  "cod": "25500",
+  "u": "ud."
+ },
+ "despensa|Helios · Fruta en conserva|Cerezas verdes · 160 g": {
+  "cod": "25501",
+  "u": "ud."
+ },
+ "despensa|Helios · Fruta en conserva|Melocotón en almíbar · lata de 840 g": {
+  "cod": "25505",
+  "u": "ud."
+ },
+ "despensa|Helios · Fruta en conserva|Melocotón en frasco · 700 g": {
+  "cod": "255051",
+  "u": "ud."
+ },
+ "despensa|Helios · Fruta en conserva|Melocotón sin azúcar añadido · 840 g": {
+  "cod": "25506",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas 0%|Mermelada 0% de albaricoque · 280 g": {
+  "cod": "25152",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas 0%|Mermelada 0% de arándano · 280 g": {
+  "cod": "25154",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas 0%|Mermelada 0% de ciruela y kiwi · 280 g": {
+  "cod": "25155",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas 0%|Mermelada 0% de ciruela · 280 g": {
+  "cod": "25150",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas 0%|Mermelada 0% de frambuesa · 280 g": {
+  "cod": "25117",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas 0%|Mermelada 0% de fresa · 280 g": {
+  "cod": "25151",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas 0%|Mermelada 0% de manzana · 280 g": {
+  "cod": "25158",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas 0%|Mermelada 0% de melocotón · 280 g": {
+  "cod": "25153",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada de ciruela y kiwi · 340 g": {
+  "cod": "25115",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada de tomate · 340 g": {
+  "cod": "25114",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada ecológica de fresa · 350 g": {
+  "cod": "25024",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada ecológica de melocotón · 350 g": {
+  "cod": "25026",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada extra de albaricoque · 340 g": {
+  "cod": "25101",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada extra de arándanos · 340 g": {
+  "cod": "25109",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada extra de ciruela · 340 g": {
+  "cod": "25102",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada extra de ciruela · 640 g": {
+  "cod": "25111",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada extra de frambuesa · 340 g": {
+  "cod": "25107",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada extra de fresa · 340 g": {
+  "cod": "25103",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada extra de fresa · 640 g": {
+  "cod": "25112",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada extra de frutas del bosque · 340 g": {
+  "cod": "251031",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada extra de manzana · 340 g": {
+  "cod": "25033",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada extra de melocotón · 340 g": {
+  "cod": "25105",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada extra de melocotón · 640 g": {
+  "cod": "25113",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada extra de mora · 340 g": {
+  "cod": "25100",
+  "u": "ud."
+ },
+ "despensa|Helios · Mermeladas extra|Mermelada extra de naranja · 340 g": {
+  "cod": "25106",
+  "u": "ud."
+ },
+ "despensa|Helios · Siropes|Sirope de caramelo · 295 g": {
+  "cod": "25002",
+  "u": "ud."
+ },
+ "despensa|Helios · Siropes|Sirope de chocolate · 295 g": {
+  "cod": "25003",
+  "u": "ud."
+ },
+ "despensa|Helios · Siropes|Sirope de fresa · 295 g": {
+  "cod": "25004",
+  "u": "ud."
+ },
+ "despensa|Helios · Siropes|Sirope de frutas del bosque": {
+  "cod": "25005",
+  "u": "ud."
+ },
+ "despensa|Helios · Tomate frito y salsas|Pisto casero · 300 g": {
+  "cod": "258650",
+  "u": "ud."
+ },
+ "despensa|Helios · Tomate frito y salsas|Pisto casero · 570 g": {
+  "cod": "25865",
+  "u": "ud."
+ },
+ "despensa|Helios · Tomate frito y salsas|Salsa boloñesa · 380 g": {
+  "cod": "25851",
+  "u": "ud."
+ },
+ "despensa|Helios · Tomate frito y salsas|Salsa de tomate casera · 300 g": {
+  "cod": "25057",
+  "u": "ud."
+ },
+ "despensa|Helios · Tomate frito y salsas|Salsa de tomate casera · 570 g": {
+  "cod": "25860",
+  "u": "ud."
+ },
+ "despensa|Helios · Tomate frito y salsas|Salsa napolitana · 380 g": {
+  "cod": "25853",
+  "u": "ud."
+ },
+ "despensa|Helios · Tomate frito y salsas|Tomate frito Mediterráneo · 560 g": {
+  "cod": "25203",
+  "u": "ud."
+ },
+ "despensa|Helios · Tomate frito y salsas|Tomate frito en brik · 340 g": {
+  "cod": "25130",
+  "u": "ud."
+ },
+ "despensa|Helios · Tomate frito y salsas|Tomate frito en brik · pack 3 × 200 g": {
+  "cod": "25131",
+  "u": "pack de 3"
+ },
+ "despensa|Helios · Tomate frito y salsas|Tomate frito en brik · pack 3 × 340 g": {
+  "cod": "25132",
+  "u": "pack de 3"
+ },
+ "despensa|Helios · Tomate frito y salsas|Tomate frito · 3 kg": {
+  "cod": "25905",
+  "u": "ud."
+ },
+ "despensa|Helios · Tomate frito y salsas|Tomate frito · 300 g": {
+  "cod": "25201",
+  "u": "ud."
+ },
+ "despensa|Helios · Tomate frito y salsas|Tomate frito · 570 g": {
+  "cod": "25202",
+  "u": "ud."
+ },
+ "despensa|Helios · Tomate frito y salsas|Tomate para untar · pack 2 × 140 g": {
+  "cod": "25001",
+  "u": "pack de 2"
+ },
+ "despensa|Helios · Verduras en conserva|Guisantes extrafinos · 340 g": {
+  "cod": "25045",
+  "u": "ud."
+ },
+ "despensa|Helios · Verduras en conserva|Judías verdes anchas · 660 g": {
+  "cod": "25707",
+  "u": "ud."
+ },
+ "despensa|Helios · Verduras en conserva|Macedonia de verduras · 345 g": {
+  "cod": "25601",
+  "u": "ud."
+ },
+ "despensa|Helios · Verduras en conserva|Macedonia de verduras · 660 g": {
+  "cod": "25708",
+  "u": "ud."
+ },
+ "despensa|Helios · Verduras en conserva|Zanahorias en tiras": {
+  "cod": "25406",
+  "u": "ud."
+ },
+ "despensa|La Ballena|Sal marina fina yodada La Ballena · 1 kg": {
+  "cod": "2162",
+  "u": "ud."
+ },
+ "despensa|La Ballena|Sal marina fina yodada · 1 kg": {
+  "cod": "2162",
+  "u": "ud."
+ },
+ "despensa|La Ballena|Sal marina fina · 1 kg": {
+  "cod": "2044",
+  "u": "ud."
+ },
+ "despensa|La Ballena|Sal marina gruesa · 1 kg": {
+  "cod": "2029",
+  "u": "ud."
+ },
+ "despensa|Luengo|Alubia blanca cocida · frasco de 570 g": {
+  "cod": "35040",
+  "u": "ud."
+ },
+ "despensa|Luengo|Alubia blanca cocida · lata de 3 kg": {
+  "cod": "35050",
+  "u": "ud."
+ },
+ "despensa|Luengo|Alubia blanca · 5 kg": {
+  "cod": "35020",
+  "u": "ud."
+ },
+ "despensa|Luengo|Alubia de granja cocida · frasco de 570 g": {
+  "cod": "35043",
+  "u": "ud."
+ },
+ "despensa|Luengo|Alubia roja cocida · frasco de 570 g": {
+  "cod": "35046",
+  "u": "ud."
+ },
+ "despensa|Luengo|Garbanzo castellano · 5 kg": {
+  "cod": "35024",
+  "u": "ud."
+ },
+ "despensa|Luengo|Garbanzo pedrosillano · 5 kg": {
+  "cod": "35025",
+  "u": "ud."
+ },
+ "despensa|Luengo|Garbanzos cocidos · frasco de 570 g": {
+  "cod": "35041",
+  "u": "ud."
+ },
+ "despensa|Luengo|Garbanzos cocidos · lata de 3 kg": {
+  "cod": "35051",
+  "u": "ud."
+ },
+ "despensa|Luengo|Lenteja castellana · 5 kg": {
+  "cod": "35022",
+  "u": "ud."
+ },
+ "despensa|Luengo|Lenteja pardina · 5 kg": {
+  "cod": "35023",
+  "u": "ud."
+ },
+ "despensa|Luengo|Lentejas cocidas · frasco de 570 g": {
+  "cod": "35042",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Espárragos|Espárrago extra 13/16": {
+  "cod": "29021",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Espárragos|Espárrago extra 17/24": {
+  "cod": "29020",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Espárragos|Espárrago extra 6/8": {
+  "cod": "29122",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Espárragos|Espárrago extra 9/12": {
+  "cod": "29123",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Frutas en almíbar|Cóctel de frutas · 3 kg": {
+  "cod": "29006",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Frutas en almíbar|Melocotón 30/40 · 3 kg": {
+  "cod": "29005",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Pimientos y setas|Champiñón entero · 3 kg": {
+  "cod": "29003",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Pimientos y setas|Champiñón laminado · 3 kg": {
+  "cod": "29002",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Pimientos y setas|Pimiento del piquillo en tiras · 3 kg": {
+  "cod": "29127",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Pimientos y setas|Pimiento del piquillo extra 80/100 · 3 kg": {
+  "cod": "29125",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Pimientos y setas|Pimiento morrón en tiras · 3 kg": {
+  "cod": "29016",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Verduras al natural|Brotes de ajo": {
+  "cod": "29000",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Verduras al natural|Guisantes · 3 kg": {
+  "cod": "29011",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Verduras al natural|Judía verde · 3 kg": {
+  "cod": "29008",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Verduras al natural|Macedonia de verduras · 3 kg": {
+  "cod": "29012",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Verduras al natural|Maíz dulce en grano · 3 kg": {
+  "cod": "29015",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Verduras al natural|Maíz dulce · ½ kg": {
+  "cod": "29124",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Verduras al natural|Menestra de verduras · 3 kg": {
+  "cod": "29128",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Verduras al natural|Zanahoria rallada · 3 kg": {
+  "cod": "29018",
+  "u": "ud."
+ },
+ "pascual|Bifrutas|Mediterráneo · 330 ml": {
+  "cod": "115000",
+  "u": "pack de 3"
+ },
+ "pascual|Bifrutas|Pacífico · 330 ml": {
+  "cod": "115030",
+  "u": "pack de 3"
+ },
+ "pascual|Bifrutas|Paraíso · 330 ml": {
+  "cod": "11506",
+  "u": "pack de 3"
+ },
+ "pascual|Bifrutas|Tropical · 1 L": {
+  "cod": "115012",
+  "u": "ud."
+ },
+ "pascual|Bifrutas|Tropical · 200 ml": {
+  "cod": "115011",
+  "u": "pack de 6"
+ },
+ "pascual|Bifrutas|Tropical · 330 ml": {
+  "cod": "11504",
+  "u": "pack de 3"
+ },
+ "pascual|Leche Classic|Bag in box · 10 L": {
+  "cod": "11107",
+  "u": "ud."
+ },
+ "pascual|Leche Classic|Leche Pascual Classic · 1,5 L": {
+  "cod": "119742",
+  "u": "botella"
+ },
+ "pascual|Leche Pascual|Leche Pascual Classic semidesnatada · caja de 10 L": {
+  "cod": "11107",
+  "u": "ud."
+ },
+ "pascual|Natillas Pascual|Natillas de chocolate · 120 g": {
+  "cod": "110322",
+  "u": "ud."
+ },
+ "pascual|Natillas Pascual|Natillas de vainilla · 120 g": {
+  "cod": "110321",
+  "u": "ud."
+ },
+ "pascual|Postres Pascual|Flan de huevo · pack de 4 × 100 g": {
+  "cod": "11450",
+  "u": "pack de 4"
+ },
+ "pascual|Vivesoy Barista|Barista Avena": {
+  "cod": "11340",
+  "u": "ud."
+ },
+ "pascual|Vivesoy Barista|Barista Soja": {
+  "cod": "11341",
+  "u": "ud."
+ },
+ "pascual|Yogikids|Yogikids de fresa y plátano · 80 g": {
+  "cod": "110646",
+  "u": "ud."
+ },
+ "pascual|Yogikids|Yogikids de fresa · 80 g": {
+  "cod": "110641",
+  "u": "ud."
+ },
+ "pascual|Yogures Pascual|Yogur de arándanos": {
+  "cod": "11314",
+  "u": "pack de 4"
+ },
+ "pascual|Yogures Pascual|Yogur de coco": {
+  "cod": "11044",
+  "u": "pack de 4"
+ },
+ "pascual|Yogures Pascual|Yogur de fresa": {
+  "cod": "11040",
+  "u": "pack de 4"
+ },
+ "pascual|Yogures Pascual|Yogur de fresa y plátano": {
+  "cod": "11045",
+  "u": "pack de 4"
+ },
+ "pascual|Yogures Pascual|Yogur de limón": {
+  "cod": "11041",
+  "u": "pack de 4"
+ },
+ "pascual|Yogures Pascual|Yogur de macedonia": {
+  "cod": "11043",
+  "u": "pack de 4"
+ },
+ "pascual|Yogures Pascual|Yogur de plátano": {
+  "cod": "11042",
+  "u": "pack de 4"
+ },
+ "pascual|Yogures Pascual|Yogur de vainilla": {
+  "cod": "11315",
+  "u": "pack de 4"
+ },
+ "pascual|Yogures Pascual|Yogur desnatado con fresa": {
+  "cod": "11110",
+  "u": "pack de 4"
+ },
+ "pascual|Yogures Pascual|Yogur desnatado con macedonia": {
+  "cod": "11114",
+  "u": "pack de 4"
+ },
+ "pascual|Yogures Pascual|Yogur griego natural azucarado": {
+  "cod": "110632",
+  "u": "pack de 4"
+ },
+ "pascual|Yogures Pascual|Yogur natural": {
+  "cod": "11047",
+  "u": "pack de 4"
+ },
+ "pascual|Yogures Pascual|Yogur natural azucarado": {
+  "cod": "11048",
+  "u": "pack de 4"
+ },
+ "refrigerados|Otros|Margarina vegetal · 1 kg": {
+  "cod": "2037",
+  "u": "ud."
+ },
+ "refrigerados|Otros|Queso fundido en lonchas · 131 g": {
+  "cod": "30000",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Huevo cocido · cubo de 70 unidades": {
+  "cod": "11054",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Huevo líquido · 1 kg": {
+  "cod": "110575",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Mantequilla Original · tarrina de 250 g": {
+  "cod": "110105",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Mantequilla · bloque de 5 kg": {
+  "cod": "11012",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Mantequilla · microtarrinas de 10 g": {
+  "cod": "11008",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Mantequilla · pastilla de 250 g": {
+  "cod": "11278",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Mantequilla · pastilla de 500 g": {
+  "cod": "11013",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Nata en spray · 500 g": {
+  "cod": "110095",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Nata ligera 18 % · 500 ml": {
+  "cod": "11279",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Nata ligera para cocinar · 1 l": {
+  "cod": "110067",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Nata ligera para cocinar · 200 ml": {
+  "cod": "110077",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Nata montada en spray · 250 g": {
+  "cod": "11210",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Nata para montar · 500 ml": {
+  "cod": "110066",
+  "u": "ud."
+ },
+ "refrigerados|Pascual|Yema líquida": {
+  "cod": "110576",
+  "u": "ud."
+ },
+ "refrigerados|Preparados|Callos a la madrileña · 2,5 kg": {
+  "cod": "14001",
+  "u": "ud."
+ },
+ "refrigerados|Preparados|Gazpacho Original · 1 l": {
+  "cod": "26700",
+  "u": "ud."
+ },
+ "refrigerados|Preparados|Morro de cerdo cocido · 500 g": {
+  "cod": "5003",
+  "u": "ud."
+ },
+ "refrigerados|Preparados|Oreja de cerdo cocida · 1 kg": {
+  "cod": "5001",
+  "u": "ud."
+ },
+ "refrigerados|Preparados|Oreja de cerdo cocida · 500 g": {
+  "cod": "5002",
+  "u": "ud."
+ },
+ "refrigerados|Preparados|Rabo de cerdo cocido · 500 g": {
+  "cod": "5011",
+  "u": "ud."
+ },
+ "refrigerados|Preparados|Salmorejo Original · 1 l": {
+  "cod": "26701",
+  "u": "ud."
+ },
+ "refrigerados|Preparados|Tortilla de patata con cebolla · 500 g": {
+  "cod": "261181",
+  "u": "ud."
+ },
+ "refrigerados|Reny Picot|Mozzarella · 150 g": {
+  "cod": "17004",
+  "u": "ud."
+ },
+ "refrigerados|Reny Picot|Nata para montar · 200 ml": {
+  "cod": "17056",
+  "u": "ud."
+ },
+ "vinos|Bornos · Ribera del Duero|Dominio de Bornos Roble · 2024": {
+  "cod": "10010",
+  "u": "botella"
+ },
+ "vinos|Bornos · Ribera del Duero|Lleiroso Crianza · 2022": {
+  "cod": "1050",
+  "u": "botella"
+ },
+ "vinos|Bornos · Ribera del Duero|Lleiroso Crianza · Magnum 2021": {
+  "cod": "1054",
+  "u": "botella"
+ },
+ "vinos|Bornos · Ribera del Duero|Lleiroso Reserva · 2021": {
+  "cod": "1053",
+  "u": "botella"
+ },
+ "vinos|Otras bodegas|De tiros largos · Ribera del Duero": {
+  "cod": "12013",
+  "u": "botella"
+ },
+ "vinos|Otras bodegas|Pinna Fidelis Crianza": {
+  "cod": "12002",
+  "u": "botella"
+ },
+ "vinos|Otras bodegas|Pinna Fidelis Roble": {
+  "cod": "12017",
+  "u": "botella"
+ },
+ "vinos|Otras bodegas|Pinna Fidelis Roble · botella 3/8 con estuche": {
+  "cod": "12005",
+  "u": "botella"
+ },
+ "vinos|Palacio de Bornos|Bornos Frizzante Verdejo · 5,5 º": {
+  "cod": "10003",
+  "u": "botella"
+ },
+ "vinos|Palacio de Bornos|Bornos Rosado Frizzante · 5,5 º": {
+  "cod": "10095",
+  "u": "botella"
+ },
+ "vinos|Palacio de Bornos|Bornos Semidulce Verdejo": {
+  "cod": "10013",
+  "u": "botella"
+ },
+ "vinos|Palacio de Bornos|Espumoso Palacio de Bornos Brut": {
+  "cod": "7002",
+  "u": "botella"
+ },
+ "vinos|Palacio de Bornos|Espumoso Palacio de Bornos Nature": {
+  "cod": "7003",
+  "u": "botella"
+ },
+ "vinos|Palacio de Bornos|Espumoso Palacio de Bornos Rosado": {
+  "cod": "7004",
+  "u": "botella"
+ },
+ "vinos|Palacio de Bornos|Espumoso Palacio de Bornos Semiseco": {
+  "cod": "7001",
+  "u": "botella"
+ },
+ "vinos|Palacio de Bornos|La Caprichosa · Verdejo 2025": {
+  "cod": "10093",
+  "u": "botella"
+ },
+ "vinos|Palacio de Bornos|Laué Frizzante Verdejo · lata de 250 ml": {
+  "cod": "1031",
+  "u": "lata"
+ },
+ "vinos|Palacio de Bornos|Laué Frizzante Verdejo · pack de 4 latas de 250 ml": {
+  "cod": "1032",
+  "u": "pack de 4"
+ },
+ "vinos|Palacio de Bornos|Palacio de Bornos Verdejo 2025 · 75 cl": {
+  "cod": "10016",
+  "u": "botella"
+ },
+ "vinos|Palacio de Bornos|Verdejo fermentado en barrica · 2023": {
+  "cod": "10080",
+  "u": "botella"
+ },
+ "vinos|Pazos de Baró|Godello · D.O. Castilla y León · 2024": {
+  "cod": "3510",
+  "u": "botella"
+ },
+ "vinos|Pazos de Baró|Pingoleta · Ribera del Duero · 10 meses · 2024": {
+  "cod": "3500",
+  "u": "botella"
+ },
+ "vinos|Pazos de Baró|Pink-goleta · Clarete · 75 cl · 2025": {
+  "cod": "3502",
+  "u": "botella"
+ }
+}

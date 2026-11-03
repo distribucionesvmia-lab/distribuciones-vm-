@@ -78,6 +78,19 @@ window.ProductWorld.init({
     {group:'Otros',brand:'Sin marca confirmada',name:'Queso fundido en lonchas · 131 g',image:'assets/refrigerados/extra/sin-marca-confirmada_queso-fundido-en-lonchas-131g.webp',width:720,height:720,desc:'Referencia de siete lonchas; marca por confirmar.',source:'Consultar'}
   ];
 
+  /* orden de familias del ERP: 70 Nata, 73 Mantequilla, 76 Preparados, 79 Fiambres, 81 Campofrío y afines, 85 Queso, 93 Huevos */
+  const famRank = p => {
+    const n = p.name.toLocaleLowerCase('es');
+    if (/^nata/.test(n)) return 70;
+    if (/^mantequilla|^margarina/.test(n)) return 73;
+    if (/callos|oreja|morro|rabo|gazpacho|salmorejo/.test(n)) return 76;
+    if (p.brand === 'ElPozo') return 79;
+    if (/huevo|clara|yema/.test(n)) return 93;
+    if (/^queso|mozzarella/.test(n) || p.brand === 'Reny Picot') return 85;
+    return 81;
+  };
+  products.sort((a, b) => famRank(a) - famRank(b));
+
   const esc = v => String(v ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const groups = ['Todos','Preparados','Pascual','Reny Picot','Charcutería','Otros'];
   const filters = document.querySelector('.cold-filters');

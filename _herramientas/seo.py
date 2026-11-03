@@ -19,7 +19,7 @@ IMAGES = {
     'cafe-mocay.html': ('assets/marcas/mocay-cafe-arabica.webp', 515, 515, 'Café Mocay Maestro Colombia'),
 }
 PAGES = ['index.html', 'cafe-mocay.html', 'pascual.html', 'vinos.html', 'agua.html',
-         'despensa.html', 'refrigerados.html', 'congelados.html']
+         'despensa.html', 'refrigerados.html', 'congelados.html', 'menaje.html']
 
 BUSINESS = {
     '@context': 'https://schema.org',

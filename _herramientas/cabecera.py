@@ -20,6 +20,7 @@ MENU = [
     ('Vinos', 'vinos.html'),
     ('Despensa', 'despensa.html'),
     ('Café Mocay', 'cafe-mocay.html'),
+    ('Menaje', 'menaje.html'),
     ('Refrigerados', 'refrigerados.html'),
     ('Congelados', 'congelados.html'),
 ]
@@ -41,6 +42,7 @@ PAGES = {
     'despensa.html': ('Despensa', False),
     'refrigerados.html': ('Refrigerados', False),
     'congelados.html': ('Congelados', False),
+    'menaje.html': ('Menaje', False),
 }
 
 

@@ -96,7 +96,7 @@ for code, family, eyebrow, title, color, ink in groups:
                      'variants': vs})
 
 js = '/* Congelados (Panamar). Generado con _herramientas/congelados/build.py */\n'
-js += "window.ProductWorld.init({\n  mount: '#familias',\n  sections: " + json.dumps(sections, ensure_ascii=False, indent=1) + '\n});\n'
+js += "window.ProductWorld.init({\n  mount: '#familias',\n  order: ['Bollería', 'Panes', 'Croissants', 'Snacks', 'Pastelería'],\n  sections: " + json.dumps(sections, ensure_ascii=False, indent=1) + '\n});\n'
 open(os.path.join(ROOT, 'congelados-products.js'), 'w', encoding='utf-8').write(js)
 print('productos:', sum(len(s['variants']) for s in sections), '· sin imagen:', len(pendientes))
 for p in pendientes[:80]:
