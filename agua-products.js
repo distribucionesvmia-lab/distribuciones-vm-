@@ -1,5 +1,6 @@
 window.ProductWorld.init({
   mount: '#familias',
+  order: ['Bezoya','Pedras','Aquarel','S.Pellegrino','Perrier'],
   sections: [
     {
       template:'hero', family:'Bezoya', color:'#cceef4', ink:'#103b50',

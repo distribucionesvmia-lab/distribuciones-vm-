@@ -2,6 +2,7 @@
 const B = 'assets/vinos/';
 window.ProductWorld.init({
   mount: '#familias',
+  order: ['Bodega Palacio','Tintos','Blancos','Frizzantes','Espumosos','Pazos','Otras'],
   sections: [
     {
       template:'hero', family:'Palacio de Bornos', color:'#eba061', ink:'#251d17',

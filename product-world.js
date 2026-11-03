@@ -56,6 +56,11 @@
   function init(config) {
     const mount = document.querySelector(config.mount || '#familias');
     if (!mount) return;
+    if (Array.isArray(config.order)) {
+      /* orden de escenas: cada texto se busca en «familia | eyebrow»; lo que no coincide va al final (orden estable) */
+      const rank = sec => { const i = config.order.findIndex(t => `${sec.family}|${sec.eyebrow || ''}`.includes(t)); return i < 0 ? config.order.length : i; };
+      config.sections = config.sections.map((sec, i) => ({ sec, i })).sort((a, b) => rank(a.sec) - rank(b.sec) || a.i - b.i).map(x => x.sec);
+    }
     total = config.sections.length;
     mount.innerHTML = config.sections.map((item, index) => {
       if (!templates[item.template]) throw new Error(`Plantilla desconocida: ${item.template}`);

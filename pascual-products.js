@@ -1,6 +1,7 @@
 /* Sustituye image, width, height y alt al recibir fotografías originales. */
 window.ProductWorld.init({
   mount: '#familias',
+  order: ['Leche','Bebidas Pascual','Vivesoy','Bifrutas','Yogikids','Yogures','Postres','Natillas'],
   sections: [
     {
       template: 'hero', family: 'Leche Pascual', color: '#efe3d6', ink: '#3a2418',

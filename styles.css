@@ -123,7 +123,7 @@ section{position:relative}
 .catalogo{padding:clamp(80px,12vw,180px) 0;background:var(--paper)}
 .cat-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:clamp(36px,5vw,72px)}
 .cat-head p{font-size:var(--f-lead);line-height:1.2;max-width:22ch;letter-spacing:-.01em}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vw,20px)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vw,20px);grid-auto-flow:dense}
 .card{position:relative;display:flex;align-items:flex-end;min-height:clamp(280px,26vw,400px);padding:clamp(20px,2vw,30px);border-radius:var(--r);overflow:hidden;background:var(--paper-2);color:var(--ink);text-decoration:none;isolation:isolate;transition:transform 260ms var(--ease),background-color 260ms var(--ease)}
 .card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 700ms var(--ease)}
 .card-photo{color:#fff}

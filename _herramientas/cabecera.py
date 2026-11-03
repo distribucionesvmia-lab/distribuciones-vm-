@@ -14,11 +14,12 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 MENU = [
     ('Inicio', 'index.html#inicio'),
     ('Catálogo', 'index.html#catalogo'),
-    ('Café Mocay', 'cafe-mocay.html'),
+    # orden de familias del ERP: 1 Leche / 10 Agua / 21 Vino / 27-51 Despensa / 40 Mocay / 70-85 Refrigerados / 92 Panamar
     ('Pascual', 'pascual.html'),
-    ('Vinos', 'vinos.html'),
     ('Aguas', 'agua.html'),
+    ('Vinos', 'vinos.html'),
     ('Despensa', 'despensa.html'),
+    ('Café Mocay', 'cafe-mocay.html'),
     ('Refrigerados', 'refrigerados.html'),
     ('Congelados', 'congelados.html'),
 ]

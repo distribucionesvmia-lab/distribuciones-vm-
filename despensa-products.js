@@ -2,6 +2,7 @@
 const D = 'assets/despensa/';
 window.ProductWorld.init({
   mount: '#familias',
+  order: ['Carbonell','Helios','Calvo','Villa Campo','Luengo','Prima','Borges','Carmencita','La Ballena'],
   sections: [
     {
       template: 'hero', family: 'Calvo', color: '#fff3c4', ink: '#1f5a3a',
