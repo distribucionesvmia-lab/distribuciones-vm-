@@ -1,0 +1,11 @@
+/* Menaje: paleta propia sobre product-world.css. Contrastes calculados: tinta #1c2830 sobre #eceff0 13:1; acento #9c2a1a sobre #eceff0 6,6:1 y sobre blanco 7,6:1; blanco sobre acento 7,6:1. */
+.menaje-world{--red:#9c2a1a;--cream:#eceff0;--dark:#1c2830}
+.menaje-world .pw-opening{background:#eceff0;color:#1c2830}
+.menaje-world .pw-opening-circle{background:#cdd6da}
+.menaje-world .pw-opening-word{color:rgba(28,40,48,.1);font-size:clamp(5rem,12vw,13rem);line-height:.8;right:-4vw}
+.menaje-world .pw-opening h1{font-size:clamp(3rem,5.6vw,6.8rem)}
+.menaje-world .pw-action{background:#9c2a1a;color:#fff}
+.menaje-world .pw-action:hover{background:#7d2013}
+.menaje-world .pw-end{background:#1c2830;color:#f4f6f7}
+.menaje-world .pw-end .pw-kicker{color:#e9b8ae}
+@media(max-width:760px){.menaje-world .pw-opening h1{font-size:clamp(2.6rem,10.5vw,4.6rem)}}

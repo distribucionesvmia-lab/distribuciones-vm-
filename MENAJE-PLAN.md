@@ -241,3 +241,17 @@ Cubertería y menaje auxiliar no llevan palabra clave propia en esta primera ver
 | FAQ | Preguntas reales de un hostelero, con respuestas confirmadas; ninguna sin respuesta [POR CONFIRMAR] |
 
 Reglas: una sola palabra principal por página, lenguaje natural, sin repetir la clave en cada frase. Sin cifras, años ni plazos que no estén confirmados.
+
+## 12. Estado del esqueleto (T04)
+
+Creados `menaje.html`, `menaje.css` y `menaje-products.js` a partir de `despensa.*`. Comprobado en local con Playwright (1440 y 390 px): un solo `h1`, sin errores de consola, sin desbordamiento horizontal.
+
+- **Hero:** `h1` «Todo el menaje de tu local, en el mismo reparto que tu pedido», subtítulo con reparto hasta 90 km desde Medina del Campo (ambos datos constan en `index.html`) y botón «Pedir información» a `index.html#contacto`. La portada no tiene imagen: la zona queda como círculo y palabra, con un comentario HTML que marca el hueco.
+- **Escenas:** `menaje-products.js` inicia el motor con `sections: []` (no pinta nada) y deja anotadas las 5 familias y una escena de ejemplo comentada. No hay datos de producto.
+- **Cierre y pie:** cierre «Equipa tu local» con enlace a contacto (sin WhatsApp, sin oferta) y pie estándar. Hueco comentado para el párrafo de créditos.
+- **Colores:** paleta propia con contrastes AA calculados (ver comentario en `menaje.css`).
+- **Cabecera:** el HTML de `menaje.html` ya incluye «Menaje» como último enlace, con `aria-current`. **Las demás páginas y `_herramientas/cabecera.py` no se han tocado**: añadir Menaje a `MENU` y `PAGES` y regenerar es la tarea de integración. Mientras tanto la nueva página es la única que enlaza a Menaje, y nada enlaza a ella.
+- **`noindex`:** la página lleva `<meta name="robots" content="noindex">` mientras esté en construcción. Hay que quitarla al publicar.
+- **`motion-pref.js` no se carga** (igual que en `despensa.html`): `product-world.js` ya respeta `prefers-reduced-motion` por su cuenta y no lee `window.VM_REDUCE`, así que el botón «Activar animaciones» no tendría efecto aquí y confundiría.
+- **Meta description:** 141 caracteres; la tarea de SEO la lleva a 150-155 con la llamada a contactar. El `title` mide 60.
+- Sin `canonical`, Open Graph ni JSON-LD todavía (tarea de SEO).
