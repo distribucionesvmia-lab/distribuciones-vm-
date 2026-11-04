@@ -63,3 +63,7 @@ Todas estas imágenes proceden de webs de marcas o distribuidores. Sus derechos 
 ## Plantilla `lineup`: llamada a la acción opcional
 
 `lineup` acepta ahora `cta: {label, href}`. Se pinta bajo la lista de variedades con el mismo estilo de enlace que `hero` y `editorial` (`.pw-link`, dentro de `.pw-e-cta`). Si no hay `cta`, la escena queda igual que antes, así que las páginas existentes no cambian. Al usarlo, subir la versión de `product-world.js` y `product-world.css` en el HTML de la página que lo necesite (`menaje.html` usa `?v=14` y `?v=17`).
+
+## Plantilla `lineup`: imagen única diferida
+
+En la imagen única de `lineup` (`product`), `lazy: true` carga la foto con `loading="lazy"`. Sin ese campo se mantiene `loading="eager"`, como antes, así que el resto de páginas no cambia. `menaje.html` usa `product-world.js?v=15`.
