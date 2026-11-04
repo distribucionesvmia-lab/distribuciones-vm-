@@ -182,3 +182,8 @@
 @media(max-width:760px){
   .pw-scene .pw-sticky{position:relative;top:auto;height:auto;min-height:0;overflow:visible}
 }
+
+/* lineup: llamada a la acción opcional (campo cta) bajo la lista */
+.pw-e-cta{grid-column:2;grid-row:4;align-self:start}
+.pw-e-cta .pw-link{margin-top:22px}
+@media(max-width:760px){.pw-e-cta{margin-top:6px}.pw-e-cta .pw-link{margin-top:14px}}

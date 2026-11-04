@@ -40,7 +40,7 @@
           <div class="pw-e-grid">
             <div class="pw-e-head"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2></div>
             <div class="pw-e-art"><span class="pw-e-disc" aria-hidden="true"></span>${multi ? item.variants.map((v,i) => v.image ? img(v,`pw-e-image pw-e-multi${i===0?' is-current':''}`,i<2) : `<span class="pw-e-image pw-e-multi pw-e-pending${i===0?' is-current':''}" role="img" aria-label="Imagen pendiente">Imagen pendiente</span>`).join('') : item.product ? img(item.product,'pw-e-image',true) : '<span class="pw-e-image pw-e-pending is-current" role="img" aria-label="Imagen pendiente">Imagen pendiente</span>'}<p class="pw-e-note">${esc(item.note || '')}</p></div>
-              <ol class="pw-e-list">${item.variants.map((v,i) => `<li${i===0?' class="is-current"':''}><span class="pw-e-num">${number(i)}</span><b>${esc(v.name)}</b><small>${esc(v.description)}</small>${multi && v.image ? `<img class="pw-e-thumb" src="${esc(v.image)}" alt="${esc(v.alt || v.name)}" width="${Number(v.width) || 300}" height="${Number(v.height) || 300}" loading="lazy" decoding="async">` : ''}</li>`).join('')}</ol>
+              <ol class="pw-e-list">${item.variants.map((v,i) => `<li${i===0?' class="is-current"':''}><span class="pw-e-num">${number(i)}</span><b>${esc(v.name)}</b><small>${esc(v.description)}</small>${multi && v.image ? `<img class="pw-e-thumb" src="${esc(v.image)}" alt="${esc(v.alt || v.name)}" width="${Number(v.width) || 300}" height="${Number(v.height) || 300}" loading="lazy" decoding="async">` : ''}</li>`).join('')}</ol>${item.cta ? `<div class="pw-e-cta">${button(item)}</div>` : ''}
           </div>
         </div></div></section>`;
     },
