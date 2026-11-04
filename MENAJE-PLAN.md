@@ -419,3 +419,45 @@ Los estilos de estos elementos ya están en `menaje.css` y no tienen efecto mien
 **Comprobado con Playwright en las 9 páginas a 1440, 1366, 1100 y 390 px:** «Menaje» presente en el menú de todas (10 enlaces), elemento activo correcto, sin desbordamiento horizontal, cabecera de una fila a 1366 px y de dos por debajo del punto de corte de siempre (1350 px), enlace de la tarjeta y del pie de la portada, enlaces cruzados presentes en las 5 categorías y funcionando.
 
 **Importante antes de publicar:** al enlazar `menaje.html` desde todo el sitio, la página se vuelve visible para quien navegue, pero sigue con `noindex`, con fotos genéricas y con datos [POR CONFIRMAR] (ver `MENAJE-PENDIENTES.md`). Si no se quiere enseñar todavía, quitar los enlaces antes de publicar: son los de esta sección, fáciles de localizar por `menaje.html`.
+
+## 21. Calidad con Playwright (T13)
+
+Revisión de `menaje.html` con Playwright (Chromium) en cuatro anchos: 1440, 820, 390 y 320 px, más una pasada con `prefers-reduced-motion: reduce`. El script es `_herramientas/qa-menaje.js` (no se publica; ver su cabecera para ejecutarlo). Las capturas y el resultado en bruto están en `_herramientas/capturas-menaje/` (11 de escritorio, 11 de móvil, una de página completa con movimiento reducido y `audit.json`).
+
+| Comprobación | Resultado |
+|---|---|
+| Consola | Sin errores ni avisos en ningún ancho; sin peticiones fallidas ni respuestas 4xx/5xx del sitio |
+| Enlaces internos | `agua`, `cafe-mocay`, `congelados`, `despensa`, `pascual`, `refrigerados`, `vinos`, `index` responden 200; anclas internas (`#contenido`, `#contacto`, `index.html#catalogo`, `index.html#inicio`) existen |
+| Enlaces externos | 15 enlaces de créditos (6 archivos y 5 autores de Commons, 4 licencias CC) responden 200 |
+| Desbordamiento horizontal | Ninguno en 320, 390, 820 ni 1440 px |
+| Contraste AA | 242 a 302 textos revisados por ancho, en 11 posiciones de scroll cada uno, calculando opacidad y fondo reales: ninguno por debajo de 4,5:1 (3:1 en texto grande). También con movimiento reducido |
+| Foco con teclado | 50 elementos enfocables con indicador visible, todos con contraste de 3:1 o más (de 5,3:1 a 18:1) |
+| Salto al contenido | Es el primer elemento del tabulador, se ve al enfocarlo y lleva a `#contenido` |
+| Imágenes | 7 de 7 con `alt`, `width` y `height`; portada sin `loading` y las 5 de familia con `loading="lazy"` |
+| Estructura | `lang="es"`, 1 `h1`, sin saltos de nivel, 1 `main`, ids sin duplicar, todos los controles con etiqueta, ningún enlace ni botón sin nombre |
+| FAQ con teclado | Se abre y se cierra con Espacio |
+| Movimiento reducido | `body.pw-static` activo, sin escenas fijas (todas `position: relative`), sin transformaciones, filas de lista a opacidad 1, transiciones prácticamente nulas, altura total de 8.118 px frente a 13.795 px; sin errores. No hay botón «Activar animaciones» porque la página no carga `motion-pref.js` (ver sección 12) |
+
+**Peso (sin tipografía de Google Fonts, que no se puede medir desde aquí):**
+
+| | Escritorio | Móvil |
+|---|---|---|
+| Carga inicial | 532 KB, 15 peticiones | 613 KB, 16 peticiones |
+| Tras recorrer toda la página | 809 KB, 18 peticiones | 809 KB, 18 peticiones |
+| Imágenes | 616 KB | 616 KB |
+| JavaScript (GSAP, ScrollTrigger, motor, datos, formulario, WhatsApp) | 136 KB | 136 KB |
+| CSS | 41 KB | 41 KB |
+| HTML | 16 KB | 16 KB |
+
+Valores sin comprimir (el servidor local no comprime; `.htaccess` activa la compresión en producción). Las imágenes de familia se cargan al llegar a ellas en escritorio y antes en móvil, porque allí las escenas se apilan.
+
+**Lo que fallaba y se corrigió** (`menaje.css` y `menaje.html`):
+1. **Foco:** summary, campos del formulario y botón de enviar usaban el contorno por defecto del navegador. Ahora todos los controles llevan un contorno explícito de 3 px, oscuro en fondo claro y blanco en fondo oscuro.
+2. **Objetivos táctiles:** la casilla de consentimiento medía 22 × 22 px y «Volver al catálogo» y «Volver a inicio» tenían 18 a 20 px de alto (mínimo de WCAG 2.2: 24 × 24 px). Ahora la casilla mide 24 px y los enlaces 32 a 34 px de alto.
+3. **Salto al contenido:** `main` ahora tiene `tabindex="-1"` (sin contorno al recibir el foco), para que el foco pase al contenido y no solo se desplace la página.
+
+**Falsos positivos descartados:** en la primera pasada móvil aparecían cuatro textos con contraste 1:1. Eran elementos con opacidad 0 que la animación de entrada aún no había revelado (la animación espera a que estén algo dentro de la pantalla); no son un fallo de contraste. El script ahora los ignora.
+
+**Observado y no tocado (fuera de menaje):**
+- Los enlaces del menú de la cabecera común miden 15 px de alto en todas las páginas (el menú es de `site-header.css`). Cumplen la excepción de separación de WCAG 2.2, pero conviene darles más altura si se revisa la cabecera.
+- Los créditos son enlaces dentro de un párrafo: están exentos del tamaño mínimo.

@@ -134,3 +134,11 @@ Rellenar los huecos y mover a `#preguntas` en `menaje.html` (y al `FAQPage` JSON
 - **Menú con 10 enlaces:** a 1366 px sigue en una fila, pero por debajo de 1350 px pasa a dos filas y en móvil se desliza. [POR CONFIRMAR] si se prefiere agrupar en un submenú.
 - **Pascual y Café Mocay** no enlazan a Menaje desde su cierre. [POR CONFIRMAR] si se quiere (por ejemplo, tazas y menaje de barra para café, solo si lo distribuyen).
 - **Incidencia ajena a esta tarea:** la portada pide `assets/escenas/escena-1.jpg`, `escena-2.jpg` y `escena-3.jpg` (sección oculta «recorrido») y devuelven 404. Ya ocurría antes; no se ha tocado.
+
+## Añadido en la tarea de calidad (Playwright)
+
+- **Peso de tipografías:** el peso de Google Fonts (Jost) no se pudo medir desde esta sesión. [POR CONFIRMAR] si se quiere alojar la fuente en el propio sitio para evitar la petición externa y reducir el tiempo de carga.
+- **Compresión en producción:** las cifras de peso son sin comprimir. [POR CONFIRMAR] que el servidor aplica la compresión del `.htaccess` (IONOS) y que `.webp`, `.js` y `.css` llegan comprimidos.
+- **Cabecera común:** altura de los enlaces del menú (15 px). [POR CONFIRMAR] si se quiere ampliar para toda la web; se hizo solo en lo propio de Menaje.
+- **Probado solo en Chromium** con emulación de móvil y de movimiento reducido. [POR CONFIRMAR] una prueba en un móvil real (Safari en iPhone y Chrome en Android) y con lector de pantalla antes de publicar. No se probó con un lector de pantalla real.
+- **Peso de las capturas** (`_herramientas/capturas-menaje/`, 1,9 MB): no se publican con el sitio, pero se versionan en el repositorio. [POR CONFIRMAR] si se prefiere no guardarlas.
