@@ -45,8 +45,9 @@
 .menaje-world .menaje-cases p{max-width:46ch}
 .menaje-world .menaje-btn{display:inline-flex;gap:42px;align-items:center;justify-content:space-between;min-width:240px;padding:16px 22px;border-radius:100px;background:#fff;color:#9c2a1a;font-weight:700;text-decoration:none;transition:background .2s,transform .2s}
 .menaje-world .menaje-btn:hover{background:#f4f6f7;transform:translateY(-2px)}
-.menaje-world a:focus-visible{outline:3px solid #9c2a1a;outline-offset:3px}
-.menaje-world .menaje-equip a:focus-visible,.menaje-world .menaje-contact a:focus-visible,.menaje-world .menaje-contact input:focus-visible,.menaje-world .menaje-contact textarea:focus-visible,.menaje-world .menaje-contact button:focus-visible,.menaje-world .pw-footer a:focus-visible{outline-color:#fff}
+.menaje-world :is(a,button,input,textarea,summary):focus-visible{outline:3px solid #9c2a1a;outline-offset:3px}
+.menaje-world :is(.menaje-equip,.menaje-contact,.pw-footer) :is(a,button,input,textarea,summary):focus-visible{outline-color:#fff}
+.menaje-world main:focus{outline:none}
 @media(max-width:900px){.menaje-world .menaje-why .menaje-wrap,.menaje-world .menaje-equip .menaje-wrap{grid-template-columns:1fr}.menaje-world .menaje-equip .menaje-wrap{align-items:start}}
 @media(max-width:560px){.menaje-world .menaje-points{grid-template-columns:1fr}.menaje-world .menaje-btn{width:100%}}
 @media(prefers-reduced-motion:reduce){.menaje-world .menaje-btn{transition:none}.menaje-world .menaje-btn:hover{transform:none}}
@@ -108,3 +109,8 @@
   .menaje-dock.has-wa .menaje-dock-call{display:none}
   .menaje-dock.has-wa .menaje-dock-wa{box-shadow:0 8px 24px rgba(0,0,0,.28)}
 }
+
+/* Objetivos táctiles de al menos 24 × 24 px (WCAG 2.2, 2.5.8) en los controles propios de menaje */
+.menaje-world .menaje-form .consent input{width:24px;height:24px}
+.menaje-world .pw-back,.menaje-world .pw-footer>a{display:inline-block;padding:7px 0}
+.menaje-world .pw-footer>a{flex:none}
