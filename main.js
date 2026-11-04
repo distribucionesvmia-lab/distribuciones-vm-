@@ -119,11 +119,11 @@
 
     // revelados con retardo escalonado
     gsap.utils.toArray('[data-r]').forEach(function (el) { el.removeAttribute('data-r'); });
-    ScrollTrigger.batch('.con-sub, form', {
+    ScrollTrigger.batch('.con-sub, #f', {
       start: 'top 88%', once: true,
       onEnter: function (b) { gsap.fromTo(b, { y: 36, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.9, ease: 'power3.out', stagger: 0.09, overwrite: true, onComplete: function () { gsap.set(b, { clearProps: 'transform' }); } }); }
     });
-    gsap.set('.con-sub, form', { autoAlpha: 0 });
+    gsap.set('.con-sub, #f', { autoAlpha: 0 });
 
     // cifras
     gsap.utils.toArray('[data-count]').forEach(function (b) {

@@ -21,3 +21,5 @@ Se ejecutan desde la raíz del repositorio, con `python3 -I _herramientas/<scrip
 **Estado de los precios:** retirados de la web a petición del cliente (`precios.js` vacío). El mapa que se usó está guardado en `precios-mapa-guardado.json`; para volver a mostrarlos, cópialo sobre `precios-mapa.json`, ejecuta `precios.py` con el Excel y luego `versionar.py`.
 
 **Menaje:** `menaje.html` combina escenas con foto (`menaje-products.js`) y el listado de artículos con buscador (`menaje-articulos.js`, que genera `menaje.py` desde el Excel, y `menaje-listado.js`). Para actualizar el listado: `python3 -I _herramientas/menaje.py ARTICULOS.xlsx` y luego `versionar.py`.
+
+**Asistente de contacto (`chat.js`, `chat.css`):** responde preguntas frecuentes en la sección de contacto de la portada, sin servidor ni servicios externos. Las respuestas están en `FAQ` y los días de reparto por localidad en `ZONAS`, dentro de `chat.js`. Para cambiar una respuesta (por ejemplo, un horario), se edita ahí y se ejecuta `versionar.py`.

@@ -1,0 +1,23 @@
+/* Asistente de contacto (chat.js). El formulario de contacto de styles.css usa un estilo global para form: se neutraliza aquí. */
+.chat{margin-top:clamp(32px,4vw,56px);max-width:760px;padding:clamp(18px,2.4vw,28px);border-radius:var(--r,14px);background:#fff;color:var(--ink,#14100d)}
+.chat h3{margin:0 0 4px;font-size:clamp(1.4rem,1.1rem + 1vw,1.9rem);font-weight:500;letter-spacing:-.025em;line-height:1.1}
+.chat-note{margin:0 0 14px;font-size:.9rem;color:#4a4541;max-width:none}
+.chat-log{display:flex;flex-direction:column;gap:10px;max-height:min(52vh,420px);overflow:auto;padding:4px 2px 8px;scroll-behavior:smooth}
+.chat-msg{max-width:92%;padding:11px 15px;border-radius:16px;font-size:1rem;line-height:1.4}
+.chat-msg ul,.chat-msg ol{margin:8px 0 0;padding-left:1.2em}
+.chat-msg li{margin:3px 0}
+.chat-msg a{color:#a80f0a;text-underline-offset:3px}
+.chat-bot{align-self:flex-start;background:#f3f2ef;border-bottom-left-radius:4px}
+.chat-user{align-self:flex-end;background:#14100d;color:#fff;border-bottom-right-radius:4px}
+.chat-chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 12px}
+.chat-chips button{font:inherit;font-size:.92rem;font-weight:500;padding:10px 14px;min-height:44px;border-radius:999px;border:1px solid rgba(20,16,13,.3);background:#fff;color:inherit;cursor:pointer}
+.chat-chips button:active{transform:scale(.97)}
+.chat .chat-form{margin:0;display:flex;gap:8px;grid-template-columns:none}
+.chat-input{flex:1;min-width:0;font:inherit;font-size:1rem;padding:12px 14px;min-height:48px;border:1px solid rgba(20,16,13,.35);border-radius:12px;background:#fff;color:inherit}
+.chat-send{font:inherit;font-weight:600;padding:0 22px;min-height:48px;border:0;border-radius:12px;background:#a80f0a;color:#fff;cursor:pointer}
+.chat-send:active{transform:scale(.97)}
+.chat :focus-visible{outline:3px solid #14100d;outline-offset:2px}
+@media(hover:hover) and (pointer:fine){.chat-chips button:hover{background:#f3f2ef}.chat-send:hover{background:#860b07}}
+@media(max-width:560px){.chat-msg{max-width:100%}.chat-send{padding:0 16px}}
+@media(prefers-reduced-motion:reduce){.chat-log{scroll-behavior:auto}}
+.chat-open .call-float{display:none!important}
