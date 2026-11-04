@@ -103,3 +103,10 @@ Rellenar los huecos y mover a `#preguntas` en `menaje.html` (y al `FAQPage` JSON
 - El formulario de la portada sigue sin enviar (`EMAIL` vacío en `main.js`). No se ha tocado por quedar fuera de esta tarea. Usar el mismo correo sería una línea; [POR CONFIRMAR] que se quiere.
 - Texto de consentimiento y política de privacidad: se copió el de la portada. Los enlaces «Aviso legal» y «Política de privacidad» de la portada apuntan a `#`: [POR CONFIRMAR] textos legales.
 - Persona que lee `oficina@distribucionesvm.es`, horario de atención y plazo de respuesta: [POR CONFIRMAR] (la web solo dice «lo antes posible»).
+
+## Añadido en la tarea de metadatos
+
+- **Dominio público definitivo** (por ejemplo, el que use el correo `distribucionesvm.es` u otro): [POR CONFIRMAR]. Hace falta para `og:image` y `twitter:image` absolutas, `og:url`, `canonical` absoluta, `sitemap.xml` y JSON-LD. Hoy el repo solo publica en GitHub Pages desde otras ramas y no declara dominio.
+- **Quitar `noindex`** de `menaje.html` y activar la indexación: [POR CONFIRMAR] cuándo (cuando haya fotos propias, marcas y el resto de datos).
+- **Aprobar textos de `title` y `meta description`:** «Pide información hoy» no promete plazo, pero [POR CONFIRMAR] que gusta el tono.
+- **Imagen para compartir en redes:** ahora es un recorte de la foto de Commons de la portada. [POR CONFIRMAR] si se quiere sustituir por una imagen propia de marca (logotipo o foto real de la empresa).

@@ -339,3 +339,25 @@ Las preguntas de **reposición, pedido mínimo y días/plazos de reparto** no ti
 - **Enlaces de consulta:** los botones de las familias, el de «Equipa tu local» y el de la portada ahora apuntan a `#contacto` de esta misma página.
 
 **Comprobación (Playwright, 1440 y 390 px):** un solo `h1`, sin errores de consola ni desbordamiento; FAQ se abre con ratón y con Enter; el formulario vacío muestra el error y enfoca el nombre, y con datos intenta abrir el `mailto:`; todos los controles tienen etiqueta; contraste de todos los textos de las dos secciones de 4,5:1 o más; sin enlace de WhatsApp en el DOM.
+
+## 17. Metadatos de cabecera (T09)
+
+Revisado y completado el `<head>` de `menaje.html`:
+
+| Elemento | Valor | Comprobación |
+|---|---|---|
+| `title` | «Menaje hostelería Medina del Campo · Distribuciones Valentín» | 60 caracteres; palabra clave principal y marca |
+| `meta description` | «Menaje para hostelería en Medina del Campo: vajilla, cubertería, cristalería, mantelería y menaje auxiliar. Reparto hasta 90 km. Pide información hoy.» | 150 caracteres; solo datos de la web; termina en llamada a la acción |
+| `h1` | uno solo, el de la portada | Jerarquía: h1 → h2 por escena/sección → h3 en puntos, casos y preguntas; sin saltos de nivel |
+| `canonical` | `menaje.html` (ruta relativa) | Se resuelve contra la URL real de la página; evita inventar el dominio |
+| Open Graph | `og:type`, `og:locale`, `og:site_name`, `og:title`, `og:description`, `og:image` (+ tipo, medidas y `alt`) | Todos presentes |
+| Twitter | `summary_large_image`, título, descripción, imagen y `alt` | Todos presentes |
+| Imagen para compartir | `assets/menaje/og-menaje.jpg`, 1200 × 630, 91 KB | Recorte de la foto de portada; registrada en `assets/credits.json` y mencionada en los créditos del pie |
+
+Verificado con Playwright: título y descripción con las longitudes indicadas, un `h1`, sin saltos en la jerarquía, `canonical` presente, etiquetas `og:` y `twitter:` presentes, la imagen de previsualización carga (`image/jpeg`) y no hay errores de consola.
+
+**Antes de publicar (no hecho a propósito):**
+1. **Dominio:** la URL pública no consta en el repo (no hay `CNAME`, ni `canonical`, ni `sitemap.xml`) [POR CONFIRMAR]. Con el dominio hay que (a) hacer absolutas `og:image` y `twitter:image` (Facebook, LinkedIn y X las piden absolutas) y (b) añadir `og:url`. La `canonical` relativa funciona, pero la absoluta es la recomendada.
+2. **`noindex`:** sigue puesto. Quitarlo al publicar, cuando lo decida el responsable.
+3. **JSON-LD, `sitemap.xml` y `robots.txt`:** siguen para las tareas de SEO siguientes.
+4. La foto de portada es CC BY-SA 4.0: la versión recortada para compartir en redes también debe atribuirse (ya está en los créditos).
