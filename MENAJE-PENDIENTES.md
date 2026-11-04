@@ -118,3 +118,11 @@ Rellenar los huecos y mover a `#preguntas` en `menaje.html` (y al `FAQPage` JSON
 - **Bloquear en `robots.txt`** `_version-3d`, `_version-anterior` y `_sin-usar`: [POR CONFIRMAR]. Se publican con el sitio y `_sin-usar` tiene imágenes sin derechos confirmados.
 - **Datos para completar el JSON-LD** (solo si se confirman): horario de atención, coordenadas o mapa de la zona de servicio, perfiles en redes sociales, tipo de negocio exacto (por ejemplo mayorista) y razón social; ninguno consta en el repo.
 - **Nombre del negocio:** la portada usa «Distribuciones Valentín Martín» como titular y «Distribuciones Valentín» como marca. El JSON-LD usa la segunda como nombre y la primera como nombre alternativo: [POR CONFIRMAR] cuál es el nombre comercial correcto.
+
+## Añadido en la tarea de contacto rápido y WhatsApp
+
+- **WhatsApp:** ¿el 635 09 80 44 tiene WhatsApp? [POR CONFIRMAR]. Todo está preparado y desactivado en `menaje-whatsapp.js` (flag `WHATSAPP`, vacío). Al confirmarlo, activar el flag con `34635098044`. Textos prefijados que habría que aprobar: «Hola, quiero hacer un pedido de menaje para mi local.» y «Hola, quiero consultar por [familia] para mi local.»
+- **Quién atiende WhatsApp y en qué horario** [POR CONFIRMAR]: la barra y el botón no deben prometer respuesta inmediata.
+- **Prueba social (testimonios):** no se ha añadido. Hace falta, por cada testimonio: texto, nombre o negocio y permiso por escrito del cliente [POR CONFIRMAR]. Hueco previsto: una sección de texto entre «Por qué pedirlo con nosotros» y «Equipa tu local».
+- **Oferta de entrada para clientes nuevos:** no se ha añadido. [POR CONFIRMAR] si existe, en qué consiste, condiciones y vigencia. Si existe, iría en «Equipa tu local» sin cifras que no se confirmen.
+- **Botón «Llamar»:** activo solo en móvil, con el 635 09 80 44. [POR CONFIRMAR] si se quiere también en escritorio (hoy no se muestra; el teléfono sí aparece en el cierre de contacto).

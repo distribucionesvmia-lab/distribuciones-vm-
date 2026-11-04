@@ -86,3 +86,25 @@
 .menaje-world .menaje-status.is-error{color:#ffc9c0}
 @media(max-width:900px){.menaje-world .menaje-contact-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.menaje-world .menaje-form .pw-action{width:100%}}
+
+/* Contacto rápido. «Llamar» (tel:) está activo solo en móvil; los estilos de WhatsApp están preparados y solo se usan si menaje-whatsapp.js se activa.
+   Contrastes: blanco sobre #9c2a1a 7,6:1; #0b2a1a sobre #25D366 7,8:1; botón rojo sobre la barra #eceff0 6,6:1. */
+.menaje-dock{display:none}
+.menaje-dock a{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 20px;border-radius:999px;font:600 1rem Jost,Arial,sans-serif;text-decoration:none}
+.menaje-dock-call{flex:1;background:#9c2a1a;color:#fff}
+.menaje-dock-num{font-weight:500;font-variant-numeric:tabular-nums}
+.menaje-dock-wa{flex:1;background:#25D366;color:#0b2a1a}
+.menaje-dock a:focus-visible{outline:3px solid #1c2830;outline-offset:3px;box-shadow:0 0 0 3px #fff}
+.menaje-wa-link{margin-left:26px}
+@media(max-width:760px){
+  .menaje-world{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+  .menaje-dock{position:fixed;z-index:40;left:0;right:0;bottom:0;display:flex;gap:10px;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:#eceff0;border-top:1px solid #b8c4cb}
+  .menaje-wa-link{display:block;margin:12px 0 0}
+  .menaje-dock.has-wa .menaje-dock-num{display:none}
+  .menaje-dock.has-wa .menaje-dock-wa{flex:1.5}
+}
+@media(min-width:761px){
+  .menaje-dock.has-wa{position:fixed;z-index:40;right:max(20px,env(safe-area-inset-right,0px));bottom:max(20px,env(safe-area-inset-bottom,0px));display:flex}
+  .menaje-dock.has-wa .menaje-dock-call{display:none}
+  .menaje-dock.has-wa .menaje-dock-wa{box-shadow:0 8px 24px rgba(0,0,0,.28)}
+}

@@ -391,3 +391,19 @@ python3 -I _herramientas/dominio.py --check
 1. **Contradicción a propósito, temporal:** `menaje.html` está en `sitemap.xml` pero lleva `noindex`. Al publicar hay que quitar el `noindex`; hasta entonces no hay que enviar el sitemap a Search Console.
 2. **Otras páginas en el sitemap:** se incluyeron las del menú porque un sitemap con una sola página no sirve; si alguna no debe indexarse todavía (por ejemplo por los derechos de imágenes pendientes de `RECURSOS-PENDIENTES.md`), hay que quitarla.
 3. **Carpetas de versiones antiguas** (`_version-3d`, `_version-anterior`, `_sin-usar`) también se publican con el sitio y `robots.txt` no las bloquea. `_sin-usar` contiene imágenes sin derechos confirmados. Decisión del responsable.
+
+## 19. Contacto rápido: «Llamar» activo y WhatsApp preparado (T11)
+
+**Activo: botón «Llamar» (solo móvil).** Barra fija inferior (`.menaje-dock`) con un enlace `tel:+34635098044` que muestra «Llamar 635 09 80 44». Solo aparece a 760 px o menos; en escritorio no se ve. Respeta las zonas seguras del móvil (`env(safe-area-inset-*)`), añade espacio al final de la página para no tapar el pie ni los créditos y tiene foco visible. Contraste del texto del botón 7,6:1. El teléfono ya es un dato publicado en la web, por eso no hace falta confirmación.
+
+**Preparado y desactivado: WhatsApp.** Todo lo de WhatsApp vive en `menaje-whatsapp.js` (nuevo) tras un flag claro: `const WHATSAPP = ''`. Con el flag vacío, el archivo no añade nada: no hay ningún enlace `wa.me` en la página (comprobado: 0 enlaces). Con un número, el script crea:
+- **«Pedir por WhatsApp»:** botón verde junto a «Llamar» en la barra de móvil y botón flotante abajo a la derecha en escritorio. Mensaje: «Hola, quiero hacer un pedido de menaje para mi local.»
+- **«Consultar por WhatsApp» en cada familia:** enlace junto a «Consultar…» con el nombre de la familia en el mensaje («Hola, quiero consultar por vajilla para mi local.») y `aria-label` que también nombra la familia.
+
+Los estilos de estos elementos ya están en `menaje.css` y no tienen efecto mientras el flag esté vacío. Contraste del botón de WhatsApp (texto oscuro sobre verde) 7,8:1.
+
+**Cómo activarlo** (cuando se confirme [POR CONFIRMAR] que el 635 09 80 44 tiene WhatsApp): en `menaje-whatsapp.js`, poner `const WHATSAPP = '34635098044';` y subir la versión del script en `menaje.html`. No hay que tocar nada más. El comentario del cierre de contacto de `menaje.html` remite a este flag.
+
+**Comprobado con Playwright** (1440 y 390 px; con el flag activado solo en una copia interceptada con un número de prueba, que no está en el repositorio): con el flag vacío, 0 enlaces de WhatsApp, «Llamar» visible solo en móvil con `tel:` correcto; con el flag, 6 enlaces (5 familias + botón de contacto), mensajes con el nombre de cada familia, barra de móvil con los dos botones, botón flotante solo en escritorio; sin desbordamiento horizontal ni errores de consola.
+
+**Sin añadir, a propósito:** prueba social (testimonios) y oferta de entrada. Siguen en `MENAJE-PENDIENTES.md`.
