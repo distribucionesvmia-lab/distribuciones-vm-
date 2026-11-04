@@ -76,3 +76,30 @@ No publicados hasta confirmar:
 - **Condiciones para aperturas** (descuentos, pedido mínimo, financiación, entrega por fases): [POR CONFIRMAR]. No se menciona nada de eso.
 - **Cifras de la empresa** (años, clientes, productos): constan en `index.html` pero no se han usado; [POR CONFIRMAR] que son correctas y si se quieren usar en esta página. Los contadores de la portada pasan por valores intermedios (36+, 444+, 1777+) antes de llegar a 40, 500 y 2.000.
 - **Zona de reparto** fuera de Medina del Campo y comarca: sin cambios, ver pendientes anteriores.
+
+## Añadido en la tarea de FAQ y contacto
+
+### Preguntas frecuentes sin respuesta confirmada (borradores, NO publicados)
+
+Rellenar los huecos y mover a `#preguntas` en `menaje.html` (y al `FAQPage` JSON-LD cuando exista). Los `[POR CONFIRMAR]` son datos que faltan; no se han inventado.
+
+1. **¿Puedo reponer piezas sueltas (platos, copas, cubiertos)?**
+   Borrador: «[POR CONFIRMAR: sí/no]. Puedes pedir piezas sueltas de reposición junto con el resto de tu pedido. [POR CONFIRMAR: si hay mínimo por referencia o plazo].»
+2. **¿Hay pedido mínimo?**
+   Borrador: «[POR CONFIRMAR: sí/no]. El pedido mínimo es de [POR CONFIRMAR]. [POR CONFIRMAR: si cambia por zona].»
+3. **¿Qué días repartís y cuánto tarda en llegar el pedido?**
+   Borrador: «Repartimos [POR CONFIRMAR: días] en Medina del Campo y comarca. Los pedidos hechos antes de [POR CONFIRMAR: hora] llegan en [POR CONFIRMAR: plazo].»
+4. **¿Puedo ver el catálogo o pedir muestras antes de comprar?**
+   Borrador: «[POR CONFIRMAR: si hay catálogo de menaje consultable y si se dan muestras].»
+5. **¿Hacéis presupuesto para equipar un local nuevo?**
+   Borrador: «[POR CONFIRMAR: sí/no]. Cuéntanos tu local y [POR CONFIRMAR: qué ofrecéis y plazo de respuesta].»
+
+### WhatsApp
+- ¿El 635 09 80 44 tiene WhatsApp? [POR CONFIRMAR]. El enlace está comentado en `menaje.html` y no se publica; el botón flotante y los «Consultar por WhatsApp» por familia tampoco se han añadido.
+- Texto prefijado del enlace: «Hola, quiero consultar por el menaje para mi local»: [POR CONFIRMAR] que gusta.
+
+### Formulario
+- `menaje-form.js` prepara un correo con `mailto:` a oficina@distribucionesvm.es; no hay envío desde servidor. [POR CONFIRMAR] si se prefiere un servicio de formularios (requeriría decidir proveedor y revisar protección de datos).
+- El formulario de la portada sigue sin enviar (`EMAIL` vacío en `main.js`). No se ha tocado por quedar fuera de esta tarea. Usar el mismo correo sería una línea; [POR CONFIRMAR] que se quiere.
+- Texto de consentimiento y política de privacidad: se copió el de la portada. Los enlaces «Aviso legal» y «Política de privacidad» de la portada apuntan a `#`: [POR CONFIRMAR] textos legales.
+- Persona que lee `oficina@distribucionesvm.es`, horario de atención y plazo de respuesta: [POR CONFIRMAR] (la web solo dice «lo antes posible»).

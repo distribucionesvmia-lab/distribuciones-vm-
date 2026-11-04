@@ -12,7 +12,7 @@
    Cada escena lleva su foto en `product:{name,image,width,height,alt,lazy:true}` (`lazy:true` carga la imagen diferida, opción del motor para la imagen única de «lineup»).
    Autoría y licencias de las fotos: assets/credits.json y pie de menaje.html. */
 const D = 'assets/menaje/';
-const CONTACTO = 'index.html#contacto';
+const CONTACTO = '#contacto';
 window.ProductWorld.init({
   mount: '#familias',
   sections: [

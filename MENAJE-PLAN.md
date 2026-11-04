@@ -318,3 +318,24 @@ Dos secciones de texto en `menaje.html`, entre las escenas por familia y el cier
 **Texto de «Equipa tu local»:** invita a contar el tipo de local, las mesas o la carta y a pedir presupuesto. Usa la promesa general de asesoramiento de la web; no afirma un servicio específico de equipamiento llave en mano.
 
 **Accesibilidad:** un solo `h1`; las nuevas secciones son `h2` con `h3` en los puntos. Contraste de todos los textos de las secciones nuevas y del cierre comprobado con Playwright (todos 4,5:1 o más). Foco visible propio en enlaces (azul/rojo en fondo claro y blanco en fondo oscuro). Sin animaciones nuevas; el botón respeta `prefers-reduced-motion`. Sin desbordamiento a 1440 ni a 390 px.
+
+## 16. Preguntas frecuentes y cierre de contacto (T08)
+
+**FAQ (`#preguntas`)**: 4 preguntas publicadas, con `<details>`/`<summary>` nativos (accesibles con teclado, sin JavaScript). Solo las que tienen respuesta en el repo o en el encargo:
+
+| Pregunta | Respuesta publicada | Respaldo |
+|---|---|---|
+| ¿Qué menaje distribuís? | Vajilla, cubertería, cristalería, mantelería y menaje auxiliar de cocina y sala, para bares, restaurantes, hoteles, cafeterías y catering | Tarjeta «Menaje» de `index.html` y público objetivo del encargo |
+| ¿Puedo pedir el menaje junto con el resto de mi pedido? | Sí; se reúne en un solo pedido con café, bebidas, lácteos, conservas, embutidos, congelados y menaje | `index.html`, paso «Preparación de pedidos» |
+| ¿Hasta dónde repartís? | Desde Medina del Campo, comarca y hasta unos 90 km; si dudas, escribe con tu pueblo o código postal y se confirma | `index.html` y mensaje de `main.js` («te confirmamos si llegamos») |
+| ¿Cómo puedo consultar por el menaje de mi local? | Teléfono, correo o formulario de la página; respuesta lo antes posible | Datos de contacto de `index.html` |
+
+Las preguntas de **reposición, pedido mínimo y días/plazos de reparto** no tienen respuesta confirmada: no se publican y sus borradores están en `MENAJE-PENDIENTES.md`. Para la tarea de SEO: el JSON-LD `FAQPage` debe incluir solo estas 4.
+
+**Cierre de contacto (`#contacto`)** sustituye al cierre anterior: título «Hablemos de tu pedido», teléfono (`tel:`), correo (`mailto:`), dirección en `<address>` y formulario.
+- **Formulario:** `menaje-form.js` (nuevo, sin dependencias). Campos nombre, teléfono o correo y mensaje, con etiquetas visibles y consentimiento igual que el de la portada. Valida en cliente (nombre, contacto y consentimiento), marca `aria-invalid`, lleva el foco al primer error y avisa en una zona `role="status"`.
+- **Cómo envía:** abre el programa de correo del usuario con el mensaje preparado (`mailto:` a `oficina@distribucionesvm.es`, correo que ya está publicado en la web) y lo dice en pantalla; no hay servidor. Es lo mismo que intenta el formulario de la portada, pero allí `EMAIL` sigue vacío en `main.js` y no envía nada; no se ha tocado.
+- **WhatsApp:** preparado y comentado en el HTML junto a los datos de contacto (`wa.me/34635098044`, con texto de ejemplo). No se muestra. Activación: descomentar la línea cuando se confirme (ver `MENAJE-PENDIENTES.md`). Tampoco hay botón flotante.
+- **Enlaces de consulta:** los botones de las familias, el de «Equipa tu local» y el de la portada ahora apuntan a `#contacto` de esta misma página.
+
+**Comprobación (Playwright, 1440 y 390 px):** un solo `h1`, sin errores de consola ni desbordamiento; FAQ se abre con ratón y con Enter; el formulario vacío muestra el error y enfoca el nombre, y con datos intenta abrir el `mailto:`; todos los controles tienen etiqueta; contraste de todos los textos de las dos secciones de 4,5:1 o más; sin enlace de WhatsApp en el DOM.
