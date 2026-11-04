@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="product-world.css?v=3eaec687">
-  <link rel="stylesheet" href="menaje.css?v=03d3afb6">
+  <link rel="stylesheet" href="menaje.css?v=434cc5df">
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="stylesheet" href="site-header.css?v=1361f71b">
@@ -43,13 +43,22 @@
 </header>
   <main id="contenido" tabindex="-1">
     <section class="pw-opening" aria-labelledby="pw-title">
-      <div class="pw-opening-copy"><p class="pw-kicker">Distribuciones Valentín / Menaje</p><h1 id="pw-title">Todo el menaje de tu local,<br><em>en el mismo reparto que tu pedido.</em></h1><p>Vajilla, cubertería, cristalería, mantelería y menaje auxiliar para hostelería. Repartimos hasta 90 km desde Medina del Campo.</p><a class="pw-action" href="#contacto">Pedir información <span aria-hidden="true">↗</span></a></div>
+      <div class="pw-opening-copy"><p class="pw-kicker">Distribuciones Valentín / Menaje</p><h1 id="pw-title">Todo el menaje de tu local,<br><em>en el mismo reparto que tu pedido.</em></h1><p>Vajilla, cubertería, cristalería, mantelería y menaje auxiliar para hostelería. Repartimos hasta 90 km desde Medina del Campo.</p><a class="pw-action" href="#contacto">Pedir información <span aria-hidden="true">↗</span></a><a class="menaje-listlink" href="#referencias">Ver el listado de artículos <span aria-hidden="true">↓</span></a></div>
       <div class="pw-opening-art"><span class="pw-opening-circle" aria-hidden="true"></span>
         <img class="pw-opening-photo" src="assets/menaje/hero-mesa-restaurante.webp" width="1400" height="1050" fetchpriority="high" alt="Mesa servida con vasos y cubiertos en un restaurante con paredes de piedra">
         <span class="pw-opening-word" aria-hidden="true">ME<br>NAJE</span></div>
       <div class="pw-opening-bottom"><span>Para bares, restaurantes, hoteles y catering</span><span>Desliza para explorar ↓</span></div>
     </section>
     <div id="familias" class="pw-world" aria-label="Familias de menaje"></div>
+    <section class="mj-catalog" id="referencias" aria-labelledby="mj-catalog-title">
+      <div class="menaje-wrap">
+        <div class="mj-intro"><p class="pw-kicker">Listado de artículos</p><h2 id="mj-catalog-title">Encuentra<br><em>lo que necesitas.</em></h2></div>
+        <div class="mj-toolbar"><div class="mj-filters" role="group" aria-label="Filtrar por familia"></div><label class="mj-search-label" for="mj-search">Buscar artículo<input id="mj-search" type="search" placeholder="Por ejemplo, copa vino o 30 cm" autocomplete="off"></label></div>
+        <p class="mj-count" id="mj-count" role="status" aria-live="polite"></p>
+        <div id="mj-groups"></div>
+        <p class="mj-note">Listado de artículos de menaje disponibles. Pide información sobre medidas, formatos y fotografías de cada referencia.</p>
+      </div>
+    </section>
     <section class="menaje-why" id="por-que" aria-labelledby="why-title">
       <div class="menaje-wrap">
         <div class="menaje-head"><p class="pw-kicker">Por qué pedirlo con nosotros</p><h2 id="why-title">Menaje de hostelería,<br><em>como el resto de tu pedido.</em></h2><p>Distribuimos menaje para hostelería desde Medina del Campo, junto con el resto de productos que ya recibes de nosotros.</p></div>
@@ -114,6 +123,8 @@
   <script src="assets/vendor/gsap.min.js?v=2d26f4c0" defer></script>
   <script src="assets/vendor/ScrollTrigger.min.js?v=489bcf6d" defer></script>
   <script src="product-world.js?v=dcd6ea52" defer></script>
+  <script src="menaje-articulos.js?v=ee2bc76a" defer></script>
+  <script src="menaje-listado.js?v=b704f593" defer></script>
   <script src="menaje-products.js?v=fea5f1f6" defer></script>
   <script src="menaje-form.js?v=00618ff6" defer></script>
   <script src="menaje-whatsapp.js?v=36872f05" defer></script>
