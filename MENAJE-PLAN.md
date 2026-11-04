@@ -294,3 +294,27 @@ Seis fotos (portada y una por familia) de **Wikimedia Commons**, descargadas a `
 - **Cambio en el motor:** `lineup` ahora admite `product.lazy: true` (carga diferida); sin él mantiene el comportamiento anterior. Detalle en `PRODUCT-WORLD.md`.
 - **Sustituir cuando se pueda:** estas fotos son de otros países (Canadá, Tailandia, Laos y otras) y de otros locales; sirven como ilustración genérica pero no representan el catálogo de la empresa. Lo ideal es cambiarlas por fotos propias o material oficial del fabricante con permiso, cuando se confirmen las marcas ([POR CONFIRMAR]).
 - Las fotos de cristalería (copas sobre mantel) y de menaje auxiliar (utensilios en pared) son las más débiles como imagen comercial.
+
+## 15. «Por qué pedirlo con nosotros» y «Equipa tu local» (T07)
+
+Dos secciones de texto en `menaje.html`, entre las escenas por familia y el cierre. Son HTML estático con estilos propios en `menaje.css` (no usan el motor, porque no llevan imagen): `#por-que` (fondo claro, 4 puntos) y `#equipa-tu-local` (fondo de acento, dos casos y botón «Pedir presupuesto» a `index.html#contacto`). El cierre pasa a «Hablemos de tu pedido», que ya existe en la portada, para no repetir el título «Equipa tu local».
+
+**Qué se afirma y de dónde sale en el repo (`index.html`)**
+
+| Texto de la página | Respaldo en el repo |
+|---|---|
+| Un solo proveedor: café, bebidas, lácteos, conservas, embutidos, congelados y menaje en el mismo distribuidor | «Un solo proveedor para toda tu carta» y «todo en un solo distribuidor» |
+| Un solo pedido, el menaje se reparte junto con lo demás | «Reunimos en un solo pedido café, bebidas, lácteos, conservas, embutidos, congelados y menaje» |
+| Repartimos desde Medina del Campo, hasta unos 90 km a la redonda | «Reparto en Medina del Campo y comarca, hasta unos 90 km a la redonda» |
+| Trato cercano y un equipo con experiencia para asesorarte | «Trato cercano y atención personalizada, con un equipo con experiencia para asesorarte» |
+| Te respondemos lo antes posible | «Cuéntanos qué necesita tu negocio y te respondemos lo antes posible» |
+
+**Qué se dejó fuera** (todo en `MENAJE-PENDIENTES.md`)
+- **Reposición:** no aparece en ninguna parte del repo. No se menciona.
+- **Cifras** (años de experiencia, clientes, número de productos): existen en la portada, pero no son de menaje y los contadores animados muestran valores distintos a los finales mientras cuentan. No se reutilizan.
+- **«Primeras marcas»:** no se aplica a menaje, porque las marcas de menaje están [POR CONFIRMAR].
+- Cualquier promesa de gratuidad, plazo de presupuesto, visita al local o descuento de apertura.
+
+**Texto de «Equipa tu local»:** invita a contar el tipo de local, las mesas o la carta y a pedir presupuesto. Usa la promesa general de asesoramiento de la web; no afirma un servicio específico de equipamiento llave en mano.
+
+**Accesibilidad:** un solo `h1`; las nuevas secciones son `h2` con `h3` en los puntos. Contraste de todos los textos de las secciones nuevas y del cierre comprobado con Playwright (todos 4,5:1 o más). Foco visible propio en enlaces (azul/rojo en fondo claro y blanco en fondo oscuro). Sin animaciones nuevas; el botón respeta `prefers-reduced-motion`. Sin desbordamiento a 1440 ni a 390 px.

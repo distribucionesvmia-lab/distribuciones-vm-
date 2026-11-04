@@ -23,3 +23,32 @@
 .menaje-world .pw-footer{flex-wrap:wrap}
 .menaje-world .pw-credits{flex-basis:100%;margin:6px 0 0;max-width:none;font-size:.78rem;line-height:1.55;color:#eee7dd}
 .menaje-world .pw-credits a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+
+/* Por qué pedirlo con nosotros y Equipa tu local: secciones de texto, sin imágenes.
+   Contrastes calculados: tinta #1c2830 sobre #f4f6f7 14:1 y acento #9c2a1a sobre #f4f6f7 7:1;
+   blanco sobre #9c2a1a 7,6:1 y botón #9c2a1a sobre blanco 7,6:1. */
+.menaje-world .menaje-wrap{width:min(1320px,100% - 2*var(--side));margin-inline:auto}
+.menaje-world .menaje-why,.menaje-world .menaje-equip{padding:clamp(72px,11vw,150px) 0}
+.menaje-world .menaje-why{background:#f4f6f7;color:#1c2830}
+.menaje-world .menaje-equip{background:#9c2a1a;color:#fff}
+.menaje-world .menaje-why .menaje-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(36px,6vw,110px);align-items:start}
+.menaje-world .menaje-head h2{margin:26px 0 22px;font-size:clamp(2.7rem,5vw,5.8rem);font-weight:600;line-height:.95;letter-spacing:-.055em}
+.menaje-world .menaje-head h2 em{font-family:Georgia,serif;font-weight:400;letter-spacing:-.05em}
+.menaje-world .menaje-head p:not(.pw-kicker){max-width:34ch;font-size:clamp(1.05rem,1.3vw,1.25rem);line-height:1.45}
+.menaje-world .menaje-points,.menaje-world .menaje-cases{list-style:none;margin:0;padding:0}
+.menaje-world .menaje-points{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,3vw,48px)}
+.menaje-world .menaje-points li,.menaje-world .menaje-cases li{padding:22px 0 28px;border-top:1px solid currentColor}
+.menaje-world .menaje-points h3,.menaje-world .menaje-cases h3{margin:0 0 10px;font-size:clamp(1.3rem,1.8vw,1.75rem);font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.menaje-world .menaje-points p,.menaje-world .menaje-cases p{margin:0;max-width:36ch;font-size:1.05rem;line-height:1.5}
+.menaje-world .menaje-equip .pw-kicker{color:#fff}
+.menaje-world .menaje-equip .menaje-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(36px,6vw,110px);align-items:end}
+.menaje-world .menaje-equip-body{display:grid;gap:34px;justify-items:start}
+.menaje-world .menaje-cases{display:grid;gap:0;width:100%}
+.menaje-world .menaje-cases p{max-width:46ch}
+.menaje-world .menaje-btn{display:inline-flex;gap:42px;align-items:center;justify-content:space-between;min-width:240px;padding:16px 22px;border-radius:100px;background:#fff;color:#9c2a1a;font-weight:700;text-decoration:none;transition:background .2s,transform .2s}
+.menaje-world .menaje-btn:hover{background:#f4f6f7;transform:translateY(-2px)}
+.menaje-world a:focus-visible{outline:3px solid #9c2a1a;outline-offset:3px}
+.menaje-world .menaje-equip a:focus-visible,.menaje-world .pw-end a:focus-visible,.menaje-world .pw-footer a:focus-visible{outline-color:#fff}
+@media(max-width:900px){.menaje-world .menaje-why .menaje-wrap,.menaje-world .menaje-equip .menaje-wrap{grid-template-columns:1fr}.menaje-world .menaje-equip .menaje-wrap{align-items:start}}
+@media(max-width:560px){.menaje-world .menaje-points{grid-template-columns:1fr}.menaje-world .menaje-btn{width:100%}}
+@media(prefers-reduced-motion:reduce){.menaje-world .menaje-btn{transition:none}.menaje-world .menaje-btn:hover{transform:none}}

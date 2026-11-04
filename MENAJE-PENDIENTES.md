@@ -66,3 +66,13 @@ Se anotan para no inventarlos cuando llegue su tarea. Ninguno consta en el repo.
 - Las licencias CC BY-SA exigen atribuir y compartir bajo la misma licencia las versiones modificadas (redimensionadas, recortadas) de esas fotos. Si la empresa no quiere esa condición, hay que cambiarlas: [POR CONFIRMAR].
 - Imagen para compartir en redes (`og:image`): puede salir de la foto de portada si se confirma que sirve; queda para la tarea de SEO.
 - No se ha podido consultar Unsplash ni Pexels desde esta sesión (Pexels devolvió 403 y Unsplash redirige); todo viene de Commons.
+
+## Añadido en la tarea «Por qué pedirlo» y «Equipa tu local»
+
+No publicados hasta confirmar:
+- **Reposición de menaje** (reponer piezas rotas o agotadas, plazos, mínimos): [POR CONFIRMAR] si se ofrece. No consta en el repo.
+- **Asesoramiento específico para equipar un local** en aperturas y reformas (visita, listado de piezas, cálculo de cantidades): [POR CONFIRMAR]. La web solo promete asesoramiento general («equipo con experiencia para asesorarte»).
+- **Presupuesto:** si se hace presupuesto para equipar un local, si es gratuito y en qué plazo se responde: [POR CONFIRMAR]. El botón «Pedir presupuesto» solo lleva al formulario y no promete nada más.
+- **Condiciones para aperturas** (descuentos, pedido mínimo, financiación, entrega por fases): [POR CONFIRMAR]. No se menciona nada de eso.
+- **Cifras de la empresa** (años, clientes, productos): constan en `index.html` pero no se han usado; [POR CONFIRMAR] que son correctas y si se quieren usar en esta página. Los contadores de la portada pasan por valores intermedios (36+, 444+, 1777+) antes de llegar a 40, 500 y 2.000.
+- **Zona de reparto** fuera de Medina del Campo y comarca: sin cambios, ver pendientes anteriores.
