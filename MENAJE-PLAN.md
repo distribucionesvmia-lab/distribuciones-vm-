@@ -114,3 +114,60 @@ window.ProductWorld.init({
 5. Apuntar la tarjeta de `index.html` a `menaje.html`.
 6. Crear `assets/credits.json` y el párrafo de créditos del pie.
 7. Datos sin confirmar: ver `MENAJE-PENDIENTES.md`. No se publican.
+
+## 10. Referencias
+
+Búsqueda web hecha solo para ver **cómo se estructura y se describe** el menaje de hostelería. No se ha copiado ningún texto, imagen ni dato de producto, y nada de esto se puede presentar como propio.
+
+Limitaciones:
+- La sesión no puede abrir webs de distribuidores (`bunzlspain.com` no resuelve: el dominio está fuera de los permitidos). Lo que sigue sale de resultados de búsqueda y catálogos en PDF, no de navegar las tiendas. Faltaría ver las fichas de producto reales.
+- Ninguna fuente da precios vigentes y no se usan.
+- Las afirmaciones de producto de las fuentes (apilable, apto para lavavajillas, etc.) pertenecen a esos fabricantes y series. Solo podrían usarse para las marcas que distribuya la empresa, y eso está [POR CONFIRMAR] (ver `MENAJE-PENDIENTES.md`).
+
+### Fuentes consultadas
+
+| Tipo | Fuente | Qué aporta a la estructura |
+|---|---|---|
+| Distribuidor Horeca | [Bunzl Spain, catálogo de cubertería Cartuja (PDF)](https://www.bunzlspain.com/media/bunzl-pdf/Catalogo_Cartuja_Cuberteria_web.pdf) | Se presenta como distribuidor del sector con menaje de cocina, vajilla, cristalería y cubertería |
+| Mayorista | [ADI Foodservice 2025 (PDF)](https://catalogos.adiberia.com/adi_foodservice_2025/datos/media/descargable.pdf) | Mayorista de menaje de hostelería con marcas propias de porcelana profesional |
+| Directorio | [Proveedores.com, menaje para hostelería](https://www.proveedores.com/fabricantes_t/menaje-para-hosteleria/) | Cómo se agrupa el sector: menaje, vajilla, cubertería y cristalería como categorías separadas, buscadas por provincia |
+| Fabricante vajilla | [Porvasal, catálogo 2024 sin precios (PDF)](https://storage.googleapis.com/d_images/ServiceAttachment/6688/534/PORVASAL_2024_WebNoPrecios.pdf) | Fichas por serie con iconos de uso (lavavajillas, horno, microondas) y opción de personalizar |
+| Fabricante vajilla | [Summa, catálogo (Issuu)](https://issuu.com/owlpinegroup/docs/summa_catalogue_aw2023-s) | Colecciones por serie con aclaración de usos y limitaciones por variante |
+| Distribuidor de vajilla | [Pioli, ficha de porcelana (Hostelería10)](https://hosteleria10.com/recursos/pdfs/pioli-vajilla-porcelana-plano.pdf) | Ficha técnica corta: formato, apilable, apto para lavavajillas |
+| Fabricante textil | [Karme, catálogo Nature 22-23 (PDF)](https://karme.es/Documents/Catalogue/2022/Cat%C3%82%C2%A0logo%20Karme%20Nature%2022-23%20Baja%20Resoluci%C3%82%C2%A2n.pdf) | Separa tela, airlaid, manteles de papel y servilletas de papel |
+| Fabricante textil | [Iberosa, catálogo textil de hostelería (PDF)](https://infohoreca.com/media/uploads/directorio/documentos/iberosa-catalogo-textil-hosteleria-2401esp.pdf) | Textil de hostelería agrupado por uso |
+| Blog de proveedor | [García de Pou, qué mantelería elegir](https://blog.garciadepou.com/en/which-professional-table-linen-to-choose/) | Criterios de elección de mantelería profesional |
+| Guía de compra | [Bone and White, cómo elegir la vajilla de un restaurante](https://en.boneandwhite.com/blogs/bone-and-white-blog/como-elegir-la-vajilla-para-un-restaurante) | Elegir según concepto del local, tipo de servicio y coste a largo plazo |
+| Guía de compra | [Qooqer, comprar menaje para tu restaurante](https://qooqer.com/blog/comprar-menaje-para-tu-restaurante) | Tratar el menaje como inventario y planificarlo antes de comprar |
+| Feria sectorial | [IFEMA, sector menaje](https://www.ifema.es/guext/sectores/menaje) | Clasificación del sector: cocción y preparación, vajilla, cristalería, cubertería y accesorios de barra |
+| Catálogo técnico | [Hostelería10, cubetas Gastronorm (PDF)](https://hosteleria10.com/recursos/catalogos/catalogo-cubetas-gastronorm-hosteleria10.pdf) | Cubetas por formato modular, con tapas y accesorios |
+| Catálogo | [A.M.C. (Issuu)](https://issuu.com/masbarservitel/docs/men_amc_ok) | Auxiliar de sala en plástico (jarras, vasos, bandejas) como bloque aparte |
+| Catálogo | [García de Pou, productos durables (Issuu)](https://issuu.com/catalogosgarciadepou/docs/cat-hos-durable-es) | Capítulo de menaje auxiliar separado del resto |
+
+### Patrones que se repiten
+
+1. **Cuatro familias base más una de auxiliares.** Vajilla, cristalería y cubertería casi siempre van separadas; el textil y el auxiliar de cocina y sala aparecen como bloques propios. Coincide con las 5 familias del encargo.
+2. **Los catálogos organizan por serie o colección, no por pieza.** Un bloque por familia con una serie representativa funciona mejor que una lista plana.
+3. **Fichas cortas y comparables.** Formato, material, usos admitidos (lavavajillas, horno) y personalización. Es lo que el cliente profesional busca para decidir.
+4. **Cada fuente delimita bien lo que no hace.** Las aclaraciones por variante (por ejemplo, un uso no apto en una serie concreta) dan confianza. Conviene hacer lo mismo: no prometer usos que la marca no confirme.
+5. **Las guías de compra empiezan por el local, no por el producto:** concepto, tipo de servicio, resistencia, limpieza y coste a largo plazo.
+6. **Consulta antes que carrito.** Las fuentes de catálogo sirven como punto de partida para pedir tarifa o muestras. Encaja con el modelo de la web (contactar, no vender en línea).
+
+### Aplicación a las 5 familias
+
+Todo lo de esta tabla es **estructura y enfoque**. Los textos concretos, marcas y datos de producto se redactan solo cuando haya datos confirmados.
+
+| Familia | Cómo estructurarla | Qué debe decir la ficha (solo si se confirma) | Evitar |
+|---|---|---|---|
+| **Vajilla** | Por tipo de pieza (platos, bol, tazas) y, si hay marcas confirmadas, por serie | Material, formatos, usos admitidos, posibilidad de reposición | Prometer «apilable» o «apta para lavavajillas» sin ficha de la marca |
+| **Cubertería** | Por juego de servicio (mesa, postre, cuchillería) | Material y acabado, formatos disponibles | Cifras de calidad del acero sin fuente de la marca |
+| **Cristalería** | Por uso (agua, vino, cerveza, coctelería) | Tipos de copa y vaso, capacidades que estén en la ficha | Fijar cantidades por silla como regla propia: es una opinión de un blog, no un dato de la empresa |
+| **Mantelería y textil** | Separar tela, desechable (airlaid, papel) y a medida si la empresa lo ofrece | Tejido, medidas habituales, lavable o desechable | Gramajes y composiciones sin confirmar; las fuentes consultadas no aportan rangos fiables |
+| **Menaje auxiliar de cocina y sala** | Sala (bandejas, jarras, utensilios de servicio) y cocina (recipientes Gastronorm, utensilios) por separado | Formatos modulares y compatibilidad (Gastronorm 1/1, 1/2…) si se distribuyen | Mezclar sala y cocina en una sola lista larga |
+
+### Decisiones para las siguientes tareas
+
+- La estructura de `menaje.html` sigue el orden de las 5 familias, con una escena por familia. La plantilla `editorial` o `lineup` del motor encaja con «bloque por serie» y con listas de variedades.
+- Mientras las marcas sean [POR CONFIRMAR], los textos hablan de tipos de producto y de cómo elegir, sin nombrar fabricantes ni atributos técnicos.
+- El bloque «Equipa tu local» puede basarse en el patrón 5 (empezar por el tipo de local), sin cifras de stock ni descuentos.
+- Pendiente de ver con acceso a los dominios: ver fichas reales de distribuidores. Queda anotado en `MENAJE-PENDIENTES.md`.

@@ -38,3 +38,10 @@ Se anotan para no inventarlos cuando llegue su tarea. Ninguno consta en el repo.
 - Teléfono 635 09 80 44, correo oficina@distribucionesvm.es y dirección Cl Labradores, n.º 45, parcela 24B, 47400 Medina del Campo (Valladolid), todos en `index.html`.
 - Reparto en Medina del Campo y comarca, hasta unos 90 km.
 - Descripción de la tarjeta actual: «Vajilla, cubertería, cristalería, mantelería y auxiliar».
+
+## Añadido en la tarea de referencias
+
+- Dominios de distribuidores de menaje (por ejemplo `bunzlspain.com`) no están permitidos en la red de la sesión, así que las fichas reales de producto no se han podido revisar. Si se quiere ese análisis, hay que permitirlos en la configuración de red del entorno: [POR CONFIRMAR].
+- Los usos técnicos de las series de otros fabricantes (apilable, apta para lavavajillas, etc.) no se pueden aplicar a ningún producto de la empresa hasta saber qué marcas distribuye: [POR CONFIRMAR].
+- Si la empresa ofrece mantelería a medida o con personalización: [POR CONFIRMAR].
+- Si distribuye menaje auxiliar de cocina (recipientes Gastronorm, utensilios) además del de sala: [POR CONFIRMAR].
