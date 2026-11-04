@@ -13,3 +13,13 @@
 @media(min-width:761px){.menaje-world:not(.pw-static) .pw-e-list li{opacity:.72}.menaje-world:not(.pw-static) .pw-e-list li.is-current{opacity:1}}
 .menaje-world.pw-mobile-anim .pw-e-list li.is-in{opacity:.72}
 .menaje-world.pw-mobile-anim .pw-e-list li.is-in.is-current{opacity:1}
+
+/* Fotos reales: portada en círculo y foto de cada familia con esquinas suaves */
+.menaje-world .pw-opening-photo{position:relative;z-index:1;width:min(39vw,570px);height:min(39vw,570px);max-width:none;border-radius:50%;object-fit:cover;object-position:50% 60%;box-shadow:25px 35px 40px rgba(28,40,48,.18)}
+.menaje-world .pw-e-image{border-radius:14px;filter:none;box-shadow:0 16px 36px rgba(28,40,48,.16)}
+@media(min-width:761px){.menaje-world .pw-e-image{max-width:min(40vw,580px);max-height:72%}}
+@media(max-width:760px){.menaje-world .pw-opening-photo{width:min(78vw,440px);height:min(78vw,440px)}.menaje-world .pw-e-image{max-width:88%}}
+/* Créditos en el pie */
+.menaje-world .pw-footer{flex-wrap:wrap}
+.menaje-world .pw-credits{flex-basis:100%;margin:6px 0 0;max-width:none;font-size:.78rem;line-height:1.55;color:#eee7dd}
+.menaje-world .pw-credits a{color:inherit;text-decoration:underline;text-underline-offset:2px}

@@ -59,3 +59,10 @@ Se anotan para no inventarlos cuando llegue su tarea. Ninguno consta en el repo.
 - Si hay opciones como tela o desechable, personalización o mantelería a medida: [POR CONFIRMAR].
 - Los enlaces «Consultar…» van a `index.html#contacto` (el formulario de la portada). Ese formulario hoy no envía mensajes porque `EMAIL` está vacío en `main.js`. Hasta que se corrija, las consultas no llegan: [POR CONFIRMAR] correo de destino o servicio de formularios.
 - Si más adelante se confirma WhatsApp, añadir «Consultar por WhatsApp» en cada familia (no se ha añadido).
+
+## Añadido en la tarea de fotografías
+
+- Las 6 fotos actuales son de Wikimedia Commons con licencia CC BY, CC BY-SA o CC0, y están registradas en `assets/credits.json`. Para sustituirlas por fotos propias o material oficial del fabricante con permiso: [POR CONFIRMAR] quién las aporta y con qué autorización.
+- Las licencias CC BY-SA exigen atribuir y compartir bajo la misma licencia las versiones modificadas (redimensionadas, recortadas) de esas fotos. Si la empresa no quiere esa condición, hay que cambiarlas: [POR CONFIRMAR].
+- Imagen para compartir en redes (`og:image`): puede salir de la foto de portada si se confirma que sirve; queda para la tarea de SEO.
+- No se ha podido consultar Unsplash ni Pexels desde esta sesión (Pexels devolvió 403 y Unsplash redirige); todo viene de Commons.

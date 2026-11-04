@@ -275,3 +275,22 @@ Creados `menaje.html`, `menaje.css` y `menaje-products.js` a partir de `despensa
 - Las ciudades (Valladolid, Castilla y León) **no** aparecen en estos textos: siguen solo como palabra clave hasta confirmar la zona de servicio (ver `MENAJE-PENDIENTES.md`).
 - **Contraste AA:** las filas inactivas de la lista bajan de opacidad en el motor (.4 en escritorio, .5 en móvil con animación), por debajo de 4,5:1. `menaje.css` las sube a .72 solo en esta página (5,2:1 o más sobre los 5 fondos). Las demás páginas del sitio siguen con los valores del motor.
 - Probado con Playwright a 1440 y 390 px: un solo `h1`, sin errores de consola ni desbordamiento horizontal, 5 enlaces de consulta.
+
+## 14. Fotografías (T06)
+
+Seis fotos (portada y una por familia) de **Wikimedia Commons**, descargadas a `assets/menaje/` en WebP. No hay material oficial de fabricante con permiso ni marcas identificables a propósito. Comprobación de licencia: los metadatos de cada archivo en la API de Commons (licencia, autoría, enlace de licencia, sin restricciones marcadas). Todas se pueden usar con atribución (CC BY, CC BY-SA) o sin ella (CC0).
+
+| Uso | Archivo | Peso | Medidas | Autor | Licencia | Página de origen |
+|---|---|---|---|---|---|---|
+| Portada | `hero-mesa-restaurante.webp` | 88 KB | 1400 × 1050 | Gogerr | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Table_Setting_at_the_Elora_Mill_Hotel_restaurant.jpg) |
+| Vajilla | `vajilla-platos-apilados.webp` | 142 KB | 1100 × 733 | Mussi Katz | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Hundreds_of_white_plates_and_bowls_stacked_at_a_tableware_shop_in_Chatuchak_Weekend_Market,_Bangkok.jpg) |
+| Cubertería | `cuberteria-cajon-cubiertos.webp` | 89 KB | 1100 × 733 | Acabashi | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Cutlery_drawer.jpg) |
+| Cristalería | `cristaleria-copas-mesa.webp` | 81 KB | 900 × 1125 | Socket0 | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Wine_glasses_on_a_table_.jpg) |
+| Mantelería y textil | `manteleria-mesa-redonda.webp` | 55 KB | 1100 × 733 | Basile Morin | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Restaurant_table_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg) |
+| Menaje auxiliar | `auxiliar-utensilios-pared.webp` | 141 KB | 960 × 640 | Shixart1985 | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Collection_of_essential_cooking_tools_hanging_on_a_rustic_wall.jpg) |
+
+- **Registro:** `assets/credits.json` (nuevo, mismo formato que el de `_sin-usar/assets/`, más `sourceFile` y `changes`) y párrafo `.pw-credits` en el pie de `menaje.html`, con título, autoría, licencia y enlaces. Indica que las fotos están redimensionadas, convertidas a WebP y, en dos casos, recortadas (requisito de las licencias CC).
+- **Carga:** portada sin `loading="lazy"` y con `fetchpriority="high"`; las cinco de familia con `loading="lazy"`. Todas con `width`/`height` y `alt` descriptivo. Ningún enlace externo a imágenes (comprobado con Playwright: 0 peticiones externas salvo Google Fonts).
+- **Cambio en el motor:** `lineup` ahora admite `product.lazy: true` (carga diferida); sin él mantiene el comportamiento anterior. Detalle en `PRODUCT-WORLD.md`.
+- **Sustituir cuando se pueda:** estas fotos son de otros países (Canadá, Tailandia, Laos y otras) y de otros locales; sirven como ilustración genérica pero no representan el catálogo de la empresa. Lo ideal es cambiarlas por fotos propias o material oficial del fabricante con permiso, cuando se confirmen las marcas ([POR CONFIRMAR]).
+- Las fotos de cristalería (copas sobre mantel) y de menaje auxiliar (utensilios en pared) son las más débiles como imagen comercial.
