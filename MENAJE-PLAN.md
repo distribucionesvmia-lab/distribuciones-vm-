@@ -255,3 +255,23 @@ Creados `menaje.html`, `menaje.css` y `menaje-products.js` a partir de `despensa
 - **`motion-pref.js` no se carga** (igual que en `despensa.html`): `product-world.js` ya respeta `prefers-reduced-motion` por su cuenta y no lee `window.VM_REDUCE`, así que el botón «Activar animaciones» no tendría efecto aquí y confundiría.
 - **Meta description:** 141 caracteres; la tarea de SEO la lleva a 150-155 con la llamada a contactar. El `title` mide 60.
 - Sin `canonical`, Open Graph ni JSON-LD todavía (tarea de SEO).
+
+## 13. Bloques por familia (T05)
+
+`menaje-products.js` define 5 escenas `lineup`, en este orden, con h2 y título de lista basados en las palabras clave de la sección 11:
+
+| Escena | h2 | Palabra clave | Enlace de consulta |
+|---|---|---|---|
+| Vajilla | Vajilla para restaurantes. | secundaria 3 | «Consultar vajilla» → `index.html#contacto` |
+| Cubertería | Cubertería para hostelería. | variante genérica | «Consultar cubertería» → `index.html#contacto` |
+| Cristalería | Cristalería para hostelería. | secundaria 4 | «Consultar cristalería» → `index.html#contacto` |
+| Mantelería y textil | Mantelería para hostelería. | secundaria 5 | «Consultar mantelería» → `index.html#contacto` |
+| Menaje auxiliar de cocina y sala | Menaje auxiliar de cocina y sala. | familia | «Consultar menaje auxiliar» → `index.html#contacto` |
+
+- Cada escena tiene 3 líneas útiles (lista numerada que se activa con el scroll) y el hueco de foto aparece como «Imagen pendiente». Al tener una foto, se añade `product:{image,width,height,alt}` a la escena.
+- **Cambio en el motor:** `lineup` no tenía forma de llevar un enlace, así que se añadió el campo opcional `cta` (`product-world.js` y `product-world.css`). Es compatible con el resto de páginas, y está explicado en `PRODUCT-WORLD.md`. Solo `menaje.html` carga las versiones nuevas (`?v=14` y `?v=17`).
+- **Sin marcas, cifras, precios ni plazos.** Lo único concreto es lo que ya consta en la web: reparto hasta 90 km desde Medina del Campo y «un solo pedido».
+- **Textos de consulta, no de catálogo.** No se afirma qué piezas, materiales ni formatos hay en stock: cada línea invita a contar el tipo de local y la carta y ofrece asesoramiento, que la web ya promete («atención personalizada»). Hasta tener datos de producto, no se enumeran artículos concretos.
+- Las ciudades (Valladolid, Castilla y León) **no** aparecen en estos textos: siguen solo como palabra clave hasta confirmar la zona de servicio (ver `MENAJE-PENDIENTES.md`).
+- **Contraste AA:** las filas inactivas de la lista bajan de opacidad en el motor (.4 en escritorio, .5 en móvil con animación), por debajo de 4,5:1. `menaje.css` las sube a .72 solo en esta página (5,2:1 o más sobre los 5 fondos). Las demás páginas del sitio siguen con los valores del motor.
+- Probado con Playwright a 1440 y 390 px: un solo `h1`, sin errores de consola ni desbordamiento horizontal, 5 enlaces de consulta.

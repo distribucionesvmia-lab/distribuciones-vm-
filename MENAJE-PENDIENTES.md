@@ -51,3 +51,11 @@ Se anotan para no inventarlos cuando llegue su tarea. Ninguno consta en el repo.
 - Datos reales de volumen y competencia de las palabras clave: no se tienen. Hace falta que alguien con acceso consulte el Planificador de palabras clave de Google, y que después de publicar se mire Search Console: [POR CONFIRMAR] quién lo hace.
 - Si la empresa quiere posicionarse solo en Medina del Campo y comarca o también en Valladolid y Castilla y León. La elección actual asume reparto hasta 90 km, que consta en la web; ampliar a Castilla y León como zona de servicio no consta: [POR CONFIRMAR]. Mientras tanto, esa región solo aparece en palabras clave y no se afirma como zona de reparto.
 - Si la empresa vende a clientes de fuera de la comarca (Valladolid capital u otras provincias): [POR CONFIRMAR].
+
+## Añadido en la tarea de bloques por familia
+
+- Fotografías de cada familia (5 huecos «Imagen pendiente»): [POR CONFIRMAR] origen y licencia. Ver reglas de fotos en el encargo: material oficial con permiso o banco con licencia libre comprobada, descargado a `assets/menaje/` y anotado en `assets/credits.json`.
+- Lista concreta de artículos de cada familia que sí se distribuyen (por ejemplo, qué incluye el menaje auxiliar de cocina y sala, qué textil, qué medidas): [POR CONFIRMAR]. Hasta entonces los textos no enumeran artículos.
+- Si hay opciones como tela o desechable, personalización o mantelería a medida: [POR CONFIRMAR].
+- Los enlaces «Consultar…» van a `index.html#contacto` (el formulario de la portada). Ese formulario hoy no envía mensajes porque `EMAIL` está vacío en `main.js`. Hasta que se corrija, las consultas no llegan: [POR CONFIRMAR] correo de destino o servicio de formularios.
+- Si más adelante se confirma WhatsApp, añadir «Consultar por WhatsApp» en cada familia (no se ha añadido).

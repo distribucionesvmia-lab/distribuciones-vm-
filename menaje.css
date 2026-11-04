@@ -9,3 +9,7 @@
 .menaje-world .pw-end{background:#1c2830;color:#f4f6f7}
 .menaje-world .pw-end .pw-kicker{color:#e9b8ae}
 @media(max-width:760px){.menaje-world .pw-opening h1{font-size:clamp(2.6rem,10.5vw,4.6rem)}}
+/* Accesibilidad AA: las filas inactivas de la lista bajan de opacidad en product-world.css (.4 en escritorio, .5 en móvil con animación). Aquí se suben a .72 para mantener 5,2:1 o más sobre los fondos de las 5 escenas. */
+@media(min-width:761px){.menaje-world:not(.pw-static) .pw-e-list li{opacity:.72}.menaje-world:not(.pw-static) .pw-e-list li.is-current{opacity:1}}
+.menaje-world.pw-mobile-anim .pw-e-list li.is-in{opacity:.72}
+.menaje-world.pw-mobile-anim .pw-e-list li.is-in.is-current{opacity:1}
