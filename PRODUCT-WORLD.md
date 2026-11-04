@@ -64,3 +64,9 @@ Todas estas imágenes proceden de webs de marcas o distribuidores. Sus derechos 
 ## Leche Classic bag in box (Pascual)
 
 En `pascual-products.js`, tras la portada, van tres escenas de Leche Classic: la caja de 10 L (hero), «Bag in box de 10 litros» (editorial, con el banner del nuevo formato y el enfriador de leche) y «Por qué el bag in box» (story, cuatro ventajas con sus iconos dorados recortados de las imágenes aportadas). Los textos de las ventajas son los facilitados por el cliente. El 33 % de rentabilidad figura con su nota original («comprobado por nuestros maestros baristas»). Las imágenes del latte art, el dispensador suelto, la jarra roja y el sello del 33 % que se pegaron en el chat no llegaron como archivos; el banner `classic-bag-in-box.webp` ya muestra enfriador, taza y jarra roja.
+
+## Plantilla `lineup`: enlace opcional e imagen única diferida
+
+- `cta: {label, href}` pinta un enlace bajo la lista de variedades (`.pw-e-cta`, mismo estilo `.pw-link` que `hero` y `editorial`). Sin `cta` la escena queda igual.
+- En la imagen única de `lineup` (`product`), `lazy: true` carga la foto con `loading="lazy"`; sin ese campo se mantiene `loading="eager"`.
+- `.pw-more`: línea secundaria opcional dentro de `.pw-end` (por ejemplo, «¿Equipas tu local? Mira el menaje»).
