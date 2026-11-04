@@ -1,30 +1,96 @@
-:root{--mj-bg:#f6f1e8;--mj-ink:#2a211a;--mj-accent:#8a3b22}
-.menaje-world{background:var(--mj-bg);color:var(--mj-ink);font-family:Jost,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-.mj-hero{min-height:78svh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:26px;padding:clamp(120px,16vh,180px) clamp(22px,5.5vw,104px) clamp(56px,8vw,110px);background:var(--mj-bg)}
-.mj-hero h1{font-size:clamp(3.4rem,7.4vw,8.6rem);font-weight:600;letter-spacing:-.06em;line-height:.94;margin:0}
-.mj-hero h1 em,.mj-intro h2 em,.menaje-world .pw-end h2 em{font-family:Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.045em}
-.mj-hero>p:not(.pw-kicker){max-width:52ch;font-size:clamp(1.06rem,1.4vw,1.3rem);line-height:1.5;margin:0}
-.mj-catalog{padding:clamp(48px,7vw,100px) clamp(22px,5.5vw,104px) clamp(64px,9vw,130px);background:#fbf8f2}
-.mj-intro h2{font-size:clamp(2.6rem,1.4rem + 4.6vw,6rem);font-weight:600;letter-spacing:-.055em;line-height:.95;margin:10px 0 0}
-.mj-toolbar{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:flex-end;justify-content:space-between;margin:clamp(28px,4vw,52px) 0 14px}
-.mj-filters{display:flex;flex-wrap:wrap;gap:8px}
-.mj-filters button{font:inherit;font-weight:500;font-size:.95rem;padding:10px 16px;border-radius:999px;border:1px solid rgba(42,33,26,.28);background:transparent;color:inherit;cursor:pointer;min-height:44px}
-.mj-filters button span{opacity:.7;font-weight:400;margin-left:2px}
-.mj-filters button[aria-pressed="true"]{background:var(--mj-ink);color:#fff;border-color:var(--mj-ink)}
-.mj-filters button:active{transform:scale(.97)}
-@media(hover:hover) and (pointer:fine){.mj-filters button[aria-pressed="false"]:hover{background:rgba(42,33,26,.07)}}
-.mj-search-label{display:grid;gap:6px;font-size:.85rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;min-width:min(100%,320px)}
-.mj-search-label input{font:inherit;font-size:1rem;font-weight:400;letter-spacing:0;text-transform:none;padding:12px 16px;border:1px solid rgba(42,33,26,.35);border-radius:12px;background:#fff;color:inherit;min-height:48px}
-.mj-count{margin:0 0 6px;font-size:.95rem;color:#5a4d42}
-.mj-group{margin-top:clamp(36px,5vw,64px)}
-.mj-group h2{display:flex;align-items:baseline;gap:12px;margin:0 0 6px;padding-bottom:14px;border-bottom:2px solid var(--mj-ink);font-size:clamp(1.8rem,1.2rem + 2vw,3rem);font-weight:600;letter-spacing:-.04em}
-.mj-group h2 span,.mj-group h3 span{font-size:1rem;font-weight:400;letter-spacing:0;color:#5a4d42}
-.mj-group h3{margin:26px 0 4px;font-size:1.25rem;font-weight:600;letter-spacing:-.02em}
-.mj-list{list-style:none;margin:8px 0 0;padding:0;columns:3 280px;column-gap:clamp(24px,3vw,48px)}
-.mj-list li{break-inside:avoid;padding:9px 0;border-bottom:1px solid rgba(42,33,26,.14);font-size:1.02rem;line-height:1.3}
-.mj-empty{padding:40px 0;font-size:1.1rem}
-.mj-note{margin:clamp(36px,5vw,60px) 0 0;font-size:.92rem;color:#5a4d42;max-width:70ch}
-.menaje-world :focus-visible{outline:3px solid #8a3b22;outline-offset:3px}
-.menaje-world .pw-kicker{color:#7a3319}
-.menaje-world .pw-end{background:#2a211a}
-.menaje-world .pw-end .pw-kicker{color:#e8b9a0}
+/* Menaje: paleta propia sobre product-world.css. Contrastes calculados: tinta #1c2830 sobre #eceff0 13:1; acento #9c2a1a sobre #eceff0 6,6:1 y sobre blanco 7,6:1; blanco sobre acento 7,6:1. */
+.menaje-world{--red:#9c2a1a;--cream:#eceff0;--dark:#1c2830}
+.menaje-world .pw-opening{background:#eceff0;color:#1c2830}
+.menaje-world .pw-opening-circle{background:#cdd6da}
+.menaje-world .pw-opening-word{color:rgba(28,40,48,.1);font-size:clamp(5rem,12vw,13rem);line-height:.8;right:-4vw}
+.menaje-world .pw-opening h1{font-size:clamp(3rem,5.6vw,6.8rem)}
+.menaje-world .pw-action{background:#9c2a1a;color:#fff}
+.menaje-world .pw-action:hover{background:#7d2013}
+@media(max-width:760px){.menaje-world .pw-opening h1{font-size:clamp(2.6rem,10.5vw,4.6rem)}}
+/* Accesibilidad AA: las filas inactivas de la lista bajan de opacidad en product-world.css (.4 en escritorio, .5 en móvil con animación). Aquí se suben a .72 para mantener 5,2:1 o más sobre los fondos de las 5 escenas. */
+@media(min-width:761px){.menaje-world:not(.pw-static) .pw-e-list li{opacity:.72}.menaje-world:not(.pw-static) .pw-e-list li.is-current{opacity:1}}
+.menaje-world.pw-mobile-anim .pw-e-list li.is-in{opacity:.72}
+.menaje-world.pw-mobile-anim .pw-e-list li.is-in.is-current{opacity:1}
+
+/* Fotos reales: portada en círculo y foto de cada familia con esquinas suaves */
+.menaje-world .pw-opening-photo{position:relative;z-index:1;width:min(39vw,570px);height:min(39vw,570px);max-width:none;border-radius:50%;object-fit:cover;object-position:50% 60%;box-shadow:25px 35px 40px rgba(28,40,48,.18)}
+.menaje-world .pw-e-image{border-radius:14px;filter:none;box-shadow:0 16px 36px rgba(28,40,48,.16)}
+@media(min-width:761px){.menaje-world .pw-e-image{max-width:min(40vw,580px);max-height:72%}}
+@media(max-width:760px){.menaje-world .pw-opening-photo{width:min(78vw,440px);height:min(78vw,440px)}.menaje-world .pw-e-image{max-width:88%}}
+/* Créditos en el pie */
+.menaje-world .pw-footer{flex-wrap:wrap}
+.menaje-world .pw-credits{flex-basis:100%;margin:6px 0 0;max-width:none;font-size:.78rem;line-height:1.55;color:#eee7dd}
+.menaje-world .pw-credits a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+
+/* Por qué pedirlo con nosotros y Equipa tu local: secciones de texto, sin imágenes.
+   Contrastes calculados: tinta #1c2830 sobre #f4f6f7 14:1 y acento #9c2a1a sobre #f4f6f7 7:1;
+   blanco sobre #9c2a1a 7,6:1 y botón #9c2a1a sobre blanco 7,6:1. */
+.menaje-world .menaje-wrap{width:min(1320px,100% - 2*var(--side));margin-inline:auto}
+.menaje-world .menaje-why,.menaje-world .menaje-equip{padding:clamp(72px,11vw,150px) 0}
+.menaje-world .menaje-why{background:#f4f6f7;color:#1c2830}
+.menaje-world .menaje-equip{background:#9c2a1a;color:#fff}
+.menaje-world .menaje-why .menaje-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(36px,6vw,110px);align-items:start}
+.menaje-world .menaje-head h2{margin:26px 0 22px;font-size:clamp(2.7rem,5vw,5.8rem);font-weight:600;line-height:.95;letter-spacing:-.055em}
+.menaje-world .menaje-head h2 em{font-family:Georgia,serif;font-weight:400;letter-spacing:-.05em}
+.menaje-world .menaje-head p:not(.pw-kicker){max-width:34ch;font-size:clamp(1.05rem,1.3vw,1.25rem);line-height:1.45}
+.menaje-world .menaje-points,.menaje-world .menaje-cases{list-style:none;margin:0;padding:0}
+.menaje-world .menaje-points{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,3vw,48px)}
+.menaje-world .menaje-points li,.menaje-world .menaje-cases li{padding:22px 0 28px;border-top:1px solid currentColor}
+.menaje-world .menaje-points h3,.menaje-world .menaje-cases h3{margin:0 0 10px;font-size:clamp(1.3rem,1.8vw,1.75rem);font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.menaje-world .menaje-points p,.menaje-world .menaje-cases p{margin:0;max-width:36ch;font-size:1.05rem;line-height:1.5}
+.menaje-world .menaje-equip .pw-kicker{color:#fff}
+.menaje-world .menaje-equip .menaje-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(36px,6vw,110px);align-items:end}
+.menaje-world .menaje-equip-body{display:grid;gap:34px;justify-items:start}
+.menaje-world .menaje-cases{display:grid;gap:0;width:100%}
+.menaje-world .menaje-cases p{max-width:46ch}
+.menaje-world .menaje-btn{display:inline-flex;gap:42px;align-items:center;justify-content:space-between;min-width:240px;padding:16px 22px;border-radius:100px;background:#fff;color:#9c2a1a;font-weight:700;text-decoration:none;transition:background .2s,transform .2s}
+.menaje-world .menaje-btn:hover{background:#f4f6f7;transform:translateY(-2px)}
+.menaje-world :is(a,button,input,textarea,summary):focus-visible{outline:3px solid #9c2a1a;outline-offset:3px}
+.menaje-world :is(.menaje-equip,.menaje-contact,.pw-footer) :is(a,button,input,textarea,summary):focus-visible{outline-color:#fff}
+.menaje-world main:focus{outline:none}
+@media(max-width:900px){.menaje-world .menaje-why .menaje-wrap,.menaje-world .menaje-equip .menaje-wrap{grid-template-columns:1fr}.menaje-world .menaje-equip .menaje-wrap{align-items:start}}
+@media(max-width:560px){.menaje-world .menaje-points{grid-template-columns:1fr}.menaje-world .menaje-btn{width:100%}}
+@media(prefers-reduced-motion:reduce){.menaje-world .menaje-btn{transition:none}.menaje-world .menaje-btn:hover{transform:none}}
+
+/* Preguntas frecuentes: <details> nativo, sin JS. Tinta #1c2830 sobre #eceff0 13:1. */
+.menaje-world .menaje-faq{background:#eceff0;color:#1c2830;padding:clamp(72px,11vw,150px) 0}
+.menaje-world .menaje-faq .menaje-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(36px,6vw,110px);align-items:start}
+.menaje-world .menaje-faq-list details{border-top:1px solid #1c2830}
+.menaje-world .menaje-faq-list details:last-child{border-bottom:1px solid #1c2830}
+.menaje-world .menaje-faq-list summary{display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:64px;padding:16px 0;cursor:pointer;list-style:none;font-size:clamp(1.15rem,1.6vw,1.45rem);font-weight:600;letter-spacing:-.02em;line-height:1.25}
+.menaje-world .menaje-faq-list summary::-webkit-details-marker{display:none}
+.menaje-world .menaje-faq-list summary::after{content:"+";flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1.5px solid currentColor;font-size:1.4rem;font-weight:400;line-height:1;transition:transform .25s}
+.menaje-world .menaje-faq-list details[open] summary::after{transform:rotate(45deg)}
+.menaje-world .menaje-faq-list p{margin:0;padding:0 56px 24px 0;max-width:60ch;font-size:1.05rem;line-height:1.55}
+@media(max-width:900px){.menaje-world .menaje-faq .menaje-wrap{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.menaje-world .menaje-faq-list summary::after{transition:none}}
+
+/* Cierre de contacto. Texto #f4f6f7 sobre #1c2830 13,9:1; campos #f4f6f7 sobre #26343d; marcador #b9c4ca sobre #26343d 7,3:1 */
+.menaje-world .menaje-contact{background:#1c2830;color:#f4f6f7;padding:clamp(72px,11vw,150px) 0}
+.menaje-world .menaje-contact .pw-kicker{color:#e9b8ae}
+.menaje-world .menaje-contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(36px,6vw,110px);align-items:start}
+.menaje-world .menaje-contact .menaje-lead{margin:0;max-width:30ch;font-size:clamp(1.05rem,1.3vw,1.25rem);line-height:1.45}
+.menaje-world .menaje-data{list-style:none;margin:30px 0 26px;padding:0;display:grid;gap:10px;font-size:1.2rem}
+.menaje-world .menaje-data a{font-weight:600;text-decoration:none;overflow-wrap:anywhere}
+.menaje-world .menaje-data a:hover{text-decoration:underline;text-underline-offset:4px}
+.menaje-world .menaje-data address{font-style:normal;font-size:1rem;line-height:1.5;color:#dfe5e8}
+.menaje-world .menaje-form{display:grid;gap:18px;min-width:0}
+.menaje-world .menaje-form .f{display:grid;gap:8px;font-size:.95rem;font-weight:600}
+.menaje-world .menaje-form input[type=text],.menaje-world .menaje-form textarea{width:100%;min-height:56px;padding:14px 16px;border:1px solid #6d7d86;border-radius:12px;background:#26343d;color:#f4f6f7;font:400 1.0625rem Jost,Arial,sans-serif}
+.menaje-world .menaje-form textarea{min-height:140px;resize:vertical}
+.menaje-world .menaje-form textarea::placeholder{color:#b9c4ca;opacity:1}
+.menaje-world .menaje-form [aria-invalid=true]{border-color:#ffb4a8;border-width:2px}
+.menaje-world .menaje-form .consent{display:flex;gap:12px;align-items:flex-start;font-size:.9rem;line-height:1.45;font-weight:400;color:#dfe5e8}
+.menaje-world .menaje-form .consent input{flex:none;width:22px;height:22px;margin-top:2px;accent-color:#ee8a78}
+.menaje-world .menaje-form .pw-action{justify-self:start;border:0;cursor:pointer;font:600 1rem Jost,Arial,sans-serif}
+.menaje-world .menaje-status{margin:0;min-height:1.5em;font-size:.95rem;line-height:1.45;color:#c6e8d2}
+.menaje-world .menaje-status.is-error{color:#ffc9c0}
+@media(max-width:900px){.menaje-world .menaje-contact-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.menaje-world .menaje-form .pw-action{width:100%}}
+
+/* WhatsApp (preparado: solo se usa si menaje-whatsapp.js se activa). El botón «Llamar» de móvil es el común de la web (.call-float).
+   Contraste #0b2a1a sobre #25D366 7,8:1. */
+.menaje-wa-float{position:fixed;z-index:70;right:max(16px,env(safe-area-inset-right,0px));bottom:max(20px,env(safe-area-inset-bottom,0px));display:inline-flex;align-items:center;min-height:50px;padding:0 20px;border-radius:999px;background:#25D366;color:#0b2a1a;font:600 .95rem/1 Jost,Arial,sans-serif;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.menaje-wa-float:focus-visible{outline:3px solid #1c2830;outline-offset:3px;box-shadow:0 0 0 3px #fff}
+.menaje-wa-link{margin-left:26px}
+@media(max-width:760px){.menaje-wa-float{bottom:calc(max(16px,env(safe-area-inset-bottom,0px)) + 62px)}.menaje-wa-link{display:block;margin:12px 0 0}}
