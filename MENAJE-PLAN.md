@@ -171,3 +171,73 @@ Todo lo de esta tabla es **estructura y enfoque**. Los textos concretos, marcas 
 - Mientras las marcas sean [POR CONFIRMAR], los textos hablan de tipos de producto y de cómo elegir, sin nombrar fabricantes ni atributos técnicos.
 - El bloque «Equipa tu local» puede basarse en el patrón 5 (empezar por el tipo de local), sin cifras de stock ni descuentos.
 - Pendiente de ver con acceso a los dominios: ver fichas reales de distribuidores. Queda anotado en `MENAJE-PENDIENTES.md`.
+
+## 11. Palabras clave
+
+### Qué se pudo y qué no se pudo medir
+
+- **Volumen de búsqueda: sin datos.** Esta sesión no tiene acceso a Google Keyword Planner, Search Console, Semrush ni similares. **No se da ninguna cifra de volumen** y las prioridades de abajo se basan en intención, ajuste al negocio y lo que muestran los resultados de búsqueda.
+- **Competencia: valoración cualitativa**, a partir de 4 búsquedas web hechas para esta tarea. Es orientativa: la herramienta de búsqueda no equivale a la página de resultados de Google de un usuario en Medina del Campo.
+- Lo que mostraron esas búsquedas:
+  - «menaje hostelería Medina del Campo» devolvió sobre todo páginas de turismo y alojamiento. No apareció ninguna página de empresa claramente optimizada para esa búsqueda. Un directorio citaba un negocio de suministros para hostelería en Medina del Campo y otro en Tordesillas.
+  - «vajilla para restaurantes Valladolid» devolvió catálogos de fabricantes, directorios y tiendas de otros países. Solo apareció una empresa de Valladolid que menciona vajilla entre otros productos.
+  - «distribuidor menaje hostelería Castilla y León» mostró distribuidores en León, Burgos, Salamanca y Ponferrada, todos vía directorios.
+  - «cristalería / mantelería hostelería Valladolid» devolvió casi solo directorios (proveedores.com) y distribuidores nacionales; ninguna web local clara que ofrezca ambas cosas.
+- Todos los nombres de empresa salen de directorios y no están verificados. No se citan en la web. Solo sirven para saber que existe competencia local pequeña y dispersa.
+- Cómo obtener datos reales (queda en `MENAJE-PENDIENTES.md`): Planificador de palabras clave de Google (gratuito con cuenta de Ads), y, una vez publicada la página, Search Console.
+
+### Candidatas evaluadas
+
+Intención comercial local: quien busca quiere comprar o pedir presupuesto en su zona. Competencia: **baja / media / alta** según lo observado; «sin datos» si no se vio.
+
+| Palabra clave | Zona | Familia | Intención | Competencia estimada | Comentario |
+|---|---|---|---|---|---|
+| menaje hostelería Medina del Campo | Local | Todas | Compra local | Baja | Sin página específica visible; ajuste exacto con la dirección y el reparto |
+| menaje para hostelería Valladolid | Provincia | Todas | Compra local | Media | Más área, más competencia de directorios |
+| distribuidor menaje hostelería Valladolid | Provincia | Todas | Proveedor B2B | Media | Intención clara de distribuidor, no de tienda |
+| distribuidor menaje hostelería Castilla y León | Región | Todas | Proveedor B2B | Media | Dominada por directorios; amplía el alcance |
+| vajilla para restaurantes Valladolid | Provincia | Vajilla | Compra local | Media | Resultados de fabricantes y de otros países; poca competencia local clara |
+| vajilla hostelería | Nacional | Vajilla | Compra | Alta | Demasiado genérica para esta página |
+| cristalería para hostelería Valladolid | Provincia | Cristalería | Compra local | Baja-media | Pocos resultados locales claros |
+| cristalería hostelería | Nacional | Cristalería | Compra | Alta | Genérica; competidores nacionales |
+| mantelería para hostelería | Nacional | Mantelería | Compra | Media-alta | Fabricantes y distribuidores nacionales; sin ficha local |
+| mantelería hostelería Valladolid | Provincia | Mantelería | Compra local | Baja | Casi solo directorios |
+| cubertería para hostelería Valladolid | Provincia | Cubertería | Compra local | Sin datos | No se buscó por separado |
+| suministros hostelería Medina del Campo | Local | Todas | Compra local | Baja-media | Existe al menos un negocio local con ese perfil según un directorio |
+| comprar menaje hostelería al por mayor | Nacional | Todas | Mayorista | Alta | Intención válida, pero sin ajuste geográfico |
+
+Descartadas:
+- Términos sin intención de compra de un profesional local («cómo elegir vajilla», «tipos de copas»): sirven para un artículo, no para esta página.
+- Términos de particulares («vajilla barata», «juego de cubiertos»): público equivocado.
+- Cualquier marca concreta: no se sabe qué marcas distribuye la empresa ([POR CONFIRMAR]).
+
+### Elección
+
+**Principal: `menaje hostelería Medina del Campo`**
+- Es exactamente el negocio: distribuidor con sede y reparto desde Medina del Campo.
+- Intención comercial local clara y competencia aparentemente baja: ninguna página específica en las búsquedas hechas.
+- Coincide con el texto de la tarjeta actual y con la dirección, que sirve de señal local.
+- Riesgo: volumen probablemente bajo (no medido). Se compensa con las secundarias, que amplían la zona.
+
+**Secundarias (5)**
+1. `distribuidor menaje hostelería Valladolid`: amplía a la provincia con intención de proveedor B2B, sin competencia local fuerte vista.
+2. `distribuidor menaje hostelería Castilla y León`: amplía a la región, coherente con «hasta 90 km» y con un mapa de directorios dominado por distribuidores de otras provincias.
+3. `vajilla para restaurantes Valladolid`: la familia con más escaparate visual y la que más busca un restaurante nuevo.
+4. `cristalería para hostelería Valladolid`: pocos resultados locales claros; apoya la familia Cristalería.
+5. `mantelería para hostelería`: sin sufijo de ciudad por su baja búsqueda local; se trabaja como h2 y texto de la familia, no como objetivo principal. Si hay datos reales, valorar `mantelería hostelería Valladolid`.
+
+Cubertería y menaje auxiliar no llevan palabra clave propia en esta primera versión: se cubren con la principal y la variante genérica en sus h3 y alt.
+
+### Dónde colocarlas (para la tarea de SEO on-page)
+
+| Elemento | Palabra clave |
+|---|---|
+| `title` (55-60 caracteres) y `h1` | Principal |
+| `meta description` | Principal + «Valladolid» + llamada a contactar; sin precios ni plazos |
+| `h2` de familia | Vajilla → «vajilla para restaurantes»; Cristalería → «cristalería para hostelería»; Mantelería → «mantelería para hostelería» |
+| Texto de portada y de cierre | «distribuidor» + «Valladolid» y «Castilla y León» una vez cada una |
+| `alt` de imágenes | Descripción real del objeto; sin palabras clave metidas a la fuerza |
+| JSON-LD | `areaServed` solo con la zona de reparto que ya consta en la web (Medina del Campo, comarca, hasta 90 km); no añadir localidades no confirmadas |
+| FAQ | Preguntas reales de un hostelero, con respuestas confirmadas; ninguna sin respuesta [POR CONFIRMAR] |
+
+Reglas: una sola palabra principal por página, lenguaje natural, sin repetir la clave en cada frase. Sin cifras, años ni plazos que no estén confirmados.

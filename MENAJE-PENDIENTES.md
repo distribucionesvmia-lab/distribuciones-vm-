@@ -45,3 +45,9 @@ Se anotan para no inventarlos cuando llegue su tarea. Ninguno consta en el repo.
 - Los usos técnicos de las series de otros fabricantes (apilable, apta para lavavajillas, etc.) no se pueden aplicar a ningún producto de la empresa hasta saber qué marcas distribuye: [POR CONFIRMAR].
 - Si la empresa ofrece mantelería a medida o con personalización: [POR CONFIRMAR].
 - Si distribuye menaje auxiliar de cocina (recipientes Gastronorm, utensilios) además del de sala: [POR CONFIRMAR].
+
+## Añadido en la tarea de palabras clave
+
+- Datos reales de volumen y competencia de las palabras clave: no se tienen. Hace falta que alguien con acceso consulte el Planificador de palabras clave de Google, y que después de publicar se mire Search Console: [POR CONFIRMAR] quién lo hace.
+- Si la empresa quiere posicionarse solo en Medina del Campo y comarca o también en Valladolid y Castilla y León. La elección actual asume reparto hasta 90 km, que consta en la web; ampliar a Castilla y León como zona de servicio no consta: [POR CONFIRMAR]. Mientras tanto, esa región solo aparece en palabras clave y no se afirma como zona de reparto.
+- Si la empresa vende a clientes de fuera de la comarca (Valladolid capital u otras provincias): [POR CONFIRMAR].
