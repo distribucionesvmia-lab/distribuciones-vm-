@@ -1,5 +1,10 @@
-/* Asistente de la sección de contacto: responde las preguntas frecuentes con los datos de la propia web.
-   No usa servidor ni servicios externos y no guarda lo que se escribe. Para añadir o cambiar respuestas, edita FAQ y ZONAS. */
+/* Asistente de Distribuciones VM (sección de contacto).
+   Funciona en el navegador, sin servidor ni servicios externos, y no guarda lo que se escribe.
+   - Entiende conjugaciones y erratas (compara por raíces y tolera una letra de diferencia).
+   - Recuerda el pueblo del cliente durante la conversación y calcula su próximo reparto con la fecha real.
+   - Busca productos concretos en el catálogo de la web (carga los datos de las páginas la primera vez que hace falta).
+   - Si la pregunta tiene dos partes, contesta las dos. Si no sabe algo, no se inventa nada: remite al teléfono y al correo.
+   Para cambiar o añadir respuestas, edita INTENTS y ZONAS. */
 (function () {
   'use strict';
   var root = document.getElementById('chat');
@@ -13,109 +18,296 @@
   var TEL = '<a href="tel:+34635098044">635 09 80 44</a>';
   var MAIL = '<a href="mailto:oficina@distribucionesvm.es">oficina@distribucionesvm.es</a>';
   var PERSONA = 'Si prefieres hablar con una persona, llama al ' + TEL + ' de 7:00 a 15:00 o escribe a ' + MAIL + '.';
+  var PLAZO = 'El plazo de entrega es de menos de 24 h en Medina del Campo y de 24 a 48 h en el resto de la zona, en días laborables de lunes a viernes.';
 
-  /* días de reparto por localidad (datos facilitados por el cliente) */
-  var ZONAS = [
-    { n: ['medina del campo', 'medina'], d: 'todos los días, de lunes a viernes. Si pides antes de las 10:00, lo recibes ese mismo día' },
-    { n: ['rueda'], d: 'todos los lunes y jueves' },
-    { n: ['tordesillas'], d: 'todos los lunes y jueves' },
-    { n: ['penafiel'], d: 'todos los viernes (también en los alrededores de Peñafiel)' },
-    { n: ['olmedo'], d: 'todos los viernes' },
-    { n: ['iscar'], d: 'todos los viernes' },
-    { n: ['la seca'], d: 'todos los miércoles' },
-    { n: ['serrada'], d: 'todos los miércoles' },
-    { n: ['valdestillas'], d: 'todos los miércoles' },
-    { n: ['viana de cega', 'viana'], d: 'todos los miércoles' },
-    { n: ['mojados'], d: 'todos los miércoles' },
-    { n: ['matapozuelos'], d: 'todos los miércoles' },
-    { n: ['cantalapiedra'], d: 'un miércoles de cada dos, en las semanas pares' },
-    { n: ['alaejos'], d: 'un miércoles de cada dos, en las semanas pares' },
-    { n: ['nava del rey'], d: 'un miércoles de cada dos, en las semanas pares' },
-    { n: ['villaverde de medina'], d: 'un miércoles de cada dos, en las semanas pares' },
-    { n: ['arrabal de portillo', 'arrabal'], d: 'un miércoles de cada dos, en las semanas pares' },
-    { n: ['penaranda de bracamonte', 'penaranda'], d: 'un martes de cada dos, en las semanas impares' }
-  ];
-  var NOMBRES = { penafiel: 'Peñafiel', iscar: 'Íscar', penaranda: 'Peñaranda de Bracamonte', 'penaranda de bracamonte': 'Peñaranda de Bracamonte', 'arrabal': 'Arrabal de Portillo', viana: 'Viana de Cega', medina: 'Medina del Campo' };
-
-  var FAQ = [
-    { k: ['donde vendeis', 'a donde', 'adonde', 'repartis', 'reparto', 'repartir', 'vendeis', 'zona', 'cobertura', 'provincia', 'kilometros', 'llegais', 'llegan', 'llevais', 'servis', 'servicio a domicilio', 'domicilio'],
-      a: 'Repartimos en <b>Medina del Campo y comarca, hasta 90 km a la redonda</b>, y en las provincias vecinas de Valladolid, Salamanca, Ávila y Segovia. Dime tu pueblo y te digo qué día pasamos. ' + 'Por ejemplo: «¿Repartís en Rueda?».' },
-    { k: ['dias de reparto', 'que dias', 'cuando pasais', 'cuando llegais', 'calendario', 'dia de reparto', 'semana par', 'semana impar', 'quincenal'],
-      a: 'Estos son los <b>días de reparto</b>:<ul><li>Medina del Campo: de lunes a viernes.</li><li>Rueda y Tordesillas: lunes y jueves.</li><li>Peñafiel y alrededores, Olmedo e Íscar: viernes.</li><li>La Seca, Serrada, Valdestillas, Viana de Cega, Mojados y Matapozuelos: miércoles.</li><li>Cantalapiedra, Alaejos, Nava del Rey, Villaverde de Medina y Arrabal de Portillo: miércoles cada 15 días, en semanas pares.</li><li>Peñaranda de Bracamonte: martes cada 15 días, en semanas impares.</li></ul>Dime tu pueblo si quieres que te lo confirme.' },
-    { k: ['plazo', 'tardais', 'tarda', 'tardan', 'entrega', 'entregais', 'cuanto tarda', 'mismo dia', 'al dia siguiente', 'manana', '24 horas', '48 horas', 'rapido', 'urgente', 'recibir'],
-      a: 'En <b>Medina del Campo</b>, menos de 24 h; si pides antes de las 10:00, lo recibes el mismo día. En el resto de la zona, <b>entre 24 y 48 h</b>, en días laborables de lunes a viernes.' },
-    { k: ['pedido minimo', 'minimo', 'importe minimo', 'minimo de compra'],
-      a: '<b>No hay pedido mínimo.</b>' },
-    { k: ['gastos de envio', 'envio', 'portes', 'coste de envio', 'cobrais', 'gratis', 'cuesta el envio', 'transporte'],
-      a: 'El reparto es <b>sin coste para el cliente</b>: no hay gastos de envío.' },
-    { k: ['horario', 'hora', 'abris', 'abierto', 'abiertos', 'atencion', 'cerrais', 'hasta que hora', 'tarde', 'fin de semana', 'sabado', 'domingo'],
-      a: 'Atendemos y gestionamos pedidos <b>de 7:00 a 15:00</b>. Pasadas las 15:00, las llamadas entrantes las atiende Valentín en su móvil. Teléfono: ' + TEL + '.' },
-    { k: ['hacerme cliente', 'hacerse cliente', 'me hago cliente', 'hago cliente', 'cliente nuevo', 'quiero ser', 'cliente', 'ser cliente', 'nuevo cliente', 'darme de alta', 'alta', 'registrarme', 'como empiezo', 'como compro', 'como pido', 'primer pedido', 'empezar', 'ficha de cliente', 'documentacion', 'papeles', 'nif'],
-      a: 'Hacerse cliente es muy sencillo:<ol><li><b>Nos conocemos:</b> te visitamos o hablamos contigo, te presentamos la empresa y el porfolio.</li><li><b>Te damos de alta:</b> rellenamos tu ficha de cliente con tus datos fiscales y acordamos la forma de pago (si es domiciliación, se firma el formato SEPA).</li><li><b>Primer pedido:</b> lo anotamos y te lo servimos el día acordado, entre 24 y 48 h desde tu primera llamada. Te asignamos un día de visita del comercial, semanal o quincenal.</li></ol>' + PERSONA },
-    { k: ['pago', 'pagar', 'pagais', 'formas de pago', 'factura', 'domicili', 'tarjeta', 'efectivo', 'contado', 'credito', 'transferencia', 'recibo', 'sepa', 'condiciones de pago'],
-      a: 'La forma de pago se <b>acuerda contigo</b>, según tu negocio y tu volumen de compra:<ul><li>Al contado en cada reparto, en efectivo o con tarjeta, con factura directa.</li><li>Albarán en cada reparto y factura resumen mensual, que se suele domiciliar en tu cuenta el día acordado: del 1 al 3 del mes, a los 15 días o a los 30 días.</li></ul>' },
-    { k: ['tarifa', 'precio', 'precios', 'cuanto cuesta', 'cuanto vale', 'cuesta', 'oferta', 'presupuesto', 'catalogo de precios', 'lista de precios'],
-      a: 'En la web no publicamos precios. Si lo pides, te enviamos una <b>tarifa personalizada, sin compromiso</b>: suele estar en 24 h (antes si es solo de una parte de los artículos). Pídela en el ' + TEL + ' o en ' + MAIL + '.' },
-    { k: ['contacto', 'telefono', 'llamar', 'llamaros', 'correo', 'email', 'mail', 'direccion', 'donde estais', 'ubicacion', 'donde esta', 'oficina', 'almacen', 'como llegar', 'whatsapp'],
-      a: 'Puedes contactarnos así:<ul><li>Teléfono: ' + TEL + ' (7:00 a 15:00). Este número no tiene WhatsApp.</li><li>Correo: ' + MAIL + '</li><li>Dirección: Cl Labradores, n.º 45, parcela 24B · 47400 Medina del Campo, Valladolid.</li></ul>' },
-    { k: ['cerveza', 'cervezas', 'refresco', 'refrescos', 'licor', 'licores', 'cola', 'bebidas', 'alcohol', 'copas de licor'], a: 'También distribuimos bebidas. En la web tienes <a href="agua.html">aguas</a>, <a href="vinos.html">vinos</a> y las bebidas de <a href="pascual.html">Pascual</a>. Para cerveza, refrescos y licores, pídenos la tarifa en el ' + TEL + ' o en ' + MAIL + '.' },
-    { k: ['que vendeis', 'que teneis', 'productos', 'marcas', 'catalogo', 'gama', 'surtido', 'que distribuis', 'que ofrecis'],
-      a: 'Distribuimos para hostelería, entre otras gamas: <a href="pascual.html">Pascual</a> (leche, bebidas, yogures y postres), <a href="agua.html">aguas</a>, <a href="vinos.html">vinos</a>, <a href="despensa.html">despensa</a>, <a href="cafe-mocay.html">Café Mocay</a> e infusiones, <a href="menaje.html">menaje</a>, <a href="refrigerados.html">refrigerados</a> y <a href="congelados.html">congelados</a>. Si buscas algo concreto, dímelo.' },
-    { k: ['cafe', 'mocay', 'infusion', 'infusiones', 'te negro'], a: 'Trabajamos <a href="cafe-mocay.html">Café Mocay</a>: café en grano, descafeinados, cápsulas, infusiones en pirámide y clásicas en bolsita, y complementos.' },
-    { k: ['leche', 'pascual', 'yogur', 'yogures', 'natillas', 'batido', 'bifrutas', 'vivesoy'], a: 'En <a href="pascual.html">Pascual</a> tienes leche (Classic, en caja de 10 L y en botella de 1,5 L), bebidas vegetales Vivesoy, Bifrutas, batidos, yogures y postres.' },
-    { k: ['vino', 'vinos', 'bornos', 'verdejo', 'rueda', 'ribera', 'espumoso', 'lleiroso', 'pinna'], a: 'Mira nuestra selección de <a href="vinos.html">vinos</a>: Palacio de Bornos (blancos, frizzantes, tintos de Ribera y espumosos), Pazos de Baró, Pinna Fidelis y más.' },
-    { k: ['agua', 'aguas', 'bezoya', 'pellegrino', 'perrier', 'pedras', 'aquarel', 'con gas'], a: 'En <a href="agua.html">aguas</a> tienes Bezoya, Aquarel, Pedras, S.Pellegrino y Perrier.' },
-    { k: ['menaje', 'copas', 'vasos', 'platos', 'cuberteria', 'vajilla', 'cristaleria', 'tazas', 'servilletas'], a: 'Tenemos un listado de <a href="menaje.html">menaje</a>: cocina, cristalería, consumibles, cubertería, complementos de mesa, cuchillería, platos y tazas.' },
-    { k: ['congelado', 'congelados', 'pan', 'bolleria', 'croissant', 'panamar'], a: 'En <a href="congelados.html">congelados</a> tienes pan, bollería, croissants y salados de Panamar.' },
-    { k: ['refrigerado', 'refrigerados', 'queso', 'mantequilla', 'nata', 'huevo', 'huevos', 'charcuteria', 'fiambre'], a: 'En <a href="refrigerados.html">refrigerados</a> encontrarás lácteos, quesos, huevos, preparados y charcutería.' },
-    { k: ['despensa', 'conservas', 'aceite', 'aceites', 'especias', 'salsas', 'mermelada', 'legumbres', 'helios', 'calvo', 'prima', 'borges'], a: 'En <a href="despensa.html">despensa</a> hay conservas (Calvo, Villa Campo), Helios, salsas Prima, aceites, especias, legumbres Luengo y frutos secos Borges, entre otros.' },
-    { k: ['cuantos anos', 'anos llevais', 'historia', 'desde cuando', 'quienes sois', 'quien sois', 'empresa', 'valentin', 'fundada', 'experiencia'], a: 'Somos <b>Distribuciones Valentín Martín</b>, de Medina del Campo. Llevamos <b>44 años</b> de experiencia, desde 1982, distribuyendo a hostelería.' },
-    { k: ['facebook', 'instagram', 'redes', 'redes sociales'], a: 'Síguenos en <a href="https://www.facebook.com/share/1LfPCX2kSw/" target="_blank" rel="noopener">Facebook</a> e <a href="https://www.instagram.com/distrvalentinmartin/" target="_blank" rel="noopener">Instagram</a>.' },
-    { k: ['hablar con una persona', 'persona', 'humano', 'comercial', 'visita', 'visiteis', 'atienda alguien', 'agente'], a: 'Claro. ' + PERSONA + ' Si eres cliente, tu comercial pasa el día de visita que se te asignó (semanal o quincenal).' },
-    { k: ['gracias', 'perfecto', 'genial', 'vale', 'ok', 'estupendo'], a: '¡A ti! Si necesitas algo más, aquí estoy.' },
-    { k: ['hola', 'buenas', 'buenos dias', 'buenas tardes', 'buenas noches', 'saludos'], a: '¡Hola! Pregúntame lo que necesites sobre el reparto, los plazos, cómo hacerte cliente o las formas de pago.' },
-    { k: ['adios', 'hasta luego', 'chao'], a: '¡Hasta pronto!' }
-  ];
-
-  var norm = function (t) { return String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim(); };
+  /* ---------- utilidades de texto ---------- */
   var esc = function (t) { return String(t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
-  var has = function (text, key) { return (' ' + text + ' ').indexOf(' ' + key + ' ') >= 0 || (key.length > 5 && text.indexOf(key) >= 0); };
+  var norm = function (t) { return String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim(); };
+  var cap = function (t) { return t.replace(/\b\w/g, function (c) { return c.toUpperCase(); }); };
+  function lev(a, b) {
+    if (Math.abs(a.length - b.length) > 1) return 2;
+    var p = [], i, j;
+    for (j = 0; j <= b.length; j++) p[j] = j;
+    for (i = 1; i <= a.length; i++) {
+      var prev = p[0]; p[0] = i;
+      for (j = 1; j <= b.length; j++) { var t = p[j]; p[j] = Math.min(p[j] + 1, p[j - 1] + 1, prev + (a[i - 1] === b[j - 1] ? 0 : 1)); prev = t; }
+    }
+    return p[b.length];
+  }
+  /* ¿alguna palabra del mensaje empieza por la raíz? (con una errata de tolerancia si la raíz tiene 5 letras o más) */
+  function hasStem(tokens, stem) {
+    for (var i = 0; i < tokens.length; i++) {
+      var t = tokens[i];
+      if (t.indexOf(stem) === 0) return true;
+      if (stem.length >= 5 && t.length >= stem.length - 1 && lev(t.slice(0, stem.length), stem) <= 1) return true;
+    }
+    return false;
+  }
 
-  function zone(text) {
+  /* ---------- fechas (hora de Madrid) ---------- */
+  function madrid() {
+    var p = {};
+    new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Madrid', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false, weekday: 'short' })
+      .formatToParts(new Date()).forEach(function (x) { p[x.type] = x.value; });
+    return { y: +p.year, m: +p.month, d: +p.day, h: (+p.hour) % 24, min: +p.minute, wd: { Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6, Sun: 0 }[p.weekday] };
+  }
+  function isoWeek(dt) {
+    var d = new Date(Date.UTC(dt.getUTCFullYear(), dt.getUTCMonth(), dt.getUTCDate()));
+    d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
+    return Math.ceil(((d - new Date(Date.UTC(d.getUTCFullYear(), 0, 1))) / 86400000 + 1) / 7);
+  }
+  var fechaTxt = function (dt) { return new Intl.DateTimeFormat('es-ES', { timeZone: 'UTC', weekday: 'long', day: 'numeric', month: 'long' }).format(dt); };
+
+  /* ---------- reparto por localidad (datos facilitados por el cliente) ---------- */
+  var L = [1, 2, 3, 4, 5];
+  var ZONAS = [
+    { n: ['medina del campo', 'medina'], nombre: 'Medina del Campo', dias: L, medina: true, txt: 'todos los días, de lunes a viernes' },
+    { n: ['rueda'], nombre: 'Rueda', dias: [1, 4], txt: 'todos los lunes y jueves' },
+    { n: ['tordesillas'], nombre: 'Tordesillas', dias: [1, 4], txt: 'todos los lunes y jueves' },
+    { n: ['penafiel'], nombre: 'Peñafiel (y alrededores)', dias: [5], txt: 'todos los viernes' },
+    { n: ['olmedo'], nombre: 'Olmedo', dias: [5], txt: 'todos los viernes' },
+    { n: ['iscar'], nombre: 'Íscar', dias: [5], txt: 'todos los viernes' },
+    { n: ['la seca'], nombre: 'La Seca', dias: [3], txt: 'todos los miércoles' },
+    { n: ['serrada'], nombre: 'Serrada', dias: [3], txt: 'todos los miércoles' },
+    { n: ['valdestillas'], nombre: 'Valdestillas', dias: [3], txt: 'todos los miércoles' },
+    { n: ['viana de cega', 'viana'], nombre: 'Viana de Cega', dias: [3], txt: 'todos los miércoles' },
+    { n: ['mojados'], nombre: 'Mojados', dias: [3], txt: 'todos los miércoles' },
+    { n: ['matapozuelos'], nombre: 'Matapozuelos', dias: [3], txt: 'todos los miércoles' },
+    { n: ['cantalapiedra'], nombre: 'Cantalapiedra', dias: [3], par: 'par', txt: 'un miércoles de cada dos, en las semanas pares' },
+    { n: ['alaejos'], nombre: 'Alaejos', dias: [3], par: 'par', txt: 'un miércoles de cada dos, en las semanas pares' },
+    { n: ['nava del rey'], nombre: 'Nava del Rey', dias: [3], par: 'par', txt: 'un miércoles de cada dos, en las semanas pares' },
+    { n: ['villaverde de medina'], nombre: 'Villaverde de Medina', dias: [3], par: 'par', txt: 'un miércoles de cada dos, en las semanas pares' },
+    { n: ['arrabal de portillo', 'arrabal'], nombre: 'Arrabal de Portillo', dias: [3], par: 'par', txt: 'un miércoles de cada dos, en las semanas pares' },
+    { n: ['penaranda de bracamonte', 'penaranda'], nombre: 'Peñaranda de Bracamonte', dias: [2], par: 'impar', txt: 'un martes de cada dos, en las semanas impares' }
+  ];
+  function findZone(t) {
     var best = null;
     ZONAS.forEach(function (z) {
-      z.n.forEach(function (n) { if (has(text, n) && (!best || n.length > best.len)) best = { z: z, len: n.length, n: n }; });
+      z.n.forEach(function (n) {
+        var hit = (' ' + t + ' ').indexOf(' ' + n + ' ') >= 0 || (n.length > 6 && t.indexOf(n) >= 0);
+        if (hit && (!best || n.length > best.len)) best = { z: z, len: n.length };
+      });
     });
-    return best;
+    return best && best.z;
+  }
+  /* próximo reparto en una localidad, a partir de ahora */
+  function proxima(z) {
+    var now = madrid(), base = new Date(Date.UTC(now.y, now.m - 1, now.d)), i, dt;
+    if (z.medina) {
+      if (now.wd >= 1 && now.wd <= 5 && now.h < 10) return 'Si haces el pedido <b>ahora</b>, antes de las 10:00, lo recibes <b>hoy mismo</b> en Medina del Campo.';
+      for (i = 1; i < 8; i++) { dt = new Date(base.getTime() + i * 86400000); if (dt.getUTCDay() >= 1 && dt.getUTCDay() <= 5) break; }
+      return 'Si haces el pedido ahora, te llegaría <b>' + fechaTxt(dt) + '</b> (en Medina del Campo, menos de 24 h; si pides antes de las 10:00 de un día laborable, lo recibes ese mismo día).';
+    }
+    for (i = 1; i < 60; i++) {
+      dt = new Date(base.getTime() + i * 86400000);
+      if (z.dias.indexOf(dt.getUTCDay()) < 0) continue;
+      var w = isoWeek(dt);
+      if (z.par && (w % 2 === 0 ? 'par' : 'impar') !== z.par) continue;
+      return 'El próximo reparto en <b>' + esc(z.nombre) + '</b> es el <b>' + fechaTxt(dt) + '</b>' + (z.par ? ' (semana n.º ' + w + ', ' + z.par + ')' : '') + '. Para recibirlo ese día, haz tu pedido con 24 a 48 h de antelación, de 7:00 a 15:00. Confírmalo al pedir.';
+    }
+    return null;
+  }
+  function zonaTxt(z) {
+    return 'Sí, llegamos a <b>' + esc(z.nombre) + '</b>: ' + z.txt + '. ' + (z.medina ? 'Si pides antes de las 10:00, lo recibes el mismo día.' : PLAZO);
   }
 
-  function answer(raw) {
-    var t = norm(raw);
-    if (!t) return null;
-    var z = /vino|verdejo|bornos|denominacion|blanco|tinto/.test(t) ? null : zone(t);
-    var asksDays = /(reparto|repartis|llegais|llegan|pasais|vais|servis|dias|dia|cuando|venis|entregais|vendeis|llevais|zona)/.test(t);
-    if (z && (asksDays || t.split(' ').length <= 4)) {
-      var nombre = NOMBRES[z.n] || z.n.replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-      return 'Sí, llegamos a <b>' + esc(nombre) + '</b>: ' + z.z.d + '. ' + 'El plazo de entrega es de menos de 24 h en Medina del Campo y de 24 a 48 h en el resto de la zona.';
-    }
-    var best = null, score = 0;
-    FAQ.forEach(function (f) {
-      var s = 0;
-      f.k.forEach(function (k) { if (has(t, k)) s += k.split(' ').length * 2 + 1; });
-      if (s > score) { score = s; best = f; }
+  /* ---------- intenciones (cada grupo de raíces debe aparecer COMPLETO en el mensaje) ---------- */
+  var INTENTS = {
+    saludo: { k: [['hola'], ['buenas'], ['buenos', 'dias'], ['saludos'], ['hey']], solo: true, a: function () { return '¡Hola! Pregúntame lo que necesites sobre reparto, plazos, formas de pago o cómo hacerte cliente.'; } },
+    gracias: { k: [['gracias'], ['perfecto'], ['genial'], ['estupendo'], ['vale']], solo: true, a: function () { return '¡A ti! Si necesitas algo más, aquí estoy.'; } },
+    adios: { k: [['adios'], ['hasta', 'luego'], ['chao']], solo: true, a: function () { return '¡Hasta pronto!'; } },
+    zona: { k: [['reparti'], ['llegai'], ['llegan'], ['vendei'], ['cobertur'], ['provinci'], ['kilometr'], ['zona'], ['llevai'], ['enviai'], ['envian'], ['mandai'], ['traei'], ['servi'], ['donde', 'vend'], ['domicilio']],
+      a: function (c) { return c.zone ? zonaTxt(c.zone) : 'Repartimos en <b>Medina del Campo y comarca, hasta 90 km a la redonda</b>, y en las provincias vecinas de Valladolid, Salamanca, Ávila y Segovia. Dime tu pueblo y te digo qué día pasamos. Por ejemplo: «¿Repartís en Rueda?».'; } },
+    dias: { k: [['dia', 'repart'], ['que', 'dias'], ['cuando', 'pasai'], ['cuando', 'llegai'], ['calendario'], ['quincenal'], ['semana', 'par'], ['semana', 'impar'], ['lunes'], ['martes'], ['miercoles'], ['jueves'], ['viernes'], ['sabado'], ['domingo'], ['finde'], ['fin', 'semana']],
+      a: function (c) {
+        if (c.zone) return zonaTxt(c.zone);
+        if (c.has(['sabado']) || c.has(['domingo']) || c.has(['finde']) || c.has(['fin', 'semana'])) return 'Repartimos <b>de lunes a viernes</b>. Los fines de semana no hay reparto.';
+        return 'Estos son los <b>días de reparto</b>:<ul><li>Medina del Campo: de lunes a viernes.</li><li>Rueda y Tordesillas: lunes y jueves.</li><li>Peñafiel y alrededores, Olmedo e Íscar: viernes.</li><li>La Seca, Serrada, Valdestillas, Viana de Cega, Mojados y Matapozuelos: miércoles.</li><li>Cantalapiedra, Alaejos, Nava del Rey, Villaverde de Medina y Arrabal de Portillo: miércoles cada 15 días, en semanas pares.</li><li>Peñaranda de Bracamonte: martes cada 15 días, en semanas impares.</li></ul>Dime tu pueblo y te lo confirmo.';
+      } },
+    plazo: { k: [['plazo'], ['tard'], ['entrega'], ['mismo', 'dia'], ['dia', 'siguiente'], ['rapid'], ['urgent'], ['24', 'hora'], ['48', 'hora']],
+      a: function (c) { return c.zone ? (c.zone.medina ? 'En <b>Medina del Campo</b>, menos de 24 h; si pides antes de las 10:00, lo recibes el mismo día.' : 'A <b>' + esc(c.zone.nombre) + '</b> la entrega es de <b>24 a 48 h</b>, en días de reparto (' + c.zone.txt + ').') : 'En <b>Medina del Campo</b>, menos de 24 h; si pides antes de las 10:00, lo recibes el mismo día. En el resto de la zona, <b>entre 24 y 48 h</b>, en días laborables de lunes a viernes.'; } },
+    proxima: { k: [['cuando', 'llega'], ['cuando', 'recib'], ['proxim', 'repart'], ['proxim', 'entreg'], ['pido', 'hoy'], ['pido', 'manana'], ['si', 'pido'], ['cuando', 'toca'], ['cuando', 'pasa']], needsZone: true,
+      a: function (c) { return proxima(c.zone) || 'Llámanos al ' + TEL + ' y te confirmamos tu próximo reparto.'; } },
+    minimo: { k: [['minimo']], a: function () { return '<b>No hay pedido mínimo.</b>'; } },
+    envio: { k: [['gasto', 'envio'], ['envio'], ['porte'], ['gratis'], ['cobrai'], ['coste', 'envio'], ['transporte']], a: function () { return 'El reparto es <b>sin coste para el cliente</b>: no hay gastos de envío.'; } },
+    ahora: { k: [['abierto', 'ahora'], ['abris', 'ahora'], ['atendeis', 'ahora'], ['estais', 'ahora'], ['ahora', 'atend']], peso: 4,
+      a: function () {
+        var n = madrid();
+        if (n.wd >= 1 && n.wd <= 5 && n.h >= 7 && n.h < 15) return 'Sí, <b>ahora mismo estamos atendiendo</b> (7:00 a 15:00). Llámanos al ' + TEL + '.';
+        return 'Ahora estamos <b>fuera del horario de atención</b> (7:00 a 15:00). Si llamas al ' + TEL + ', te atiende Valentín en su móvil.';
+      } },
+    horario: { k: [['horario'], ['hora'], ['abri'], ['abiert'], ['atencion'], ['cerrai'], ['hasta', 'hora']],
+      a: function () { return 'Atendemos y gestionamos pedidos <b>de 7:00 a 15:00</b>. Pasadas las 15:00, las llamadas entrantes las atiende Valentín en su móvil. Teléfono: ' + TEL + '.'; } },
+    cliente: { k: [['cliente'], ['registr'], ['empez'], ['como', 'compr'], ['primer', 'pedido'], ['ficha'], ['document'], ['nif'], ['papeles'], ['hacerme'], ['hacerse'], ['darme', 'alta'], ['dar', 'alta']],
+      a: function () { return 'Hacerse cliente es muy sencillo:<ol><li><b>Nos conocemos:</b> te visitamos o hablamos contigo, te presentamos la empresa y el porfolio.</li><li><b>Te damos de alta:</b> rellenamos tu ficha de cliente con tus datos fiscales y acordamos la forma de pago (si es domiciliación, se firma el formato SEPA).</li><li><b>Primer pedido:</b> lo anotamos y te lo servimos el día acordado, entre 24 y 48 h desde tu primera llamada. Te asignamos un día de visita del comercial, semanal o quincenal.</li></ol>' + PERSONA; } },
+    pedido: { k: [['como', 'pedir'], ['hacer', 'pedido'], ['hago', 'pedido'], ['realizar', 'pedido'], ['encargar'], ['como', 'pido'], ['quiero', 'pedir']],
+      a: function () { return 'Los pedidos se gestionan <b>de 7:00 a 15:00</b>. Si ya eres cliente, llama al ' + TEL + ' o díselo a tu comercial en su día de visita. Si aún no lo eres, te damos de alta en 3 pasos (pregúntame «¿cómo me hago cliente?»).'; } },
+    pago: { k: [['pago'], ['pagar'], ['pagai'], ['factura'], ['domicili'], ['tarjeta'], ['efectivo'], ['contado'], ['credito'], ['transferencia'], ['recibo'], ['sepa']],
+      a: function () { return 'La forma de pago se <b>acuerda contigo</b>, según tu negocio y tu volumen de compra:<ul><li>Al contado en cada reparto, en efectivo o con tarjeta, con factura directa.</li><li>Albarán en cada reparto y factura resumen mensual, que se suele domiciliar en tu cuenta el día acordado: del 1 al 3 del mes, a los 15 días o a los 30 días.</li></ul>'; } },
+    tarifa: { k: [['tarifa'], ['precio'], ['cuanto', 'cuesta'], ['cuanto', 'vale'], ['cuanto', 'cobrai'], ['cuesta'], ['oferta'], ['presupuesto']],
+      a: function () { return 'En la web no publicamos precios. Si lo pides, te enviamos una <b>tarifa personalizada, sin compromiso</b>: suele estar en 24 h (antes si es solo de una parte de los artículos). Pídela en el ' + TEL + ' o en ' + MAIL + '.'; } },
+    whatsapp: { k: [['whatsapp'], ['wasap'], ['guasap']], peso: 4, a: function () { return 'El ' + TEL + ' <b>no tiene WhatsApp</b>. Puedes llamarnos de 7:00 a 15:00 o escribir a ' + MAIL + '.'; } },
+    contacto: { k: [['contacto'], ['telefono'], ['llamar'], ['correo'], ['email'], ['mail'], ['direccion'], ['donde', 'estai'], ['ubicacion'], ['oficina'], ['almacen'], ['como', 'llegar']],
+      a: function () { return 'Puedes contactarnos así:<ul><li>Teléfono: ' + TEL + ' (7:00 a 15:00).</li><li>Correo: ' + MAIL + '</li><li>Dirección: Cl Labradores, n.º 45, parcela 24B · 47400 Medina del Campo, Valladolid.</li></ul>'; } },
+    incidencia: { k: [['problema'], ['reclam'], ['queja'], ['devol'], ['equivoc'], ['falta'], ['roto'], ['defect'], ['no', 'llego'], ['error']],
+      a: function () { return 'Lamentamos el problema. Para una incidencia con un pedido, llámanos al ' + TEL + ' de 7:00 a 15:00 o escribe a ' + MAIL + ', indicando el nombre de tu negocio y el albarán, y lo revisamos.'; } },
+    empresa: { k: [['cuantos', 'anos'], ['anos', 'llevai'], ['historia'], ['desde', 'cuando'], ['quienes', 'sois'], ['empresa'], ['fundad'], ['experiencia']],
+      a: function () { return 'Somos <b>Distribuciones Valentín Martín</b>, de Medina del Campo. Llevamos <b>44 años</b> de experiencia, desde 1982, distribuyendo a hostelería.'; } },
+    redes: { k: [['facebook'], ['instagram'], ['redes']], a: function () { return 'Síguenos en <a href="https://www.facebook.com/share/1LfPCX2kSw/" target="_blank" rel="noopener">Facebook</a> e <a href="https://www.instagram.com/distrvalentinmartin/" target="_blank" rel="noopener">Instagram</a>.'; } },
+    persona: { k: [['persona'], ['humano'], ['comercial'], ['visita'], ['agente'], ['hablar', 'con']], a: function () { return 'Claro. ' + PERSONA + ' Si eres cliente, tu comercial pasa el día de visita que se te asignó (semanal o quincenal).'; } },
+    productos: { k: [['que', 'vendei'], ['que', 'tenei'], ['producto'], ['marca'], ['catalogo'], ['gama'], ['surtido'], ['distribui'], ['ofrecei']],
+      a: function () { return 'Distribuimos para hostelería, entre otras gamas: <a href="pascual.html">Pascual</a> (leche, bebidas, yogures y postres), <a href="agua.html">aguas</a>, <a href="vinos.html">vinos</a>, <a href="despensa.html">despensa</a>, <a href="cafe-mocay.html">Café Mocay</a> e infusiones, <a href="menaje.html">menaje</a>, <a href="refrigerados.html">refrigerados</a> y <a href="congelados.html">congelados</a>. Dime qué buscas y lo miro.'; } },
+    bebidas: { k: [['cerveza'], ['refresco'], ['licor'], ['cola'], ['alcohol'], ['bebida']], cat: true,
+      a: function () { return 'También distribuimos bebidas. En la web tienes <a href="agua.html">aguas</a>, <a href="vinos.html">vinos</a> y las bebidas de <a href="pascual.html">Pascual</a>. Para cerveza, refrescos y licores, pídenos la tarifa en el ' + TEL + ' o en ' + MAIL + '.'; } },
+    cafe: { k: [['cafe'], ['mocay'], ['infusion'], ['te', 'negro']], cat: true, a: function () { return 'Trabajamos <a href="cafe-mocay.html">Café Mocay</a>: café en grano, descafeinados, cápsulas, infusiones en pirámide y clásicas en bolsita, y complementos.'; } },
+    pascual: { k: [['leche'], ['pascual'], ['yogur'], ['natilla'], ['batido'], ['bifruta'], ['vivesoy']], cat: true, a: function () { return 'En <a href="pascual.html">Pascual</a> tienes leche (Classic, en caja de 10 L y en botella de 1,5 L), bebidas vegetales Vivesoy, Bifrutas, batidos, yogures y postres.'; } },
+    vinos: { k: [['vino'], ['bornos'], ['verdejo'], ['ribera'], ['espumoso'], ['lleiroso'], ['pinna']], cat: true, a: function () { return 'Mira nuestra selección de <a href="vinos.html">vinos</a>: Palacio de Bornos (blancos, frizzantes, tintos de Ribera y espumosos), Pazos de Baró, Pinna Fidelis y más.'; } },
+    aguas: { k: [['agua'], ['bezoya'], ['pellegrino'], ['perrier'], ['pedras'], ['aquarel']], cat: true, a: function () { return 'En <a href="agua.html">aguas</a> tienes Bezoya, Aquarel, Pedras, S.Pellegrino y Perrier.'; } },
+    menaje: { k: [['menaje'], ['copa'], ['vaso'], ['plato'], ['cuberteria'], ['vajilla'], ['cristaleria'], ['taza'], ['servilleta']], cat: true, a: function () { return 'Tenemos un listado de <a href="menaje.html">menaje</a>: cocina, cristalería, consumibles, cubertería, complementos de mesa, cuchillería, platos y tazas.'; } },
+    congelados: { k: [['congelado'], ['bolleria'], ['croissant'], ['panamar']], cat: true, a: function () { return 'En <a href="congelados.html">congelados</a> tienes pan, bollería, croissants y salados de Panamar.'; } },
+    refrigerados: { k: [['refrigerado'], ['queso'], ['mantequilla'], ['nata'], ['huevo'], ['charcuteria'], ['fiambre'], ['embutido']], cat: true, a: function () { return 'En <a href="refrigerados.html">refrigerados</a> encontrarás lácteos, quesos, huevos, preparados y charcutería.'; } },
+    despensa: { k: [['despensa'], ['conserva'], ['aceite'], ['especia'], ['salsa'], ['mermelada'], ['legumbre'], ['helios'], ['calvo'], ['prima'], ['borges']], cat: true, a: function () { return 'En <a href="despensa.html">despensa</a> hay conservas (Calvo, Villa Campo), Helios, salsas Prima, aceites, especias, legumbres Luengo y frutos secos Borges, entre otros.'; } }
+  };
+
+  /* ---------- catálogo de productos (se carga la primera vez que se pregunta por uno) ---------- */
+  var CAT = null, catPromise = null;
+  var PAGINAS = { pascual: 'Pascual', agua: 'Aguas', vinos: 'Vinos', despensa: 'Despensa', congelados: 'Congelados', refrigerados: 'Refrigerados', menaje: 'Menaje' };
+  function cargarCatalogo() {
+    if (catPromise) return catPromise;
+    var items = [];
+    var fuentes = [['helios-products.js', null], ['villacampo-products.js', null], ['pascual-products.js', 'pascual'], ['agua-products.js', 'agua'], ['vinos-products.js', 'vinos'], ['despensa-products.js', 'despensa'], ['congelados-products.js', 'congelados'], ['menaje-articulos.js', 'menaje']];
+    var viejo = window.ProductWorld;
+    var actual = null;
+    window.ProductWorld = { init: function (cfg) {
+      (cfg.sections || []).forEach(function (s) {
+        [].concat(s.products || [], s.variants || [], s.frames || [], s.product ? [s.product] : []).forEach(function (p) { if (p && p.name) items.push({ n: p.name, p: actual, f: s.family || '' }); });
+      });
+    } };
+    var cargar = function (src, pag) {
+      return new Promise(function (ok) {
+        var s = document.createElement('script');
+        actual = pag;
+        s.src = src; s.onload = s.onerror = function () { ok(); };
+        document.head.appendChild(s);
+      });
+    };
+    var refri = fetch('refrigerados-products.js').then(function (r) { return r.text(); }).then(function (t) {
+      var re = /\{group:'([^']*)',brand:'([^']*)',name:'((?:[^'\\]|\\.)*)'/g, m;
+      while ((m = re.exec(t))) items.push({ n: m[3].split("\\'").join("'"), p: 'refrigerados', f: m[2] });
+    }).catch(function () {});
+    catPromise = fuentes.reduce(function (pr, f) { return pr.then(function () { return cargar(f[0], f[1]); }); }, Promise.resolve()).then(function () { return refri; }).then(function () {
+      window.ProductWorld = viejo;
+      (window.MENAJE || []).forEach(function (m) { items.push({ n: m.n, p: 'menaje', f: m.g }); });
+      CAT = items.map(function (it) { return { n: it.n, p: it.p, f: it.f, t: norm(it.n + ' ' + it.f).split(' ') }; });
     });
-    var m = t.match(/\b(?:repartis|llegais|vendeis|servis|llevais|venis|entregais|llegan|repartir)\s+(?:en|a|hasta|por)\s+([a-z]+(?: [a-z]+){0,3})/);
-    var STOP = /^(donde|mi|toda|todo|la|el|los|las|que|cuantos|cuando|domicilio|casa|hosteleria|bares|negocios|particulares|empresas|toda la)\b/;
-    if (!z && m && !STOP.test(m[1])) {
-      return 'No tengo <b>' + esc(m[1].replace(/\b\w/g, function (c) { return c.toUpperCase(); })) + '</b> en el listado de días de reparto. Repartimos en Medina del Campo y comarca, hasta 90 km, y en las provincias vecinas de Valladolid, Salamanca, Ávila y Segovia. Llámanos al ' + TEL + ' o escribe a ' + MAIL + ' y te confirmamos si llegamos y qué día.';
-    }
-    if (best && score >= 2) return best.a;
-    if (/^(a )?(donde|en que|que pueblos|que localidades)/.test(t) || /pueblo|localidad/.test(t)) {
-      return 'No tengo ese pueblo en el listado de días de reparto. Repartimos en Medina del Campo y comarca, hasta 90 km, y en las provincias vecinas. Llámanos al ' + TEL + ' o escribe a ' + MAIL + ' y te confirmamos si llegamos y qué día.';
-    }
-    return 'No estoy seguro de haberte entendido. Puedo ayudarte con el <b>reparto</b>, los <b>plazos</b>, el <b>horario</b>, las <b>formas de pago</b> o <b>cómo hacerte cliente</b>. ' + PERSONA;
+    return catPromise;
+  }
+  var RUIDO_RAIZ = /^(teneis|tenemos|tienen|tienes|tiene|vendeis|venden|vendemos|trabajais|trabajan|distribuis|distribuyen|busco|buscamos|necesito|necesitamos|quiero|queremos|quisiera|podeis|pueden|servis|sirven|disponible|disponibles|referencia|referencias|vuestro|vuestra|vuestros|vuestras|nuestro|nuestra)$/;
+  var RUIDO_EXACTO = /^(hay|ver|mirar|algun|alguna|alguno|algo|todo|toda|una|unos|unas|los|las|del|con|sin|para|por|que|como|cual|cuales|cuanto|cuesta|vale|precio|esta|este|ese|esa|mas|muy|bien|favor|hola|buenas|gracias|tambien|ademas|tipo|marca|producto|productos|gama|stock|ref|cosas|cosa|articulo|articulos|material|materiales)$/;
+  var RUIDO = { test: function (w) { return RUIDO_EXACTO.test(w) || RUIDO_RAIZ.test(w); } };
+  function etiqueta(it) {
+    var fam = String(it.f || '').split(' · ')[0];
+    if (it.p === 'menaje' || !fam || norm(it.n).indexOf(norm(fam)) >= 0) return it.n;
+    return fam + ' · ' + it.n;
+  }
+  function buscar(tokens) {
+    var q = tokens.filter(function (t) { return t.length >= 3 && !RUIDO.test(t); });
+    if (!q.length || !CAT) return [];
+    var stem = function (w) { return w.length > 4 ? w.replace(/(es|s)$/, '') : w; };
+    var res = [];
+    CAT.forEach(function (it) {
+      var ok = q.every(function (w) { var s = stem(w); return it.t.some(function (x) { return x.indexOf(s) === 0; }); });
+      if (ok) res.push(it);
+    });
+    res.sort(function (a, b) { return a.n.length - b.n.length; });
+    return res;
   }
 
+  /* ---------- análisis del mensaje ---------- */
+  var state = { zone: null, last: null, espera: null };
+  var NEEDS_ZONE = { proxima: true };
+  var SIMPLE = { saludo: 1, gracias: 1, adios: 1 };
+
+  function analizar(raw) {
+    var t = norm(raw), tokens = t.split(' ').filter(Boolean);
+    var has = function (g) { return g.every(function (s) { return hasStem(tokens, s); }); };
+    var scored = [];
+    Object.keys(INTENTS).forEach(function (id) {
+      var it = INTENTS[id], s = 0;
+      var ps = [];
+      it.k.forEach(function (g) { if (has(g)) ps.push(g.length * 3 + g.join('').length / 4); });
+      if (ps.length) { ps.sort(function (x, y) { return y - x; }); s = ps[0] + 0.25 * ps.slice(1).reduce(function (x, y) { return x + y; }, 0); scored.push({ id: id, s: s * (it.peso || 1) }); }
+    });
+    scored.sort(function (a, b) { return b.s - a.s; });
+    return { t: t, tokens: tokens, has: has, scored: scored };
+  }
+
+  /* devuelve el HTML de la respuesta, o una promesa con él */
+  function responder(raw) {
+    var a = analizar(raw);
+    if (!a.t) return null;
+    var zone = /vino|verdejo|bornos|denominacion|blanco|tinto/.test(a.t) ? null : findZone(a.t);
+    if (zone) state.zone = zone;
+    var c = { zone: zone || null, has: a.has };
+    var top = a.scored[0];
+    if (/\b(sabado|domingo|finde|fin de semana|festivo)/.test(a.t) && !zone) return 'Repartimos <b>de lunes a viernes</b>. Los fines de semana no hay reparto. ' + PLAZO;
+
+    /* esperaba el pueblo para seguir con la pregunta anterior */
+    if (state.espera) {
+      var pend = state.espera; state.espera = null;
+      if (zone) { state.last = pend; return INTENTS[pend].a({ zone: zone, has: a.has }); }
+    }
+    /* pregunta que necesita pueblo y no lo tenemos */
+    if (top && NEEDS_ZONE[top.id]) {
+      var zz = zone || state.zone;
+      if (!zz) { state.espera = top.id; return '¿De qué pueblo eres? Con eso te calculo tu próximo reparto.'; }
+      state.last = top.id; return INTENTS[top.id].a({ zone: zz, has: a.has });
+    }
+    /* seguimiento corto: «¿y a Olmedo?», «¿y en Rueda?» */
+    if (zone && a.tokens.length <= 6 && (!top || ['zona', 'dias', 'plazo'].indexOf(top.id) >= 0 || /^y /.test(a.t))) {
+      var id = state.last && (state.last === 'proxima' || state.last === 'plazo') ? state.last : 'zona';
+      state.last = id; return INTENTS[id].a({ zone: zone, has: a.has });
+    }
+    /* pueblo que no tenemos en el listado */
+    var m = a.t.match(/\b(?:reparti|reparto|llegai|llegan|vendei|servi|llevai|venis|entregai|repartir)s?\s+(?:en|a|hasta|por)\s+([a-z]+(?: [a-z]+){0,3})/);
+    if (!zone && m && !/^(donde|mi|toda|todo|la|el|los|las|que|cuantos|cuando|domicilio|casa|hosteleria|bares|negocios|particulares|empresas)\b/.test(m[1])) {
+      return 'No tengo <b>' + esc(cap(m[1])) + '</b> en el listado de días de reparto. Repartimos en Medina del Campo y comarca, hasta 90 km, y en las provincias vecinas de Valladolid, Salamanca, Ávila y Segovia. Llámanos al ' + TEL + ' o escribe a ' + MAIL + ' y te confirmamos si llegamos y qué día.';
+    }
+    /* búsqueda de producto concreto */
+    var pareceProducto = /\b(tenei|tienen|vendei|venden|hay|busco|necesito|quiero|trabajai|distribui)/.test(a.t) || !top || INTENTS[top.id].cat;
+    if (pareceProducto) {
+      var cont = a.tokens.filter(function (x) { return x.length >= 3 && !RUIDO.test(x); });
+      if (cont.length && !(top && SIMPLE[top.id])) {
+        var catIntent = top && INTENTS[top.id].cat ? top.id : null;
+        return cargarCatalogo().then(function () {
+          var r = buscar(a.tokens);
+          if (r.length) {
+            var vistos = {}, lista = [];
+            r.forEach(function (it) { var k = it.p + etiqueta(it); if (!vistos[k] && lista.length < 6) { vistos[k] = 1; lista.push(it); } });
+            return 'Sí, esto es lo que tenemos relacionado:<ul>' + lista.map(function (it) { return '<li><a href="' + it.p + '.html">' + esc(etiqueta(it)) + '</a> <small>(' + PAGINAS[it.p] + ')</small></li>'; }).join('') + '</ul>' + (r.length > lista.length ? 'Y alguno más: míralo en <a href="' + lista[0].p + '.html">' + PAGINAS[lista[0].p] + '</a>. ' : '') + 'Para pedirlo o pedir tarifa: ' + TEL + '.';
+          }
+          if (catIntent) return INTENTS[catIntent].a(c);
+          return fallback(a, c);
+        });
+      }
+    }
+    return fallback(a, c);
+  }
+
+  function fallback(a, c) {
+    var sc = a.scored;
+    if (sc.length && sc[0].s >= 3) {
+      var partes = [sc[0]];
+      if (sc[1] && sc[1].s >= 3 && sc[1].s >= sc[0].s * 0.4 && !INTENTS[sc[0].id].solo && !INTENTS[sc[1].id].solo && !INTENTS[sc[0].id].cat && !INTENTS[sc[1].id].cat) partes.push(sc[1]);
+      state.last = partes[0].id;
+      var textos = [];
+      partes.forEach(function (p) { var h = INTENTS[p.id].a(c); if (textos.indexOf(h) < 0) textos.push(h); });
+      return textos.join('<br><br>');
+    }
+    return 'No estoy seguro de haberte entendido. Puedo ayudarte con el <b>reparto</b> (dime tu pueblo), los <b>plazos</b>, el <b>horario</b>, las <b>formas de pago</b>, <b>cómo hacerte cliente</b> o buscar un <b>producto</b>. ' + PERSONA;
+  }
+
+  /* ---------- interfaz ---------- */
   function add(who, html, isHtml) {
     var d = document.createElement('div');
     d.className = 'chat-msg chat-' + who;
@@ -124,14 +316,17 @@
     log.scrollTop = log.scrollHeight;
     return d;
   }
-
   function ask(text) {
     text = String(text || '').trim();
     if (!text) return;
     add('user', text, false);
-    var out = answer(text);
-    var show = function () { add('bot', out, true); };
-    if (reduce) show(); else setTimeout(show, 350);
+    var out;
+    try { out = responder(text); } catch (e) { out = 'Ahora no puedo responder. ' + PERSONA; }
+    var show = function (html) { if (html) add('bot', html, true); };
+    var pensar = reduce ? 0 : 350;
+    Promise.resolve(out).then(function (html) { return html; }, function () { return 'Ahora no puedo responder. ' + PERSONA; }).then(function (html) {
+      if (pensar) setTimeout(function () { show(html); }, pensar); else show(html);
+    });
   }
 
   form.addEventListener('submit', function (e) { e.preventDefault(); ask(input.value); input.value = ''; input.focus(); });
@@ -140,5 +335,5 @@
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (en) { document.documentElement.classList.toggle('chat-open', en[0].isIntersecting); }, { threshold: 0.05 }).observe(root);
   }
-  add('bot', '¡Hola! Soy el asistente de Distribuciones Valentín. Respondo a las preguntas más frecuentes: <b>dónde repartimos</b>, <b>plazos</b>, <b>horario</b>, <b>formas de pago</b> o <b>cómo hacerte cliente</b>.', true);
+  add('bot', '¡Hola! Soy el <b>Asistente de Distribuciones VM</b>. Puedo decirte <b>dónde repartimos y qué día</b>, <b>cuándo te llegaría un pedido</b>, los <b>plazos</b>, el <b>horario</b>, las <b>formas de pago</b>, <b>cómo hacerte cliente</b> o buscar un <b>producto</b>. Prueba con: «¿repartís en Rueda?» o «¿tenéis copas de vino?».', true);
 })();
