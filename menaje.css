@@ -1,9 +1,13 @@
 :root{--mj-bg:#f6f1e8;--mj-ink:#2a211a;--mj-accent:#8a3b22}
 .menaje-world{background:var(--mj-bg);color:var(--mj-ink);font-family:Jost,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-.mj-hero{min-height:78svh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:26px;padding:clamp(120px,16vh,180px) clamp(22px,5.5vw,104px) clamp(56px,8vw,110px);background:var(--mj-bg)}
-.mj-hero h1{font-size:clamp(3.4rem,7.4vw,8.6rem);font-weight:600;letter-spacing:-.06em;line-height:.94;margin:0}
+.mj-hero{min-height:82svh;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:clamp(28px,5vw,80px);padding:clamp(110px,15vh,170px) clamp(22px,5.5vw,104px) clamp(48px,7vw,96px);background:var(--mj-bg)}
+.mj-hero-copy{display:flex;flex-direction:column;align-items:flex-start;gap:26px}
+.mj-hero h1{font-size:clamp(3.2rem,6.4vw,8rem);font-weight:600;letter-spacing:-.06em;line-height:.94;margin:0}
 .mj-hero h1 em,.mj-intro h2 em,.menaje-world .pw-end h2 em{font-family:Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.045em}
-.mj-hero>p:not(.pw-kicker){max-width:52ch;font-size:clamp(1.06rem,1.4vw,1.3rem);line-height:1.5;margin:0}
+.mj-hero-copy>p:not(.pw-kicker){max-width:52ch;font-size:clamp(1.06rem,1.4vw,1.3rem);line-height:1.5;margin:0}
+.mj-hero-fig{margin:0;justify-self:center}
+.mj-hero-fig img{display:block;width:auto;height:min(72svh,720px);max-width:100%;border-radius:20px;box-shadow:0 22px 50px rgba(42,33,26,.22)}
+@media(max-width:860px){.mj-hero{grid-template-columns:minmax(0,1fr);min-height:0}.mj-hero-fig img{height:auto;width:min(100%,420px)}}
 .mj-catalog{padding:clamp(48px,7vw,100px) clamp(22px,5.5vw,104px) clamp(64px,9vw,130px);background:#fbf8f2}
 .mj-intro h2{font-size:clamp(2.6rem,1.4rem + 4.6vw,6rem);font-weight:600;letter-spacing:-.055em;line-height:.95;margin:10px 0 0}
 .mj-toolbar{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:flex-end;justify-content:space-between;margin:clamp(28px,4vw,52px) 0 14px}
