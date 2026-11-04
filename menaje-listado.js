@@ -1,4 +1,4 @@
-/* Listado de Menaje: filtros por familia, buscador y artículos agrupados. Los datos están en menaje-products.js. */
+/* Listado de Menaje: filtros por familia, buscador y artículos agrupados. Los datos están en menaje-articulos.js (los genera _herramientas/menaje.py). */
 (function () {
   'use strict';
   var data = window.MENAJE || [];

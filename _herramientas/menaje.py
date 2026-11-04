@@ -1,4 +1,4 @@
-"""Genera menaje-products.js (listado de Menaje) a partir del Excel de artículos del ERP.
+"""Genera menaje-articulos.js (listado de Menaje) a partir del Excel de artículos del ERP.
 
 Uso (desde la raíz del repositorio):  python3 -I _herramientas/menaje.py ruta/al/ARTICULOS.xlsx
 
@@ -59,7 +59,7 @@ for row in ws.iter_rows(min_row=2, values_only=True):
     items.append((key(fam), fam, nice(str(row[2]))))
 items.sort(key=lambda x: (x[0], x[2].lower()))
 data = [{'g': GROUPS[f.split('.')[0]], 's': SUB[f], 'n': n} for _, f, n in items]
-with open(os.path.join(ROOT, 'menaje-products.js'), 'w', encoding='utf-8') as f:
+with open(os.path.join(ROOT, 'menaje-articulos.js'), 'w', encoding='utf-8') as f:
     f.write('/* Listado de Menaje. Generado por _herramientas/menaje.py desde ' + os.path.basename(sys.argv[1]) + '. No editar a mano. */\n')
     f.write('window.MENAJE = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n')
 print(len(data), 'artículos en', len({d['g'] for d in data}), 'familias')

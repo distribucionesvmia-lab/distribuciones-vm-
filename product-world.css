@@ -189,3 +189,12 @@
 .pw-e-list .pw-price{display:block;margin:4px 0 0}
 .pw-e-list li.is-current small{max-height:8em}
 .pw-price-note{margin:0;padding:18px var(--side,22px);text-align:center;font-size:.9rem;background:var(--paper,#f3f2ef);color:#4a4541}
+
+/* lineup: llamada a la acción opcional (campo cta) bajo la lista */
+.pw-e-cta{grid-column:2;grid-row:4;align-self:start}
+.pw-e-cta .pw-link{margin-top:22px}
+@media(max-width:760px){.pw-e-cta{margin-top:6px}.pw-e-cta .pw-link{margin-top:14px}}
+/* enlace secundario bajo el cierre (por ejemplo, a otra categoría) */
+.pw-end>p.pw-more{margin:18px 0 0;max-width:none;font-size:.95rem;line-height:1.4}
+.pw-end .pw-more a{font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.pw-end .pw-more a:hover{opacity:.8}

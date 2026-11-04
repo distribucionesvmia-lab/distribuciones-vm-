@@ -1,5 +1,5 @@
 """Genera en todas las páginas el bloque SEO (canonical, Open Graph, Twitter), los datos de empresa local
-(JSON-LD, solo en la portada), sitemap.xml y robots.txt.
+(JSON-LD de empresa en la portada; migas y preguntas frecuentes en Menaje), sitemap.xml y robots.txt.
 
 Uso (desde la raíz del repositorio):  python3 -I _herramientas/seo.py
 
@@ -9,6 +9,7 @@ BASE es la dirección pública del sitio, con barra final. Cuando la web pase a 
 import json
 import os
 import re
+from html import unescape
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 BASE = 'https://distribucionesvmia-lab.github.io/distribuciones-vm-/'
@@ -17,6 +18,7 @@ DEFAULT_IMG = ('assets/portada.webp', 1360, 931, 'Furgoneta de reparto frente al
 # página -> imagen para compartir (ruta, ancho, alto, texto alternativo); sin entrada usa DEFAULT_IMG
 IMAGES = {
     'cafe-mocay.html': ('assets/marcas/mocay-cafe-arabica.webp', 515, 515, 'Café Mocay Maestro Colombia'),
+    'menaje.html': ('assets/menaje/og-menaje.jpg', 1200, 630, 'Mesa de restaurante preparada con copas, platos y servilletas bajo una luz cálida'),
 }
 PAGES = ['index.html', 'cafe-mocay.html', 'pascual.html', 'vinos.html', 'agua.html',
          'despensa.html', 'refrigerados.html', 'congelados.html', 'menaje.html']
@@ -62,6 +64,19 @@ def esc(t):
     return t.replace('&', '&amp;').replace('"', '&quot;').replace('<', '&lt;')
 
 
+def menaje_ld(html):
+    """Migas de pan y preguntas frecuentes de menaje.html; las preguntas se leen de la propia página."""
+    faq = re.findall(r'<details><summary>(.*?)</summary><p>(.*?)</p></details>', html, re.S)
+    graph = [
+        {'@type': 'BreadcrumbList', '@id': BASE + 'menaje.html#migas', 'itemListElement': [
+            {'@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': BASE},
+            {'@type': 'ListItem', 'position': 2, 'name': 'Menaje', 'item': BASE + 'menaje.html'}]},
+        {'@type': 'FAQPage', '@id': BASE + 'menaje.html#preguntas', 'mainEntity': [
+            {'@type': 'Question', 'name': unescape(q), 'acceptedAnswer': {'@type': 'Answer', 'text': unescape(a)}} for q, a in faq]},
+    ]
+    return '<script type="application/ld+json">' + json.dumps({'@context': 'https://schema.org', '@graph': graph}, ensure_ascii=False, separators=(',', ':')) + '</script>'
+
+
 def block(page, html):
     title = re.search(r'<title>(.*?)</title>', html, re.S).group(1).strip()
     desc = re.search(r'<meta name="description" content="(.*?)"', html, re.S).group(1).strip()
@@ -87,6 +102,8 @@ def block(page, html):
     ]
     if page == 'index.html':
         lines.append('<script type="application/ld+json">' + json.dumps(BUSINESS, ensure_ascii=False, separators=(',', ':')) + '</script>')
+    if page == 'menaje.html':
+        lines.append(menaje_ld(html))
     lines.append('<!-- /seo -->')
     return '\n' + '\n'.join(lines)
 
