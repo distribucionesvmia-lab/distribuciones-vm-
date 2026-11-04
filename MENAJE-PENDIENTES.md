@@ -126,3 +126,11 @@ Rellenar los huecos y mover a `#preguntas` en `menaje.html` (y al `FAQPage` JSON
 - **Prueba social (testimonios):** no se ha añadido. Hace falta, por cada testimonio: texto, nombre o negocio y permiso por escrito del cliente [POR CONFIRMAR]. Hueco previsto: una sección de texto entre «Por qué pedirlo con nosotros» y «Equipa tu local».
 - **Oferta de entrada para clientes nuevos:** no se ha añadido. [POR CONFIRMAR] si existe, en qué consiste, condiciones y vigencia. Si existe, iría en «Equipa tu local» sin cifras que no se confirmen.
 - **Botón «Llamar»:** activo solo en móvil, con el 635 09 80 44. [POR CONFIRMAR] si se quiere también en escritorio (hoy no se muestra; el teléfono sí aparece en el cierre de contacto).
+
+## Añadido en la tarea de integración en el sitio
+
+- **Enlazar Menaje en producción:** ahora todas las páginas enlazan a `menaje.html`. [POR CONFIRMAR] si se publica ya, o si se prefiere esperar a tener fotos propias, marcas y los datos pendientes. Para quitar el enlace en un paso: borrar `Menaje` de `MENU` y `PAGES` en `_herramientas/cabecera.py` y regenerar, restaurar `href="#contacto"` en la tarjeta de la portada y quitar la línea `.pw-more` de las 5 categorías.
+- **Tarjeta «Menaje» sin foto:** en la portada es la única tarjeta de texto sin imagen (junto a Congelados). Se puede usar una foto de `assets/menaje/` y añadir su crédito en el pie de la portada: [POR CONFIRMAR].
+- **Menú con 10 enlaces:** a 1366 px sigue en una fila, pero por debajo de 1350 px pasa a dos filas y en móvil se desliza. [POR CONFIRMAR] si se prefiere agrupar en un submenú.
+- **Pascual y Café Mocay** no enlazan a Menaje desde su cierre. [POR CONFIRMAR] si se quiere (por ejemplo, tazas y menaje de barra para café, solo si lo distribuyen).
+- **Incidencia ajena a esta tarea:** la portada pide `assets/escenas/escena-1.jpg`, `escena-2.jpg` y `escena-3.jpg` (sección oculta «recorrido») y devuelven 404. Ya ocurría antes; no se ha tocado.

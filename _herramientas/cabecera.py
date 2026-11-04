@@ -21,6 +21,7 @@ MENU = [
     ('Despensa', 'despensa.html'),
     ('Refrigerados', 'refrigerados.html'),
     ('Congelados', 'congelados.html'),
+    ('Menaje', 'menaje.html'),
 ]
 # página -> (texto del elemento activo, ¿cabecera fija sobre la portada?)
 PAGES = {
@@ -32,7 +33,11 @@ PAGES = {
     'despensa.html': ('Despensa', False),
     'refrigerados.html': ('Refrigerados', False),
     'congelados.html': ('Congelados', False),
+    'menaje.html': ('Menaje', False),
 }
+
+# páginas con formulario de contacto propio: el botón «Contactar» baja a él en lugar de ir a la portada
+CONTACT_HERE = {'index.html', 'menaje.html'}
 
 
 def header(page):
@@ -47,7 +52,7 @@ def header(page):
             href = '#contenido'
         links.append(f'<a href="{href}"{cur}>{text}</a>')
     brand = '#inicio' if home else 'index.html#inicio'
-    contact = '#contacto' if home else 'index.html#contacto'
+    contact = '#contacto' if page in CONTACT_HERE else 'index.html#contacto'
     cls = 'site-header is-fixed' if fixed else 'site-header'
     return (f'<header class="{cls}" id="top">\n'
             f'  <a class="sh-brand" href="{brand}" aria-label="Distribuciones Valentín, inicio"><img src="assets/logo.png" width="400" height="400" alt=""><span>Distribuciones Valentín</span></a>\n'

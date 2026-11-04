@@ -407,3 +407,15 @@ Los estilos de estos elementos ya están en `menaje.css` y no tienen efecto mien
 **Comprobado con Playwright** (1440 y 390 px; con el flag activado solo en una copia interceptada con un número de prueba, que no está en el repositorio): con el flag vacío, 0 enlaces de WhatsApp, «Llamar» visible solo en móvil con `tel:` correcto; con el flag, 6 enlaces (5 familias + botón de contacto), mensajes con el nombre de cada familia, barra de móvil con los dos botones, botón flotante solo en escritorio; sin desbordamiento horizontal ni errores de consola.
 
 **Sin añadir, a propósito:** prueba social (testimonios) y oferta de entrada. Siguen en `MENAJE-PENDIENTES.md`.
+
+## 20. Integración en el sitio (T12)
+
+- **Portada:** la tarjeta «Menaje» de `index.html` enlaza ahora a `menaje.html` (antes a `#contacto`). El pie de la portada también lista «Menaje» entre las secciones.
+- **Menú de todas las páginas:** «Menaje» se añadió al final de `MENU` y a `PAGES` en `_herramientas/cabecera.py` y se regeneró la cabecera con `python3 -I _herramientas/cabecera.py` (9 páginas, una línea cambiada en cada una). **`site-header.js` no contiene el menú**: solo centra el elemento activo en móvil, así que no necesitó cambios. El texto del enlace es «Menaje», igual de corto que el resto del menú; en `menaje.html` queda marcado con `aria-current="page"`.
+- **Botón «Contactar» de la cabecera:** el generador tiene ahora `CONTACT_HERE` (portada y menaje): en esas páginas baja a su propio `#contacto`; en las demás sigue yendo a la portada. Sin este ajuste, regenerar habría devuelto el botón de `menaje.html` a la portada.
+- **Enlaces desde otras categorías:** en el cierre de Vinos, Aguas, Despensa, Refrigerados y Congelados hay una línea «¿Equipas tu local? Mira el menaje para hostelería» (`.pw-more`, estilo nuevo en `product-world.css`). No se añadió en Pascual ni en Café Mocay, donde la relación es menos directa. Todas las páginas con `product-world.css` pasan a `?v=17`.
+- **Créditos:** no procede actualizar el pie de las demás páginas. Las fotos de `assets/menaje/` solo se usan en `menaje.html`, que ya tiene sus créditos. La tarjeta «Menaje» de la portada sigue sin foto; si más adelante se pone una de `assets/menaje/`, habrá que añadir su crédito en el pie de la portada y en `assets/credits.json` (la de vajilla es CC0 y no exige atribución, las demás sí).
+
+**Comprobado con Playwright en las 9 páginas a 1440, 1366, 1100 y 390 px:** «Menaje» presente en el menú de todas (10 enlaces), elemento activo correcto, sin desbordamiento horizontal, cabecera de una fila a 1366 px y de dos por debajo del punto de corte de siempre (1350 px), enlace de la tarjeta y del pie de la portada, enlaces cruzados presentes en las 5 categorías y funcionando.
+
+**Importante antes de publicar:** al enlazar `menaje.html` desde todo el sitio, la página se vuelve visible para quien navegue, pero sigue con `noindex`, con fotos genéricas y con datos [POR CONFIRMAR] (ver `MENAJE-PENDIENTES.md`). Si no se quiere enseñar todavía, quitar los enlaces antes de publicar: son los de esta sección, fáciles de localizar por `menaje.html`.
