@@ -4,24 +4,24 @@
   "failed": [],
   "bad": [],
   "bytes": {
-   "initial": 548591,
-   "afterScroll": 832353,
+   "initial": 618031,
+   "afterScroll": 901793,
    "images": 630417,
-   "js": 142758,
-   "css": 44433,
-   "html": 14745
+   "js": 208197,
+   "css": 47343,
+   "html": 15836
   },
   "lowContrast": [],
   "skipped": [],
-  "checked": 302,
+  "checked": 488,
   "overflow": {
    "sw": 1440,
    "cw": 1440
   },
-  "pageH": 13795,
+  "pageH": 27116,
   "reqs": {
-   "initial": 15,
-   "afterScroll": 18
+   "initial": 17,
+   "afterScroll": 20
   }
  },
  "tablet": {
@@ -29,24 +29,24 @@
   "failed": [],
   "bad": [],
   "bytes": {
-   "initial": 548591,
-   "afterScroll": 832353,
+   "initial": 618031,
+   "afterScroll": 901793,
    "images": 630417,
-   "js": 142758,
-   "css": 44433,
-   "html": 14745
+   "js": 208197,
+   "css": 47343,
+   "html": 15836
   },
   "lowContrast": [],
   "skipped": [],
-  "checked": 292,
+  "checked": 504,
   "overflow": {
    "sw": 820,
    "cw": 820
   },
-  "pageH": 16718,
+  "pageH": 34727,
   "reqs": {
-   "initial": 15,
-   "afterScroll": 18
+   "initial": 17,
+   "afterScroll": 20
   }
  },
  "mobile": {
@@ -54,24 +54,24 @@
   "failed": [],
   "bad": [],
   "bytes": {
-   "initial": 631289,
-   "afterScroll": 832353,
+   "initial": 700729,
+   "afterScroll": 901793,
    "images": 630417,
-   "js": 142758,
-   "css": 44433,
-   "html": 14745
+   "js": 208197,
+   "css": 47343,
+   "html": 15836
   },
   "lowContrast": [],
   "skipped": [],
-  "checked": 278,
+  "checked": 360,
   "overflow": {
    "sw": 390,
    "cw": 390
   },
-  "pageH": 9798,
+  "pageH": 43190,
   "reqs": {
-   "initial": 16,
-   "afterScroll": 18
+   "initial": 18,
+   "afterScroll": 20
   }
  },
  "xs": {
@@ -79,24 +79,24 @@
   "failed": [],
   "bad": [],
   "bytes": {
-   "initial": 631289,
-   "afterScroll": 832353,
+   "initial": 700729,
+   "afterScroll": 901793,
    "images": 630417,
-   "js": 142758,
-   "css": 44433,
-   "html": 14745
+   "js": 208197,
+   "css": 47343,
+   "html": 15836
   },
   "lowContrast": [],
   "skipped": [],
-  "checked": 233,
+  "checked": 297,
   "overflow": {
    "sw": 320,
    "cw": 320
   },
-  "pageH": 9793,
+  "pageH": 48459,
   "reqs": {
-   "initial": 16,
-   "afterScroll": 18
+   "initial": 18,
+   "afterScroll": 20
   }
  },
  "a11y": {
@@ -194,6 +194,7 @@
   "congelados.html",
   "index.html#contacto",
   "#contacto",
+  "#referencias",
   "#contacto",
   "#contacto",
   "#contacto",
@@ -231,7 +232,7 @@
   "afterEnter": "#contenido"
  },
  "focus": {
-  "count": 50,
+  "count": 60,
   "noIndicator": [],
   "sample": [
    {
@@ -284,7 +285,7 @@
    "1"
   ],
   "imgTransform": "none",
-  "pageH": 8118,
+  "pageH": 21438,
   "sw": 1440,
   "cw": 1440,
   "btnTransition": "1e-05s",

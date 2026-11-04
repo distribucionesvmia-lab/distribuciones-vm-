@@ -144,3 +144,10 @@ Rellenar los huecos y mover a `#preguntas` en `menaje.html` (y al `FAQPage` JSON
 - **Cabecera común:** altura de los enlaces del menú (15 px). [POR CONFIRMAR] si se quiere ampliar para toda la web; se hizo solo en lo propio de Menaje.
 - **Probado solo en Chromium** con emulación de móvil y de movimiento reducido. [POR CONFIRMAR] una prueba en un móvil real (Safari en iPhone y Chrome en Android) y con lector de pantalla antes de publicar. No se probó con un lector de pantalla real.
 - **Peso de las capturas** (`_herramientas/capturas-menaje/`, 1,9 MB): no se publican con el sitio, pero se versionan en el repositorio. [POR CONFIRMAR] si se prefiere no guardarlas.
+
+## Añadido al restaurar el listado de artículos
+
+- **El Excel de artículos** (`ARTICULOS_29-10-26.xlsx`, el que usó `menaje.py`) no está en el repositorio: para actualizar el listado hay que tenerlo y ejecutar `_herramientas/menaje.py`. [POR CONFIRMAR] dónde se guarda y quién lo actualiza.
+- **Texto «Listado de artículos de menaje disponibles»:** viene de la versión anterior de la página. «Disponibles» puede entenderse como stock; [POR CONFIRMAR] que es correcto o cambiar a «de nuestro catálogo».
+- **Marcas:** los nombres de los artículos incluyen marcas del proveedor (por ejemplo Java, Comas, Lacor, Arc, Magefesa). La página no las destaca ni las usa como reclamo; [POR CONFIRMAR] si se quiere nombrar marcas de menaje en los textos (las pendientes de antes ya se pueden deducir del listado).
+- **Fotos de artículos:** el listado no tiene fotos ni precios, por decisión anterior del cliente.

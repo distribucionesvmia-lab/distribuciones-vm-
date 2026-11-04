@@ -4,7 +4,9 @@ Rama: `claude/charming-faraday-9sfdfo`. Sin pull request. Detalle técnico en `M
 
 ## Estado en una frase
 
-La nueva `menaje.html` **sustituye a la anterior en la rama publicada** (`claude/sweet-bohr-lergl3`, la que despliega GitHub Pages). Se retiró el listado antiguo de 761 artículos del Excel (con su buscador y su generador `_herramientas/menaje.py`) a petición del cliente; sigue en el historial de Git (commit `3d6288d`) por si se quiere recuperar. Siguen pendientes los datos [POR CONFIRMAR] de abajo y las fotos propias.
+La nueva `menaje.html` **sustituye a la anterior en la rama publicada** (`claude/sweet-bohr-lergl3`, la que despliega GitHub Pages) y **conserva el listado de 761 artículos del Excel del ERP**, con sus filtros por familia y su buscador, como sección «Listado de artículos» (`#referencias`), enlazada desde la portada de la página. Siguen pendientes los datos [POR CONFIRMAR] de abajo y las fotos propias.
+
+> En una primera publicación el listado se retiró junto con la página antigua y la nueva salió sin artículos; se restauró al detectarlo. El listado antiguo (maquetación anterior) sigue en el historial de Git, commit `3d6288d`.
 
 ## Cómo se publicó
 
@@ -14,6 +16,7 @@ Mi rama de trabajo (`claude/charming-faraday-9sfdfo`) partía de una versión de
 - **SEO:** canonical, Open Graph y Twitter los genera `_herramientas/seo.py` con la dirección pública de la web (`https://distribucionesvmia-lab.github.io/distribuciones-vm-/`). Se le añadió la imagen para compartir de Menaje y el JSON-LD de migas y preguntas frecuentes (las preguntas se leen de la propia página). El JSON-LD de empresa sigue solo en la portada. `sitemap.xml` y `robots.txt` también salen de `seo.py`; los de mi rama y `_herramientas/dominio.py` no se usan.
 - **`noindex`:** quitado. La página es indexable como las demás.
 - **Versiones de CSS y JS:** `_herramientas/versionar.py`.
+- **Listado de artículos:** `menaje-articulos.js` (datos, los genera `_herramientas/menaje.py` desde el Excel de artículos del ERP, sin precios), `menaje-listado.js` (filtros, buscador y recuento) y estilos propios en `menaje.css`. Sin cambios de contenido respecto a la versión anterior: 761 artículos en 7 familias.
 - **Motor:** se conservaron los cambios de la rama publicada (precios, orden de escenas) y se añadieron mis dos opciones de `lineup` (`cta` y `product.lazy`) y el estilo `.pw-more`.
 - **Enlaces cruzados:** cierre de Vinos, Aguas, Despensa, Refrigerados y Congelados. El menú, la tarjeta y el pie de la portada ya enlazaban a Menaje en la rama publicada.
 
