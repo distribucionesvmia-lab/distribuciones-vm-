@@ -1,0 +1,295 @@
+{
+ "desktop": {
+  "console": [],
+  "failed": [],
+  "bad": [],
+  "bytes": {
+   "initial": 548591,
+   "afterScroll": 832353,
+   "images": 630417,
+   "js": 142758,
+   "css": 44433,
+   "html": 14745
+  },
+  "lowContrast": [],
+  "skipped": [],
+  "checked": 302,
+  "overflow": {
+   "sw": 1440,
+   "cw": 1440
+  },
+  "pageH": 13795,
+  "reqs": {
+   "initial": 15,
+   "afterScroll": 18
+  }
+ },
+ "tablet": {
+  "console": [],
+  "failed": [],
+  "bad": [],
+  "bytes": {
+   "initial": 548591,
+   "afterScroll": 832353,
+   "images": 630417,
+   "js": 142758,
+   "css": 44433,
+   "html": 14745
+  },
+  "lowContrast": [],
+  "skipped": [],
+  "checked": 292,
+  "overflow": {
+   "sw": 820,
+   "cw": 820
+  },
+  "pageH": 16718,
+  "reqs": {
+   "initial": 15,
+   "afterScroll": 18
+  }
+ },
+ "mobile": {
+  "console": [],
+  "failed": [],
+  "bad": [],
+  "bytes": {
+   "initial": 631289,
+   "afterScroll": 832353,
+   "images": 630417,
+   "js": 142758,
+   "css": 44433,
+   "html": 14745
+  },
+  "lowContrast": [],
+  "skipped": [],
+  "checked": 278,
+  "overflow": {
+   "sw": 390,
+   "cw": 390
+  },
+  "pageH": 9798,
+  "reqs": {
+   "initial": 16,
+   "afterScroll": 18
+  }
+ },
+ "xs": {
+  "console": [],
+  "failed": [],
+  "bad": [],
+  "bytes": {
+   "initial": 631289,
+   "afterScroll": 832353,
+   "images": 630417,
+   "js": 142758,
+   "css": 44433,
+   "html": 14745
+  },
+  "lowContrast": [],
+  "skipped": [],
+  "checked": 233,
+  "overflow": {
+   "sw": 320,
+   "cw": 320
+  },
+  "pageH": 9793,
+  "reqs": {
+   "initial": 16,
+   "afterScroll": 18
+  }
+ },
+ "a11y": {
+  "lang": "es",
+  "title": "Menaje hostelería Medina del Campo · Distribuciones Valentín",
+  "h1": 1,
+  "headingSkip": false,
+  "landmarks": {
+   "header": 1,
+   "nav": 1,
+   "main": 1,
+   "footer": 1
+  },
+  "imgs": [
+   {
+    "src": "assets/logo.png",
+    "alt": "",
+    "w": "400",
+    "h": "400",
+    "loading": null,
+    "hidden": false
+   },
+   {
+    "src": "assets/menaje/hero-mesa-restaurante.webp",
+    "alt": "Mesa servida con vasos y cubiertos en un restaurante con paredes de piedra",
+    "w": "1400",
+    "h": "1050",
+    "loading": null,
+    "hidden": false
+   },
+   {
+    "src": "assets/menaje/vajilla-platos-apilados.webp",
+    "alt": "Pilas de platos y cuencos blancos apiladas en una tienda de vajilla",
+    "w": "1100",
+    "h": "733",
+    "loading": "lazy",
+    "hidden": false
+   },
+   {
+    "src": "assets/menaje/cuberteria-cajon-cubiertos.webp",
+    "alt": "Cajón con cuchillos, tenedores y cucharas de acero inoxidable",
+    "w": "1100",
+    "h": "733",
+    "loading": "lazy",
+    "hidden": false
+   },
+   {
+    "src": "assets/menaje/cristaleria-copas-mesa.webp",
+    "alt": "Copas de vino vacías sobre una mesa con mantel claro",
+    "w": "900",
+    "h": "1125",
+    "loading": "lazy",
+    "hidden": false
+   },
+   {
+    "src": "assets/menaje/manteleria-mesa-redonda.webp",
+    "alt": "Mesa redonda con mantel blanco y sillas de mimbre en un comedor luminoso",
+    "w": "1100",
+    "h": "733",
+    "loading": "lazy",
+    "hidden": false
+   },
+   {
+    "src": "assets/menaje/auxiliar-utensilios-pared.webp",
+    "alt": "Utensilios de cocina colgados de una barra de madera sobre una pared de bloques",
+    "w": "960",
+    "h": "640",
+    "loading": "lazy",
+    "hidden": false
+   }
+  ],
+  "imgsMissingAlt": [],
+  "imgsNoSize": [],
+  "dupIds": [],
+  "linksNoName": [],
+  "brokenAnchors": [],
+  "ctrlsNoLabel": [],
+  "btnNoName": 0,
+  "viewportMeta": "width=device-width, initial-scale=1, viewport-fit=cover",
+  "mainHasSkipTarget": true,
+  "skipHref": "#contenido"
+ },
+ "links": [
+  "#contenido",
+  "index.html#inicio",
+  "index.html#inicio",
+  "index.html#catalogo",
+  "pascual.html",
+  "agua.html",
+  "vinos.html",
+  "despensa.html",
+  "cafe-mocay.html",
+  "#contenido",
+  "refrigerados.html",
+  "congelados.html",
+  "index.html#contacto",
+  "#contacto",
+  "#contacto",
+  "#contacto",
+  "#contacto",
+  "#contacto",
+  "#contacto",
+  "#contacto",
+  "tel:+34635098044",
+  "mailto:oficina@distribucionesvm.es",
+  "index.html#catalogo",
+  "index.html#inicio",
+  "https://commons.wikimedia.org/wiki/File:Table_Setting_at_the_Elora_Mill_Hotel_restaurant.jpg",
+  "https://commons.wikimedia.org/wiki/User:Gogerr",
+  "https://creativecommons.org/licenses/by-sa/4.0/",
+  "https://commons.wikimedia.org/wiki/File:Hundreds_of_white_plates_and_bowls_stacked_at_a_tableware_shop_in_Chatuchak_Weekend_Market,_Bangkok.jpg",
+  "https://creativecommons.org/publicdomain/zero/1.0/",
+  "https://commons.wikimedia.org/wiki/File:Cutlery_drawer.jpg",
+  "https://commons.wikimedia.org/wiki/User:Acabashi",
+  "https://creativecommons.org/licenses/by-sa/4.0/",
+  "https://commons.wikimedia.org/wiki/File:Wine_glasses_on_a_table_.jpg",
+  "https://commons.wikimedia.org/wiki/User:Socket0",
+  "https://creativecommons.org/licenses/by-sa/3.0/",
+  "https://commons.wikimedia.org/wiki/File:Restaurant_table_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
+  "https://commons.wikimedia.org/wiki/User:Basile_Morin",
+  "https://creativecommons.org/licenses/by-sa/4.0/",
+  "https://commons.wikimedia.org/wiki/File:Collection_of_essential_cooking_tools_hanging_on_a_rustic_wall.jpg",
+  "https://commons.wikimedia.org/wiki/User:Shixart1985",
+  "https://creativecommons.org/licenses/by/2.0/",
+  "tel:+34635098044"
+ ],
+ "skip": {
+  "cls": "pw-skip",
+  "text": "Saltar al contenido",
+  "visible": true,
+  "outline": "solid 3px",
+  "afterEnter": "#contenido"
+ },
+ "focus": {
+  "count": 50,
+  "noIndicator": [],
+  "sample": [
+   {
+    "tag": "A",
+    "txt": "Saltar al contenido",
+    "vis": true,
+    "outline": true,
+    "shadow": false,
+    "oc": "rgb(156, 42, 26)",
+    "ow": "3px"
+   },
+   {
+    "tag": "A",
+    "txt": "Distribuciones Valentín",
+    "vis": true,
+    "outline": true,
+    "shadow": false,
+    "oc": "rgb(198, 24, 25)",
+    "ow": "2px"
+   },
+   {
+    "tag": "A",
+    "txt": "Inicio",
+    "vis": true,
+    "outline": true,
+    "shadow": false,
+    "oc": "rgb(198, 24, 25)",
+    "ow": "2px"
+   },
+   {
+    "tag": "A",
+    "txt": "Catálogo",
+    "vis": true,
+    "outline": true,
+    "shadow": false,
+    "oc": "rgb(198, 24, 25)",
+    "ow": "2px"
+   }
+  ]
+ },
+ "faqSpace": true,
+ "faqSpace2": false,
+ "reduced": {
+  "bodyStatic": true,
+  "stickyPositions": [
+   "relative"
+  ],
+  "sceneHeight": 844,
+  "listOpacity": [
+   "1"
+  ],
+  "imgTransform": "none",
+  "pageH": 8118,
+  "sw": 1440,
+  "cw": 1440,
+  "btnTransition": "1e-05s",
+  "motionBtn": false,
+  "errors": [],
+  "lowContrast": []
+ }
+}
