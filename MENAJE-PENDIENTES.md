@@ -110,3 +110,11 @@ Rellenar los huecos y mover a `#preguntas` en `menaje.html` (y al `FAQPage` JSON
 - **Quitar `noindex`** de `menaje.html` y activar la indexación: [POR CONFIRMAR] cuándo (cuando haya fotos propias, marcas y el resto de datos).
 - **Aprobar textos de `title` y `meta description`:** «Pide información hoy» no promete plazo, pero [POR CONFIRMAR] que gusta el tono.
 - **Imagen para compartir en redes:** ahora es un recorte de la foto de Commons de la portada. [POR CONFIRMAR] si se quiere sustituir por una imagen propia de marca (logotipo o foto real de la empresa).
+
+## Añadido en la tarea de datos estructurados y sitemap
+
+- **Dominio público:** sigue [POR CONFIRMAR] (ya anotado). Con el dominio, ejecutar `python3 -I _herramientas/dominio.py https://<dominio>`; hasta entonces `sitemap.xml`, `robots.txt` y el JSON-LD usan el marcador `https://DOMINIO.POR-CONFIRMAR.invalid` y no sirven para publicar.
+- **Qué páginas van en `sitemap.xml`:** se listaron las 9 del menú. [POR CONFIRMAR] si todas deben indexarse (derechos de imágenes pendientes) y si `menaje.html` entra ya o después de quitar el `noindex`.
+- **Bloquear en `robots.txt`** `_version-3d`, `_version-anterior` y `_sin-usar`: [POR CONFIRMAR]. Se publican con el sitio y `_sin-usar` tiene imágenes sin derechos confirmados.
+- **Datos para completar el JSON-LD** (solo si se confirman): horario de atención, coordenadas o mapa de la zona de servicio, perfiles en redes sociales, tipo de negocio exacto (por ejemplo mayorista) y razón social; ninguno consta en el repo.
+- **Nombre del negocio:** la portada usa «Distribuciones Valentín Martín» como titular y «Distribuciones Valentín» como marca. El JSON-LD usa la segunda como nombre y la primera como nombre alternativo: [POR CONFIRMAR] cuál es el nombre comercial correcto.

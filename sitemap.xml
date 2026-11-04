@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- El dominio aún es [POR CONFIRMAR]: DOMINIO.POR-CONFIRMAR.invalid es un marcador que se sustituye con
+     python3 -I _herramientas/dominio.py https://<dominio>. menaje.html lleva noindex hasta que se decida publicarla. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://DOMINIO.POR-CONFIRMAR.invalid/</loc></url>
+  <url><loc>https://DOMINIO.POR-CONFIRMAR.invalid/cafe-mocay.html</loc></url>
+  <url><loc>https://DOMINIO.POR-CONFIRMAR.invalid/pascual.html</loc></url>
+  <url><loc>https://DOMINIO.POR-CONFIRMAR.invalid/vinos.html</loc></url>
+  <url><loc>https://DOMINIO.POR-CONFIRMAR.invalid/agua.html</loc></url>
+  <url><loc>https://DOMINIO.POR-CONFIRMAR.invalid/despensa.html</loc></url>
+  <url><loc>https://DOMINIO.POR-CONFIRMAR.invalid/refrigerados.html</loc></url>
+  <url><loc>https://DOMINIO.POR-CONFIRMAR.invalid/congelados.html</loc></url>
+  <url><loc>https://DOMINIO.POR-CONFIRMAR.invalid/menaje.html</loc></url>
+</urlset>

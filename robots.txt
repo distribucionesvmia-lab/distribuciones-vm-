@@ -1,0 +1,5 @@
+# El dominio aún es [POR CONFIRMAR]: se sustituye el marcador con python3 -I _herramientas/dominio.py https://<dominio>
+User-agent: *
+Allow: /
+
+Sitemap: https://DOMINIO.POR-CONFIRMAR.invalid/sitemap.xml

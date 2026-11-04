@@ -361,3 +361,33 @@ Verificado con Playwright: título y descripción con las longitudes indicadas, 
 2. **`noindex`:** sigue puesto. Quitarlo al publicar, cuando lo decida el responsable.
 3. **JSON-LD, `sitemap.xml` y `robots.txt`:** siguen para las tareas de SEO siguientes.
 4. La foto de portada es CC BY-SA 4.0: la versión recortada para compartir en redes también debe atribuirse (ya está en los créditos).
+
+## 18. Datos estructurados, sitemap y robots (T10)
+
+**JSON-LD en `menaje.html`** (un solo bloque `@graph` en el `<head>`):
+
+| Tipo | Contenido | Origen |
+|---|---|---|
+| `LocalBusiness` | Nombre «Distribuciones Valentín» (alternativo «Distribuciones Valentín Martín»), descripción, teléfono `+34635098044`, correo, dirección postal (Cl Labradores, n.º 45, parcela 24B, 47400 Medina del Campo, Valladolid, ES), `areaServed` («Medina del Campo» y «Comarca de Medina del Campo, hasta unos 90 km a la redonda»), logotipo | Datos de contacto y reparto de `index.html` |
+| `BreadcrumbList` | Inicio → Menaje | Estructura del sitio |
+| `FAQPage` | Las 4 preguntas publicadas en `#preguntas`, con el mismo texto que la página | Sección 16 |
+
+No se incluyen datos sin confirmar: ni horario, ni coordenadas, ni precios, ni redes sociales, ni valoraciones. `areaServed` va como texto (no hay coordenadas confirmadas para una `GeoCircle`). Las preguntas de reposición, mínimo y plazos no están en el `FAQPage`.
+
+**`sitemap.xml` y `robots.txt` (nuevos en la raíz).** `sitemap.xml` lista las páginas públicas del menú: portada, Café Mocay, Pascual, Vinos, Aguas, Despensa, Refrigerados, Congelados y Menaje. `robots.txt` permite todo y apunta al sitemap. Ambos se publican con el sitio (el workflow solo excluye `*.md`, `_herramientas` y `.git*`).
+
+**Dominio pendiente.** Un sitemap, el `Sitemap:` de robots y las URL del JSON-LD deben ser absolutas y el dominio no consta [POR CONFIRMAR]. Hasta entonces llevan el marcador `https://DOMINIO.POR-CONFIRMAR.invalid`, un dominio reservado que nunca resuelve (no es una URL inventada que pueda apuntar a un tercero). Para fijarlo:
+
+```bash
+python3 -I _herramientas/dominio.py https://www.ejemplo.es
+python3 -I _herramientas/dominio.py --check
+```
+
+`_herramientas/dominio.py` (nuevo) sustituye el marcador en `menaje.html`, `sitemap.xml` y `robots.txt`, hace absolutas `canonical`, `og:image` y `twitter:image`, añade `og:url` y quita los comentarios del marcador. Es idempotente y se probó sobre una copia con un dominio de pruebas. **No quita el `noindex`.**
+
+**Comprobado:** el JSON-LD se lee como JSON, las 4 preguntas coinciden palabra por palabra con las de la página, teléfono, dirección y correo del JSON-LD aparecen en la página, `sitemap.xml` es XML válido, no hay errores de consola.
+
+**Atención antes de publicar:**
+1. **Contradicción a propósito, temporal:** `menaje.html` está en `sitemap.xml` pero lleva `noindex`. Al publicar hay que quitar el `noindex`; hasta entonces no hay que enviar el sitemap a Search Console.
+2. **Otras páginas en el sitemap:** se incluyeron las del menú porque un sitemap con una sola página no sirve; si alguna no debe indexarse todavía (por ejemplo por los derechos de imágenes pendientes de `RECURSOS-PENDIENTES.md`), hay que quitarla.
+3. **Carpetas de versiones antiguas** (`_version-3d`, `_version-anterior`, `_sin-usar`) también se publican con el sitio y `robots.txt` no las bloquea. `_sin-usar` contiene imágenes sin derechos confirmados. Decisión del responsable.
