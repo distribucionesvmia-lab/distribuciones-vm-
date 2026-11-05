@@ -118,3 +118,9 @@
 .menaje-world .mj-list li{break-inside:avoid;padding:9px 0;border-bottom:1px solid rgba(28,40,48,.16);font-size:1.02rem;line-height:1.3}
 .menaje-world .mj-empty{padding:40px 0;font-size:1.1rem}
 .menaje-world .mj-note{margin:clamp(36px,5vw,60px) 0 0;max-width:70ch;font-size:.92rem;color:#4a5961}
+
+/* Portada con fotografía de fondo: texto claro */
+.menaje-world .pw-photo{background:#16110d;color:#fff}
+.menaje-world .pw-photo .pw-opening-copy,.menaje-world .pw-photo h1,.menaje-world .pw-photo h1 em,.menaje-world .pw-photo .pw-kicker{color:#fff}
+.menaje-world .pw-photo .pw-kicker{color:#ffd9b5}
+.menaje-world .pw-photo .menaje-listlink{color:#fff;border-color:rgba(255,255,255,.7)}
