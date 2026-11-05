@@ -14,7 +14,7 @@ from html import unescape
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 BASE = 'https://distribucionesvmia-lab.github.io/distribuciones-vm-/'
 SITE = 'Distribuciones Valentín'
-DEFAULT_IMG = ('assets/portada.webp', 1360, 931, 'Furgoneta de reparto frente al Castillo de la Mota, en Medina del Campo')
+DEFAULT_IMG = ('assets/portada.webp', 1904, 1040, 'Nave de Distribuciones Valentín Martín en Medina del Campo')
 # página -> imagen para compartir (ruta, ancho, alto, texto alternativo); sin entrada usa DEFAULT_IMG
 IMAGES = {
     'cafe-mocay.html': ('assets/marcas/mocay-cafe-arabica.webp', 515, 515, 'Café Mocay Maestro Colombia'),

@@ -143,15 +143,6 @@
     var mm = gsap.matchMedia();
     mm.add({ desk: '(min-width: 1001px)', mob: '(max-width: 1000px)' }, function (ctx) {
       var mob = ctx.conditions.mob;
-
-      /* café: bloque informativo sin pin; la caída de granos vive en la página de Café Mocay */
-      gsap.fromTo('.cafe-bg', { scale: 1.18, filter: 'brightness(.4) saturate(1)' }, { scale: 1.02, filter: 'brightness(.55) saturate(1.1)', ease: 'none', scrollTrigger: { trigger: '.cafe', start: 'top bottom', end: 'bottom top', scrub: true } });
-      var ct = gsap.timeline({ scrollTrigger: { trigger: '.cafe', start: 'top 65%', toggleActions: 'play none none reverse' } });
-      ct.from('.cafe-copy .big', { y: 50, autoAlpha: 0, duration: 1, ease: 'power3.out' }, 0)
-        .from('.cafe-copy p', { y: 30, autoAlpha: 0, duration: 0.9, ease: 'power3.out' }, 0.2)
-        .from('.cafe-copy .actions', { y: 24, autoAlpha: 0, duration: 0.8, ease: 'power3.out' }, 0.4)
-        .from('.cafe-card', { x: mob ? 0 : 80, y: mob ? -30 : 0, autoAlpha: 0, rotation: mob ? 0 : 3, duration: 1.1, ease: 'power3.out' }, 0.5)
-        .from('.cafe-logo', { autoAlpha: 0, scale: 0.85, duration: 1, ease: 'power3.out' }, 0.7);
     });
 
     // aparición progresiva: cada bloque entra al ritmo del scroll (y se deshace al subir)
