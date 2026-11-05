@@ -226,3 +226,19 @@ button,a{-webkit-tap-highlight-color:transparent}
 .m-compl-fig img{width:100%;height:auto;max-width:640px}
 .m-compl-fig figcaption{font-size:.85rem;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
 @media(max-width:800px){.m-compl-in{grid-template-columns:minmax(0,1fr)}}
+
+/* Portada con fotografía de fondo y texto claro sobre velo oscuro */
+.m-photo{color:#fff;background:#14100d}
+.m-photo::before{background:linear-gradient(90deg,rgba(14,10,7,.88) 0%,rgba(14,10,7,.7) 40%,rgba(14,10,7,.15) 75%,rgba(14,10,7,.05) 100%),linear-gradient(0deg,rgba(14,10,7,.55) 0%,rgba(14,10,7,0) 30%)}
+.m-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%;z-index:-3}
+.m-photo .m-hero-grain,.m-photo .m-hero-stage,.m-photo .m-scroll{display:none}
+.m-photo .m-hero-copy{text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.m-photo .m-eyebrow,.m-photo .m-lead,.m-photo h1{color:#fff}
+.m-photo h1 em{color:#ff6b5e}
+.m-photo .m-wordmark{border-radius:18px}
+@media(max-width:760px){
+ .m-photo{justify-content:flex-start;padding-top:0}
+ .m-photo::before{display:none}
+ .m-photo .m-hero-photo{position:relative;inset:auto;z-index:0;order:-1;width:100vw;max-width:none;margin:0 0 0 calc(50% - 50vw);height:42svh;min-height:240px;object-position:78% 50%}
+ .m-photo .m-hero-copy{padding-top:22px}
+}
