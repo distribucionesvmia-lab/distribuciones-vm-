@@ -112,9 +112,9 @@
     ScrollTrigger.config({ ignoreMobileResize: true });
 
     // portada: entrada lenta de la fotografía y paralaje al salir
-    gsap.fromTo('.hero-bg', { scale: 1.16 }, { scale: 1.02, duration: 2.8, ease: 'power3.out' });
+    gsap.fromTo('.hero-bg', { scale: 1.05 }, { scale: 1, duration: 2.8, ease: 'power3.out' });
     gsap.from('.hero h1, .hero-sub, .hero .actions, .hero-cap', { y: 36, autoAlpha: 0, duration: 1.1, ease: 'power3.out', stagger: 0.12, delay: 0.25 });
-    gsap.to('.hero-bg', { yPercent: 9, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.to('.hero-bg', { yPercent: 4, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
     gsap.to('.hero-in', { yPercent: -10, autoAlpha: 0.2, ease: 'none', scrollTrigger: { trigger: '.hero', start: '40% top', end: 'bottom top', scrub: true } });
 
     // revelados con retardo escalonado

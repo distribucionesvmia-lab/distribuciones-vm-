@@ -41,9 +41,9 @@ section{position:relative}
 .top .btn{min-height:46px;padding:0 24px}
 
 /* portada */
-.hero{min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--ink)}
+.hero{min-height:calc(100svh - 76px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--ink)}
 .hero-media{position:absolute;inset:0;overflow:hidden}
-.hero-bg{position:absolute;inset:-6% 0 -6% 0;width:100%;height:112%;object-fit:cover;object-position:50% 62%;transform-origin:50% 60%}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;transform-origin:50% 50%}
 .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(14,10,7,.55) 0%,rgba(14,10,7,0) 62%),linear-gradient(to top,rgba(14,10,7,.78) 0%,rgba(14,10,7,.3) 45%,rgba(14,10,7,.3) 100%)} /* taste-skill-ignore: velo neutro sobre fotografía */ /* taste-skill-ignore: velo neutro o sombra física sobre fotografía */
 .hero-in{position:relative;z-index:2;width:min(1320px,100% - 2*var(--m));margin:0 auto;padding:130px 0 clamp(48px,9vh,96px)}
 .hero h1{font-size:clamp(3rem,1rem + 8.4vw,9.5rem);font-weight:500;letter-spacing:-.05em;line-height:.92;max-width:11ch}
@@ -236,6 +236,9 @@ form{margin-top:48px;display:grid;gap:10px;grid-template-columns:1fr 1fr 1fr}
   .top .btn{padding:0 18px;min-height:42px;font-size:1rem}
   .hero h1{max-width:none;font-size:clamp(2.6rem,12vw,3.4rem)}
   .hero-cap{display:none}
+  .hero-media{background:var(--ink)}
+  .hero-bg{inset:0 0 auto 0;height:auto;aspect-ratio:16/9;object-position:50% 50%}
+  .hero-media::after{background:linear-gradient(to bottom,rgba(14,10,7,0) 0%,rgba(14,10,7,0) 22%,rgba(14,10,7,.55) 38%,var(--ink) 52%)}
   .why-grid{grid-template-columns:1fr}
   .figs{grid-template-columns:1fr 1fr}
   .cards{grid-template-columns:1fr}
