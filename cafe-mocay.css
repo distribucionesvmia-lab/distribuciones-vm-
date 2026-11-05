@@ -100,7 +100,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 .m-service{min-height:100svh;background:var(--coffee);color:var(--paper);display:grid;grid-template-columns:1fr 1fr}
 .m-service-image{position:relative;min-height:700px;overflow:hidden}
-.m-service-image img{width:100%;height:100%;object-fit:cover;filter:saturate(.78) contrast(1.1)}
+.m-service-image img{width:100%;height:100%;object-fit:cover}
 .m-service-image::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 70%,rgba(52,33,22,.2))}
 .m-service-copy{padding:clamp(110px,12vw,190px) clamp(36px,7vw,130px);display:flex;flex-direction:column;justify-content:center}
 .m-service-copy .m-eyebrow{margin:0 0 25px;color:#e8c7b3}
