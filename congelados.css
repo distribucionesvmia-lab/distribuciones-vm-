@@ -8,3 +8,8 @@
 .cold-world .pw-end{background:#2b1c12}
 .cold-world .pw-end .pw-kicker{color:#f0cf9d}
 @media(max-width:760px){.cold-world .pw-opening-bottle{width:min(72vw,360px)}}
+
+/* Portada con fotografía de fondo: texto claro */
+.cold-world .pw-photo{background:#16110d;color:#fff}
+.cold-world .pw-photo h1,.cold-world .pw-photo h1 em,.cold-world .pw-photo .pw-opening-copy>p:not(.pw-kicker){color:#fff}
+.cold-world .pw-photo .pw-kicker{color:#ffd9b5}
