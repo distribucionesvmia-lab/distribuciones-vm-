@@ -119,7 +119,7 @@ window.ProductWorld.init({
         {name:'Garbanzos cocidos · frasco de 570 g', description:'Garbanzos cocidos en conserva, listos para añadir a guisos o ensaladas.', image:D+'luengo-garbanzo-cocido.webp', width:600, height:600, alt:'Frasco de garbanzos cocidos Luengo'},
         {name:'Garbanzos cocidos · lata de 3 kg', description:'Garbanzos cocidos en formato de hostelería.', image:'assets/despensa/extra/luengo_garbanzos-cocidos-lata-3kg.webp', width:719, height:719, alt:'Luengo Garbanzos cocidos lata 3 kg'},
         {name:'Lenteja castellana · 5 kg', description:'Lenteja castellana seca, de grano grande, en formato de 5 kg.', image:'assets/despensa/extra/luengo_lenteja-castellana-5kg.webp', width:720, height:720, alt:'Luengo Lenteja castellana 5 kg'},
-        {name:'Lenteja pardina · 5 kg', description:'Lenteja pardina seca, de grano pequeño y piel fina, en formato de 5 kg.', image:D+'luengo-lenteja-pardina.webp', width:600, height:600, alt:'Lentejas pardina Luengo'},
+        {name:'Lenteja pardina · 5 kg', description:'Lenteja pardina seca, de grano pequeño y piel fina, en formato de 5 kg.', image:D+'luengo-lenteja-pardina-1kg.webp', width:253, height:500, alt:'Lentejas pardina Luengo'},
         {name:'Lentejas cocidas · frasco de 570 g', description:'Lentejas cocidas en conserva, listas para consumir.', image:'assets/despensa/extra/luengo_lentejas-cocidas-frasco-570g.webp', width:636, height:636, alt:'Luengo Lentejas cocidas frasco 570 g'}
       ]
     },
