@@ -29,8 +29,8 @@ window.ProductWorld.init({
       variants:[
         {name:'Bornos Frizzante Verdejo · 5,5 º', description:'Frizzante Verdejo de Palacio de Bornos.', image:B+'bornos-frizzante-cutout.webp', width:430, height:1070, alt:'Botella Palacio de Bornos Frizzante Verdejo'},
         {name:'Bornos Rosado Frizzante · 5,5 º', description:'Frizzante rosado de Palacio de Bornos.', image:B+'bornos-rosado-frizzante.webp', width:206, height:746, alt:'Botella Bornos Frizzante Rosado 5,5 grados'},
-        {name:'Laué Frizzante Verdejo · lata de 250 ml', description:'Frizzante Verdejo de Palacio de Bornos en lata.', image:B+'laue-frizzante.webp', width:260, height:570, alt:'Lata Laué Frizzante Verdejo'},
-        {name:'Laué Frizzante Verdejo · pack de 4 latas de 250 ml', description:'Pack de cuatro latas de Laué Frizzante Verdejo. Imagen de una lata individual.', image:B+'laue-frizzante.webp', width:260, height:570, alt:'Lata Laué Frizzante Verdejo, imagen del formato individual'}
+        {name:'Laué Frizzante Verdejo · lata de 250 ml', description:'Frizzante Verdejo de Palacio de Bornos en lata.', image:B+'laue-lata.webp', width:167, height:486, alt:'Lata Laué Frizzante Verdejo'},
+        {name:'Laué Frizzante Verdejo · pack de 4 latas de 250 ml', description:'Pack de cuatro latas de Laué Frizzante Verdejo.', image:B+'laue-pack-4.webp', width:372, height:499, alt:'Pack de 4 latas Laué Frizzante Verdejo'}
       ]
     },
     {
