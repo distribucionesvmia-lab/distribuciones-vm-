@@ -198,3 +198,20 @@
 .pw-end>p.pw-more{margin:18px 0 0;max-width:none;font-size:.95rem;line-height:1.4}
 .pw-end .pw-more a{font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .pw-end .pw-more a:hover{opacity:.8}
+
+/* Portada con fotografía a toda pantalla y texto claro sobre velo oscuro */
+.pw-photo{background:#16110d!important;color:#fff;min-height:calc(100svh - 76px);isolation:isolate}
+.pw-photo .pw-opening-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%;z-index:-2}
+.pw-photo::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,9,6,.86) 0%,rgba(12,9,6,.62) 38%,rgba(12,9,6,.12) 70%,rgba(12,9,6,0) 100%),linear-gradient(0deg,rgba(12,9,6,.6) 0%,rgba(12,9,6,0) 28%)}
+.pw-photo .pw-opening-copy{text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.pw-photo .pw-kicker{color:#ffd9b5}
+.pw-photo h1,.pw-photo h1 em{color:#fff}
+.pw-photo .pw-opening-copy>p:not(.pw-kicker){color:#fff}
+.pw-photo .pw-opening-bottom{color:#fff}
+@media(max-width:760px){
+ .pw-photo{justify-content:flex-start;padding:0 var(--side) 70px}
+ .pw-photo::before{display:none}
+ .pw-photo .pw-opening-bg{position:relative;inset:auto;z-index:0;order:-1;width:100vw;max-width:none;margin:0 0 0 calc(50% - 50vw);height:44svh;min-height:260px;object-position:72% 60%}
+ .pw-photo .pw-opening-copy{padding-top:26px}
+ .pw-photo h1{margin-top:22px}
+}
