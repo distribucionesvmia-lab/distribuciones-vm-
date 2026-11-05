@@ -68,3 +68,8 @@
 .cold-price b{font-size:1.2rem}
 .cold-price small{font-size:.85rem;opacity:.8}
 .cold-price-note{margin:24px 0 0;font-size:.9rem;opacity:.8}
+
+/* Portada con fotografía de fondo: texto claro */
+.cold-world .pw-photo{background:#16110d;color:#fff}
+.cold-world .pw-photo h1,.cold-world .pw-photo h1 em,.cold-world .pw-photo .pw-opening-copy>p:not(.pw-kicker){color:#fff}
+.cold-world .pw-photo .pw-kicker{color:#ffd9b5}
