@@ -69,18 +69,9 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'lineup', family: 'Yogikids', color: '#d9ecf7', ink: '#17405e',
-      eyebrow: 'Para los más pequeños', title: 'Yogikids, en formato individual.',
-      note: 'Una imagen por variedad',
-      variants: [
-        {name:'Yogikids de fresa · 80 g', description:'Yogur Pascual en formato individual de 80 g y sabor fresa.', image:'assets/pascual/yogikids-fresa.webp', width:336, height:545, alt:'Envase individual Yogikids de Pascual, sabor fresa'},
-        {name:'Yogikids de fresa y plátano · 80 g', description:'Yogur Pascual en formato individual de 80 g, con sabor a fresa y plátano.', image:'assets/pascual/yogikids-pack-fresa-platano.webp', width:248, height:203, alt:'Pack de cuatro Yogikids de fresa y plátano de Pascual'}
-      ]
-    },
-    {
       template: 'lineup', family: 'Yogures Pascual', color: '#fbe8e6', ink: '#7a1218',
-      eyebrow: 'Pack de 4 × 120 g', title: 'Un yogur para cada sabor.',
-      note: 'Packs de 4 unidades · una imagen por variedad',
+      eyebrow: 'Packs de 4 × 120 g y Yogikids de 80 g', title: 'Un yogur para cada sabor.',
+      note: 'Una imagen por variedad',
       variants: [
         {name:'Yogur de fresa', description:'Yogur Pascual de fresa en pack de cuatro unidades.', image:'assets/pascual/yogur-pack-fresa.webp', width:248, height:202, alt:'Pack de cuatro yogur de fresa de Pascual'},
         {name:'Yogur de limón', description:'Yogur Pascual con sabor a limón en pack de cuatro unidades.', image:'assets/pascual/yogur-pack-limon.webp', width:249, height:204, alt:'Pack de cuatro yogur de limón de Pascual'},
@@ -94,7 +85,9 @@ window.ProductWorld.init({
         {name:'Yogur de vainilla', description:'Yogur Pascual con sabor a vainilla en pack de cuatro unidades.', image:'assets/pascual/yogur-pack-vainilla.webp', width:248, height:202, alt:'Pack de cuatro yogur de vainilla de Pascual'},
         {name:'Yogur desnatado con fresa', description:'Yogur Pascual desnatado con sabor a fresa en pack de cuatro unidades.', image:'assets/pascual/yogur-pack-desnatado-fresa.webp', width:295, height:241, alt:'Pack de cuatro yogur desnatado con fresa de Pascual'},
         {name:'Yogur desnatado con macedonia', description:'Yogur Pascual desnatado con sabor a macedonia en pack de cuatro unidades.', image:'assets/pascual/yogur-pack-desnatado-macedonia.webp', width:295, height:242, alt:'Pack de cuatro yogur desnatado con macedonia de Pascual'},
-        {name:'Yogur griego natural azucarado', description:'Yogur Pascual estilo griego, de sabor natural azucarado, en pack de cuatro unidades.', image:'assets/pascual/yogur-pack-griego-natural-azucarado.webp', width:248, height:202, alt:'Pack de cuatro yogur griego natural azucarado de Pascual'}
+        {name:'Yogur griego natural azucarado', description:'Yogur Pascual estilo griego, de sabor natural azucarado, en pack de cuatro unidades.', image:'assets/pascual/yogur-pack-griego-natural-azucarado.webp', width:248, height:202, alt:'Pack de cuatro yogur griego natural azucarado de Pascual'},
+        {name:'Yogikids de fresa · 80 g', description:'Yogur líquido Pascual en formato individual de 80 g y sabor fresa.', image:'assets/pascual/yogikids-fresa.webp', width:430, height:695, alt:'Envase individual Yogikids de Pascual, sabor fresa'},
+        {name:'Yogikids de fresa y plátano · 80 g', description:'Yogur líquido Pascual en formato individual de 80 g, con sabor a fresa y plátano.', image:'assets/pascual/yogikids-fresa-platano.webp', width:431, height:697, alt:'Envase individual Yogikids de Pascual, sabor fresa y plátano'}
       ]
     },
     {
