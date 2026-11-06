@@ -93,13 +93,11 @@ window.ProductWorld.init({
     {
       template: 'lineup', family: 'La Ballena', color: '#e2edf8', ink: '#12365e',
       eyebrow: 'Sal marina · 1 kg', title: 'La Ballena, sal para cada uso.',
-      note: 'Imagen de la gama · sal marina fina yodada',
-      product: {name:'Sal marina fina yodada La Ballena · 1 kg', image:D+'ballena-sal.webp', width:201, height:307, alt:'Caja de sal marina fina yodada La Ballena de 1 kg'},
+      note: 'Una imagen por variedad',
       variants: [
-        {name:'Sal marina gruesa · 1 kg', description:'Sal marina de grano grueso para cocinar y sazonar alimentos.'},
-        {name:'Sal marina fina · 1 kg', description:'Sal marina de grano fino para sazonar alimentos y utilizar en la cocina diaria.'},
-        {name:'Sal marina fina yodada · 1 kg', description:'Sal marina fina con yodo añadido, para sazonar alimentos.'},
-        {name:'Sal marina gruesa yodada · 1 kg', description:'Sal marina de grano grueso con yodo añadido, para cocinar y sazonar.'}
+        {name:'Sal marina gruesa · 1 kg', description:'Sal marina de grano grueso para cocinar y sazonar alimentos.', image:D+'ballena-sal-gruesa.webp', width:278, height:389, alt:'Caja de sal marina gruesa La Ballena de 1 kg'},
+        {name:'Sal marina fina · 1 kg', description:'Sal marina de grano fino para sazonar alimentos y utilizar en la cocina diaria.', image:D+'ballena-sal-fina.webp', width:296, height:409, alt:'Caja de sal marina fina La Ballena de 1 kg'},
+        {name:'Sal marina fina yodada · 1 kg', description:'Sal marina fina con yodo añadido, para sazonar alimentos.', image:D+'ballena-sal-fina-yodada.webp', width:365, height:403, alt:'Caja de sal marina fina yodada La Ballena de 1 kg'}
       ]
     },
     {
