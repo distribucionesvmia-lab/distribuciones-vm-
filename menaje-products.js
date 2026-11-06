@@ -19,7 +19,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', family: 'Vajilla', color: '#eceff0', ink: '#1c2830',
       eyebrow: 'Mesa de tu local', title: 'Vajilla para restaurantes.',
-      product: {name:'Pilas de platos y cuencos blancos apiladas en una tienda de vajilla', image:D+'vajilla-platos-apilados.webp', width:1100, height:733, lazy:true, alt:'Pilas de platos y cuencos blancos apiladas en una tienda de vajilla'},
+      product: {name:'Platos, cuenco y vasos sobre una mesa de madera con servilleta y cubiertos negros', image:D+'vajilla-mesa-servida.webp', width:940, height:1400, lazy:true, alt:'Platos, cuenco y vasos sobre una mesa de madera con servilleta y cubiertos negros'},
       variants: [
         {name:'Piensa en tu carta', description:'Un menú del día, unas tapas o una carta de platos piden piezas distintas. Dinos qué sirves y te asesoramos.'},
         {name:'Platos, bols y tazas', description:'Piezas para el servicio de cada día en bares, restaurantes y hoteles.'},
@@ -41,7 +41,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', family: 'Cristalería', color: '#f1ebe4', ink: '#1c2830',
       eyebrow: 'Barra y sala', title: 'Cristalería para hostelería.',
-      product: {name:'Copas de vino vacías sobre una mesa con mantel claro', image:D+'cristaleria-copas-mesa.webp', width:900, height:1125, lazy:true, alt:'Copas de vino vacías sobre una mesa con mantel claro'},
+      product: {name:'Dos copas de cristal tallado sobre una mesa con camino de mesa gris y platos', image:D+'cristaleria-copas-talladas.webp', width:1100, height:1101, lazy:true, alt:'Dos copas de cristal tallado sobre una mesa con camino de mesa gris y platos'},
       variants: [
         {name:'Vasos y copas', description:'Para cada bebida de tu carta, en la barra y en la sala.'},
         {name:'Según lo que sirves', description:'Agua, vino, cerveza o refrescos piden vasos y copas distintos. Cuéntanos tu carta.'},
@@ -63,7 +63,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', family: 'Menaje auxiliar de cocina y sala', color: '#e9e6e0', ink: '#1c2830',
       eyebrow: 'Lo que completa el servicio', title: 'Menaje auxiliar de cocina y sala.',
-      product: {name:'Utensilios de cocina colgados de una barra de madera sobre una pared de bloques', image:D+'auxiliar-utensilios-pared.webp', width:960, height:640, lazy:true, alt:'Utensilios de cocina colgados de una barra de madera sobre una pared de bloques'},
+      product: {name:'Sartenes de acero sobre una encimera en una cocina profesional con cocineros', image:D+'auxiliar-cocina-sartenes.webp', width:940, height:1400, lazy:true, alt:'Sartenes de acero sobre una encimera en una cocina profesional con cocineros'},
       variants: [
         {name:'Cocina y sala', description:'Lo que no es vajilla ni cristalería, pero tu servicio necesita cada día.'},
         {name:'Cuéntanos qué te falta', description:'Dinos qué echas en falta en la cocina o en la sala y lo consultamos.'},
