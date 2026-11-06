@@ -27,13 +27,14 @@ window.ProductWorld.init({
     {
       template: 'range', family: 'Calvo · Formatos', color: '#dce8f2', ink: '#143a5e',
       eyebrow: 'Del plato a la barra', title: 'Formatos para cocina profesional.',
-      description: 'Bolsas y lata de gran formato de la gama Calvo y de la marca Eureka.',
+      description: 'Bolsas y lata de gran formato de las marcas Calvo, Eureka e Isabel.',
       products: [
         {name:'Atún en aceite vegetal', description:'Calvo, atún en trozos en aceite vegetal.', image:D+'calvo-hosteleria-atun-vegetal.webp', width:170, height:240, alt:'Bolsa Calvo de atún en trozos en aceite vegetal'},
-        {name:'Atún Eureka', description:'Atún en trozos en aceite de girasol.', image:D+'calvo-hosteleria-eureka.webp', width:170, height:236, alt:'Bolsa Eureka de atún en trozos en aceite de girasol'},
-        {name:'Calamares en tinta', description:'Calvo, calamares en tinta en formato bolsa.', image:D+'calvo-hosteleria-calamares-tinta.webp', width:168, height:232, alt:'Bolsa Calvo de calamares en tinta'},
-        {name:'Calamares en salsa americana', description:'Calvo, calamares en salsa americana en formato bolsa.', image:D+'calvo-hosteleria-calamares-americana.webp', width:168, height:232, alt:'Bolsa Calvo de calamares en salsa americana'},
-        {name:'Lata de atún Calvo', description:'Lata de gran formato de atún Calvo.', image:D+'calvo-hosteleria-atun-lata-1kg.webp', width:186, height:122, alt:'Lata de gran formato de atún Calvo'}
+        {name:'Atún Eureka', description:'Atún en trozos en aceite de girasol.', image:D+'calvo-hosteleria-eureka.webp', width:332, height:477, alt:'Bolsa Eureka de atún en trozos en aceite de girasol'},
+        {name:'Atún Isabel · bolsa de 1 kg', description:'Atún en aceite de girasol en bolsa de 1 kg, para cocina profesional.', image:D+'isabel-atun-bolsa-1kg.webp', width:350, height:480, alt:'Bolsa Isabel de atún en aceite de girasol de 1 kg'},
+        {name:'Calamares en tinta', description:'Calvo, calamares en tinta en formato bolsa.', image:D+'calvo-hosteleria-calamares-tinta.webp', width:334, height:478, alt:'Bolsa Calvo de calamares en tinta'},
+        {name:'Calamares en salsa americana', description:'Calvo, calamares en salsa americana en formato bolsa.', image:D+'calvo-hosteleria-calamares-americana.webp', width:334, height:478, alt:'Bolsa Calvo de calamares en salsa americana'},
+        {name:'Atún en aceite de oliva · lata de 750 g', description:'Atún Calvo en aceite de oliva, en lata de gran formato de 750 g.', image:D+'calvo-hosteleria-atun-lata-750g.webp', width:364, height:271, alt:'Lata de gran formato de atún Calvo'}
       ]
     },
     {
@@ -106,17 +107,17 @@ window.ProductWorld.init({
       note: 'Imagen de la ficha del producto · puede diferir del formato',
       variants: [
         {name:'Alubia blanca · 5 kg', description:'Alubia blanca seca, de grano alargado, en formato de 5 kg.', image:D+'luengo-alubia-blanca-5kg.webp', width:458, height:458, alt:'Alubia blanca larga Luengo de 5 kg'},
-        {name:'Alubia blanca cocida · frasco de 570 g', description:'Alubias blancas cocidas en conserva, listas para consumir.', image:D+'luengo-alubia-blanca-cocida.webp', width:600, height:600, alt:'Frasco de alubia blanca cocida Luengo'},
+        {name:'Alubia blanca cocida · frasco de 570 g', description:'Alubias blancas cocidas en conserva, listas para consumir.', image:D+'luengo-alubia-blanca-cocida.webp', width:473, height:900, alt:'Frasco de alubia blanca cocida Luengo'},
         {name:'Alubia de granja cocida · frasco de 570 g', description:'Alubias de granja cocidas en conserva.', image:'assets/despensa/extra/luengo_alubia-de-granja-cocida-frasco-570g.webp', width:720, height:720, alt:'Luengo Alubia de granja cocida frasco 570 g'},
         {name:'Alubia roja cocida · frasco de 570 g', description:'Alubias rojas cocidas en conserva.', image:'assets/despensa/extra/luengo_alubia-roja-cocida-frasco-570g.webp', width:720, height:720, alt:'Luengo Alubia roja cocida frasco 570 g'},
         {name:'Alubia blanca cocida · lata de 3 kg', description:'Alubias blancas cocidas en formato de hostelería.', image:'assets/despensa/extra/luengo_alubia-blanca-cocida-lata-3kg.webp', width:720, height:720, alt:'Luengo Alubia blanca cocida lata 3 kg'},
         {name:'Garbanzo castellano · 5 kg', description:'Garbanzo seco en formato de 5 kg.', image:'assets/despensa/extra/luengo_garbanzo-castellano-5kg.webp', width:720, height:720, alt:'Luengo Garbanzo castellano 5 kg'},
         {name:'Garbanzo pedrosillano · 5 kg', description:'Garbanzo pedrosillano seco en formato de 5 kg.', image:'assets/despensa/extra/luengo_garbanzo-pedrosillano-5kg.webp', width:720, height:720, alt:'Luengo Garbanzo pedrosillano 5 kg'},
-        {name:'Garbanzos cocidos · frasco de 570 g', description:'Garbanzos cocidos en conserva, listos para añadir a guisos o ensaladas.', image:D+'luengo-garbanzo-cocido.webp', width:600, height:600, alt:'Frasco de garbanzos cocidos Luengo'},
+        {name:'Garbanzos cocidos · frasco de 570 g', description:'Garbanzos cocidos en conserva, listos para añadir a guisos o ensaladas.', image:D+'luengo-garbanzo-cocido.webp', width:473, height:900, alt:'Frasco de garbanzos cocidos Luengo'},
         {name:'Garbanzos cocidos · lata de 3 kg', description:'Garbanzos cocidos en formato de hostelería.', image:'assets/despensa/extra/luengo_garbanzos-cocidos-lata-3kg.webp', width:719, height:719, alt:'Luengo Garbanzos cocidos lata 3 kg'},
         {name:'Lenteja castellana · 5 kg', description:'Lenteja castellana seca, de grano grande, en formato de 5 kg.', image:'assets/despensa/extra/luengo_lenteja-castellana-5kg.webp', width:720, height:720, alt:'Luengo Lenteja castellana 5 kg'},
-        {name:'Lenteja pardina · 5 kg', description:'Lenteja pardina seca, de grano pequeño y piel fina, en formato de 5 kg.', image:D+'luengo-lenteja-pardina-1kg.webp', width:253, height:500, alt:'Lentejas pardina Luengo'},
-        {name:'Lentejas cocidas · frasco de 570 g', description:'Lentejas cocidas en conserva, listas para consumir.', image:'assets/despensa/extra/luengo_lentejas-cocidas-frasco-570g.webp', width:636, height:636, alt:'Luengo Lentejas cocidas frasco 570 g'}
+        {name:'Lenteja pardina · 5 kg', description:'Lenteja pardina seca, de grano pequeño y piel fina, en formato de 5 kg.', image:D+'luengo-lenteja-pardina-5kg.webp', width:264, height:510, alt:'Lentejas pardina Luengo'},
+        {name:'Lentejas cocidas · frasco de 570 g', description:'Lentejas cocidas en conserva, listas para consumir.', image:D+'luengo-lentejas-cocidas-570g.webp', width:473, height:900, alt:'Luengo Lentejas cocidas frasco 570 g'}
       ]
     },
     {
@@ -126,8 +127,8 @@ window.ProductWorld.init({
       variants: [
         {name:'Cóctel barbacoa · 1 kg', description:'Mezcla de frutos secos con sabor barbacoa, en formato de 1 kg.', image:'assets/despensa/extra/borges_coctel-barbacoa-1kg.webp', width:540, height:540, alt:'Borges Cóctel barbacoa 1 kg'},
         {name:'Mix frito · cubo de 2 kg', description:'Mezcla de frutos secos fritos para servir como aperitivo, en cubo de 2 kg.', image:D+'borges-mix-frito-cubo-2kg.webp', width:375, height:434, alt:'Mix frito cubo de 2 kg'},
-        {name:'Cacahuetes · cubo de 2,5 kg', description:'Cacahuetes en formato grande para hostelería y servicio de aperitivos.', image:D+'borges-cacahuetes-cubo-2-5kg.webp', width:374, height:434, alt:'Cacahuetes cubo de 2,5 kg'},
-        {name:'Mix barbacoa · cubo de 1,75 kg', description:'Mezcla de aperitivo con sabor barbacoa, en cubo de 1,75 kg.', image:D+'borges-mix-barbacoa-cubo-1-75kg.webp', width:363, height:424, alt:'Mix barbacoa cubo de 1,75 kg'},
+        {name:'Cacahuetes · cubo de 2,5 kg', description:'Cacahuetes en formato grande para hostelería y servicio de aperitivos.', image:D+'borges-cacahuetes-cubo-2-5kg.webp', width:375, height:434, alt:'Cacahuetes cubo de 2,5 kg'},
+        {name:'Mix barbacoa · cubo de 1,75 kg', description:'Mezcla de aperitivo con sabor barbacoa, en cubo de 1,75 kg.', image:D+'borges-mix-barbacoa-cubo-1-75kg.webp', width:375, height:434, alt:'Mix barbacoa cubo de 1,75 kg'},
         {name:'Almendra tostada · 1 kg', description:'Almendras tostadas en formato de 1 kg para cocina y hostelería.', image:'assets/despensa/extra/borges_almendra-tostada-1kg.webp', width:540, height:540, alt:'Borges Almendra tostada 1 kg'},
         {name:'Cacahuete frito · 1 kg', description:'Cacahuetes fritos en formato de 1 kg para aperitivos y hostelería.', image:D+'borges-cacahuetes.webp', width:319, height:400, alt:'Bolsa Borges Selección de cacahuetes fritos y salados, imagen de la gama'},
         {name:'Nuez en grano · 1 kg', description:'Nueces sin cáscara en formato de 1 kg, listas para utilizar en cocina y repostería.', image:D+'borges-nueces.webp', width:309, height:395, alt:'Bolsa Borges Selección de nueces de California en grano, imagen de la gama'},
