@@ -27,12 +27,10 @@ window.ProductWorld.init({
     {
       template: 'range', family: 'Calvo · Formatos', color: '#dce8f2', ink: '#143a5e',
       eyebrow: 'Del plato a la barra', title: 'Formatos para cocina profesional.',
-      description: 'Bolsas y lata de gran formato de la gama Calvo y de las marcas Razo y Eureka.',
+      description: 'Bolsas y lata de gran formato de la gama Calvo y de la marca Eureka.',
       products: [
         {name:'Atún en aceite vegetal', description:'Calvo, atún en trozos en aceite vegetal.', image:D+'calvo-hosteleria-atun-vegetal.webp', width:170, height:240, alt:'Bolsa Calvo de atún en trozos en aceite vegetal'},
-        {name:'Atún Razo', description:'Atún en trozos en aceite de girasol.', image:D+'calvo-hosteleria-razo.webp', width:168, height:240, alt:'Bolsa Razo de atún en trozos en aceite de girasol'},
         {name:'Atún Eureka', description:'Atún en trozos en aceite de girasol.', image:D+'calvo-hosteleria-eureka.webp', width:170, height:236, alt:'Bolsa Eureka de atún en trozos en aceite de girasol'},
-        {name:'Chipirones en tinta', description:'Calvo, chipirones en tinta en formato bolsa.', image:D+'calvo-hosteleria-chipirones.webp', width:169, height:237, alt:'Bolsa Calvo de chipirones en tinta'},
         {name:'Calamares en tinta', description:'Calvo, calamares en tinta en formato bolsa.', image:D+'calvo-hosteleria-calamares-tinta.webp', width:168, height:232, alt:'Bolsa Calvo de calamares en tinta'},
         {name:'Calamares en salsa americana', description:'Calvo, calamares en salsa americana en formato bolsa.', image:D+'calvo-hosteleria-calamares-americana.webp', width:168, height:232, alt:'Bolsa Calvo de calamares en salsa americana'},
         {name:'Lata de atún Calvo', description:'Lata de gran formato de atún Calvo.', image:D+'calvo-hosteleria-atun-lata-1kg.webp', width:186, height:122, alt:'Lata de gran formato de atún Calvo'}
