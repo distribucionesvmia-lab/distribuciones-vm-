@@ -1,16 +1,9 @@
 /* Bifrutas: envases a todo color, sin mezcla multiply para que no se apaguen sobre el fondo */
 .pw-e[style*="--scene:#ffd9b0"] .pw-e-multi{mix-blend-mode:normal;filter:drop-shadow(14px 20px 14px rgba(70,30,10,.18))}
 
-/* Portada de marca: rojo Pascual y texto blanco, sin fotografía */
-.pw-brand-red{background:#c8102e!important;color:#fff}
-.pw-brand-red .pw-kicker{color:#ffd9d9}
-.pw-brand-red h1,.pw-brand-red h1 em,.pw-brand-red .pw-opening-copy>p:not(.pw-kicker),.pw-brand-red .pw-opening-bottom{color:#fff}
-.pw-brand-red .pw-opening-circle{background:#b00d28}
-.pw-brand-red .pw-opening-word{color:rgba(255,255,255,.2);position:static;font-size:clamp(4.5rem,11vw,12rem);line-height:.82;letter-spacing:-.07em;text-align:center;z-index:1}
-.pw-brand-red .pw-action{background:#fff;color:#c8102e}
-.pw-brand-red .pw-action:hover{background:#ffe9ea}
-.pw-brand-red .pw-opening-art{display:grid;place-items:center}
-.pw-brand-red .pw-opening-circle{z-index:0}
+/* Portada de Pascual: la fotografía queda a la derecha y el texto a la izquierda */
+.pw-photo .pw-opening-bg[src*="portada-pascual"]{object-position:0% 50%}
+@media(max-width:760px){.pw-photo .pw-opening-bg[src*="portada-pascual"]{object-position:62% 50%}}
 
 /* Barista sin lactosa: foto pequeña, se muestra sin ampliarla en exceso */
 .pw-a[style*="--scene:#efe5d8"] .pw-a-product{height:min(46vh,430px)}
