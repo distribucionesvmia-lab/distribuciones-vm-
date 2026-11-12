@@ -5,13 +5,13 @@
 .sh-brand{display:flex;align-items:center;gap:10px;min-width:0;color:inherit;text-decoration:none;font-size:.86rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
 .sh-brand img{width:42px;height:42px;flex:none;border-radius:8px;object-fit:contain}
 .sh-brand span{white-space:nowrap}
-.site-header nav{display:flex;align-items:center;gap:clamp(12px,2vw,34px);white-space:nowrap}
+.site-header nav{display:flex;align-items:center;gap:clamp(10px,1.1vw,22px);white-space:nowrap}
 .site-header nav a,.sh-contact{color:inherit;text-decoration:none;font-size:.9rem;font-weight:600}
 .site-header nav a[aria-current]{color:#c61819}
 .sh-contact{flex:none;border:1px solid currentColor;border-radius:100px;padding:10px 17px;background:transparent;white-space:nowrap}
 @media(hover:hover) and (pointer:fine){.site-header nav a:hover{color:#c61819}.sh-contact:hover{background:#251d1a;color:#fff;border-color:#251d1a}}
 .site-header a:focus-visible{outline:2px solid #c61819;outline-offset:3px;border-radius:4px}
-@media(max-width:1350px){
+@media(max-width:1560px){
   .site-header{flex-wrap:wrap;gap:4px 15px}
   .site-header nav{order:3;width:100%;justify-content:center;overflow-x:auto;padding:8px 0;scrollbar-width:none}
   .site-header nav::-webkit-scrollbar{display:none}
@@ -29,7 +29,7 @@
   .sh-brand span{max-width:115px;white-space:normal;line-height:1.1}
 }
 /* las secciones fijadas con scroll cuelgan de la cabecera cuando es de dos filas */
-@media(max-width:1350px){.pw-sticky{top:111px;height:calc(100svh - 111px)}}
+@media(max-width:1560px){.pw-sticky{top:111px;height:calc(100svh - 111px)}}
 /* Botón fijo «Llamar»: solo en móvil (se genera con _herramientas/cabecera.py) */
 .call-float{display:none}
 @media(max-width:760px){
