@@ -51,8 +51,8 @@ window.ProductWorld.init({
     },
     {
       template: 'range', family: 'Carbonell · Koipe', color: '#fff8e6', ink: '#1f6b43',
-      eyebrow: 'Aceites', title: 'Carbonell, el sabor del hogar.',
-      description: 'Considerado un tesoro nacional, Carbonell ha sido un elemento básico en las cocinas españolas durante un siglo y medio. Creado en Andalucía en 1866, es considerado un embajador mundial de la dieta mediterránea.',
+      eyebrow: 'Aceites', title: 'Carbonell. «Somos lo que cocinamos.»',
+      description: 'Como dice Carbonell: «160 años en tu cocina de toda la vida», ahora en el formato que pide tu negocio — Virgen Extra 5 L y gama profesional. Koipe, al lado, para cuando la cocina pide aceite de semillas (Koipe Profesional y Koipe Sol).',
       products: [
         {name:'Virgen Extra · 5 L', description:'Carbonell, aceite de oliva virgen extra en formato ahorro.', image:D+'carbonell-virgen-extra-5l.webp', width:233, height:613, alt:'Garrafa Carbonell Virgen Extra de 5 litros'},
         {name:'Carbonell Profesional', description:'Aceite de la gama profesional Carbonell.', image:D+'carbonell-carbonell-profesional.webp', width:110, height:286, alt:'Garrafa Carbonell Profesional'},
@@ -62,8 +62,8 @@ window.ProductWorld.init({
     },
     {
       template: 'lineup', family: 'Carmencita', color: '#f7e7d2', ink: '#5a2410',
-      eyebrow: 'Especias y hierbas', title: 'Carmencita, para sazonar cada plato.',
-      note: 'Imagen ilustrativa de la especia · no es el envase',
+      eyebrow: 'Especias y hierbas', title: 'Carmencita. «Cultura del sabor.»',
+      note: 'Como dice Carmencita: «100 años dando sabor y color a tu vida», en los formatos PET y gramajes que usa una cocina profesional, servicio tras servicio. Imagen ilustrativa de la especia · no es el envase',
       variants: [
         {name:'Orégano · 95 g', description:'Orégano seco para dar aroma y sabor a pizzas, pastas, ensaladas y otros platos.', image:D+'carmencita-oregano.webp', width:640, height:640, alt:'Orégano, imagen ilustrativa de Carmencita'},
         {name:'Ajo en polvo · 625 g', description:'Ajo deshidratado y molido, práctico para sazonar carnes, verduras, salsas y guisos.', image:D+'carmencita-ajo.webp', width:640, height:640, alt:'Ajo, imagen ilustrativa de Carmencita'},
@@ -95,8 +95,8 @@ window.ProductWorld.init({
     },
     {
       template: 'lineup', family: 'Luengo', color: '#f3ead7', ink: '#4a3416',
-      eyebrow: 'Legumbres secas y cocidas', title: 'Luengo, legumbres de cuchara.',
-      note: 'Imagen de la ficha del producto · puede diferir del formato',
+      eyebrow: 'Legumbres secas y cocidas', title: 'Luengo. «Cuando son Luengo, tú lo sabes.»',
+      note: 'Más de cien años de legumbres, en saco, frasco y lata de hostelería. Sabor, calidad y textura que se reconocen en el plato. Imagen de la ficha del producto · puede diferir del formato',
       variants: [
         {name:'Alubia blanca · 5 kg', description:'Alubia blanca seca, de grano alargado, en formato de 5 kg.', image:D+'luengo-alubia-blanca-5kg.webp', width:458, height:458, alt:'Alubia blanca larga Luengo de 5 kg'},
         {name:'Alubia blanca cocida · frasco de 570 g', description:'Alubias blancas cocidas en conserva, listas para consumir.', image:D+'luengo-alubia-blanca-cocida.webp', width:473, height:900, alt:'Frasco de alubia blanca cocida Luengo'},
