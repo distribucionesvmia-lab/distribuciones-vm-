@@ -481,6 +481,100 @@
   var NEGOCIO = /\b(?:tengo|tenemos|soy|somos|llevo|llevamos|trabajo|trabajamos|regento|regentamos|mi|nuestro|nuestra)\b[^.?!]{0,22}?\b(bar|restaurante|cafeteria|hotel|hostal|catering|panaderia|pasteleria|colegio|residencia|taberna|asador|cerveceria|pub|comedor)\b/;
 
   /* devuelve el HTML de la respuesta, o una promesa con él. state.cur indica de qué trata (para los botones de seguimiento) */
+
+  /* ---------- consultas específicas: tipos de azúcar, cafés (arábica, descafeinado, cápsulas) y copas según la bebida ---------- */
+  var DATOS = null, datosPromise = null;
+  function cargarDatos() {
+    if (datosPromise) return datosPromise;
+    datosPromise = fetch('asistente-datos.js').then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) { if (t) (new Function(t))(); DATOS = window.ASISTENTE_DATOS || { azucar: [], cafe: [] }; }).catch(function () { DATOS = { azucar: [], cafe: [] }; });
+    return datosPromise;
+  }
+  var COPAS = [
+    { k: /\b(vino|vinos|tinto|blanco|rosado|copa de vino)\b/, nombre: 'vino', f: /^Copa Vino/i, nota: '' },
+    { k: /\b(gin|ginebra|gintonic|gin tonic|combinado|combinados|cubata|cubatas|cocktail|coctel|cocteles|mojito|ron|vodka|calimocho)\b/, nombre: 'combinados y gin-tonic', f: /^Copa (Gin|Combinado)/i, nota: 'Son copas de gran capacidad, de la familia de los combinados' },
+    { k: /\b(cava|champan|champagne|espumoso|espumosos|flauta)\b/, nombre: 'cava y espumosos', f: /Champan|Flauta/i, nota: 'La flauta es la copa pensada para los espumosos' },
+    { k: /\b(cerveza|cervezas|cana|canas|pinta|jarra|jarras)\b/, nombre: 'cerveza', f: /cerveza|\bca[nñ]a\b/i, nota: 'Hay copas, vasos y jarras de cerveza' },
+    { k: /\b(agua)\b/, nombre: 'agua', f: /\bagua\b/i, nota: '' },
+    { k: /\b(zumo|zumos)\b/, nombre: 'zumo', f: /zumo/i, nota: '' },
+    { k: /\b(helado|helados|postre|postres)\b/, nombre: 'helado y postres', f: /helado/i, nota: '' },
+    { k: /\b(sidra)\b/, nombre: 'sidra', f: /sidra/i, nota: '' },
+    { k: /\b(licor|licores|chupito|chupitos|orujo|pacharan)\b/, nombre: 'licores y chupitos', f: /licor|chupito/i, nota: '' },
+    { k: /\b(whisky|whiskey|brandy|coñac|conac)\b/, nombre: 'whisky', f: /whisky/i, nota: '' }
+  ];
+  function capacidades(items) {
+    var cl = [];
+    items.forEach(function (it) { var m = it.n.match(/(\d+(?:[.,]\d+)?)\s*cl/i); if (m) cl.push(parseFloat(m[1].replace(',', '.'))); });
+    if (!cl.length) return '';
+    var mn = Math.min.apply(null, cl), mx = Math.max.apply(null, cl);
+    var f = function (x) { return String(x).replace('.', ','); };
+    return mn === mx ? ' (' + f(mn) + ' cl)' : ' (de ' + f(mn) + ' a ' + f(mx) + ' cl)';
+  }
+  function listaLinks(items, pg, max) {
+    return '<ul>' + items.slice(0, max).map(function (it) { return '<li><a href="' + pg + '">' + esc(it.n) + '</a></li>'; }).join('') + '</ul>';
+  }
+  function especificas(a) {
+    var t = a.t;
+    /* tipos de azúcar y edulcorantes */
+    if (/\b(azucar|azucares|azucarillo|azucarillos|azucarito|azucaritos|edulcorante|edulcorantes|sacarina)\b/.test(t) && !/sin azucar|yogur|zumo|essential|vivesoy|bebida|galleta|bolleria|pepito|nata|caña/.test(t)) {
+      return cargarDatos().then(function () {
+        if (!DATOS.azucar.length) return null;
+        var fa = /moreno/.test(t) ? /moreno/i : /azucarillo|azucarito/.test(t) ? /Azucarillos/i : /edulcorante|sacarina/.test(t) ? /edulcorante/i : /blanco/.test(t) ? /blanco|Azucarillos blancos|Azucarera|Anagrama/i : null;
+        var sel = fa ? DATOS.azucar.filter(function (x) { return fa.test(x.n) || (fa.test(x.t) && /edulcorante/.test(t)); }) : DATOS.azucar;
+        if (!sel.length) sel = DATOS.azucar;
+        var grupos = {}, orden = [];
+        sel.forEach(function (x) { if (!grupos[x.t]) { grupos[x.t] = []; orden.push(x.t); } grupos[x.t].push(x.n); });
+        var h = 'De <b>azúcar y edulcorantes</b> tenemos, para hostelería:' + orden.map(function (g) { return '<br><b>' + esc(g) + '</b><ul>' + grupos[g].map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>'; }).join('');
+        state.cur = 'azucar';
+        return h + 'Más detalle y tarifa: ' + TEL + ' o ' + MAIL + '. También los ves entre los <a href="cafe-mocay.html#complementos">complementos de Mocay</a>.';
+      });
+    }
+    /* cafés: arábica, descafeinado, cápsulas y referencias */
+    var hayCafe = /\b(cafe|cafes|mocay|capsula|capsulas|descafeinado|descafeinados|arabica|arabicas)\b/.test(t);
+    if (hayCafe && /(arabic|robusta|mezcla|variedad)/.test(t)) {
+      return cargarDatos().then(function () {
+        var ar = DATOS.cafe.filter(function (x) { return x.a && /Grano/.test(x.g); }).map(function (x) { return '<li>' + esc(x.n) + '</li>'; }).join('');
+        var cap = DATOS.cafe.filter(function (x) { return x.a && /Cápsulas/.test(x.g); })[0];
+        state.cur = 'arabica';
+        return 'Según <b>Mocay</b>, la gama <b>Maestro</b> es «100 % arábica, de los orígenes más exóticos»:<ul>' + ar + '</ul>' + (cap ? 'Y en cápsulas: <b>' + esc(cap.n) + '</b>. ' : '') + 'De la gama Barista y de los descafeinados no tengo la composición de la mezcla; pregúntanos en el ' + TEL + '. <a href="cafe-mocay.html#gamas">Ver las gamas de Café Mocay</a>.';
+      });
+    }
+    if (hayCafe && /(descafeinad|decaf)/.test(t)) {
+      return cargarDatos().then(function () { return cafeGrupo(/Descafeinado|descafeinada/, 'los descafeinados'); });
+    }
+    if (hayCafe && /capsula/.test(t) && !/cafetera|maquina/.test(t)) {
+      return cargarDatos().then(function () { return cafeGrupo(/Cápsulas/, 'cápsulas'); });
+    }
+    if (hayCafe && /(grano|molido|referencia|tipos|que cafes|cuales)/.test(t) && !/leche/.test(t)) {
+      return cargarDatos().then(function () { return cafeGrupo(/./, 'grano, descafeinados, cápsulas y soluble'); });
+    }
+    /* qué copa o vaso va con cada bebida */
+    var preguntaCopa = /\b(copa|copas|vaso|vasos)\b/.test(t) && /(que|cual|cuales|adecuad|mejor|recomend|ideal|sirve|usar|para)/.test(t) && !/(tenei|vendei|hay|busco)/.test(t.replace(/que copa|que vaso/, ''));
+    if (preguntaCopa || (state.copa && a.tokens.length <= 4)) {
+      var d = COPAS.filter(function (x) { return x.k.test(t); })[0];
+      if (!d) {
+        if (!preguntaCopa) { state.copa = false; return null; }
+        state.copa = true; state.cur = 'copa';
+        return Promise.resolve('Depende de la bebida. Tenemos copas y vasos para <b>vino</b>, <b>cerveza</b>, <b>combinados y gin-tonic</b>, <b>cava</b>, <b>agua</b>, <b>zumo</b>, <b>sidra</b>, <b>licores</b> y <b>helados</b>. ¿Qué vas a servir? Dímelo y te enseño las referencias.');
+      }
+      state.copa = false;
+      return cargarCatalogo().then(function () {
+        var items = (window.MENAJE || []).filter(function (m) { return m.g === 'Cristalería' && d.f.test(m.n); });
+        if (!items.length) return null;
+        state.cur = 'copa';
+        return 'Para <b>' + d.nombre + '</b> tenemos ' + items.length + ' referencia' + (items.length === 1 ? '' : 's') + ' de cristalería' + capacidades(items) + (d.nota ? '. ' + d.nota : '') + ':' + listaLinks(items, 'menaje.html#referencias', 6) + (items.length > 6 ? 'Y alguna más en el <a href="menaje.html#referencias">listado de menaje</a>. ' : '') + 'Cuál te conviene depende de tu carta y de cómo sirvas; cuéntanos tu local en el ' + TEL + ' o ' + MAIL + ' y te asesoramos.';
+      });
+    }
+    return null;
+  }
+  function cafeGrupo(re, titulo) {
+    var it = DATOS.cafe.filter(function (x) { return re.test(x.g); });
+    if (!it.length) return null;
+    var grupos = {}, orden = [];
+    it.forEach(function (x) { if (!grupos[x.g]) { grupos[x.g] = []; orden.push(x.g); } grupos[x.g].push(x.n); });
+    state.cur = 'cafe';
+    return 'Esto tenemos de <b>Café Mocay</b>:' + orden.map(function (g) { return '<br><b>' + esc(g) + '</b><ul>' + grupos[g].map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>'; }).join('') + 'Más en <a href="cafe-mocay.html#gamas">Café Mocay</a>. Pedidos y tarifa: ' + TEL + '.';
+  }
+
   function responder(raw) {
     var a = analizar(raw);
     state.cur = null;
@@ -491,6 +585,10 @@
     var top = a.scored[0];
     var lista = comandoLista(a);
     if (lista) return lista;
+    var esp = especificas(a);
+    if (esp) return typeof esp === 'string' ? esp : esp.then(function (r) { return r || seguir(); });
+    return seguir();
+    function seguir() {
     var neg = a.t.match(NEGOCIO);
     if (neg) {
       state.negocio = neg[1];
@@ -553,6 +651,7 @@
       }
     }
     return fallback(a, c);
+    }
   }
 
   function fallback(a, c) {
