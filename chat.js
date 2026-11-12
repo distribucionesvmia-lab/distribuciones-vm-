@@ -556,7 +556,7 @@
         state.copa = true; state.cur = 'copa';
         return Promise.resolve('Depende de la bebida. Tenemos copas y vasos para <b>vino</b>, <b>cerveza</b>, <b>combinados y gin-tonic</b>, <b>cava</b>, <b>agua</b>, <b>zumo</b>, <b>sidra</b>, <b>licores</b> y <b>helados</b>. ¿Qué vas a servir? Dímelo y te enseño las referencias.');
       }
-      state.copa = false;
+      state.copa = true;   /* sigue la conversación de copas: «¿y para el cava?» */
       return cargarCatalogo().then(function () {
         var items = (window.MENAJE || []).filter(function (m) { return m.g === 'Cristalería' && d.f.test(m.n); });
         if (!items.length) return null;
@@ -571,6 +571,7 @@
         if (recomendadas && recomendadas.length) {
           return (d.guia ? d.guia + '<br><br>' : '') + 'Entre las nuestras, ' + tipo + ' (' + recomendadas.length + ')' + capacidades(recomendadas) + ':' + listaLinks(recomendadas, 'menaje.html#referencias', 6) + (recomendadas.length > 6 ? 'Hay alguna más en el <a href="menaje.html#referencias">listado de menaje</a>. ' : '') + 'Dime si es para tinto, blanco o espumoso, o llámanos al ' + TEL + ' y te asesoramos según tu carta.';
         }
+        if (d.vino) state.copa = true;   /* espera «tinto» o «blanco» para afinar */
         if (d.guia) return d.guia + '<br><br>Entre las nuestras tienes ' + items.length + ' referencia' + (items.length === 1 ? '' : 's') + capacidades(items) + ':' + listaLinks(items, 'menaje.html#referencias', 6) + (items.length > 6 ? 'Y alguna más en el <a href="menaje.html#referencias">listado de menaje</a>. ' : '') + (d.vino ? 'Si me dices si es para tinto o para blanco, te enseño las más adecuadas. ' : '') + 'Para afinar según tu carta: ' + TEL + ' o ' + MAIL + '.';
         return 'Para <b>' + d.nombre + '</b> tenemos ' + items.length + ' referencia' + (items.length === 1 ? '' : 's') + ' de cristalería' + capacidades(items) + (d.nota ? '. ' + d.nota : '') + ':' + listaLinks(items, 'menaje.html#referencias', 6) + (items.length > 6 ? 'Y alguna más en el <a href="menaje.html#referencias">listado de menaje</a>. ' : '') + 'Cuál te conviene depende de tu carta y de cómo sirvas; cuéntanos tu local en el ' + TEL + ' o ' + MAIL + ' y te asesoramos.';
       });

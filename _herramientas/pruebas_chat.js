@@ -177,6 +177,9 @@ const CONTENIDO = [
 ];
 for (const [m, rx, h] of CONTENIDO) CASOS.push([[m], h ? { texto: rx, html: h } : { texto: rx }]);
 CASOS.push([['que copa es la mejor para mi bar', 'cerveza'], { texto: /cerveza/i }]);
+CASOS.push([['que copa es mejor para el vino', 'para tinto'], { texto: /45 cl/i, no: /Calamares/i }]);
+CASOS.push([['que copa es mejor para el vino', 'blanco'], { texto: /25 a 35 cl/i }]);
+CASOS.push([['que copa es mejor para el vino', 'para tinto', 'y para cava'], { texto: /flauta/i }]);
 
 (async () => {
   await new Promise(r => servidor.listen(0, r));
