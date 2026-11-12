@@ -7,7 +7,7 @@ window.VILLACAMPO_SECTIONS = [
   "ink": "#3d4a12",
   "eyebrow": "Verduras en lata y tarro",
   "title": "Villa Campo, conservas para hostelería.",
-  "note": "Imagen de la ficha del producto",
+  "note": "Vegagel presenta Villa Campo como «Conservas con sabor a campo y a mar»: artesanos conserveros desde 1949. Formato lata 3 kg / especial hostelería. Imagen de la ficha del producto",
   "variants": [
    {
     "name": "Maíz dulce en grano · 3 kg",

@@ -19,8 +19,8 @@ window.ProductWorld.init({
     },
     {
       template: 'range', family: 'Calvo · Formatos', color: '#dce8f2', ink: '#143a5e',
-      eyebrow: 'Del plato a la barra', title: 'Formatos para cocina profesional.',
-      description: 'Bolsas y lata de gran formato de las marcas Calvo, Eureka e Isabel.',
+      eyebrow: 'Del plato a la barra', title: 'Formatos que aguantan la rotación.',
+      description: 'Bolsas y latas de gran formato Calvo e Isabel, pensadas para abrirse fácil, ocupar menos y servir con ritmo. Isabel está en esta escena como marca propia (bolsa de 1 kg), no como un producto de Calvo. Isabel habla de «sabor y calidad de primera».',
       products: [
         {name:'Atún Eureka', description:'Atún en trozos en aceite de girasol.', image:D+'calvo-hosteleria-eureka.webp', width:332, height:477, alt:'Bolsa Eureka de atún en trozos en aceite de girasol'},
         {name:'Atún Isabel · bolsa de 1 kg', description:'Atún en aceite de girasol en bolsa de 1 kg, para cocina profesional.', image:D+'isabel-atun-bolsa-1kg.webp', width:350, height:480, alt:'Bolsa Isabel de atún en aceite de girasol de 1 kg'},
@@ -32,7 +32,7 @@ window.ProductWorld.init({
     {
       template: 'editorial', family: 'Helios', color: '#c7c9b3', ink: '#1b3d25', columns: 3,
       eyebrow: 'Helios', title: 'El sabor del origen.',
-      description: 'Porque, para Helios, origen es sinónimo de calidad. Por eso seleccionan solo las mejores materias primas procedentes de cultivo local.',
+      description: 'Porque, para Helios, origen es sinónimo de calidad. Por eso seleccionan solo las mejores materias primas procedentes de cultivo local. En hostelería, Helios habla de «el producto adecuado para cada necesidad», en porciones, dispensador y tarro.',
       products: [
         {name:'Mermeladas y confituras', description:'Gama de mermeladas y confituras Helios.', image:D+'helios-mermeladas.webp', width:421, height:302, cover:true, alt:'Tarro de mermelada de fresa Helios'},
         {name:'Tomate frito y salsas pasta', description:'Tomate frito mediterráneo y salsas para pasta.', image:D+'helios-tomate-frito.webp', width:425, height:302, cover:true, alt:'Tarro de tomate frito mediterráneo Helios'},
@@ -44,7 +44,7 @@ window.ProductWorld.init({
     {
       template: 'hero', family: 'Prima', color: '#cf0122', ink: '#ffffff', dark: true,
       eyebrow: 'Salsas Prima', title: 'Salseo del bueno.',
-      description: 'Una amplia variedad de deliciosas salsas elaboradas de forma responsable con tu salud, con ingredientes de aquí y la experiencia de más de 40 años a tu lado, acompañando tus platos y trabajando para mejorar cada día.',
+      description: 'Una amplia variedad de deliciosas salsas elaboradas de forma responsable con tu salud, con ingredientes de aquí y la experiencia de más de 40 años a tu lado, acompañando tus platos y trabajando para mejorar cada día. Formatos Prima pensados para hostelería, con el sabor de siempre y tomate 100 % origen España.',
       bottom: '05 — Gama de salsas',
       logo: {image:D+'prima-logo.webp', width:430, height:280, alt:'Prima'},
       product: {name:'Gama de salsas Prima', image:D+'prima-gama.webp', width:1425, height:330, wide:true, alt:'Gama de salsas Prima: mayonesas, kétchup, mostazas y otras salsas'}
@@ -85,7 +85,7 @@ window.ProductWorld.init({
     },
     {
       template: 'lineup', family: 'La Ballena', color: '#e2edf8', ink: '#12365e',
-      eyebrow: 'Sal marina · 1 kg', title: 'La Ballena, sal para cada uso.',
+      eyebrow: 'Sal marina · 1 kg', title: 'La Ballena, sal marina para tu cocina.',
       note: 'Una imagen por variedad',
       variants: [
         {name:'Sal marina gruesa · 1 kg', description:'Sal marina de grano grueso para cocinar y sazonar alimentos.', image:D+'ballena-sal-gruesa.webp', width:278, height:389, alt:'Caja de sal marina gruesa La Ballena de 1 kg'},
@@ -115,7 +115,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', family: 'Borges · Hostelería', color: '#f4e4d0', ink: '#6a1d12',
       eyebrow: 'Frutos secos y aperitivos', title: 'Borges, para la barra y la cocina.',
-      note: 'Imagen de la gama en formato comercial · puede diferir del formato de hostelería',
+      note: 'Borges Professional dice: «Ponemos en tu cocina lo mejor del Mediterráneo» y habla de soluciones para sala y para cocina. Imagen de la gama en formato comercial · puede diferir del formato de hostelería',
       variants: [
         {name:'Cóctel barbacoa · 1 kg', description:'Mezcla de frutos secos con sabor barbacoa, en formato de 1 kg.', image:'assets/despensa/extra/borges_coctel-barbacoa-1kg.webp', width:540, height:540, alt:'Borges Cóctel barbacoa 1 kg'},
         {name:'Mix frito · cubo de 2 kg', description:'Mezcla de frutos secos fritos para servir como aperitivo, en cubo de 2 kg.', image:D+'borges-mix-frito-cubo-2kg.webp', width:375, height:434, alt:'Mix frito cubo de 2 kg'},
@@ -130,7 +130,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', family: 'Borges · Siropes', color: '#fbf6ee', ink: '#5b341a',
       eyebrow: 'Siropes Exquizito · 1 kg', title: 'El toque final del postre.',
-      note: 'Sirope de la gama Exquizito de Borges',
+      note: 'La gama Exquizito de Borges, «la solución más dulce para darle el toque final» a postres, helados y copas, en botella de 1 kg.',
       variants: [
         {name:'Sirope de caramelo · 1 kg', description:'Sirope de caramelo para acompañar y decorar postres, helados y otras elaboraciones.', image:D+'borges-sirope-caramelo.webp', width:178, height:510, alt:'Botella de sirope de caramelo Borges Exquizito'},
         {name:'Sirope de chocolate · 1 kg', description:'Sirope de chocolate para acompañar y decorar postres y helados.', image:D+'borges-sirope-chocolate.webp', width:178, height:510, alt:'Botella de sirope de chocolate Borges Exquizito'},
