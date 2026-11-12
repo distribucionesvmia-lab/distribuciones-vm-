@@ -162,7 +162,7 @@ const CONTENIDO = [
   ['que es un frizzante', /Frizzante/i, /vinos\.html#/], ['que vinos de ribera teneis', /Ribera/i], ['de que bodega es pazos de baro', /Pazos|Baró/i], ['que es dominio de bornos', /Bornos/i],
   ['de que es el sirope de speculoos', /galleta|speculoos/i, /despensa\.html#/], ['que legumbres teneis de luengo', /Lenteja|Garbanzo|Alubia/i], ['tenéis sal marina fina', /Sal marina/i], ['que especias tiene carmencita', /Carmencita|Orégano|Pimentón/i],
   ['tenéis atun isabel', /Isabel/i], ['que mermeladas tiene helios', /Helios|Mermelada/i],
-  ['que servicio ofrece mocay', /maquinaria|mantenimiento/i, /cafe-mocay\.html#/], ['hacéis mantenimiento de cafeteras', /Mantenimiento/i], ['que infusiones teneis en piramide', /pirámide/i], ['tenéis molinos de café', /Molinos/i],
+  ['que servicio tecnico ofrece mocay', /cafeteras|mantenimiento/i, /cafe-mocay\.html#/], ['hacéis mantenimiento de cafeteras', /Mantenimiento/i], ['que infusiones teneis en piramide', /pirámide/i], ['tenéis molinos de café', /Molinos/i],
   ['que cafes tiene mocay', /Colombia|Maestro|café/i], ['dais asesoramiento barista', /Asesoramiento barista|asesoramiento/i],
   ['que menaje distribuis', /Vajilla|cubertería|cristalería/i], ['puedo pedir el menaje junto con el resto del pedido', /un solo pedido|Sí/i], ['como consulto por el menaje de mi local', /635 09 80 44|formulario/i],
   ['que es un solo proveedor para toda la carta', /proveedor/i], ['teneis marcas reconocidas', /marcas/i], ['que es la preparacion de pedidos', /pedidos|almacén/i], ['que hago si reformo mi sala', /reform|sala/i],
