@@ -169,7 +169,7 @@ const CONTENIDO = [
   ['que ofrece la atencion personalizada', /Atendemos|atención|llama/i], ['que cobertura local teneis', /cobertura|90 km|local/i], ['que vinos de rueda teneis', /Rueda/i],
   ['cuantos pasos son para hacerse cliente', /3 pasos|tres pasos|Nos conocemos/i], ['que es el primer pedido y reparto', /Primer pedido|reparto/i], ['que formas de pago hay en la web', /contado|domicili|pago/i],
   ['que pan congelado teneis', /pan|Panamar|congelado/i], ['que bolleria hay', /bollería|Croissant|Napolitana|congelados/i], ['que quesos teneis', /queso/i], ['que embutidos hay', /embutido|Chorizo|charcut/i],
-  ['teneis huevos', /huevo/i], ['hay leche de coco', /leche|Vivesoy|Pascual|635/i], ['que es el agua con gas mas internacional', /Pellegrino/i],
+  ['teneis huevos', /huevo/i], ['hay leche de coco', /leche|Vivesoy|Pascual|635/i], ['que aguas con gas teneis', /Pellegrino|Pedras|Perrier/i],
   ['vendeis neumaticos', /No estoy seguro/i], ['alquilais maquinaria de obra', /No estoy seguro|maquinaria/i], ['quien gano el mundial', /No estoy seguro/i]
 ];
 for (const [m, rx, h] of CONTENIDO) CASOS.push([[m], h ? { texto: rx, html: h } : { texto: rx }]);
