@@ -76,7 +76,7 @@ window.ProductWorld.init({
       eyebrow: 'Pascual Profesional · Sin lactosa', title: 'Sin lactosa Barista. Para tu barra.',
       description: 'Leche sin lactosa semidesnatada Barista, para hostelería. Emulsiona mejor en el vaporizador de la cafetera que la leche sin lactosa normal.',
       backword: 'BARISTA', bottom: 'Leche sin lactosa Barista · semidesnatada · para cafeterías y bares',
-      product: {name:'Leche Pascual Profesional Sin Lactosa Barista · semidesnatada', image:'assets/pascual/sinlactosa-barista.webp', width:100, height:256, alt:'Brik de leche Pascual Profesional Sin Lactosa Barista, semidesnatada'}
+      product: {name:'Leche Pascual Profesional Sin Lactosa · semidesnatada · 1 L', image:'assets/pascual/sinlactosa-barista.webp', width:276, height:735, alt:'Brik de leche Pascual Profesional sin lactosa semidesnatada de 1 litro'}
     },
     {
       template: 'lineup', id: 'sin-lactosa', family: 'Leche Sin Lactosa', color: '#ebe2f1', ink: '#44245e',
