@@ -4,10 +4,17 @@ window.ProductWorld.init({
   order: ['Leche','Bebidas Pascual','Vivesoy','Bifrutas','Yogikids','Yogures','Postres','Natillas'],
   sections: [
     {
+      template: 'hero', family: 'Leche Intense', color: '#e8e0d6', ink: '#2b2a3a',
+      eyebrow: 'Pascual Profesional · Botella de 1,5 litros', title: 'Intense. La más vendida.',
+      description: 'Leche Intense en botella de 1,5 litros: la leche más vendida de la gama Pascual Profesional para hostelería.',
+      backword: 'INTENSE', bottom: '01 — Leche Intense · 1,5 L · la más vendida',
+      product: {name:'Leche Pascual Intense · 1,5 L', image:'assets/pascual/intense-cutout.webp', width:240, height:688, alt:'Botella de Leche Pascual Profesional Intense de 1,5 litros'}
+    },
+    {
       template: 'hero', family: 'Leche Pascual', color: '#efe3d6', ink: '#3a2418',
       eyebrow: 'Pascual Profesional', title: 'Classic. Para la barra y el café.',
       description: 'Leche semidesnatada Classic, más ajustada en precio e ideal para la barra y el café. Leche de Bienestar Animal para hostelería, de sabor suave y con la cremosidad de la leche. Tiene las mismas cualidades de emulsión que la variedad entera por su contenido en proteína.',
-      backword: 'CLASSIC', bottom: '01 — Leche semidesnatada · más ajustada en precio',
+      backword: 'CLASSIC', bottom: '02 — Leche Classic semidesnatada · caja de 10 L para tu enfriador',
       product: {name:'Leche Pascual Classic semidesnatada · caja de 10 L', image:'assets/pascual/classic-10l.webp', width:333, height:434, alt:'Caja de 10 litros de leche Pascual Profesional Classic, ideal para café'}
     },
     {
@@ -20,13 +27,6 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'hero', family: 'Leche Classic', color: '#f1e6da', ink: '#3a2418',
-      eyebrow: 'Botella de 1,5 litros', title: 'Classic, también en botella.',
-      description: 'Leche Classic semidesnatada en botella de 1,5 litros, con un precio más ajustado e ideal para la cafetería.',
-      backword: 'CLASSIC', bottom: 'Leche Classic · 1,5 L · precio más ajustado, ideal para la cafetería',
-      product: {name:'Leche Pascual Classic · 1,5 L', image:'assets/pascual/classic-botella-1-5l.webp', width:168, height:512, alt:'Botella de Leche Pascual Profesional Classic de 1,5 litros'}
-    },
-    {
       template: 'story', family: 'Leche Classic', color: '#3a2418', ink: '#f5ead9', dark: true,
       eyebrow: 'Ventajas del formato', title: 'Por qué el bag in box.',
       frames: [
@@ -35,6 +35,20 @@ window.ProductWorld.init({
         {name:'Almacenamiento más eficiente', description:'Hemos pensado que una forma cúbica sería la mejor y más óptima manera de poder almacenar nuestra leche.', image:'assets/pascual/ventaja-almacenamiento.webp', width:273, height:273, alt:'Icono de estantería con cajas', color:'#3a2418'},
         {name:'Mayor rapidez en la operación', description:'Ya no tendrás que ir abriendo mil botellas una a una: a partir de ahora, con una sola acción llenarás tu enfriador con 10 L de nuestra mejor leche.', image:'assets/pascual/ventaja-rapidez.webp', width:291, height:291, alt:'Icono de reloj', color:'#4a2e20'}
       ]
+    },
+    {
+      template: 'hero', family: 'Leche Classic', color: '#f1e6da', ink: '#3a2418',
+      eyebrow: 'Botella de 1,5 litros', title: 'Classic, también en botella.',
+      description: 'Leche Classic semidesnatada en botella de 1,5 litros, con un precio más ajustado. Pensada para hostelería.',
+      backword: 'CLASSIC', bottom: 'Leche Classic · 1,5 L · semidesnatada · precio más ajustado',
+      product: {name:'Leche Pascual Classic · 1,5 L', image:'assets/pascual/classic-botella-1-5l.webp', width:168, height:512, alt:'Botella de Leche Pascual Profesional Classic de 1,5 litros'}
+    },
+    {
+      template: 'hero', family: 'Leche Extra Crème', color: '#efe3d6', ink: '#2e1c14',
+      eyebrow: 'Botella de 1,5 litros', title: 'Extra Crème. Emulsiona mejor.',
+      description: 'Leche Extra Crème en botella de 1,5 litros, especial hostelería. Lleva más proteína láctea, y por eso emulsiona mejor.',
+      backword: 'EXTRA', bottom: 'Leche Extra Crème · 1,5 L · más proteína láctea · especial hostelería',
+      product: {name:'Leche Pascual Extra Crème · 1,5 L', image:'assets/pascual/extra-creme-botella-1-5l.webp', width:130, height:416, alt:'Botella de Leche Pascual Profesional Extra Crème de 1,5 litros'}
     },
     {
       template: 'range', family: 'Vivesoy Barista', color: '#e9eacb', ink: '#214b32',
