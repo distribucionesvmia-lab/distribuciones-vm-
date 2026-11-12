@@ -23,7 +23,7 @@ window.ProductWorld.init({
       description: 'Leche Classic en caja de 10 litros, para llenar el enfriador de leche con una sola acción.',
       products: [
         {name:'Bag in box · 10 L', description:'La caja de 10 L de Leche Classic junto al enfriador de leche, la taza y la jarra Classic.', image:'assets/pascual/classic-bag-in-box.webp', width:1400, height:787, cover:true, alt:'Nuevo formato para hostelería: caja bag in box de Leche Classic de 10 L, enfriador de leche, taza y jarra roja'},
-        {name:'Enfriador de leche', description:'Con una sola acción llenas tu enfriador con 10 L de nuestra mejor leche.', image:'assets/pascual/classic-enfriador.webp', width:275, height:275, cover:true, alt:'Enfriador de leche Pascual'}
+        {name:'Enfriador de leche', description:'Con una sola acción llenas tu enfriador con 10 L de nuestra mejor leche.', image:'assets/pascual/classic-enfriador.webp', width:640, height:640, cover:true, alt:'Enfriador de leche Pascual'}
       ]
     },
     {
