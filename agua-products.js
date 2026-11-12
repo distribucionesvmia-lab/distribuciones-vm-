@@ -5,14 +5,14 @@ window.ProductWorld.init({
     {
       template:'hero', family:'Bezoya', color:'#cceef4', ink:'#103b50',
       eyebrow:'Agua mineral natural', title:'Ligera desde el origen.',
-      description:'Bezoya procede de manantiales de Segovia. Su mineralización muy débil acompaña el día a día en distintos formatos.',
+      description:'Bezoya, agua mineral natural de mineralización muy débil (residuo seco 27 mg/l), de manantiales de Segovia. La marca lo resume en «Dar lo mejor». En esta selección, el formato de 1,5 L, para acompañar comidas y cenas.',
       backword:'BEZOYA', bottom:'01 — Agua sin gas',
       product:{name:'Bezoya · 1,5 L', image:'assets/agua/bezoya-cutout.webp', width:1254, height:1254, alt:'Botella Bezoya de 1,5 litros'}
     },
     {
       template:'range', family:'Nestlé Aquarel', color:'#e8f3e7', ink:'#194a43',
-      eyebrow:'Dos formatos para cada ocasión', title:'Aquarel, a tu medida.',
-      description:'Una botella para compartir y otra para llevar. Elige el formato que encaja con cada servicio.',
+      eyebrow:'Dos formatos para cada ocasión', title:'Reconecta con lo natural.',
+      description:'Como dice Nestlé Aquarel: «Reconecta con lo natural.» Brota de Reservas de la Biosfera de la UNESCO. Un formato para compartir (1,5 L) y otro para el servicio individual (50 cl).',
       products:[
         {name:'1,5 litros',description:'Formato para compartir.',image:'assets/agua/aquarel-15.webp',width:1200,height:1200,alt:'Botella Nestlé Aquarel de 1,5 litros'},
         {name:'50 cl',description:'Formato individual.',image:'assets/agua/aquarel-50.webp',width:600,height:600,alt:'Botella Nestlé Aquarel de 50 centilitros'}
@@ -20,8 +20,8 @@ window.ProductWorld.init({
     },
     {
       template:'hero', family:'S.Pellegrino', color:'#69c5d7', ink:'#082d3e',
-      eyebrow:'Alta restauración', title:'El agua con gas más internacional.',
-      description:'S.Pellegrino es el agua con gas más internacional y de más categoría, presente en la alta restauración. Botella de vidrio en tres formatos: 25 cl, 50 cl y 75 cl.',
+      eyebrow:'Alta restauración', title:'Lo que se trae a la mesa.',
+      description:'S.Pellegrino dice que «lo que cuenta es lo que cada uno trae a la mesa». Agua mineral natural con gas, en la botella de vidrio de la alta restauración: 25 cl, 50 cl y 75 cl.',
       backword:'ITALIA', bottom:'03 — S.Pellegrino · 75 cl',
       product:{name:'S.Pellegrino · 75 cl',image:'assets/agua/sanpellegrino-75cl.webp',width:248,height:895,alt:'Botella de vidrio S.Pellegrino de 75 centilitros'}
     },
@@ -46,9 +46,9 @@ window.ProductWorld.init({
     },
     {
       template:'story', family:'Pedras', color:'#dcead3', ink:'#173b30',
-      eyebrow:'Agua con gas y sabores', title:'Una forma distinta de brindar.',
+      eyebrow:'Agua con gas y sabores', title:'Un agua con gas 100 % natural.',
       frames:[
-        {name:'Pedras Salgadas',description:'Agua mineral con gas de origen natural, presentada en botella de vidrio.',image:'assets/agua/pedras-75-alt.webp',width:800,height:1200,alt:'Botella Pedras Salgadas de 75 centilitros',color:'#dcead3'},
+        {name:'Pedras Salgadas',description:'Pedras Salgadas, «un agua con gas 100 % natural», de origen natural. El vidrio forma parte de su propuesta para la restauración. La gama sigue con Limão, Frutos vermelhos y Tangerina.',image:'assets/agua/pedras-75-alt.webp',width:800,height:1200,alt:'Botella Pedras Salgadas de 75 centilitros',color:'#dcead3'},
         {name:'Pedras Limão',description:'Una propuesta con limón para ampliar la carta de bebidas.',image:'assets/agua/pedras-limao-botella.webp',width:126,height:408,alt:'Botella Pedras con limón',color:'#f1e9aa'},
         {name:'Frutos vermelhos',description:'Pedras con frutos rojos, otra expresión de la gama.',image:'assets/agua/pedras-frutos-vermelhos-botella.webp',width:133,height:428,alt:'Botella Pedras Frutos Vermelhos con frutos rojos',color:'#e8d8d9'},
         {name:'Pedras Tangerina',description:'Pedras con mandarina, otra expresión de la gama.',image:'assets/agua/pedras-tangerina-botella.webp',width:133,height:428,alt:'Botella Pedras Tangerina con mandarina',color:'#f8e0bd'}
@@ -57,7 +57,7 @@ window.ProductWorld.init({
     {
       template:'range', family:'Perrier', color:'#d9efdc', ink:'#0d4a2a',
       eyebrow:'Agua mineral natural con gas', title:'La burbuja Perrier.',
-      description:'Perrier en botella de vidrio, en dos formatos.',
+      description:'Perrier, en su botella de vidrio verde de 33 cl y 75 cl. La marca lo asocia a un espíritu efervescente y lo propone también para cócteles y mocktails.',
       products:[
         {name:'33 cl',description:'Botella de vidrio individual.',image:'assets/agua/perrier-33cl.webp',width:328,height:900,alt:'Botella de vidrio Perrier de 33 centilitros'},
         {name:'75 cl',description:'Botella de vidrio de 75 cl.',image:'assets/agua/perrier-botella-grande.webp',width:286,height:900,alt:'Botella de vidrio Perrier de 75 centilitros'}
