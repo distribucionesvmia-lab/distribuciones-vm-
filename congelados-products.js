@@ -10,7 +10,7 @@ window.ProductWorld.init({
   "ink": "#5a3112",
   "eyebrow": "Pan precocido",
   "title": "El pan de cada servicio.",
-  "note": "Imagen del catálogo oficial de Panamar",
+  "note": "Precocido, para hornear y servir recién hecho. Imagen del catálogo oficial de Panamar",
   "variants": [
    {
     "name": "Baguette R · 250 g",

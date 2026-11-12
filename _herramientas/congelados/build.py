@@ -92,7 +92,7 @@ for code, family, eyebrow, title, color, ink in groups:
         vs.append(v)
     sections.append({'template': 'lineup', 'family': f'Congelados · {family}', 'color': color, 'ink': ink,
                      'eyebrow': eyebrow, 'title': title,
-                     'note': 'Imagen del catálogo oficial de Panamar' if FILES else 'Imagen pendiente · catálogo oficial de Panamar',
+                     'note': ('Precocido, para hornear y servir recién hecho. ' if title == 'El pan de cada servicio.' else '') + ('Imagen del catálogo oficial de Panamar' if FILES else 'Imagen pendiente · catálogo oficial de Panamar'),
                      'variants': vs})
 
 js = '/* Congelados (Panamar). Generado con _herramientas/congelados/build.py */\n'
