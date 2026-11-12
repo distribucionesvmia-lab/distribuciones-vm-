@@ -3,8 +3,8 @@ window.ProductWorld.init({
   sections:[
     {
       template:'hero', family:'Reny Picot', color:'#dbeae4', ink:'#153b3c',
-      eyebrow:'01 · Quesos y untables', title:'Frescura que suma posibilidades.',
-      description:'Quesos frescos, rallados y cremas para cocina y sala. Formatos de uso diario y opciones profesionales para preparar más.',
+      eyebrow:'01 · Quesos y untables', title:'Grandes formatos, para una cocina que no para.',
+      description:'Reny Picot habla de «grandes formatos para grandes clientes que necesitan calidad y excelencia.» Quesos frescos, rallados y cremas para cocina y sala. Formatos de uso diario y opciones profesionales para preparar más.',
       backword:'FRESCO', bottom:'Imagen: queso crema Reny Picot de 2 kg',
       product:{name:'Queso crema natural · 2 kg',image:'assets/refrigerados/reny-crema-2kg.webp',width:1000,height:1000,alt:'Cubo de queso crema natural Reny Picot de 2 kg'},
       cta:{label:'Ver las referencias',href:'#referencias'}
@@ -12,7 +12,7 @@ window.ProductWorld.init({
     {
       template:'range', family:'Pascual', color:'#edece3', ink:'#2b3d45',
       eyebrow:'02 · Mantequilla y nata', title:'Dos básicos, muchos servicios.',
-      description:'Porciones, bloques y briks para dar respuesta a desayunos, cocina y repostería.',
+      description:'Nata, mantequilla y huevo pasteurizado de Pascual Profesional, como ingredientes de cocina y desayuno. Porciones, bloques y briks para el ritmo del servicio.',
       products:[
         {name:'Mantequilla 5 kg',description:'Bloque Pascual para una cocina de mayor volumen.',image:'assets/refrigerados/pascual-mantequilla-5kg.webp',width:240,height:168,alt:'Envase de mantequilla Pascual en bloque de 5 kg'},
         {name:'Nata para montar 1 l',description:'Brik Pascual de nata líquida al 38 % de materia grasa.',image:'assets/refrigerados/pascual-nata-38.webp',width:225,height:225,alt:'Brik de nata Pascual para montar de 1 litro al 38 por ciento'}
@@ -20,7 +20,8 @@ window.ProductWorld.init({
     },
     {
       template:'story', family:'Charcutería', color:'#e7dcd5', ink:'#432c2a',
-      eyebrow:'03 · Fiambres y embutidos', title:'Listos para formar parte de tu carta.',
+      eyebrow:'03 · Fiambres y embutidos', title:'Para tu carta, con el sabor de siempre.',
+      note:'Cada marca, con sus palabras: Campofrío, «Saber disfrutar, que nada nos lo quite» · Navidul, «Tradición y calidad» · Revilla, «Mismo sabor. Qué maravilla» · Oscar Mayer, «Sabor Inigualable» (salchicha y bacon) · ElPozo, «Contigo de principio a fin».',
       frames:[
         {name:'Jamón cocido',description:'Una de las referencias de Campofrío para sándwiches, bocadillos y platos preparados.',image:'assets/marcas/campofrio-jamon-cocido.webp',width:624,height:414,alt:'Envase de jamón cocido Campofrío',color:'#e7dcd5'},
         {name:'Chorizo',description:'Embutidos para raciones, tablas y elaboraciones de cocina.',image:'assets/marcas/campofrio-chorizo.webp',width:600,height:384,alt:'Envase de chorizo Campofrío',color:'#e3e4d6'},
@@ -36,14 +37,14 @@ window.ProductWorld.init({
   const ren = 'https://www.renypicot.es/';
   const coe = 'https://coenyco.com/file/Productos_Coenyco.pdf';
   const products = [
-    {group:'Preparados',brand:'Rogusa',name:'Callos a la madrileña · 2,5 kg',desc:'Callos cocinados y envasados en formato profesional.',url:'https://www.aecoctrade.es/es/producto/fvfK8VleZxmABCimApEReM',source:'Ficha exacta',image:'assets/refrigerados/rogusa-callos.webp',imageAlt:'Envase Rogusa de callos preparados de 2,5 kg',imageCaption:'Fotografía del envase de 2,5 kg'},
+    {group:'Preparados',brand:'Rogusa',name:'Callos a la madrileña · 2,5 kg',desc:'Callos a la madrileña Rogusa, formato profesional de 2,5 kg. La marca habla de platos tradicionales «listos para ti» y de «calentar y saborear».',url:'https://www.aecoctrade.es/es/producto/fvfK8VleZxmABCimApEReM',source:'Ficha exacta',image:'assets/refrigerados/rogusa-callos.webp',imageAlt:'Envase Rogusa de callos preparados de 2,5 kg',imageCaption:'Fotografía del envase de 2,5 kg'},
     {group:'Preparados',brand:'Coenyco',name:'Oreja de cerdo cocida · 1 kg',image:'assets/refrigerados/extra/coenyco_oreja-de-cerdo-cocida-1kg.webp',width:720,height:720,desc:'Oreja cocida y troceada, envasada al vacío.',url:coe,source:'Catálogo de gama'},
     {group:'Preparados',brand:'Coenyco',name:'Oreja de cerdo cocida · 500 g',image:'assets/refrigerados/extra/coenyco_oreja-de-cerdo-cocida-500g.webp',width:720,height:720,desc:'Formato de medio kilo para cocina y raciones.',url:'https://soysuper.com/p/orejas-de-cerdo-cocidas-envase-500-gr-coenyco-envase-500-gr',source:'Ficha de producto'},
     {group:'Preparados',brand:'Coenyco',name:'Morro de cerdo cocido · 500 g',image:'assets/refrigerados/extra/coenyco_morro-de-cerdo-cocido-500g.webp',width:703,height:703,desc:'Morro cocido y troceado, envasado al vacío.',url:'https://soysuper.com/p/morros-de-cerdo-cocidos-envase-500-gr-coenyco-envase-500-gr',source:'Ficha de producto'},
     {group:'Preparados',brand:'Coenyco',name:'Rabo de cerdo cocido · 500 g',image:'assets/refrigerados/extra/coenyco_rabo-de-cerdo-cocido-500g.webp',width:687,height:687,desc:'Referencia de casquería cocida. Confirma el formato al pedirla.',url:coe,source:'Catálogo de gama'},
-    {group:'Preparados',brand:'Alvalle',name:'Gazpacho Original · 1 l',image:'assets/refrigerados/extra/alvalle_gazpacho-original-1l.webp',width:720,height:720,desc:'Sopa fría lista para servir.',url:'https://www.alvalle.com/',source:'Web de marca'},
-    {group:'Preparados',brand:'Alvalle',name:'Salmorejo Original · 1 l',image:'assets/refrigerados/extra/alvalle_salmorejo-original-1l.webp',width:720,height:720,desc:'Salmorejo listo para incorporar a la carta.',url:'https://www.alvalle.com/',source:'Web de marca'},
-    {group:'Preparados',brand:'Buitoni',name:'Empanadillas y masa gruesa',image:'assets/refrigerados/extra/buitoni_empanadillas-y-masa-gruesa.webp',width:720,height:720,desc:'Referencias de 160 g y 350 g facilitadas para consulta; formatos por confirmar.',url:'https://www.buitoni.es/',source:'Web de marca'},
+    {group:'Preparados',brand:'Alvalle',name:'Gazpacho Original · 1 l',image:'assets/refrigerados/extra/alvalle_gazpacho-original-1l.webp',width:720,height:720,desc:'Gazpacho Alvalle. Como dice la marca: «Sólo ingredientes naturales, y nada más.» También: «con respeto sabe mejor», con hortalizas de proximidad.',url:'https://www.alvalle.com/',source:'Web de marca'},
+    {group:'Preparados',brand:'Alvalle',name:'Salmorejo Original · 1 l',image:'assets/refrigerados/extra/alvalle_salmorejo-original-1l.webp',width:720,height:720,desc:'Salmorejo Alvalle, listo para la carta. Como dice la marca: «Sólo ingredientes naturales, y nada más.»',url:'https://www.alvalle.com/',source:'Web de marca'},
+    {group:'Preparados',brand:'Buitoni',name:'Empanadillas y masa gruesa',image:'assets/refrigerados/extra/buitoni_empanadillas-y-masa-gruesa.webp',width:720,height:720,desc:'Empanadillas y masa Buitoni. Como dice la marca: «¡Con Buitoni triunfarás cada día!» Formatos: [POR CONFIRMAR] (se mantienen 160 g y 350 g como consulta).',url:'https://www.buitoni.es/',source:'Web de marca'},
     {group:'Preparados',brand:'Campofrío',name:'Tortilla de patata con cebolla · 500 g',desc:'Tortilla preparada; confirma presentación y disponibilidad.',url:'https://www.campofrio.es/marcas/campofrio',source:'Catálogo de marca'},
     {group:'Pascual',brand:'Pascual',name:'Mantequilla · microtarrinas de 10 g',image:'assets/refrigerados/extra/pascual_mantequilla-microtarrinas-10g.webp',width:223,height:223,desc:'Caja de 280 porciones individuales para desayunos y servicio.',url:pas+'L%C3%A1cteos-y-Bebidas-Vegetales/Mantequilla-y-Untables/c/MantequillayUntable',source:'Gama',note:'La página enlazada no identifica este envase.'},
     {group:'Pascual',brand:'Pascual',name:'Mantequilla · bloque de 5 kg',desc:'Formato para cocina y hostelería. Conservar refrigerada.',url:pas+'calidadpascual/es/L%C3%A1cteos-y-Bebidas-Vegetales/Mantequilla-y-Untables//p/30000371-8410128000554',source:'Ficha exacta',image:'assets/refrigerados/pascual-mantequilla-5kg.webp',imageAlt:'Mantequilla Pascual en bloque de 5 kg',imageCaption:'Fotografía del bloque de 5 kg'},
@@ -108,6 +109,8 @@ window.ProductWorld.init({
     const matches=products.filter(p=>(active==='Todos'||p.group===active)&&(!q||`${p.brand} ${p.name} ${p.desc}`.toLocaleLowerCase('es').includes(q)));
     grid.innerHTML=matches.map(card).join('')||'<p>No hay referencias con ese filtro. Prueba otra búsqueda.</p>';
     if (!document.querySelector('.cold-price-note') && grid.querySelector('.cold-price')) grid.insertAdjacentHTML('afterend', '<p class="cold-price-note">Precios de tarifa por formato de venta. Pide tu tarifa personalizada, sin compromiso.</p>');
+    document.querySelectorAll('.cold-brand-note').forEach(n=>n.remove());
+    if (matches.some(p=>p.brand==='Coenyco')) grid.insertAdjacentHTML('afterend', '<p class="cold-price-note cold-brand-note">Coenyco. Desde 1980, casquería cocida al vacío.</p>');
     count.textContent=`${matches.length} ${matches.length===1?'referencia':'referencias'}`;
   }
   filters.addEventListener('click',event=>{
