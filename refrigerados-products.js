@@ -14,7 +14,7 @@ window.ProductWorld.init({
       eyebrow:'02 · Mantequilla y nata', title:'Dos básicos, muchos servicios.',
       description:'Nata, mantequilla y huevo pasteurizado de Pascual Profesional, como ingredientes de cocina y desayuno. Porciones, bloques y briks para el ritmo del servicio.',
       products:[
-        {name:'Mantequilla 5 kg',description:'Bloque Pascual para una cocina de mayor volumen.',image:'assets/refrigerados/pascual-mantequilla-5kg.webp',width:240,height:168,alt:'Envase de mantequilla Pascual en bloque de 5 kg'},
+        {name:'Mantequilla 5 kg',description:'Bloque Pascual para una cocina de mayor volumen.',image:'assets/refrigerados/pascual-mantequilla-5kg.webp',width:385,height:268,alt:'Envase de mantequilla Pascual en bloque de 5 kg'},
         {name:'Nata para montar 1 l',description:'Brik Pascual de nata líquida al 38 % de materia grasa.',image:'assets/refrigerados/pascual-nata-38.webp',width:225,height:225,alt:'Brik de nata Pascual para montar de 1 litro al 38 por ciento'}
       ]
     },
