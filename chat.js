@@ -35,12 +35,12 @@
     }
     return p[b.length];
   }
-  /* ¿alguna palabra del mensaje empieza por la raíz? (con una errata de tolerancia si la raíz tiene 5 letras o más) */
+  /* ¿alguna palabra del mensaje empieza por la raíz? (con una errata de tolerancia si la raíz tiene 7 letras o más) */
   function hasStem(tokens, stem) {
     for (var i = 0; i < tokens.length; i++) {
       var t = tokens[i];
       if (t.indexOf(stem) === 0) return true;
-      if (stem.length >= 5 && t.length >= stem.length - 1 && lev(t.slice(0, stem.length), stem) <= 1) return true;
+      if (stem.length >= 7 && t.length >= stem.length - 1 && lev(t.slice(0, stem.length), stem) <= 1) return true;
     }
     return false;
   }
@@ -89,6 +89,19 @@
         if (hit && (!best || n.length > best.len)) best = { z: z, len: n.length };
       });
     });
+    if (!best) {
+      var ws = t.split(' ').filter(Boolean);
+      ZONAS.forEach(function (z) {
+        z.n.forEach(function (n) {
+          if (n.length < 5) return;
+          var k = n.split(' ').length;
+          for (var i = 0; i + k <= ws.length; i++) {
+            var w = ws.slice(i, i + k).join(' ');
+            if (w.length >= 5 && lev(w, n) <= 1 && (!best || n.length > best.len)) best = { z: z, len: n.length };
+          }
+        });
+      });
+    }
     return best && best.z;
   }
   /* próximo reparto en una localidad, a partir de ahora */
@@ -114,55 +127,55 @@
 
   /* ---------- intenciones (cada grupo de raíces debe aparecer COMPLETO en el mensaje) ---------- */
   var INTENTS = {
-    saludo: { k: [['hola'], ['buenas'], ['buenos', 'dias'], ['saludos'], ['hey']], solo: true, a: function () { return '¡Hola! Pregúntame lo que necesites sobre reparto, plazos, formas de pago o cómo hacerte cliente.'; } },
-    gracias: { k: [['gracias'], ['perfecto'], ['genial'], ['estupendo'], ['vale']], solo: true, a: function () { return '¡A ti! Si necesitas algo más, aquí estoy.'; } },
-    adios: { k: [['adios'], ['hasta', 'luego'], ['chao']], solo: true, a: function () { return '¡Hasta pronto!'; } },
+    saludo: { k: [['que', 'tal'], ['hola'], ['buenas'], ['buenos', 'dias'], ['saludos'], ['hey']], solo: true, a: function () { return '¡Hola! Pregúntame lo que necesites sobre reparto, plazos, formas de pago o cómo hacerte cliente.'; } },
+    gracias: { k: [['agradec'], ['ok'], ['gracias'], ['perfecto'], ['genial'], ['estupendo'], ['vale']], solo: true, a: function () { return '¡A ti! Si necesitas algo más, aquí estoy.'; } },
+    adios: { k: [['ciao'], ['hasta', 'pronto'], ['nos', 'vemos'], ['adios'], ['hasta', 'luego'], ['chao']], solo: true, a: function () { return '¡Hasta pronto!'; } },
     zona: { k: [['reparti'], ['llegai'], ['llegan'], ['vendei'], ['cobertur'], ['provinci'], ['kilometr'], ['zona'], ['llevai'], ['enviai'], ['envian'], ['mandai'], ['traei'], ['servi'], ['donde', 'vend'], ['domicilio']],
       a: function (c) { return c.zone ? zonaTxt(c.zone) : 'Repartimos en <b>Medina del Campo y comarca, hasta 90 km a la redonda</b>, y en las provincias vecinas de Valladolid, Salamanca, Ávila y Segovia. Dime tu pueblo y te digo qué día pasamos. Por ejemplo: «¿Repartís en Rueda?».'; } },
-    dias: { k: [['dia', 'repart'], ['que', 'dias'], ['cuando', 'pasai'], ['cuando', 'llegai'], ['calendario'], ['quincenal'], ['semana', 'par'], ['semana', 'impar'], ['lunes'], ['martes'], ['miercoles'], ['jueves'], ['viernes'], ['sabado'], ['domingo'], ['finde'], ['fin', 'semana']],
+    dias: { k: [['dias', 'pasai'], ['pasai', 'por'], ['pasan', 'por'], ['dia', 'pasa'], ['cuando', 'pasan'], ['dias', 'pasan'], ['dias', 'entrega'], ['dia', 'repart'], ['que', 'dias'], ['cuando', 'pasai'], ['cuando', 'llegai'], ['calendario'], ['quincenal'], ['semana', 'par'], ['semana', 'impar'], ['lunes'], ['martes'], ['miercoles'], ['jueves'], ['viernes'], ['sabado'], ['domingo'], ['finde'], ['fin', 'semana']],
       a: function (c) {
         if (c.zone) return zonaTxt(c.zone);
         if (c.has(['sabado']) || c.has(['domingo']) || c.has(['finde']) || c.has(['fin', 'semana'])) return 'Repartimos <b>de lunes a viernes</b>. Los fines de semana no hay reparto.';
         return 'Estos son los <b>días de reparto</b>:<ul><li>Medina del Campo: de lunes a viernes.</li><li>Rueda y Tordesillas: lunes y jueves.</li><li>Peñafiel y alrededores, Olmedo e Íscar: viernes.</li><li>La Seca, Serrada, Valdestillas, Viana de Cega, Mojados y Matapozuelos: miércoles.</li><li>Cantalapiedra, Alaejos, Nava del Rey, Villaverde de Medina y Arrabal de Portillo: miércoles cada 15 días, en semanas pares.</li><li>Peñaranda de Bracamonte: martes cada 15 días, en semanas impares.</li></ul>Dime tu pueblo y te lo confirmo.';
       } },
-    plazo: { k: [['plazo'], ['tard'], ['entrega'], ['mismo', 'dia'], ['dia', 'siguiente'], ['rapid'], ['urgent'], ['24', 'hora'], ['48', 'hora']],
+    plazo: { k: [['hora', 'pedir'], ['hora', 'pido'], ['llegue', 'hoy'], ['cuanto', 'tiempo'], ['cuanto', 'tarda'], ['tiempo', 'entrega'], ['cuando', 'entregai'], ['plazo'], ['tarda'], ['entrega'], ['mismo', 'dia'], ['dia', 'siguiente'], ['rapid'], ['urgent'], ['24', 'hora'], ['48', 'hora']],
       a: function (c) { return c.zone ? (c.zone.medina ? 'En <b>Medina del Campo</b>, menos de 24 h; si pides antes de las 10:00, lo recibes el mismo día.' : 'A <b>' + esc(c.zone.nombre) + '</b> la entrega es de <b>24 a 48 h</b>, en días de reparto (' + c.zone.txt + ').') : 'En <b>Medina del Campo</b>, menos de 24 h; si pides antes de las 10:00, lo recibes el mismo día. En el resto de la zona, <b>entre 24 y 48 h</b>, en días laborables de lunes a viernes.'; } },
-    proxima: { k: [['cuando', 'llega'], ['cuando', 'recib'], ['proxim', 'repart'], ['proxim', 'entreg'], ['pido', 'hoy'], ['pido', 'manana'], ['si', 'pido'], ['cuando', 'toca'], ['cuando', 'pasa']], needsZone: true,
+    proxima: { k: [['cuando', 'trae'], ['hoy', 'pedido'], ['cuando', 'mandai'], ['cuando', 'entregai'], ['cuando', 'llega'], ['cuando', 'recib'], ['proxim', 'repart'], ['proxim', 'entreg'], ['pido', 'hoy'], ['pido', 'manana'], ['si', 'pido'], ['cuando', 'toca'], ['cuando', 'pasa']], needsZone: true,
       a: function (c) { return proxima(c.zone) || 'Llámanos al ' + TEL + ' y te confirmamos tu próximo reparto.'; } },
     minimo: { k: [['minimo']], a: function () { return '<b>No hay pedido mínimo.</b>'; } },
-    envio: { k: [['gasto', 'envio'], ['envio'], ['porte'], ['gratis'], ['cobrai'], ['coste', 'envio'], ['transporte']], a: function () { return 'El reparto es <b>sin coste para el cliente</b>: no hay gastos de envío.'; } },
+    envio: { k: [['coste'], ['costo'], ['cobran'], ['cobro'], ['gasto', 'envio'], ['envio'], ['porte'], ['gratis'], ['cobrai'], ['coste', 'envio'], ['transporte']], a: function () { return 'El reparto es <b>sin coste para el cliente</b>: no hay gastos de envío.'; } },
     ahora: { k: [['abierto', 'ahora'], ['abris', 'ahora'], ['atendeis', 'ahora'], ['estais', 'ahora'], ['ahora', 'atend']], peso: 4,
       a: function () {
         var n = madrid();
         if (n.wd >= 1 && n.wd <= 5 && n.h >= 7 && n.h < 15) return 'Sí, <b>ahora mismo estamos atendiendo</b> (7:00 a 15:00). Llámanos al ' + TEL + '.';
         return 'Ahora estamos <b>fuera del horario de atención</b> (7:00 a 15:00). Si llamas al ' + TEL + ', te atiende Valentín en su móvil.';
       } },
-    horario: { k: [['horario'], ['hora'], ['abri'], ['abiert'], ['atencion'], ['cerrai'], ['hasta', 'hora']],
+    horario: { k: [['por', 'la', 'tarde'], ['tarde'], ['por', 'la', 'manana'], ['horario'], ['hora'], ['abri'], ['abiert'], ['atencion'], ['cerrai'], ['hasta', 'hora']],
       a: function () { return 'Atendemos y gestionamos pedidos <b>de 7:00 a 15:00</b>. Pasadas las 15:00, las llamadas entrantes las atiende Valentín en su móvil. Teléfono: ' + TEL + '.'; } },
-    cliente: { k: [['cliente'], ['registr'], ['empez'], ['como', 'compr'], ['primer', 'pedido'], ['ficha'], ['document'], ['nif'], ['papeles'], ['hacerme'], ['hacerse'], ['darme', 'alta'], ['dar', 'alta']],
+    cliente: { k: [['alta'], ['abrir', 'cuenta'], ['nueva', 'cuenta'], ['cliente'], ['registr'], ['empez'], ['como', 'compr'], ['primer', 'pedido'], ['ficha'], ['document'], ['nif'], ['papeles'], ['hacerme'], ['hacerse'], ['darme', 'alta'], ['dar', 'alta']],
       a: function () { return 'Hacerse cliente es muy sencillo:<ol><li><b>Nos conocemos:</b> te visitamos o hablamos contigo, te presentamos la empresa y el porfolio.</li><li><b>Te damos de alta:</b> rellenamos tu ficha de cliente con tus datos fiscales y acordamos la forma de pago (si es domiciliación, se firma el formato SEPA).</li><li><b>Primer pedido:</b> lo anotamos y te lo servimos el día acordado, entre 24 y 48 h desde tu primera llamada. Te asignamos un día de visita del comercial, semanal o quincenal.</li></ol>' + PERSONA; } },
     pedido: { k: [['como', 'pedir'], ['hacer', 'pedido'], ['hago', 'pedido'], ['realizar', 'pedido'], ['encargar'], ['como', 'pido'], ['quiero', 'pedir']],
       a: function () { return 'Los pedidos se gestionan <b>de 7:00 a 15:00</b>. Si ya eres cliente, llama al ' + TEL + ' o díselo a tu comercial en su día de visita. Si aún no lo eres, te damos de alta en 3 pasos (pregúntame «¿cómo me hago cliente?»).'; } },
-    pago: { k: [['pago'], ['pagar'], ['pagai'], ['factura'], ['domicili'], ['tarjeta'], ['efectivo'], ['contado'], ['credito'], ['transferencia'], ['recibo'], ['sepa']],
+    pago: { k: [['paga'], ['datafono'], ['bizum'], ['cheque'], ['pagare'], ['pago'], ['pagar'], ['pagai'], ['factura'], ['domicili'], ['tarjeta'], ['efectivo'], ['contado'], ['credito'], ['transferencia'], ['recibo'], ['sepa']],
       a: function () { return 'La forma de pago se <b>acuerda contigo</b>, según tu negocio y tu volumen de compra:<ul><li>Al contado en cada reparto, en efectivo o con tarjeta, con factura directa.</li><li>Albarán en cada reparto y factura resumen mensual, que se suele domiciliar en tu cuenta el día acordado: del 1 al 3 del mes, a los 15 días o a los 30 días.</li></ul>'; } },
-    tarifa: { k: [['tarifa'], ['precio'], ['cuanto', 'cuesta'], ['cuanto', 'vale'], ['cuanto', 'cobrai'], ['cuesta'], ['oferta'], ['presupuesto']],
+    tarifa: { k: [['cuanto', 'sale'], ['lista', 'precios'], ['cuanto', 'es'], ['tarifa'], ['precio'], ['cuanto', 'cuesta'], ['cuanto', 'vale'], ['cuanto', 'cobrai'], ['cuesta'], ['oferta'], ['presupuesto']],
       a: function () { return 'En la web no publicamos precios. Si lo pides, te enviamos una <b>tarifa personalizada, sin compromiso</b>: suele estar en 24 h (antes si es solo de una parte de los artículos). Pídela en el ' + TEL + ' o en ' + MAIL + '.'; } },
     whatsapp: { k: [['whatsapp'], ['wasap'], ['guasap']], peso: 4, a: function () { return 'El ' + TEL + ' <b>no tiene WhatsApp</b>. Puedes llamarnos de 7:00 a 15:00 o escribir a ' + MAIL + '.'; } },
-    contacto: { k: [['contacto'], ['telefono'], ['llamar'], ['correo'], ['email'], ['mail'], ['direccion'], ['donde', 'estai'], ['ubicacion'], ['oficina'], ['almacen'], ['como', 'llegar']],
+    contacto: { k: [['llamo'], ['llamada'], ['encuentr'], ['encontr'], ['contact'], ['como', 'os', 'contacto'], ['contacto'], ['telefono'], ['llamar'], ['correo'], ['email'], ['mail'], ['direccion'], ['donde', 'estai'], ['ubicacion'], ['oficina'], ['almacen'], ['como', 'llegar']],
       a: function () { return 'Puedes contactarnos así:<ul><li>Teléfono: ' + TEL + ' (7:00 a 15:00).</li><li>Correo: ' + MAIL + '</li><li>Dirección: Cl Labradores, n.º 45, parcela 24B · 47400 Medina del Campo, Valladolid.</li></ul>'; } },
-    incidencia: { k: [['problema'], ['reclam'], ['queja'], ['devol'], ['equivoc'], ['falta'], ['roto'], ['defect'], ['no', 'llego'], ['error']],
+    incidencia: { k: [['incomplet'], ['pedido', 'mal'], ['mal', 'pedido'], ['traido', 'mal'], ['trajeron', 'mal'], ['llegado', 'mal'], ['no', 'coincide'], ['no', 'llegad'], ['llego', 'mal'], ['mal', 'estado'], ['problema'], ['reclam'], ['queja'], ['devol'], ['equivoc'], ['falta'], ['roto'], ['defect'], ['no', 'llego'], ['error']],
       a: function () { return 'Lamentamos el problema. Para una incidencia con un pedido, llámanos al ' + TEL + ' de 7:00 a 15:00 o escribe a ' + MAIL + ', indicando el nombre de tu negocio y el albarán, y lo revisamos.'; } },
-    empresa: { k: [['cuantos', 'anos'], ['anos', 'llevai'], ['historia'], ['desde', 'cuando'], ['quienes', 'sois'], ['empresa'], ['fundad'], ['experiencia']],
+    empresa: { k: [['antigued'], ['trayectoria'], ['empezasteis'], ['cuantos', 'anos'], ['anos', 'llevai'], ['historia'], ['desde', 'cuando'], ['quienes', 'sois'], ['empresa'], ['fundad'], ['experiencia']],
       a: function () { return 'Somos <b>Distribuciones Valentín Martín</b>, de Medina del Campo. Llevamos <b>44 años</b> de experiencia, desde 1982, distribuyendo a hostelería.'; } },
     redes: { k: [['facebook'], ['instagram'], ['redes']], a: function () { return 'Síguenos en <a href="https://www.facebook.com/share/1LfPCX2kSw/" target="_blank" rel="noopener">Facebook</a> e <a href="https://www.instagram.com/distrvalentinmartin/" target="_blank" rel="noopener">Instagram</a>.'; } },
     persona: { k: [['persona'], ['humano'], ['comercial'], ['visita'], ['agente'], ['hablar', 'con']], a: function () { return 'Claro. ' + PERSONA + ' Si eres cliente, tu comercial pasa el día de visita que se te asignó (semanal o quincenal).'; } },
-    productos: { k: [['que', 'vendei'], ['que', 'tenei'], ['producto'], ['marca'], ['catalogo'], ['gama'], ['surtido'], ['distribui'], ['ofrecei']],
+    productos: { k: [['que', 'marcas'], ['que', 'gamas'], ['que', 'vendei'], ['que', 'tenei'], ['producto'], ['marca'], ['catalogo'], ['gama'], ['surtido'], ['distribui'], ['ofrecei']],
       a: function () { return 'Distribuimos para hostelería, entre otras gamas: <a href="pascual.html">Pascual</a> (leche, bebidas, yogures y postres), <a href="agua.html">aguas</a>, <a href="vinos.html">vinos</a>, <a href="despensa.html">despensa</a>, <a href="cafe-mocay.html">Café Mocay</a> e infusiones, <a href="menaje.html">menaje</a>, <a href="refrigerados.html">refrigerados</a> y <a href="congelados.html">congelados</a>. Dime qué buscas y lo miro.'; } },
-    bebidas: { k: [['cerveza'], ['refresco'], ['licor'], ['cola'], ['alcohol'], ['bebida']], cat: true,
+    bebidas: { k: [['cocacola'], ['coca'], ['fanta'], ['pepsi'], ['sprite'], ['tonica'], ['gaseosa'], ['sidra'], ['whisky'], ['ron'], ['ginebra'], ['vodka'], ['anis'], ['cerveza'], ['refresco'], ['licor'], ['cola'], ['alcohol'], ['bebida']], cat: true,
       a: function () { return 'También distribuimos bebidas. En la web tienes <a href="agua.html">aguas</a>, <a href="vinos.html">vinos</a> y las bebidas de <a href="pascual.html">Pascual</a>. Para cerveza, refrescos y licores, pídenos la tarifa en el ' + TEL + ' o en ' + MAIL + '.'; } },
     cafe: { k: [['cafe'], ['mocay'], ['infusion'], ['te', 'negro']], cat: true, a: function () { return 'Trabajamos <a href="cafe-mocay.html">Café Mocay</a>: café en grano, descafeinados, cápsulas, infusiones en pirámide y clásicas en bolsita, y complementos.'; } },
-    pascual: { k: [['leche'], ['pascual'], ['yogur'], ['natilla'], ['batido'], ['bifruta'], ['vivesoy'], ['movit'], ['brik'], ['colacao'], ['nata'], ['mantequilla']], cat: true, a: function () { return 'En <a href="pascual.html">Pascual</a> tienes:<ul><li><b>Leche para hostelería:</b> <a href="pascual.html#leche-intense">Intense</a> (la más vendida), <a href="pascual.html#bag-in-box-10l">Classic en caja de 10 L</a>, <a href="pascual.html#leche-classic-botella">Classic en botella</a>, <a href="pascual.html#leche-extra-creme">Extra Crème</a> y <a href="pascual.html#sin-lactosa-barista">sin lactosa Barista</a>.</li><li><b>Leche para el hogar:</b> <a href="pascual.html#leche-hogar">botella de 1,5 L</a>, <a href="pascual.html#leche-brik">brik</a>, <a href="pascual.html#sin-lactosa">sin lactosa</a> y <a href="pascual.html#movit">Movit con calcio</a>.</li><li><a href="pascual.html#batidos-vidrio">Batidos en vidrio</a> y <a href="pascual.html#batidos-brik">en brik</a>, <a href="pascual.html#natas">natas</a> y <a href="pascual.html#mantequillas">mantequillas</a>.</li><li><a href="pascual.html#vivesoy">Vivesoy</a>, <a href="pascual.html#bifrutas">Bifrutas</a>, <a href="pascual.html#yogures">yogures</a> y <a href="pascual.html#natillas">postres</a>.</li></ul>'; } },
-    lechecafe: { k: [['leche', 'cafe'], ['leche', 'cafeteria'], ['leche', 'barista'], ['leche', 'vaporiz'], ['leche', 'espum'], ['leche', 'capuchin'], ['leche', 'cortado'], ['leche', 'hosteleria'], ['leche', 'recomend'], ['mejor', 'leche'], ['que', 'leche'], ['leche', 'mas', 'vendid'], ['leche', 'barra'], ['leche', 'emulsion'], ['emulsion']], peso: 1.3,
+    pascual: { k: [['zumo'], ['leche'], ['pascual'], ['yogur'], ['natilla'], ['batido'], ['bifruta'], ['vivesoy'], ['movit'], ['brik'], ['colacao'], ['nata'], ['mantequilla']], cat: true, a: function () { return 'En <a href="pascual.html">Pascual</a> tienes:<ul><li><b>Leche para hostelería:</b> <a href="pascual.html#leche-intense">Intense</a> (la más vendida), <a href="pascual.html#bag-in-box-10l">Classic en caja de 10 L</a>, <a href="pascual.html#leche-classic-botella">Classic en botella</a>, <a href="pascual.html#leche-extra-creme">Extra Crème</a> y <a href="pascual.html#sin-lactosa-barista">sin lactosa Barista</a>.</li><li><b>Leche para el hogar:</b> <a href="pascual.html#leche-hogar">botella de 1,5 L</a>, <a href="pascual.html#leche-brik">brik</a>, <a href="pascual.html#sin-lactosa">sin lactosa</a> y <a href="pascual.html#movit">Movit con calcio</a>.</li><li><a href="pascual.html#batidos-vidrio">Batidos en vidrio</a> y <a href="pascual.html#batidos-brik">en brik</a>, <a href="pascual.html#natas">natas</a> y <a href="pascual.html#mantequillas">mantequillas</a>.</li><li><a href="pascual.html#vivesoy">Vivesoy</a>, <a href="pascual.html#bifrutas">Bifrutas</a>, <a href="pascual.html#zumos">zumos</a>, <a href="pascual.html#yogures">yogures</a> y <a href="pascual.html#natillas">postres</a>.</li></ul>'; } },
+    lechecafe: { k: [['leche', 'profesional'], ['leche', 'bares'], ['leche', 'restaurante'], ['leche', 'cafe'], ['leche', 'cafeteria'], ['leche', 'barista'], ['leche', 'vaporiz'], ['leche', 'espum'], ['leche', 'capuchin'], ['leche', 'cortado'], ['leche', 'hosteleria'], ['leche', 'recomend'], ['mejor', 'leche'], ['leche', 'mas', 'vendid'], ['leche', 'barra'], ['leche', 'emulsion'], ['emulsion']], peso: 1.3,
       a: function () { var n = state.negocio ? 'Para tu <b>' + esc(state.negocio) + '</b>, ' : 'Para <b>hostelería y café</b> '; return n + 'tenemos leche Pascual Profesional:<ul><li><a href="pascual.html#leche-intense">Intense 1,5 L</a>: la <b>más vendida</b>.</li><li><a href="pascual.html#leche-classic-10l">Classic semidesnatada</a>: la de precio más ajustado, en <a href="pascual.html#leche-classic-botella">botella de 1,5 L</a> o en <a href="pascual.html#bag-in-box-10l">caja de 10 L</a> para llenar el enfriador.</li><li><a href="pascual.html#leche-extra-creme">Extra Crème 1,5 L</a>: lleva más proteína láctea y <b>emulsiona mejor</b>.</li><li><a href="pascual.html#sin-lactosa-barista">Sin lactosa Barista</a>: semidesnatada, emulsiona mejor en el vaporizador de la cafetera que la sin lactosa normal.</li></ul>Para tarifa o pedido: ' + TEL + '.'; } },
     lactosa: { k: [['lactosa'], ['intoleran']], a: function () { return 'Tenemos leche <b>sin lactosa</b>: para el hogar, en <a href="pascual.html#sin-lactosa">brik de 1 L</a> (entera, semidesnatada y desnatada) y semidesnatada de 200 ml. Para hostelería, <a href="pascual.html#sin-lactosa-barista">sin lactosa Barista</a>, que emulsiona mejor en el vaporizador de la cafetera.'; } },
     vinos: { k: [['vino'], ['bornos'], ['verdejo'], ['ribera'], ['espumoso'], ['lleiroso'], ['pinna']], cat: true, a: function () { return 'Mira nuestra selección de <a href="vinos.html">vinos</a>: Palacio de Bornos (blancos, frizzantes, tintos de Ribera y espumosos), Pazos de Baró, Pinna Fidelis y más.'; } },
@@ -206,8 +219,8 @@
     });
     return catPromise;
   }
-  var RUIDO_RAIZ = /^(teneis|tenemos|tienen|tienes|tiene|vendeis|venden|vendemos|trabajais|trabajan|distribuis|distribuyen|busco|buscamos|necesito|necesitamos|quiero|queremos|quisiera|podeis|pueden|servis|sirven|disponible|disponibles|referencia|referencias|vuestro|vuestra|vuestros|vuestras|nuestro|nuestra)$/;
-  var RUIDO_EXACTO = /^(hay|ver|mirar|algun|alguna|alguno|algo|todo|toda|una|unos|unas|los|las|del|con|sin|para|por|que|como|cual|cuales|cuanto|cuesta|vale|precio|esta|este|ese|esa|mas|muy|bien|favor|hola|buenas|gracias|tambien|ademas|tipo|marca|producto|productos|gama|stock|ref|cosas|cosa|articulo|articulos|material|materiales)$/;
+  var RUIDO_RAIZ = /^(tenies|teneys|ofrecen|ofreceis|manejais|comercializais|disponeis|teneis|tenemos|tienen|tienes|tiene|vendeis|venden|vendemos|trabajais|trabajan|distribuis|distribuyen|busco|buscamos|necesito|necesitamos|quiero|queremos|quisiera|podeis|pueden|servis|sirven|disponible|disponibles|referencia|referencias|vuestro|vuestra|vuestros|vuestras|nuestro|nuestra)$/;
+  var RUIDO_EXACTO = /^(hay|ver|mirar|algun|alguna|alguno|algo|todo|toda|una|unos|unas|los|las|del|con|sin|para|por|que|como|cual|cuales|cuanto|cuesta|vale|precio|esta|este|ese|esa|mas|muy|bien|favor|hola|buenas|gracias|tambien|ademas|tipo|marca|producto|productos|gama|stock|ref|bebida|bebidas|marcas|tipos|gamas|clases|variedades|cosas|cosa|articulo|articulos|material|materiales)$/;
   var RUIDO = { test: function (w) { return RUIDO_EXACTO.test(w) || RUIDO_RAIZ.test(w); } };
   function etiqueta(it) {
     var fam = String(it.f || '').split(' · ')[0];
@@ -223,6 +236,10 @@
       var ok = q.every(function (w) { var s = stem(w); return it.t.some(function (x) { return x.indexOf(s) === 0; }); });
       if (ok) res.push(it);
     });
+    if (!res.length && q.length >= 3) {
+      var kept = q.filter(function (w) { var s2 = stem(w); return CAT.some(function (it) { return it.t.some(function (x) { return x.indexOf(s2) === 0; }); }); });
+      if (kept.length >= 2 && kept.length < q.length) return buscar(kept);
+    }
     res.sort(function (a, b) { return a.n.length - b.n.length; });
     return res;
   }
@@ -230,10 +247,29 @@
   /* ---------- análisis del mensaje ---------- */
   var state = { zone: null, last: null, espera: null, cur: null, negocio: null, lista: [], resultados: [], hist: [] };
   var NEEDS_ZONE = { proxima: true };
+  var AMPLIO = { pascual: ['leche', 'pascual'], menaje: ['menaje'], vinos: ['vino'], aguas: ['agua'], congelados: ['congelado'], refrigerados: ['refrigerado'], despensa: ['despensa'], cafe: ['cafe'], bebidas: ['bebida'] };
   var SIMPLE = { saludo: 1, gracias: 1, adios: 1 };
 
+  /* limpia el mensaje: abreviaturas, saludos y cortesías delante o detrás de la pregunta, y alias de productos */
+  var SALUDO_INI = /^((?:buenos dias|buenas tardes|buenas noches|buenas|hola|hey|oye|perdona|perdone|disculpa|disculpe|saludos)\b[ ,]*)+/;
+  var CORTESIA_FIN = /[ ,]*\b(?:muchas gracias|gracias|por favor|porfavor|porfa|plis)$/;
+  function limpiar(raw) {
+    var t = norm(raw)
+      .replace(/\b(q|k|ke)\b/g, 'que').replace(/\b(xq|pq|porq|porke)\b/g, 'porque').replace(/\b(tb|tmb|tambn)\b/g, 'tambien').replace(/\bx\b/g, 'por').replace(/\bd\b/g, 'de')
+      .replace(/\b(queria|quisiera|quiero|me gustaria|necesito|os queria|queremos|querriamos) (saber|preguntar|consultar|preguntaros|averiguar)( si| que| cuanto| cuando| como| donde)?\b/g, ' ')
+      .replace(/\b(podeis|puedes|podria|podrias|pueden|puede) (decirme|decirnos|informarme|indicarme|decir)\b/g, ' ')
+      .replace(/\b(una|otra) (pregunta|duda|consulta)\b/g, ' ')
+      .replace(/\s+/g, ' ').trim();
+    var mg = t.match(SALUDO_INI);
+    if (mg && t.length > mg[0].length) t = t.slice(mg[0].length);
+    var mf = t.match(CORTESIA_FIN);
+    if (mf && t.length > mf[0].length) t = t.slice(0, t.length - mf[0].length);
+    t = t.trim() || norm(raw);
+    return t.replace(/\bcola cao\b/g, 'colacao').replace(/\bbrick\b/g, 'brik').replace(/\blacteos?\b/g, 'leche').replace(/\bleche del cafe\b/g, 'leche cafe').replace(/\bsemi\b/g, 'semidesnatada');
+  }
+
   function analizar(raw) {
-    var t = norm(raw).replace(/\bcola cao\b/g, 'colacao').replace(/\bbrick\b/g, 'brik').replace(/\blacteos?\b/g, 'leche').replace(/\bleche del cafe\b/g, 'leche cafe').replace(/\bsemi\b/g, 'semidesnatada'), tokens = t.split(' ').filter(Boolean);
+    var t = limpiar(raw), tokens = t.split(' ').filter(Boolean);
     var has = function (g) { return g.every(function (s) { return hasStem(tokens, s); }); };
     var scored = [];
     Object.keys(INTENTS).forEach(function (id) {
@@ -365,11 +401,11 @@
     if (pareceProducto) {
       var cont = a.tokens.filter(function (x) { return x.length >= 3 && !RUIDO.test(x); });
       if (cont.length && !(top && SIMPLE[top.id])) {
-        var catIntent = top && INTENTS[top.id].cat ? top.id : null;
+        var catIntent = (top && INTENTS[top.id].cat) ? top.id : ((a.scored.filter(function (x) { return INTENTS[x.id].cat; })[0] || {}).id || null);
         return cargarCatalogo().then(function () {
           var r = buscar(a.tokens);
           if (r.length) {
-            if (r.length > 6 && catIntent && cont.length === 1) { state.cur = catIntent; return INTENTS[catIntent].a(c); }
+            if (r.length > 6 && catIntent && cont.length === 1 && AMPLIO[catIntent] && AMPLIO[catIntent].some(function (st) { return cont[0].indexOf(st) === 0; })) { state.cur = catIntent; return INTENTS[catIntent].a(c); }
             var lista = unicos(r, 6);
             state.resultados = lista.map(function (it) { return { n: etiqueta(it), href: enlaceProducto(it), pg: PAGINAS[it.p] }; });
             state.cur = 'producto';
@@ -433,6 +469,7 @@
     lactosa: ['¿Qué leche me recomendáis para café?', '¿Cuánto tardáis?'],
     pascual: ['¿Qué leche me recomendáis para café?', '¿Tenéis nata para montar?'],
     negocio: ['¿A dónde repartís?', '¿Qué leche me recomendáis?'],
+    nada: ['¿A dónde repartís?', '¿Qué productos tenéis?'],
     _: ['¿A dónde repartís?', '¿Formas de pago?']
   };
   var SIN_ACCIONES = { saludo: 1, gracias: 1, adios: 1 };

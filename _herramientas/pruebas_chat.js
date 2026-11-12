@@ -82,6 +82,74 @@ const CASOS = [
   [['¿repartís en Rueda?'], { seguimiento: true }]
 ];
 
+/* Formas distintas de preguntar lo mismo: sin signos de interrogación, sin tildes, con abreviaturas y con erratas.
+   [mensaje, expresión que debe aparecer en la respuesta] */
+const VARIANTES = [
+  // productos y categorías
+  ['q leches teneis', /hostelería|Intense/i], ['que leches teneis', /hostelería|Intense/i], ['leches', /hostelería|Intense/i], ['leche', /hostelería|Intense/i],
+  ['teneis leche', /hostelería|Intense/i], ['tenéis leche?', /hostelería|Intense/i], ['que tipos de leche hay', /hostelería|Intense/i], ['venden leche', /hostelería|Intense/i],
+  ['hay leche sin lactosa', /lactosa/i], ['sin lactosa', /lactosa/i], ['leche para intolerantes a la lactosa', /lactosa/i],
+  ['vendeis nata', /nata/i], ['nata para montar', /Nata para montar/i], ['teneis nata de cocinar', /Nata para cocinar/i], ['nata', /nata/i],
+  ['mantequilla', /Mantequilla/i], ['teneis mantequilla sin sal', /sin sal/i], ['batidos', /Batido/i], ['batido de chocolate', /chocolate/i], ['colacao', /ColaCao/i], ['cola cao', /ColaCao/i],
+  ['yogures', /yogur/i], ['yogur de fresa', /fresa/i], ['copas', /menaje|Copa/i], ['copas de vino', /Copa/i], ['vasos', /menaje|Vaso/i], ['platos', /menaje|Plato/i],
+  ['vino', /vinos/i], ['teneis vino blanco', /vinos|Bornos|Verdejo/i], ['agua', /agua/i], ['aguas con gas', /gas|Pellegrino|Perrier|agua/i], ['teneis agua sin gas', /agua|Bezoya|Aquarel/i],
+  ['cafe', /Mocay/i], ['teneis cafe en grano', /Mocay/i], ['infusiones', /infusion|Mocay/i], ['cervezas', /tarifa/i], ['refrescos', /tarifa|Pascual/i], ['teneis cocacola', /tarifa|bebidas/i],
+  ['que marcas teneis', /Pascual/i], ['que productos teneis', /Pascual/i], ['que vendeis', /Pascual/i], ['catalogo', /Pascual/i], ['que ofreceis', /Pascual/i], ['gama de productos', /Pascual/i],
+  ['aceite', /aceite|despensa/i], ['teneis atun', /Atún|despensa/i], ['legumbres', /Luengo|legumbre|Lenteja|Garbanzo/i], ['lentejas', /Lenteja/i], ['salsas', /salsa|despensa/i],
+  ['congelados', /congelado/i], ['pan congelado', /pan|congelado/i], ['croissant', /Croissant/i], ['quesos', /queso|refrigerado/i], ['huevos', /huevo|refrigerado/i], ['jamon', /jamón|charcuter|refrigerado/i],
+  // reparto
+  ['repartis en rueda', /lunes y jueves/i], ['llegais a tordesillas', /lunes y jueves/i], ['q dias pasais por olmedo', /viernes/i], ['dias de reparto', /Medina del Campo/i], ['que dias repartis', /Medina del Campo/i],
+  ['cuando pasais por mojados', /miércoles/i], ['a donde repartis', /90 km/i], ['zona de reparto', /90 km/i], ['hasta donde llegais', /90 km/i], ['llevais a peñafiel', /viernes/i],
+  ['repartis a domicilio', /reparto|repartimos|90 km/i], ['haceis envios', /sin coste|repartimos|90 km/i], ['donde vendeis', /90 km/i], ['reparto en cantalapiedra', /miércoles/i],
+  // plazos y horario
+  ['cuanto tardais en entregar', /24/], ['cuanto tarda un pedido', /24/], ['en cuanto tiempo llega', /24/], ['plazo de entrega', /24/], ['entregais el mismo dia', /mismo día/i], ['es urgente', /24|mismo día/i], ['tiempo de entrega', /24/],
+  ['a que hora abris', /7:00 a 15:00/], ['hasta que hora estais', /15:00/], ['horario de atencion', /7:00 a 15:00/], ['estais abiertos', /7:00 a 15:00|atendiendo|fuera/i], ['horarios', /7:00 a 15:00/], ['abris por la tarde', /7:00 a 15:00/],
+  // pago, cliente, condiciones
+  ['como se paga', /contado|domicili/i], ['se puede pagar con tarjeta', /tarjeta/i], ['aceptais efectivo', /efectivo/i], ['pagos', /contado|domicili/i], ['puedo pagar a 30 dias', /30 días/i], ['domiciliacion bancaria', /domicili/i], ['teneis datafono', /tarjeta|contado/i],
+  ['quiero ser cliente', /ficha|alta/i], ['como me doy de alta', /ficha|alta/i], ['como empiezo a comprar', /ficha|alta/i], ['que necesito para ser cliente', /ficha|alta/i], ['hacerme cliente', /ficha|alta/i], ['abrir una cuenta', /ficha|alta/i],
+  ['minimo de pedido', /No hay pedido mínimo/i], ['pedido minimo', /No hay pedido mínimo/i], ['cual es el pedido minimo', /No hay pedido mínimo/i], ['hay minimo', /No hay pedido mínimo/i],
+  ['cobrais el transporte', /sin coste/i], ['tiene coste el envio', /sin coste/i], ['el envio es gratis', /sin coste/i], ['gastos de envio', /sin coste/i], ['portes', /sin coste/i],
+  ['precios', /no publicamos precios/i], ['cuanto cuesta la leche', /no publicamos precios/i], ['tarifa', /no publicamos precios/i], ['me pasais precios', /no publicamos precios/i], ['quiero presupuesto', /no publicamos precios|tarifa/i], ['cuanto vale', /no publicamos precios/i],
+  ['como hago un pedido', /7:00 a 15:00/], ['quiero hacer un pedido', /7:00 a 15:00/], ['como pido', /7:00 a 15:00/], ['encargar mercancia', /7:00 a 15:00/],
+  // contacto y empresa
+  ['telefono', /635 09 80 44/], ['cual es vuestro telefono', /635 09 80 44/], ['numero de telefono', /635 09 80 44/], ['email', /oficina@distribucionesvm\.es/], ['correo', /oficina@distribucionesvm\.es/],
+  ['direccion', /Labradores/], ['donde estais', /Labradores/], ['donde os encuentro', /Labradores/], ['whatsapp', /no tiene WhatsApp/i], ['teneis wasap', /no tiene WhatsApp/i], ['como contacto con vosotros', /635 09 80 44/],
+  ['quiero hablar con alguien', /llama/i], ['pasame con una persona', /llama/i], ['me puede llamar alguien', /llama|635/i], ['atencion al cliente', /llama|635/i], ['hablar con un comercial', /comercial|llama/i],
+  ['desde cuando existis', /1982|44 años/], ['cuantos años llevais', /44 años/], ['quienes sois', /Distribuciones Valentín Martín/], ['historia de la empresa', /1982|44 años/], ['instagram', /Instagram/],
+  // incidencias y cortesía
+  ['me ha llegado roto', /albarán/i], ['me falta un producto', /albarán/i], ['tengo una queja', /albarán|Lamentamos/i], ['no me ha llegado el pedido', /albarán|Lamentamos/i], ['devolucion', /albarán|Lamentamos/i],
+  ['buenas', /Hola/], ['buenos dias', /Hola/], ['buenas tardes', /Hola/], ['hey', /Hola/], ['muchas gracias', /A ti/], ['ok gracias', /A ti/], ['adios', /Hasta pronto/], ['hasta luego', /Hasta pronto/], ['vale', /A ti/],
+  // leche para café
+  ['q leche pongo en el cafe', /Intense/], ['leche para cafeteria', /Intense/], ['leche para espumar', /Intense|Barista/], ['mejor leche para capuccino', /Intense|Barista/], ['leche barista', /Barista/], ['cual es la leche mas vendida', /Intense/], ['q leche me recomiendas', /Intense/],
+  ['leche para hosteleria', /Intense|Classic/], ['leche profesional', /Intense|Classic/], ['leche para bares', /Intense|Classic/], ['leche mas barata', /Classic/],
+  // abreviaturas y erratas
+  ['q dias reparten x medina', /lunes a viernes/i], ['xq no llega mi pedido', /albarán|Lamentamos|llama/i], ['tb teneis aceite', /aceite|despensa/i], ['tenies leche', /hostelería|Intense/i], ['repartis en ruedaa', /lunes y jueves/i],
+  ['hola, q leches teneis', /hostelería|Intense/i], ['buenos dias, queria saber si repartis en rueda', /lunes y jueves/i], ['perdona, ¿hasta que hora abris? gracias', /15:00/], ['oye q hora abris', /7:00 a 15:00/],
+  ['una pregunta: aceptais tarjeta', /tarjeta/i], ['q tal', /Hola/], ['disculpa podrias decirme cuanto tardais', /24/], ['hola buenas tardes teneis nata para montar por favor', /Nata para montar/i],
+  ['buenas, me gustaria saber el horario', /7:00 a 15:00/], ['quisiera saber que dias reparten en mojados', /miércoles/i], ['hola q marcas de leche teneis', /Pascual|Intense|hostelería/i],
+  ['REPARTIS EN RUEDA', /lunes y jueves/i], ['  repartis   en   rueda  ', /lunes y jueves/i], ['cuanto tardais??', /24/], ['¿¿horario??', /7:00 a 15:00/]
+];
+for (const [m, rx] of VARIANTES) CASOS.push([[m], { texto: rx }]);
+
+/* Segundo grupo, redactado con frases más naturales y sin ajustar el asistente a ellas una a una */
+const VARIANTES2 = [
+  ['oye y vosotros llegais a mi pueblo que es nava del rey', /miércoles/i], ['sabeis si pasais por viana de cega', /miércoles/i], ['mi bar esta en olmedo, cuando me traeis la mercancia', /viernes/i],
+  ['si hago el pedido hoy cuando me lo traen', /pueblo/i], ['a que hora hay que pedir para que llegue hoy', /10:00/], ['trabajais los festivos', /lunes a viernes/i],
+  ['teneis algo de cafe descafeinado', /Mocay/i], ['busco servilletas', /Servilleta/i], ['necesito cubiertos', /Cubier|cubertería|menaje/i], ['teneis tenedores', /Tenedor/i],
+  ['que vinos teneis', /vinos/i], ['teneis verdejo', /Verdejo/i], ['teneis cava', /cava|espumoso|vinos|tarifa|635/i], ['agua mineral', /agua/i], ['teneis pepsi', /tarifa|bebidas/i],
+  ['yogures de sabores', /yogur/i], ['flan', /flan|postre|Pascual/i], ['natillas de chocolate', /Natillas/i], ['leche entera', /entera/i], ['leche semidesnatada para el hogar', /semidesnatada/i],
+  ['leche desnatada', /desnatada/i], ['leche de avena', /avena|Vivesoy/i], ['bebida de soja', /soja|Vivesoy/i], ['zumos', /zumo|Essential|Pascual/i], ['bifrutas', /Bifrutas/i],
+  ['pan', /pan|congelado/i], ['bolleria', /bollería|congelados/i], ['napolitanas', /Napolitana/i], ['embutidos', /embutido|Chorizo|charcuter|refrigerado/i], ['queso', /queso/i],
+  ['como puedo hacer un pedido si ya soy cliente', /7:00 a 15:00/], ['tengo que firmar algo para empezar', /ficha|alta|SEPA/i], ['cuanto hay que pedir como minimo', /No hay pedido mínimo/i],
+  ['el reparto tiene algun coste', /sin coste/i], ['puedo pagar a final de mes', /mensual|factura|domicili/i], ['me mandais una tarifa', /tarifa/i], ['cual es vuestro horario de verano', /7:00 a 15:00/],
+  ['si llamo por la tarde me cogen', /móvil|15:00/i], ['podeis llamarme', /635|llama/i], ['cual es el mail', /oficina@distribucionesvm\.es/], ['donde teneis el almacen', /Labradores/],
+  ['sois de medina del campo', /Medina del Campo/], ['os sigo en redes', /Facebook|Instagram/], ['me ha llegado el pedido incompleto', /albarán|Lamentamos/i], ['me han traido mal el pedido', /albarán|Lamentamos/i],
+  ['quiero reclamar', /albarán|Lamentamos/i], ['ahora estais atendiendo', /atendiendo|fuera/i], ['haceis repartos a restaurantes pequeños', /repartimos|90 km|reparto/i], ['envios a toda españa', /90 km|repart|No tengo/i],
+  ['repartis en valladolid capital', /Valladolid/i], ['como se paga', /contado|domicili/i], ['que leche usan los bares', /Intense|Classic|Extra/i], ['leche para hacer cafe con leche', /Intense|Barista|Extra/i],
+  ['teneis leche en polvo', /leche|Pascual|635/i], ['leche de coco', /leche|Vivesoy|Pascual|635/i]
+];
+for (const [m, rx] of VARIANTES2) CASOS.push([[m], { texto: rx }]);
+
 (async () => {
   await new Promise(r => servidor.listen(0, r));
   const base = 'http://localhost:' + servidor.address().port + '/index.html';
