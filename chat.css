@@ -21,3 +21,14 @@
 @media(max-width:560px){.chat-msg{max-width:100%}.chat-send{padding:0 16px}}
 @media(prefers-reduced-motion:reduce){.chat-log{scroll-behavior:auto}}
 .chat-open .call-float{display:none!important}
+
+/* botones de seguimiento, llamar/escribir y lista de interés */
+.chat-acts{align-self:flex-start;max-width:100%;display:flex;flex-direction:column;gap:8px;margin:-2px 0 4px}
+.chat-follow,.chat-pers{display:flex;flex-wrap:wrap;gap:8px}
+.chat-follow button{font:inherit;font-size:.88rem;font-weight:500;padding:8px 13px;min-height:44px;border-radius:999px;border:1px solid rgba(20,16,13,.3);background:#fff;color:inherit;cursor:pointer}
+.chat-act{display:inline-flex;align-items:center;font-size:.88rem;font-weight:600;padding:8px 14px;min-height:44px;border-radius:999px;background:#14100d;color:#fff;text-decoration:none}
+.chat-act+.chat-act{background:#a80f0a}
+.chat-fuera{margin:0;font-size:.85rem;line-height:1.35;color:#4a4541;max-width:48ch}
+.chat-mini{font:inherit;font-size:.82rem;font-weight:600;padding:5px 11px;min-height:32px;border-radius:999px;border:1px solid rgba(20,16,13,.35);background:#fff;color:inherit;cursor:pointer;margin-left:4px}
+.chat-msg small{color:#4a4541}
+@media(hover:hover) and (pointer:fine){.chat-follow button:hover,.chat-mini:hover{background:#f3f2ef}}

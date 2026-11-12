@@ -4,6 +4,9 @@
 
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const img = (item, className = '', eager = false) => `<img class="${className}" src="${esc(item.image)}" alt="${esc(item.alt || item.name)}" width="${Number(item.width) || 600}" height="${Number(item.height) || 600}" loading="${eager ? 'eager' : 'lazy'}" decoding="async">`;
+  /* identificador estable de cada escena (enlaces con #): item.id o, si falta, familia + título */
+  const slug = t => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 48);
+  const sid = item => ` id="${esc(item.id || slug((item.family || '') + ' ' + (item.title || '')))}"`;
   const number = index => String(index + 1).padStart(2, '0');
   let total = 4;
   const dark = item => item.dark ? ' is-dark' : '';
@@ -19,7 +22,7 @@
 
   const templates = {
     hero(item, index) {
-      return `<section class="pw-scene pw-a${item.product.wide?' is-wide':''}${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
+      return `<section${sid(item)} class="pw-scene pw-a${item.product.wide?' is-wide':''}${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
         <div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
           <div class="pw-a-copy"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2><p class="pw-description">${esc(item.description)}</p>${price(item.family,item.product)}${button(item)}</div>
           <div class="pw-a-art">${item.logo?`<img class="pw-a-logo" src="${esc(item.logo.image)}" alt="${esc(item.logo.alt)}" width="${Number(item.logo.width)}" height="${Number(item.logo.height)}">`:''}<span class="pw-a-ring" aria-hidden="true"></span><span class="pw-a-backword" aria-hidden="true">${esc(item.backword || item.family)}</span>${img(item.product,'pw-a-product')}<p class="pw-product-note">${esc(item.product.name)}</p></div>
@@ -27,7 +30,7 @@
         </div></div></section>`;
     },
     range(item, index) {
-      return `<section class="pw-scene pw-b${dark(item)}" style="--n:${item.products.length};--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
+      return `<section${sid(item)} class="pw-scene pw-b${dark(item)}" style="--n:${item.products.length};--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
         <div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
           <div class="pw-b-head"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2><p>${esc(item.description)}</p></div>
           <div class="pw-b-window"><div class="pw-b-track">${item.products.map((p,i) => `<article class="pw-b-panel"><span class="pw-panel-number">${number(i)} / ${String(item.products.length).padStart(2,'0')}</span><div class="pw-b-image">${img(p,'',true)}</div><div class="pw-b-copy"><p class="pw-panel-kicker">${esc(item.family)}</p><h3>${esc(p.name)}</h3><p>${esc(p.description)}</p>${price(item.family,p)}</div></article>`).join('')}</div></div>
@@ -35,14 +38,14 @@
         </div></div></section>`;
     },
     editorial(item, index) {
-      return `<section class="pw-scene pw-c${item.columns===3?' is-3':''}${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}"><div class="pw-c-inner">${label(item,index)}
+      return `<section${sid(item)} class="pw-scene pw-c${item.columns===3?' is-3':''}${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}"><div class="pw-c-inner">${label(item,index)}
         <div class="pw-c-title"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2><p>${esc(item.description)}</p></div>
         <div class="pw-c-grid">${item.products.map((p,i) => `<article class="pw-c-item"><div class="pw-c-photo${p.cover?' is-cover':''}"${p.cover?` style="--ar:${Number(p.width)||4}/${Number(p.height)||3}"`:''}>${img(p)}</div><div class="pw-c-caption"><span>${number(i)}</span><div><h3>${esc(p.name)}</h3><p>${esc(p.description)}</p>${price(item.family,p)}</div></div></article>`).join('')}</div>${button(item)}</div></section>`;
     },
     lineup(item, index) {
       const n = item.variants.length;
       const multi = item.variants.some(v => v.image);
-      return `<section class="pw-scene pw-e${n>8?' is-long':''}${n>14?' is-scroll':''}${dark(item)}" style="--n:${n};--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
+      return `<section${sid(item)} class="pw-scene pw-e${n>8?' is-long':''}${n>14?' is-scroll':''}${dark(item)}" style="--n:${n};--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
         <div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
           <div class="pw-e-grid">
             <div class="pw-e-head"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2></div>
@@ -52,7 +55,7 @@
         </div></div></section>`;
     },
     story(item, index) {
-      return `<section class="pw-scene pw-d${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}"><div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
+      return `<section${sid(item)} class="pw-scene pw-d${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}"><div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
         <div class="pw-d-head"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2></div>
         <div class="pw-d-scenes">${item.frames.map((f,i)=>`<article class="pw-d-frame${i===0?' is-current':''}" data-frame="${i}" style="--frame-color:${esc(f.color || item.color)}"><div class="pw-d-image">${img(f)}</div><div class="pw-d-copy"><span>${number(i)} / ${String(item.frames.length).padStart(2,'0')}</span><h3>${esc(f.name)}</h3><p>${esc(f.description)}</p>${price(item.family,f)}</div></article>`).join('')}</div>
         <div class="pw-d-rail" aria-hidden="true">${item.frames.map((_,i)=>`<i${i===0?' class="is-current"':''}></i>`).join('')}</div>
@@ -73,6 +76,12 @@
       if (!templates[item.template]) throw new Error(`Plantilla desconocida: ${item.template}`);
       return templates[item.template](item, index);
     }).join('');
+    /* enlace con #sección (por ejemplo, desde el asistente): se desplaza a la escena una vez montada la página */
+    if (location.hash.length > 1) {
+      const ir = () => { const t = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (t) t.scrollIntoView(); };
+      setTimeout(ir, 80);
+      window.addEventListener('load', () => setTimeout(ir, 250), { once: true });
+    }
     if (mount.querySelector('.pw-price')) mount.insertAdjacentHTML('afterend', '<p class="pw-price-note">Precios de tarifa por unidad de venta. Pide tu tarifa personalizada, sin compromiso.</p>');
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     const mobile = window.matchMedia('(max-width: 760px)');

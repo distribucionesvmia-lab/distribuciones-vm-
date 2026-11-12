@@ -4,21 +4,21 @@ window.ProductWorld.init({
   order: ['Leche','Batidos','Natas','Mantequillas','Bebidas Pascual','Vivesoy','Bifrutas','Yogikids','Yogures','Postres','Natillas'],
   sections: [
     {
-      template: 'hero', family: 'Leche Intense', color: '#e8e0d6', ink: '#2b2a3a',
+      template: 'hero', id: 'leche-intense', family: 'Leche Intense', color: '#e8e0d6', ink: '#2b2a3a',
       eyebrow: 'Pascual Profesional · Botella de 1,5 litros', title: 'Intense. La más vendida.',
       description: 'Leche Intense en botella de 1,5 litros: la leche más vendida de la gama Pascual Profesional para hostelería.',
       backword: 'INTENSE', bottom: '01 — Leche Intense · 1,5 L · la más vendida',
       product: {name:'Leche Pascual Intense · 1,5 L', image:'assets/pascual/intense-cutout.webp', width:240, height:688, alt:'Botella de Leche Pascual Profesional Intense de 1,5 litros'}
     },
     {
-      template: 'hero', family: 'Leche Pascual', color: '#efe3d6', ink: '#3a2418',
+      template: 'hero', id: 'leche-classic-10l', family: 'Leche Pascual', color: '#efe3d6', ink: '#3a2418',
       eyebrow: 'Pascual Profesional', title: 'Classic. Para la barra y el café.',
       description: 'Leche semidesnatada Classic, más ajustada en precio e ideal para la barra y el café. Leche de Bienestar Animal para hostelería, de sabor suave y con la cremosidad de la leche. Tiene las mismas cualidades de emulsión que la variedad entera por su contenido en proteína.',
       backword: 'CLASSIC', bottom: '02 — Leche Classic semidesnatada · caja de 10 L para tu enfriador',
       product: {name:'Leche Pascual Classic semidesnatada · caja de 10 L', image:'assets/pascual/classic-10l.webp', width:333, height:434, alt:'Caja de 10 litros de leche Pascual Profesional Classic, ideal para café'}
     },
     {
-      template: 'editorial', family: 'Leche Classic', color: '#f1e6da', ink: '#3a2418',
+      template: 'editorial', id: 'bag-in-box-10l', family: 'Leche Classic', color: '#f1e6da', ink: '#3a2418',
       eyebrow: 'Nuevo formato para hostelería', title: 'Bag in box de 10 litros.',
       description: 'Leche Classic en caja de 10 litros, para llenar el enfriador de leche con una sola acción.',
       products: [
@@ -27,7 +27,7 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'story', family: 'Leche Classic', color: '#3a2418', ink: '#f5ead9', dark: true,
+      template: 'story', id: 'ventajas-bag-in-box', family: 'Leche Classic', color: '#3a2418', ink: '#f5ead9', dark: true,
       eyebrow: 'Ventajas del formato', title: 'Por qué el bag in box.',
       frames: [
         {name:'Menos residuos, más sostenible', description:'Los números no engañan: 49 % menos de residuos y 7 % menos de CO2 por litro movido (vs. botella de 1,5 L).', image:'assets/pascual/ventaja-residuos.webp', width:270, height:270, alt:'Icono de reciclaje', color:'#3a2418'},
@@ -37,21 +37,21 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'hero', family: 'Leche Classic', color: '#f1e6da', ink: '#3a2418',
+      template: 'hero', id: 'leche-classic-botella', family: 'Leche Classic', color: '#f1e6da', ink: '#3a2418',
       eyebrow: 'Botella de 1,5 litros', title: 'Classic, también en botella.',
       description: 'Leche Classic semidesnatada en botella de 1,5 litros, con un precio más ajustado. Pensada para hostelería.',
       backword: 'CLASSIC', bottom: 'Leche Classic · 1,5 L · semidesnatada · precio más ajustado',
       product: {name:'Leche Pascual Classic · 1,5 L', image:'assets/pascual/classic-botella-1-5l.webp', width:168, height:512, alt:'Botella de Leche Pascual Profesional Classic de 1,5 litros'}
     },
     {
-      template: 'hero', family: 'Leche Extra Crème', color: '#efe3d6', ink: '#2e1c14',
+      template: 'hero', id: 'leche-extra-creme', family: 'Leche Extra Crème', color: '#efe3d6', ink: '#2e1c14',
       eyebrow: 'Botella de 1,5 litros', title: 'Extra Crème. Emulsiona mejor.',
       description: 'Leche Extra Crème en botella de 1,5 litros, especial hostelería. Lleva más proteína láctea, y por eso emulsiona mejor.',
       backword: 'EXTRA', bottom: 'Leche Extra Crème · 1,5 L · más proteína láctea · especial hostelería',
       product: {name:'Leche Pascual Extra Crème · 1,5 L', image:'assets/pascual/extra-creme-botella-1-5l.webp', width:130, height:416, alt:'Botella de Leche Pascual Profesional Extra Crème de 1,5 litros'}
     },
     {
-      template: 'lineup', family: 'Leche Alimentación', color: '#e4ecf6', ink: '#12305a',
+      template: 'lineup', id: 'leche-hogar', family: 'Leche Alimentación', color: '#e4ecf6', ink: '#12305a',
       eyebrow: 'Botella de 1,5 litros · para el hogar', title: 'Leche Pascual para el hogar.',
       note: 'Una imagen por variedad',
       variants: [
@@ -61,7 +61,7 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'lineup', family: 'Leche en brik', color: '#dde8f5', ink: '#12305a',
+      template: 'lineup', id: 'leche-brik', family: 'Leche en brik', color: '#dde8f5', ink: '#12305a',
       eyebrow: 'Brik · alimentación y hogar', title: 'Leche en brik, para el día a día.',
       note: 'Una imagen por variedad',
       variants: [
@@ -72,14 +72,14 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'hero', family: 'Leche Sin Lactosa Barista', color: '#efe5d8', ink: '#2f3a2a',
+      template: 'hero', id: 'sin-lactosa-barista', family: 'Leche Sin Lactosa Barista', color: '#efe5d8', ink: '#2f3a2a',
       eyebrow: 'Pascual Profesional · Sin lactosa', title: 'Sin lactosa Barista. Para tu barra.',
       description: 'Leche sin lactosa semidesnatada Barista, para hostelería. Emulsiona mejor en el vaporizador de la cafetera que la leche sin lactosa normal.',
       backword: 'BARISTA', bottom: 'Leche sin lactosa Barista · semidesnatada · para cafeterías y bares',
       product: {name:'Leche Pascual Profesional Sin Lactosa Barista · semidesnatada', image:'assets/pascual/sinlactosa-barista.webp', width:100, height:256, alt:'Brik de leche Pascual Profesional Sin Lactosa Barista, semidesnatada'}
     },
     {
-      template: 'lineup', family: 'Leche Sin Lactosa', color: '#ebe2f1', ink: '#44245e',
+      template: 'lineup', id: 'sin-lactosa', family: 'Leche Sin Lactosa', color: '#ebe2f1', ink: '#44245e',
       eyebrow: 'Brik · sin lactosa para el hogar', title: 'Leche sin lactosa, en brik.',
       note: 'Una imagen por variedad',
       variants: [
@@ -90,7 +90,7 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'lineup', family: 'Leche Movit', color: '#f3dfe6', ink: '#6b1e3d',
+      template: 'lineup', id: 'movit', family: 'Leche Movit', color: '#f3dfe6', ink: '#6b1e3d',
       eyebrow: 'Con calcio · consumo en el hogar', title: 'Movit, leche con calcio.',
       note: 'Una imagen por variedad',
       variants: [
@@ -99,7 +99,7 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'lineup', family: 'Batidos Pascual', color: '#fbd9e4', ink: '#7a1d3c',
+      template: 'lineup', id: 'batidos-vidrio', family: 'Batidos Pascual', color: '#fbd9e4', ink: '#7a1d3c',
       eyebrow: 'Batidos para hostelería · vidrio', title: 'Batidos Pascual, un formato único para el canal Horeca.',
       note: 'Una imagen por variedad',
       variants: [
@@ -110,7 +110,7 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'lineup', family: 'Batidos en brik', color: '#f6e4d8', ink: '#5a2e1b',
+      template: 'lineup', id: 'batidos-brik', family: 'Batidos en brik', color: '#f6e4d8', ink: '#5a2e1b',
       eyebrow: 'Brik de 200 ml · alimentación', title: 'Batidos en brik, para llevar.',
       note: 'Una imagen por variedad',
       variants: [
@@ -119,7 +119,7 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'lineup', family: 'Natas Pascual', color: '#e6eef7', ink: '#17305a',
+      template: 'lineup', id: 'natas', family: 'Natas Pascual', color: '#e6eef7', ink: '#17305a',
       eyebrow: 'Para cocinar y para montar', title: 'Natas, para cocinar y para montar.',
       note: 'Una imagen por variedad',
       variants: [
@@ -132,7 +132,7 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'lineup', family: 'Mantequillas Pascual', color: '#f7ecc4', ink: '#5a4310',
+      template: 'lineup', id: 'mantequillas', family: 'Mantequillas Pascual', color: '#f7ecc4', ink: '#5a4310',
       eyebrow: 'Pastilla y tarrina', title: 'Mantequilla, en pastilla y en tarrina.',
       note: 'Una imagen por variedad',
       variants: [
@@ -143,7 +143,7 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'range', family: 'Vivesoy Barista', color: '#e9eacb', ink: '#214b32',
+      template: 'range', id: 'vivesoy', family: 'Vivesoy Barista', color: '#e9eacb', ink: '#214b32',
       eyebrow: 'Tres variedades, una misma barra', title: 'Vegetal, en movimiento.',
       description: 'Tres bebidas vegetales Vivesoy Barista para descubrir en la barra.',
       products: [
@@ -153,7 +153,7 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'lineup', family: 'Bifrutas', color: '#ffd9b0', ink: '#6b2f0e',
+      template: 'lineup', id: 'bifrutas', family: 'Bifrutas', color: '#ffd9b0', ink: '#6b2f0e',
       eyebrow: 'Sabor Original', title: 'Bifrutas, en cuatro sabores.',
       note: 'Una imagen por variedad',
       variants: [
@@ -166,7 +166,7 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'editorial', family: 'Bebidas Pascual', color: '#ffedda', ink: '#512f1c',
+      template: 'editorial', id: 'zumos', family: 'Bebidas Pascual', color: '#ffedda', ink: '#512f1c',
       eyebrow: 'Una selección para cada momento', title: 'Color en la carta.',
       description: 'Zumos Pascual Essential para la carta.',
       products: [
@@ -174,7 +174,7 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'lineup', family: 'Yogures Pascual', color: '#fbe8e6', ink: '#7a1218',
+      template: 'lineup', id: 'yogures', family: 'Yogures Pascual', color: '#fbe8e6', ink: '#7a1218',
       eyebrow: 'Packs de 4 × 120 g y Yogikids de 80 g', title: 'Un yogur para cada sabor.',
       note: 'Una imagen por variedad',
       variants: [
@@ -196,14 +196,14 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'hero', family: 'Postres Pascual', color: '#fff0c4', ink: '#59330f',
+      template: 'hero', id: 'flan', family: 'Postres Pascual', color: '#fff0c4', ink: '#59330f',
       eyebrow: 'Flan de huevo', title: 'El postre de siempre.',
       description: 'Postre Pascual de flan de huevo, presentado en cuatro unidades individuales.',
       backword: 'FLAN', bottom: 'Pack de 4 × 100 g',
       product: {name:'Flan de huevo · pack de 4 × 100 g', image:'assets/pascual/flan-huevo.webp', width:391, height:533, alt:'Flan de huevo Pascual, imagen de la gama'}
     },
     {
-      template: 'lineup', family: 'Natillas Pascual', color: '#ead9cb', ink: '#4a2a1b',
+      template: 'lineup', id: 'natillas', family: 'Natillas Pascual', color: '#ead9cb', ink: '#4a2a1b',
       eyebrow: 'Vaso individual de 120 g', title: 'Natillas, a cucharadas.',
       note: 'Una imagen por variedad',
       variants: [
