@@ -256,3 +256,11 @@ button,a{-webkit-tap-highlight-color:transparent}
 .m-col-card:not(.m-col-wide) img{aspect-ratio:3/2}
 .m-col-card figcaption{padding:14px 6px 6px;text-align:center;font-weight:700;letter-spacing:.02em;text-transform:uppercase;font-size:clamp(.85rem,.8rem + .2vw,1.05rem)}
 @media(max-width:760px){.m-collage-grid{grid-template-columns:1fr 1fr}.m-col-card,.m-col-card.m-col-wide{grid-column:span 1}.m-col-card.m-col-wide{grid-column:span 2}.m-col-card:not(.m-col-wide):last-child{grid-column:span 2}.m-col-card:not(.m-col-wide):last-child img{aspect-ratio:3/1.6}}
+
+.m-more-text{margin:0 0 22px;max-width:44ch}
+.m-more-text summary{display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-weight:600;font-size:.95rem;list-style:none;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.m-more-text summary::-webkit-details-marker{display:none}
+.m-more-text summary::after{content:"+";font-size:1.1rem;line-height:1}
+.m-more-text[open] summary::after{content:"−"}
+.m-more-text summary:focus-visible{outline:3px solid var(--red);outline-offset:4px;border-radius:3px}
+.m-more-text p{margin:12px 0 0;font-size:1rem;line-height:1.55}

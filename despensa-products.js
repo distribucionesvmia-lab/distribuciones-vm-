@@ -20,7 +20,7 @@ window.ProductWorld.init({
     {
       template: 'range', family: 'Calvo · Formatos', color: '#dce8f2', ink: '#143a5e',
       eyebrow: 'Del plato a la barra', title: 'Formatos que aguantan la rotación.',
-      description: 'Bolsas y latas de gran formato Calvo e Isabel, pensadas para abrirse fácil, ocupar menos y servir con ritmo. Isabel está en esta escena como marca propia (bolsa de 1 kg), no como un producto de Calvo. Isabel habla de «sabor y calidad de primera».',
+      description: 'Bolsas y latas de gran formato Calvo e Isabel, pensadas para abrirse fácil, ocupar menos y servir con ritmo. Isabel, en bolsa de 1 kg, habla de «sabor y calidad de primera».',
       products: [
         {name:'Atún Eureka', description:'Atún en trozos en aceite de girasol.', image:D+'calvo-hosteleria-eureka.webp', width:332, height:477, alt:'Bolsa Eureka de atún en trozos en aceite de girasol'},
         {name:'Atún Isabel · bolsa de 1 kg', description:'Atún en aceite de girasol en bolsa de 1 kg, para cocina profesional.', image:D+'isabel-atun-bolsa-1kg.webp', width:350, height:480, alt:'Bolsa Isabel de atún en aceite de girasol de 1 kg'},

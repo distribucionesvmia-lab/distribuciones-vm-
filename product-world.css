@@ -222,3 +222,12 @@
 
 .pw-d-note{margin:18px 0 0;font-size:.8rem;line-height:1.5;max-width:46ch;opacity:.8}
 @media(min-width:761px){.pw-d-note{position:absolute;top:0;left:calc(100% + 5vw);width:min(34ch,30vw);margin:0}}
+
+/* Texto largo de las portadas: una frase y un desplegable */
+.pw-more-text{margin:2px 0 18px;max-width:46ch}
+.pw-more-text summary{display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-weight:600;font-size:.95rem;list-style:none;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;opacity:.92}
+.pw-more-text summary::-webkit-details-marker{display:none}
+.pw-more-text summary::after{content:"+";font-size:1.1rem;line-height:1;text-decoration:none;display:inline-block}
+.pw-more-text[open] summary::after{content:"−"}
+.pw-more-text summary:focus-visible{outline:2px solid currentColor;outline-offset:4px;border-radius:3px}
+.pw-more-text p{margin:12px 0 0;font-size:.98rem;line-height:1.55}
