@@ -18,10 +18,10 @@ window.ProductWorld.init({
   sections: [
     {
       template: 'lineup', family: 'Vajilla', color: '#eceff0', ink: '#1c2830',
-      eyebrow: 'Mesa de tu local', title: 'Vajilla para restaurantes.',
+      eyebrow: 'Mesa de tu local', title: 'Vajilla para el servicio de cada día.',
       product: {name:'Platos, cuenco y vasos sobre una mesa de madera con servilleta y cubiertos negros', image:D+'vajilla-mesa-servida.webp', width:940, height:1400, lazy:true, alt:'Platos, cuenco y vasos sobre una mesa de madera con servilleta y cubiertos negros'},
       variants: [
-        {name:'Piensa en tu carta', description:'Un menú del día, unas tapas o una carta de platos piden piezas distintas. Dinos qué sirves y te asesoramos.'},
+        {name:'Piensa en tu carta', description:'Piezas para el menú del día, las tapas o la carta. Si abres o reformas, te asesoramos con las medidas y el estilo de tu sala.'},
         {name:'Platos, bols y tazas', description:'Piezas para el servicio de cada día en bares, restaurantes y hoteles.'},
         {name:'En el mismo pedido', description:'Añade la vajilla al reparto que ya recibes, sin otro proveedor ni otra entrega.'}
       ],
@@ -29,10 +29,10 @@ window.ProductWorld.init({
     },
     {
       template: 'lineup', family: 'Cubertería', color: '#e1e8ec', ink: '#1c2830',
-      eyebrow: 'Servicio de sala', title: 'Cubertería para hostelería.',
+      eyebrow: 'Servicio de sala', title: 'Cubertería que aguanta el trote de la sala.',
       product: {name:'Cajón con cuchillos, tenedores y cucharas de acero inoxidable', image:D+'cuberteria-cajon-cubiertos.webp', width:1100, height:733, lazy:true, alt:'Cajón con cuchillos, tenedores y cucharas de acero inoxidable'},
       variants: [
-        {name:'Para cada servicio', description:'Tenedores, cuchillos y cucharas para el servicio de sala, según el tipo de local.'},
+        {name:'Para cada servicio', description:'Colecciones de Comas y Jay —esta última, «sencilla, alternativa, moderna» en su línea Hotel—, en acero inoxidable para el servicio diario. Jay forma parte del grupo de Lacor desde 2024.'},
         {name:'Postre y café', description:'Cucharillas y cubiertos de postre para completar el servicio.'},
         {name:'Cuántos necesitas', description:'Dinos tu aforo y el tipo de servicio y te asesoramos sobre cuántos juegos pedir.'}
       ],
@@ -40,10 +40,10 @@ window.ProductWorld.init({
     },
     {
       template: 'lineup', family: 'Cristalería', color: '#f1ebe4', ink: '#1c2830',
-      eyebrow: 'Barra y sala', title: 'Cristalería para hostelería.',
+      eyebrow: 'Barra y sala', title: 'Cristalería a prueba de cada servicio.',
       product: {name:'Dos copas de cristal tallado sobre una mesa con camino de mesa gris y platos', image:D+'cristaleria-copas-talladas.webp', width:1100, height:1101, lazy:true, alt:'Dos copas de cristal tallado sobre una mesa con camino de mesa gris y platos'},
       variants: [
-        {name:'Vasos y copas', description:'Para cada bebida de tu carta, en la barra y en la sala.'},
+        {name:'Vasos y copas', description:'Copas y vasos de Arcoroc y Vicrila, pensados para barra y sala. Arcoroc lo llama «Everyday Proof»; Vicrila habla de durabilidad, diseño y eficiencia operativa.'},
         {name:'Según lo que sirves', description:'Agua, vino, cerveza o refrescos piden vasos y copas distintos. Cuéntanos tu carta.'},
         {name:'Tu local, tu pedido', description:'Dinos cuántas mesas tienes y qué bebidas sirves, y te asesoramos.'}
       ],
@@ -51,10 +51,10 @@ window.ProductWorld.init({
     },
     {
       template: 'lineup', family: 'Mantelería y textil', color: '#dbe3e8', ink: '#1c2830',
-      eyebrow: 'Mesa vestida', title: 'Mantelería para hostelería.',
+      eyebrow: 'Mesa vestida', title: 'Una mesa bien vestida, sin complicar el servicio.',
       product: {name:'Mesa redonda con mantel blanco y sillas de mimbre en un comedor luminoso', image:D+'manteleria-mesa-redonda.webp', width:1100, height:733, lazy:true, alt:'Mesa redonda con mantel blanco y sillas de mimbre en un comedor luminoso'},
       variants: [
-        {name:'Manteles y servilletas', description:'Para vestir las mesas de tu local en el servicio de cada día.'},
+        {name:'Manteles y servilletas', description:'Manteles y caminos Newtex: imagen tipo tela, resistentes y prácticos en servicios de mucho volumen.'},
         {name:'Textil de sala', description:'Consúltanos qué textil necesita tu sala y lo revisamos contigo.'},
         {name:'Medidas y ambiente', description:'Dinos qué medidas de mesa usas y qué ambiente buscas en tu local.'}
       ],
@@ -62,10 +62,10 @@ window.ProductWorld.init({
     },
     {
       template: 'lineup', family: 'Menaje auxiliar de cocina y sala', color: '#e9e6e0', ink: '#1c2830',
-      eyebrow: 'Lo que completa el servicio', title: 'Menaje auxiliar de cocina y sala.',
+      eyebrow: 'Lo que completa el servicio', title: 'Lo que la cocina profesional necesita cada día.',
       product: {name:'Sartenes de acero sobre una encimera en una cocina profesional con cocineros', image:D+'auxiliar-cocina-sartenes.webp', width:940, height:1400, lazy:true, alt:'Sartenes de acero sobre una encimera en una cocina profesional con cocineros'},
       variants: [
-        {name:'Cocina y sala', description:'Lo que no es vajilla ni cristalería, pero tu servicio necesita cada día.'},
+        {name:'Cocina y sala', description:'De Lacor, Araven, Arcos, Vaello o Java: baterías, herméticos gastronorm, cuchillería y paelleras. Pídelo con el resto del pedido.'},
         {name:'Cuéntanos qué te falta', description:'Dinos qué echas en falta en la cocina o en la sala y lo consultamos.'},
         {name:'Un solo reparto', description:'Pídelo junto con el resto de tu pedido, desde Medina del Campo y hasta 90 km.'}
       ],
