@@ -52,12 +52,12 @@
     }
     return p[b.length];
   }
-  /* ¿alguna palabra del mensaje empieza por la raíz? (con una errata de tolerancia si la raíz tiene 7 letras o más) */
+  /* ¿alguna palabra del mensaje empieza por la raíz? (con una errata de tolerancia si la raíz tiene 8 letras o más) */
   function hasStem(tokens, stem) {
     for (var i = 0; i < tokens.length; i++) {
       var t = tokens[i];
       if (t.indexOf(stem) === 0) return true;
-      if (stem.length >= 7 && t.length >= stem.length - 1 && lev(t.slice(0, stem.length), stem) <= 1) return true;
+      if (stem.length >= 8 && t.length >= stem.length - 1 && lev(t.slice(0, stem.length), stem) <= 1) return true;
     }
     return false;
   }
@@ -147,7 +147,7 @@
     saludo: { k: [['que', 'tal'], ['hola'], ['buenas'], ['buenos', 'dias'], ['saludos'], ['hey']], solo: true, a: function () { return '¡Hola! Pregúntame lo que necesites sobre reparto, plazos, formas de pago o cómo hacerte cliente.'; } },
     gracias: { k: [['agradec'], ['ok'], ['gracias'], ['perfecto'], ['genial'], ['estupendo'], ['vale']], solo: true, a: function () { return '¡A ti! Si necesitas algo más, aquí estoy.'; } },
     adios: { k: [['ciao'], ['hasta', 'pronto'], ['nos', 'vemos'], ['adios'], ['hasta', 'luego'], ['chao']], solo: true, a: function () { return '¡Hasta pronto!'; } },
-    zona: { k: [['reparti'], ['llegai'], ['llegan'], ['vendei'], ['cobertur'], ['provinci'], ['kilometr'], ['zona'], ['llevai'], ['enviai'], ['envian'], ['mandai'], ['traei'], ['servi'], ['donde', 'vend'], ['domicilio']],
+    zona: { k: [['reparti'], ['llegai'], ['llegan'], ['cobertur'], ['provinci'], ['kilometr'], ['zona'], ['llevai'], ['enviai'], ['envian'], ['mandai'], ['traei'], ['servis'], ['servimos'], ['servir'], ['donde', 'vend'], ['domicilio']],
       a: function (c) { return c.zone ? zonaTxt(c.zone) : 'Repartimos en <b>Medina del Campo y comarca, hasta 90 km a la redonda</b>, y en las provincias vecinas de Valladolid, Salamanca, Ávila y Segovia. Dime tu pueblo y te digo qué día pasamos. Por ejemplo: «¿Repartís en Rueda?».'; } },
     dias: { k: [['dias', 'pasai'], ['pasai', 'por'], ['pasan', 'por'], ['dia', 'pasa'], ['cuando', 'pasan'], ['dias', 'pasan'], ['dias', 'entrega'], ['dia', 'repart'], ['que', 'dias'], ['cuando', 'pasai'], ['cuando', 'llegai'], ['calendario'], ['quincenal'], ['semana', 'par'], ['semana', 'impar'], ['lunes'], ['martes'], ['miercoles'], ['jueves'], ['viernes'], ['sabado'], ['domingo'], ['finde'], ['fin', 'semana']],
       a: function (c) {
@@ -180,7 +180,7 @@
     whatsapp: { k: [['whatsapp'], ['wasap'], ['guasap']], peso: 4, a: function () { return 'El ' + TEL + ' <b>no tiene WhatsApp</b>. Puedes llamarnos de 7:00 a 15:00 o escribir a ' + MAIL + '.'; } },
     contacto: { k: [['llamo'], ['llamada'], ['encuentr'], ['encontr'], ['contact'], ['como', 'os', 'contacto'], ['contacto'], ['telefono'], ['llamar'], ['correo'], ['email'], ['mail'], ['direccion'], ['donde', 'estai'], ['ubicacion'], ['oficina'], ['almacen'], ['como', 'llegar']],
       a: function () { return 'Puedes contactarnos así:<ul><li>Teléfono: ' + TEL + ' (7:00 a 15:00).</li><li>Correo: ' + MAIL + '</li><li>Dirección: Cl Labradores, n.º 45, parcela 24B · 47400 Medina del Campo, Valladolid.</li></ul>'; } },
-    incidencia: { k: [['incomplet'], ['pedido', 'mal'], ['mal', 'pedido'], ['traido', 'mal'], ['trajeron', 'mal'], ['llegado', 'mal'], ['no', 'coincide'], ['no', 'llegad'], ['llego', 'mal'], ['mal', 'estado'], ['problema'], ['reclam'], ['queja'], ['devol'], ['equivoc'], ['falta'], ['roto'], ['defect'], ['no', 'llego'], ['error']],
+    incidencia: { k: [['no','llega'], ['incomplet'], ['pedido', 'mal'], ['mal', 'pedido'], ['traido', 'mal'], ['trajeron', 'mal'], ['llegado', 'mal'], ['no', 'coincide'], ['no', 'llegad'], ['llego', 'mal'], ['mal', 'estado'], ['problema'], ['reclam'], ['queja'], ['devol'], ['equivoc'], ['falta'], ['roto'], ['defect'], ['no', 'llego'], ['error']],
       a: function () { return 'Lamentamos el problema. Para una incidencia con un pedido, llámanos al ' + TEL + ' de 7:00 a 15:00 o escribe a ' + MAIL + ', indicando el nombre de tu negocio y el albarán, y lo revisamos.'; } },
     empresa: { k: [['antigued'], ['trayectoria'], ['empezasteis'], ['cuantos', 'anos'], ['anos', 'llevai'], ['historia'], ['desde', 'cuando'], ['quienes', 'sois'], ['empresa'], ['fundad'], ['experiencia']],
       a: function () { return 'Somos <b>Distribuciones Valentín Martín</b>, de Medina del Campo. Llevamos <b>44 años</b> de experiencia, desde 1982, distribuyendo a hostelería.'; } },
@@ -204,17 +204,20 @@
   };
 
   /* ---------- catálogo de productos (se carga la primera vez que se pregunta por uno) ---------- */
-  var CAT = null, catPromise = null;
+  var CAT = null, catPromise = null, SECS = [];
   var PAGINAS = { pascual: 'Pascual', agua: 'Aguas', vinos: 'Vinos', despensa: 'Despensa', congelados: 'Congelados', refrigerados: 'Refrigerados', menaje: 'Menaje' };
   function cargarCatalogo() {
     if (catPromise) return catPromise;
     var items = [];
+    SECS = [];
     var fuentes = [['helios-products.js', null], ['villacampo-products.js', null], ['pascual-products.js', 'pascual'], ['agua-products.js', 'agua'], ['vinos-products.js', 'vinos'], ['despensa-products.js', 'despensa'], ['congelados-products.js', 'congelados'], ['menaje-articulos.js', 'menaje']];
     var viejo = window.ProductWorld;
     var actual = null;
     window.ProductWorld = { init: function (cfg) {
       (cfg.sections || []).forEach(function (s) {
-        [].concat(s.products || [], s.variants || [], s.frames || [], s.product ? [s.product] : []).forEach(function (p) { if (p && p.name) items.push({ n: p.name, p: actual, f: s.family || '', a: s.id || SLUG((s.family || '') + ' ' + (s.title || '')) }); });
+        var anc = s.id || SLUG((s.family || '') + ' ' + (s.title || ''));
+        SECS.push({ p: actual, a: anc, ctx: s.title || s.family || '', text: [s.eyebrow, s.description, s.note, s.bottom].filter(Boolean).join('. ') });
+        [].concat(s.products || [], s.variants || [], s.frames || [], s.product ? [s.product] : []).forEach(function (p) { if (p && p.name) items.push({ n: p.name, p: actual, f: s.family || '', a: anc, d: p.description || '', sec: s.title || '' }); });
       });
     } };
     var cargar = function (src, pag) {
@@ -228,9 +231,115 @@
     catPromise = fuentes.reduce(function (pr, f) { return pr.then(function () { return cargar(f[0], f[1]); }); }, Promise.resolve()).then(function () { return refri; }).then(function () {
       window.ProductWorld = viejo;
       (window.MENAJE || []).forEach(function (m) { items.push({ n: m.n, p: 'menaje', f: m.g, a: 'referencias' }); });
-      CAT = items.map(function (it) { return { n: it.n, p: it.p, f: it.f, a: it.a, t: norm(it.n + ' ' + it.f).split(' ') }; });
+      CAT = items.map(function (it) { return { n: it.n, p: it.p, f: it.f, a: it.a, d: it.d || '', sec: it.sec || '', t: norm(it.n + ' ' + it.f).split(' ') }; });
     });
     return catPromise;
+  }
+  /* ---------- buscador de todo el contenido de la web ----------
+     Se construye la primera vez que hace falta: lee el texto de las 9 páginas (títulos, párrafos, listas, preguntas frecuentes)
+     y las descripciones de todos los productos y escenas. Contesta citando la propia web y enlazando a la sección, nunca inventa. */
+  var PAGINAS_WEB = ['index', 'pascual', 'agua', 'vinos', 'despensa', 'cafe-mocay', 'menaje', 'refrigerados', 'congelados'];
+  var NOMBRES = { index: 'Inicio', pascual: 'Pascual', agua: 'Aguas', vinos: 'Vinos', despensa: 'Despensa', 'cafe-mocay': 'Café Mocay', menaje: 'Menaje', refrigerados: 'Refrigerados', congelados: 'Congelados' };
+  var STOP = /^(el|la|los|las|un|una|unos|unas|de|del|al|y|o|u|e|en|con|por|para|que|como|cual|cuales|cuanto|cuantos|cuanta|cuantas|cuando|donde|quien|quienes|es|son|soy|somos|eres|ser|estar|esta|estan|estoy|hay|tiene|tienen|teneis|tenemos|tengo|me|te|se|lo|le|les|mi|tu|su|nos|os|vosotros|ustedes|yo|muy|mas|menos|si|no|ni|pero|porque|ya|tambien|asi|esto|eso|este|ese|esa|esos|esas|aqui|ahi|hacer|hace|hacen|haceis|puedo|puede|pueden|podeis|quiero|queria|necesito|saber|dime|decir|digame|sobre|entre|desde|hasta|sus|nuestro|nuestra|vuestro|vuestra|algo|algun|alguna|todo|toda|todos|todas|otro|otra|otros|otras|bien|favor|hola|buenas|gracias|cosa|cosas|ahora|vez|dos|tres|ver|hablar|informacion|info|vale|ok|san|formato|formatos|tamano|tamanos|tipo|tipos|clases|variedades|opciones|caracteristicas|pesa|pesan|lleva|llevan|incluye|incluyen|significa|funciona|funcionan|sirve|sirven|tiene|tienen)$/;
+  var IDX = null, idxPromise = null;
+  var stemW = function (w) { w = w.length > 4 ? w.replace(/(es|s)$/, '') : w; return w.length >= 5 && /[aeiou]$/.test(w) ? w.slice(0, -1) : w; };
+  var tokensW = function (t) { return norm(t).split(' ').filter(function (w) { return w.length >= 3 && !STOP.test(w); }); };
+  function cargarIndice() {
+    if (idxPromise) return idxPromise;
+    idxPromise = cargarCatalogo().then(function () {
+      var chunks = [], vistos = {};
+      var meter = function (c) {
+        var txt = String(c.text || '').replace(/\s+/g, ' ').trim();
+        var ctx = String(c.ctx || '').replace(/\s+/g, ' ').trim();
+        if (txt.length < 12 && !ctx) return;
+        var clave = c.p + '|' + c.a + '|' + ctx + '|' + txt;
+        if (vistos[clave]) return; vistos[clave] = 1;
+        chunks.push({ p: c.p, a: c.a || '', ctx: ctx, text: txt, tt: tokensW(ctx), tx: tokensW(ctx + ' ' + txt + ' ' + (c.extra || '')) });
+      };
+      SECS.forEach(function (x) { if (x.p) meter(x); });
+      CAT.forEach(function (it) { if (it.d && it.p) meter({ p: it.p, a: it.a, ctx: etiqueta(it), text: it.d, extra: it.sec }); });
+      var paginas = PAGINAS_WEB.map(function (pg) {
+        return fetch(pg + '.html').then(function (r) { return r.ok ? r.text() : ''; }).then(function (h) {
+          if (!h) return;
+          var doc = new DOMParser().parseFromString(h, 'text/html');
+          [].slice.call(doc.querySelectorAll('script,style,noscript,header,footer,nav,aside,[hidden],.chat,.vmc,svg,template,.sr,.pw-scene-label,.pw-opening-bottom')).forEach(function (e) { e.remove(); });
+          [].slice.call(doc.querySelectorAll('br')).forEach(function (b) { b.replaceWith(' '); });
+          var ctx = '', listas = [];
+          [].slice.call(doc.body.querySelectorAll('h1,h2,h3,h4,summary,p,li,figcaption,dd,td,address,blockquote')).forEach(function (el) {
+            var t = el.textContent.replace(/\s+/g, ' ').trim();
+            if (!t) return;
+            var anc = el.closest('[id]');
+            if (/^(H1|H2|H3|H4|SUMMARY)$/.test(el.tagName)) { ctx = t; if (el.tagName === 'SUMMARY') return; meter({ p: pg, a: anc ? anc.id : '', ctx: t, text: '' }); return; }
+            if (el.tagName === 'LI' && el.parentElement) {
+              var l = listas.filter(function (x) { return x.ul === el.parentElement; })[0];
+              if (!l) listas.push(l = { ul: el.parentElement, ctx: ctx, a: anc ? anc.id : '', it: [] });
+              l.it.push(t);
+            }
+            if (t.length < 20) return;
+            meter({ p: pg, a: anc ? anc.id : '', ctx: ctx, text: t });
+          });
+          /* cada lista, entera: «Cafeteras · Molinos · Mantenimiento…» */
+          listas.forEach(function (l) { if (l.it.length >= 2) meter({ p: pg, a: l.a, ctx: l.ctx, text: l.it.join(' · ') }); });
+        }).catch(function () {});
+      });
+      return Promise.all(paginas).then(function () { IDX = chunks; });
+    });
+    return idxPromise;
+  }
+  function buscarWeb(tokens, opc) {
+    opc = opc || {};
+    var estricto = !!opc.estricto, unir = !!opc.unir, info = !!opc.info;
+    if (!IDX) return [];
+    var q = [], vistos = {};
+    tokens.forEach(function (w) { if (w.length >= 3 && !STOP.test(w) && !RUIDO.test(w)) { var s2 = stemW(w); if (!vistos[s2]) { vistos[s2] = 1; q.push(s2); } } });
+    if (!q.length) return [];
+    var tiene = function (arr, st) { for (var i = 0; i < arr.length; i++) if (arr[i].indexOf(st) === 0) return true; return false; };
+    var N = IDX.length;
+    var idf = q.map(function (st) { var df = 0; IDX.forEach(function (c) { if (tiene(c.tx, st)) df++; }); return df ? Math.log(1 + N / (1 + df)) : 0; });
+    /* las palabras que no aparecen en ninguna parte de la web no cuentan (si todas faltan, no hay nada que decir) */
+    var conocidas = q.map(function (st, i) { return i; }).filter(function (i) { return idf[i] > 0; });
+    if (!conocidas.length) return [];
+    /* solo en preguntas de tipo «qué es / cuánto pesa / qué ventajas» se ignoran las palabras que la web no contiene */
+    if (info) { q = conocidas.map(function (i) { return q[i]; }); idf = conocidas.map(function (i) { return idf[i]; }); }
+    var cob = info ? 0.5 : 0.6;
+    var posibles = q.filter(function (_, i) { return idf[i] > 0; }).length;
+    if (!posibles || posibles < Math.ceil(q.length * cob)) return [];
+    var res = [];
+    IDX.forEach(function (c) {
+      var sc = 0, hit = 0;
+      q.forEach(function (st, i) { if (idf[i] && tiene(c.tx, st)) { hit++; sc += idf[i] * (tiene(c.tt, st) ? 1.6 : 1); } });
+      if (hit < (unir ? q.length : Math.ceil(q.length * cob)) || (q.length === 1 && idf[0] < 2.2)) return;
+      sc = sc * (hit / q.length) / (1 + 0.1 * Math.log(1 + c.tx.length));
+      res.push({ c: c, s: sc, hit: hit });
+    });
+    res.sort(function (a, b) { return b.s - a.s; });
+    var out = [], usados = {};
+    res.forEach(function (r) { var k = r.c.p + '|' + r.c.a + '|' + r.c.ctx; if (out.length < 3 && !usados[k]) { usados[k] = 1; out.push(r); } });
+    var umbral = estricto ? 2 : 1.2;
+    if (out.length && out[0].s >= umbral && (!estricto || out[0].hit >= 2 || idf[0] >= 3)) return out;
+    /* ninguna pieza reúne todas las palabras: se muestra la mejor pieza de cada cosa por la que pregunta (por ejemplo, «diferencia entre A y B») */
+    if (unir && !out.length && posibles >= 2) {
+      var ord = q.map(function (st, i) { return { st: st, i: i }; }).filter(function (x) { return idf[x.i] > 0; }).sort(function (x, y) { return idf[y.i] - idf[x.i]; }).slice(0, 3);
+      var picks = [], vi = {};
+      ord.forEach(function (x) {
+        var best = null;
+        IDX.forEach(function (c) {
+          if (!tiene(c.tx, x.st)) return;
+          var sc = idf[x.i] * (tiene(c.tt, x.st) ? 1.6 : 1) / (1 + 0.1 * Math.log(1 + c.tx.length));
+          if (!best || sc > best.s) best = { c: c, s: sc, hit: 1 };
+        });
+        if (best && best.s >= 1.2) { var k = best.c.p + '|' + best.c.a + '|' + best.c.ctx; if (!vi[k]) { vi[k] = 1; picks.push(best); } }
+      });
+      if (picks.length >= 2) { picks.union = true; return picks; }
+    }
+    return [];
+  }
+  function recorte(t, n) { t = String(t); if (t.length <= n) return t; var c = t.slice(0, n); return c.slice(0, Math.max(c.lastIndexOf(' '), n - 30)) + '…'; }
+  function respuestaWeb(res) {
+    return (res.union ? 'No encuentro una respuesta exacta, pero esto es lo que hay en la web de cada cosa que preguntas:' : 'Esto es lo que encuentro en la web sobre eso:') + '<ul>' + res.map(function (r) {
+      var c = r.c;
+      return '<li><a href="' + c.p + '.html' + (c.a ? '#' + c.a : '') + '"><b>' + esc(c.ctx || NOMBRES[c.p]) + '</b></a> <small>(' + NOMBRES[c.p] + ')</small>' + (c.text ? '<br>' + esc(recorte(c.text, 170)) : '') + '</li>';
+    }).join('') + '</ul>Si necesitas más detalle, llámanos al ' + TEL + '.';
   }
   var RUIDO_RAIZ = /^(tenies|teneys|ofrecen|ofreceis|manejais|comercializais|disponeis|teneis|tenemos|tienen|tienes|tiene|vendeis|venden|vendemos|trabajais|trabajan|distribuis|distribuyen|busco|buscamos|necesito|necesitamos|quiero|queremos|quisiera|podeis|pueden|servis|sirven|disponible|disponibles|referencia|referencias|vuestro|vuestra|vuestros|vuestras|nuestro|nuestra)$/;
   var RUIDO_EXACTO = /^(hay|ver|mirar|algun|alguna|alguno|algo|todo|toda|una|unos|unas|los|las|del|con|sin|para|por|que|como|cual|cuales|cuanto|cuesta|vale|precio|esta|este|ese|esa|mas|muy|bien|favor|hola|buenas|gracias|tambien|ademas|tipo|marca|producto|productos|gama|stock|ref|bebida|bebidas|marcas|tipos|gamas|clases|variedades|cosas|cosa|articulo|articulos|material|materiales)$/;
@@ -249,9 +358,9 @@
       var ok = q.every(function (w) { var s = stem(w); return it.t.some(function (x) { return x.indexOf(s) === 0; }); });
       if (ok) res.push(it);
     });
-    if (!res.length && q.length >= 3) {
+    if (!res.length && q.length >= 2) {
       var kept = q.filter(function (w) { var s2 = stem(w); return CAT.some(function (it) { return it.t.some(function (x) { return x.indexOf(s2) === 0; }); }); });
-      if (kept.length >= 2 && kept.length < q.length) return buscar(kept);
+      if (kept.length >= Math.ceil(q.length * 0.6) && kept.length < q.length) { var parc = buscar(kept); parc.parcial = true; return parc; }
     }
     res.sort(function (a, b) { return a.n.length - b.n.length; });
     return res;
@@ -260,6 +369,8 @@
   /* ---------- análisis del mensaje ---------- */
   var state = { zone: null, last: null, espera: null, cur: null, negocio: null, lista: [], resultados: [], hist: [] };
   var NEEDS_ZONE = { proxima: true };
+  var INFO = /\b(que es|que son|para que (sirve|sirven|es)|como (funciona|funcionan|se usa|se hace|se prepara|se toma|es|son)|que (lleva|llevan|incluye|incluyen|contiene|contienen|significa|ventaja|ventajas|beneficio|beneficios)|ventajas?|beneficios?|diferencias?|por que|de que (es|esta|estan|son|se hace)|cuanto (pesa|pesan|mide|dura|residuo|ahorra|contiene|trae)|cuanto\b.*\b(ahorra|ahorro|pesa|pesan|mide|miden|dura|contiene|trae)|ingredientes|formatos?)\b/;
+  var COMP = /\b(diferencia|diferencias|comparar|comparacion|entre|mejor que|versus|vs)\b/;
   var AMPLIO = { pascual: ['leche', 'pascual'], menaje: ['menaje'], vinos: ['vino'], aguas: ['agua'], congelados: ['congelado'], refrigerados: ['refrigerado'], despensa: ['despensa'], cafe: ['cafe'], bebidas: ['bebida'] };
   var SIMPLE = { saludo: 1, gracias: 1, adios: 1 };
 
@@ -417,15 +528,26 @@
         var catIntent = (top && INTENTS[top.id].cat) ? top.id : ((a.scored.filter(function (x) { return INTENTS[x.id].cat; })[0] || {}).id || null);
         return cargarCatalogo().then(function () {
           var r = buscar(a.tokens);
-          if (r.length) {
+          var listaHtml = function () {
             if (r.length > 6 && catIntent && cont.length === 1 && AMPLIO[catIntent] && AMPLIO[catIntent].some(function (st) { return cont[0].indexOf(st) === 0; })) { state.cur = catIntent; return INTENTS[catIntent].a(c); }
             var lista = unicos(r, 6);
             state.resultados = lista.map(function (it) { return { n: etiqueta(it), href: enlaceProducto(it), pg: PAGINAS[it.p] }; });
             state.cur = 'producto';
             return 'Sí, esto es lo que tenemos relacionado:<ul>' + state.resultados.map(function (x, i) { return '<li><a href="' + x.href + '">' + esc(x.n) + '</a> <small>(' + x.pg + ')</small> <button type="button" class="chat-mini" data-add="' + i + '">Apuntar</button></li>'; }).join('') + '</ul>' + (r.length > lista.length ? 'Y alguno más: míralo en <a href="' + lista[0].p + '.html">' + PAGINAS[lista[0].p] + '</a>. ' : '') + 'Para pedirlo o pedir tarifa: ' + TEL + '.';
-          }
-          if (catIntent) { state.cur = catIntent; return INTENTS[catIntent].a(c); }
-          return fallback(a, c);
+          };
+          if (r.length && !r.parcial && !INFO.test(a.t)) return listaHtml();
+          if (!r.length && catIntent && cont.length === 1 && INTENTS[catIntent].k.some(function (g) { return g.length === 1 && cont[0].indexOf(g[0]) === 0; })) { state.cur = catIntent; return INTENTS[catIntent].a(c); }
+          var curada = top && !INTENTS[top.id].cat && top.id !== 'productos' && top.s >= 3;
+          if (curada && (!r.length || r.parcial)) return fallback(a, c);
+          /* sin coincidencia exacta de producto: puede ser una pregunta sobre el contenido de la web («ventajas del bag in box», «mantenimiento de cafeteras») */
+          return cargarIndice().then(function () {
+            var w = buscarWeb(a.tokens, { estricto: true, info: INFO.test(a.t), unir: COMP.test(a.t) });
+            if (w.length) { state.cur = 'web'; return respuestaWeb(w); }
+            if (r.parcial && catIntent) { state.cur = catIntent; return INTENTS[catIntent].a(c); }
+            if (r.length) return listaHtml();
+            if (catIntent) { state.cur = catIntent; return INTENTS[catIntent].a(c); }
+            return fallback(a, c);
+          }, function () { return r.length ? listaHtml() : (catIntent ? INTENTS[catIntent].a(c) : fallback(a, c)); });
         });
       }
     }
@@ -437,6 +559,16 @@
     if (sc.length && sc[0].s >= 3) {
       var partes = [sc[0]];
       if (sc[1] && sc[1].s >= 3 && sc[1].s >= sc[0].s * 0.4 && !INTENTS[sc[0].id].solo && !INTENTS[sc[1].id].solo && !INTENTS[sc[0].id].cat && !INTENTS[sc[1].id].cat) partes.push(sc[1]);
+      var contenido = a.tokens.filter(function (x) { return x.length >= 3 && !RUIDO.test(x); });
+      var debil = INTENTS[sc[0].id].cat && contenido.length > 1;
+      if (debil && !a.sinWeb) {
+        var propio = fallback;
+        return cargarIndice().then(function () {
+          var w = buscarWeb(a.tokens, { estricto: true, info: INFO.test(a.t), unir: COMP.test(a.t) });
+          if (w.length) { state.cur = 'web'; return respuestaWeb(w); }
+          a.sinWeb = true; return propio(a, c);
+        }, function () { a.sinWeb = true; return fallback(a, c); });
+      }
       var pz = partes.filter(function (x) { return INTENTS[x.id].needsZone; })[0];
       if (pz) {
         var zz2 = c.zone || state.zone;
@@ -448,9 +580,13 @@
       partes.forEach(function (p) { var h = INTENTS[p.id].a(c); if (textos.indexOf(h) < 0) textos.push(h); });
       return textos.join('<br><br>');
     }
-    state.cur = 'nada';
-    return 'No estoy seguro de haberte entendido. Puedo ayudarte con el <b>reparto</b> (dime tu pueblo), los <b>plazos</b>, el <b>horario</b>, las <b>formas de pago</b>, <b>cómo hacerte cliente</b> o buscar un <b>producto</b>. ' + PERSONA;
+    return cargarIndice().then(function () {
+      var r = buscarWeb(a.tokens, { unir: COMP.test(a.t), info: INFO.test(a.t) });
+      if (r.length) { state.cur = 'web'; return respuestaWeb(r); }
+      state.cur = 'nada'; return NO_ENTIENDO;
+    }, function () { state.cur = 'nada'; return NO_ENTIENDO; });
   }
+  var NO_ENTIENDO = 'No estoy seguro de haberte entendido. Puedo ayudarte con el <b>reparto</b> (dime tu pueblo), los <b>plazos</b>, el <b>horario</b>, las <b>formas de pago</b>, <b>cómo hacerte cliente</b> o buscar un <b>producto</b>. ' + PERSONA;
 
   /* ---------- interfaz ---------- */
   function add(who, html, isHtml) {
@@ -483,6 +619,7 @@
     pascual: ['¿Qué leche me recomendáis para café?', '¿Tenéis nata para montar?'],
     negocio: ['¿A dónde repartís?', '¿Qué leche me recomendáis?'],
     nada: ['¿A dónde repartís?', '¿Qué productos tenéis?'],
+    web: ['¿Qué productos tenéis?', '¿Cuánto tardáis?'],
     _: ['¿A dónde repartís?', '¿Formas de pago?']
   };
   var SIN_ACCIONES = { saludo: 1, gracias: 1, adios: 1 };

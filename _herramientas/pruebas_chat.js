@@ -150,6 +150,30 @@ const VARIANTES2 = [
 ];
 for (const [m, rx] of VARIANTES2) CASOS.push([[m], { texto: rx }]);
 
+/* Preguntas sobre cualquier contenido de la web (textos de las páginas, descripciones de productos, preguntas frecuentes).
+   El asistente las responde citando la propia web y enlazando a su sección; lo que no está en la web, no lo inventa. */
+const CONTENIDO = [
+  ['que ventajas tiene el bag in box', /residuos|rentabilidad|Bag in box/i, /pascual\.html#/],
+  ['cuanto residuo ahorra el box', /49 %/], ['cuanto co2 se ahorra con la caja de 10 litros', /7 %/], ['que es el enfriador de leche', /enfriador/i],
+  ['cuanto puede aumentar la rentabilidad con el box', /33 %/], ['por que la forma cubica de la caja', /cúbica|almacen/i], ['que batidos hay en vidrio', /vidrio|Batido/i],
+  ['que lleva el batido de chocolate de vidrio', /semidesnatada|chocolate/i], ['que sabores tiene bifrutas', /Tropical|Paraíso|Pacífico|Mediterráneo/i], ['que grasa tiene la nata para montar', /35 %|materia grasa/i],
+  ['cuanto pesa una natilla', /120 g/i], ['que formatos tiene la mantequilla', /250 g|500 g|tarrina/i], ['que diferencia hay entre classic e intense', /Intense[\s\S]*Classic|Classic[\s\S]*Intense/i],
+  ['que formatos tiene san pellegrino', /cl\b|formatos/i, /agua\.html#/], ['que es perrier', /Perrier/i], ['que marcas de agua teneis', /Bezoya|Aquarel|Pedras|Pellegrino|Perrier/i],
+  ['que es un frizzante', /Frizzante/i, /vinos\.html#/], ['que vinos de ribera teneis', /Ribera/i], ['de que bodega es pazos de baro', /Pazos|Baró/i], ['que es dominio de bornos', /Bornos/i],
+  ['de que es el sirope de speculoos', /galleta|speculoos/i, /despensa\.html#/], ['que legumbres teneis de luengo', /Lenteja|Garbanzo|Alubia/i], ['tenéis sal marina fina', /Sal marina/i], ['que especias tiene carmencita', /Carmencita|Orégano|Pimentón/i],
+  ['tenéis atun isabel', /Isabel/i], ['que mermeladas tiene helios', /Helios|Mermelada/i],
+  ['que servicio ofrece mocay', /maquinaria|mantenimiento/i, /cafe-mocay\.html#/], ['hacéis mantenimiento de cafeteras', /Mantenimiento/i], ['que infusiones teneis en piramide', /pirámide/i], ['tenéis molinos de café', /Molinos/i],
+  ['que cafes tiene mocay', /Colombia|Maestro|café/i], ['dais asesoramiento barista', /Asesoramiento barista|asesoramiento/i],
+  ['que menaje distribuis', /Vajilla|cubertería|cristalería/i], ['puedo pedir el menaje junto con el resto del pedido', /un solo pedido|Sí/i], ['como consulto por el menaje de mi local', /635 09 80 44|formulario/i],
+  ['que es un solo proveedor para toda la carta', /proveedor/i], ['teneis marcas reconocidas', /marcas/i], ['que es la preparacion de pedidos', /pedidos|almacén/i], ['que hago si reformo mi sala', /reform|sala/i],
+  ['que ofrece la atencion personalizada', /Atendemos|atención|llama/i], ['que cobertura local teneis', /cobertura|90 km|local/i], ['que vinos de rueda teneis', /Rueda/i],
+  ['cuantos pasos son para hacerse cliente', /3 pasos|tres pasos|Nos conocemos/i], ['que es el primer pedido y reparto', /Primer pedido|reparto/i], ['que formas de pago hay en la web', /contado|domicili|pago/i],
+  ['que pan congelado teneis', /pan|Panamar|congelado/i], ['que bolleria hay', /bollería|Croissant|Napolitana|congelados/i], ['que quesos teneis', /queso/i], ['que embutidos hay', /embutido|Chorizo|charcut/i],
+  ['teneis huevos', /huevo/i], ['hay leche de coco', /leche|Vivesoy|Pascual|635/i], ['que es el agua con gas mas internacional', /Pellegrino/i],
+  ['vendeis neumaticos', /No estoy seguro/i], ['alquilais maquinaria de obra', /No estoy seguro|maquinaria/i], ['quien gano el mundial', /No estoy seguro/i]
+];
+for (const [m, rx, h] of CONTENIDO) CASOS.push([[m], h ? { texto: rx, html: h } : { texto: rx }]);
+
 (async () => {
   await new Promise(r => servidor.listen(0, r));
   const base = 'http://localhost:' + servidor.address().port + '/index.html';
