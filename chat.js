@@ -13,10 +13,11 @@
     var holder = document.createElement('div');
     holder.innerHTML =
       '<button type="button" id="vmc-launcher" class="vmc-launcher" aria-label="Abrir el asistente de Distribuciones VM" aria-expanded="false" aria-controls="chat">' +
-        '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2C6.48 2 2 5.92 2 10.75c0 2.5 1.2 4.75 3.12 6.34-.12 1.4-.6 2.7-1.5 3.8a.6.6 0 0 0 .55.97c2.1-.2 3.9-.98 5.2-1.9.85.18 1.72.28 2.63.28 5.52 0 10-3.92 10-8.75S17.52 2 12 2Z"/><circle cx="7.6" cy="10.8" r="1.35" fill="#c61819"/><circle cx="12" cy="10.8" r="1.35" fill="#c61819"/><circle cx="16.4" cy="10.8" r="1.35" fill="#c61819"/></svg></button>' +
+        '<img src="assets/asistente-pablo.webp" width="64" height="64" alt="" decoding="async">' +
+        '<span class="vmc-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M12 3C6.9 3 3 6.4 3 10.6c0 2.2 1 4.1 2.7 5.5-.1 1.2-.5 2.3-1.3 3.3a.5.5 0 0 0 .5.8c1.9-.2 3.4-.9 4.5-1.6.8.2 1.6.3 2.6.3 5.1 0 9-3.4 9-7.6S17.100 3 12 3Z"/></svg></span></button>' +
       '<div class="vmc-teaser" id="vmc-teaser" hidden><button type="button" class="vmc-teaser-txt">Hola, soy <b>Pablo</b>, el asistente. ¿Te ayudo?</button><button type="button" class="vmc-teaser-x" aria-label="Cerrar el aviso">×</button></div>' +
       '<section class="chat vmc" id="chat" role="dialog" aria-modal="false" aria-labelledby="chat-title" tabindex="-1" hidden>' +
-        '<header class="vmc-head"><span class="vmc-avatar" aria-hidden="true">P</span><div><h3 id="chat-title">Pablo · Asistente virtual</h3><p class="chat-note">Distribuciones VM · respuestas automáticas. No guardamos lo que escribes.</p></div><button type="button" class="vmc-close" aria-label="Cerrar el asistente">×</button></header>' +
+        '<header class="vmc-head"><span class="vmc-avatar" aria-hidden="true"><img src="assets/asistente-pablo.webp" width="44" height="44" alt="" decoding="async"></span><div><h3 id="chat-title">Pablo · Asistente virtual</h3><p class="chat-note">Distribuciones VM · respuestas automáticas. No guardamos lo que escribes.</p></div><button type="button" class="vmc-close" aria-label="Cerrar el asistente">×</button></header>' +
         '<div class="chat-log" role="log" aria-live="polite" aria-label="Conversación"></div>' +
         '<div class="chat-chips" role="group" aria-label="Preguntas frecuentes">' +
           ['¿A dónde repartís?', '¿Qué días repartís?', '¿Cuánto tardáis?', '¿Cuándo me llega?', '¿Qué leche me recomendáis?', '¿Hay pedido mínimo?', '¿Cómo me hago cliente?', '¿Formas de pago?', '¿Horario?'].map(function (q) { return '<button type="button" data-q="' + q + '">' + q + '</button>'; }).join('') + '</div>' +
