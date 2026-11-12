@@ -160,6 +160,8 @@ for (const [m, rx] of VARIANTES2) CASOS.push([[m], { texto: rx }]);
     try {
       await pagina.clock.setFixedTime(ok.hora || JUEVES_10);
       await pagina.goto(base);
+      await pagina.click('#vmc-launcher');
+      await pagina.waitForSelector('#chat:not([hidden])');
       for (const m of mensajes) {
         const antes = await pagina.locator('#chat .chat-bot').count();
         await pagina.fill('#chat .chat-input', m);

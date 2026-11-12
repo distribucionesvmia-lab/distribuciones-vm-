@@ -82,6 +82,10 @@ for page in PAGES:
         h = h.replace('</body>', CALL_HTML + '\n</body>', 1)
     if 'site-header.css' not in h:
         h = h.replace('</head>', '<link rel="stylesheet" href="site-header.css?v=1">\n</head>', 1)
+    if 'chat.css' not in h:
+        h = h.replace('</head>', '<link rel="stylesheet" href="chat.css?v=1">\n</head>', 1)
+    if 'chat.js' not in h:
+        h = h.replace('</body>', '<script src="chat.js?v=1" defer></script>\n</body>', 1)
     if 'site-header.js' not in h:
         h = h.replace('</body>', '<script src="site-header.js?v=1" defer></script>\n</body>', 1)
     open(p, 'w', encoding='utf-8').write(h)

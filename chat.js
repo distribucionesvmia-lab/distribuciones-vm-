@@ -1,5 +1,6 @@
-/* Asistente de Distribuciones VM (sección de contacto).
-   Funciona en el navegador, sin servidor ni servicios externos, y no guarda lo que se escribe.
+/* Asistente de Distribuciones VM: icono flotante abajo a la izquierda en todas las páginas, aviso breve («Hola, soy Pablo…») y panel de chat.
+   Funciona en el navegador, sin servidor ni servicios externos, y no envía ni guarda en ningún servidor lo que se escribe
+   (solo recuerda en la pestaña, hasta que se cierra, el pueblo, el negocio y la lista de interés).
    - Entiende conjugaciones y erratas (compara por raíces y tolera una letra de diferencia).
    - Recuerda el pueblo del cliente durante la conversación y calcula su próximo reparto con la fecha real.
    - Busca productos concretos en el catálogo de la web (carga los datos de las páginas la primera vez que hace falta).
@@ -8,7 +9,23 @@
 (function () {
   'use strict';
   var root = document.getElementById('chat');
-  if (!root) return;
+  if (!root) {
+    var holder = document.createElement('div');
+    holder.innerHTML =
+      '<button type="button" id="vmc-launcher" class="vmc-launcher" aria-label="Abrir el asistente de Distribuciones VM" aria-expanded="false" aria-controls="chat">' +
+        '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2C6.48 2 2 5.92 2 10.75c0 2.5 1.2 4.75 3.12 6.34-.12 1.4-.6 2.7-1.5 3.8a.6.6 0 0 0 .55.97c2.1-.2 3.9-.98 5.2-1.9.85.18 1.72.28 2.63.28 5.52 0 10-3.92 10-8.75S17.52 2 12 2Z"/><circle cx="7.6" cy="10.8" r="1.35" fill="#c61819"/><circle cx="12" cy="10.8" r="1.35" fill="#c61819"/><circle cx="16.4" cy="10.8" r="1.35" fill="#c61819"/></svg></button>' +
+      '<div class="vmc-teaser" id="vmc-teaser" hidden><button type="button" class="vmc-teaser-txt">Hola, soy <b>Pablo</b>, el asistente. ¿Te ayudo?</button><button type="button" class="vmc-teaser-x" aria-label="Cerrar el aviso">×</button></div>' +
+      '<section class="chat vmc" id="chat" role="dialog" aria-modal="false" aria-labelledby="chat-title" tabindex="-1" hidden>' +
+        '<header class="vmc-head"><span class="vmc-avatar" aria-hidden="true">P</span><div><h3 id="chat-title">Pablo · Asistente virtual</h3><p class="chat-note">Distribuciones VM · respuestas automáticas. No guardamos lo que escribes.</p></div><button type="button" class="vmc-close" aria-label="Cerrar el asistente">×</button></header>' +
+        '<div class="chat-log" role="log" aria-live="polite" aria-label="Conversación"></div>' +
+        '<div class="chat-chips" role="group" aria-label="Preguntas frecuentes">' +
+          ['¿A dónde repartís?', '¿Qué días repartís?', '¿Cuánto tardáis?', '¿Cuándo me llega?', '¿Qué leche me recomendáis?', '¿Hay pedido mínimo?', '¿Cómo me hago cliente?', '¿Formas de pago?', '¿Horario?'].map(function (q) { return '<button type="button" data-q="' + q + '">' + q + '</button>'; }).join('') + '</div>' +
+        '<form class="chat-form" autocomplete="off"><label class="sr" for="chat-input">Escribe tu pregunta</label><input id="chat-input" class="chat-input" type="text" placeholder="Escribe tu pregunta" maxlength="200"><button class="chat-send" type="submit">Enviar</button></form>' +
+      '</section>';
+    while (holder.firstChild) document.body.appendChild(holder.firstChild);
+    root = document.getElementById('chat');
+  }
+  var launcher = document.getElementById('vmc-launcher'), teaser = document.getElementById('vmc-teaser');
   var log = root.querySelector('.chat-log');
   var form = root.querySelector('.chat-form');
   var input = root.querySelector('.chat-input');
@@ -201,12 +218,8 @@
       });
     } };
     var cargar = function (src, pag) {
-      return new Promise(function (ok) {
-        var s = document.createElement('script');
-        actual = pag;
-        s.src = src; s.onload = s.onerror = function () { ok(); };
-        document.head.appendChild(s);
-      });
+      actual = pag;
+      return fetch(src).then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) { if (t) (new Function(t))(); }).catch(function () {});
     };
     var refri = fetch('refrigerados-products.js').then(function (r) { return r.text(); }).then(function (t) {
       var re = /\{group:'([^']*)',brand:'([^']*)',name:'((?:[^'\\]|\\.)*)'/g, m;
@@ -489,10 +502,10 @@
     log.scrollTop = log.scrollHeight;
   }
 
-  function mostrar(html, preguntada) {
+  var mostrar = function (html, preguntada) {
     var cur = state.cur;
     if (html) { add('bot', html, true); acciones(cur, preguntada); }
-  }
+  };
   function ask(text) {
     text = String(text || '').trim();
     if (!text) return;
@@ -521,9 +534,65 @@
     var ml = e.target.closest('a[data-mail]');
     if (ml) ml.setAttribute('href', mailHref());
   });
-  /* mientras el chat está a la vista, el botón fijo «Llamar» (móvil) se oculta para no tapar el botón Enviar */
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (en) { document.documentElement.classList.toggle('chat-open', en[0].isIntersecting); }, { threshold: 0.05 }).observe(root);
+  /* ---------- abrir y cerrar el panel ---------- */
+  var html = document.documentElement;
+  var movil = window.matchMedia('(max-width: 760px)');
+  var avisoVisto = false;
+  function marcarAviso() { avisoVisto = true; try { sessionStorage.setItem('vmc-aviso', '1'); } catch (e) {} }
+  function ocultarAviso() { teaser.hidden = true; launcher.classList.remove('is-pulse'); }
+  function abierto() { return !root.hidden; }
+  function abrir() {
+    root.hidden = false; ocultarAviso(); marcarAviso();
+    launcher.setAttribute('aria-expanded', 'true'); launcher.setAttribute('aria-label', 'Cerrar el asistente de Distribuciones VM');
+    html.classList.add('chat-open');
+    log.scrollTop = log.scrollHeight;
+    if (movil.matches) root.focus(); else input.focus();
   }
-  add('bot', '¡Hola! Soy el <b>Asistente de Distribuciones VM</b>. Puedo decirte <b>dónde repartimos y qué día</b>, <b>cuándo te llegaría un pedido</b>, los <b>plazos</b>, el <b>horario</b>, las <b>formas de pago</b>, <b>cómo hacerte cliente</b> o buscar un <b>producto</b> y apuntarlo en tu lista. Prueba con: «¿repartís en Rueda?» o «¿qué leche me recomendáis para café?».', true);
+  function cerrar(devolverFoco) {
+    root.hidden = true;
+    launcher.setAttribute('aria-expanded', 'false'); launcher.setAttribute('aria-label', 'Abrir el asistente de Distribuciones VM');
+    html.classList.remove('chat-open');
+    if (devolverFoco) launcher.focus();
+  }
+  launcher.addEventListener('click', function () { if (abierto()) cerrar(false); else abrir(); });
+  root.querySelector('.vmc-close').addEventListener('click', function () { cerrar(true); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && abierto()) cerrar(true); });
+  teaser.querySelector('.vmc-teaser-txt').addEventListener('click', abrir);
+  teaser.querySelector('.vmc-teaser-x').addEventListener('click', function () { ocultarAviso(); marcarAviso(); });
+  /* en el móvil, al pulsar un enlace a otra parte de la misma página se cierra el panel para ver la sección */
+  log.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href]');
+    if (a && movil.matches && a.pathname === location.pathname && a.hash) cerrar(false);
+  });
+
+  /* aviso breve junto al icono: una vez por pestaña */
+  try { avisoVisto = sessionStorage.getItem('vmc-aviso') === '1'; } catch (e) {}
+  if (!avisoVisto) {
+    setTimeout(function () {
+      if (abierto()) return;
+      teaser.hidden = false; launcher.classList.add('is-pulse');
+      setTimeout(function () { if (!teaser.hidden) { ocultarAviso(); marcarAviso(); } }, 14000);
+    }, 2500);
+  }
+
+  /* ---------- memoria de la pestaña (se borra al cerrarla; no sale del navegador) ---------- */
+  function guardar() {
+    try { sessionStorage.setItem('vmc', JSON.stringify({ zona: state.zone ? state.zone.nombre : null, negocio: state.negocio, lista: state.lista, hist: state.hist.slice(-12) })); } catch (e) {}
+  }
+  function cargarMemoria() {
+    try {
+      var d = JSON.parse(sessionStorage.getItem('vmc') || 'null');
+      if (!d) return;
+      state.negocio = typeof d.negocio === 'string' ? d.negocio : null;
+      state.lista = Array.isArray(d.lista) ? d.lista.filter(function (x) { return x && typeof x.n === 'string'; }).slice(0, 30) : [];
+      state.hist = Array.isArray(d.hist) ? d.hist.filter(function (x) { return typeof x === 'string'; }).slice(-12) : [];
+      if (d.zona) ZONAS.forEach(function (z) { if (z.nombre === d.zona) state.zone = z; });
+    } catch (e) {}
+  }
+  cargarMemoria();
+  var mostrarOrig = mostrar;
+  mostrar = function (h, q) { mostrarOrig(h, q); guardar(); };
+  log.addEventListener('click', function () { setTimeout(guardar, 0); });
+
+  add('bot', '¡Hola! Soy <b>Pablo</b>, el asistente virtual de Distribuciones VM. Te ayudo con el <b>reparto</b>, los <b>plazos</b>, el <b>horario</b>, las <b>formas de pago</b>, <b>hacerte cliente</b> o a buscar un <b>producto</b> y apuntarlo en tu lista. Prueba con: «¿repartís en Rueda?» o «¿qué leche me recomendáis para café?».' + (state.lista.length ? '<br><br>Sigo teniendo tu lista de interés (<b>' + state.lista.length + '</b>). Escribe «ver mi lista» para verla.' : ''), true);
 })();
