@@ -50,14 +50,6 @@ window.VILLACAMPO_SECTIONS = [
     "alt": "Judía verde · 3 kg, Villa Campo"
    },
    {
-    "name": "Patatas enteras · 3 kg",
-    "description": "Patatas enteras baby en conserva, en lata de 3 kg.",
-    "image": "assets/despensa/villacampo/villacampo-362-patatas-enteras-baby-primera-3kg-lata.webp",
-    "width": 477,
-    "height": 620,
-    "alt": "Patatas enteras · 3 kg, Villa Campo"
-   },
-   {
     "name": "Guisantes · 3 kg",
     "description": "Guisantes finos en conserva, en lata de 3 kg.",
     "image": "assets/despensa/villacampo/villacampo-330-guisantes-del-pais-finos-primera-3kg-lata.webp",
@@ -135,14 +127,6 @@ window.VILLACAMPO_SECTIONS = [
   "title": "Del piquillo a la seta.",
   "note": "Imagen de la ficha del producto",
   "variants": [
-   {
-    "name": "Pimiento morrón entero · 3 kg",
-    "description": "Pimientos morrones enteros en conserva, en lata de 3 kg.",
-    "image": "assets/despensa/villacampo/villacampo-379-pimiento-morron-primera-3kg-lata.webp",
-    "width": 477,
-    "height": 620,
-    "alt": "Pimiento morrón entero · 3 kg, Villa Campo"
-   },
    {
     "name": "Pimiento morrón en tiras · 3 kg",
     "description": "Pimiento morrón rojo en tiras, en conserva.",

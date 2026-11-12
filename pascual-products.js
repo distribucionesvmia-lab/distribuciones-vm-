@@ -114,8 +114,7 @@ window.ProductWorld.init({
       eyebrow: 'Brik de 200 ml · alimentación', title: 'Batidos en brik, para llevar.',
       note: 'Una imagen por variedad',
       variants: [
-        {name:'Batido de chocolate · brik de 200 ml', description:'Batido Pascual de chocolate en brik de 200 ml.', image:'assets/pascual/batido-brik-chocolate-200ml.webp', width:225, height:440, alt:'Brik de batido Pascual de chocolate de 200 ml'},
-        {name:'Batido de fresa y plátano · brik de 200 ml', description:'Batido Pascual de fresa y plátano en brik de 200 ml.', image:'assets/pascual/batido-brik-fresa-platano-200ml.webp', width:223, height:439, alt:'Brik de batido Pascual de fresa y plátano de 200 ml'}
+        {name:'Batido de chocolate · brik de 200 ml', description:'Batido Pascual de chocolate en brik de 200 ml.', image:'assets/pascual/batido-brik-chocolate-200ml.webp', width:225, height:440, alt:'Brik de batido Pascual de chocolate de 200 ml'}
       ]
     },
     {

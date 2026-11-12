@@ -21,22 +21,6 @@ window.ProductWorld.init({
     "alt": "Baguette R · 250 g, Panamar"
    },
    {
-    "name": "Baguettina Express · 120 g",
-    "description": "Baguettina de formato individual, pensada para hornear rápidamente.",
-    "image": "assets/congelados/8506-baguettina-clasica-120g.webp",
-    "width": 352,
-    "height": 159,
-    "alt": "Baguettina Express · 120 g, Panamar"
-   },
-   {
-    "name": "Barra Gourmet Ficelle · 280 g",
-    "description": "Barra de pan tipo ficelle, de formato alargado y textura crujiente.",
-    "image": "assets/congelados/130747-barra-gourmet-280g.webp",
-    "width": 386,
-    "height": 106,
-    "alt": "Barra Gourmet Ficelle · 280 g, Panamar"
-   },
-   {
     "name": "Barra Larga · 285 g",
     "description": "Barra de pan tradicional para hornear y servir recién hecha.",
     "image": "assets/congelados/13962-barra-larga-285g.webp",
@@ -67,14 +51,6 @@ window.ProductWorld.init({
     "width": 395,
     "height": 144,
     "alt": "Súper Barra Rústica Mediterránea · 380 g, Panamar"
-   },
-   {
-    "name": "Barra de Cuarto · 260 g",
-    "description": "Barra de pan de formato cuarto, en caja de 30 unidades.",
-    "image": "assets/congelados/13973-barra-de-cuarto-260g.webp",
-    "width": 383,
-    "height": 137,
-    "alt": "Barra de Cuarto · 260 g, Panamar"
    },
    {
     "name": "Barra Verité · 250 g",
@@ -123,22 +99,6 @@ window.ProductWorld.init({
     "width": 402,
     "height": 270,
     "alt": "Mini Flauta Express · 50 g, Panamar"
-   },
-   {
-    "name": "Mollete Andaluz · 70 g",
-    "description": "Panecillo tierno de estilo andaluz, ideal para desayunos y bocadillos.",
-    "image": "assets/congelados/12649-mollete-andaluz-dyl-70g.webp",
-    "width": 329,
-    "height": 208,
-    "alt": "Mollete Andaluz · 70 g, Panamar"
-   },
-   {
-    "name": "Mini Cuadrados de Pan Candeal · 80 g",
-    "description": "Pan candeal en piezas cuadradas de formato individual.",
-    "image": "assets/congelados/13696-pan-candeal-minicuadrados-80g.webp",
-    "width": 196,
-    "height": 157,
-    "alt": "Mini Cuadrados de Pan Candeal · 80 g, Panamar"
    },
    {
     "name": "Pan Castilla Redondo · 450 g",
@@ -197,22 +157,6 @@ window.ProductWorld.init({
     "alt": "Rebanada de Pan de Payés · 63 g, Panamar"
    },
    {
-    "name": "Surtido de Panecillos Redondos · 40 g",
-    "description": "Surtido de panecillos redondos listos para descongelar y servir.",
-    "image": "assets/congelados/13471-surtido-panecillos-redondos-dyl-40g.webp",
-    "width": 353,
-    "height": 196,
-    "alt": "Surtido de Panecillos Redondos · 40 g, Panamar"
-   },
-   {
-    "name": "Urban Brioche · 550 g",
-    "description": "Pan brioche de formato grande, listo para descongelar y servir.",
-    "image": "assets/congelados/131417-urban-brioche-dyl-550g.webp",
-    "width": 455,
-    "height": 218,
-    "alt": "Urban Brioche · 550 g, Panamar"
-   },
-   {
     "name": "Rustic Cristal Burger · 110 g",
     "description": "Panecillo tipo burger de estilo rústico, listo para descongelar y servir.",
     "image": "assets/congelados/13799-rustic-cristal-burger-12cm-dyl-110g.webp",
@@ -248,22 +192,6 @@ window.ProductWorld.init({
     "alt": "Croissant de Margarina Fermentado · 120 g, Panamar"
    },
    {
-    "name": "Mini Croissant Recto · 22 g",
-    "description": "Mini croissant recto, listo para fermentar antes del horneado.",
-    "image": "assets/congelados/1261-mini-croissant-recto-margarina-22g.webp",
-    "width": 191,
-    "height": 98,
-    "alt": "Mini Croissant Recto · 22 g, Panamar"
-   },
-   {
-    "name": "Mini Croissant de Mantequilla 100% · 25 g",
-    "description": "Mini croissant recto elaborado con mantequilla, listo para fermentar.",
-    "image": "assets/congelados/12177-mini-croissant-clasico-mantequilla-25g.webp",
-    "width": 200,
-    "height": 112,
-    "alt": "Mini Croissant de Mantequilla 100% · 25 g, Panamar"
-   },
-   {
     "name": "Croissant Recto de Mantequilla · 70 g",
     "description": "Croissant recto elaborado con mantequilla, listo para fermentar y hornear.",
     "image": "assets/congelados/13308-croissant-recto-mantequilla-20-ferm-70g.webp",
@@ -286,14 +214,6 @@ window.ProductWorld.init({
     "width": 373,
     "height": 178,
     "alt": "Croissant Recto Supreme de Mantequilla · 60 g, Panamar"
-   },
-   {
-    "name": "Croissant Recto de Margarina con Crema de Chocolate · 52 g",
-    "description": "Mini croissant recto relleno de crema de chocolate, en caja de 150 unidades.",
-    "image": "assets/congelados/130686-croissant-recto-margarina-crema-choco-52g.webp",
-    "width": 316,
-    "height": 163,
-    "alt": "Croissant Recto de Margarina con Crema de Chocolate · 52 g, Panamar"
    },
    {
     "name": "Palmera Croissant · 160 g",
@@ -377,14 +297,6 @@ window.ProductWorld.init({
     "width": 278,
     "height": 235,
     "alt": "Berlina Súper Choco · 90 g, Panamar"
-   },
-   {
-    "name": "Bretzel de Crema · 125 g",
-    "description": "Bretzel dulce relleno de crema.",
-    "image": "assets/congelados/130970-bretzel-crema-125g.webp",
-    "width": 372,
-    "height": 243,
-    "alt": "Bretzel de Crema · 125 g, Panamar"
    },
    {
     "name": "Cookie Doble Chocolate · 80 g",
@@ -484,14 +396,6 @@ window.ProductWorld.init({
     "width": 439,
     "height": 96,
     "alt": "Empanadilla de Tomate y Atún · 125 g, Panamar"
-   },
-   {
-    "name": "Empanada Gallega de Atún · 150 g",
-    "description": "Empanada de estilo gallego rellena de atún, en caja de 50 unidades.",
-    "image": "assets/congelados/12699-empanada-bocata-atun-gallega-150g.webp",
-    "width": 397,
-    "height": 186,
-    "alt": "Empanada Gallega de Atún · 150 g, Panamar"
    },
    {
     "name": "Bocapizza de Bacon y Queso · 150 g",

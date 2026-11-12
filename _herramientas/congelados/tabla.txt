@@ -1,19 +1,14 @@
 A || Baguette R · 250 g || Baguette de pan precocido, ideal para acompañar comidas o preparar bocadillos.
-A || Baguettina Express · 120 g || Baguettina de formato individual, pensada para hornear rápidamente.
-A || Barra Gourmet Ficelle · 280 g || Barra de pan tipo ficelle, de formato alargado y textura crujiente.
 A || Barra Larga · 285 g || Barra de pan tradicional para hornear y servir recién hecha.
 A || Barra Larga Croustillante Tradición · 260 g || Barra larga de corteza crujiente, en caja de 30 unidades.
 A || Barra Riquiña · 270 g || Barra de pan de estilo tradicional, en caja de 20 unidades.
 A || Súper Barra Rústica Mediterránea · 380 g || Barra rústica de inspiración mediterránea, en caja de 21 unidades.
-A || Barra de Cuarto · 260 g || Barra de pan de formato cuarto, en caja de 30 unidades.
 A || Barra Verité · 250 g || Barra de pan rústica de 250 g, en caja de 28 unidades.
 A || Bocadillo de Agua · 140 g || Pan individual de miga ligera, adecuado para bocadillos.
 A || Bocatín Rústico Express · 75 g || Panecillo rústico de pequeño formato, pensado para horneado rápido.
 A || Chapata Gourmet · 90 g || Panecillo de estilo chapata, de formato individual.
 A || Flauta Súper · 140 g || Pan alargado de formato individual, adecuado para bocadillos.
 A || Mini Flauta Express · 50 g || Panecillo alargado de pequeño formato, pensado para horneado rápido.
-A || Mollete Andaluz · 70 g || Panecillo tierno de estilo andaluz, ideal para desayunos y bocadillos.
-A || Mini Cuadrados de Pan Candeal · 80 g || Pan candeal en piezas cuadradas de formato individual.
 A || Pan Castilla Redondo · 450 g || Hogaza redonda de pan Castilla, de 450 g.
 A || Pan Castilla Redondo · 450 g · caja de 20 || Hogaza redonda de pan Castilla, en caja de 20 unidades.
 A || Pan de Molde · 800 g || Pan de molde de formato grande, adecuado para tostadas y sándwiches.
@@ -21,17 +16,12 @@ A || Pan Labriego · 300 g || Pan rústico de 300 g, en caja de 20 unidades.
 A || Panecillo sin Gluten para Hostelería · 66 g || Panecillo individual sin gluten, destinado al canal de hostelería.
 A || Pan de Payés Rebanado · 800 g || Pan de payés cortado en rebanadas, en formato de 800 g.
 A || Rebanada de Pan de Payés · 63 g || Rebanadas individuales de pan de payés; presentación de 4 paquetes de 22.
-A || Surtido de Panecillos Redondos · 40 g || Surtido de panecillos redondos listos para descongelar y servir.
-A || Urban Brioche · 550 g || Pan brioche de formato grande, listo para descongelar y servir.
 A || Rustic Cristal Burger · 110 g || Panecillo tipo burger de estilo rústico, listo para descongelar y servir.
 B || Croissant de Margarina · 120 g || Croissant elaborado con margarina, de formato grande.
 B || Croissant de Margarina Fermentado · 120 g || Croissant de margarina, listo para fermentar antes del horneado.
-B || Mini Croissant Recto · 22 g || Mini croissant recto, listo para fermentar antes del horneado.
-B || Mini Croissant de Mantequilla 100% · 25 g || Mini croissant recto elaborado con mantequilla, listo para fermentar.
 B || Croissant Recto de Mantequilla · 70 g || Croissant recto elaborado con mantequilla, listo para fermentar y hornear.
 B || Croissant Art Supreme de Mantequilla · 80 g || Croissant de mantequilla listo para fermentar, en caja de 60 unidades.
 B || Croissant Recto Supreme de Mantequilla · 60 g || Croissant recto de mantequilla, listo para fermentar, en caja de 60 unidades.
-B || Croissant Recto de Margarina con Crema de Chocolate · 52 g || Mini croissant recto relleno de crema de chocolate, en caja de 150 unidades.
 B || Palmera Croissant · 160 g || Pieza de bollería de hojaldre, en caja de 30 unidades.
 C || Napolitana Súper de Chocolate · 135 g || Napolitana de hojaldre rellena de chocolate.
 C || Napolitana de Crema Fermentada · 115 g || Napolitana rellena de crema, lista para fermentar y hornear.
@@ -41,7 +31,6 @@ C || Napolitana Decorada de Chocolate · 118 g || Napolitana decorada y rellena 
 C || Napolitana Mixta · 140 g || Napolitana de relleno mixto, en caja de 66 unidades.
 C || Berlina Blanca Rayada · 115 g || Berlina dulce decorada con líneas; lista para descongelar y servir.
 C || Berlina Súper Choco · 90 g || Berlina de chocolate, lista para descongelar y servir.
-C || Bretzel de Crema · 125 g || Bretzel dulce relleno de crema.
 C || Cookie Doble Chocolate · 80 g || Galleta de doble chocolate, lista para descongelar y servir.
 C || Ensaimada Grande · 95 g || Pieza de bollería dulce en formato individual.
 C || Herradura de Chocolate · 170 g || Pieza de bollería con forma de herradura y relleno de chocolate.
@@ -53,7 +42,6 @@ C || Pepito de Crema Azucarado · 110 g || Pieza de bollería rellena de crema y
 C || Trenza Maple · 95 g || Pieza de bollería trenzada con sabor a maple.
 D || Empanadilla Selecta de Pisto · 125 g || Empanadilla rellena de pisto, en caja de 44 unidades.
 D || Empanadilla de Tomate y Atún · 125 g || Empanadilla salada rellena de tomate y atún.
-D || Empanada Gallega de Atún · 150 g || Empanada de estilo gallego rellena de atún, en caja de 50 unidades.
 D || Bocapizza de Bacon y Queso · 150 g || Bocapizza rellena de bacon y queso, en caja de 20 unidades.
 D || Bocapizza de Atún y Queso · 150 g || Bocapizza rellena de atún y queso, en caja de 20 unidades.
 D || Bocapizza de York y Queso · 150 g || Bocapizza rellena de jamón York y queso, en caja de 20 unidades.

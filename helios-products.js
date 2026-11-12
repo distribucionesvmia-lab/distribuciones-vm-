@@ -371,14 +371,6 @@ window.HELIOS_SECTIONS = [
   "note": "Imagen del catálogo oficial de Helios",
   "variants": [
    {
-    "name": "Dulce de membrillo · 400 g",
-    "description": "Dulce de membrillo en formato de 400 g.",
-    "image": "assets/despensa/helios/membrillo-lingote.webp",
-    "width": 465,
-    "height": 202,
-    "alt": "Dulce de membrillo · 400 g, Helios"
-   },
-   {
     "name": "Picos de fruta · fresa · 170 g",
     "description": "Picos de fruta con sabor a fresa.",
     "image": "assets/despensa/helios/picos-de-fresa.webp",
@@ -591,14 +583,6 @@ window.HELIOS_SECTIONS = [
     "width": 210,
     "height": 456,
     "alt": "Macedonia de verduras · 660 g, Helios"
-   },
-   {
-    "name": "Puerros · 660 g",
-    "description": "Puerros al natural en frasco.",
-    "image": "assets/despensa/helios/puerros-660g.webp",
-    "width": 211,
-    "height": 456,
-    "alt": "Puerros · 660 g, Helios"
    }
   ]
  },
@@ -687,14 +671,6 @@ window.HELIOS_SECTIONS = [
     "alt": "Cebollitas en vinagre · 345 g, Helios"
    },
    {
-    "name": "Cóctel de encurtidos · 345 g",
-    "description": "Surtido de encurtidos en conserva.",
-    "image": "assets/despensa/helios/cocktail-345g.webp",
-    "width": 371,
-    "height": 458,
-    "alt": "Cóctel de encurtidos · 345 g, Helios"
-   },
-   {
     "name": "Guindillas en vinagre · 345 g",
     "description": "Guindillas conservadas en vinagre.",
     "image": "assets/despensa/helios/guindillas-en-vinagre-345g.webp",
@@ -709,14 +685,6 @@ window.HELIOS_SECTIONS = [
     "width": 373,
     "height": 456,
     "alt": "Pepinillos en vinagre · 345 g, Helios"
-   },
-   {
-    "name": "Banderillas en vinagre · 330 g",
-    "description": "Banderillas de encurtidos conservadas en vinagre.",
-    "image": "assets/despensa/helios/banderillas-en-vinagre-345g.webp",
-    "width": 373,
-    "height": 464,
-    "alt": "Banderillas en vinagre · 330 g, Helios"
    }
   ]
  },

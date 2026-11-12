@@ -18,8 +18,7 @@ window.ProductWorld.init({
       variants:[
         {name:'La Caprichosa · Verdejo 2025', description:'Verdejo sobre lías de Palacio de Bornos.', image:B+'la-caprichosa-verdejo.webp', width:119, height:478, alt:'Botella La Caprichosa Verdejo sobre lías'},
         {name:'Verdejo fermentado en barrica · 2023', description:'Blanco de Palacio de Bornos fermentado en barrica.', image:'assets/marcas/bornos-fermentado.webp', width:270, height:612, alt:'Botella Palacio de Bornos Verdejo fermentado en barrica'},
-        {name:'Bornos Semidulce Verdejo', description:'Verdejo semidulce de Palacio de Bornos.', image:B+'bornos-semidulce-verdejo.webp', width:135, height:546, alt:'Botella Palacio de Bornos Verdejo Semidulce'},
-        {name:'Sauvignon Blanc', description:'Palacio de Bornos Sauvignon Blanc.', image:'assets/marcas/bornos-sauvignon-2025.webp', width:270, height:612, alt:'Botella Palacio de Bornos Sauvignon Blanc'}
+        {name:'Bornos Semidulce Verdejo', description:'Verdejo semidulce de Palacio de Bornos.', image:B+'bornos-semidulce-verdejo.webp', width:135, height:546, alt:'Botella Palacio de Bornos Verdejo Semidulce'}
       ]
     },
     {

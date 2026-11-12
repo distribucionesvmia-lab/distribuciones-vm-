@@ -5,13 +5,6 @@ window.ProductWorld.init({
   order: ['Carbonell','Helios','Calvo','Villa Campo','Luengo','Prima','Borges','Carmencita','La Ballena'],
   sections: [
     {
-      template: 'hero', family: 'Calvo', color: '#fff3c4', ink: '#1f5a3a',
-      eyebrow: 'Edición limitada de Navidad', title: '85 años. En una lata.',
-      description: 'Coincidiendo con el 85 aniversario de la compañía, Calvo lanza una Edición Limitada de Navidad que rinde homenaje a su historia, recuperando la esencia de aquella primera lata de conserva creada en Galicia.',
-      backword: 'CALVO', bottom: '01 — Edición vintage',
-      product: {name:'Lata Recetas Gourmet · Edición limitada', image:D+'calvo-lata-85.webp', width:287, height:723, alt:'Lata vintage de Calvo, edición limitada por el 85 aniversario'}
-    },
-    {
       template: 'editorial', family: 'Calvo', color: '#fbf6e8', ink: '#1f5a3a', columns: 3,
       eyebrow: 'La colección en la mesa', title: 'Conservas con receta.',
       description: 'Las referencias de la edición limitada, presentadas junto a platos pensados para cada una.',
@@ -21,7 +14,7 @@ window.ProductWorld.init({
         {name:'Mejillones al albariño', description:'Mejillones en salsa de vino albariño.', image:D+'calvo-receta-mejillones-albarino.webp', width:481, height:361, cover:true, alt:'Lata Calvo de mejillones en salsa de vino albariño junto a un plato servido'},
         {name:'Ventresca escabechada', description:'Ventresca de atún claro escabechada.', image:D+'calvo-receta-ventresca.webp', width:482, height:440, cover:true, alt:'Lata Calvo de ventresca de atún claro escabechada junto a un plato servido'},
         {name:'Mejillones en salsa gallega', description:'Mejillones en salsa gallega, listos para una mesa navideña.', image:D+'calvo-receta-mejillones-gallega.webp', width:483, height:440, cover:true, alt:'Latas Calvo de mejillones en salsa gallega y aperitivo servido'},
-        {name:'La colección completa', description:'Latas de la edición limitada junto a la lata Recetas Gourmet.', image:D+'calvo-coleccion.webp', width:685, height:444, cover:true, alt:'Colección de latas Calvo de edición limitada sobre una mesa'}
+        {name:'La colección completa', description:'Las latas de la edición limitada.', image:D+'calvo-coleccion.webp', width:685, height:444, cover:true, alt:'Colección de latas Calvo de edición limitada sobre una mesa'}
       ]
     },
     {
@@ -29,7 +22,6 @@ window.ProductWorld.init({
       eyebrow: 'Del plato a la barra', title: 'Formatos para cocina profesional.',
       description: 'Bolsas y lata de gran formato de las marcas Calvo, Eureka e Isabel.',
       products: [
-        {name:'Atún en aceite vegetal', description:'Calvo, atún en trozos en aceite vegetal.', image:D+'calvo-hosteleria-atun-vegetal.webp', width:170, height:240, alt:'Bolsa Calvo de atún en trozos en aceite vegetal'},
         {name:'Atún Eureka', description:'Atún en trozos en aceite de girasol.', image:D+'calvo-hosteleria-eureka.webp', width:332, height:477, alt:'Bolsa Eureka de atún en trozos en aceite de girasol'},
         {name:'Atún Isabel · bolsa de 1 kg', description:'Atún en aceite de girasol en bolsa de 1 kg, para cocina profesional.', image:D+'isabel-atun-bolsa-1kg.webp', width:350, height:480, alt:'Bolsa Isabel de atún en aceite de girasol de 1 kg'},
         {name:'Calamares en tinta', description:'Calvo, calamares en tinta en formato bolsa.', image:D+'calvo-hosteleria-calamares-tinta.webp', width:334, height:478, alt:'Bolsa Calvo de calamares en tinta'},
@@ -129,7 +121,6 @@ window.ProductWorld.init({
         {name:'Mix frito · cubo de 2 kg', description:'Mezcla de frutos secos fritos para servir como aperitivo, en cubo de 2 kg.', image:D+'borges-mix-frito-cubo-2kg.webp', width:375, height:434, alt:'Mix frito cubo de 2 kg'},
         {name:'Cacahuetes · cubo de 2,5 kg', description:'Cacahuetes en formato grande para hostelería y servicio de aperitivos.', image:D+'borges-cacahuetes-cubo-2-5kg.webp', width:375, height:434, alt:'Cacahuetes cubo de 2,5 kg'},
         {name:'Mix barbacoa · cubo de 1,75 kg', description:'Mezcla de aperitivo con sabor barbacoa, en cubo de 1,75 kg.', image:D+'borges-mix-barbacoa-cubo-1-75kg.webp', width:375, height:434, alt:'Mix barbacoa cubo de 1,75 kg'},
-        {name:'Almendra tostada · 1 kg', description:'Almendras tostadas en formato de 1 kg para cocina y hostelería.', image:'assets/despensa/extra/borges_almendra-tostada-1kg.webp', width:540, height:540, alt:'Borges Almendra tostada 1 kg'},
         {name:'Cacahuete frito · 1 kg', description:'Cacahuetes fritos en formato de 1 kg para aperitivos y hostelería.', image:D+'borges-cacahuetes.webp', width:319, height:400, alt:'Bolsa Borges Selección de cacahuetes fritos y salados, imagen de la gama'},
         {name:'Nuez en grano · 1 kg', description:'Nueces sin cáscara en formato de 1 kg, listas para utilizar en cocina y repostería.', image:D+'borges-nueces.webp', width:309, height:395, alt:'Bolsa Borges Selección de nueces de California en grano, imagen de la gama'},
         {name:'Pasas sultanas · 1 kg', description:'Pasas sultanas en formato de 1 kg, apropiadas para recetas, ensaladas y repostería.', image:'assets/despensa/extra/borges_pasas-sultanas-1kg.webp', width:540, height:540, alt:'Borges Pasas sultanas 1 kg'},
