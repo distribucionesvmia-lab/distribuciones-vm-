@@ -11,3 +11,10 @@
 .pw-brand-red .pw-action:hover{background:#ffe9ea}
 .pw-brand-red .pw-opening-art{display:grid;place-items:center}
 .pw-brand-red .pw-opening-circle{z-index:0}
+
+/* Barista sin lactosa: foto pequeña, se muestra sin ampliarla en exceso */
+.pw-a[style*="--scene:#efe5d8"] .pw-a-product{height:min(46vh,430px)}
+
+/* Zumos Essential: una sola foto, a ancho de composición */
+.pw-c[style*="--scene:#ffedda"] .pw-c-grid{grid-template-columns:minmax(0,820px)}
+.pw-c[style*="--scene:#ffedda"] .pw-c-photo{height:clamp(320px,38vw,560px)}

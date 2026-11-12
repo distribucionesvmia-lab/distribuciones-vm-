@@ -1,7 +1,7 @@
 /* Sustituye image, width, height y alt al recibir fotografías originales. */
 window.ProductWorld.init({
   mount: '#familias',
-  order: ['Leche','Bebidas Pascual','Vivesoy','Bifrutas','Yogikids','Yogures','Postres','Natillas'],
+  order: ['Leche','Batidos','Natas','Mantequillas','Bebidas Pascual','Vivesoy','Bifrutas','Yogikids','Yogures','Postres','Natillas'],
   sections: [
     {
       template: 'hero', family: 'Leche Intense', color: '#e8e0d6', ink: '#2b2a3a',
@@ -51,6 +51,98 @@ window.ProductWorld.init({
       product: {name:'Leche Pascual Extra Crème · 1,5 L', image:'assets/pascual/extra-creme-botella-1-5l.webp', width:130, height:416, alt:'Botella de Leche Pascual Profesional Extra Crème de 1,5 litros'}
     },
     {
+      template: 'lineup', family: 'Leche Alimentación', color: '#e4ecf6', ink: '#12305a',
+      eyebrow: 'Botella de 1,5 litros · para el hogar', title: 'Leche Pascual para el hogar.',
+      note: 'Una imagen por variedad',
+      variants: [
+        {name:'Leche entera · botella de 1,5 L', description:'Leche entera Pascual en botella de 1,5 litros, para el consumo en el hogar.', image:'assets/pascual/hogar-botella-entera.webp', width:249, height:786, alt:'Botella de leche entera Pascual de 1,5 litros'},
+        {name:'Leche semidesnatada · botella de 1,5 L', description:'Leche semidesnatada Pascual en botella de 1,5 litros, para el consumo en el hogar.', image:'assets/pascual/hogar-botella-semidesnatada.webp', width:249, height:787, alt:'Botella de leche semidesnatada Pascual de 1,5 litros'},
+        {name:'Leche desnatada · botella de 1,5 L', description:'Leche desnatada Pascual en botella de 1,5 litros, para el consumo en el hogar.', image:'assets/pascual/hogar-botella-desnatada.webp', width:249, height:787, alt:'Botella de leche desnatada Pascual de 1,5 litros'}
+      ]
+    },
+    {
+      template: 'lineup', family: 'Leche en brik', color: '#dde8f5', ink: '#12305a',
+      eyebrow: 'Brik · alimentación y hogar', title: 'Leche en brik, para el día a día.',
+      note: 'Una imagen por variedad',
+      variants: [
+        {name:'Leche entera · brik de 1 L', description:'Leche entera Pascual en brik de 1 litro, para el hogar.', image:'assets/pascual/brik-entera-1l.webp', width:188, height:513, alt:'Brik de leche entera Pascual de 1 litro'},
+        {name:'Leche semidesnatada · brik de 1 L', description:'Leche semidesnatada Pascual en brik de 1 litro, para el hogar.', image:'assets/pascual/brik-semidesnatada-1l.webp', width:181, height:510, alt:'Brik de leche semidesnatada Pascual de 1 litro'},
+        {name:'Leche desnatada · brik de 1 L', description:'Leche desnatada Pascual en brik de 1 litro, para el hogar.', image:'assets/pascual/brik-desnatada-1l.webp', width:186, height:506, alt:'Brik de leche desnatada Pascual de 1 litro'},
+        {name:'Leche entera · brik de 200 ml', description:'Formato pequeño de 200 ml, pensado para los niños.', image:'assets/pascual/brik-entera-200ml-ninos.webp', width:226, height:447, alt:'Brik de leche entera Pascual de 200 ml, formato para niños'}
+      ]
+    },
+    {
+      template: 'hero', family: 'Leche Sin Lactosa Barista', color: '#efe5d8', ink: '#2f3a2a',
+      eyebrow: 'Pascual Profesional · Sin lactosa', title: 'Sin lactosa Barista. Para tu barra.',
+      description: 'Leche sin lactosa semidesnatada Barista, para hostelería. Emulsiona mejor en el vaporizador de la cafetera que la leche sin lactosa normal.',
+      backword: 'BARISTA', bottom: 'Leche sin lactosa Barista · semidesnatada · para cafeterías y bares',
+      product: {name:'Leche Pascual Profesional Sin Lactosa Barista · semidesnatada', image:'assets/pascual/sinlactosa-barista.webp', width:100, height:256, alt:'Brik de leche Pascual Profesional Sin Lactosa Barista, semidesnatada'}
+    },
+    {
+      template: 'lineup', family: 'Leche Sin Lactosa', color: '#ebe2f1', ink: '#44245e',
+      eyebrow: 'Brik · sin lactosa para el hogar', title: 'Leche sin lactosa, en brik.',
+      note: 'Una imagen por variedad',
+      variants: [
+        {name:'Sin lactosa entera · brik de 1 L', description:'Leche entera sin lactosa Pascual en brik de 1 litro, para el hogar.', image:'assets/pascual/sinlactosa-entera-1l.webp', width:180, height:507, alt:'Brik de leche entera sin lactosa Pascual de 1 litro'},
+        {name:'Sin lactosa semidesnatada · brik de 1 L', description:'Leche semidesnatada sin lactosa Pascual en brik de 1 litro, para el hogar.', image:'assets/pascual/sinlactosa-semidesnatada-1l.webp', width:190, height:506, alt:'Brik de leche semidesnatada sin lactosa Pascual de 1 litro'},
+        {name:'Sin lactosa desnatada · brik de 1 L', description:'Leche desnatada sin lactosa Pascual en brik de 1 litro, para el hogar.', image:'assets/pascual/sinlactosa-desnatada-1l.webp', width:184, height:506, alt:'Brik de leche desnatada sin lactosa Pascual de 1 litro'},
+        {name:'Sin lactosa semidesnatada · brik de 200 ml', description:'Formato pequeño de 200 ml de leche semidesnatada sin lactosa.', image:'assets/pascual/sinlactosa-semidesnatada-200ml.webp', width:255, height:502, alt:'Brik de leche semidesnatada sin lactosa Pascual de 200 ml'}
+      ]
+    },
+    {
+      template: 'lineup', family: 'Leche Movit', color: '#f3dfe6', ink: '#6b1e3d',
+      eyebrow: 'Con calcio · consumo en el hogar', title: 'Movit, leche con calcio.',
+      note: 'Una imagen por variedad',
+      variants: [
+        {name:'Movit semidesnatada · brik de 1 L', description:'Leche semidesnatada Movit con calcio, para el consumo en el hogar.', image:'assets/pascual/movit-semidesnatada.webp', width:177, height:504, alt:'Brik de leche Movit semidesnatada con calcio de 1 litro'},
+        {name:'Movit desnatada · brik de 1 L', description:'Leche desnatada Movit con calcio, para el consumo en el hogar.', image:'assets/pascual/movit-desnatada.webp', width:183, height:505, alt:'Brik de leche Movit desnatada con calcio de 1 litro'}
+      ]
+    },
+    {
+      template: 'lineup', family: 'Batidos Pascual', color: '#fbd9e4', ink: '#7a1d3c',
+      eyebrow: 'Batidos para hostelería · vidrio', title: 'Batidos Pascual, un formato único para el canal Horeca.',
+      note: 'Una imagen por variedad',
+      variants: [
+        {name:'Batido de vainilla · vidrio de 200 ml', description:'Batido Pascual Intense de vainilla en botella de vidrio, para hostelería.', image:'assets/pascual/batido-vidrio-vainilla.webp', width:211, height:729, alt:'Botella de vidrio de batido Pascual Intense de vainilla'},
+        {name:'Batido de chocolate · vidrio de 200 ml', description:'Batido Pascual Intense de chocolate en botella de vidrio. Con la fórmula mejorada, elaborado con leche semidesnatada: textura más cremosa y sabor más intenso.', image:'assets/pascual/batido-vidrio-chocolate.webp', width:211, height:729, alt:'Botella de vidrio de batido Pascual Intense de chocolate'},
+        {name:'Batido de fresa · vidrio de 200 ml', description:'Batido Pascual Intense de fresa en botella de vidrio, para hostelería.', image:'assets/pascual/batido-vidrio-fresa.webp', width:212, height:730, alt:'Botella de vidrio de batido Pascual Intense de fresa'},
+        {name:'ColaCao · vidrio de 195 cc', description:'Batido ColaCao en botella de vidrio, para hostelería.', image:'assets/pascual/batido-vidrio-colacao.webp', width:221, height:730, alt:'Botella de vidrio de batido ColaCao'}
+      ]
+    },
+    {
+      template: 'lineup', family: 'Batidos en brik', color: '#f6e4d8', ink: '#5a2e1b',
+      eyebrow: 'Brik de 200 ml · alimentación', title: 'Batidos en brik, para llevar.',
+      note: 'Una imagen por variedad',
+      variants: [
+        {name:'Batido de chocolate · brik de 200 ml', description:'Batido Pascual de chocolate en brik de 200 ml.', image:'assets/pascual/batido-brik-chocolate-200ml.webp', width:225, height:440, alt:'Brik de batido Pascual de chocolate de 200 ml'},
+        {name:'Batido de fresa y plátano · brik de 200 ml', description:'Batido Pascual de fresa y plátano en brik de 200 ml.', image:'assets/pascual/batido-brik-fresa-platano-200ml.webp', width:223, height:439, alt:'Brik de batido Pascual de fresa y plátano de 200 ml'}
+      ]
+    },
+    {
+      template: 'lineup', family: 'Natas Pascual', color: '#e6eef7', ink: '#17305a',
+      eyebrow: 'Para cocinar y para montar', title: 'Natas, para cocinar y para montar.',
+      note: 'Una imagen por variedad',
+      variants: [
+        {name:'Nata para cocinar · 200 ml', description:'Nata Pascual para cocinar, con un 18 % de materia grasa, en formato de 200 ml.', image:'assets/pascual/nata-cocinar-200ml.webp', width:173, height:338, alt:'Brik de nata Pascual para cocinar de 200 ml'},
+        {name:'Nata para cocinar · 500 ml', description:'Nata Pascual para cocinar, con un 18 % de materia grasa, en formato de 500 ml.', image:'assets/pascual/nata-cocinar-500ml.webp', width:198, height:328, alt:'Brik de nata Pascual para cocinar de 500 ml'},
+        {name:'Nata para cocinar · 1 L', description:'Nata Pascual para cocinar, con un 18 % de materia grasa, en formato de 1 litro.', image:'assets/pascual/nata-cocinar-1l.webp', width:175, height:503, alt:'Brik de nata Pascual para cocinar de 1 litro'},
+        {name:'Nata para montar · 500 ml', description:'Nata Pascual para montar, con un 35 % de materia grasa, en formato de 500 ml.', image:'assets/pascual/nata-montar-500ml.webp', width:198, height:328, alt:'Brik de nata Pascual para montar de 500 ml'},
+        {name:'Nata para montar · 1 L', description:'Nata Pascual para montar, con un 35 % de materia grasa, en formato de 1 litro.', image:'assets/pascual/nata-montar-1l.webp', width:173, height:504, alt:'Brik de nata Pascual para montar de 1 litro'},
+        {name:'Nata montada · spray', description:'Nata montada azucarada Pascual en spray, lista para usar.', image:'assets/pascual/nata-montada-spray.webp', width:123, height:496, alt:'Spray de nata montada azucarada Pascual'}
+      ]
+    },
+    {
+      template: 'lineup', family: 'Mantequillas Pascual', color: '#f7ecc4', ink: '#5a4310',
+      eyebrow: 'Pastilla y tarrina', title: 'Mantequilla, en pastilla y en tarrina.',
+      note: 'Una imagen por variedad',
+      variants: [
+        {name:'Mantequilla en pastilla · 250 g', description:'Mantequilla Pascual en pastilla de 250 g.', image:'assets/pascual/mantequilla-pastilla-250g.webp', width:232, height:131, alt:'Pastilla de mantequilla Pascual de 250 g'},
+        {name:'Mantequilla en pastilla · 500 g', description:'Mantequilla Pascual en pastilla de 500 g.', image:'assets/pascual/mantequilla-pastilla-500g.webp', width:237, height:153, alt:'Pastilla de mantequilla Pascual de 500 g'},
+        {name:'Mantequilla en tarrina · con sal', description:'Mantequilla Pascual en tarrina, con sal.', image:'assets/pascual/mantequilla-tarrina-con-sal.webp', width:234, height:127, alt:'Tarrina de mantequilla Pascual con sal'},
+        {name:'Mantequilla en tarrina · sin sal', description:'Mantequilla Pascual en tarrina, sin sal.', image:'assets/pascual/mantequilla-tarrina-sin-sal.webp', width:235, height:127, alt:'Tarrina de mantequilla Pascual sin sal'}
+      ]
+    },
+    {
       template: 'range', family: 'Vivesoy Barista', color: '#e9eacb', ink: '#214b32',
       eyebrow: 'Tres variedades, una misma barra', title: 'Vegetal, en movimiento.',
       description: 'Tres bebidas vegetales Vivesoy Barista para descubrir en la barra.',
@@ -76,9 +168,8 @@ window.ProductWorld.init({
     {
       template: 'editorial', family: 'Bebidas Pascual', color: '#ffedda', ink: '#512f1c',
       eyebrow: 'Una selección para cada momento', title: 'Color en la carta.',
-      description: 'Batidos y zumos Essential de Pascual en un recorrido lleno de color.',
+      description: 'Zumos Pascual Essential para la carta.',
       products: [
-        {name:'Batidos Pascual', description:'Vainilla, chocolate y fresa junto a ColaCao.', image:'assets/pascual/batidos.webp', width:430, height:385, alt:'Botellas originales de batidos Pascual y ColaCao'},
         {name:'Zumos Essential', description:'Una selección de botellas Pascual Essential.', image:'assets/pascual/essential.webp', width:680, height:480, alt:'Botellas originales de zumo Pascual Essential'}
       ]
     },
