@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /_version-3d/
+Disallow: /_version-anterior/
+Disallow: /_sin-usar/
+
+Sitemap: https://distribucionesvm.es/sitemap.xml

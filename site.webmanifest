@@ -1,0 +1,21 @@
+{
+  "name": "Distribuciones Valentín Martín",
+  "short_name": "Valentín",
+  "lang": "es",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#e8f3f3",
+  "theme_color": "#e8f3f3",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "400x400",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
