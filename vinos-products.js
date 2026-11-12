@@ -65,15 +65,15 @@ window.ProductWorld.init({
       ]
     },
     {
-      template:'lineup', family:'Otras bodegas', color:'#f4f0e9', ink:'#29231f',
-      eyebrow:'Más nombres en la selección', title:'Otras referencias.',
-      note:'Una imagen por variedad',
+      template:'lineup', family:'Pinna Fidelis', color:'#f4f0e9', ink:'#29231f',
+      eyebrow:'Pinna Fidelis · Peñafiel', title:'Pinna Fidelis, de Peñafiel a la copa.',
+      note:'Pinna Fidelis resume su casa en «de nuestros viñedos a tu copa». Una imagen por variedad',
       variants:[
         {name:'Pinna Fidelis Roble', description:'Pinna Fidelis Roble, Ribera del Duero.', image:B+'pinna-fidelis-roble-2020.webp', width:153, height:494, alt:'Botella Pinna Fidelis Roble 2020, Ribera del Duero'},
         {name:'Pinna Fidelis Crianza', description:'Crianza de Pinna Fidelis, Ribera del Duero.', image:B+'pinna-fidelis-crianza.webp', width:140, height:560, alt:'Botella Pinna Fidelis Crianza, Ribera del Duero'},
         {name:'Pinna Fidelis Roble · botella 3/8 con estuche', description:'Pinna Fidelis Roble, Ribera del Duero, en botella de 3/8 (37,5 cl) con estuche blanco.', image:B+'pinna-fidelis-roble-pequena-estuche.webp', width:377, height:660, alt:'Botella pequeña de Pinna Fidelis Roble con su estuche blanco'},
         {name:'Pinna Fidelis · estuche de regalo', description:'Pinna Fidelis, Ribera del Duero, presentado en estuche de regalo negro.', image:B+'pinna-fidelis-estuche-regalo.webp', width:366, height:900, alt:'Pinna Fidelis, Ribera del Duero, en estuche de regalo negro'},
-        {name:'De tiros largos · Ribera del Duero', description:'Tinto de la D.O. Ribera del Duero.', image:B+'de-tiros-largos.webp', width:150, height:607, alt:'Botella De tiros largos, tinto de Ribera del Duero'}
+        {name:'De tiros largos · Pinna Fidelis · Ribera del Duero', description:'Tinto de Pinna Fidelis, 100 % Tinta del País, D.O. Ribera del Duero.', image:B+'de-tiros-largos.webp', width:150, height:607, alt:'Botella De tiros largos, tinto de Pinna Fidelis, Ribera del Duero'}
       ]
     }
   ]
