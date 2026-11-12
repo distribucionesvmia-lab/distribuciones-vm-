@@ -242,3 +242,17 @@ button,a{-webkit-tap-highlight-color:transparent}
  .m-photo .m-hero-photo{position:relative;inset:auto;z-index:0;order:-1;width:100vw;max-width:none;margin:0 0 0 calc(50% - 50vw);height:42svh;min-height:240px;object-position:78% 50%}
  .m-photo .m-hero-copy{padding-top:22px}
 }
+
+/* Collage de servicio (segunda sección): cafeteras, molinos, mantenimiento, asistencia técnica y asesoramiento */
+.m-collage{padding:clamp(70px,9vw,140px) var(--gutter);background:var(--paper-2)}
+.m-collage-head{max-width:880px;margin:0 0 clamp(32px,4vw,60px)}
+.m-collage-head .m-eyebrow{margin:0 0 18px}
+.m-collage h2{font-size:clamp(2.6rem,1.4rem + 4vw,6rem);font-weight:500;letter-spacing:-.055em;line-height:.95;margin:0 0 20px}
+.m-collage-head>p:last-child{font-size:clamp(1.15rem,1rem + .5vw,1.5rem);line-height:1.3;max-width:34ch;margin:0}
+.m-collage-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(14px,2vw,28px);max-width:1180px}
+.m-col-card{grid-column:span 2;margin:0;background:#fff;border-radius:10px;padding:clamp(10px,1.2vw,16px);box-shadow:0 10px 30px rgba(20,16,13,.08)}
+.m-col-card.m-col-wide{grid-column:span 3}
+.m-col-card img{display:block;width:100%;aspect-ratio:3/1.45;object-fit:cover;border-radius:6px}
+.m-col-card:not(.m-col-wide) img{aspect-ratio:3/2}
+.m-col-card figcaption{padding:14px 6px 6px;text-align:center;font-weight:700;letter-spacing:.02em;text-transform:uppercase;font-size:clamp(.85rem,.8rem + .2vw,1.05rem)}
+@media(max-width:760px){.m-collage-grid{grid-template-columns:1fr 1fr}.m-col-card,.m-col-card.m-col-wide{grid-column:span 1}.m-col-card.m-col-wide{grid-column:span 2}.m-col-card:not(.m-col-wide):last-child{grid-column:span 2}.m-col-card:not(.m-col-wide):last-child img{aspect-ratio:3/1.6}}
