@@ -21,7 +21,7 @@ IMAGES = {
     'menaje.html': ('assets/menaje/og-menaje.jpg', 1200, 630, 'Mesa de restaurante preparada con copas, platos y servilletas bajo una luz cálida'),
 }
 PAGES = ['index.html', 'cafe-mocay.html', 'pascual.html', 'vinos.html', 'agua.html',
-         'despensa.html', 'refrigerados.html', 'congelados.html', 'menaje.html', 'aviso-legal.html', 'privacidad.html']
+         'despensa.html', 'refrigerados.html', 'congelados.html', 'menaje.html', 'quienes-somos.html', 'historia.html', 'aviso-legal.html', 'privacidad.html']
 
 BUSINESS = {
     '@context': 'https://schema.org',

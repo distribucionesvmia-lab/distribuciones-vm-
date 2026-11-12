@@ -13,16 +13,16 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 # (texto, página o ancla en index.html)
 MENU = [
     ('Inicio', 'index.html#inicio'),
-    ('Catálogo', 'index.html#catalogo'),
-    # orden de familias del ERP: 1 Leche / 10 Agua / 21 Vino / 27-51 Despensa / 40 Mocay / 70-85 Refrigerados / 92 Panamar
-    ('Pascual', 'pascual.html'),
-    ('Aguas', 'agua.html'),
-    ('Vinos', 'vinos.html'),
-    ('Despensa', 'despensa.html'),
     ('Café Mocay', 'cafe-mocay.html'),
-    ('Menaje', 'menaje.html'),
+    ('Pascual', 'pascual.html'),
+    ('Vinos', 'vinos.html'),
+    ('Aguas', 'agua.html'),
+    ('Despensa', 'despensa.html'),
     ('Refrigerados', 'refrigerados.html'),
     ('Congelados', 'congelados.html'),
+    ('Menaje', 'menaje.html'),
+    ('Catálogo', 'index.html#catalogo'),
+    ('Conócenos', 'quienes-somos.html'),   # subpáginas: Quiénes somos e Historia (se enlazan entre sí)
 ]
 # Botón fijo «Llamar» (solo se ve en móvil; se escribe igual en todas las páginas)
 CALL_NUMBER = '+34635098044'
@@ -43,6 +43,8 @@ PAGES = {
     'refrigerados.html': ('Refrigerados', False),
     'congelados.html': ('Congelados', False),
     'menaje.html': ('Menaje', False),
+    'quienes-somos.html': ('Conócenos', False),
+    'historia.html': ('Conócenos', False),
     'aviso-legal.html': (None, False),
     'privacidad.html': (None, False),
 }
