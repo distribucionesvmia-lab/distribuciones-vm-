@@ -490,11 +490,11 @@
     return datosPromise;
   }
   var COPAS = [
-    { k: /\b(vino|vinos|tinto|blanco|rosado|copa de vino)\b/, nombre: 'vino', f: /^Copa Vino/i, nota: '' },
-    { k: /\b(gin|ginebra|gintonic|gin tonic|combinado|combinados|cubata|cubatas|cocktail|coctel|cocteles|mojito|ron|vodka|calimocho)\b/, nombre: 'combinados y gin-tonic', f: /^Copa (Gin|Combinado)/i, nota: 'Son copas de gran capacidad, de la familia de los combinados' },
-    { k: /\b(cava|champan|champagne|espumoso|espumosos|flauta)\b/, nombre: 'cava y espumosos', f: /Champan|Flauta/i, nota: 'La flauta es la copa pensada para los espumosos' },
-    { k: /\b(cerveza|cervezas|cana|canas|pinta|jarra|jarras)\b/, nombre: 'cerveza', f: /cerveza|\bca[nñ]a\b/i, nota: 'Hay copas, vasos y jarras de cerveza' },
-    { k: /\b(agua)\b/, nombre: 'agua', f: /\bagua\b/i, nota: '' },
+    { k: /\b(vino|vinos|tinto|tintos|blanco|blancos|rosado|rosados|crianza|reserva|joven|verdejo|rueda|ribera|rioja)\b/, nombre: 'vino', f: /^Copa Vino/i, nota: '', vino: true, guia: 'Como regla general, los <b>tintos</b> (crianza, reserva) piden una copa grande, de unos 45 cl en adelante, para que el vino respire; los <b>blancos, rosados y jóvenes</b>, una copa algo más pequeña, de unos 25 a 35 cl, para que se mantengan frescos.' },
+    { k: /\b(gin|ginebra|gintonic|gin tonic|combinado|combinados|cubata|cubatas|cocktail|coctel|cocteles|mojito|ron|vodka|calimocho)\b/, nombre: 'combinados y gin-tonic', f: /^Copa (Gin|Combinado)/i, nota: '', guia: 'Para un gin-tonic o un combinado conviene una copa grande, de unos 58 cl en adelante, que deje sitio al hielo y a la bebida sin que se caliente.' },
+    { k: /\b(cava|champan|champagne|espumoso|espumosos|flauta)\b/, nombre: 'cava y espumosos', f: /Champan|Flauta/i, nota: '', guia: 'Para cava y espumosos, lo clásico es la flauta: su forma alargada mantiene la burbuja.' },
+    { k: /\b(cerveza|cervezas|cana|canas|pinta|jarra|jarras)\b/, nombre: 'cerveza', f: /cerveza|\bca[nñ]a\b/i, nota: '', guia: 'Para la barra, la caña (vaso de 18 a 25 cl) sirve la cerveza fría y rápido; para cervezas de mesa o especiales, una copa o una jarra de 28 cl en adelante.' },
+    { k: /\b(agua)\b/, nombre: 'agua', f: /\bagua\b/i, nota: '', guia: 'Para el agua, un vaso o una copa de 23 a 35 cl cubre bien el servicio de mesa.' },
     { k: /\b(zumo|zumos)\b/, nombre: 'zumo', f: /zumo/i, nota: '' },
     { k: /\b(helado|helados|postre|postres)\b/, nombre: 'helado y postres', f: /helado/i, nota: '' },
     { k: /\b(sidra)\b/, nombre: 'sidra', f: /sidra/i, nota: '' },
@@ -561,6 +561,17 @@
         var items = (window.MENAJE || []).filter(function (m) { return m.g === 'Cristalería' && d.f.test(m.n); });
         if (!items.length) return null;
         state.cur = 'copa';
+        var clde = function (it) { var m = it.n.match(/(\d+(?:[.,]\d+)?)\s*cl/i); return m ? parseFloat(m[1].replace(',', '.')) : null; };
+        var recomendadas = null, tipo = '';
+        if (d.vino) {
+          var tinto = /tinto|crianza|reserva|ribera|rioja/.test(t), claro = /blanco|rosado|joven|verdejo|rueda|albarino/.test(t);
+          if (tinto && !claro) { tipo = 'para tinto'; recomendadas = items.filter(function (it) { var c = clde(it); return c && c >= 44; }); }
+          else if (claro && !tinto) { tipo = 'para blanco, rosado o joven'; recomendadas = items.filter(function (it) { var c = clde(it); return c && c >= 19 && c <= 36; }); }
+        }
+        if (recomendadas && recomendadas.length) {
+          return (d.guia ? d.guia + '<br><br>' : '') + 'Entre las nuestras, ' + tipo + ' (' + recomendadas.length + ')' + capacidades(recomendadas) + ':' + listaLinks(recomendadas, 'menaje.html#referencias', 6) + (recomendadas.length > 6 ? 'Hay alguna más en el <a href="menaje.html#referencias">listado de menaje</a>. ' : '') + 'Dime si es para tinto, blanco o espumoso, o llámanos al ' + TEL + ' y te asesoramos según tu carta.';
+        }
+        if (d.guia) return d.guia + '<br><br>Entre las nuestras tienes ' + items.length + ' referencia' + (items.length === 1 ? '' : 's') + capacidades(items) + ':' + listaLinks(items, 'menaje.html#referencias', 6) + (items.length > 6 ? 'Y alguna más en el <a href="menaje.html#referencias">listado de menaje</a>. ' : '') + (d.vino ? 'Si me dices si es para tinto o para blanco, te enseño las más adecuadas. ' : '') + 'Para afinar según tu carta: ' + TEL + ' o ' + MAIL + '.';
         return 'Para <b>' + d.nombre + '</b> tenemos ' + items.length + ' referencia' + (items.length === 1 ? '' : 's') + ' de cristalería' + capacidades(items) + (d.nota ? '. ' + d.nota : '') + ':' + listaLinks(items, 'menaje.html#referencias', 6) + (items.length > 6 ? 'Y alguna más en el <a href="menaje.html#referencias">listado de menaje</a>. ' : '') + 'Cuál te conviene depende de tu carta y de cómo sirvas; cuéntanos tu local en el ' + TEL + ' o ' + MAIL + ' y te asesoramos.';
       });
     }

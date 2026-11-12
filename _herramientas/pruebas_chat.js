@@ -164,7 +164,7 @@ const CONTENIDO = [
   ['tenéis atun isabel', /Isabel/i], ['que mermeladas tiene helios', /Helios|Mermelada/i],
   ['que tipos de azucares vendeis', /moreno/i, /Anagrama|Mocay/i], ['azucar moreno', /moreno/i], ['que edulcorantes teneis', /edulcorante/i], ['teneis azucarillos', /Azucarillos/i],
   ['que referencia de cafe lleva cafe arabica', /Maestro/i, /100 % arábica/i], ['que cafes arabicas teneis', /Maestro Colombia/i], ['que cafe descafeinado teneis', /Barista 3 descafeinado/i], ['que capsulas de cafe teneis', /Cápsula/i],
-  ['que copa es la mas adecuada para el vino', /Copa Vino/i], ['que copa es la mas adecuada para el gin tonic', /Combinado/i], ['que copa para el cava', /Flauta/i], ['que copa es la mejor para mi bar', /¿Qué vas a servir/i],
+  ['que copa es la mas adecuada para el vino', /tintos.*copa grande|Copa Vino/is], ['que copa es mejor para un vino tinto', /45 cl/i], ['que copa me recomiendas para vino blanco', /25 a 35 cl/i], ['que vaso es mejor para la cerveza', /caña/i], ['que copa es la mas adecuada para el gin tonic', /Combinado/i], ['que copa para el cava', /Flauta/i], ['que copa es la mejor para mi bar', /¿Qué vas a servir/i],
   ['que servicio tecnico ofrece mocay', /cafeteras|mantenimiento/i, /cafe-mocay\.html#/], ['hacéis mantenimiento de cafeteras', /Mantenimiento/i], ['que infusiones teneis en piramide', /pirámide/i], ['tenéis molinos de café', /Molinos/i],
   ['que cafes tiene mocay', /Colombia|Maestro|café/i], ['dais asesoramiento barista', /Asesoramiento barista|asesoramiento/i],
   ['que menaje distribuis', /Vajilla|cubertería|cristalería/i], ['puedo pedir el menaje junto con el resto del pedido', /un solo pedido|Sí/i], ['como consulto por el menaje de mi local', /635 09 80 44|formulario/i],
