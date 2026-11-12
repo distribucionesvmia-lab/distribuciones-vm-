@@ -96,7 +96,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', family: 'Luengo', color: '#f3ead7', ink: '#4a3416',
       eyebrow: 'Legumbres secas y cocidas', title: 'Luengo. «Cuando son Luengo, tú lo sabes.»',
-      note: 'Más de cien años de legumbres, en saco, frasco y lata de hostelería. Sabor, calidad y textura que se reconocen en el plato. Imagen de la ficha del producto · puede diferir del formato',
+      note: 'Más de cien años de legumbres: alubia, garbanzo y lenteja, en saco, frasco y lata de hostelería. Sabor, calidad y textura que se reconocen en el plato. Imagen de la ficha del producto · puede diferir del formato',
       variants: [
         {name:'Alubia blanca · 5 kg', description:'Alubia blanca seca, de grano alargado, en formato de 5 kg.', image:D+'luengo-alubia-blanca-5kg.webp', width:458, height:458, alt:'Alubia blanca larga Luengo de 5 kg'},
         {name:'Alubia blanca cocida · frasco de 570 g', description:'Alubias blancas cocidas en conserva, listas para consumir.', image:D+'luengo-alubia-blanca-cocida.webp', width:473, height:900, alt:'Frasco de alubia blanca cocida Luengo'},
