@@ -43,6 +43,8 @@ PAGES = {
     'refrigerados.html': ('Refrigerados', False),
     'congelados.html': ('Congelados', False),
     'menaje.html': ('Menaje', False),
+    'aviso-legal.html': (None, False),
+    'privacidad.html': (None, False),
 }
 
 

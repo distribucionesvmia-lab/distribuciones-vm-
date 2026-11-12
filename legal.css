@@ -1,0 +1,17 @@
+/* Páginas legales (aviso-legal.html y privacidad.html). Los huecos «[POR CONFIRMAR]» se muestran resaltados a propósito. */
+.legal-world .legal{padding:clamp(48px,9vh,110px) var(--side) clamp(64px,10vh,120px)}
+.legal-in{max-width:760px;margin:0 auto}
+.legal .pw-kicker{margin:0}
+.legal h1{font-size:clamp(2.6rem,6vw,5rem);font-weight:600;letter-spacing:-.05em;line-height:.95;margin:20px 0 14px}
+.legal-sub{margin:0 0 36px;font-size:1.12rem;line-height:1.5;opacity:.82}
+.legal h2{margin:46px 0 12px;font-size:clamp(1.4rem,2.2vw,1.9rem);font-weight:600;letter-spacing:-.03em;line-height:1.15}
+.legal p,.legal li{font-size:1.06rem;line-height:1.62}
+.legal p{margin:0 0 14px}
+.legal ul{margin:0 0 14px;padding-left:1.2em}
+.legal li{margin:4px 0}
+.legal a{color:var(--red);text-underline-offset:3px}
+.legal dl{display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:10px 22px;margin:14px 0 0}
+.legal dt{font-weight:600}
+.legal dd{margin:0}
+.por-confirmar{display:inline-block;background:#ffe08a;color:#4a3300;padding:.05em .45em;border-radius:5px;font-weight:600;font-size:.92em;line-height:1.4}
+@media(max-width:560px){.legal dl{grid-template-columns:1fr;gap:2px}.legal dd{margin-bottom:12px}}
