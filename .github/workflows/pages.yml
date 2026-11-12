@@ -27,8 +27,12 @@ jobs:
           enablement: true
       - name: Preparar sitio
         run: |
-          mkdir _site
-          rsync -a --exclude='.git*' --exclude='.claude' --exclude='.taste-skill' --exclude='_site' --exclude='_herramientas' --exclude='_version-3d' --exclude='_version-anterior' --exclude='_sin-usar' --exclude='*.md' --exclude='*.zip' ./ _site/
+          RUTA=vm-2fe82817c8
+          mkdir -p _site/$RUTA
+          rsync -a --exclude='.git*' --exclude='.claude' --exclude='.taste-skill' --exclude='_site' --exclude='_herramientas' --exclude='_version-3d' --exclude='_version-anterior' --exclude='_sin-usar' --exclude='*.md' --exclude='*.zip' ./ _site/$RUTA/
+          printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
+          printf '<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><title></title>' > _site/index.html
+          cp CNAME _site/CNAME
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
