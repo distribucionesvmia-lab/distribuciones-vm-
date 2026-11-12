@@ -14,7 +14,7 @@ Se ejecutan desde la raíz del repositorio, con `python3 -I _herramientas/<scrip
 | `congelados/build.py` | Regenera la sección de Congelados desde las fotos del catálogo. |
 
 **Antes de publicar:** `cabecera.py`, `seo.py` y por último `versionar.py`.
-**Para IONOS:** cambia `BASE` en `seo.py` al dominio real, vuelve a ejecutar los tres scripts y luego `zip_ionos.py`.
+**Dominio propio:** la web se publica en GitHub Pages y se sirve en `https://distribucionesvm.es/` (archivo `CNAME`, `BASE` en `seo.py`). El DNS del dominio apunta a GitHub; el correo sigue en IONOS. El ZIP de `zip_ionos.py` solo sirve si algún día se contrata un hosting con FTP.
 
 **Precios:** se muestran donde el producto esté en `precios-mapa.json`. Para actualizar tarifas: nuevo Excel → `precios.py` → `versionar.py`. Para quitar todos los precios: vaciar el mapa (o borrar `precios.js`) y volver a ejecutar `precios.py`.
 

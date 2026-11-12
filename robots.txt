@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://distribucionesvmia-lab.github.io/distribuciones-vm-/sitemap.xml
+Sitemap: https://distribucionesvm.es/sitemap.xml

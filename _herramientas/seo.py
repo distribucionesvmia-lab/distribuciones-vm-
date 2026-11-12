@@ -12,7 +12,7 @@ import re
 from html import unescape
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-BASE = 'https://distribucionesvmia-lab.github.io/distribuciones-vm-/'
+BASE = 'https://distribucionesvm.es/'
 SITE = 'Distribuciones Valentín'
 DEFAULT_IMG = ('assets/portada.webp', 1792, 1008, 'Furgoneta de reparto frente al Castillo de la Mota, en Medina del Campo')
 # página -> imagen para compartir (ruta, ancho, alto, texto alternativo); sin entrada usa DEFAULT_IMG

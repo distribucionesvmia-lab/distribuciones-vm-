@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://distribucionesvmia-lab.github.io/distribuciones-vm-/</loc><priority>1.0</priority></url>
-  <url><loc>https://distribucionesvmia-lab.github.io/distribuciones-vm-/cafe-mocay.html</loc><priority>0.8</priority></url>
-  <url><loc>https://distribucionesvmia-lab.github.io/distribuciones-vm-/pascual.html</loc><priority>0.8</priority></url>
-  <url><loc>https://distribucionesvmia-lab.github.io/distribuciones-vm-/vinos.html</loc><priority>0.8</priority></url>
-  <url><loc>https://distribucionesvmia-lab.github.io/distribuciones-vm-/agua.html</loc><priority>0.8</priority></url>
-  <url><loc>https://distribucionesvmia-lab.github.io/distribuciones-vm-/despensa.html</loc><priority>0.8</priority></url>
-  <url><loc>https://distribucionesvmia-lab.github.io/distribuciones-vm-/refrigerados.html</loc><priority>0.8</priority></url>
-  <url><loc>https://distribucionesvmia-lab.github.io/distribuciones-vm-/congelados.html</loc><priority>0.8</priority></url>
-  <url><loc>https://distribucionesvmia-lab.github.io/distribuciones-vm-/menaje.html</loc><priority>0.8</priority></url>
+  <url><loc>https://distribucionesvm.es/</loc><priority>1.0</priority></url>
+  <url><loc>https://distribucionesvm.es/cafe-mocay.html</loc><priority>0.8</priority></url>
+  <url><loc>https://distribucionesvm.es/pascual.html</loc><priority>0.8</priority></url>
+  <url><loc>https://distribucionesvm.es/vinos.html</loc><priority>0.8</priority></url>
+  <url><loc>https://distribucionesvm.es/agua.html</loc><priority>0.8</priority></url>
+  <url><loc>https://distribucionesvm.es/despensa.html</loc><priority>0.8</priority></url>
+  <url><loc>https://distribucionesvm.es/refrigerados.html</loc><priority>0.8</priority></url>
+  <url><loc>https://distribucionesvm.es/congelados.html</loc><priority>0.8</priority></url>
+  <url><loc>https://distribucionesvm.es/menaje.html</loc><priority>0.8</priority></url>
 </urlset>
