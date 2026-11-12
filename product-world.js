@@ -56,7 +56,7 @@
     },
     story(item, index) {
       return `<section${sid(item)} class="pw-scene pw-d${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}"><div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
-        <div class="pw-d-head"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2></div>
+        <div class="pw-d-head"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2>${item.note?`<p class="pw-d-note">${esc(item.note)}</p>`:''}</div>
         <div class="pw-d-scenes">${item.frames.map((f,i)=>`<article class="pw-d-frame${i===0?' is-current':''}" data-frame="${i}" style="--frame-color:${esc(f.color || item.color)}"><div class="pw-d-image">${img(f)}</div><div class="pw-d-copy"><span>${number(i)} / ${String(item.frames.length).padStart(2,'0')}</span><h3>${esc(f.name)}</h3><p>${esc(f.description)}</p>${price(item.family,f)}</div></article>`).join('')}</div>
         <div class="pw-d-rail" aria-hidden="true">${item.frames.map((_,i)=>`<i${i===0?' class="is-current"':''}></i>`).join('')}</div>
       </div></div></section>`;

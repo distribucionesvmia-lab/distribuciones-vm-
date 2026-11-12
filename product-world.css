@@ -219,3 +219,6 @@
 /* Enlaces a una escena concreta: se deja sitio a la cabecera fija */
 .pw-scene{scroll-margin-top:76px}
 @media(max-width:1350px){.pw-scene{scroll-margin-top:112px}}
+
+.pw-d-note{margin:18px 0 0;font-size:.8rem;line-height:1.5;max-width:46ch;opacity:.8}
+@media(min-width:761px){.pw-d-note{position:absolute;top:0;left:calc(100% + 5vw);width:min(34ch,30vw);margin:0}}
