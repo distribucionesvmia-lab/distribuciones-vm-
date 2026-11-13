@@ -4,7 +4,8 @@ a modelo-asistente.js, que chat.js lee en el navegador sin librerías ni servido
 Uso (desde la raíz del repositorio):
     python3 -I _herramientas/ml/entrenar_asistente.py [--reglas reglas.json] [--c 20]
 
-Necesita scikit-learn y numpy. Los datos están en _herramientas/ml/ejemplos.py.
+Necesita scikit-learn y numpy. Los datos están en _herramientas/ml/ejemplos.py y, para las preguntas frecuentes, en asistente-faq.js
+(cada entrada es una clase «faq:<id>»; una de cada cinco formas de preguntar se aparta para medir y el modelo final se entrena con todas).
 Con --reglas (salida de etiquetar.js sobre las preguntas de PRUEBA) compara el sistema de reglas con las reglas + modelo.
 """
 import argparse
@@ -47,14 +48,28 @@ def datos(d):
     return X, np.array(y)
 
 
+def cargar_faq():
+    """Lee asistente-faq.js: {'faq:<id>': [formas de preguntar]}."""
+    txt = open(os.path.join(ROOT, 'asistente-faq.js'), encoding='utf-8').read()
+    ent = {}
+    for m in re.finditer(r"\{ id: '([^']+)'[^\n]*\n\s*q: \[(.*?)\],\s*\n\s*a:", txt, re.S):
+        ent['faq:' + m.group(1)] = re.findall(r"'((?:[^'\\]|\\.)*)'", m.group(2))
+    return ent
+
+
 ap = argparse.ArgumentParser()
 ap.add_argument('--reglas')
 ap.add_argument('--c', type=float, default=20.0)
 ap.add_argument('--umbral', type=float, default=0.55)
 args = ap.parse_args()
 
-Xtr, ytr = datos(ENTRENAMIENTO)
+FAQ = cargar_faq()
+FAQ_TR = {k: [q for i, q in enumerate(v) if i % 5] for k, v in FAQ.items()}
+FAQ_TE = {k: [q for i, q in enumerate(v) if i % 5 == 0] for k, v in FAQ.items()}
+print('preguntas frecuentes: %d temas, %d formas de preguntar' % (len(FAQ), sum(len(v) for v in FAQ.values())))
+Xtr, ytr = datos({**ENTRENAMIENTO, **FAQ_TR})
 Xte, yte = datos(PRUEBA)
+Xfq, yfq = datos(FAQ_TE)
 vec = TfidfVectorizer(analyzer='char_wb', ngram_range=(2, 4), min_df=2, max_features=3000)
 Atr = vec.fit_transform(Xtr)
 clf = LogisticRegression(C=args.c, max_iter=3000)
@@ -75,6 +90,12 @@ print('preguntas aparte, solo modelo: %.1f %% (%d de %d)' % (100 * np.mean(top =
 for u in (0.4, 0.5, 0.55, 0.6, 0.7):
     seg = conf >= u
     print('  umbral %.2f: contesta %d, acierta %.1f %% de las que contesta' % (u, seg.sum(), 100 * np.mean(top[seg] == yte[seg]) if seg.any() else 0))
+pf = clf.predict_proba(vec.transform(Xfq))
+tf = np.array([clases[i] for i in pf.argmax(1)])
+print('preguntas frecuentes apartadas, solo modelo: %.1f %% (%d de %d)' % (100 * np.mean(tf == yfq), int(np.sum(tf == yfq)), len(yfq)))
+for u in (0.5, 0.6, 0.7):
+    sg = pf.max(1) >= u
+    print('  umbral %.2f: contesta %d, acierta %.1f %% de las que contesta' % (u, sg.sum(), 100 * np.mean(tf[sg] == yfq[sg]) if sg.any() else 0))
 print('\ninformes por tema (preguntas aparte):')
 errores = [(yte[i], top[i], round(float(conf[i]), 2), Xte[i]) for i in range(len(yte)) if top[i] != yte[i]]
 for e in errores: print('  esperaba %-12s dio %-12s (%.2f)  «%s»' % e)
@@ -109,7 +130,7 @@ if args.reglas:
     print('reglas + modelo corrigiendo si seguro: %d de %d (%.1f %%)' % (alt2, n, 100 * alt2 / n))
 
 # 4) modelo final: entrena con todo (entrenamiento + preguntas aparte) y exporta
-Xall, yall = Xtr + Xte, np.concatenate([ytr, yte])
+Xall, yall = Xtr + Xte + Xfq, np.concatenate([ytr, yte, yfq])
 vec2 = TfidfVectorizer(analyzer='char_wb', ngram_range=(2, 4), min_df=2, max_features=3000)
 Aall = vec2.fit_transform(Xall)
 clf2 = LogisticRegression(C=args.c, max_iter=3000).fit(Aall, yall)
