@@ -606,9 +606,9 @@
   var SIN = {
     pagar: ['pago', 'paga', 'pagan', 'pagar*', 'pagam*', 'pagad*', 'pague*', 'cobr*', 'abona*', 'abono', 'liquida*'], devolver: ['devol*', 'devuel*', 'reembols*', 'retorn*'], factura: ['factur*', 'recibo', 'albaran'],
     festivo: ['festiv*', 'feriad*', 'puente', 'vacacion*', 'agosto', 'navidad*', 'semana santa'], cancelar: ['cancel*', 'anula*'], cambiar: ['cambi*', 'modific*', 'ampli*', 'anadi*'],
-    pedir: ['pedid*', 'pedir', 'pido', 'pide', 'pidai', 'encarg*', 'compra', 'comprar', 'compro'], repartir: ['repart*', 'entreg*', 'llega*', 'llegu*', 'trae', 'traer', 'traen', 'traigo', 'servis', 'servim*', 'llevai*', 'llevan'],
+    pedir: ['pedid*', 'pedir', 'pido', 'pide', 'pidai', 'encarg*', 'compra', 'comprar', 'compro'], repartir: ['repart*', 'entreg*', 'llega*', 'llegu*', 'trae', 'traer', 'traen', 'traigo', 'llevai*', 'llevan'],
     precio: ['precio', 'cuesta', 'cuestan', 'coste', 'costo', 'tarifa', 'vale', 'valen'], cliente: ['client*', 'alta', 'altas'], hora: ['hora', 'horas', 'horari*', 'franja*'],
-    urgente: ['urgen*', 'prisa', 'rapid*', 'acaba*', 'falta', 'faltan', 'quedad*'], correo: ['correo', 'email', 'mail'], telefono: ['telef*', 'llama*', 'llamo', 'llamad*'],
+    urgente: ['urgen*', 'prisa', 'rapid*', 'acaba*', 'quedad*'], correo: ['correo', 'email', 'mail'], telefono: ['telef*', 'llamar', 'llamada', 'llamadas', 'llamo', 'llame*'], domicilio: ['domicilio', 'domicilios'],
     local: ['local', 'locales', 'negoci*', 'establec*'], caducidad: ['caduc*'], contrato: ['contrat*', 'permanenc*', 'compromis*'],
     particular: ['particul*', 'publico'], recoger: ['recog*', 'recoj*'], almacen: ['almacen*', 'nave', 'tienda*'],
     marca: ['marca', 'marcas', 'fabricant*', 'proveed*'], muestra: ['muestr*', 'prueba', 'probar'], empleo: ['empleo', 'curricul*', 'vacante*'],
@@ -662,13 +662,14 @@
     q.forEach(function (k) { wq += idf[k] || FAQ_IDX.max; });
     var mejor = {};
     FAQ_IDX.vars.forEach(function (v) {
-      var wi = 0, wv = 0, fuerte = 0;
+      if (v.tk.length < 2 && norm(v.q) !== a.t) return;   /* una sola palabra suelta es demasiado ambigua: solo vale si es justo lo escrito */
+      var wi = 0, wv = 0, fuerte = 0, hit = 0;
       v.tk.forEach(function (k) { wv += idf[k]; });
-      q.forEach(function (k) { if (idf[k] && v.tk.indexOf(k) >= 0) { wi += idf[k]; if (idf[k] >= 2.6) fuerte++; } });
+      q.forEach(function (k) { if (idf[k] && v.tk.indexOf(k) >= 0) { wi += idf[k]; hit++; if (idf[k] >= 2.6) fuerte++; } });
       if (!wi) return;
       var s = wi / (0.6 * wv + 0.4 * wq);
       var m = mejor[v.i];
-      if (!m || s > m.s + 1e-9 || (Math.abs(s - m.s) < 1e-9 && v.tk.length > m.nt)) mejor[v.i] = { f: FAQ[v.i], s: s, fuerte: fuerte, pq: q.length, v: v.q, nt: v.tk.length };
+      if (!m || s > m.s + 1e-9 || (Math.abs(s - m.s) < 1e-9 && v.tk.length > m.nt)) mejor[v.i] = { f: FAQ[v.i], s: s, fuerte: fuerte, hit: hit, pq: q.length, v: v.q, nt: v.tk.length };
     });
     return Object.keys(mejor).map(function (k) { return mejor[k]; }).sort(function (x, y) { return (y.s - x.s) || (y.nt - x.nt); });
   }
@@ -676,8 +677,10 @@
     var r = faqBuscar(a);
     if (!r.length) return null;
     var top = a.scored[0], fuertes = top && top.s >= 3;   /* si las reglas ya tienen una intención clara, la pregunta frecuente debe coincidir más para quitarle el turno */
-    var b = r[0], umbral = b.pq === 1 ? (fuertes ? 0.85 : 0.75) : (fuertes ? 0.72 : 0.5);
-    if (b.s < umbral || !b.fuerte) return null;
+    var b = r[0], umbral = b.pq === 1 ? (fuertes ? 0.85 : 0.75) : (fuertes ? 0.85 : 0.5);
+    if (b.s < umbral || !b.fuerte || b.hit < (b.pq >= 2 ? 2 : 1)) return null;
+    /* si las reglas ya tienen clara la intención, la pregunta frecuente necesita pruebas más claras (dos palabras distintivas, o una frase casi idéntica) */
+    if (fuertes && !(b.fuerte >= 2 || (b.s >= 0.95 && b.fuerte >= 1))) return null;
     return b.f;
   }
   function sinRespuesta(a) {
@@ -705,11 +708,13 @@
     pan: 'la <a href="pascual.html#natas">nata</a> y la <a href="pascual.html#mantequillas">mantequilla</a> de Pascual, el <a href="congelados.html">pan y la bollería</a> de Panamar y la <a href="despensa.html">despensa</a>',
     comedor: 'la leche, los <a href="pascual.html#yogures">yogures</a> y los <a href="pascual.html#natillas">postres</a> de <a href="pascual.html">Pascual</a>, la <a href="despensa.html">despensa</a> y los <a href="refrigerados.html">refrigerados</a>'
   };
+  var NEG_NOMBRE = { cafeteria: 'cafetería', panaderia: 'panadería', pasteleria: 'pastelería', cerveceria: 'cervecería', bocateria: 'bocatería', pizzeria: 'pizzería', hamburgueseria: 'hamburguesería' };
+  var nombreNeg = function () { var n = norm(state.negocio || ''); return NEG_NOMBRE[n] || state.negocio; };
   var grupoNegocio = function () { return state.negocio ? NEG_GRUPO[norm(state.negocio)] || null : null; };
   function consejoNegocio() {
     var g = grupoNegocio();
     if (!g) return 'Cuéntame qué negocio tienes (<b>bar</b>, <b>restaurante</b>, <b>hotel</b>, <b>cafetería</b>, <b>catering</b>, <b>panadería</b>…) y te digo qué suele interesar. Por ejemplo: «tengo un bar».';
-    return 'Para tu <b>' + esc(state.negocio) + '</b> suele interesar: ' + NEG_TIPS[g] + '. Si me dices qué usas, te enseño las referencias; y si quieres precios, te enviamos una <b>tarifa personalizada, sin compromiso</b>: ' + TEL + '.';
+    return 'Para tu <b>' + esc(nombreNeg()) + '</b> suele interesar: ' + NEG_TIPS[g] + '. Si me dices qué usas, te enseño las referencias; y si quieres precios, te enviamos una <b>tarifa personalizada, sin compromiso</b>: ' + TEL + '.';
   }
   var ZONA_CURS = { zona: 1, dias: 1, plazo: 1, minimo: 1, envio: 1, pedido: 1, cliente: 1, pago: 1, tarifa: 1, horario: 0, negocio: 1 };
   var NEG_CURS = { productos: 1, tarifa: 1, cliente: 1, pedido: 1, negocio: 1, bebidas: 1, cafe: 1 };
@@ -718,14 +723,14 @@
     if (typeof html !== 'string' || !cur || SIMPLE[cur] || cur === 'nada') return html;
     var z = state.zone, extra = '';
     var quiereZona = cur === 'faq' ? state.faqZona : ZONA_CURS[cur];
-    if (z && quiereZona && html.indexOf(esc(z.nombre)) < 0 && html.indexOf(z.nombre) < 0) {
+    if (z && quiereZona && !state.msgZone) {
       var corto = z.medina ? 'menos de 24 h; si pides antes de las 10:00 de un día laborable, lo recibes el mismo día' : '24 a 48 h, ' + z.txt;
       var prox = (cur === 'pedido' || cur === 'cliente' || cur === 'minimo' || cur === 'envio' || cur === 'faq') ? proxima(z) : null;
       extra += '<br><br><b>Para ti (' + esc(z.nombre) + '):</b> ' + (prox || ('entrega ' + corto + '.'));
     }
     var quiereNeg = cur === 'faq' ? state.faqNeg : NEG_CURS[cur];
     var g = grupoNegocio();
-    if (g && quiereNeg && cur !== 'negocio' && html.indexOf('suele interesar') < 0) extra += '<br><br><b>Para tu ' + esc(state.negocio) + ':</b> suele interesar ' + NEG_TIPS[g] + '.';
+    if (g && quiereNeg && cur !== 'negocio' && html.indexOf('suele interesar') < 0) extra += '<br><br><b>Para tu ' + esc(nombreNeg()) + ':</b> suele interesar ' + NEG_TIPS[g] + '.';
     if (cur === 'negocio') {
       if (g) extra += '<br><br>Por lo que sueles necesitar, suele interesar ' + NEG_TIPS[g] + '.';
       if (!z) extra += '<br><br>Si me dices tu <b>pueblo</b>, te digo qué día pasamos y cuándo te llegaría el primer pedido.';
@@ -735,10 +740,10 @@
 
   function responder(raw) {
     var a = analizar(raw);
-    state.cur = null; state.segPropio = null; state.faqId = null; state.faqZona = false; state.faqNeg = false;
+    state.cur = null; state.msgZone = false; state.segPropio = null; state.faqId = null; state.faqZona = false; state.faqNeg = false;
     if (!a.t) return null;
     var zone = /vino|verdejo|bornos|denominacion|blanco|tinto/.test(a.t) ? null : findZone(a.t);
-    if (zone) state.zone = zone;
+    if (zone) { state.zone = zone; state.msgZone = true; }
     var c = { zone: zone || null, has: a.has };
     var top = a.scored[0];
     var neg0 = a.t.match(NEGOCIO);
@@ -750,6 +755,7 @@
     return faqOSeguir();
     /* primero las preguntas frecuentes (si la coincidencia es alta); si no, el resto del asistente */
     function faqOSeguir() {
+      if (neg0 && /\b(abrir|abro|abrimos|montar|monto|montamos)\b/.test(a.t) && (!top || top.id === 'horario')) { state.cur = 'negocio'; return 'Perfecto, anoto tu negocio: <b>' + esc(nombreNeg()) + '</b>. Cuéntame qué necesitas: si repartimos en tu pueblo, plazos, formas de pago o productos.'; }
       /* «tengo un bar» (una frase corta que solo cuenta el negocio) no es una pregunta frecuente: la contesta el resto del asistente */
       if (state.espera || (neg0 && a.tokens.length <= 5 && !/abrir|abro|abrimos|montar|monto|montamos/.test(a.t))) return seguir();
       return cargarFaq().then(function () { var f = faqMatch(a); return f ? faqRespuesta(f) : seguir(); });

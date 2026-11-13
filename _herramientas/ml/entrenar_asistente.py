@@ -5,7 +5,9 @@ Uso (desde la raíz del repositorio):
     python3 -I _herramientas/ml/entrenar_asistente.py [--reglas reglas.json] [--c 20]
 
 Necesita scikit-learn y numpy. Los datos están en _herramientas/ml/ejemplos.py y, para las preguntas frecuentes, en asistente-faq.js
-(cada entrada es una clase «faq:<id>»; una de cada cinco formas de preguntar se aparta para medir y el modelo final se entrena con todas).
+Con --con-faq (experimental) cada entrada de asistente-faq.js es una clase «faq:<id>». Se probó en noviembre de 2026 y NO se usa:
+la precisión del modelo bajó del 90,8 % al 79,4 % en las preguntas de prueba y en las preguntas frecuentes apartadas solo acertó el 51 %
+(el buscador por palabras de chat.js reconoció 34 de 36 paráfrasis de prueba). Las preguntas frecuentes las resuelve ese buscador, no este modelo.
 Con --reglas (salida de etiquetar.js sobre las preguntas de PRUEBA) compara el sistema de reglas con las reglas + modelo.
 """
 import argparse
@@ -61,12 +63,13 @@ ap = argparse.ArgumentParser()
 ap.add_argument('--reglas')
 ap.add_argument('--c', type=float, default=20.0)
 ap.add_argument('--umbral', type=float, default=0.55)
+ap.add_argument('--con-faq', action='store_true', help='añade las preguntas frecuentes de asistente-faq.js como temas (EXPERIMENTAL: baja la precisión, ver más abajo)')
 args = ap.parse_args()
 
-FAQ = cargar_faq()
+FAQ = cargar_faq() if args.con_faq else {}
 FAQ_TR = {k: [q for i, q in enumerate(v) if i % 5] for k, v in FAQ.items()}
 FAQ_TE = {k: [q for i, q in enumerate(v) if i % 5 == 0] for k, v in FAQ.items()}
-print('preguntas frecuentes: %d temas, %d formas de preguntar' % (len(FAQ), sum(len(v) for v in FAQ.values())))
+if FAQ: print('preguntas frecuentes: %d temas, %d formas de preguntar' % (len(FAQ), sum(len(v) for v in FAQ.values())))
 Xtr, ytr = datos({**ENTRENAMIENTO, **FAQ_TR})
 Xte, yte = datos(PRUEBA)
 Xfq, yfq = datos(FAQ_TE)
@@ -90,12 +93,13 @@ print('preguntas aparte, solo modelo: %.1f %% (%d de %d)' % (100 * np.mean(top =
 for u in (0.4, 0.5, 0.55, 0.6, 0.7):
     seg = conf >= u
     print('  umbral %.2f: contesta %d, acierta %.1f %% de las que contesta' % (u, seg.sum(), 100 * np.mean(top[seg] == yte[seg]) if seg.any() else 0))
-pf = clf.predict_proba(vec.transform(Xfq))
-tf = np.array([clases[i] for i in pf.argmax(1)])
-print('preguntas frecuentes apartadas, solo modelo: %.1f %% (%d de %d)' % (100 * np.mean(tf == yfq), int(np.sum(tf == yfq)), len(yfq)))
-for u in (0.5, 0.6, 0.7):
-    sg = pf.max(1) >= u
-    print('  umbral %.2f: contesta %d, acierta %.1f %% de las que contesta' % (u, sg.sum(), 100 * np.mean(tf[sg] == yfq[sg]) if sg.any() else 0))
+if Xfq:
+    pf = clf.predict_proba(vec.transform(Xfq))
+    tf = np.array([clases[i] for i in pf.argmax(1)])
+    print('preguntas frecuentes apartadas, solo modelo: %.1f %% (%d de %d)' % (100 * np.mean(tf == yfq), int(np.sum(tf == yfq)), len(yfq)))
+    for u in (0.5, 0.6, 0.7):
+        sg = pf.max(1) >= u
+        print('  umbral %.2f: contesta %d, acierta %.1f %% de las que contesta' % (u, sg.sum(), 100 * np.mean(tf[sg] == yfq[sg]) if sg.any() else 0))
 print('\ninformes por tema (preguntas aparte):')
 errores = [(yte[i], top[i], round(float(conf[i]), 2), Xte[i]) for i in range(len(yte)) if top[i] != yte[i]]
 for e in errores: print('  esperaba %-12s dio %-12s (%.2f)  «%s»' % e)

@@ -235,7 +235,9 @@ for (const [m, rx] of PERSONAL_CASOS) CASOS.push([m, { texto: rx }]);
   const base = 'http://localhost:' + servidor.address().port + '/index.html';
   const navegador = await chromium.launch();
   let fallos = 0;
+  const SOLO = process.env.SOLO ? new RegExp(process.env.SOLO, 'i') : null;   // SOLO="festivo|bizum" node _herramientas/pruebas_chat.js → solo las pruebas cuyos mensajes encajen
   for (const [mensajes, ok] of CASOS) {
+    if (SOLO && !SOLO.test(mensajes.join(' | '))) continue;
     const pagina = await navegador.newPage({ viewport: { width: 1280, height: 900 } });
     try {
       await pagina.clock.setFixedTime(ok.hora || JUEVES_10);
