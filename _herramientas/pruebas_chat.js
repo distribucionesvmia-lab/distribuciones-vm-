@@ -177,6 +177,8 @@ const CONTENIDO = [
 ];
 for (const [m, rx, h] of CONTENIDO) CASOS.push([[m], h ? { texto: rx, html: h } : { texto: rx }]);
 CASOS.push([['que copa es la mejor para mi bar', 'cerveza'], { texto: /cerveza/i }]);
+/* preguntas que las reglas no entienden y resuelve el clasificador (modelo-asistente.js) */
+for (const [q, rx] of [['cantidad mínima para que me lo traigáis', /No hay pedido mínimo/i], ['cuánto demoráis en traerlo', /24/], ['quiénes son vosotros', /Distribuciones Valentín Martín|Somos/i], ['dónde os puedo seguir', /Facebook/i], ['pásame con alguien', /persona|comercial/i], ['hay alguien ahora mismo', /7:00|atend|abiert/i], ['necesito un fontanero', /No estoy seguro/i]]) CASOS.push([[q], { texto: rx }]);
 CASOS.push([['que copa es mejor para el vino', 'para tinto'], { texto: /45 cl/i, no: /Calamares/i }]);
 CASOS.push([['que copa es mejor para el vino', 'blanco'], { texto: /25 a 35 cl/i }]);
 CASOS.push([['que copa es mejor para el vino', 'para tinto', 'y para cava'], { texto: /flauta/i }]);

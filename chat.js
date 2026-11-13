@@ -753,8 +753,70 @@
 
   var mostrar = function (html, preguntada) {
     var cur = state.cur;
-    if (html) { add('bot', html, true); acciones(cur, preguntada); }
+    if (html) { var el = add('bot', html, true); if (cur) el.setAttribute('data-intent', cur); if (state.modelo) el.setAttribute('data-via', 'modelo'); acciones(cur, preguntada); }
   };
+
+  /* ---------- clasificador de temas (aprendizaje automático clásico, entrenado con _herramientas/ml/entrenar_asistente.py) ----------
+     TF-IDF de n-gramas de caracteres + regresión logística: un archivo de pesos (modelo-asistente.js), sin servidor ni librerías.
+     Solo elige entre los temas y respuestas que ya están escritos; nunca genera texto. Se usa cuando las reglas no entienden la pregunta
+     o cuando está muy seguro de que las reglas se han equivocado de tema. Si no está seguro, no interviene. */
+  var MODELO = null, modeloPromise = null;
+  function cargarModelo() {
+    if (modeloPromise) return modeloPromise;
+    modeloPromise = fetch('modelo-asistente.js').then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
+      if (!t) return;
+      (new Function(t))();
+      var m = window.MODELO_ASISTENTE;
+      if (m && m.vocab && m.w) { m.pos = {}; m.vocab.forEach(function (g, i) { m.pos[g] = i; }); MODELO = m; }
+    }).catch(function () {});
+    return modeloPromise;
+  }
+  function prepML(t) {   /* igual que prep() en entrenar_asistente.py */
+    t = norm(t).replace(/\b(q|k|ke)\b/g, 'que').replace(/\b(xq|pq|porq|porke)\b/g, 'porque').replace(/\b(tb|tmb|tambn)\b/g, 'tambien').replace(/\bx\b/g, 'por').replace(/\bd\b/g, 'de');
+    return t.replace(/\s+/g, ' ').trim();
+  }
+  function clasificar(texto) {
+    var m = MODELO; if (!m) return null;
+    var cuenta = {}, add1 = function (g) { cuenta[g] = (cuenta[g] || 0) + 1; };
+    prepML(texto).split(' ').filter(Boolean).forEach(function (w) {
+      w = ' ' + w + ' ';
+      for (var n = 2; n <= 4; n++) {
+        var off = 0; add1(w.substr(off, n));
+        while (off + n < w.length) { off++; add1(w.substr(off, n)); }
+        if (off === 0) break;
+      }
+    });
+    var v = {}, sq = 0;
+    Object.keys(cuenta).forEach(function (g) { var i = m.pos[g]; if (i !== undefined) { v[i] = cuenta[g] * m.idf[i]; sq += v[i] * v[i]; } });
+    if (!sq) return null;
+    var nrm = Math.sqrt(sq), lg = m.b.slice();
+    Object.keys(v).forEach(function (i) { var x = v[i] / nrm; m.w[i].forEach(function (cw) { lg[cw[0]] += cw[1] * x; }); });
+    var mx = Math.max.apply(null, lg), tot = 0;
+    lg = lg.map(function (x) { x = Math.exp(x - mx); tot += x; return x; });
+    var k = 0; for (var c = 1; c < lg.length; c++) if (lg[c] > lg[k]) k = c;
+    return { id: m.clases[k], p: lg[k] / tot };
+  }
+  var TEMAS = { zona: 'dónde repartimos', dias: 'los días de reparto', plazo: 'el plazo de entrega', proxima: 'tu próximo reparto', minimo: 'el pedido mínimo', envio: 'el coste del envío', ahora: 'si estamos atendiendo ahora', horario: 'el horario', cliente: 'cómo hacerte cliente', pedido: 'cómo hacer un pedido', pago: 'las formas de pago', tarifa: 'los precios y la tarifa', whatsapp: 'el WhatsApp', contacto: 'cómo contactarnos', incidencia: 'un problema con un pedido', empresa: 'quiénes somos', redes: 'nuestras redes', persona: 'hablar con una persona', productos: 'nuestros productos', bebidas: 'las bebidas', cafe: 'el café', pascual: 'los productos Pascual', lechecafe: 'la leche para café', lactosa: 'la leche sin lactosa', vinos: 'los vinos', aguas: 'las aguas', menaje: 'el menaje', congelados: 'los congelados', refrigerados: 'los refrigerados', despensa: 'la despensa' };
+  function viaModelo(texto, cl) {
+    var a = analizar(texto); a.scored = [{ id: cl.id, s: 9 }]; a.sinWeb = true;
+    var zone = findZone(a.t); if (zone) state.zone = zone;
+    state.modelo = true;
+    var h = fallback(a, { zone: zone || null, has: a.has });
+    var pre = cl.p < 0.8 && TEMAS[cl.id] ? 'Si te he entendido bien, preguntas por <b>' + TEMAS[cl.id] + '</b>:<br>' : '';
+    return pre ? (h && h.then ? h.then(function (x) { return pre + x; }) : pre + h) : h;
+  }
+  function refinar(texto, html) {
+    var cur = state.cur;
+    return cargarModelo().then(function () {
+      var cl = clasificar(texto);
+      if (!cl || cl.id === 'nada' || !INTENTS[cl.id] || SIMPLE[cl.id]) return html;
+      if (cur === 'nada') return cl.p >= MODELO.umbral ? viaModelo(texto, cl) : html;
+      /* las reglas contestaron: solo se corrige si el modelo está muy seguro, el tema es de respuesta fija y no hay pueblo de por medio */
+      if (cl.id !== cur && cl.p >= 0.75 && INTENTS[cur] && !SIMPLE[cur] && !INTENTS[cur].cat && !findZone(limpiar(texto)) && !state.espera) return viaModelo(texto, cl);
+      return html;
+    }).then(function (r) { return r; }, function () { return html; });
+  }
+
   function ask(text) {
     text = String(text || '').trim();
     if (!text) return;
@@ -763,7 +825,8 @@
     var out;
     try { out = responder(text); } catch (e) { if (window.console) console.error('chat:', e); out = 'Ahora no puedo responder. ' + PERSONA; state.cur = 'nada'; }
     var pensar = reduce ? 0 : 350;
-    Promise.resolve(out).then(function (html) { return html; }, function () { state.cur = 'nada'; return 'Ahora no puedo responder. ' + PERSONA; }).then(function (html) {
+    state.modelo = false;
+    Promise.resolve(out).then(function (html) { return html; }, function () { state.cur = 'nada'; return 'Ahora no puedo responder. ' + PERSONA; }).then(function (html) { return refinar(text, html); }).then(function (html) {
       var cur = state.cur;
       var fin = function () { state.cur = cur; mostrar(html, text); };
       if (pensar) setTimeout(fin, pensar); else fin();
