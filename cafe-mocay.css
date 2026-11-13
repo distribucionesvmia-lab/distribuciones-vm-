@@ -264,3 +264,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .m-more-text[open] summary::after{content:"−"}
 .m-more-text summary:focus-visible{outline:3px solid var(--red);outline-offset:4px;border-radius:3px}
 .m-more-text p{margin:12px 0 0;font-size:1rem;line-height:1.55}
+
+/* Complementos: la vajilla y el azúcar en bolsa con agitador, una foto debajo de la otra */
+.m-compl-figs{display:grid;gap:clamp(24px,3vw,40px);justify-items:center}
+.m-compl-azucar img{max-width:min(100%,340px)}
