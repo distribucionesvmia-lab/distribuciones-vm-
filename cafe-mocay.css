@@ -265,6 +265,9 @@ button,a{-webkit-tap-highlight-color:transparent}
 .m-more-text summary:focus-visible{outline:3px solid var(--red);outline-offset:4px;border-radius:3px}
 .m-more-text p{margin:12px 0 0;font-size:1rem;line-height:1.55}
 
-/* Complementos: la vajilla y el azúcar en bolsa con agitador, una foto debajo de la otra */
+/* Complementos: la vajilla y, debajo, los azúcares en sobre (cada foto en su tarjeta blanca) */
 .m-compl-figs{display:grid;gap:clamp(24px,3vw,40px);justify-items:center}
-.m-compl-azucar img{max-width:min(100%,340px)}
+.m-compl-azucares{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.6vw,18px);width:100%;max-width:640px}
+.m-compl-azucares figure{margin:0;background:#fff;border-radius:10px;padding:clamp(8px,1vw,14px);box-shadow:0 8px 24px rgba(20,16,13,.07);display:flex;flex-direction:column;justify-content:space-between;gap:8px}
+.m-compl-azucares img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:contain}
+.m-compl-azucares figcaption{text-align:center;font-size:.78rem;line-height:1.25;font-weight:600;color:var(--ink)}
