@@ -211,8 +211,15 @@
 @media(max-width:760px){
  .pw-photo{justify-content:flex-start;padding:0 var(--side) 70px}
  .pw-photo::before{display:none}
- .pw-photo .pw-opening-bg{position:relative;inset:auto;z-index:0;order:-1;width:100vw;max-width:none;margin:0 0 0 calc(50% - 50vw);height:44svh;min-height:260px;object-position:72% 60%}
- .pw-photo .pw-opening-copy{padding-top:26px}
+ .pw-photo .pw-opening-bg{position:relative;inset:auto;z-index:0;order:-1;width:100vw;max-width:none;margin:0 0 -52px calc(50% - 50vw);height:46svh;min-height:280px;object-position:72% 60%;-webkit-mask-image:linear-gradient(to bottom,#000 0,#000 52%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0,#000 52%,transparent 100%)}
+ .pw-photo .pw-opening-copy{padding-top:0}
+ /* encuadre de cada portada en móvil */
+ .pw-photo .pw-opening-bg[src*="portada-agua"]{object-position:4% 50%}
+ .pw-photo .pw-opening-bg[src*="portada-vinos"]{object-position:72% 55%}
+ .pw-photo .pw-opening-bg[src*="portada-despensa"]{object-position:12% 50%}
+ .pw-photo .pw-opening-bg[src*="portada-refrigerados"]{object-position:62% 50%}
+ .pw-photo .pw-opening-bg[src*="portada-congelados"]{object-position:50% 50%}
+ .pw-photo .pw-opening-bg[src*="portada-menaje"]{object-position:38% 50%}
  .pw-photo h1{margin-top:22px}
 }
 

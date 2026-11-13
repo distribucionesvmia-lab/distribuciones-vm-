@@ -21,3 +21,4 @@
 
 /* La portada trae un titular dentro de la foto: se encuadra a la derecha para que no pise el texto de la página */
 .pw-photo .pw-opening-bg[src*="portada-agua"]{object-position:100% 50%}
+@media(max-width:760px){.pw-photo .pw-opening-bg[src*="portada-agua"]{object-position:78% 50%}}

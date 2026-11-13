@@ -5,7 +5,7 @@
 .pw-photo .pw-opening-bg[src*="portada-pascual"]{left:30%;width:70%;object-position:35% 50%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 34%);mask-image:linear-gradient(90deg,transparent 0,#000 34%)}
 .pw-photo h1{font-size:clamp(2.4rem,4.4vw,5rem);line-height:1.02;letter-spacing:-.05em;max-width:15em}
 @media(max-width:760px){
- .pw-photo .pw-opening-bg[src*="portada-pascual"]{left:auto;width:100vw;object-position:30% 55%;-webkit-mask-image:none;mask-image:none}
+ .pw-photo .pw-opening-bg[src*="portada-pascual"]{left:auto;width:100vw;object-position:40% 55%;-webkit-mask-image:linear-gradient(to bottom,#000 0,#000 52%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0,#000 52%,transparent 100%)}
  .pw-photo h1{font-size:clamp(2rem,9vw,3rem)}
 }
 

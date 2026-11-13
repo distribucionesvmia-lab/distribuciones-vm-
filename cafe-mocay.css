@@ -239,8 +239,8 @@ button,a{-webkit-tap-highlight-color:transparent}
 @media(max-width:760px){
  .m-photo{justify-content:flex-start;padding-top:0}
  .m-photo::before{display:none}
- .m-photo .m-hero-photo{position:relative;inset:auto;z-index:0;order:-1;width:100vw;max-width:none;margin:0 0 0 calc(50% - 50vw);height:42svh;min-height:240px;object-position:78% 50%}
- .m-photo .m-hero-copy{padding-top:22px}
+ .m-photo .m-hero-photo{position:relative;inset:auto;z-index:0;order:-1;width:100vw;max-width:none;margin:0 0 -52px calc(50% - 50vw);height:44svh;min-height:260px;object-position:78% 50%;-webkit-mask-image:linear-gradient(to bottom,#000 0,#000 52%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0,#000 52%,transparent 100%)}
+ .m-photo .m-hero-copy{padding-top:0}
 }
 
 /* Collage de servicio (segunda sección): cafeteras, molinos, mantenimiento, asistencia técnica y asesoramiento */
