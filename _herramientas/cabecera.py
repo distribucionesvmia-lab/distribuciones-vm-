@@ -25,9 +25,12 @@ MENU = [
     ('Conócenos', 'quienes-somos.html'),   # subpáginas: Quiénes somos e Historia (se enlazan entre sí)
 ]
 # Botón fijo «Llamar» (solo se ve en móvil; se escribe igual en todas las páginas)
+ORDER_URL = 'https://distribucionesvm-pedidos.tailc4a490.ts.net/cliente'   # zona de pedidos de clientes (se abre en una pestaña nueva)
+ORDER_ICON = ('<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 7h12l-1 13H7L6 7zm3 0a3 3 0 0 1 6 0"/></svg>')
 CALL_NUMBER = '+34635098044'
 CALL_ICON = ('<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>')
-CALL_HTML = ('<!-- call-float -->\n<aside aria-label="Llamada rápida">'
+CALL_HTML = ('<!-- call-float -->\n<aside class="call-bar" aria-label="Pedidos y llamada rápida">'
+             f'<a class="order-float" href="{ORDER_URL}" target="_blank" rel="noopener">{ORDER_ICON}<span>Hacer pedido</span></a>'
              f'<a class="call-float" href="tel:{CALL_NUMBER}" aria-label="Llamar al 635 09 80 44">{CALL_ICON}<span>Llamar</span></a></aside>\n'
              '<!-- /call-float -->')
 CALL_RE = re.compile(r'<!-- call-float -->.*?<!-- /call-float -->', re.S)
@@ -67,7 +70,8 @@ def header(page):
     return (f'<header class="{cls}" id="top">\n'
             f'  <a class="sh-brand" href="{brand}" aria-label="Distribuciones Valentín, inicio"><img src="assets/logo.png" width="400" height="400" alt=""><span>Distribuciones Valentín</span></a>\n'
             f'  <nav aria-label="Principal">{"".join(links)}</nav>\n'
-            f'  <a class="sh-contact" href="{contact}">Contactar <span aria-hidden="true">↗</span></a>\n'
+            f'  <div class="sh-actions"><a class="sh-order" href="{ORDER_URL}" target="_blank" rel="noopener">{ORDER_ICON}<span>Hacer pedido</span></a>'
+            f'<a class="sh-contact" href="{contact}">Contactar <span aria-hidden="true">↗</span></a></div>\n'
             f'</header>')
 
 

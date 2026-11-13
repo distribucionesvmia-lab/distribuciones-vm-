@@ -61,5 +61,5 @@
   .chat.vmc{left:0;right:0;bottom:0;width:100%;height:min(88svh,700px);border-radius:20px 20px 0 0;transform-origin:bottom center}
   .chat-open .vmc-launcher,.chat-open .vmc-teaser,.chat-open .idx-btn,.chat-open .vm-motion-btn{display:none!important}
 }
-.chat-open .call-float{display:none!important}
+.chat-open .call-bar{display:none!important}
 .vmc .sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
