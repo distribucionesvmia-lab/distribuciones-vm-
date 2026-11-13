@@ -39,8 +39,8 @@
 .cold-category{font-size:.68rem;font-weight:650;color:#617570;text-align:right}
 .cold-item h3{font-size:clamp(1.35rem,1.6vw,1.7rem);font-weight:650;letter-spacing:-.035em;line-height:1.14;margin:0}
 .cold-item p{font-size:.95rem;line-height:1.48;margin:0;color:#455854}
-.cold-item-image{height:185px;display:grid;place-items:center;background:#f1f5f2;border-radius:11px;overflow:hidden}
-.cold-item-image img{max-width:90%;max-height:90%;object-fit:contain}
+.cold-item-image{height:185px;display:flex;align-items:center;justify-content:center;background:#f1f5f2;border-radius:11px;overflow:hidden}
+.cold-item-image img{max-width:90%;max-height:90%;max-height:166px;height:auto;object-fit:contain}
 .cold-image-caption{font-size:.72rem!important;color:#617570!important}
 .cold-item-footer{margin-top:auto;padding-top:15px;border-top:1px solid #e3eae5;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .cold-item-footer a{color:#14534d;text-decoration-thickness:1px;text-underline-offset:3px;font-size:.84rem;font-weight:650}
@@ -56,6 +56,7 @@
   .cold-category,.cold-image-caption{display:none}
   .cold-brand{font-size:.62rem;letter-spacing:.1em}
   .cold-item-image{height:118px;border-radius:9px}
+  .cold-item-image img{max-height:106px}
   .cold-item h3{font-size:1.02rem;line-height:1.16}
   .cold-item p{font-size:.8rem;line-height:1.4;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .cold-item-footer{padding-top:9px}
