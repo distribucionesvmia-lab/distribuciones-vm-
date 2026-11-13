@@ -255,5 +255,27 @@
     if (dy) setTimeout(function () { window.scrollTo(0, +dy); ScrollTrigger.update(); }, 600);
   }
 
+  /* enlaces con ancla desde otra página (index.html#catalogo): las secciones fijadas por GSAP cambian la altura de la página después de cargar,
+     así que se vuelve a colocar la ancla cuando todo está montado y otra vez cuando las imágenes ya han cargado */
+  function irAlAncla() {
+    var id = decodeURIComponent((location.hash || '').slice(1));
+    var el = id && document.getElementById(id);
+    if (!el || /[?&](only|dv|y)=/.test(location.search)) return;
+    if (window.ScrollTrigger) ScrollTrigger.refresh();
+    var hdr = document.querySelector('.site-header');
+    var top = el.getBoundingClientRect().top + window.pageYOffset - (hdr ? hdr.offsetHeight : 0);
+    window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+  }
+  window.addEventListener('load', function () { setTimeout(irAlAncla, 500); setTimeout(irAlAncla, 1800); });
+  /* clic en un enlace de ancla dentro de la propia portada (menú «Catálogo», botones): salto directo y recolocado, sin deriva por las secciones fijadas */
+  document.addEventListener('click', function (e) {
+    var l = e.target.closest && e.target.closest('a[href^="#"]');
+    var h = l && l.getAttribute('href');
+    if (!h || h.length < 2 || !document.getElementById(decodeURIComponent(h.slice(1)))) return;
+    e.preventDefault();
+    if (location.hash !== h) history.pushState(null, '', h);
+    irAlAncla(); setTimeout(irAlAncla, 500);
+  });
+
   if (document.readyState === 'complete') start(); else window.addEventListener('load', start);
 })();

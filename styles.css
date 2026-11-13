@@ -325,3 +325,6 @@ form{margin-top:48px;display:grid;gap:10px;grid-template-columns:1fr 1fr 1fr}
 /* Pantallas anchas y bajas: la portada se recorta más y la furgoneta quedaba cortada; se encuadra más abajo para que se vea */
 @media (min-width:641px) and (min-aspect-ratio:17/10){.hero-bg{object-position:50% 62%}}
 @media (min-width:641px) and (min-aspect-ratio:19/10){.hero-bg{object-position:50% 78%}}
+
+/* los enlaces a #catalogo y demás anclas dejan sitio a la cabecera fija */
+.catalogo,.entrega,.alta,.contacto,.why{scroll-margin-top:104px}
