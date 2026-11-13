@@ -1,0 +1,42 @@
+[
+ {
+  "q": "¿repartís en Rueda?",
+  "clase": "zona",
+  "p": 0.7296
+ },
+ {
+  "q": "q dia pasais por olmedo",
+  "clase": "dias",
+  "p": 0.9008
+ },
+ {
+  "q": "cuánto cuesta el transporte",
+  "clase": "envio",
+  "p": 0.877
+ },
+ {
+  "q": "hasta qué población vais",
+  "clase": "zona",
+  "p": 0.795
+ },
+ {
+  "q": "qué tiempo hace",
+  "clase": "nada",
+  "p": 0.8423
+ },
+ {
+  "q": "tenéis leche sin lactosa",
+  "clase": "lactosa",
+  "p": 0.9554
+ },
+ {
+  "q": "xq tardan tanto",
+  "clase": "plazo",
+  "p": 0.5269
+ },
+ {
+  "q": "hay alguien ahora mismo",
+  "clase": "ahora",
+  "p": 0.9063
+ }
+]
