@@ -60,7 +60,7 @@ window.ProductWorld.init({
       note:'Pingoleta, de Ribera del Duero, busca «un equilibrio que despierta los sentidos»; el Godello, de IGP Castilla y León, se presenta como «un vino con carácter y personalidad». Pink-goleta, el clarete de la casa, completa el trío. Una imagen por variedad',
       variants:[
         {name:'Pingoleta · Ribera del Duero · 10 meses · 2024', description:'Tinto de Pazos de Baró, de la D.O. Ribera del Duero, con diez meses de crianza.', image:B+'pingoleta-ribera-10-meses.webp', width:130, height:530, alt:'Botella Pingoleta de Pazos de Baró, Ribera del Duero 10 meses'},
-        {name:'Pink-goleta · Clarete · 75 cl · 2025', description:'Clarete de Pazos de Baró, de tempranillo y godello.', image:B+'pink-goleta-clarete.webp', width:188, height:652, alt:'Botella Pink-goleta Clarete de Pazos de Baró'},
+        {name:'Pink-goleta · Clarete · 75 cl · 2025', description:'Clarete de Pazos de Baró, de tempranillo y godello.', image:B+'pink-goleta-clarete.webp', width:153, height:589, alt:'Botella Pink-goleta Clarete de Pazos de Baró'},
         {name:'Godello · D.O. Castilla y León · 2024', description:'Godello blanco de Pazos de Baró.', image:B+'godello-pazos-de-baro.webp', width:110, height:368, alt:'Botella Godello de Pazos de Baró'}
       ]
     },
