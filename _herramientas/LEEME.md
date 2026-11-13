@@ -32,3 +32,10 @@ Se ejecutan desde la raíz del repositorio, con `python3 -I _herramientas/<scrip
 - `ml/entrenar_asistente.py`: entrena (TF-IDF de n-gramas de caracteres + regresión logística, con scikit-learn) y escribe `modelo-asistente.js`. Se ejecuta con `python3 -I _herramientas/ml/entrenar_asistente.py --reglas reglas.json`; `reglas.json` sale de `node _herramientas/ml/etiquetar.js /tmp/prueba.json reglas.json` y sirve para comparar con las reglas.
 - `ml/verificar_js.js`: comprueba que el navegador calcula lo mismo que Python.
 - `chat.js` lo usa solo cuando las reglas no entienden la pregunta, o cuando el modelo está muy seguro (≥ 0,75) de que las reglas se equivocaron de tema. Elige entre respuestas ya escritas; no genera texto.
+
+### Cómo aprende el asistente de las preguntas reales
+
+El asistente no aprende solo: la web no tiene servidor donde guardar lo que escriben los clientes. El ciclo es este:
+1. Cuando el asistente no entiende una pregunta, ofrece «Enviar mi pregunta a la oficina»: se abre el correo del cliente con la pregunta escrita y solo se envía si él pulsa «Enviar». Llega a oficina@distribucionesvm.es.
+2. Se revisan esas preguntas y se decide el tema de cada una. Si ya existe una respuesta: `python3 -I _herramientas/ml/anadir_pregunta.py TEMA "pregunta"`. Si no existe, se escribe antes la respuesta nueva en `chat.js` (INTENTS).
+3. `python3 -I _herramientas/ml/anadir_pregunta.py --reentrenar` actualiza `modelo-asistente.js`; se publica la web y el asistente ya la entiende.

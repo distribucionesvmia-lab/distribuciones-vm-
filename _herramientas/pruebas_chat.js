@@ -178,6 +178,8 @@ const CONTENIDO = [
 for (const [m, rx, h] of CONTENIDO) CASOS.push([[m], h ? { texto: rx, html: h } : { texto: rx }]);
 CASOS.push([['que copa es la mejor para mi bar', 'cerveza'], { texto: /cerveza/i }]);
 /* preguntas que las reglas no entienden y resuelve el clasificador (modelo-asistente.js) */
+CASOS.push([['necesito un fontanero'], { texto: /No estoy seguro/i, pregunta: /subject=Pregunta desde la web.*necesito un fontanero/is }]);
+CASOS.push([['¿hay pedido mínimo?'], { texto: /No hay pedido mínimo/i, sinPregunta: true }]);
 for (const [q, rx] of [['cantidad mínima para que me lo traigáis', /No hay pedido mínimo/i], ['cuánto demoráis en traerlo', /24/], ['quiénes son vosotros', /Distribuciones Valentín Martín|Somos/i], ['dónde os puedo seguir', /Facebook/i], ['pásame con alguien', /persona|comercial/i], ['hay alguien ahora mismo', /7:00|atend|abiert/i], ['necesito un fontanero', /No estoy seguro/i]]) CASOS.push([[q], { texto: rx }]);
 CASOS.push([['que copa es mejor para el vino', 'para tinto'], { texto: /45 cl/i, no: /Calamares/i }]);
 CASOS.push([['que copa es mejor para el vino', 'blanco'], { texto: /25 a 35 cl/i }]);
@@ -212,6 +214,8 @@ CASOS.push([['que copa es mejor para el vino', 'para tinto', 'y para cava'], { t
       if (ok.texto2 && !ok.texto2.test(texto)) errores.push('texto no contiene ' + ok.texto2);
       if (ok.html && !ok.html.test(html)) errores.push('html no contiene ' + ok.html);
       if (ok.acts && !hayActs) errores.push('faltan los botones de llamar y escribir');
+      if (ok.pregunta) { const n = await pagina.locator('#chat a[data-pregunta]').count(); const href = n ? await pagina.locator('#chat a[data-pregunta]').last().getAttribute('href') : ''; if (!n || !ok.pregunta.test(decodeURIComponent(href))) errores.push('falta el botón de enviar la pregunta a la oficina o no lleva la pregunta: ' + href); }
+      if (ok.sinPregunta && (await pagina.locator('#chat a[data-pregunta]').count())) errores.push('no debería ofrecer enviar la pregunta');
       if (ok.sinActs && hayActs) errores.push('no debería tener botones');
       if (hayActs && (ok.tel || ok.correo || ok.fuera || ok.sinFuera || ok.mail || ok.seguimiento)) {
         const h = await acts.innerHTML(), t = await acts.innerText();

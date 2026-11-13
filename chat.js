@@ -426,6 +426,14 @@
     if (body.length > 1500) body = body.slice(0, 1500) + '…';
     return 'mailto:' + MAILTO + '?subject=' + encodeURIComponent(state.lista.length ? 'Lista de interés desde la web' : 'Consulta desde la web') + '&body=' + encodeURIComponent(body);
   }
+  /* correo con la pregunta que el asistente no supo contestar: se abre el programa de correo del cliente y solo se envía si él pulsa «Enviar» */
+  function mailPregunta(q) {
+    var body = ['Hola,', '', 'Esta pregunta no me la ha sabido contestar el asistente de la web:', '', '«' + String(q).replace(/\s+/g, ' ').trim().slice(0, 400) + '»', ''];
+    if (state.zone) body.push('Mi pueblo: ' + state.zone.nombre);
+    if (state.negocio) body.push('Mi negocio: ' + state.negocio);
+    body.push('Mi nombre y mi teléfono (para que me contestéis): ', '', 'Al enviar este correo aceptas que usemos tu pregunta para contestarte y para mejorar el asistente.');
+    return 'mailto:' + MAILTO + '?subject=' + encodeURIComponent('Pregunta desde la web (asistente)') + '&body=' + encodeURIComponent(body.join('\n'));
+  }
   function anotar(nombre) {
     var n = String(nombre).replace(/\s+/g, ' ').trim().slice(0, 80);
     if (!n) return 'Dime qué producto quieres apuntar.';
@@ -745,6 +753,7 @@
     var d = document.createElement('div');
     d.className = 'chat-acts';
     d.innerHTML = '<div class="chat-follow">' + q.map(function (x) { return '<button type="button" data-q="' + esc(x) + '">' + esc(x) + '</button>'; }).join('') + '</div>' +
+      (cur === 'nada' && preguntada ? '<div class="chat-pers chat-pregunta"><a class="chat-act" href="' + mailPregunta(preguntada) + '" data-pregunta>Enviar mi pregunta a la oficina</a><p class="chat-fuera">Se abre tu programa de correo con la pregunta escrita; solo se envía si pulsas «Enviar». Así podemos contestarte y mejorar el asistente.</p></div>' : '') +
       '<div class="chat-pers"><a class="chat-act" href="tel:+34635098044">Llamar al 635 09 80 44</a><a class="chat-act" href="' + mailHref() + '" data-mail>Escribir por correo</a></div>' +
       (fueraDeHorario() ? '<p class="chat-fuera">Ahora estamos fuera del horario de atención (7:00 a 15:00, de lunes a viernes). Si llamas, te atiende Valentín en su móvil.</p>' : '');
     log.appendChild(d);
