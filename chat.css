@@ -63,3 +63,10 @@
 }
 .chat-open .call-bar{display:none!important}
 .vmc .sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* Botón «Hacer pedido» dentro de las respuestas de Pablo */
+.chat-pedido{margin:12px 0 2px;padding-top:10px;border-top:1px solid rgba(20,16,13,.12)}
+.chat-pedido p{margin:0 0 8px;font-weight:600}
+.chat-order{display:inline-flex;align-items:center;gap:9px;min-height:46px;padding:0 20px;border-radius:999px;background:#c61819;color:#fff!important;text-decoration:none!important;font-weight:700;font-size:.98rem;box-shadow:0 6px 16px rgba(198,24,25,.3)}
+.chat-order:hover{background:#a80f0a}
+.chat-order:focus-visible{outline:3px solid #14100d;outline-offset:3px}

@@ -85,7 +85,7 @@ window.ASISTENTE_FAQ = [
     seg: ['¿Cómo hago un pedido?', '¿Formas de pago?'] },
   { id: 'pedido-canales',
     q: ['¿puedo hacer el pedido por correo?', '¿puedo pedir por email?', '¿se puede pedir por internet?', '¿hay tienda online?', '¿puedo comprar en la web?', '¿puedo pedir desde la página web?', '¿se compra por la web?', '¿hay carrito de la compra?', '¿puedo pagar en la web?', '¿vendéis online?', '¿dónde hago el pedido?', '¿por dónde se hacen los pedidos?', '¿se puede pedir por teléfono?'],
-    a: 'La web es un <b>catálogo informativo</b>: no se compra ni se paga en ella (no pedimos ningún dato de pago). Los pedidos se hacen <b>llamando al {TEL} de 7:00 a 15:00</b> o con tu comercial en su día de visita. Con el asistente puedes apuntar tu <b>lista de interés</b> y enviarla por correo a {MAIL}; te contactamos con tu tarifa.',
+    a: 'La web es un <b>catálogo informativo</b>: no se paga en ella (no pedimos ningún dato de pago). Si ya eres cliente, puedes <b>hacer tu pedido con el botón «Hacer pedido»</b>; también <b>llamando al {TEL} de 7:00 a 15:00</b> o con tu comercial en su día de visita. Con el asistente puedes apuntar tu <b>lista de interés</b> y enviarla por correo a {MAIL}; te contactamos con tu tarifa.',
     zona: true, seg: ['Ver mi lista', '¿Cómo me hago cliente?'] },
   { id: 'ver-catalogo',
     q: ['¿tenéis catálogo?', '¿hay catálogo en pdf?', '¿dónde veo el catálogo?', '¿puedo ver todos los productos?', '¿me mandáis el catálogo?', '¿cómo veo lo que vendéis?', '¿hay lista de productos?', '¿puedo descargar el catálogo?', '¿tenéis un listado de artículos?', '¿dónde puedo ver el surtido?'],

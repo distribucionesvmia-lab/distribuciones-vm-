@@ -177,6 +177,9 @@ const CONTENIDO = [
 ];
 for (const [m, rx, h] of CONTENIDO) CASOS.push([[m], h ? { texto: rx, html: h } : { texto: rx }]);
 CASOS.push([['que copa es la mejor para mi bar', 'cerveza'], { texto: /cerveza/i }]);
+/* enlace «Hacer pedido» cuando dicen que quieren comprar o pedir (y no en otras preguntas) */
+for (const q of ['quiero comprar', 'comprar', 'quiero hacer un pedido', 'quiero comprar leche', 'quiero comprar vino', 'donde compro', 'cómo puedo comprar online', 'tienda online', 'voy a hacer un pedido ahora', 'quiero comprar pero no soy cliente', 'quiero encargar género', 'cómo hago un pedido']) CASOS.push([[q], { html: /pedidos\.tailc4a490\.ts\.net\/cliente/ }]);
+for (const q of ['¿hay pedido mínimo?', '¿cuánto cuesta la leche?', '¿repartís en Rueda?', 'quiero vender mi vino', '¿cuánto tardáis?']) CASOS.push([[q], { sinHtml: /pedidos\.tailc4a490/ }]);
 /* preguntas que las reglas no entienden y resuelve el clasificador (modelo-asistente.js) */
 CASOS.push([['necesito un fontanero'], { texto: /No estoy seguro/i, pregunta: /subject=Pregunta desde la web.*necesito un fontanero/is }]);
 CASOS.push([['¿hay pedido mínimo?'], { texto: /No hay pedido mínimo/i, sinPregunta: true }]);
@@ -262,6 +265,7 @@ for (const [m, rx] of PERSONAL_CASOS) CASOS.push([m, { texto: rx }]);
       if (ok.html && !ok.html.test(html)) errores.push('html no contiene ' + ok.html);
       if (ok.acts && !hayActs) errores.push('faltan los botones de llamar y escribir');
       if (ok.pregunta) { const n = await pagina.locator('#chat a[data-pregunta]').count(); const href = n ? await pagina.locator('#chat a[data-pregunta]').last().getAttribute('href') : ''; if (!n || !ok.pregunta.test(decodeURIComponent(href))) errores.push('falta el botón de enviar la pregunta a la oficina o no lleva la pregunta: ' + href); }
+      if (ok.sinHtml && ok.sinHtml.test(html)) errores.push('no debería llevar el enlace de pedido');
       if (ok.sinPregunta && (await pagina.locator('#chat a[data-pregunta]').count())) errores.push('no debería ofrecer enviar la pregunta');
       if (ok.sinActs && hayActs) errores.push('no debería tener botones');
       if (hayActs && (ok.tel || ok.correo || ok.fuera || ok.sinFuera || ok.mail || ok.seguimiento)) {

@@ -173,7 +173,7 @@
     cliente: { k: [['alta'], ['abrir', 'cuenta'], ['nueva', 'cuenta'], ['cliente'], ['registr'], ['empez'], ['como', 'compr'], ['primer', 'pedido'], ['ficha'], ['document'], ['nif'], ['papeles'], ['hacerme'], ['hacerse'], ['darme', 'alta'], ['dar', 'alta']],
       a: function () { return 'Hacerse cliente es muy sencillo:<ol><li><b>Nos conocemos:</b> te visitamos o hablamos contigo, te presentamos la empresa y el porfolio.</li><li><b>Te damos de alta:</b> rellenamos tu ficha de cliente con tus datos fiscales y acordamos la forma de pago (si es domiciliación, se firma el formato SEPA).</li><li><b>Primer pedido:</b> lo anotamos y te lo servimos el día acordado, entre 24 y 48 h desde tu primera llamada. Te asignamos un día de visita del comercial, semanal o quincenal.</li></ol>' + PERSONA; } },
     pedido: { k: [['como', 'pedir'], ['hacer', 'pedido'], ['hago', 'pedido'], ['realizar', 'pedido'], ['encargar'], ['como', 'pido'], ['quiero', 'pedir']],
-      a: function () { return 'Los pedidos se gestionan <b>de 7:00 a 15:00</b>. Si ya eres cliente, llama al ' + TEL + ' o díselo a tu comercial en su día de visita. Si aún no lo eres, te damos de alta en 3 pasos (pregúntame «¿cómo me hago cliente?»).<br>Si ya eres cliente, también puedes <a href="https://distribucionesvm-pedidos.tailc4a490.ts.net/cliente" target="_blank" rel="noopener"><b>hacer tu pedido aquí</b></a>.'; } },
+      a: function () { return 'Los pedidos se gestionan <b>de 7:00 a 15:00</b>. Si ya eres cliente, llama al ' + TEL + ' o díselo a tu comercial en su día de visita. Si aún no lo eres, te damos de alta en 3 pasos (pregúntame «¿cómo me hago cliente?»).'; } },
     pago: { k: [['paga'], ['datafono'], ['bizum'], ['cheque'], ['pagare'], ['pago'], ['pagar'], ['pagai'], ['factura'], ['domicili'], ['tarjeta'], ['efectivo'], ['contado'], ['credito'], ['transferencia'], ['recibo'], ['sepa']],
       a: function () { return 'La forma de pago se <b>acuerda contigo</b>, según tu negocio y tu volumen de compra:<ul><li>Al contado en cada reparto, en efectivo o con tarjeta, con factura directa.</li><li>Albarán en cada reparto y factura resumen mensual, que se suele domiciliar en tu cuenta el día acordado: del 1 al 3 del mes, a los 15 días o a los 30 días.</li></ul>'; } },
     tarifa: { k: [['cuanto', 'sale'], ['lista', 'precios'], ['cuanto', 'es'], ['tarifa'], ['precio'], ['cuanto', 'cuesta'], ['cuanto', 'vale'], ['cuanto', 'cobrai'], ['cuesta'], ['oferta'], ['presupuesto']],
@@ -978,6 +978,23 @@
     }).then(function (r) { return r; }, function () { return html; });
   }
 
+
+  /* ---------- enlace para hacer pedido: se añade a cualquier respuesta cuando el cliente dice que quiere comprar o pedir ---------- */
+  var PEDIDO_URL = 'https://distribucionesvm-pedidos.tailc4a490.ts.net/cliente';
+  var PEDIDO_ICONO = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 7h12l-1 13H7L6 7zm3 0a3 3 0 0 1 6 0"/></svg>';
+  var QUIERE_COMPRAR = /\b(compr(ar|o|a|amos|ais|an|e|as)|comprarlo|comprarla|comprarlos|hacer (un |el |mi |otro )?pedido|hacemos (un |el )?pedido|hago (un |el |mi )?pedido|realizar (un |el |mi )?pedido|poner (un |el |mi )?pedido|encargar|encargo|como (pido|pedir)|donde (pido|pedir)|(quiero|quisiera|queremos|necesito|necesitamos|voy a|vamos a|me gustaria|nos gustaria) pedir|pedir (algo|genero|mercancia|productos|material)|hacer (la )?compra|tienda online|tienda virtual|pedidos? online|pedir online|comprar por internet)\b/;
+  var NO_COMPRAR = /\b(precio|precios|tarifa|cuanto (cuesta|vale|sale)|no quiero|vendeis|vender|vendo|vendemos|proveedor(es)?|distribuir (mi|nuestro))\b/;
+  function pedidoBoton(lead) {
+    return '<div class="chat-pedido"><p>' + lead + '</p><a class="chat-order" href="' + PEDIDO_URL + '" target="_blank" rel="noopener">' + PEDIDO_ICONO + '<span>Hacer pedido</span></a></div>';
+  }
+  function conPedido(texto, html) {
+    if (!html || typeof html !== 'string' || html.indexOf('pedidos.tailc4a490') >= 0) return html;
+    var t = limpiar(texto);
+    var quiere = (QUIERE_COMPRAR.test(t) && !NO_COMPRAR.test(t)) || state.cur === 'pedido';
+    if (!quiere || SIMPLE[state.cur]) return html;
+    return html + pedidoBoton(state.cur === 'pedido' ? 'Si ya eres cliente, haz tu pedido aquí:' : '¿Quieres comprar? Si ya eres cliente, haz tu pedido aquí:');
+  }
+
   function ask(text) {
     text = String(text || '').trim();
     if (!text) return;
@@ -987,7 +1004,7 @@
     try { out = responder(text); } catch (e) { if (window.console) console.error('chat:', e); out = 'Ahora no puedo responder. ' + PERSONA; state.cur = 'nada'; }
     var pensar = reduce ? 0 : 350;
     state.modelo = false;
-    Promise.resolve(out).then(function (html) { return html; }, function () { state.cur = 'nada'; return 'Ahora no puedo responder. ' + PERSONA; }).then(function (html) { return refinar(text, html); }).then(function (html) {
+    Promise.resolve(out).then(function (html) { return html; }, function () { state.cur = 'nada'; return 'Ahora no puedo responder. ' + PERSONA; }).then(function (html) { return refinar(text, html); }).then(function (html) { return conPedido(text, html); }).then(function (html) {
       var cur = state.cur;
       html = personalizar(html, cur);
       var fin = function () { state.cur = cur; mostrar(html, text); };
