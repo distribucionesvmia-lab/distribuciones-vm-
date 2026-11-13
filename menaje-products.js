@@ -30,7 +30,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', family: 'Cubertería', color: '#e1e8ec', ink: '#1c2830',
       eyebrow: 'Servicio de sala', title: 'Cubertería que aguanta el trote de la sala.',
-      product: {name:'Cajón con cuchillos, tenedores y cucharas de acero inoxidable', image:D+'cuberteria-cajon-cubiertos.webp', width:1100, height:733, lazy:true, alt:'Cajón con cuchillos, tenedores y cucharas de acero inoxidable'},
+      product: {name:'Cubiertos negros sobre una servilleta junto a platos y vasos en una mesa de madera', image:D+'cuberteria-cajon-cubiertos.webp', width:940, height:1412, lazy:true, alt:'Tenedor y cuchillo negros sobre una servilleta de lino, con platos y vasos al fondo, en una mesa de madera'},
       variants: [
         {name:'Para cada servicio', description:'Colecciones de Comas y Jay —esta última, «sencilla, alternativa, moderna» en su línea Hotel—, en acero inoxidable para el servicio diario. Jay forma parte del grupo de Lacor desde 2024.'},
         {name:'Postre y café', description:'Cucharillas y cubiertos de postre para completar el servicio.'},
