@@ -42,9 +42,12 @@
   .call-bar{position:fixed;z-index:70;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));display:flex;align-items:center;gap:8px}
   .order-float,.call-float{display:inline-flex;align-items:center;gap:8px;min-height:50px;border-radius:999px;color:#fff;text-decoration:none;font:700 .95rem/1 Jost,Arial,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.3)}
   .order-float{padding:0 18px 0 15px;background:#c61819}
-  .call-float{padding:0 15px 0 13px;background:#251d1a}
+  .call-float{width:50px;padding:0;justify-content:center;background:#251d1a}
+  .call-float span{display:none}
   .order-float:focus-visible,.call-float:focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px #c61819}
 }
+
+@media(max-width:380px){.order-float{gap:6px;padding:0 12px 0 10px;font-size:.85rem}.order-float svg{width:18px;height:18px}.call-bar{gap:6px}.call-float{width:46px;min-height:46px}.order-float{min-height:46px}}
 
 /* Índice de marcas de las páginas largas (lo crea site-header.js) */
 .idx-btn{position:fixed;z-index:70;left:calc(max(16px,env(safe-area-inset-left)) + 72px);bottom:calc(max(16px,env(safe-area-inset-bottom)) + 9px);display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 18px 0 14px;border:0;border-radius:999px;background:#251d1a;color:#fff;font:600 .9rem/1 Jost,Arial,sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.28)}
@@ -58,7 +61,8 @@
 @media(hover:hover) and (pointer:fine){.idx-panel a:hover{background:rgba(37,29,26,.08)}}
 /* el botón de animaciones (motion-pref.js) y el índice comparten esquina: el de animaciones sube */
 .vm-motion-btn{bottom:calc(max(16px,env(safe-area-inset-bottom)) + 74px)!important}
-@media(min-width:761px){.idx-btn{width:46px;padding:0;justify-content:center}.idx-btn span{display:none}}
+/* solo el icono, también en móvil: así no se solapa con «Hacer pedido» y «Llamar» (el nombre sigue en aria-label) */
+.idx-btn{width:46px;padding:0;justify-content:center}.idx-btn span{display:none}
 
 /* Botón «Hacer pedido» dentro de las páginas (enlace a la zona de pedidos) y banda de pedido */
 .btn-pedido{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:999px;background:#c61819;color:#fff!important;text-decoration:none;font:700 1.05rem/1 Jost,Arial,sans-serif;letter-spacing:.01em;box-shadow:0 10px 26px rgba(198,24,25,.34);transition:background .2s,transform .2s,box-shadow .2s;cursor:pointer}
