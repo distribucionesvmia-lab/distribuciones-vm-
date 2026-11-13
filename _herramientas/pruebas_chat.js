@@ -185,6 +185,51 @@ CASOS.push([['que copa es mejor para el vino', 'para tinto'], { texto: /45 cl/i,
 CASOS.push([['que copa es mejor para el vino', 'blanco'], { texto: /25 a 35 cl/i }]);
 CASOS.push([['que copa es mejor para el vino', 'para tinto', 'y para cava'], { texto: /flauta/i }]);
 
+/* Preguntas frecuentes (asistente-faq.js): lo que dice cada respuesta. Las marcadas «pend» en el archivo derivan a una persona; aquí se comprueba que no inventan nada. */
+const FAQ_CASOS = [
+  ['¿hacéis factura electrónica?', /factura resumen/i], ['¿puedo recibir las facturas por correo?', /factura resumen|correo electrónico/i],
+  ['¿hacéis cuentas a 60 días?', /1 al 3 del mes[\s\S]*30 días/i], ['¿puedo pagar a 90 días?', /acuerda contigo/i],
+  ['¿qué pasa si no estoy cuando llegáis?', /avisa/i], ['¿se puede devolver un palé?', /devoluciones/i], ['¿aceptáis devoluciones?', /devoluciones/i],
+  ['¿repartís los festivos?', /festivo/i], ['¿repartís en Navidad?', /festivo/i], ['¿trabajáis en agosto?', /festivo|vacaciones/i], ['¿a qué hora llegáis?', /hora exacta/i],
+  ['necesito un pedido urgente', /antes de las 10:00/i], ['se me ha acabado la leche', /antes de las 10:00/i], ['¿puedo pedir para el fin de semana?', /No hay reparto los fines de semana/i],
+  ['¿puedo comprar en la web?', /catálogo informativo/i], ['¿hay tienda online?', /catálogo informativo/i], ['¿puedo pedir por email?', /catálogo informativo|635 09 80 44/i],
+  ['¿qué necesito para ser cliente?', /ficha de cliente/i], ['¿qué documentos necesito para darme de alta?', /datos fiscales/i], ['¿cuánto tarda el alta?', /24 y 48 h/i],
+  ['¿hay que firmar un contrato?', /no hay pedido mínimo/i], ['¿hay permanencia?', /no hay pedido mínimo/i], ['¿quién es mi comercial?', /día de visita/i],
+  ['¿puedo pagar con bizum?', /efectivo o tarjeta/i], ['¿aceptáis tarjeta?', /efectivo o tarjeta/i], ['¿qué es el SEPA?', /SEPA/],
+  ['¿qué marcas trabajáis?', /Pascual[\s\S]*Panamar/i], ['¿cuántos clientes tenéis?', /500 clientes/i], ['¿cuántos productos tenéis?', /2000 productos/i],
+  ['no encuentro un producto en la web', /selección/i], ['¿tenéis fichas de alérgenos?', /fabricante/i], ['¿tenéis productos sin gluten?', /fabricante/i],
+  ['¿tenéis café ecológico?', /Maestro Ecológico/i], ['¿qué café me recomendáis para mi bar?', /Maestro[\s\S]*Barista/i], ['¿Maestro o Barista?', /Maestro[\s\S]*Barista/i],
+  ['¿arregláis cafeteras?', /asistencia técnica/i], ['mi cafetera no funciona', /asistencia técnica/i], ['¿tenéis infusiones?', /pirámide/i],
+  ['¿tenéis pan precocido?', /Panamar/i], ['¿tenéis aceite en garrafa?', /garrafa/i], ['¿tenéis cava?', /no tenemos publicadas/i], ['¿tenéis Mahou?', /no tenemos publicadas/i],
+  ['¿tenéis vino de Ribera del Duero?', /Dominio de Bornos/i], ['¿qué aguas tenéis?', /Bezoya[\s\S]*Perrier/i], ['¿tenéis fiambre?', /Campofrío/i],
+  ['¿eres un robot?', /respuestas automáticas/i], ['¿eres una persona?', /no una persona/i], ['¿cómo te llamas?', /Pablo/], ['¿qué sabes hacer?', /Reparto/i],
+  ['¿guardáis mis datos?', /no se envía a ningún servidor/i], ['¿buscáis personal?', /empleo/i], ['quiero que distribuyáis mi marca', /proponernos/i],
+  ['¿puedo recoger en el almacén?', /Labradores/i], ['quiero poner una queja', /queja/i], ['¿puedo llamar por la tarde?', /Valentín en su móvil/i],
+  ['¿servís a colegios?', /hostelería/i], ['¿vendéis a particulares?', /distribuidor para hostelería/i], ['quiero cambiar mi pedido', /cambiar, ampliar o cancelar/i],
+  ['tengo dos locales', /locales/i], ['¿tenéis ofertas?', /tarifa personalizada/i], ['¿en cuánto tiempo recibo la tarifa?', /24 h/i], ['¿me dais albarán?', /albarán/i],
+  ['¿quién es Valentín?', /Valentín Martín/i], ['¿cuánto cuesta la leche?', /no publicamos precios/i]
+];
+for (const [m, rx] of FAQ_CASOS) CASOS.push([[m], { texto: rx }]);
+/* Lo que se adapta al pueblo y al negocio que el cliente ya ha contado */
+const PERSONAL_CASOS = [
+  [['¿repartís en Rueda?', '¿hay pedido mínimo?'], /Para ti \(Rueda\)/],
+  [['¿repartís en Rueda?', '¿cuánto tardáis?'], /Para ti \(Rueda\):[\s\S]*lunes y jueves/],
+  [['¿repartís en Rueda?', '¿qué días repartís?'], /Para ti \(Rueda\)/],
+  [['¿repartís en Rueda?', '¿cómo me hago cliente?'], /Para ti \(Rueda\)/],
+  [['¿repartís en Rueda?', '¿qué necesito para ser cliente?'], /Para ti \(Rueda\)/],
+  [['¿repartís en Medina del Campo?', '¿hay que firmar un contrato?'], /no hay pedido mínimo/i],
+  [['tengo un bar', '¿cuánto cuesta la leche?'], /Para tu bar:[\s\S]*Mocay/],
+  [['tengo un bar', '¿cómo me hago cliente?'], /Para tu bar/],
+  [['tengo un restaurante', '¿qué me recomendáis para mi negocio?'], /vinos[\s\S]*despensa/i],
+  [['tengo un hotel', '¿qué me recomendáis para mi negocio?'], /desayuno/i],
+  [['tengo un catering', '¿qué necesita un bar?'], /menaje/i],
+  [['tengo un bar'], /pueblo[\s\S]*|Mocay/],
+  [['voy a abrir una panadería'], /nata[\s\S]*Panamar/i],
+  [['tengo un bar', '¿qué necesito para ser cliente?'], /ficha de cliente/i],
+  [['¿qué me recomendáis para mi negocio?'], /Cuéntame qué negocio tienes/i]
+];
+for (const [m, rx] of PERSONAL_CASOS) CASOS.push([m, { texto: rx }]);
+
 (async () => {
   await new Promise(r => servidor.listen(0, r));
   const base = 'http://localhost:' + servidor.address().port + '/index.html';

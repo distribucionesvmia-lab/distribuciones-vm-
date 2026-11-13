@@ -486,7 +486,7 @@
   }
 
   /* ---------- tipo de negocio ---------- */
-  var NEGOCIO = /\b(?:tengo|tenemos|soy|somos|llevo|llevamos|trabajo|trabajamos|regento|regentamos|mi|nuestro|nuestra)\b[^.?!]{0,22}?\b(bar|restaurante|cafeteria|hotel|hostal|catering|panaderia|pasteleria|colegio|residencia|taberna|asador|cerveceria|pub|comedor)\b/;
+  var NEGOCIO = /\b(?:tengo|tenemos|soy|somos|llevo|llevamos|trabajo|trabajamos|regento|regentamos|mi|nuestro|nuestra|abrir|abro|abrimos|montar|monto|montamos)\b[^.?!]{0,22}?\b(bar|restaurante|cafeteria|hotel|hostal|catering|panaderia|pasteleria|colegio|residencia|taberna|asador|cerveceria|pub|comedor|bocateria|pizzeria|hamburgueseria)\b/;
 
   /* devuelve el HTML de la respuesta, o una promesa con él. state.cur indica de qué trata (para los botones de seguimiento) */
 
@@ -595,19 +595,165 @@
     return 'Esto tenemos de <b>Café Mocay</b>:' + orden.map(function (g) { return '<br><b>' + esc(g) + '</b><ul>' + grupos[g].map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>'; }).join('') + 'Más en <a href="cafe-mocay.html#gamas">Café Mocay</a>. Pedidos y tarifa: ' + TEL + '.';
   }
 
+  /* ---------- preguntas frecuentes (asistente-faq.js) ----------
+     Cientos de formas de preguntar lo mismo, escritas a mano. Se comparan con la pregunta del cliente palabra a palabra
+     (raíces, sinónimos y peso por rareza de la palabra: una palabra poco frecuente como «festivos» pesa más que «pedido»).
+     Solo se contesta si la coincidencia es alta; si es dudosa, no interviene y sigue el resto del asistente.
+     Para añadir o cambiar respuestas se edita asistente-faq.js, no este archivo. */
+  var FAQ = null, faqPromise = null, FAQ_IDX = null;
+  /* grupos de palabras que significan lo mismo (se compara por el principio de la palabra) */
+  /* cada grupo: palabras exactas (ya sin plural) y, con * al final, principios de palabra (solo raíces largas y claras) */
+  var SIN = {
+    pagar: ['pago', 'paga', 'pagan', 'pagar*', 'pagam*', 'pagad*', 'pague*', 'cobr*', 'abona*', 'abono', 'liquida*'], devolver: ['devol*', 'devuel*', 'reembols*', 'retorn*'], factura: ['factur*', 'recibo', 'albaran'],
+    festivo: ['festiv*', 'feriad*', 'puente', 'vacacion*', 'agosto', 'navidad*', 'semana santa'], cancelar: ['cancel*', 'anula*'], cambiar: ['cambi*', 'modific*', 'ampli*', 'anadi*'],
+    pedir: ['pedid*', 'pedir', 'pido', 'pide', 'pidai', 'encarg*', 'compra', 'comprar', 'compro'], repartir: ['repart*', 'entreg*', 'llega*', 'llegu*', 'trae', 'traer', 'traen', 'traigo', 'servis', 'servim*', 'llevai*', 'llevan'],
+    precio: ['precio', 'cuesta', 'cuestan', 'coste', 'costo', 'tarifa', 'vale', 'valen'], cliente: ['client*', 'alta', 'altas'], hora: ['hora', 'horas', 'horari*', 'franja*'],
+    urgente: ['urgen*', 'prisa', 'rapid*', 'acaba*', 'falta', 'faltan', 'quedad*'], correo: ['correo', 'email', 'mail'], telefono: ['telef*', 'llama*', 'llamo', 'llamad*'],
+    local: ['local', 'locales', 'negoci*', 'establec*'], caducidad: ['caduc*'], contrato: ['contrat*', 'permanenc*', 'compromis*'],
+    particular: ['particul*', 'publico'], recoger: ['recog*', 'recoj*'], almacen: ['almacen*', 'nave', 'tienda*'],
+    marca: ['marca', 'marcas', 'fabricant*', 'proveed*'], muestra: ['muestr*', 'prueba', 'probar'], empleo: ['empleo', 'curricul*', 'vacante*'],
+    queja: ['quej*', 'reclam*', 'sugerenc*', 'opinion'], datos: ['dato', 'datos', 'privacid*', 'rgpd', 'cookie*', 'segur*', 'guarda*', 'graba*'], persona: ['person*', 'human*', 'robot', 'bot', 'inteligen*']
+  };
+  var SIN_K = Object.keys(SIN);
+  var STOP_FAQ = /^(tenei|teneis|haceis|hacei|hacemos|podemos|queria|gustaria|saber|pregunta|dime|ayudar|ayuda2|puede|puedes|podria|podrias|favor|hola|buenas|gracias|asi|alguna|alguno|algun|cual|cuales|aqui|ahi|esta|este|eso|esto|cuando2|quiero|necesito|tengo|tenemos|vuestro|vuestra|vuestros|vuestras|nuestro|nuestra|vosotros|ustedes|mismo|misma|mucho|mucha|poco|hay|haya|dan|dais|dar|dais|ver|veo|digo|dice|decir|hacer|hago|hace|hacen|voy|vas|van|iba|estoy|estais|estan|estar|sois|somos|soy|eres|sea|sean|sido|solo|solos|todo|toda|todos|todas|cada|otro|otra|otros|otras|tipo|tipos|cosa|cosas|forma|formas)$/;
+  /* palabras que el buscador general descarta pero que aquí distinguen preguntas («cuántos clientes» no es «cómo hacerse cliente»; «mi marca» no es «qué marcas») */
+  var CONTENIDO_FAQ = /^(cuantos|cuantas|mi|mis)$/;
+  var stemF = function (w) { w = stemW(w); return w.length > 7 ? w.slice(0, 7) : w; };
+  function canonF(w) {
+    var sw = stemW(w);
+    for (var i = 0; i < SIN_K.length; i++) {
+      var g = SIN[SIN_K[i]];
+      for (var j = 0; j < g.length; j++) {
+        var e = g[j], pref = e.charAt(e.length - 1) === '*';
+        if (pref ? w.indexOf(e.slice(0, -1)) === 0 : (w === e || sw === e)) return SIN_K[i];
+      }
+    }
+    return stemF(w);
+  }
+  function tokensF(texto) {
+    var vistos = {}, out = [];
+    norm(texto).split(' ').forEach(function (w) {
+      if ((w.length < 3 && w !== 'mi') || (STOP.test(w) && !CONTENIDO_FAQ.test(w)) || STOP_FAQ.test(w)) return;
+      var k = canonF(w); if (!vistos[k]) { vistos[k] = 1; out.push(k); }
+    });
+    return out;
+  }
+  function cargarFaq() {
+    if (faqPromise) return faqPromise;
+    faqPromise = fetch('asistente-faq.js').then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
+      if (t) (new Function(t))();
+      FAQ = Array.isArray(window.ASISTENTE_FAQ) ? window.ASISTENTE_FAQ : [];
+      var df = {}, vars = [];
+      FAQ.forEach(function (f, i) {
+        (f.q || []).forEach(function (q) { var tk = tokensF(q); if (!tk.length) return; vars.push({ i: i, tk: tk, q: q }); tk.forEach(function (k) { df[k] = (df[k] || 0) + 1; }); });
+      });
+      var N = vars.length + 1, idf = {};
+      Object.keys(df).forEach(function (k) { idf[k] = Math.log(1 + N / (1 + df[k])); });
+      FAQ_IDX = { vars: vars, idf: idf, max: Math.log(1 + N) };
+    }).catch(function () { FAQ = []; FAQ_IDX = { vars: [], idf: {}, max: 5 }; });
+    return faqPromise;
+  }
+  /* mejores preguntas del archivo para la frase del cliente: [{f, s, hit}] ordenadas */
+  function faqBuscar(a) {
+    if (!FAQ_IDX || !FAQ_IDX.vars.length) return [];
+    var q = tokensF(a.t);
+    if (!q.length) return [];
+    var idf = FAQ_IDX.idf, wq = 0;
+    q.forEach(function (k) { wq += idf[k] || FAQ_IDX.max; });
+    var mejor = {};
+    FAQ_IDX.vars.forEach(function (v) {
+      var wi = 0, wv = 0, fuerte = 0;
+      v.tk.forEach(function (k) { wv += idf[k]; });
+      q.forEach(function (k) { if (idf[k] && v.tk.indexOf(k) >= 0) { wi += idf[k]; if (idf[k] >= 2.6) fuerte++; } });
+      if (!wi) return;
+      var s = wi / (0.6 * wv + 0.4 * wq);
+      var m = mejor[v.i];
+      if (!m || s > m.s + 1e-9 || (Math.abs(s - m.s) < 1e-9 && v.tk.length > m.nt)) mejor[v.i] = { f: FAQ[v.i], s: s, fuerte: fuerte, pq: q.length, v: v.q, nt: v.tk.length };
+    });
+    return Object.keys(mejor).map(function (k) { return mejor[k]; }).sort(function (x, y) { return (y.s - x.s) || (y.nt - x.nt); });
+  }
+  function faqMatch(a) {
+    var r = faqBuscar(a);
+    if (!r.length) return null;
+    var top = a.scored[0], fuertes = top && top.s >= 3;   /* si las reglas ya tienen una intención clara, la pregunta frecuente debe coincidir más para quitarle el turno */
+    var b = r[0], umbral = b.pq === 1 ? (fuertes ? 0.85 : 0.75) : (fuertes ? 0.72 : 0.5);
+    if (b.s < umbral || !b.fuerte) return null;
+    return b.f;
+  }
+  function sinRespuesta(a) {
+    state.cur = 'nada';
+    var r = faqBuscar(a).filter(function (x) { return x.s >= 0.3 && x.fuerte; }).slice(0, 3);
+    if (!r.length) return NO_ENTIENDO;
+    return NO_ENTIENDO + '<br><br>¿Querías preguntar alguna de estas?<div class="chat-follow">' + r.map(function (x) { var p = x.f.q[0]; return '<button type="button" data-q="' + esc(p) + '">' + esc(p) + '</button>'; }).join('') + '</div>';
+  }
+  function faqTexto(f) {
+    return String(f.a).replace(/\{TEL\}/g, TEL).replace(/\{MAIL\}/g, MAIL).replace(/\{PERSONA\}/g, PERSONA).replace(/\{PLAZO\}/g, PLAZO).replace(/\{NEG_TIP\}/g, function () { return consejoNegocio(); });
+  }
+  function faqRespuesta(f) {
+    state.cur = 'faq'; state.faqId = f.id; state.segPropio = f.seg || null;
+    state.faqZona = !!f.zona; state.faqNeg = !!f.neg && String(f.a).indexOf('{NEG_TIP}') < 0;
+    return faqTexto(f);
+  }
+
+  /* ---------- respuestas que se adaptan al cliente: su pueblo y su tipo de negocio (lo que ha contado en la conversación) ---------- */
+  var NEG_GRUPO = { bar: 'barra', cafeteria: 'barra', pub: 'barra', cerveceria: 'barra', taberna: 'barra', bocateria: 'barra', restaurante: 'rest', asador: 'rest', pizzeria: 'rest', hamburgueseria: 'rest', hotel: 'hotel', hostal: 'hotel', catering: 'cater', panaderia: 'pan', pasteleria: 'pan', colegio: 'comedor', residencia: 'comedor', comedor: 'comedor' };
+  var NEG_TIPS = {
+    barra: 'el <a href="cafe-mocay.html">café Mocay</a> (con cafeteras, molinos y servicio técnico), la <a href="pascual.html#leche-intense">leche Pascual</a> para el café, las <a href="agua.html">aguas</a>, el <a href="menaje.html#referencias">menaje y la cristalería</a> y <a href="congelados.html">pan y bollería</a> para el desayuno',
+    rest: 'los <a href="vinos.html">vinos</a> de Rueda y Ribera, las <a href="agua.html">aguas</a>, la <a href="despensa.html">despensa</a> (conservas, salsas, aceites), los <a href="refrigerados.html">refrigerados</a>, los <a href="congelados.html">congelados</a> y el <a href="menaje.html">menaje</a> de mesa y cocina',
+    hotel: 'el <a href="cafe-mocay.html">café Mocay</a>, la leche, los zumos y los yogures de <a href="pascual.html">Pascual</a> para el desayuno, <a href="congelados.html">pan y bollería</a>, las <a href="agua.html">aguas</a> y el <a href="menaje.html">menaje</a>',
+    cater: 'el <a href="menaje.html">menaje</a>, los <a href="refrigerados.html">refrigerados</a>, los <a href="congelados.html">congelados</a> y la <a href="despensa.html">despensa</a>',
+    pan: 'la <a href="pascual.html#natas">nata</a> y la <a href="pascual.html#mantequillas">mantequilla</a> de Pascual, el <a href="congelados.html">pan y la bollería</a> de Panamar y la <a href="despensa.html">despensa</a>',
+    comedor: 'la leche, los <a href="pascual.html#yogures">yogures</a> y los <a href="pascual.html#natillas">postres</a> de <a href="pascual.html">Pascual</a>, la <a href="despensa.html">despensa</a> y los <a href="refrigerados.html">refrigerados</a>'
+  };
+  var grupoNegocio = function () { return state.negocio ? NEG_GRUPO[norm(state.negocio)] || null : null; };
+  function consejoNegocio() {
+    var g = grupoNegocio();
+    if (!g) return 'Cuéntame qué negocio tienes (<b>bar</b>, <b>restaurante</b>, <b>hotel</b>, <b>cafetería</b>, <b>catering</b>, <b>panadería</b>…) y te digo qué suele interesar. Por ejemplo: «tengo un bar».';
+    return 'Para tu <b>' + esc(state.negocio) + '</b> suele interesar: ' + NEG_TIPS[g] + '. Si me dices qué usas, te enseño las referencias; y si quieres precios, te enviamos una <b>tarifa personalizada, sin compromiso</b>: ' + TEL + '.';
+  }
+  var ZONA_CURS = { zona: 1, dias: 1, plazo: 1, minimo: 1, envio: 1, pedido: 1, cliente: 1, pago: 1, tarifa: 1, horario: 0, negocio: 1 };
+  var NEG_CURS = { productos: 1, tarifa: 1, cliente: 1, pedido: 1, negocio: 1, bebidas: 1, cafe: 1 };
+  /* línea que se añade al final de una respuesta general cuando ya sabemos el pueblo o el negocio del cliente */
+  function personalizar(html, cur) {
+    if (typeof html !== 'string' || !cur || SIMPLE[cur] || cur === 'nada') return html;
+    var z = state.zone, extra = '';
+    var quiereZona = cur === 'faq' ? state.faqZona : ZONA_CURS[cur];
+    if (z && quiereZona && html.indexOf(esc(z.nombre)) < 0 && html.indexOf(z.nombre) < 0) {
+      var corto = z.medina ? 'menos de 24 h; si pides antes de las 10:00 de un día laborable, lo recibes el mismo día' : '24 a 48 h, ' + z.txt;
+      var prox = (cur === 'pedido' || cur === 'cliente' || cur === 'minimo' || cur === 'envio' || cur === 'faq') ? proxima(z) : null;
+      extra += '<br><br><b>Para ti (' + esc(z.nombre) + '):</b> ' + (prox || ('entrega ' + corto + '.'));
+    }
+    var quiereNeg = cur === 'faq' ? state.faqNeg : NEG_CURS[cur];
+    var g = grupoNegocio();
+    if (g && quiereNeg && cur !== 'negocio' && html.indexOf('suele interesar') < 0) extra += '<br><br><b>Para tu ' + esc(state.negocio) + ':</b> suele interesar ' + NEG_TIPS[g] + '.';
+    if (cur === 'negocio') {
+      if (g) extra += '<br><br>Por lo que sueles necesitar, suele interesar ' + NEG_TIPS[g] + '.';
+      if (!z) extra += '<br><br>Si me dices tu <b>pueblo</b>, te digo qué día pasamos y cuándo te llegaría el primer pedido.';
+    }
+    return html + extra;
+  }
+
   function responder(raw) {
     var a = analizar(raw);
-    state.cur = null;
+    state.cur = null; state.segPropio = null; state.faqId = null; state.faqZona = false; state.faqNeg = false;
     if (!a.t) return null;
     var zone = /vino|verdejo|bornos|denominacion|blanco|tinto/.test(a.t) ? null : findZone(a.t);
     if (zone) state.zone = zone;
     var c = { zone: zone || null, has: a.has };
     var top = a.scored[0];
+    var neg0 = a.t.match(NEGOCIO);
+    if (neg0) state.negocio = neg0[1];
     var lista = comandoLista(a);
     if (lista) return lista;
     var esp = especificas(a);
-    if (esp) return typeof esp === 'string' ? esp : esp.then(function (r) { return r || seguir(); });
-    return seguir();
+    if (esp) return typeof esp === 'string' ? esp : esp.then(function (r) { return r || faqOSeguir(); });
+    return faqOSeguir();
+    /* primero las preguntas frecuentes (si la coincidencia es alta); si no, el resto del asistente */
+    function faqOSeguir() {
+      /* «tengo un bar» (una frase corta que solo cuenta el negocio) no es una pregunta frecuente: la contesta el resto del asistente */
+      if (state.espera || (neg0 && a.tokens.length <= 5 && !/abrir|abro|abrimos|montar|monto|montamos/.test(a.t))) return seguir();
+      return cargarFaq().then(function () { var f = faqMatch(a); return f ? faqRespuesta(f) : seguir(); });
+    }
     function seguir() {
     var neg = a.t.match(NEGOCIO);
     if (neg) {
@@ -703,8 +849,8 @@
     return cargarIndice().then(function () {
       var r = buscarWeb(a.tokens, { unir: COMP.test(a.t), info: INFO.test(a.t) });
       if (r.length) { state.cur = 'web'; return respuestaWeb(r); }
-      state.cur = 'nada'; return NO_ENTIENDO;
-    }, function () { state.cur = 'nada'; return NO_ENTIENDO; });
+      return sinRespuesta(a);
+    }, function () { return sinRespuesta(a); });
   }
   var NO_ENTIENDO = 'No estoy seguro de haberte entendido. Puedo ayudarte con el <b>reparto</b> (dime tu pueblo), los <b>plazos</b>, el <b>horario</b>, las <b>formas de pago</b>, <b>cómo hacerte cliente</b> o buscar un <b>producto</b>. ' + PERSONA;
 
@@ -747,7 +893,7 @@
 
   function acciones(cur, preguntada) {
     if (SIN_ACCIONES[cur]) return;
-    var q = (SEGUIR[cur] || SEGUIR._).slice();
+    var q = (cur === 'faq' && state.segPropio ? state.segPropio : (SEGUIR[cur] || SEGUIR._)).slice();
     if (state.lista.length && cur !== 'lista' && q.indexOf('Ver mi lista') < 0) q.unshift('Ver mi lista');
     q = q.filter(function (x) { return norm(x) !== norm(preguntada); }).slice(0, 2);
     var d = document.createElement('div');
@@ -837,6 +983,7 @@
     state.modelo = false;
     Promise.resolve(out).then(function (html) { return html; }, function () { state.cur = 'nada'; return 'Ahora no puedo responder. ' + PERSONA; }).then(function (html) { return refinar(text, html); }).then(function (html) {
       var cur = state.cur;
+      html = personalizar(html, cur);
       var fin = function () { state.cur = cur; mostrar(html, text); };
       if (pensar) setTimeout(fin, pensar); else fin();
     });
