@@ -2,7 +2,7 @@
 const B = 'assets/vinos/';
 window.ProductWorld.init({
   mount: '#familias',
-  order: ['Bodega Palacio','Ribera del Duero','Blancos','Frizzantes','Espumosos','Pazos','Otras'],
+  order: ['Bodega Palacio','Ribera del Duero','Blancos','Frizzantes','Espumosos','Pazos','Bag in box','Otras'],
   sections: [
     {
       template:'hero', family:'Palacio de Bornos', color:'#eba061', ink:'#251d17',
@@ -62,6 +62,18 @@ window.ProductWorld.init({
         {name:'Pingoleta · Ribera del Duero · 10 meses · 2024', description:'Tinto de Pazos de Baró, de la D.O. Ribera del Duero, con diez meses de crianza.', image:B+'pingoleta-ribera-10-meses.webp', width:130, height:530, alt:'Botella Pingoleta de Pazos de Baró, Ribera del Duero 10 meses'},
         {name:'Pink-goleta · Clarete · 75 cl · 2025', description:'Clarete de Pazos de Baró, de tempranillo y godello.', image:B+'pink-goleta-clarete.webp', width:188, height:652, alt:'Botella Pink-goleta Clarete de Pazos de Baró'},
         {name:'Godello · D.O. Castilla y León · 2024', description:'Godello blanco de Pazos de Baró.', image:B+'godello-pazos-de-baro.webp', width:110, height:368, alt:'Botella Godello de Pazos de Baró'}
+      ]
+    },
+    {
+      template:'lineup', family:'Bag in box', color:'#fbfaf6', ink:'#2b2a1f',
+      eyebrow:'Bag in box · 5 y 15 litros', title:'Bag in box de 5 y 15 litros.',
+      note:'Una imagen por formato',
+      variants:[
+        {name:'Vino blanco · bag in box de 5 L', description:'Vino de mesa blanco en bag in box de 5 litros.', image:B+'bib-blanco-5l.webp', width:517, height:620, alt:'Caja de bag in box de vino de mesa blanco de 5 litros'},
+        {name:'Vino tinto · bag in box de 5 L', description:'Vino de mesa tinto en bag in box de 5 litros.', image:B+'bib-tinto-5l.webp', width:518, height:620, alt:'Caja de bag in box de vino de mesa tinto de 5 litros'},
+        {name:'Solera · bag in box de 5 L', description:'Solera, blanco envejecido (Vinofiel, vino de la tierra), en bag in box de 5 litros.', image:B+'bib-solera-5l.webp', width:517, height:620, alt:'Caja de bag in box Vinofiel Solera, blanco envejecido, de 5 litros'},
+        {name:'Vino blanco · bag in box de 15 L', description:'Vino de mesa blanco en bag in box de 15 litros.', image:B+'bib-blanco-15l.webp', width:477, height:620, alt:'Caja de bag in box de vino de mesa blanco de 15 litros'},
+        {name:'Vino tinto · bag in box de 15 L', description:'Vino de mesa tinto en bag in box de 15 litros.', image:B+'bib-tinto-15l.webp', width:476, height:620, alt:'Caja de bag in box de vino de mesa tinto de 15 litros'}
       ]
     },
     {
