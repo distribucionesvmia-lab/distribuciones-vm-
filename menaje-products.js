@@ -63,7 +63,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', family: 'Menaje auxiliar de cocina y sala', color: '#e9e6e0', ink: '#1c2830',
       eyebrow: 'Lo que completa el servicio', title: 'Lo que la cocina profesional necesita cada día.',
-      product: {name:'Sartenes de acero sobre una encimera en una cocina profesional con cocineros', image:D+'auxiliar-cocina-sartenes.webp', width:940, height:1400, lazy:true, alt:'Sartenes de acero sobre una encimera en una cocina profesional con cocineros'},
+      product: {name:'Vajilla de aspecto artesanal turquesa con servilleta y cubiertos negros sobre una mesa de madera', image:D+'auxiliar-cocina-sartenes.webp', width:940, height:1412, lazy:true, alt:'Platos y cuenco de aspecto artesanal turquesa con vasos y cubiertos negros sobre una servilleta, en una mesa de madera'},
       variants: [
         {name:'Cocina y sala', description:'De Lacor, Araven, Arcos, Vaello o Java: baterías, herméticos gastronorm, cuchillería y paelleras. Pídelo con el resto del pedido.'},
         {name:'Cuéntanos qué te falta', description:'Dinos qué echas en falta en la cocina o en la sala y lo consultamos.'},
