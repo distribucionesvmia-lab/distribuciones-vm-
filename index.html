@@ -9,8 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/portada-inicio.webp" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=ea4e0e57">
+<link rel="preload" as="image" href="assets/portada-inicio.webp" fetchpriority="high" media="(min-width:641px)">
+<link rel="preload" as="image" href="assets/portada-inicio-movil.webp" fetchpriority="high" media="(max-width:640px)">
+<link rel="stylesheet" href="styles.css?v=bcac16f2">
 <script>document.documentElement.classList.add('js')</script>
 <script src="motion-pref.js?v=9d45106a"></script>
 <link rel="icon" type="image/png" href="assets/logo.png">
@@ -61,7 +62,7 @@
 
 <!-- PORTADA -->
 <section class="hero" id="inicio" aria-labelledby="h-hero">
-  <div class="hero-media"><img class="hero-bg" src="assets/portada-inicio.webp" width="1792" height="1148" alt="Furgoneta de reparto de caja cerrada frente al Castillo de la Mota, en Medina del Campo" fetchpriority="high"></div>
+  <div class="hero-media"><picture><source media="(max-width:640px)" srcset="assets/portada-inicio-movil.webp" width="2132" height="1288"><img class="hero-bg" src="assets/portada-inicio.webp" width="1792" height="1148" alt="Furgoneta de reparto de caja cerrada frente al Castillo de la Mota, en Medina del Campo" fetchpriority="high"></picture></div>
   <div class="hero-in">
     <h1 id="h-hero">Distribuciones Valentín Martín</h1>
     <p class="hero-sub">Distribución para hostelería: alimentación, bebidas y menaje de primeras marcas, desde Medina del Campo y hasta 90 km a la redonda.</p>
