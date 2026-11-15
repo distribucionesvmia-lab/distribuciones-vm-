@@ -238,3 +238,6 @@
 .pw-more-text[open] summary::after{content:"−"}
 .pw-more-text summary:focus-visible{outline:2px solid currentColor;outline-offset:4px;border-radius:3px}
 .pw-more-text p{margin:12px 0 0;font-size:.98rem;line-height:1.55}
+
+/* Lista que se desplaza (muchas variedades): la ventana de la lista nunca pasa del borde inferior de la pantalla */
+@media(min-width:761px){.pw-e.is-scroll .pw-e-list{max-height:calc(100svh - 111px - 400px);min-height:200px}}

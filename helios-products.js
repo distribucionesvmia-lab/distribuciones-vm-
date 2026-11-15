@@ -312,14 +312,6 @@ window.HELIOS_SECTIONS = [
     "alt": "Confitura de melocotón · 28 g, Helios"
    },
    {
-    "name": "Crema de cacao · 20 g",
-    "description": "Crema de cacao en porción individual.",
-    "image": "assets/despensa/helios/crema-de-cacao.webp",
-    "width": 352,
-    "height": 211,
-    "alt": "Crema de cacao · 20 g, Helios"
-   },
-   {
     "name": "Miel · 28 g",
     "description": "Miel en frasco individual.",
     "image": "assets/despensa/extra/helios_miel-28g.webp",
