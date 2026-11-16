@@ -74,3 +74,12 @@
 .cold-world .pw-photo{background:#16110d;color:#fff}
 .cold-world .pw-photo h1,.cold-world .pw-photo h1 em,.cold-world .pw-photo .pw-opening-copy>p:not(.pw-kicker){color:#fff}
 .cold-world .pw-photo .pw-kicker{color:#ffd9b5}
+.cold-grid{display:block}
+.cold-block{max-width:1440px;margin:0 auto 64px;scroll-margin-top:130px}
+.cold-block-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 18px;padding-bottom:14px;margin-bottom:18px;border-bottom:2px solid #182f31}
+.cold-block-head h3{margin:0;font-size:clamp(1.7rem,3vw,2.6rem);letter-spacing:-.04em;font-weight:650}
+.cold-block-head p{margin:0;flex:1;color:#58706b}
+.cold-block-head span{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#58706b}
+.cold-block-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media(max-width:900px){.cold-block-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.cold-block{margin-bottom:40px}.cold-block-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}

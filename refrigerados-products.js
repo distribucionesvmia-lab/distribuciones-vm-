@@ -2,29 +2,36 @@ window.ProductWorld.init({
   mount:'#familias',
   sections:[
     {
-      template:'hero', family:'Reny Picot', color:'#dbeae4', ink:'#153b3c',
-      eyebrow:'01 · Quesos y untables', title:'Grandes formatos, para una cocina que no para.',
-      description:'Reny Picot habla de «grandes formatos para grandes clientes que necesitan calidad y excelencia.» Quesos frescos, rallados y cremas para cocina y sala. Formatos de uso diario y opciones profesionales para preparar más.',
-      backword:'FRESCO', bottom:'Imagen: queso crema Reny Picot de 2 kg',
-      product:{name:'Queso crema natural · 2 kg',image:'assets/refrigerados/reny-crema-2kg.webp',width:1000,height:1000,alt:'Cubo de queso crema natural Reny Picot de 2 kg'},
-      cta:{label:'Ver las referencias',href:'#referencias'}
+      template:'hero', family:'Navidul', color:'#eadfd4', ink:'#432c2a',
+      eyebrow:'01 · Navidul · Jamones y embutidos curados', title:'Navidul, el jamón en tu carta.',
+      description:'Navidul, marca de jamones y embutidos curados. En la foto, jamón curado loncheado, curado en bodegas de Trujillo (Extremadura), según figura en el envase. Referencias y formatos a concretar al pedir.',
+      backword:'NAVIDUL', bottom:'Imagen: jamón curado loncheado Navidul',
+      product:{name:'Jamón curado loncheado',image:'assets/refrigerados/extra/navidul_jamones-chorizos-salchichones-y-lotes.webp',width:720,height:720,alt:'Envase de jamón curado loncheado Navidul'},
+      cta:{label:'Ver las referencias',href:'#bloque-navidul'}
     },
     {
-      template:'range', family:'Pascual', color:'#edece3', ink:'#2b3d45',
-      eyebrow:'02 · Mantequilla y nata', title:'Dos básicos, muchos servicios.',
-      description:'Nata, mantequilla y huevo pasteurizado de Pascual Profesional, como ingredientes de cocina y desayuno. Porciones, bloques y briks para el ritmo del servicio.',
-      products:[
-        {name:'Mantequilla 5 kg',description:'Bloque Pascual para una cocina de mayor volumen.',image:'assets/refrigerados/pascual-mantequilla-5kg.webp',width:385,height:268,alt:'Envase de mantequilla Pascual en bloque de 5 kg'},
-        {name:'Nata para montar 1 l',description:'Brik Pascual de nata líquida al 38 % de materia grasa.',image:'assets/refrigerados/pascual-nata-38.webp',width:225,height:225,alt:'Brik de nata Pascual para montar de 1 litro al 38 por ciento'}
+      template:'story', family:'Campofrío', color:'#e7dcd5', ink:'#432c2a',
+      eyebrow:'02 · Campofrío · Fiambres y embutidos', title:'Para tu carta, con el sabor de siempre.',
+      frames:[
+        {name:'Chorizo',description:'Embutidos para raciones, tablas y elaboraciones de cocina.',image:'assets/marcas/campofrio-chorizo.webp',width:600,height:384,alt:'Envase de chorizo Campofrío',color:'#e3e4d6'},
+        {name:'Salchichón',description:'Otra opción para completar la selección de fiambres y embutidos.',image:'assets/marcas/campofrio-salchichon.webp',width:600,height:384,alt:'Envase de salchichón Campofrío',color:'#e9e0d9'}
       ]
     },
     {
-      template:'story', family:'Charcutería', color:'#e7dcd5', ink:'#432c2a',
-      eyebrow:'03 · Navidul y Campofrío · Fiambres y embutidos', title:'Para tu carta, con el sabor de siempre.',
-      frames:[
-        {name:'Navidul · Jamón curado',description:'Navidul, marca de jamones y embutidos curados. Jamón curado loncheado, curado en bodegas de Trujillo (Extremadura), según figura en el envase.',image:'assets/refrigerados/extra/navidul_jamones-chorizos-salchichones-y-lotes.webp',width:720,height:720,alt:'Envase de jamón curado loncheado Navidul',color:'#eadfd4'},
-        {name:'Chorizo',description:'Embutidos para raciones, tablas y elaboraciones de cocina.',image:'assets/marcas/campofrio-chorizo.webp',width:600,height:384,alt:'Envase de chorizo Campofrío',color:'#e3e4d6'},
-        {name:'Salchichón',description:'Otra opción para completar la selección de fiambres y embutidos.',image:'assets/marcas/campofrio-salchichon.webp',width:600,height:384,alt:'Envase de salchichón Campofrío',color:'#e9e0d9'}
+      template:'hero', family:'Reny Picot', color:'#dbeae4', ink:'#153b3c',
+      eyebrow:'03 · Reny Picot · Quesos y untables', title:'Grandes formatos, para una cocina que no para.',
+      description:'Reny Picot habla de «grandes formatos para grandes clientes que necesitan calidad y excelencia.» Quesos frescos, rallados y cremas para cocina y sala. Formatos de uso diario y opciones profesionales para preparar más.',
+      backword:'FRESCO', bottom:'Imagen: queso crema Reny Picot de 2 kg',
+      product:{name:'Queso crema natural · 2 kg',image:'assets/refrigerados/reny-crema-2kg.webp',width:1000,height:1000,alt:'Cubo de queso crema natural Reny Picot de 2 kg'},
+      cta:{label:'Ver las referencias',href:'#bloque-reny-picot'}
+    },
+    {
+      template:'range', family:'Pascual', color:'#edece3', ink:'#2b3d45',
+      eyebrow:'04 · Pascual · Grasas y mantequillas', title:'Mantequilla y nata, para cada servicio.',
+      description:'Mantequilla y nata de Pascual Profesional, como ingredientes de cocina y desayuno. Porciones, bloques y briks para el ritmo del servicio.',
+      products:[
+        {name:'Mantequilla 5 kg',description:'Bloque Pascual para una cocina de mayor volumen.',image:'assets/refrigerados/pascual-mantequilla-5kg.webp',width:385,height:268,alt:'Envase de mantequilla Pascual en bloque de 5 kg'},
+        {name:'Nata para montar 1 l',description:'Brik Pascual de nata líquida al 38 % de materia grasa.',image:'assets/refrigerados/pascual-nata-38.webp',width:225,height:225,alt:'Brik de nata Pascual para montar de 1 litro al 38 por ciento'}
       ]
     }
   ]
@@ -70,8 +77,8 @@ window.ProductWorld.init({
     {group:'Reny Picot',brand:'Reny Picot',name:'Queso de oveja Eminencia',image:'assets/refrigerados/extra/reny-picot_queso-de-oveja-eminencia.webp',width:720,height:720,desc:'Referencia de media pieza; ficha individual pendiente de confirmar.',url:ren,source:'Web de marca'},
     {group:'Reny Picot',brand:'Reny Picot',name:'Queso en lonchas',image:'assets/refrigerados/extra/reny-picot_queso-en-lonchas.webp',width:720,height:720,desc:'Referencia de 8 unidades; formato por confirmar.',url:ren,source:'Web de marca'},
     {group:'Charcutería',brand:'ElPozo',name:'Bacon, paleta, taquitos y salchichas',image:'assets/refrigerados/extra/elpozo_bacon-paleta-taquitos-y-salchichas.webp',width:720,height:720,desc:'Gama refrigerada en distintos formatos de cocina y servicio.',url:'https://www.elpozo.com/',source:'Web de marca'},
-    {group:'Charcutería',brand:'Navidul',name:'Jamones, chorizos, salchichones y lotes',image:'assets/refrigerados/extra/navidul_jamones-chorizos-salchichones-y-lotes.webp',width:720,height:720,desc:'Familia de curados; referencias y formatos a concretar.',url:'https://www.campofrio.es/',source:'Web corporativa'},
-    {group:'Charcutería',brand:'Campofrío',name:'Fiambres, bacon, pavo, quesos y ensaladilla',desc:'Gama refrigerada para bocadillos, raciones y cocina.',url:'https://www.campofrio.es/marcas/campofrio',source:'Catálogo de marca',image:'assets/marcas/campofrio-jamon-cocido.webp',imageAlt:'Envase de jamón cocido Campofrío',imageCaption:'Fotografía de jamón cocido'},
+    {group:'Charcutería',brand:'Navidul',name:'Jamones, chorizos, salchichones y lotes',image:'assets/refrigerados/extra/navidul_jamones-chorizos-salchichones-y-lotes.webp',width:720,height:720,desc:'Familia de curados; referencias y formatos a concretar.'},
+    {group:'Charcutería',brand:'Campofrío',name:'Fiambres, bacon, pavo, quesos y ensaladilla',desc:'Gama refrigerada para bocadillos, raciones y cocina.',url:'https://www.campofrio.es/marcas/campofrio',source:'Catálogo de marca'},
     {group:'Charcutería',brand:'Revilla',name:'Salchichón, chorizo, torreznos y salami',image:'assets/refrigerados/extra/revilla_salchichon-chorizo-torreznos-y-salami.webp',width:720,height:720,desc:'Embutidos y aperitivos cárnicos; formatos por confirmar.',url:'https://www.campofrio.es/',source:'Web corporativa'},
     {group:'Charcutería',brand:'Oscar Mayer',name:'Salchichas Jumbo y bacon en lonchas',image:'assets/refrigerados/extra/oscar-mayer_salchichas-jumbo-y-bacon-en-lonchas.webp',width:720,height:720,desc:'Referencias refrigeradas de salchichas y bacon.',url:'https://www.campofrio.es/',source:'Web corporativa'},
     {group:'Otros',brand:'Holland',name:'Margarina vegetal · 1 kg',image:'assets/refrigerados/extra/holland_margarina-vegetal-1kg.webp',width:716,height:716,desc:'Referencia facilitada para consulta; ficha e imagen pendientes de verificar.',source:'Consultar'},
@@ -89,10 +96,20 @@ window.ProductWorld.init({
     if (/^queso|mozzarella/.test(n) || p.brand === 'Reny Picot') return 85;
     return 81;
   };
-  products.sort((a, b) => famRank(a) - famRank(b));
 
   const esc = v => String(v ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const groups = ['Todos','Preparados','Pascual','Reny Picot','Charcutería','Otros'];
+  const blocks = [
+    {id:'navidul',label:'Navidul',title:'Navidul',intro:'Jamones y embutidos curados.',test:p=>p.brand==='Navidul'},
+    {id:'campofrio',label:'Campofrío',title:'Campofrío',intro:'Fiambres, bacon, pavo, ensaladilla y platos preparados.',test:p=>p.brand==='Campofrío'},
+    {id:'reny-picot',label:'Reny Picot',title:'Reny Picot',intro:'Quesos, mantequilla y nata.',test:p=>p.brand==='Reny Picot'},
+    {id:'pascual-grasas',label:'Grasas y mantequillas',title:'Pascual · grasas y mantequillas',intro:'Mantequilla y nata de Pascual, y margarina.',test:p=>(p.brand==='Pascual'&&/^(mantequilla|nata)/i.test(p.name))||p.brand==='Holland'},
+    {id:'preparados',label:'Alimentos preparados',title:'Alimentos preparados',intro:'Rogusa, Coenyco y otros platos listos para la cocina.',test:p=>['Rogusa','Coenyco','Alvalle','Buitoni'].includes(p.brand)},
+    {id:'otras',label:'Más referencias',title:'Más referencias',intro:'Otras marcas y referencias de la lista.',test:()=>true}
+  ];
+  const blockOf = p => blocks.find(b=>b.test(p));
+  const bi = p => blocks.indexOf(blocks.find(b=>b.test(p)));
+  products.sort((a, b) => bi(a) - bi(b) || famRank(a) - famRank(b));
+  const groups = ['Todos',...blocks.map(b=>b.label)];
   const filters = document.querySelector('.cold-filters');
   const search = document.querySelector('#cold-search');
   const grid = document.querySelector('#cold-grid');
@@ -105,11 +122,15 @@ window.ProductWorld.init({
   const card = p => `<article class="cold-item"><div class="cold-item-head"><span class="cold-brand">${esc(p.brand)}</span><span class="cold-category">${esc(p.group)}</span></div>${p.image ? `<div class="cold-item-image"><img src="${esc(p.image)}" alt="${esc(p.imageAlt)}" loading="lazy"></div><p class="cold-image-caption">${esc(p.imageCaption)}</p>` : ''}<h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p>${p.note ? `<p>${esc(p.note)}</p>` : ''}${price(p)}<div class="cold-item-footer">${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">Ver ${p.source.toLowerCase()} ↗</a>` : '<span>Consultar disponibilidad</span>'}<span>${['Ficha exacta','Ficha de producto','Ficha de 2 kg'].includes(p.source)?'Formato documentado':'Formato por confirmar'}</span></div></article>`;
   function render(){
     const q=search.value.trim().toLocaleLowerCase('es');
-    const matches=products.filter(p=>(active==='Todos'||p.group===active)&&(!q||`${p.brand} ${p.name} ${p.desc}`.toLocaleLowerCase('es').includes(q)));
-    grid.innerHTML=matches.map(card).join('')||'<p>No hay referencias con ese filtro. Prueba otra búsqueda.</p>';
-    if (!document.querySelector('.cold-price-note') && grid.querySelector('.cold-price')) grid.insertAdjacentHTML('afterend', '<p class="cold-price-note">Precios de tarifa por formato de venta. Pide tu tarifa personalizada, sin compromiso.</p>');
-    document.querySelectorAll('.cold-brand-note').forEach(n=>n.remove());
-    if (matches.some(p=>p.brand==='Coenyco')) grid.insertAdjacentHTML('afterend', '<p class="cold-price-note cold-brand-note">Coenyco. Desde 1980, casquería cocida al vacío.</p>');
+    const matches=products.filter(p=>(active==='Todos'||blockOf(p).label===active)&&(!q||`${p.brand} ${p.name} ${p.desc}`.toLocaleLowerCase('es').includes(q)));
+    document.querySelectorAll('.cold-price-note').forEach(n=>n.remove());
+    grid.innerHTML=blocks.map(b=>{
+      const items=matches.filter(p=>blockOf(p)===b);
+      if(!items.length)return '';
+      const note=b.id==='preparados'&&items.some(p=>p.brand==='Coenyco')?'<p class="cold-price-note cold-brand-note">Coenyco. Desde 1980, casquería cocida al vacío.</p>':'';
+      return `<section class="cold-block" id="bloque-${b.id}" aria-labelledby="bloque-${b.id}-t"><header class="cold-block-head"><h3 id="bloque-${b.id}-t">${esc(b.title)}</h3><p>${esc(b.intro)}</p><span>${items.length} ${items.length===1?'referencia':'referencias'}</span></header><div class="cold-block-grid">${items.map(card).join('')}</div>${note}</section>`;
+    }).join('')||'<p>No hay referencias con ese filtro. Prueba otra búsqueda.</p>';
+    if (grid.querySelector('.cold-price')) grid.insertAdjacentHTML('afterend', '<p class="cold-price-note">Precios de tarifa por formato de venta. Pide tu tarifa personalizada, sin compromiso.</p>');
     count.textContent=`${matches.length} ${matches.length===1?'referencia':'referencias'}`;
   }
   filters.addEventListener('click',event=>{
