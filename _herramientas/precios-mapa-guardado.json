@@ -715,22 +715,6 @@
   "cod": "25106",
   "u": "ud."
  },
- "despensa|Helios · Siropes|Sirope de caramelo · 295 g": {
-  "cod": "25002",
-  "u": "ud."
- },
- "despensa|Helios · Siropes|Sirope de chocolate · 295 g": {
-  "cod": "25003",
-  "u": "ud."
- },
- "despensa|Helios · Siropes|Sirope de fresa · 295 g": {
-  "cod": "25004",
-  "u": "ud."
- },
- "despensa|Helios · Siropes|Sirope de frutas del bosque": {
-  "cod": "25005",
-  "u": "ud."
- },
  "despensa|Helios · Tomate frito y salsas|Pisto casero · 300 g": {
   "cod": "258650",
   "u": "ud."
@@ -1269,6 +1253,22 @@
  },
  "despensa|Villa Campo · Pimientos y setas|Melocotón 30/40 · 3 kg": {
   "cod": "29005",
+  "u": "ud."
+ },
+ "despensa|Helios · Fruta en conserva|Sirope de caramelo · 295 g": {
+  "cod": "25002",
+  "u": "ud."
+ },
+ "despensa|Helios · Fruta en conserva|Sirope de chocolate · 295 g": {
+  "cod": "25003",
+  "u": "ud."
+ },
+ "despensa|Helios · Fruta en conserva|Sirope de fresa · 295 g": {
+  "cod": "25004",
+  "u": "ud."
+ },
+ "despensa|Helios · Fruta en conserva|Sirope de frutas del bosque": {
+  "cod": "25005",
   "u": "ud."
  }
 }

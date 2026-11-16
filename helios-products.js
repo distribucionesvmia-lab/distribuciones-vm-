@@ -580,49 +580,6 @@ window.HELIOS_SECTIONS = [
  },
  {
   "template": "lineup",
-  "family": "Helios · Siropes",
-  "color": "#f6e8dc",
-  "ink": "#5a2f1a",
-  "eyebrow": "Siropes para postres, helados y decoración",
-  "title": "El toque dulce",
-  "note": "Imagen del catálogo oficial de Helios",
-  "variants": [
-   {
-    "name": "Sirope de caramelo · 295 g",
-    "description": "Sirope de caramelo para postres, helados y decoración.",
-    "image": "assets/despensa/helios/sirope-caramelo-295g.webp",
-    "width": 212,
-    "height": 460,
-    "alt": "Sirope de caramelo · 295 g, Helios"
-   },
-   {
-    "name": "Sirope de chocolate · 295 g",
-    "description": "Sirope de chocolate para postres, helados y decoración.",
-    "image": "assets/despensa/helios/sirope-chocolate-295g.webp",
-    "width": 212,
-    "height": 461,
-    "alt": "Sirope de chocolate · 295 g, Helios"
-   },
-   {
-    "name": "Sirope de fresa · 295 g",
-    "description": "Sirope de fresa para postres, helados y decoración.",
-    "image": "assets/despensa/helios/sirope-fresa-295g.webp",
-    "width": 212,
-    "height": 461,
-    "alt": "Sirope de fresa · 295 g, Helios"
-   },
-   {
-    "name": "Sirope de frutas del bosque",
-    "description": "Sirope de frutas del bosque para postres y helados.",
-    "image": "assets/despensa/helios/sirope-frutos-del-bosque-295g.webp",
-    "width": 212,
-    "height": 460,
-    "alt": "Sirope de frutas del bosque, Helios"
-   }
-  ]
- },
- {
-  "template": "lineup",
   "family": "Helios · Confitados y encurtidos",
   "color": "#eef0d6",
   "ink": "#44501a",
@@ -685,8 +642,8 @@ window.HELIOS_SECTIONS = [
   "family": "Helios · Fruta en conserva",
   "color": "#fdeacb",
   "ink": "#6a3a0c",
-  "eyebrow": "Frutas en almíbar, en zumo y en gajos",
-  "title": "Fruta todo el año",
+  "eyebrow": "Frutas en almíbar y en zumo, y siropes para postres",
+  "title": "Fruta todo el año, con toque dulce.",
   "note": "Imagen del catálogo oficial de Helios",
   "variants": [
    {
@@ -728,6 +685,38 @@ window.HELIOS_SECTIONS = [
     "width": 222,
     "height": 472,
     "alt": "Melocotón en frasco · 700 g, Helios"
+   },
+   {
+    "name": "Sirope de caramelo · 295 g",
+    "description": "Sirope de caramelo para postres, helados y decoración.",
+    "image": "assets/despensa/helios/sirope-caramelo-295g.webp",
+    "width": 212,
+    "height": 460,
+    "alt": "Sirope de caramelo · 295 g, Helios"
+   },
+   {
+    "name": "Sirope de chocolate · 295 g",
+    "description": "Sirope de chocolate para postres, helados y decoración.",
+    "image": "assets/despensa/helios/sirope-chocolate-295g.webp",
+    "width": 212,
+    "height": 461,
+    "alt": "Sirope de chocolate · 295 g, Helios"
+   },
+   {
+    "name": "Sirope de fresa · 295 g",
+    "description": "Sirope de fresa para postres, helados y decoración.",
+    "image": "assets/despensa/helios/sirope-fresa-295g.webp",
+    "width": 212,
+    "height": 461,
+    "alt": "Sirope de fresa · 295 g, Helios"
+   },
+   {
+    "name": "Sirope de frutas del bosque",
+    "description": "Sirope de frutas del bosque para postres y helados.",
+    "image": "assets/despensa/helios/sirope-frutos-del-bosque-295g.webp",
+    "width": 212,
+    "height": 460,
+    "alt": "Sirope de frutas del bosque, Helios"
    }
   ]
  }
