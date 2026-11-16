@@ -158,14 +158,6 @@ window.VILLACAMPO_SECTIONS = [
     "width": 477,
     "height": 620,
     "alt": "Champiñón laminado · 3 kg, Villa Campo"
-   },
-   {
-    "name": "Champiñón entero · 3 kg",
-    "description": "Champiñones enteros gruesos en conserva, en lata de 3 kg.",
-    "image": "assets/despensa/villacampo/villacampo-429-champinon-entero-grueso-primera-3kg-lata.webp",
-    "width": 477,
-    "height": 620,
-    "alt": "Champiñón entero · 3 kg, Villa Campo"
    }
   ]
  },
