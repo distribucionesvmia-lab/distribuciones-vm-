@@ -21,7 +21,6 @@ window.ProductWorld.init({
     {
       template:'story', family:'Charcutería', color:'#e7dcd5', ink:'#432c2a',
       eyebrow:'03 · Fiambres y embutidos', title:'Para tu carta, con el sabor de siempre.',
-      note:'Cada marca, con sus palabras: Campofrío, «Saber disfrutar, que nada nos lo quite» · Navidul, «Tradición y calidad» · Revilla, «Mismo sabor. Qué maravilla» · Oscar Mayer, «Sabor Inigualable» (salchicha y bacon) · ElPozo, «Contigo de principio a fin».',
       frames:[
         {name:'Chorizo',description:'Embutidos para raciones, tablas y elaboraciones de cocina.',image:'assets/marcas/campofrio-chorizo.webp',width:600,height:384,alt:'Envase de chorizo Campofrío',color:'#e3e4d6'},
         {name:'Salchichón',description:'Otra opción para completar la selección de fiambres y embutidos.',image:'assets/marcas/campofrio-salchichon.webp',width:600,height:384,alt:'Envase de salchichón Campofrío',color:'#e9e0d9'}
