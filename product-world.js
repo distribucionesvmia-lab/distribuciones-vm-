@@ -24,7 +24,7 @@
     hero(item, index) {
       return `<section${sid(item)} class="pw-scene pw-a${item.product.wide?' is-wide':''}${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
         <div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
-          <div class="pw-a-copy"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2><p class="pw-description">${esc(item.description)}</p>${price(item.family,item.product)}${button(item)}</div>
+          <div class="pw-a-copy"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2><p class="pw-description">${esc(item.description)}</p>${item.formats?`<div class="pw-a-formats"><p>${esc(item.formats.title)}</p><ul>${item.formats.items.map(f=>`<li>${esc(f)}</li>`).join('')}</ul></div>`:''}${price(item.family,item.product)}${button(item)}</div>
           <div class="pw-a-art">${item.logo?`<img class="pw-a-logo" src="${esc(item.logo.image)}" alt="${esc(item.logo.alt)}" width="${Number(item.logo.width)}" height="${Number(item.logo.height)}">`:''}<span class="pw-a-ring" aria-hidden="true"></span><span class="pw-a-backword" aria-hidden="true">${esc(item.backword || item.family)}</span>${img(item.product,'pw-a-product')}<p class="pw-product-note">${esc(item.product.name)}</p></div>
           <p class="pw-scene-bottom">${esc(item.bottom || '')}</p>
         </div></div></section>`;
@@ -89,17 +89,23 @@
       window.addEventListener('load', () => setTimeout(ir, 250), { once: true });
     }
     if (mount.querySelector('.pw-price')) mount.insertAdjacentHTML('afterend', '<p class="pw-price-note">Precios de tarifa por unidad de venta. Pide tu tarifa personalizada, sin compromiso.</p>');
-    mount.addEventListener('click', e => {
-      const b = e.target.closest && e.target.closest('.pw-v-play');
-      if (!b) return;
+    const playVideo = (b, muted) => {
+      if (!b || !b.isConnected) return;
       const f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(b.dataset.video) + '?autoplay=1&rel=0';
+      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(b.dataset.video) + '?autoplay=1&rel=0&playsinline=1' + (muted ? '&mute=1' : '');
       f.title = b.dataset.title;
       f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
       f.allowFullscreen = true;
       f.referrerPolicy = 'strict-origin-when-cross-origin';
       b.replaceWith(f);
-    });
+    };
+    mount.addEventListener('click', e => playVideo(e.target.closest && e.target.closest('.pw-v-play'), false));
+    /* el vídeo arranca solo, sin sonido, al llegar a él (con «reducir animaciones» activado solo al pulsar) */
+    const vbtn = mount.querySelector('.pw-v-play');
+    if (vbtn && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const vio = new IntersectionObserver(en => { if (en.some(x => x.isIntersecting)) { vio.disconnect(); playVideo(vbtn, true); } }, { threshold: 0.5 });
+      vio.observe(vbtn);
+    }
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     const mobile = window.matchMedia('(max-width: 760px)');
     let triggers = [];

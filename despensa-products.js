@@ -45,6 +45,7 @@ window.ProductWorld.init({
       template: 'hero', family: 'Prima', color: '#cf0122', ink: '#ffffff', dark: true,
       eyebrow: 'Salsas Prima', title: 'Salseo del bueno.',
       description: 'Una amplia variedad de deliciosas salsas elaboradas de forma responsable con tu salud, con ingredientes de aquí y la experiencia de más de 40 años a tu lado, acompañando tus platos y trabajando para mejorar cada día. Formatos Prima pensados para hostelería, con el sabor de siempre y tomate 100 % origen España.',
+      formats: {title:'Formatos industriales', items:['Kétchup · 2 kg','Salsa brava · 2 kg','Mayonesa · 4,4 kg','Mayonesa · 2,9 kg','Mayonesa · 1,8 kg','Alioli · 1,8 kg','Queso cheddar · 1,8 kg','y más formatos']},
       bottom: '05 — Gama de salsas',
       logo: {image:D+'prima-logo.webp', width:430, height:280, alt:'Prima'},
       product: {name:'Gama de salsas Prima', image:D+'prima-gama.webp', width:1425, height:330, wide:true, alt:'Gama de salsas Prima: mayonesas, kétchup, mostazas y otras salsas'}
@@ -94,6 +95,12 @@ window.ProductWorld.init({
       ]
     },
     {
+      template: 'video', family: 'Luengo · Vídeo', color: '#f3ead7', ink: '#4a3416',
+      eyebrow: 'Vídeo de la marca', title: 'Luengo, en movimiento.',
+      note: 'La marca Luengo, en su canal de YouTube.',
+      video: {id:'nt8Zimy4JtM', title:'Legumbres Luengo. Nuestra casa es tu casa', author:'Legumbres Luengo'}
+    },
+    {
       template: 'lineup', family: 'Luengo', color: '#f3ead7', ink: '#4a3416',
       eyebrow: 'Legumbres secas y cocidas', title: 'Luengo. «Cuando son Luengo, tú lo sabes.»',
       note: 'Más de cien años de legumbres: alubia, garbanzo y lenteja, en saco, frasco y lata de hostelería. Sabor, calidad y textura que se reconocen en el plato. Imagen de la ficha del producto · puede diferir del formato',
@@ -111,12 +118,6 @@ window.ProductWorld.init({
         {name:'Lenteja pardina · 5 kg', description:'Lenteja pardina seca, de grano pequeño y piel fina, en formato de 5 kg.', image:D+'luengo-lenteja-pardina-5kg.webp', width:264, height:510, alt:'Lentejas pardina Luengo'},
         {name:'Lentejas cocidas · frasco de 570 g', description:'Lentejas cocidas en conserva, listas para consumir.', image:D+'luengo-lentejas-cocidas-570g.webp', width:473, height:900, alt:'Luengo Lentejas cocidas frasco 570 g'}
       ]
-    },
-    {
-      template: 'video', family: 'Luengo · Vídeo', color: '#f3ead7', ink: '#4a3416',
-      eyebrow: 'Vídeo de la marca', title: 'Luengo, en movimiento.',
-      note: 'La marca Luengo, en su canal de YouTube.',
-      video: {id:'nt8Zimy4JtM', title:'Legumbres Luengo. Nuestra casa es tu casa', author:'Legumbres Luengo'}
     },
     {
       template: 'lineup', family: 'Borges · Hostelería', color: '#f4e4d0', ink: '#6a1d12',
