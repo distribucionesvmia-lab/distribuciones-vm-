@@ -20,8 +20,9 @@ window.ProductWorld.init({
     },
     {
       template:'story', family:'Charcutería', color:'#e7dcd5', ink:'#432c2a',
-      eyebrow:'03 · Fiambres y embutidos', title:'Para tu carta, con el sabor de siempre.',
+      eyebrow:'03 · Navidul y Campofrío · Fiambres y embutidos', title:'Para tu carta, con el sabor de siempre.',
       frames:[
+        {name:'Navidul · Jamón curado',description:'Navidul, marca de jamones y embutidos curados. Jamón curado loncheado, curado en bodegas de Trujillo (Extremadura), según figura en el envase.',image:'assets/refrigerados/extra/navidul_jamones-chorizos-salchichones-y-lotes.webp',width:720,height:720,alt:'Envase de jamón curado loncheado Navidul',color:'#eadfd4'},
         {name:'Chorizo',description:'Embutidos para raciones, tablas y elaboraciones de cocina.',image:'assets/marcas/campofrio-chorizo.webp',width:600,height:384,alt:'Envase de chorizo Campofrío',color:'#e3e4d6'},
         {name:'Salchichón',description:'Otra opción para completar la selección de fiambres y embutidos.',image:'assets/marcas/campofrio-salchichon.webp',width:600,height:384,alt:'Envase de salchichón Campofrío',color:'#e9e0d9'}
       ]

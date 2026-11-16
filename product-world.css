@@ -242,3 +242,5 @@
 /* Lista que se desplaza (muchas variedades): la ventana de la lista nunca pasa del borde inferior de la pantalla */
 @media(min-width:761px){.pw-e.is-scroll .pw-e-list{max-height:calc(100svh - 111px - 400px);min-height:200px}}
 @media(min-width:761px){.pw-b-head h2{font-size:clamp(2.4rem,4.4vw,4.8rem);max-width:900px}.pw-b-panel{--ph:clamp(260px,calc(100svh - 111px - 350px),560px);height:var(--ph)}.pw-b-image img{max-height:calc(var(--ph) - 76px);width:auto;max-width:100%}}
+.pw-opening-bottom .pw-credit{padding:5px 12px;border:1px solid currentColor;border-radius:999px;letter-spacing:.08em}.pw-opening-bottom .pw-credit b{font-weight:800}
+@media(max-width:760px){.pw-opening-bottom .pw-credit{display:none}}
