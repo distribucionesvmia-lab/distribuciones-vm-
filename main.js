@@ -265,8 +265,9 @@
     var hdr = document.querySelector('.site-header');
     var top = el.getBoundingClientRect().top + window.pageYOffset - (hdr ? hdr.offsetHeight : 0);
     window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    document.documentElement.classList.remove('ir-ancla');
   }
-  window.addEventListener('load', function () { setTimeout(irAlAncla, 500); setTimeout(irAlAncla, 1800); });
+  window.addEventListener('load', function () { setTimeout(irAlAncla, 250); setTimeout(irAlAncla, 1500); });
   /* clic en un enlace de ancla dentro de la propia portada (menú «Catálogo», botones): salto directo y recolocado, sin deriva por las secciones fijadas */
   document.addEventListener('click', function (e) {
     var l = e.target.closest && e.target.closest('a[href^="#"]');
