@@ -272,3 +272,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 .m-compl-azucares figure{margin:0;background:#fff;border-radius:10px;padding:clamp(8px,1vw,14px);box-shadow:0 8px 24px rgba(20,16,13,.07);display:flex;flex-direction:column;justify-content:space-between;gap:8px}
 .m-compl-azucares img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:contain}
 .m-compl-azucares figcaption{text-align:center;font-size:.78rem;line-height:1.25;font-weight:600;color:var(--ink)}
+
+.m-compl-dulces{grid-template-columns:repeat(2,minmax(0,1fr))}
+.m-compl-dulces img{aspect-ratio:1/1;object-fit:contain}
