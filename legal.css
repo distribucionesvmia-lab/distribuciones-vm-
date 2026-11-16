@@ -15,3 +15,34 @@
 .legal dd{margin:0}
 .por-confirmar{display:inline-block;background:#ffe08a;color:#4a3300;padding:.05em .45em;border-radius:5px;font-weight:600;font-size:.92em;line-height:1.4}
 @media(max-width:560px){.legal dl{grid-template-columns:1fr;gap:2px}.legal dd{margin-bottom:12px}}
+
+/* ===== El equipo (organigrama) ===== */
+.equipo{background:#f7f3ea;color:#251d1a;padding:clamp(48px,7vw,96px) var(--gutter,clamp(22px,5.5vw,104px))}
+.equipo-in{max-width:1180px;margin:0 auto}
+.equipo h2{margin:6px 0 34px;font-size:clamp(2.2rem,4.6vw,4.2rem);line-height:1;letter-spacing:-.04em;font-weight:650}
+.org{display:flex;flex-direction:column;align-items:center}
+.eq-gerente{margin:0;text-align:center}
+.eq-ph{margin:0;aspect-ratio:4/5;overflow:hidden;border-radius:16px;background:#e7ded0;display:grid;place-items:center}
+.eq-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.eq-ph-g{width:min(260px,62vw);background:linear-gradient(180deg,#efe6d6,#dccfb8);border-radius:20px;box-shadow:0 20px 40px rgba(37,29,26,.14);margin:0 auto}
+.eq-ph-g img{object-fit:contain;object-position:bottom}
+.eq-gerente figcaption{margin-top:14px;display:grid;gap:2px}
+.eq-gerente figcaption b{font-size:1.35rem;letter-spacing:-.02em}
+.eq-gerente figcaption span,.eq-role{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#a6232c}
+.org-tronco{width:2px;height:38px;background:#b9ad99;margin:14px 0 8px}
+.org-grupo{width:100%;margin-top:30px}
+.org-grupo h3{display:flex;align-items:center;gap:12px;margin:0 0 16px;font-size:.82rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#58503f}
+.org-grupo h3:after{content:"";flex:1;height:1px;background:#d6cbb8}
+.eq-grid{list-style:none;margin:0;padding:0;display:grid;gap:16px;justify-content:center}
+.eq-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.eq-1{grid-template-columns:minmax(0,260px)}
+.eq-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.eq-card{background:#fff;border-radius:16px;padding:10px 10px 16px;box-shadow:0 12px 26px rgba(37,29,26,.07);text-align:center}
+.eq-card .eq-ph{border-radius:12px}
+.eq-name{margin:12px 0 2px;font-size:1.12rem;font-weight:700;letter-spacing:-.01em}
+.eq-role{margin:0}
+.eq-card.no-foto .eq-ph{background:linear-gradient(160deg,#efe6d6,#e0d3bd)}
+.eq-ini{font-size:clamp(3rem,7vw,5rem);font-weight:700;color:#a6232c;opacity:.85}
+@media(max-width:900px){.eq-5{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.eq-3{grid-template-columns:repeat(2,minmax(0,1fr))}.eq-5{grid-template-columns:repeat(2,minmax(0,1fr))}.eq-1{grid-template-columns:minmax(0,200px)}.eq-name{font-size:1rem}.eq-role{font-size:.68rem}}
+.eq-3{max-width:940px;margin-left:auto;margin-right:auto}
