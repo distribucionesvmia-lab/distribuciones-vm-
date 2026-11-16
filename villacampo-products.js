@@ -123,8 +123,8 @@ window.VILLACAMPO_SECTIONS = [
   "family": "Villa Campo · Pimientos y setas",
   "color": "#f8e3da",
   "ink": "#6a2411",
-  "eyebrow": "Pimientos, champiñones y setas",
-  "title": "Del piquillo a la seta.",
+  "eyebrow": "Pimientos, champiñones, setas y fruta en almíbar ligero",
+  "title": "Del piquillo al melocotón.",
   "note": "Imagen de la ficha del producto",
   "variants": [
    {
@@ -158,18 +158,7 @@ window.VILLACAMPO_SECTIONS = [
     "width": 477,
     "height": 620,
     "alt": "Champiñón laminado · 3 kg, Villa Campo"
-   }
-  ]
- },
- {
-  "template": "lineup",
-  "family": "Villa Campo · Frutas en almíbar",
-  "color": "#fdecd0",
-  "ink": "#6a3a0c",
-  "eyebrow": "Fruta en almíbar ligero",
-  "title": "Fruta, lista para servir.",
-  "note": "Imagen de la ficha del producto",
-  "variants": [
+   },
    {
     "name": "Melocotón 30/40 · 3 kg",
     "description": "Melocotón en almíbar ligero, en lata de 3 kg.",

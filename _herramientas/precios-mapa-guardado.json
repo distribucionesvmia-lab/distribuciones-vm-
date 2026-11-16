@@ -887,14 +887,6 @@
   "cod": "29123",
   "u": "ud."
  },
- "despensa|Villa Campo · Frutas en almíbar|Cóctel de frutas · 3 kg": {
-  "cod": "29006",
-  "u": "ud."
- },
- "despensa|Villa Campo · Frutas en almíbar|Melocotón 30/40 · 3 kg": {
-  "cod": "29005",
-  "u": "ud."
- },
  "despensa|Villa Campo · Pimientos y setas|Champiñón laminado · 3 kg": {
   "cod": "29002",
   "u": "ud."
@@ -1269,6 +1261,14 @@
  },
  "despensa|Helios · Formato individual|Mini confitura de melocotón · 28 g": {
   "cod": "25060",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Pimientos y setas|Cóctel de frutas · 3 kg": {
+  "cod": "29006",
+  "u": "ud."
+ },
+ "despensa|Villa Campo · Pimientos y setas|Melocotón 30/40 · 3 kg": {
+  "cod": "29005",
   "u": "ud."
  }
 }
