@@ -559,22 +559,6 @@
   "cod": "251042",
   "u": "ud."
  },
- "despensa|Helios · Formato individual|Confitura de ciruela · 28 g": {
-  "cod": "25062",
-  "u": "ud."
- },
- "despensa|Helios · Formato individual|Confitura de fresa · 28 g": {
-  "cod": "25061",
-  "u": "ud."
- },
- "despensa|Helios · Formato individual|Confitura de melocotón · 28 g": {
-  "cod": "25060",
-  "u": "ud."
- },
- "despensa|Helios · Formato individual|Confitura de naranja · 28 g": {
-  "cod": "25063",
-  "u": "ud."
- },
  "despensa|Helios · Formato individual|Kétchup · 30 g": {
   "cod": "25091",
   "u": "ud."
@@ -1274,5 +1258,21 @@
  "vinos|Pazos de Baró|Pink-goleta · Clarete · 75 cl · 2025": {
   "cod": "3502",
   "u": "botella"
+ },
+ "despensa|Helios · Formato individual|Mini confitura de fresa · 28 g": {
+  "cod": "25061",
+  "u": "ud."
+ },
+ "despensa|Helios · Formato individual|Mini confitura de ciruela · 28 g": {
+  "cod": "25062",
+  "u": "ud."
+ },
+ "despensa|Helios · Formato individual|Mini confitura de naranja amarga · 28 g": {
+  "cod": "25063",
+  "u": "ud."
+ },
+ "despensa|Helios · Formato individual|Mini confitura de melocotón · 28 g": {
+  "cod": "25060",
+  "u": "ud."
  }
 }

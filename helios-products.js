@@ -280,36 +280,36 @@ window.HELIOS_SECTIONS = [
     "alt": "Mermelada de fresa · porciones de 25 g, Helios"
    },
    {
-    "name": "Confitura de fresa · 28 g",
-    "description": "Confitura de fresa en formato individual.",
-    "image": "assets/despensa/helios/confitura-natural-de-fresa.webp",
-    "width": 340,
-    "height": 460,
-    "alt": "Confitura de fresa · 28 g, Helios"
+    "name": "Mini confitura de fresa · 28 g",
+    "description": "Confitura extra de fresa, sin gluten y 100 % natural, en mini frasco individual de cristal.",
+    "image": "assets/despensa/helios/confitura-fresa-mini.webp",
+    "width": 760,
+    "height": 714,
+    "alt": "Mini frasco Helios de confitura extra de fresa"
    },
    {
-    "name": "Confitura de ciruela · 28 g",
-    "description": "Confitura de ciruela en formato individual.",
-    "image": "assets/despensa/extra/helios_confitura-de-ciruela-28g.webp",
-    "width": 720,
-    "height": 720,
-    "alt": "Helios Confitura de ciruela 28 g"
+    "name": "Mini confitura de ciruela · 28 g",
+    "description": "Confitura extra de ciruela, sin gluten y 100 % natural, en mini frasco individual de cristal.",
+    "image": "assets/despensa/helios/confitura-ciruela-mini.webp",
+    "width": 760,
+    "height": 714,
+    "alt": "Mini frasco Helios de confitura extra de ciruela"
    },
    {
-    "name": "Confitura de naranja · 28 g",
-    "description": "Confitura de naranja en formato individual.",
-    "image": "assets/despensa/helios/confitura-natural-de-naranja-amarga.webp",
-    "width": 340,
-    "height": 460,
-    "alt": "Confitura de naranja · 28 g, Helios"
+    "name": "Mini confitura de naranja amarga · 28 g",
+    "description": "Confitura de naranja amarga, sin gluten y 100 % natural, en mini frasco individual de cristal.",
+    "image": "assets/despensa/helios/confitura-naranja-amarga-mini.webp",
+    "width": 522,
+    "height": 482,
+    "alt": "Mini frasco Helios de confitura de naranja amarga"
    },
    {
-    "name": "Confitura de melocotón · 28 g",
-    "description": "Confitura de melocotón en formato individual.",
-    "image": "assets/despensa/helios/confitura-natural-de-melocoton.webp",
-    "width": 340,
-    "height": 461,
-    "alt": "Confitura de melocotón · 28 g, Helios"
+    "name": "Mini confitura de melocotón · 28 g",
+    "description": "Confitura extra de melocotón, sin gluten y 100 % natural, en mini frasco individual de cristal.",
+    "image": "assets/despensa/helios/confitura-melocoton-mini.webp",
+    "width": 760,
+    "height": 715,
+    "alt": "Mini frasco Helios de confitura extra de melocotón"
    },
    {
     "name": "Miel · 28 g",
