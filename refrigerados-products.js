@@ -3,15 +3,15 @@ window.ProductWorld.init({
   sections:[
     {
       template:'hero', family:'Navidul', color:'#eadfd4', ink:'#432c2a',
-      eyebrow:'01 · Navidul · Jamones y embutidos curados', title:'Navidul, el jamón en tu carta.',
+      eyebrow:'01 · Grupo Campofrío · Navidul', title:'Navidul, el jamón en tu carta.',
       description:'Navidul, marca de jamones y embutidos curados. En la foto, jamón curado loncheado, curado en bodegas de Trujillo (Extremadura), según figura en el envase. Referencias y formatos a concretar al pedir.',
       backword:'NAVIDUL', bottom:'Imagen: jamón curado loncheado Navidul',
       product:{name:'Jamón curado loncheado',image:'assets/refrigerados/extra/navidul_jamones-chorizos-salchichones-y-lotes.webp',width:720,height:720,alt:'Envase de jamón curado loncheado Navidul'},
-      cta:{label:'Ver las referencias',href:'#bloque-navidul'}
+      cta:{label:'Ver las referencias',href:'#bloque-grupo-campofrio'}
     },
     {
       template:'story', family:'Campofrío', color:'#e7dcd5', ink:'#432c2a',
-      eyebrow:'02 · Campofrío · Fiambres y embutidos', title:'Para tu carta, con el sabor de siempre.',
+      eyebrow:'02 · Grupo Campofrío · Campofrío', title:'Para tu carta, con el sabor de siempre.',
       frames:[
         {name:'Chorizo',description:'Embutidos para raciones, tablas y elaboraciones de cocina.',image:'assets/marcas/campofrio-chorizo.webp',width:600,height:384,alt:'Envase de chorizo Campofrío',color:'#e3e4d6'},
         {name:'Salchichón',description:'Otra opción para completar la selección de fiambres y embutidos.',image:'assets/marcas/campofrio-salchichon.webp',width:600,height:384,alt:'Envase de salchichón Campofrío',color:'#e9e0d9'}
@@ -102,8 +102,7 @@ window.ProductWorld.init({
 
   const esc = v => String(v ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const blocks = [
-    {id:'navidul',label:'Navidul',title:'Navidul',intro:'Jamones y embutidos curados.',test:p=>p.brand==='Navidul'},
-    {id:'campofrio',label:'Campofrío',title:'Campofrío',intro:'Fiambres, bacon, pavo, ensaladilla y platos preparados.',test:p=>p.brand==='Campofrío'},
+    {id:'grupo-campofrio',label:'Grupo Campofrío',title:'Grupo Campofrío',intro:'Campofrío, Navidul, Revilla y Oscar Mayer: nuestra principal distribución de productos refrigerados.',test:p=>['Campofrío','Navidul','Revilla','Oscar Mayer'].includes(p.brand)},
     {id:'reny-picot',label:'Reny Picot',title:'Reny Picot',intro:'Quesos, mantequilla y nata.',test:p=>p.brand==='Reny Picot'},
     {id:'pascual-grasas',label:'Grasas y mantequillas',title:'Pascual · grasas y mantequillas',intro:'Mantequilla y nata de Pascual, y margarina.',test:p=>(p.brand==='Pascual'&&/^(mantequilla|nata)/i.test(p.name))||p.brand==='Holland'},
     {id:'preparados',label:'Alimentos preparados',title:'Alimentos preparados',intro:'Rogusa, Coenyco y otros platos listos para la cocina.',test:p=>['Rogusa','Coenyco','Alvalle','Buitoni'].includes(p.brand)},
@@ -140,7 +139,7 @@ window.ProductWorld.init({
       const items=matches.filter(p=>blockOf(p)===b);
       if(!items.length)return '';
       const note=b.id==='preparados'&&items.some(p=>p.brand==='Coenyco')?'<p class="cold-price-note cold-brand-note">Coenyco. Desde 1980, casquería cocida al vacío.</p>':'';
-      return `<section class="cold-block" id="bloque-${b.id}" aria-labelledby="bloque-${b.id}-t"><header class="cold-block-head"><h3 id="bloque-${b.id}-t">${esc(b.title)}</h3><p>${esc(b.intro)}</p><span>${items.length} ${items.length===1?'referencia':'referencias'}</span></header>${usoHTML(items)}${note}</section>`;
+      return `<section class="cold-block" id="bloque-${b.id}" aria-labelledby="bloque-${b.id}-t"><header class="cold-block-head"><h3 id="bloque-${b.id}-t">${esc(b.title)}</h3><p>${esc(b.intro)}</p><span>${items.length} ${items.length===1?'referencia':'referencias'}</span></header>${b.id==='grupo-campofrio'?['Campofrío','Navidul','Revilla','Oscar Mayer'].map(br=>{const x=items.filter(p=>p.brand===br);return x.length?`<div class="cold-brandgroup"><h4 class="cold-brandtitle">${br}</h4>${usoHTML(x)}</div>`:''}).join(''):usoHTML(items)}${note}</section>`;
     }).join('')||'<p>No hay referencias con ese filtro. Prueba otra búsqueda.</p>';
     if (grid.querySelector('.cold-price')) grid.insertAdjacentHTML('afterend', '<p class="cold-price-note">Precios de tarifa por formato de venta. Pide tu tarifa personalizada, sin compromiso.</p>');
     count.textContent=`${matches.length} ${matches.length===1?'referencia':'referencias'}`;
