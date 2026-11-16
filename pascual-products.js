@@ -144,7 +144,7 @@ window.ProductWorld.init({
     {
       template: 'range', id: 'vivesoy', family: 'Vivesoy Barista', color: '#e9eacb', ink: '#214b32',
       eyebrow: 'Tres variedades, una misma barra', title: 'Vivesoy Barista. «Más cerca. Sabe mejor.»',
-      description: 'Como dice Vivesoy: «Más cerca. Sabe mejor.» Tres bebidas 100 % de cultivo en España, pensadas para el café: soja, avena y almendras.',
+      description: 'Tres bebidas 100 % de cultivo en España, pensadas para el café: soja, avena y almendras.',
       products: [
         {name:'Barista Soja', description:'Bebida de soja Vivesoy Barista.', image:'assets/pascual/vivesoy-barista-soja.webp', width:154, height:428, alt:'Envase original Vivesoy Barista Soja de 1 litro'},
         {name:'Barista Avena', description:'Bebida de avena Vivesoy Barista.', image:'assets/pascual/vivesoy-barista-avena.webp', width:154, height:428, alt:'Envase original Vivesoy Barista Avena de 1 litro'},
@@ -154,7 +154,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', id: 'bifrutas', family: 'Bifrutas', color: '#ffd9b0', ink: '#6b2f0e',
       eyebrow: 'Sabor Original', title: 'Bifrutas. «El de siempre.»',
-      note: 'Como dice Bifrutas: «mezclando lo mejor de la fruta y lo mejor de la leche», en Tropical, Paraíso, Pacífico y Mediterráneo. Una imagen por variedad',
+      note: 'En Tropical, Paraíso, Pacífico y Mediterráneo. Una imagen por variedad',
       variants: [
         {name:'Tropical · 330 ml', description:'Bifrutas Sabor Original Tropical, con vitaminas A, C y E, en brik de 330 ml.', image:'assets/pascual/bifrutas-tropical-330ml.webp', width:216, height:508, alt:'Brik de Bifrutas Sabor Original Tropical de 330 ml'},
         {name:'Tropical · 200 ml', description:'Bifrutas Sabor Original Tropical, con vitaminas A, C y E, en brik de 200 ml.', image:'assets/pascual/bifrutas-tropical-200ml.webp', width:206, height:400, alt:'Brik pequeño de Bifrutas Sabor Original Tropical de 200 ml'},

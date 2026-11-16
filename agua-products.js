@@ -12,7 +12,7 @@ window.ProductWorld.init({
     {
       template:'range', family:'Nestlé Aquarel', color:'#e8f3e7', ink:'#194a43',
       eyebrow:'Dos formatos para cada ocasión', title:'Reconecta con lo natural.',
-      description:'Como dice Nestlé Aquarel: «Reconecta con lo natural.» Brota de Reservas de la Biosfera de la UNESCO. Un formato para compartir (1,5 L) y otro para el servicio individual (50 cl).',
+      description:'Brota de Reservas de la Biosfera de la UNESCO. Un formato para compartir (1,5 L) y otro para el servicio individual (50 cl).',
       products:[
         {name:'1,5 litros',description:'Formato para compartir.',image:'assets/agua/aquarel-15.webp',width:1200,height:1200,alt:'Botella Nestlé Aquarel de 1,5 litros'},
         {name:'50 cl',description:'Formato individual.',image:'assets/agua/aquarel-50.webp',width:600,height:600,alt:'Botella Nestlé Aquarel de 50 centilitros'}

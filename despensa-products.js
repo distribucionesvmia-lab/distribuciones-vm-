@@ -52,7 +52,7 @@ window.ProductWorld.init({
     {
       template: 'range', family: 'Carbonell · Koipe', color: '#fff8e6', ink: '#1f6b43',
       eyebrow: 'Aceites', title: 'Carbonell. «Somos lo que cocinamos.»',
-      description: 'Como dice Carbonell: «160 años en tu cocina de toda la vida», ahora en el formato que pide tu negocio — Virgen Extra 5 L y gama profesional. Koipe, al lado, para cuando la cocina pide aceite de semillas (Koipe Profesional y Koipe Sol).',
+      description: 'Virgen Extra 5 L y gama profesional, en el formato que pide tu negocio. Koipe, al lado, para cuando la cocina pide aceite de semillas (Koipe Profesional y Koipe Sol).',
       products: [
         {name:'Virgen Extra · 5 L', description:'Carbonell, aceite de oliva virgen extra en formato ahorro.', image:D+'carbonell-virgen-extra-5l.webp', width:233, height:613, alt:'Garrafa Carbonell Virgen Extra de 5 litros'},
         {name:'Carbonell Profesional', description:'Aceite de la gama profesional Carbonell.', image:D+'carbonell-carbonell-profesional.webp', width:110, height:286, alt:'Garrafa Carbonell Profesional'},
@@ -63,7 +63,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', family: 'Carmencita', color: '#f7e7d2', ink: '#5a2410',
       eyebrow: 'Especias y hierbas', title: 'Carmencita. «Cultura del sabor.»',
-      note: 'Como dice Carmencita: «100 años dando sabor y color a tu vida», en los formatos PET y gramajes que usa una cocina profesional, servicio tras servicio. Imágenes de Carmencita: ilustración de la especia y, donde aparece, su bote PET',
+      note: 'En los formatos PET y gramajes que usa una cocina profesional, servicio tras servicio. Imágenes de Carmencita: ilustración de la especia y, donde aparece, su bote PET',
       variants: [
         {name:'Orégano · 95 g', description:'Orégano seco para dar aroma y sabor a pizzas, pastas, ensaladas y otros platos.', image:D+'carmencita-oregano-pet.webp', width:800, height:640, alt:'Orégano, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
         {name:'Ajo en polvo · 625 g', description:'Ajo deshidratado y molido, práctico para sazonar carnes, verduras, salsas y guisos.', image:D+'carmencita-ajo-pet.webp', width:800, height:640, alt:'Ajo, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
