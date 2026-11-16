@@ -24,7 +24,7 @@ window.ProductWorld.init({
       products: [
         {name:'Atún Eureka', description:'Atún en trozos en aceite de girasol.', image:D+'calvo-hosteleria-eureka.webp', width:332, height:477, alt:'Bolsa Eureka de atún en trozos en aceite de girasol'},
         {name:'Atún Isabel · bolsa de 1 kg', description:'Atún en aceite de girasol en bolsa de 1 kg, para cocina profesional.', image:D+'isabel-atun-bolsa-1kg.webp', width:350, height:480, alt:'Bolsa Isabel de atún en aceite de girasol de 1 kg'},
-        {name:'Calamares en tinta', description:'Calvo, calamares en tinta en formato bolsa.', image:D+'calvo-hosteleria-calamares-tinta.webp', width:334, height:478, alt:'Bolsa Calvo de calamares en tinta'},
+        {name:'Calamares en tinta', description:'Calvo, calamares en tinta en formato bolsa.', image:D+'calvo-hosteleria-calamares-tinta.webp', width:671, height:956, alt:'Bolsa Calvo de calamares en tinta'},
         {name:'Calamares en salsa americana', description:'Calvo, calamares en salsa americana en formato bolsa.', image:D+'calvo-hosteleria-calamares-americana.webp', width:334, height:478, alt:'Bolsa Calvo de calamares en salsa americana'},
         {name:'Atún en aceite de oliva · lata de 750 g', description:'Atún Calvo en aceite de oliva, en lata de gran formato de 750 g.', image:D+'calvo-hosteleria-atun-lata-750g.webp', width:364, height:271, alt:'Lata de gran formato de atún Calvo'}
       ]

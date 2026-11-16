@@ -650,16 +650,16 @@ window.HELIOS_SECTIONS = [
     "name": "Cerezas rojas · 160 g",
     "description": "Cerezas rojas en frasco pequeño.",
     "image": "assets/despensa/helios/cereza-roja-160g.webp",
-    "width": 230,
-    "height": 227,
+    "width": 420,
+    "height": 420,
     "alt": "Cerezas rojas · 160 g, Helios"
    },
    {
     "name": "Cerezas verdes · 160 g",
     "description": "Cerezas verdes en frasco pequeño.",
     "image": "assets/despensa/extra/helios_cerezas-verdes-160g.webp",
-    "width": 720,
-    "height": 720,
+    "width": 420,
+    "height": 420,
     "alt": "Helios Cerezas verdes 160 g"
    },
    {
