@@ -113,6 +113,12 @@ window.ProductWorld.init({
       ]
     },
     {
+      template: 'video', family: 'Luengo · Vídeo', color: '#f3ead7', ink: '#4a3416',
+      eyebrow: 'Vídeo de la marca', title: 'Luengo, en movimiento.',
+      note: 'La marca Luengo, en su canal de YouTube.',
+      video: {id:'nt8Zimy4JtM', title:'Legumbres Luengo. Nuestra casa es tu casa', author:'Legumbres Luengo'}
+    },
+    {
       template: 'lineup', family: 'Borges · Hostelería', color: '#f4e4d0', ink: '#6a1d12',
       eyebrow: 'Frutos secos y aperitivos', title: 'Borges, para la barra y la cocina.',
       note: 'Borges Professional dice: «Ponemos en tu cocina lo mejor del Mediterráneo» y habla de soluciones para sala y para cocina. Imagen de la gama en formato comercial · puede diferir del formato de hostelería',

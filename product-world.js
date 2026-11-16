@@ -54,6 +54,12 @@
           </div>
         </div></div></section>`;
     },
+    video(item, index) {
+      return `<section${sid(item)} class="pw-scene pw-v${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}"><div class="pw-v-inner">${label(item,index)}
+        <div class="pw-v-head"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2>${item.note?`<p class="pw-v-note">${esc(item.note)}</p>`:''}</div>
+        <div class="pw-v-frame"><button type="button" class="pw-v-play" data-video="${esc(item.video.id)}" data-title="${esc(item.video.title)}" aria-label="Reproducir el vídeo: ${esc(item.video.title)}"><span class="pw-v-btn" aria-hidden="true"></span><span class="pw-v-cap">${esc(item.video.title)}</span><span class="pw-v-src">Vídeo de ${esc(item.video.author)} · se carga desde YouTube al reproducirlo</span></button></div>
+      </div></section>`;
+    },
     story(item, index) {
       return `<section${sid(item)} class="pw-scene pw-d${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}"><div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
         <div class="pw-d-head"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2>${item.note?`<p class="pw-d-note">${esc(item.note)}</p>`:''}</div>
@@ -83,6 +89,17 @@
       window.addEventListener('load', () => setTimeout(ir, 250), { once: true });
     }
     if (mount.querySelector('.pw-price')) mount.insertAdjacentHTML('afterend', '<p class="pw-price-note">Precios de tarifa por unidad de venta. Pide tu tarifa personalizada, sin compromiso.</p>');
+    mount.addEventListener('click', e => {
+      const b = e.target.closest && e.target.closest('.pw-v-play');
+      if (!b) return;
+      const f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(b.dataset.video) + '?autoplay=1&rel=0';
+      f.title = b.dataset.title;
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      b.replaceWith(f);
+    });
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     const mobile = window.matchMedia('(max-width: 760px)');
     let triggers = [];
