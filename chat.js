@@ -33,7 +33,7 @@
   var chips = root.querySelector('.chat-chips');
   var reduce = window.VM_REDUCE ? window.VM_REDUCE.matches : window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var TEL = '<a href="tel:+34635098044">635 09 80 44</a>';
+  var TEL = '<a href="tel:+34636971266">636 97 12 66</a>';
   var MAIL = '<a href="mailto:oficina@distribucionesvm.es">oficina@distribucionesvm.es</a>';
   var PERSONA = 'Si prefieres hablar con una persona, llama al ' + TEL + ' de 7:00 a 15:00 o escribe a ' + MAIL + '.';
   var PLAZO = 'El plazo de entrega es de menos de 24 h en Medina del Campo y de 24 a 48 h en el resto de la zona, en días laborables de lunes a viernes.';
@@ -906,7 +906,7 @@
     d.className = 'chat-acts';
     d.innerHTML = '<div class="chat-follow">' + q.map(function (x) { return '<button type="button" data-q="' + esc(x) + '">' + esc(x) + '</button>'; }).join('') + '</div>' +
       (cur === 'nada' && preguntada ? '<div class="chat-pers chat-pregunta"><a class="chat-act" href="' + mailPregunta(preguntada) + '" data-pregunta>Enviar mi pregunta a la oficina</a><p class="chat-fuera">Se abre tu programa de correo con la pregunta escrita; solo se envía si pulsas «Enviar». Así podemos contestarte y mejorar el asistente.</p></div>' : '') +
-      '<div class="chat-pers"><a class="chat-act" href="tel:+34635098044">Llamar al 635 09 80 44</a><a class="chat-act" href="' + mailHref() + '" data-mail>Escribir por correo</a></div>' +
+      '<div class="chat-pers"><a class="chat-act" href="tel:+34636971266">Llamar al 636 97 12 66</a><a class="chat-act" href="' + mailHref() + '" data-mail>Escribir por correo</a></div>' +
       (fueraDeHorario() ? '<p class="chat-fuera">Ahora estamos fuera del horario de atención (7:00 a 15:00, de lunes a viernes). Si llamas, te atiende Valentín en su móvil.</p>' : '');
     log.appendChild(d);
     log.scrollTop = log.scrollHeight;

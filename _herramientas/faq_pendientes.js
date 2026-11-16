@@ -7,7 +7,7 @@ const raiz = path.resolve(__dirname, '..');
 global.window = {};
 eval(fs.readFileSync(path.join(raiz, 'asistente-faq.js'), 'utf8'));
 const F = global.window.ASISTENTE_FAQ;
-const limpio = h => h.replace(/\{TEL\}/g, '635 09 80 44').replace(/\{MAIL\}/g, 'oficina@distribucionesvm.es').replace(/\{PERSONA\}/g, '').replace(/<li>/g, '\n  - ').replace(/<[^>]+>/g, '').replace(/\n{2,}/g, '\n').trim();
+const limpio = h => h.replace(/\{TEL\}/g, '636 97 12 66').replace(/\{MAIL\}/g, 'oficina@distribucionesvm.es').replace(/\{PERSONA\}/g, '').replace(/<li>/g, '\n  - ').replace(/<[^>]+>/g, '').replace(/\n{2,}/g, '\n').trim();
 const pend = F.filter(f => f.pend);
 let md = '# Preguntas del asistente que la web no responde\n\n' +
   'Pablo (el asistente de la web) contesta a estas ' + pend.length + ' preguntas **derivando a una persona**, porque ni la web ni la información que tenemos dicen la respuesta concreta. ' +

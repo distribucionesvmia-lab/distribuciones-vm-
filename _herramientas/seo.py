@@ -33,7 +33,7 @@ BUSINESS = {
     'url': BASE,
     'logo': BASE + 'assets/logo.png',
     'image': BASE + 'assets/portada.webp',
-    'telephone': '+34635098044',
+    'telephone': '+34636971266',
     'email': 'oficina@distribucionesvm.es',
     'foundingDate': '1982',
     'address': {

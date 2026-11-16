@@ -1,7 +1,7 @@
-/* WhatsApp de menaje: DESACTIVADO hasta confirmar que el 635 09 80 44 tiene WhatsApp ([POR CONFIRMAR], ver MENAJE-PENDIENTES.md).
+/* WhatsApp de menaje: DESACTIVADO hasta confirmar que el 636 97 12 66 tiene WhatsApp ([POR CONFIRMAR], ver MENAJE-PENDIENTES.md).
    Mientras WHATSAPP esté vacío este archivo no añade nada a la página: ni el botón «Pedir por WhatsApp» ni los «Consultar por WhatsApp» de cada familia.
    Para activarlo: poner el número en formato internacional, sin «+» ni espacios (España: 34 y las 9 cifras), por ejemplo
-       const WHATSAPP = '34635098044';
+       const WHATSAPP = '34636971266';
    y subir la versión de este script en menaje.html. El botón «Llamar» de móvil NO depende de este archivo: es el botón fijo común de la web (.call-float, lo genera cabecera.py). */
 (function () {
   'use strict';

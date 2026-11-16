@@ -55,10 +55,12 @@
         </div></div></section>`;
     },
     video(item, index) {
+      const v = item.video;
       return `<section${sid(item)} class="pw-scene pw-v${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}"><div class="pw-v-inner">${label(item,index)}
-        <div class="pw-v-head"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2>${item.note?`<p class="pw-v-note">${esc(item.note)}</p>`:''}</div>
-        <div class="pw-v-frame"><button type="button" class="pw-v-play" data-video="${esc(item.video.id)}" data-title="${esc(item.video.title)}" aria-label="Reproducir el vídeo: ${esc(item.video.title)}"><span class="pw-v-btn" aria-hidden="true"></span><span class="pw-v-cap">${esc(item.video.title)}</span><span class="pw-v-src">Vídeo de ${esc(item.video.author)} · se carga desde YouTube al reproducirlo</span></button></div>
-      </div></section>`;
+        <div class="pw-v-head"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2>${item.note?`<p class="pw-v-note">${esc(item.note)}</p>`:''}</div></div>
+        <div class="pw-v-frame"><video class="pw-v-el" src="${esc(v.src)}" poster="${esc(v.poster||'')}" preload="metadata" muted playsinline loop controls aria-label="${esc(v.title)}"></video></div>
+        <p class="pw-v-credit">Vídeo: ${esc(v.author)}</p>
+      </section>`;
     },
     story(item, index) {
       return `<section${sid(item)} class="pw-scene pw-d${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}"><div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
@@ -89,23 +91,11 @@
       window.addEventListener('load', () => setTimeout(ir, 250), { once: true });
     }
     if (mount.querySelector('.pw-price')) mount.insertAdjacentHTML('afterend', '<p class="pw-price-note">Precios de tarifa por unidad de venta. Pide tu tarifa personalizada, sin compromiso.</p>');
-    const playVideo = (b, muted) => {
-      if (!b || !b.isConnected) return;
-      const f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(b.dataset.video) + '?autoplay=1&rel=0&playsinline=1' + (muted ? '&mute=1' : '');
-      f.title = b.dataset.title;
-      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-      f.allowFullscreen = true;
-      f.referrerPolicy = 'strict-origin-when-cross-origin';
-      b.replaceWith(f);
-    };
-    mount.addEventListener('click', e => playVideo(e.target.closest && e.target.closest('.pw-v-play'), false));
-    /* el vídeo arranca solo, sin sonido, al llegar a él (con «reducir animaciones» activado solo al pulsar) */
-    const vbtn = mount.querySelector('.pw-v-play');
-    if (vbtn && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const vio = new IntersectionObserver(en => { if (en.some(x => x.isIntersecting)) { vio.disconnect(); playVideo(vbtn, true); } }, { threshold: 0.5 });
-      vio.observe(vbtn);
-    }
+    /* vídeo a todo el ancho: arranca solo y sin sonido al verse, y se pausa al salir (con «reducir animaciones» solo con los controles) */
+    mount.querySelectorAll('.pw-v-el').forEach(vid => {
+      if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      new IntersectionObserver(en => en.forEach(x => { if (x.isIntersecting) { const p = vid.play(); if (p && p.catch) p.catch(() => {}); } else vid.pause(); }), { threshold: 0.4 }).observe(vid);
+    });
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     const mobile = window.matchMedia('(max-width: 760px)');
     let triggers = [];

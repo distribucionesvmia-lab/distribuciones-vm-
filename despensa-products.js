@@ -97,8 +97,8 @@ window.ProductWorld.init({
     {
       template: 'video', family: 'Luengo · Vídeo', color: '#f3ead7', ink: '#4a3416',
       eyebrow: 'Vídeo de la marca', title: 'Luengo, en movimiento.',
-      note: 'La marca Luengo, en su canal de YouTube.',
-      video: {id:'nt8Zimy4JtM', title:'Legumbres Luengo. Nuestra casa es tu casa', author:'Legumbres Luengo'}
+      note: 'Legumbres Luengo. Nuestra casa es tu casa.',
+      video: {src:'assets/video/luengo-nuestra-casa-es-tu-casa.mp4', poster:'assets/video/luengo-poster.webp', title:'Legumbres Luengo. Nuestra casa es tu casa', author:'Legumbres Luengo'}
     },
     {
       template: 'lineup', family: 'Luengo', color: '#f3ead7', ink: '#4a3416',
