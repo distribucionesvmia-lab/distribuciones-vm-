@@ -197,7 +197,7 @@ window.ASISTENTE_FAQ = [
     neg: true, seg: ['¿Qué marcas trabajáis?', '¿Puedo pedir una tarifa?'] },
   { id: 'refrigerados-detalle',
     q: ['¿qué refrigerados tenéis?', '¿tenéis fiambre?', '¿tenéis embutido?', '¿tenéis platos cocinados?', '¿tenéis platos preparados?', '¿tenéis comida preparada?', '¿tenéis Campofrío?', '¿tenéis charcutería?'],
-    a: 'En <a href="refrigerados.html">refrigerados</a> hay <b>quesos y lácteos en formato profesional, huevo, nata, gazpacho, platos tradicionales, fiambres y embutidos</b> de marcas conocidas (entre ellas Campofrío). La disponibilidad y los formatos se confirman al preparar el pedido: {TEL}.',
+    a: 'En <a href="refrigerados.html">refrigerados</a> hay <b>jamón, fiambres y embutidos del Grupo Campofrío (Campofrío, Navidul, Revilla y Oscar Mayer) y de El Pozo, quesos Reny Picot, salchichas y platos preparados</b>. En cada marca separamos lo de hostelería (piezas y formatos grandes) y lo de alimentación (sobres y formatos pequeños). La disponibilidad y los formatos se confirman al preparar el pedido: {TEL}.',
     neg: true, seg: ['¿Tenéis tarifa?', '¿Qué marcas trabajáis?'] },
   { id: 'congelados-detalle',
     q: ['¿qué congelados tenéis?', '¿tenéis pan precocido?', '¿tenéis bollería congelada?', '¿tenéis pan congelado?', '¿tenéis croissants para hornear?', '¿tenéis bollería para el desayuno?', '¿tenéis snacks salados?', '¿tenéis pastelería congelada?', '¿tenéis Panamar?', '¿tenéis masa congelada?', '¿tenéis pan para bocadillos?'],

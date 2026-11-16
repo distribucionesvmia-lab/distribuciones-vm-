@@ -1035,110 +1035,6 @@
   "cod": "11048",
   "u": "pack de 4"
  },
- "refrigerados|Otros|Margarina vegetal · 1 kg": {
-  "cod": "2037",
-  "u": "ud."
- },
- "refrigerados|Otros|Queso fundido en lonchas · 131 g": {
-  "cod": "30000",
-  "u": "ud."
- },
- "refrigerados|Pascual|Huevo cocido · cubo de 70 unidades": {
-  "cod": "11054",
-  "u": "ud."
- },
- "refrigerados|Pascual|Huevo líquido · 1 kg": {
-  "cod": "110575",
-  "u": "ud."
- },
- "refrigerados|Pascual|Mantequilla Original · tarrina de 250 g": {
-  "cod": "110105",
-  "u": "ud."
- },
- "refrigerados|Pascual|Mantequilla · bloque de 5 kg": {
-  "cod": "11012",
-  "u": "ud."
- },
- "refrigerados|Pascual|Mantequilla · microtarrinas de 10 g": {
-  "cod": "11008",
-  "u": "ud."
- },
- "refrigerados|Pascual|Mantequilla · pastilla de 250 g": {
-  "cod": "11278",
-  "u": "ud."
- },
- "refrigerados|Pascual|Mantequilla · pastilla de 500 g": {
-  "cod": "11013",
-  "u": "ud."
- },
- "refrigerados|Pascual|Nata en spray · 500 g": {
-  "cod": "110095",
-  "u": "ud."
- },
- "refrigerados|Pascual|Nata ligera 18 % · 500 ml": {
-  "cod": "11279",
-  "u": "ud."
- },
- "refrigerados|Pascual|Nata ligera para cocinar · 1 l": {
-  "cod": "110067",
-  "u": "ud."
- },
- "refrigerados|Pascual|Nata ligera para cocinar · 200 ml": {
-  "cod": "110077",
-  "u": "ud."
- },
- "refrigerados|Pascual|Nata montada en spray · 250 g": {
-  "cod": "11210",
-  "u": "ud."
- },
- "refrigerados|Pascual|Nata para montar · 500 ml": {
-  "cod": "110066",
-  "u": "ud."
- },
- "refrigerados|Pascual|Yema líquida": {
-  "cod": "110576",
-  "u": "ud."
- },
- "refrigerados|Preparados|Callos a la madrileña · 2,5 kg": {
-  "cod": "14001",
-  "u": "ud."
- },
- "refrigerados|Preparados|Gazpacho Original · 1 l": {
-  "cod": "26700",
-  "u": "ud."
- },
- "refrigerados|Preparados|Morro de cerdo cocido · 500 g": {
-  "cod": "5003",
-  "u": "ud."
- },
- "refrigerados|Preparados|Oreja de cerdo cocida · 1 kg": {
-  "cod": "5001",
-  "u": "ud."
- },
- "refrigerados|Preparados|Oreja de cerdo cocida · 500 g": {
-  "cod": "5002",
-  "u": "ud."
- },
- "refrigerados|Preparados|Rabo de cerdo cocido · 500 g": {
-  "cod": "5011",
-  "u": "ud."
- },
- "refrigerados|Preparados|Salmorejo Original · 1 l": {
-  "cod": "26701",
-  "u": "ud."
- },
- "refrigerados|Preparados|Tortilla de patata con cebolla · 500 g": {
-  "cod": "261181",
-  "u": "ud."
- },
- "refrigerados|Reny Picot|Mozzarella · 150 g": {
-  "cod": "17004",
-  "u": "ud."
- },
- "refrigerados|Reny Picot|Nata para montar · 200 ml": {
-  "cod": "17056",
-  "u": "ud."
- },
  "vinos|Bornos · Ribera del Duero|Dominio de Bornos Roble · 2024": {
   "cod": "10010",
   "u": "botella"
@@ -1269,6 +1165,270 @@
  },
  "despensa|Helios · Fruta en conserva|Sirope de frutas del bosque": {
   "cod": "25005",
+  "u": "ud."
+ },
+ "refrigerados|Navidul|Centro de jamón ibérico · kg": {
+  "cod": "20007",
+  "u": "ud."
+ },
+ "refrigerados|Navidul|Chorizo cular ibérico · kg": {
+  "cod": "26009",
+  "u": "ud."
+ },
+ "refrigerados|Navidul|Centro gran rendimiento · kg": {
+  "cod": "26007",
+  "u": "ud."
+ },
+ "refrigerados|Navidul|Jamón 4 Estaciones Reserva · pieza": {
+  "cod": "26129",
+  "u": "ud."
+ },
+ "refrigerados|Navidul|Jamón asado ahumado · kg": {
+  "cod": "26106",
+  "u": "ud."
+ },
+ "refrigerados|Navidul|Jamón cebo ibérico · pieza de 7,5-8 kg": {
+  "cod": "26027",
+  "u": "ud."
+ },
+ "refrigerados|Navidul|Lonchas de jamón curado · 500 g": {
+  "cod": "26008",
+  "u": "ud."
+ },
+ "refrigerados|Navidul|Salchichón cular ibérico · kg": {
+  "cod": "26010",
+  "u": "ud."
+ },
+ "refrigerados|Navidul alimentación|Chorizo ibérico · 40 g": {
+  "cod": "26050",
+  "u": "ud."
+ },
+ "refrigerados|Navidul alimentación|Lomo embuchado · 40 g · PVP 1,20 €": {
+  "cod": "26317",
+  "u": "ud."
+ },
+ "refrigerados|Navidul alimentación|Jamón curado · 45 g · PVP 1 €": {
+  "cod": "26300",
+  "u": "ud."
+ },
+ "refrigerados|Navidul alimentación|Salchichón ibérico · 40 g · PVP 1,10 €": {
+  "cod": "26051",
+  "u": "ud."
+ },
+ "refrigerados|Navidul alimentación|Chorizo ibérico · 40 g · PVP 1,10 €": {
+  "cod": "260511",
+  "u": "ud."
+ },
+ "refrigerados|Navidul alimentación|Lonchas de queso semicurado · 100 g · PVP 2 €": {
+  "cod": "26148",
+  "u": "ud."
+ },
+ "refrigerados|Navidul alimentación|Taquitos de jamón · 100 g · PVP 2 €": {
+  "cod": "26094",
+  "u": "ud."
+ },
+ "refrigerados|Campofrío|Jamón cocido 11×11 · pieza de 4 kg": {
+  "cod": "26119",
+  "u": "ud."
+ },
+ "refrigerados|Campofrío|Bacon costilla al vacío · kg": {
+  "cod": "26120",
+  "u": "ud."
+ },
+ "refrigerados|Campofrío|Bacon práctico · kg": {
+  "cod": "26095",
+  "u": "ud."
+ },
+ "refrigerados|Campofrío|Fiambre de lomo adobado · kg": {
+  "cod": "26105",
+  "u": "ud."
+ },
+ "refrigerados|Campofrío|Fiambre de paleta · kg": {
+  "cod": "26109",
+  "u": "ud."
+ },
+ "refrigerados|Campofrío|Lonchas de paleta cocida · 500 g": {
+  "cod": "26013",
+  "u": "ud."
+ },
+ "refrigerados|Campofrío|Medallón de pato · 1,2 kg": {
+  "cod": "26117",
+  "u": "ud."
+ },
+ "refrigerados|Campofrío|Pechuga de pavo · kg": {
+  "cod": "26111",
+  "u": "ud."
+ },
+ "refrigerados|Campofrío|Queso en barra para sándwich · 3,3 kg": {
+  "cod": "26203",
+  "u": "ud."
+ },
+ "refrigerados|Campofrío|Queso edam en lonchas · 1 kg": {
+  "cod": "26200",
+  "u": "ud."
+ },
+ "refrigerados|Campofrío|Queso en lonchas para sándwich · 1 kg": {
+  "cod": "26201",
+  "u": "ud."
+ },
+ "refrigerados|Campofrío|Chopped en lonchas · 95 g · PVP 1 €": {
+  "cod": "26307",
+  "u": "ud."
+ },
+ "refrigerados|Campofrío|Jamón cocido · PVP 1 €": {
+  "cod": "260541",
+  "u": "ud."
+ },
+ "refrigerados|Campofrío|Mortadela clásica · 95 g · PVP 1 €": {
+  "cod": "26055",
+  "u": "ud."
+ },
+ "refrigerados|Campofrío|Mortadela con aceitunas · PVP 1 €": {
+  "cod": "26056",
+  "u": "ud."
+ },
+ "refrigerados|Campofrío|Pechuga de pavo · PVP 1 €": {
+  "cod": "26309",
+  "u": "ud."
+ },
+ "refrigerados|Revilla|Chorizo tradicional · kg": {
+  "cod": "26023",
+  "u": "ud."
+ },
+ "refrigerados|Revilla|Salchichón Cumbre · kg": {
+  "cod": "26022",
+  "u": "ud."
+ },
+ "refrigerados|Revilla|Chorizo · 65 g · PVP 1 €": {
+  "cod": "26304",
+  "u": "ud."
+ },
+ "refrigerados|Revilla|Chorizo Pamplona · 65 g · PVP 1 €": {
+  "cod": "260651",
+  "u": "ud."
+ },
+ "refrigerados|Revilla|Salami · 65 g · PVP 1 €": {
+  "cod": "263051",
+  "u": "ud."
+ },
+ "refrigerados|Revilla|Salchichón · 65 g · PVP 1 €": {
+  "cod": "26303",
+  "u": "ud."
+ },
+ "refrigerados|Smart Solutions|Callos a la madrileña · 2,5 kg": {
+  "cod": "14001",
+  "u": "ud."
+ },
+ "refrigerados|Smart Solutions|Ensaladilla rusa · 2 kg": {
+  "cod": "26118",
+  "u": "ud."
+ },
+ "refrigerados|Smart Solutions|Fuet en lonchas · 500 g": {
+  "cod": "26122",
+  "u": "ud."
+ },
+ "refrigerados|Smart Solutions|Tortilla de patata con cebolla · 500 g": {
+  "cod": "261181",
+  "u": "ud."
+ },
+ "refrigerados|Smart Solutions|Morros cocidos · 500 g": {
+  "cod": "5003",
+  "u": "ud."
+ },
+ "refrigerados|Smart Solutions|Orejas cocidas · 1 kg": {
+  "cod": "5001",
+  "u": "ud."
+ },
+ "refrigerados|Smart Solutions|Orejas cocidas · 500 g": {
+  "cod": "5002",
+  "u": "ud."
+ },
+ "refrigerados|Smart Solutions|Rabo de cerdo · 500 g": {
+  "cod": "5011",
+  "u": "ud."
+ },
+ "refrigerados|Smart Solutions|Torrezno de Soria · bandeja de 1,3 kg": {
+  "cod": "260235",
+  "u": "ud."
+ },
+ "refrigerados|Salchichas|Salchichas Frankfurt · pack de 4 × 140 g": {
+  "cod": "26084",
+  "u": "ud."
+ },
+ "refrigerados|Salchichas|Salchichas cocktail · 1 kg": {
+  "cod": "20120",
+  "u": "ud."
+ },
+ "refrigerados|Salchichas|Salchichas Jumbo · 350 g": {
+  "cod": "26121",
+  "u": "ud."
+ },
+ "refrigerados|Quesos|Queso de Burgos · brik de 1 kg": {
+  "cod": "17050",
+  "u": "ud."
+ },
+ "refrigerados|Quesos|Queso de Burgos · 4 × 62,5 g": {
+  "cod": "17002",
+  "u": "ud."
+ },
+ "refrigerados|Quesos|Queso en lonchas · 8 unidades": {
+  "cod": "17080",
+  "u": "ud."
+ },
+ "refrigerados|Quesos|Emmental rallado · 60 g": {
+  "cod": "17005",
+  "u": "ud."
+ },
+ "refrigerados|Quesos|Queso rallado en polvo · 100 g": {
+  "cod": "17006",
+  "u": "ud."
+ },
+ "refrigerados|Quesos|Queso rallado hilo fundido · 1 kg": {
+  "cod": "17011",
+  "u": "ud."
+ },
+ "refrigerados|Quesos|Mozzarella · 150 g": {
+  "cod": "17004",
+  "u": "ud."
+ },
+ "refrigerados|Quesos|Queso para untar · 2 kg": {
+  "cod": "17020",
+  "u": "ud."
+ },
+ "refrigerados|Quesos|Queso para untar · cubo de 5 kg": {
+  "cod": "17018",
+  "u": "ud."
+ },
+ "refrigerados|Quesos|Tranchetes · 7 lonchas, 131 g": {
+  "cod": "30000",
+  "u": "ud."
+ },
+ "refrigerados|El Pozo|Barqueta de bacon · 1 kg": {
+  "cod": "20001",
+  "u": "ud."
+ },
+ "refrigerados|El Pozo|Fiambre de paleta para sándwich · 4 kg": {
+  "cod": "20004",
+  "u": "ud."
+ },
+ "refrigerados|El Pozo|Taquitos de jamón · 500 g": {
+  "cod": "20014",
+  "u": "ud."
+ },
+ "refrigerados|El Pozo|Salchichas hot dog · 1 kg (20 salchichas)": {
+  "cod": "20033",
+  "u": "ud."
+ },
+ "refrigerados|El Pozo|Taquitos de jamón · PVP 1 €": {
+  "cod": "20028",
+  "u": "ud."
+ },
+ "refrigerados|El Pozo|Jamón curado · 80 g · PVP 1,50 €": {
+  "cod": "20025",
+  "u": "ud."
+ },
+ "refrigerados|El Pozo|Jamón cocido «1954» · 150 g · PVP 2 €": {
+  "cod": "20024",
   "u": "ud."
  }
 }
