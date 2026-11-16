@@ -114,7 +114,7 @@ const VARIANTES = [
   // contacto y empresa
   ['telefono', /636 97 12 66/], ['cual es vuestro telefono', /636 97 12 66/], ['numero de telefono', /636 97 12 66/], ['email', /oficina@distribucionesvm\.es/], ['correo', /oficina@distribucionesvm\.es/],
   ['direccion', /Labradores/], ['donde estais', /Labradores/], ['donde os encuentro', /Labradores/], ['whatsapp', /no tiene WhatsApp/i], ['teneis wasap', /no tiene WhatsApp/i], ['como contacto con vosotros', /636 97 12 66/],
-  ['quiero hablar con alguien', /llama/i], ['pasame con una persona', /llama/i], ['me puede llamar alguien', /llama|636/i], ['atencion al cliente', /llama|635/i], ['hablar con un comercial', /comercial|llama/i],
+  ['quiero hablar con alguien', /llama/i], ['pasame con una persona', /llama/i], ['me puede llamar alguien', /llama|636/i], ['atencion al cliente', /llama|636/i], ['hablar con un comercial', /comercial|llama/i],
   ['desde cuando existis', /1982|44 años/], ['cuantos años llevais', /44 años/], ['quienes sois', /Distribuciones Valentín Martín/], ['historia de la empresa', /1982|44 años/], ['instagram', /Instagram/],
   // incidencias y cortesía
   ['me ha llegado roto', /albarán/i], ['me falta un producto', /albarán/i], ['tengo una queja', /albarán|Lamentamos/i], ['no me ha llegado el pedido', /albarán|Lamentamos/i], ['devolucion', /albarán|Lamentamos/i],
@@ -136,7 +136,7 @@ const VARIANTES2 = [
   ['oye y vosotros llegais a mi pueblo que es nava del rey', /miércoles/i], ['sabeis si pasais por viana de cega', /miércoles/i], ['mi bar esta en olmedo, cuando me traeis la mercancia', /viernes/i],
   ['si hago el pedido hoy cuando me lo traen', /pueblo/i], ['a que hora hay que pedir para que llegue hoy', /10:00/], ['trabajais los festivos', /lunes a viernes/i],
   ['teneis algo de cafe descafeinado', /Mocay/i], ['busco servilletas', /Servilleta/i], ['necesito cubiertos', /Cubier|cubertería|menaje/i], ['teneis tenedores', /Tenedor/i],
-  ['que vinos teneis', /vinos/i], ['teneis verdejo', /Verdejo/i], ['teneis cava', /cava|espumoso|vinos|tarifa|635/i], ['agua mineral', /agua/i], ['teneis pepsi', /tarifa|bebidas/i],
+  ['que vinos teneis', /vinos/i], ['teneis verdejo', /Verdejo/i], ['teneis cava', /cava|espumoso|vinos|tarifa|636/i], ['agua mineral', /agua/i], ['teneis pepsi', /tarifa|bebidas/i],
   ['yogures de sabores', /yogur/i], ['flan', /flan|postre|Pascual/i], ['natillas de chocolate', /Natillas/i], ['leche entera', /entera/i], ['leche semidesnatada para el hogar', /semidesnatada/i],
   ['leche desnatada', /desnatada/i], ['leche de avena', /avena|Vivesoy/i], ['bebida de soja', /soja|Vivesoy/i], ['zumos', /zumo|Essential|Pascual/i], ['bifrutas', /Bifrutas/i],
   ['pan', /pan|congelado/i], ['bolleria', /bollería|congelados/i], ['napolitanas', /Napolitana/i], ['embutidos', /embutido|Chorizo|charcuter|refrigerado/i], ['queso', /queso/i],
@@ -146,7 +146,7 @@ const VARIANTES2 = [
   ['sois de medina del campo', /Medina del Campo/], ['os sigo en redes', /Facebook|Instagram/], ['me ha llegado el pedido incompleto', /albarán|Lamentamos/i], ['me han traido mal el pedido', /albarán|Lamentamos/i],
   ['quiero reclamar', /albarán|Lamentamos/i], ['ahora estais atendiendo', /atendiendo|fuera/i], ['haceis repartos a restaurantes pequeños', /repartimos|90 km|reparto/i], ['envios a toda españa', /90 km|repart|No tengo/i],
   ['repartis en valladolid capital', /Valladolid/i], ['como se paga', /contado|domicili/i], ['que leche usan los bares', /Intense|Classic|Extra/i], ['leche para hacer cafe con leche', /Intense|Barista|Extra/i],
-  ['teneis leche en polvo', /leche|Pascual|635/i], ['leche de coco', /leche|Vivesoy|Pascual|635/i]
+  ['teneis leche en polvo', /leche|Pascual|636/i], ['leche de coco', /leche|Vivesoy|Pascual|636/i]
 ];
 for (const [m, rx] of VARIANTES2) CASOS.push([[m], { texto: rx }]);
 
@@ -172,7 +172,7 @@ const CONTENIDO = [
   ['que ofrece la atencion personalizada', /Atendemos|atención|llama/i], ['que cobertura local teneis', /cobertura|90 km|local/i], ['que vinos de rueda teneis', /Rueda/i],
   ['cuantos pasos son para hacerse cliente', /3 pasos|tres pasos|Nos conocemos/i], ['que es el primer pedido y reparto', /Primer pedido|reparto/i], ['que formas de pago hay en la web', /contado|domicili|pago/i],
   ['que pan congelado teneis', /pan|Panamar|congelado/i], ['que bolleria hay', /bollería|Croissant|Napolitana|congelados/i], ['que quesos teneis', /queso/i], ['que embutidos hay', /embutido|Chorizo|charcut/i],
-  ['teneis huevos', /huevo/i], ['hay leche de coco', /leche|Vivesoy|Pascual|635/i], ['que aguas con gas teneis', /Pellegrino|Pedras|Perrier/i],
+  ['teneis huevos', /huevo/i], ['hay leche de coco', /leche|Vivesoy|Pascual|636/i], ['que aguas con gas teneis', /Pellegrino|Pedras|Perrier/i],
   ['vendeis neumaticos', /No estoy seguro/i], ['alquilais maquinaria de obra', /No estoy seguro|maquinaria/i], ['quien gano el mundial', /No estoy seguro/i]
 ];
 for (const [m, rx, h] of CONTENIDO) CASOS.push([[m], h ? { texto: rx, html: h } : { texto: rx }]);
