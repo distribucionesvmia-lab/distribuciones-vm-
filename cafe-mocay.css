@@ -275,3 +275,5 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 .m-compl-dulces{grid-template-columns:repeat(2,minmax(0,1fr))}
 .m-compl-dulces img{aspect-ratio:1/1;object-fit:contain}
+.m-compl-dulces .m-wide{grid-column:1/-1}
+.m-compl-dulces .m-wide img{aspect-ratio:auto;max-height:340px}
