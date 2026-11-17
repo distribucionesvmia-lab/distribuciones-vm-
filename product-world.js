@@ -188,7 +188,7 @@
             rows.forEach((r,i)=>r.classList.toggle('is-current',i===active));
             scene.querySelectorAll('.pw-e-multi').forEach((m,i)=>m.classList.toggle('is-current',i===active));
             const list=scene.querySelector('.pw-e-list');
-            if (scene.classList.contains('is-scroll') && list) list.scrollTop=rows[active].offsetTop-list.clientHeight*.38;
+            if (scene.classList.contains('is-scroll') && list) { const dy=rows[active].getBoundingClientRect().top-list.getBoundingClientRect().top+list.scrollTop; list.scrollTop=Math.max(0,dy-list.clientHeight*.38); }
           }
           if (scene.classList.contains('pw-d')) {
             const frames=[...scene.querySelectorAll('.pw-d-frame')];
