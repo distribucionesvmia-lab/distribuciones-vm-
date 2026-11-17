@@ -55,53 +55,17 @@
 
 
 
-  /* ---------- vídeo de YouTube ligado al scroll ---------- */
-  var ytReady = null;
-  function loadYT() {
-    if (ytReady) return ytReady;
-    ytReady = new Promise(function (resolve) {
-      if (window.YT && window.YT.Player) return resolve();
-      var prev = window.onYouTubeIframeAPIReady;
-      window.onYouTubeIframeAPIReady = function () { if (prev) prev(); resolve(); };
-      var s = document.createElement('script');
-      s.src = 'https://www.youtube.com/iframe_api';
-      document.head.appendChild(s);
-    });
-    return ytReady;
-  }
-  function makeVideo(autoplay) {
-    var host = document.getElementById('vid-player');
-    if (!host) return Promise.resolve(null);
-    var frame = host.parentNode, start = +host.dataset.start || 0, id = host.dataset.id;
-    // si YouTube no responde (bloqueador, red, abrir el archivo en local), se ofrece el enlace directo
-    function fail() { frame.classList.add('vid-fail'); }
-    var failTimer = setTimeout(fail, 9000);
-    return loadYT().then(function () {
-      return new Promise(function (resolve) {
-        var p = new window.YT.Player('vid-player', {
-          videoId: id,
-          host: 'https://www.youtube-nocookie.com',
-          playerVars: Object.assign({ autoplay: autoplay ? 1 : 0, controls: 1, modestbranding: 1, rel: 0, playsinline: 1, start: start, fs: 1, iv_load_policy: 3 }, /^https?:$/.test(location.protocol) ? { origin: location.origin } : {}),
-          events: {
-            onReady: function (e) {
-              clearTimeout(failTimer);
-              frame.classList.add('vid-ready');
-              if (autoplay) e.target.playVideo();
-              resolve(e.target);
-            },
-            onError: function () { fail(); resolve(null); }
-          }
-        });
-
-      });
-    });
-  }
-
+  /* ---------- vídeo de inicio: arranca solo y sin sonido al verse; se pausa al salir ---------- */
   function armVideo() {
-    var host = document.getElementById('vid-player');
-    var btn = host && host.parentNode.querySelector('.vid-play');
-    if (!btn) { makeVideo(false); return; }
-    btn.addEventListener('click', function () { btn.classList.add('is-loading'); makeVideo(true).then(function () { btn.remove(); }); }, { once: true });
+    var v = document.querySelector('.vid-el');
+    if (!v || v.dataset.armed) return;
+    v.dataset.armed = '1';
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    new IntersectionObserver(function (en) {
+      en.forEach(function (x) {
+        if (x.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause();
+      });
+    }, { threshold: 0.35 }).observe(v);
   }
 
   function start() {
@@ -162,7 +126,7 @@
       rise('.contacto .big', null, { y: 70 });
     })(); } catch (e) { window.__err = 'rise: ' + e.message; }
 
-    // vídeo: el reproductor de YouTube se carga solo al pulsar play
+    // vídeo: arranca solo al verse
     try { armVideo();     } catch (e) { window.__err = 'vid: ' + e.message; }
 
     // recorrido: escenas ilustradas con zoom y fundido controlados por el scroll

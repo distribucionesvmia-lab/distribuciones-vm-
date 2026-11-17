@@ -53,14 +53,8 @@ section{position:relative}
 
 /* vídeo */
 .vid{background:var(--ink);color:var(--cream)}
-.vid-stage{position:relative;display:grid;place-items:center;background:var(--ink);padding:clamp(88px,12vh,120px) var(--m) clamp(48px,8vh,96px)}
-.vid-frame{position:relative;width:min(92vw,1240px);aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#000}
-.vid-frame iframe,.vid-poster{position:absolute;inset:0;width:100%;height:100%;border:0}
-.vid-poster{object-fit:cover;transition:opacity 500ms var(--ease)}
-.vid-ready .vid-poster{opacity:0;pointer-events:none}
-.vid-fallback{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);display:none;padding:14px 24px;border-radius:999px;background:var(--red);color:#fff;text-decoration:none;font-weight:500;white-space:nowrap}
-.vid-fail .vid-fallback{display:inline-flex;gap:10px;z-index:3}
-.vid-fail:not(.vid-ready) .vid-poster{z-index:1}
+.vid-frame{position:relative;width:100%;aspect-ratio:640/352;max-height:92svh;background:#000;overflow:hidden}
+.vid-el{display:block;width:100%;height:100%;object-fit:cover;background:#000}
 
 /* por qué elegirnos */
 .why{padding:clamp(80px,13vw,200px) 0 clamp(64px,10vw,150px);background:var(--paper)}
@@ -274,12 +268,6 @@ form{margin-top:48px;display:grid;gap:10px;grid-template-columns:1fr 1fr 1fr}
 @media (max-width:1450px){.top{flex-wrap:wrap;gap:7px 16px;padding-block:10px}.top nav{order:3;flex:0 0 100%;display:flex;justify-content:flex-start;gap:clamp(16px,3vw,28px);overflow-x:auto;white-space:nowrap;padding:6px 0 2px;scrollbar-width:none}.top nav::-webkit-scrollbar{display:none}}
 @media (max-width:1000px){.top nav{justify-content:flex-start}}
 
-.vid-play{position:absolute;inset:0;z-index:2;display:grid;place-items:center;width:100%;border:0;background:rgba(0,0,0,.18);color:var(--red);cursor:pointer;transition:background .3s}
-.vid-play svg{width:clamp(64px,9vw,96px);filter:drop-shadow(0 6px 18px rgba(0,0,0,.35));transition:transform .3s var(--ease)}
-.vid-play:hover svg,.vid-play:focus-visible svg{transform:scale(1.08)}
-.vid-play:hover{background:rgba(0,0,0,.05)}
-.vid-play.is-loading{opacity:.55;pointer-events:none}
-.vid-ready .vid-play{display:none}
 /* Entregas y plazos */
 .entrega{padding:clamp(72px,11vw,170px) 0;background:var(--ink);color:var(--cream)}
 .ent-title{font-size:clamp(2.4rem,1.2rem + 4.2vw,5.6rem);font-weight:500;letter-spacing:-.045em;line-height:1;max-width:16ch}
