@@ -277,3 +277,12 @@ button,a{-webkit-tap-highlight-color:transparent}
 .m-compl-dulces img{aspect-ratio:1/1;object-fit:contain}
 .m-compl-dulces .m-wide{grid-column:1/-1}
 .m-compl-dulces .m-wide img{aspect-ratio:auto;max-height:340px}
+
+/* fotos en PNG sin fondo: sin tarjeta blanca, sobre el color de la sección */
+.m-compl-dulces figure{background:none;box-shadow:none;padding:0}
+.m-compl-dulces img{aspect-ratio:auto;height:clamp(110px,15vw,190px);width:100%;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(40,28,10,.18))}
+.m-compl-dulces .m-wide img{height:auto;max-height:260px}
+.m-compl-dulces figcaption{margin-top:6px}
+
+.m-compl-dulces figure.is-card{background:#fff;border-radius:12px;padding:clamp(8px,1vw,14px);box-shadow:0 8px 24px rgba(20,16,13,.07)}
+.m-compl-dulces figure.is-card img{filter:none}
