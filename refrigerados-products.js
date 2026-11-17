@@ -36,8 +36,8 @@
     { id:'quesos', n:'07', chip:'Quesos', kicker:'Reny Picot', title:'Quesos',
       lead:'Queso para untar, queso de Burgos, mozzarella, rallados y lonchas.',
       media:[
-        {src:B+'reny-picot-logo.webp', w:212, h:62, alt:'Reny Picot', cls:'rf-m-brand'},
-        {src:B+'reny-picot-quesos.webp', w:500, h:500, alt:'Quesos Reny Picot: queso crema, queso de Burgos, rallado, lonchas y barra', cls:'rf-m-hero'}
+        {src:B+'reny-picot-logo.png', w:212, h:62, alt:'Reny Picot', cls:'rf-m-brand'},
+        {src:B+'reny-picot-quesos.png', w:472, h:467, alt:'Quesos Reny Picot: queso crema, queso de Burgos, rallado, lonchas y barra', cls:'rf-m-hero rf-m-cut'}
       ] },
     { id:'pozo', n:'08', chip:'El Pozo', kicker:'El Pozo', title:'El Pozo',
       lead:'Bacon, paleta, taquitos de jamón y salchichas para hostelería, y jamón en formato sobre para alimentación.',

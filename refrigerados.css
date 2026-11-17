@@ -145,3 +145,5 @@
 
 .rf-media.is-mosaic .rf-m-wide{grid-column:3/5}
 @media(min-width:900px){.rf-card.has-plato{grid-column:span 2}}
+
+.rf-media .rf-m-cut{box-shadow:none;border-radius:0;max-height:440px;filter:drop-shadow(0 14px 18px rgba(24,47,49,.2))}
