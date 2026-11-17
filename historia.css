@@ -43,3 +43,6 @@
  .hi-vcap{left:30px;transform:none;font-size:.62rem}
 }
 @media(prefers-reduced-motion:reduce){.hi-stop{opacity:1;transform:none;transition:none}.hi-vehicle .v{transition:none}}
+
+.hi-mapa .r90,.hi-mapa .t90{opacity:.35;transition:opacity .8s}.hi-ruta.is90 .hi-mapa .r90,.hi-ruta.is90 .hi-mapa .t90{opacity:1}
+.hi-ruta.is90 .hi-mapa .r90{stroke:#c8372d}

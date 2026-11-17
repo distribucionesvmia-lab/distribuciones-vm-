@@ -55,6 +55,7 @@
     veh.style.transform='translate('+p.x+'px,'+p.y+'px) rotate('+tilt+'deg)';
     fl.style.transform=dx<0?'scaleX(-1)':'none';
     var idx=0;pts.forEach(function(s,i){if(s.y<=p.y+20)idx=i});
+    ruta.classList.toggle('is90',idx===stops.length-1);
     if(idx!==cur){cur=idx;var k=stops[idx].dataset.veh;[].forEach.call(fl.children,function(c){c.classList.toggle('on',c.dataset&&c.dataset.k===k)});cap.textContent=stops[idx].dataset.vcap||''}
   }
   if('IntersectionObserver' in window&&!reduce){
