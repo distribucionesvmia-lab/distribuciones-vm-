@@ -286,3 +286,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 .m-compl-dulces figure.is-card{background:#fff;border-radius:12px;padding:clamp(8px,1vw,14px);box-shadow:0 8px 24px rgba(20,16,13,.07)}
 .m-compl-dulces figure.is-card img{filter:none}
+
+.m-compl-dulces .m-premium img{height:auto;max-height:280px;width:auto;max-width:100%;margin:0 auto}
+.m-compl-dulces .m-premium figcaption{display:grid;gap:3px;justify-items:center}
+.m-compl-dulces .m-premium figcaption small{font-size:.74rem;font-weight:500;opacity:.75;letter-spacing:.02em}
