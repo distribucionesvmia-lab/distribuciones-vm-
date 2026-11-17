@@ -19,7 +19,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', family: 'Vajilla', color: '#eceff0', ink: '#1c2830',
       eyebrow: 'Mesa de tu local', title: 'Vajilla para el servicio de cada día.',
-      product: {name:'Vajilla blanca de aspecto rústico: platos llanos, hondos y una fuente alargada sobre un camino de mesa marrón', image:D+'vajilla-mesa-servida.webp', width:1000, height:1381, lazy:true, alt:'Vista cenital de platos llanos, hondos y una fuente alargada de vajilla blanca de aspecto rústico sobre un camino de mesa marrón'},
+      product: {name:'Vajilla blanca de aspecto rústico: platos llanos, hondos y una fuente alargada sobre un camino de mesa marrón', image:D+'vajilla-mesa-servida.png', width:1000, height:1381, lazy:true, alt:'Vista cenital de platos llanos, hondos y una fuente alargada de vajilla blanca de aspecto rústico sobre un camino de mesa marrón'},
       variants: [
         {name:'Piensa en tu carta', description:'Piezas para el menú del día, las tapas o la carta. Si abres o reformas, te asesoramos con las medidas y el estilo de tu sala.'},
         {name:'Platos, bols y tazas', description:'Piezas para el servicio de cada día en bares, restaurantes y hoteles.'},
@@ -41,7 +41,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', family: 'Cristalería', color: '#f1ebe4', ink: '#1c2830',
       eyebrow: 'Barra y sala', title: 'Cristalería a prueba de cada servicio.',
-      product: {name:'Copa de pie alto con una bebida y espuma sobre una barra, mientras un barman ralla especias encima', image:D+'cristaleria-copas-talladas.webp', width:1000, height:1381, lazy:true, alt:'Barman rallando especias sobre una copa de pie alto con una bebida ámbar y espuma en una barra'},
+      product: {name:'Copa de pie alto con una bebida y espuma sobre una barra, mientras un barman ralla especias encima', image:D+'cristaleria-copas-talladas.png', width:1000, height:1381, lazy:true, alt:'Barman rallando especias sobre una copa de pie alto con una bebida ámbar y espuma en una barra'},
       variants: [
         {name:'Vasos y copas', description:'Copas y vasos de Arcoroc y Vicrila, pensados para barra y sala. Arcoroc lo llama «Everyday Proof»; Vicrila habla de durabilidad, diseño y eficiencia operativa.'},
         {name:'Según lo que sirves', description:'Agua, vino, cerveza o refrescos piden vasos y copas distintos. Cuéntanos tu carta.'},
@@ -52,7 +52,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', family: 'Mantelería y textil', color: '#dbe3e8', ink: '#1c2830',
       eyebrow: 'Mesa vestida', title: 'Una mesa bien vestida, sin complicar el servicio.',
-      product: {name:'Mesa redonda con mantel blanco y sillas de mimbre en un comedor luminoso', image:D+'manteleria-mesa-redonda.webp', width:1100, height:733, lazy:true, alt:'Mesa redonda con mantel blanco y sillas de mimbre en un comedor luminoso'},
+      product: {name:'Mesa redonda con mantel blanco y sillas de mimbre en un comedor luminoso', image:D+'manteleria-mesa-redonda.png', width:1100, height:733, lazy:true, alt:'Mesa redonda con mantel blanco y sillas de mimbre en un comedor luminoso'},
       variants: [
         {name:'Manteles y servilletas', description:'Manteles y caminos Newtex: imagen tipo tela, resistentes y prácticos en servicios de mucho volumen.'},
         {name:'Textil de sala', description:'Consúltanos qué textil necesita tu sala y lo revisamos contigo.'},

@@ -12,7 +12,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Maíz dulce en grano · 3 kg",
     "description": "Maíz dulce en conserva, en formato lata de 3 kg.",
-    "image": "assets/despensa/villacampo/villacampo-528-maiz-dulce-en-grano-primera-3kg-lata-fa.webp",
+    "image": "assets/despensa/villacampo/villacampo-528-maiz-dulce-en-grano-primera-3kg-lata-fa.png",
     "width": 477,
     "height": 620,
     "alt": "Maíz dulce en grano · 3 kg, Villa Campo"
@@ -20,7 +20,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Maíz dulce · ½ kg",
     "description": "Maíz dulce en conserva, en formato de media lata.",
-    "image": "assets/despensa/extra/villa-campo_maiz-dulce-medio-kg.webp",
+    "image": "assets/despensa/extra/villa-campo_maiz-dulce-medio-kg.png",
     "width": 244,
     "height": 244,
     "alt": "Villa Campo Maíz dulce ½ kg"
@@ -28,7 +28,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Zanahoria rallada · 3 kg",
     "description": "Zanahoria rallada en conserva, lista para ensaladas y guarniciones.",
-    "image": "assets/despensa/villacampo/villacampo-474-zanahoria-rallada-primera-3kg-lata.webp",
+    "image": "assets/despensa/villacampo/villacampo-474-zanahoria-rallada-primera-3kg-lata.png",
     "width": 477,
     "height": 620,
     "alt": "Zanahoria rallada · 3 kg, Villa Campo"
@@ -36,7 +36,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Brotes de ajo",
     "description": "Brotes de ajo en conserva, en tarro de 720 ml.",
-    "image": "assets/despensa/villacampo/villacampo-342-brotes-de-ajo-primera-tarro-v720ml.webp",
+    "image": "assets/despensa/villacampo/villacampo-342-brotes-de-ajo-primera-tarro-v720ml.png",
     "width": 477,
     "height": 620,
     "alt": "Brotes de ajo, Villa Campo"
@@ -44,7 +44,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Judía verde · 3 kg",
     "description": "Judía verde redonda, fina y cortada, en conserva.",
-    "image": "assets/despensa/villacampo/villacampo-331-judia-verde-redonda-fina-cortada-primera-3kg-lata.webp",
+    "image": "assets/despensa/villacampo/villacampo-331-judia-verde-redonda-fina-cortada-primera-3kg-lata.png",
     "width": 477,
     "height": 620,
     "alt": "Judía verde · 3 kg, Villa Campo"
@@ -52,7 +52,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Guisantes · 3 kg",
     "description": "Guisantes finos en conserva, en lata de 3 kg.",
-    "image": "assets/despensa/villacampo/villacampo-330-guisantes-del-pais-finos-primera-3kg-lata.webp",
+    "image": "assets/despensa/villacampo/villacampo-330-guisantes-del-pais-finos-primera-3kg-lata.png",
     "width": 477,
     "height": 620,
     "alt": "Guisantes · 3 kg, Villa Campo"
@@ -60,7 +60,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Macedonia de verduras · 3 kg",
     "description": "Selección de verduras en conserva, en lata de 3 kg.",
-    "image": "assets/despensa/villacampo/villacampo-338-macedonia-de-verduras-primera-3kg-lata.webp",
+    "image": "assets/despensa/villacampo/villacampo-338-macedonia-de-verduras-primera-3kg-lata.png",
     "width": 477,
     "height": 620,
     "alt": "Macedonia de verduras · 3 kg, Villa Campo"
@@ -68,7 +68,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Menestra de verduras · 3 kg",
     "description": "Menestra de verduras en conserva, en lata de 3 kg.",
-    "image": "assets/despensa/villacampo/villacampo-340-menestra-de-verduras-primera-3kg-lata.webp",
+    "image": "assets/despensa/villacampo/villacampo-340-menestra-de-verduras-primera-3kg-lata.png",
     "width": 477,
     "height": 620,
     "alt": "Menestra de verduras · 3 kg, Villa Campo"
@@ -87,7 +87,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Espárrago extra 6/8",
     "description": "Espárrago blanco extra en lata rectangular; la ficha oficial indica formato de 1 kg.",
-    "image": "assets/despensa/villacampo/villacampo-406-esparrago-extra-1kg-lata-rectangular-68f.webp",
+    "image": "assets/despensa/villacampo/villacampo-406-esparrago-extra-1kg-lata-rectangular-68f.png",
     "width": 477,
     "height": 620,
     "alt": "Espárrago extra 6/8, Villa Campo"
@@ -95,7 +95,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Espárrago extra 9/12",
     "description": "Espárrago blanco extra en lata rectangular; la ficha oficial indica formato de 1 kg.",
-    "image": "assets/despensa/villacampo/villacampo-407-esparrago-extra-1kg-lata-rectangular-912f.webp",
+    "image": "assets/despensa/villacampo/villacampo-407-esparrago-extra-1kg-lata-rectangular-912f.png",
     "width": 477,
     "height": 620,
     "alt": "Espárrago extra 9/12, Villa Campo"
@@ -103,7 +103,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Espárrago extra 13/16",
     "description": "Espárrago blanco extra en lata rectangular; la ficha oficial indica formato de 1 kg.",
-    "image": "assets/despensa/villacampo/villacampo-408-esparrago-extra-1kg-lata-rectangular-1316f.webp",
+    "image": "assets/despensa/villacampo/villacampo-408-esparrago-extra-1kg-lata-rectangular-1316f.png",
     "width": 477,
     "height": 620,
     "alt": "Espárrago extra 13/16, Villa Campo"
@@ -111,7 +111,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Espárrago extra 17/24",
     "description": "Espárrago blanco extra en lata rectangular; la ficha oficial indica formato de 1 kg.",
-    "image": "assets/despensa/villacampo/villacampo-409-esparrago-extra-1kg-lata-rectangular-1724f.webp",
+    "image": "assets/despensa/villacampo/villacampo-409-esparrago-extra-1kg-lata-rectangular-1724f.png",
     "width": 477,
     "height": 620,
     "alt": "Espárrago extra 17/24, Villa Campo"
@@ -130,7 +130,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Pimiento morrón en tiras · 3 kg",
     "description": "Pimiento morrón rojo en tiras, en conserva.",
-    "image": "assets/despensa/villacampo/villacampo-378-pimiento-morron-primera-tiras-rojas-3kg-lata.webp",
+    "image": "assets/despensa/villacampo/villacampo-378-pimiento-morron-primera-tiras-rojas-3kg-lata.png",
     "width": 477,
     "height": 620,
     "alt": "Pimiento morrón en tiras · 3 kg, Villa Campo"
@@ -138,7 +138,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Pimiento del piquillo extra 80/100 · 3 kg",
     "description": "Pimientos del piquillo extra en conserva, con calibre 80/100.",
-    "image": "assets/despensa/villacampo/villacampo-370-pimiento-piquillo-extra-3kg-lata-80100f.webp",
+    "image": "assets/despensa/villacampo/villacampo-370-pimiento-piquillo-extra-3kg-lata-80100f.png",
     "width": 477,
     "height": 620,
     "alt": "Pimiento del piquillo extra 80/100 · 3 kg, Villa Campo"
@@ -146,7 +146,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Pimiento del piquillo en tiras · 3 kg",
     "description": "Pimiento del piquillo en tiras rojas, en lata de 3 kg.",
-    "image": "assets/despensa/villacampo/villacampo-371-pimiento-piquillo-primera-tiras-rojas-3kg-lata.webp",
+    "image": "assets/despensa/villacampo/villacampo-371-pimiento-piquillo-primera-tiras-rojas-3kg-lata.png",
     "width": 477,
     "height": 620,
     "alt": "Pimiento del piquillo en tiras · 3 kg, Villa Campo"
@@ -154,7 +154,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Champiñón laminado · 3 kg",
     "description": "Champiñones laminados en conserva, en lata de 3 kg.",
-    "image": "assets/despensa/villacampo/villacampo-432-champinon-laminado-primera-3kg-lata.webp",
+    "image": "assets/despensa/villacampo/villacampo-432-champinon-laminado-primera-3kg-lata.png",
     "width": 477,
     "height": 620,
     "alt": "Champiñón laminado · 3 kg, Villa Campo"
@@ -162,7 +162,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Melocotón 30/40 · 3 kg",
     "description": "Melocotón en almíbar ligero, en lata de 3 kg.",
-    "image": "assets/despensa/villacampo/villacampo-498-melocoton-extra-en-almibar-ligero-1416brix-3kg-lata-3040.webp",
+    "image": "assets/despensa/villacampo/villacampo-498-melocoton-extra-en-almibar-ligero-1416brix-3kg-lata-3040.png",
     "width": 477,
     "height": 620,
     "alt": "Melocotón 30/40 · 3 kg, Villa Campo"
@@ -170,7 +170,7 @@ window.VILLACAMPO_SECTIONS = [
    {
     "name": "Cóctel de frutas · 3 kg",
     "description": "Cóctel de cinco frutas en almíbar ligero, en lata de 3 kg.",
-    "image": "assets/despensa/villacampo/villacampo-504-coctel-de-frutas-primera-en-almibar-ligero-1416brix-3kg-.webp",
+    "image": "assets/despensa/villacampo/villacampo-504-coctel-de-frutas-primera-en-almibar-ligero-1416brix-3kg-.png",
     "width": 477,
     "height": 620,
     "alt": "Cóctel de frutas · 3 kg, Villa Campo"

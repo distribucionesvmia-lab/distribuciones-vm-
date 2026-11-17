@@ -9,12 +9,12 @@ window.ProductWorld.init({
       eyebrow: 'La colección en la mesa', title: 'Conservas con receta.',
       description: 'Las referencias de la edición limitada, presentadas junto a platos pensados para cada una.',
       products: [
-        {name:'Sardinillas con cebolla pochada', description:'Sardinillas en salsa con cebolla pochada.', image:D+'calvo-receta-sardinillas-cebolla.webp', width:482, height:361, cover:true, alt:'Lata Calvo de sardinillas en salsa con cebolla pochada junto a un plato servido'},
-        {name:'Sardinillas con tomate seco', description:'Sardinillas en salsa con tomate seco.', image:D+'calvo-receta-sardinillas-tomate.webp', width:483, height:361, cover:true, alt:'Lata Calvo de sardinillas en salsa con tomate seco junto a un plato servido'},
-        {name:'Mejillones al albariño', description:'Mejillones en salsa de vino albariño.', image:D+'calvo-receta-mejillones-albarino.webp', width:481, height:361, cover:true, alt:'Lata Calvo de mejillones en salsa de vino albariño junto a un plato servido'},
-        {name:'Ventresca escabechada', description:'Ventresca de atún claro escabechada.', image:D+'calvo-receta-ventresca.webp', width:482, height:440, cover:true, alt:'Lata Calvo de ventresca de atún claro escabechada junto a un plato servido'},
-        {name:'Mejillones en salsa gallega', description:'Mejillones en salsa gallega, listos para una mesa navideña.', image:D+'calvo-receta-mejillones-gallega.webp', width:483, height:440, cover:true, alt:'Latas Calvo de mejillones en salsa gallega y aperitivo servido'},
-        {name:'La colección completa', description:'Las latas de la edición limitada.', image:D+'calvo-coleccion.webp', width:685, height:444, cover:true, alt:'Colección de latas Calvo de edición limitada sobre una mesa'}
+        {name:'Sardinillas con cebolla pochada', description:'Sardinillas en salsa con cebolla pochada.', image:D+'calvo-receta-sardinillas-cebolla.png', width:482, height:361, cover:true, alt:'Lata Calvo de sardinillas en salsa con cebolla pochada junto a un plato servido'},
+        {name:'Sardinillas con tomate seco', description:'Sardinillas en salsa con tomate seco.', image:D+'calvo-receta-sardinillas-tomate.png', width:483, height:361, cover:true, alt:'Lata Calvo de sardinillas en salsa con tomate seco junto a un plato servido'},
+        {name:'Mejillones al albariño', description:'Mejillones en salsa de vino albariño.', image:D+'calvo-receta-mejillones-albarino.png', width:481, height:361, cover:true, alt:'Lata Calvo de mejillones en salsa de vino albariño junto a un plato servido'},
+        {name:'Ventresca escabechada', description:'Ventresca de atún claro escabechada.', image:D+'calvo-receta-ventresca.png', width:482, height:440, cover:true, alt:'Lata Calvo de ventresca de atún claro escabechada junto a un plato servido'},
+        {name:'Mejillones en salsa gallega', description:'Mejillones en salsa gallega, listos para una mesa navideña.', image:D+'calvo-receta-mejillones-gallega.png', width:483, height:440, cover:true, alt:'Latas Calvo de mejillones en salsa gallega y aperitivo servido'},
+        {name:'La colección completa', description:'Las latas de la edición limitada.', image:D+'calvo-coleccion.png', width:685, height:444, cover:true, alt:'Colección de latas Calvo de edición limitada sobre una mesa'}
       ]
     },
     {
@@ -22,11 +22,11 @@ window.ProductWorld.init({
       eyebrow: 'Del plato a la barra', title: 'Formatos que aguantan la rotación.',
       description: 'Bolsas y latas de gran formato Calvo e Isabel, pensadas para abrirse fácil, ocupar menos y servir con ritmo. Isabel, en bolsa de 1 kg, habla de «sabor y calidad de primera».',
       products: [
-        {name:'Atún Eureka', description:'Atún en trozos en aceite de girasol.', image:D+'calvo-hosteleria-eureka.webp', width:332, height:477, alt:'Bolsa Eureka de atún en trozos en aceite de girasol'},
-        {name:'Atún Isabel · bolsa de 1 kg', description:'Atún en aceite de girasol en bolsa de 1 kg, para cocina profesional.', image:D+'isabel-atun-bolsa-1kg.webp', width:350, height:480, alt:'Bolsa Isabel de atún en aceite de girasol de 1 kg'},
-        {name:'Calamares en tinta', description:'Calvo, calamares en tinta en formato bolsa.', image:D+'calvo-hosteleria-calamares-tinta.webp', width:671, height:956, alt:'Bolsa Calvo de calamares en tinta'},
-        {name:'Calamares en salsa americana', description:'Calvo, calamares en salsa americana en formato bolsa.', image:D+'calvo-hosteleria-calamares-americana.webp', width:334, height:478, alt:'Bolsa Calvo de calamares en salsa americana'},
-        {name:'Atún en aceite de oliva · lata de 750 g', description:'Atún Calvo en aceite de oliva, en lata de gran formato de 750 g.', image:D+'calvo-hosteleria-atun-lata-750g.webp', width:364, height:271, alt:'Lata de gran formato de atún Calvo'}
+        {name:'Atún Eureka', description:'Atún en trozos en aceite de girasol.', image:D+'calvo-hosteleria-eureka.png', width:332, height:477, alt:'Bolsa Eureka de atún en trozos en aceite de girasol'},
+        {name:'Atún Isabel · bolsa de 1 kg', description:'Atún en aceite de girasol en bolsa de 1 kg, para cocina profesional.', image:D+'isabel-atun-bolsa-1kg.png', width:350, height:480, alt:'Bolsa Isabel de atún en aceite de girasol de 1 kg'},
+        {name:'Calamares en tinta', description:'Calvo, calamares en tinta en formato bolsa.', image:D+'calvo-hosteleria-calamares-tinta.png', width:671, height:956, alt:'Bolsa Calvo de calamares en tinta'},
+        {name:'Calamares en salsa americana', description:'Calvo, calamares en salsa americana en formato bolsa.', image:D+'calvo-hosteleria-calamares-americana.png', width:334, height:478, alt:'Bolsa Calvo de calamares en salsa americana'},
+        {name:'Atún en aceite de oliva · lata de 750 g', description:'Atún Calvo en aceite de oliva, en lata de gran formato de 750 g.', image:D+'calvo-hosteleria-atun-lata-750g.png', width:364, height:271, alt:'Lata de gran formato de atún Calvo'}
       ]
     },
     {
@@ -34,9 +34,9 @@ window.ProductWorld.init({
       eyebrow: 'Helios', title: 'El sabor del origen.',
       description: 'Porque, para Helios, origen es sinónimo de calidad. Por eso seleccionan solo las mejores materias primas procedentes de cultivo local. En hostelería, Helios habla de «el producto adecuado para cada necesidad», en porciones, dispensador y tarro.',
       products: [
-        {name:'Mermeladas y confituras', description:'Gama de mermeladas y confituras Helios.', image:D+'helios-mermeladas.webp', width:421, height:302, cover:true, alt:'Tarro de mermelada de fresa Helios'},
-        {name:'Tomate frito y salsas pasta', description:'Tomate frito mediterráneo y salsas para pasta.', image:D+'helios-tomate-frito.webp', width:425, height:302, cover:true, alt:'Tarro de tomate frito mediterráneo Helios'},
-        {name:'Vegetales', description:'Gama de vegetales Helios.', image:D+'helios-vegetales.webp', width:423, height:302, cover:true, alt:'Tarro de Torti-Ya de Helios'}
+        {name:'Mermeladas y confituras', description:'Gama de mermeladas y confituras Helios.', image:D+'helios-mermeladas.png', width:421, height:302, cover:true, alt:'Tarro de mermelada de fresa Helios'},
+        {name:'Tomate frito y salsas pasta', description:'Tomate frito mediterráneo y salsas para pasta.', image:D+'helios-tomate-frito.png', width:425, height:302, cover:true, alt:'Tarro de tomate frito mediterráneo Helios'},
+        {name:'Vegetales', description:'Gama de vegetales Helios.', image:D+'helios-vegetales.png', width:423, height:302, cover:true, alt:'Tarro de Torti-Ya de Helios'}
       ]
     },
     ...(window.HELIOS_SECTIONS || []),
@@ -46,27 +46,27 @@ window.ProductWorld.init({
       eyebrow: 'Salsas Prima', title: 'Salseo del bueno.',
       description: 'Una amplia variedad de deliciosas salsas elaboradas de forma responsable con tu salud, con ingredientes de aquí y la experiencia de más de 40 años a tu lado, acompañando tus platos y trabajando para mejorar cada día. Formatos Prima pensados para hostelería, con el sabor de siempre y tomate 100 % origen España.',
       showcase: [
-        {image:'assets/despensa/prima/prima-ketchup.webp', alt:'Kétchup Prima · bote de 1,8 kg'},
-        {image:'assets/despensa/prima/prima-brava.webp', alt:'Salsa brava Prima · 1,8 kg'},
-        {image:'assets/despensa/prima/prima-mayonesa-1800.webp', alt:'Mayonesa Prima · cubo de 1.800 ml'},
-        {image:'assets/despensa/prima/prima-cheddar-1850.webp', alt:'Salsa cheddar Prima · cubo de 1.850 g'},
-        {image:'assets/despensa/prima/prima-alioli.webp', alt:'Alioli Prima · cubo de 1,8 kg'},
-        {image:'assets/despensa/prima/prima-mayonesa-2900.webp', alt:'Mayonesa Prima · cubo de 2.900 ml'},
-        {image:'assets/despensa/prima/prima-mayonesa-4400.webp', alt:'Mayonesa Prima · cubo de 4,4 kg'}
+        {image:'assets/despensa/prima/prima-ketchup.png', alt:'Kétchup Prima · bote de 1,8 kg'},
+        {image:'assets/despensa/prima/prima-brava.png', alt:'Salsa brava Prima · 1,8 kg'},
+        {image:'assets/despensa/prima/prima-mayonesa-1800.png', alt:'Mayonesa Prima · cubo de 1.800 ml'},
+        {image:'assets/despensa/prima/prima-cheddar-1850.png', alt:'Salsa cheddar Prima · cubo de 1.850 g'},
+        {image:'assets/despensa/prima/prima-alioli.png', alt:'Alioli Prima · cubo de 1,8 kg'},
+        {image:'assets/despensa/prima/prima-mayonesa-2900.png', alt:'Mayonesa Prima · cubo de 2.900 ml'},
+        {image:'assets/despensa/prima/prima-mayonesa-4400.png', alt:'Mayonesa Prima · cubo de 4,4 kg'}
       ],
       bottom: '05 — Gama de salsas',
-      logo: {image:D+'prima-logo.webp', width:430, height:280, alt:'Prima'},
-      product: {name:'Gama de salsas Prima', image:D+'prima-gama.webp', width:2694, height:690, wide:true, alt:'Gama de salsas Prima: mayonesas, kétchup, mostazas y otras salsas'}
+      logo: {image:D+'prima-logo.png', width:430, height:280, alt:'Prima'},
+      product: {name:'Gama de salsas Prima', image:D+'prima-gama.png', width:2694, height:690, wide:true, alt:'Gama de salsas Prima: mayonesas, kétchup, mostazas y otras salsas'}
     },
     {
       template: 'range', family: 'Carbonell · Koipe', color: '#fff8e6', ink: '#1f6b43',
       eyebrow: 'Aceites', title: 'Carbonell. «Somos lo que cocinamos.»',
       description: 'Virgen Extra 5 L y gama profesional, en el formato que pide tu negocio. Koipe, al lado, para cuando la cocina pide aceite de semillas (Koipe Profesional y Koipe Sol).',
       products: [
-        {name:'Virgen Extra · 5 L', description:'Carbonell, aceite de oliva virgen extra en formato ahorro.', image:D+'carbonell-virgen-extra-5l.webp', width:233, height:613, alt:'Garrafa Carbonell Virgen Extra de 5 litros'},
-        {name:'Carbonell Profesional', description:'Aceite de la gama profesional Carbonell.', image:D+'carbonell-carbonell-profesional.webp', width:110, height:286, alt:'Garrafa Carbonell Profesional'},
-        {name:'Koipe Profesional', description:'Aceite de la gama profesional Koipe.', image:D+'carbonell-koipe-profesional.webp', width:103, height:289, alt:'Garrafa Koipe Profesional'},
-        {name:'Koipe Sol', description:'Aceite de girasol Koipe Sol.', image:D+'carbonell-koipe-sol.webp', width:103, height:287, alt:'Garrafa Koipe Sol'}
+        {name:'Virgen Extra · 5 L', description:'Carbonell, aceite de oliva virgen extra en formato ahorro.', image:D+'carbonell-virgen-extra-5l.png', width:233, height:613, alt:'Garrafa Carbonell Virgen Extra de 5 litros'},
+        {name:'Carbonell Profesional', description:'Aceite de la gama profesional Carbonell.', image:D+'carbonell-carbonell-profesional.png', width:110, height:286, alt:'Garrafa Carbonell Profesional'},
+        {name:'Koipe Profesional', description:'Aceite de la gama profesional Koipe.', image:D+'carbonell-koipe-profesional.png', width:103, height:289, alt:'Garrafa Koipe Profesional'},
+        {name:'Koipe Sol', description:'Aceite de girasol Koipe Sol.', image:D+'carbonell-koipe-sol.png', width:103, height:287, alt:'Garrafa Koipe Sol'}
       ]
     },
     {
@@ -74,22 +74,22 @@ window.ProductWorld.init({
       eyebrow: 'Especias y hierbas', title: 'Carmencita. «Cultura del sabor.»',
       note: 'En los formatos PET y gramajes que usa una cocina profesional, servicio tras servicio. Imágenes de Carmencita: ilustración de la especia y, donde aparece, su bote PET',
       variants: [
-        {name:'Orégano · 95 g', description:'Orégano seco para dar aroma y sabor a pizzas, pastas, ensaladas y otros platos.', image:D+'carmencita-oregano-pet.webp', width:800, height:640, alt:'Orégano, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
-        {name:'Ajo en polvo · 625 g', description:'Ajo deshidratado y molido, práctico para sazonar carnes, verduras, salsas y guisos.', image:D+'carmencita-ajo-pet.webp', width:800, height:640, alt:'Ajo, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
-        {name:'Guindilla cayena · 160 g', description:'Guindilla cayena para aportar un toque picante a guisos, salsas y otros platos.', image:D+'carmencita-cayena-pet.webp', width:800, height:640, alt:'Guindilla cayena, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
-        {name:'Pimienta negra molida · 510 g', description:'Pimienta negra molida para condimentar carnes, pescados, verduras y salsas.', image:D+'carmencita-pimienta-negra.webp', width:640, height:640, alt:'Pimienta negra, imagen ilustrativa de Carmencita'},
-        {name:'Perejil · 110 g', description:'Perejil seco para añadir sabor y aroma a guisos, sopas, pescados y salsas.', image:D+'carmencita-perejil-pet.webp', width:800, height:640, alt:'Perejil, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
-        {name:'Pimentón dulce · 490 g', description:'Pimentón dulce para dar color y sabor a arroces, guisos, carnes y verduras.', image:D+'carmencita-pimenton-pet.webp', width:800, height:640, alt:'Pimentón, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
-        {name:'Pimienta blanca molida · 510 g', description:'Pimienta blanca molida, adecuada para sazonar salsas, cremas, pescados y otros platos.', image:D+'carmencita-pimienta-blanca-pet.webp', width:800, height:640, alt:'Pimienta blanca, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
-        {name:'Colorante alimentario · 625 g', description:'Colorante alimentario para aportar un tono dorado a arroces y otros platos.', image:D+'carmencita-colorante-625g.webp', width:165, height:280, alt:'Colorante alimentario 625 g'},
-        {name:'Laurel en hojas · 40 g', description:'Hojas de laurel para aromatizar guisos, caldos, legumbres y estofados.', image:D+'carmencita-laurel-pet.webp', width:800, height:640, alt:'Laurel, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
-        {name:'Comino en grano · 390 g', description:'Comino entero para condimentar guisos, salsas, escabeches y recetas tradicionales.', image:D+'carmencita-comino-grano-pet.webp', width:800, height:640, alt:'Comino, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
-        {name:'Comino molido · 440 g', description:'Comino molido para incorporar fácilmente a guisos, salsas y otros platos.', image:D+'carmencita-comino-molido-pet.webp', width:800, height:640, alt:'Comino, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
-        {name:'Pimienta negra en grano · 500 g', description:'Granos de pimienta negra para moler o añadir a caldos, guisos y marinados.', image:D+'carmencita-pimienta-negra-pet.webp', width:800, height:640, alt:'Pimienta negra, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
-        {name:'Bicarbonato · 1 kg', description:'Bicarbonato sódico para usos culinarios, como repostería y preparación de masas.', image:'assets/despensa/extra/carmencita_bicarbonato-1kg.webp', width:381, height:381, alt:'Carmencita Bicarbonato 1 kg'},
-        {name:'Clavo en grano · 550 g', description:'Clavos enteros para aromatizar platos dulces, guisos, caldos y marinados.', image:D+'carmencita-clavo-pet.webp', width:800, height:640, alt:'Clavo, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
-        {name:'Canela en rama · 170 g', description:'Canela en rama para aromatizar postres, bebidas y preparaciones de cocina.', image:D+'carmencita-canela-rama-pet.webp', width:800, height:640, alt:'Canela, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
-        {name:'Canela molida · 410 g', description:'Canela molida para repostería, postres, bebidas y otras recetas.', image:D+'carmencita-canela-molida-pet.webp', width:800, height:640, alt:'Canela, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'}
+        {name:'Orégano · 95 g', description:'Orégano seco para dar aroma y sabor a pizzas, pastas, ensaladas y otros platos.', image:D+'carmencita-oregano-pet.png', width:800, height:640, alt:'Orégano, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
+        {name:'Ajo en polvo · 625 g', description:'Ajo deshidratado y molido, práctico para sazonar carnes, verduras, salsas y guisos.', image:D+'carmencita-ajo-pet.png', width:800, height:640, alt:'Ajo, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
+        {name:'Guindilla cayena · 160 g', description:'Guindilla cayena para aportar un toque picante a guisos, salsas y otros platos.', image:D+'carmencita-cayena-pet.png', width:800, height:640, alt:'Guindilla cayena, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
+        {name:'Pimienta negra molida · 510 g', description:'Pimienta negra molida para condimentar carnes, pescados, verduras y salsas.', image:D+'carmencita-pimienta-negra.png', width:640, height:640, alt:'Pimienta negra, imagen ilustrativa de Carmencita'},
+        {name:'Perejil · 110 g', description:'Perejil seco para añadir sabor y aroma a guisos, sopas, pescados y salsas.', image:D+'carmencita-perejil-pet.png', width:800, height:640, alt:'Perejil, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
+        {name:'Pimentón dulce · 490 g', description:'Pimentón dulce para dar color y sabor a arroces, guisos, carnes y verduras.', image:D+'carmencita-pimenton-pet.png', width:800, height:640, alt:'Pimentón, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
+        {name:'Pimienta blanca molida · 510 g', description:'Pimienta blanca molida, adecuada para sazonar salsas, cremas, pescados y otros platos.', image:D+'carmencita-pimienta-blanca-pet.png', width:800, height:640, alt:'Pimienta blanca, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
+        {name:'Colorante alimentario · 625 g', description:'Colorante alimentario para aportar un tono dorado a arroces y otros platos.', image:D+'carmencita-colorante-625g.png', width:165, height:280, alt:'Colorante alimentario 625 g'},
+        {name:'Laurel en hojas · 40 g', description:'Hojas de laurel para aromatizar guisos, caldos, legumbres y estofados.', image:D+'carmencita-laurel-pet.png', width:800, height:640, alt:'Laurel, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
+        {name:'Comino en grano · 390 g', description:'Comino entero para condimentar guisos, salsas, escabeches y recetas tradicionales.', image:D+'carmencita-comino-grano-pet.png', width:800, height:640, alt:'Comino, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
+        {name:'Comino molido · 440 g', description:'Comino molido para incorporar fácilmente a guisos, salsas y otros platos.', image:D+'carmencita-comino-molido-pet.png', width:800, height:640, alt:'Comino, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
+        {name:'Pimienta negra en grano · 500 g', description:'Granos de pimienta negra para moler o añadir a caldos, guisos y marinados.', image:D+'carmencita-pimienta-negra-pet.png', width:800, height:640, alt:'Pimienta negra, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
+        {name:'Bicarbonato · 1 kg', description:'Bicarbonato sódico para usos culinarios, como repostería y preparación de masas.', image:'assets/despensa/extra/carmencita_bicarbonato-1kg.png', width:381, height:381, alt:'Carmencita Bicarbonato 1 kg'},
+        {name:'Clavo en grano · 550 g', description:'Clavos enteros para aromatizar platos dulces, guisos, caldos y marinados.', image:D+'carmencita-clavo-pet.png', width:800, height:640, alt:'Clavo, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
+        {name:'Canela en rama · 170 g', description:'Canela en rama para aromatizar postres, bebidas y preparaciones de cocina.', image:D+'carmencita-canela-rama-pet.png', width:800, height:640, alt:'Canela, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'},
+        {name:'Canela molida · 410 g', description:'Canela molida para repostería, postres, bebidas y otras recetas.', image:D+'carmencita-canela-molida-pet.png', width:800, height:640, alt:'Canela, imagen ilustrativa de Carmencita, con el bote PET de Carmencita'}
       ]
     },
     {
@@ -97,34 +97,34 @@ window.ProductWorld.init({
       eyebrow: 'Sal marina · 1 kg', title: 'La Ballena, sal marina para tu cocina.',
       note: 'Una imagen por variedad',
       variants: [
-        {name:'Sal marina gruesa · 1 kg', description:'Sal marina de grano grueso para cocinar y sazonar alimentos.', image:D+'ballena-sal-gruesa.webp', width:278, height:389, alt:'Caja de sal marina gruesa La Ballena de 1 kg'},
-        {name:'Sal marina fina · 1 kg', description:'Sal marina de grano fino para sazonar alimentos y utilizar en la cocina diaria.', image:D+'ballena-sal-fina.webp', width:296, height:409, alt:'Caja de sal marina fina La Ballena de 1 kg'},
-        {name:'Sal marina fina yodada · 1 kg', description:'Sal marina fina con yodo añadido, para sazonar alimentos.', image:D+'ballena-sal-fina-yodada.webp', width:365, height:403, alt:'Caja de sal marina fina yodada La Ballena de 1 kg'}
+        {name:'Sal marina gruesa · 1 kg', description:'Sal marina de grano grueso para cocinar y sazonar alimentos.', image:D+'ballena-sal-gruesa.png', width:278, height:389, alt:'Caja de sal marina gruesa La Ballena de 1 kg'},
+        {name:'Sal marina fina · 1 kg', description:'Sal marina de grano fino para sazonar alimentos y utilizar en la cocina diaria.', image:D+'ballena-sal-fina.png', width:296, height:409, alt:'Caja de sal marina fina La Ballena de 1 kg'},
+        {name:'Sal marina fina yodada · 1 kg', description:'Sal marina fina con yodo añadido, para sazonar alimentos.', image:D+'ballena-sal-fina-yodada.png', width:365, height:403, alt:'Caja de sal marina fina yodada La Ballena de 1 kg'}
       ]
     },
     {
       template: 'video', family: 'Luengo · Vídeo', color: '#f3ead7', ink: '#4a3416',
       eyebrow: 'Vídeo de la marca', title: 'Luengo, en movimiento.',
       note: 'Legumbres Luengo. Nuestra casa es tu casa.',
-      video: {src:'assets/video/luengo-nuestra-casa-es-tu-casa.mp4', poster:'assets/video/luengo-poster.webp', title:'Legumbres Luengo. Nuestra casa es tu casa', author:'Legumbres Luengo'}
+      video: {src:'assets/video/luengo-nuestra-casa-es-tu-casa.mp4', poster:'assets/video/luengo-poster.png', title:'Legumbres Luengo. Nuestra casa es tu casa', author:'Legumbres Luengo'}
     },
     {
       template: 'lineup', family: 'Luengo', color: '#f3ead7', ink: '#4a3416',
       eyebrow: 'Legumbres secas y cocidas', title: 'Luengo. «Cuando son Luengo, tú lo sabes.»',
       note: 'Más de cien años de legumbres: alubia, garbanzo y lenteja, en saco, frasco y lata de hostelería. Sabor, calidad y textura que se reconocen en el plato. Imagen de la ficha del producto · puede diferir del formato',
       variants: [
-        {name:'Alubia blanca cocida · frasco de 570 g', description:'Alubias blancas cocidas en conserva, listas para consumir.', image:D+'luengo-alubia-blanca-cocida.webp', width:473, height:900, alt:'Frasco de alubia blanca cocida Luengo'},
-        {name:'Alubia de granja cocida · frasco de 570 g', description:'Alubias de granja cocidas en conserva.', image:'assets/despensa/extra/luengo_alubia-de-granja-cocida-frasco-570g.webp', width:720, height:720, alt:'Luengo Alubia de granja cocida frasco 570 g'},
-        {name:'Alubia roja cocida · frasco de 570 g', description:'Alubias rojas cocidas en conserva.', image:'assets/despensa/extra/luengo_alubia-roja-cocida-frasco-570g.webp', width:720, height:720, alt:'Luengo Alubia roja cocida frasco 570 g'},
-        {name:'Garbanzos cocidos · frasco de 570 g', description:'Garbanzos cocidos en conserva, listos para añadir a guisos o ensaladas.', image:D+'luengo-garbanzo-cocido.webp', width:473, height:900, alt:'Frasco de garbanzos cocidos Luengo'},
-        {name:'Lentejas cocidas · frasco de 570 g', description:'Lentejas cocidas en conserva, listas para consumir.', image:D+'luengo-lentejas-cocidas-570g.webp', width:473, height:900, alt:'Luengo Lentejas cocidas frasco 570 g'},
-        {name:'Alubia blanca cocida · lata de 3 kg', description:'Alubias blancas cocidas en formato de hostelería.', image:'assets/despensa/extra/luengo_alubia-blanca-cocida-lata-3kg.webp', width:720, height:720, alt:'Luengo Alubia blanca cocida lata 3 kg'},
-        {name:'Garbanzos cocidos · lata de 3 kg', description:'Garbanzos cocidos en formato de hostelería.', image:'assets/despensa/extra/luengo_garbanzos-cocidos-lata-3kg.webp', width:719, height:719, alt:'Luengo Garbanzos cocidos lata 3 kg'},
-        {name:'Alubia blanca · 5 kg', description:'Alubia blanca seca, de grano alargado, en formato de 5 kg.', image:D+'luengo-alubia-blanca-5kg.webp', width:458, height:458, alt:'Alubia blanca larga Luengo de 5 kg'},
-        {name:'Garbanzo castellano · 5 kg', description:'Garbanzo seco en formato de 5 kg.', image:'assets/despensa/extra/luengo_garbanzo-castellano-5kg.webp', width:720, height:720, alt:'Luengo Garbanzo castellano 5 kg'},
-        {name:'Garbanzo pedrosillano · 5 kg', description:'Garbanzo pedrosillano seco en formato de 5 kg.', image:'assets/despensa/extra/luengo_garbanzo-pedrosillano-5kg.webp', width:720, height:720, alt:'Luengo Garbanzo pedrosillano 5 kg'},
-        {name:'Lenteja castellana · 5 kg', description:'Lenteja castellana seca, de grano grande, en formato de 5 kg.', image:'assets/despensa/extra/luengo_lenteja-castellana-5kg.webp', width:720, height:720, alt:'Luengo Lenteja castellana 5 kg'},
-        {name:'Lenteja pardina · 5 kg', description:'Lenteja pardina seca, de grano pequeño y piel fina, en formato de 5 kg.', image:D+'luengo-lenteja-pardina-5kg.webp', width:264, height:510, alt:'Lentejas pardina Luengo'}
+        {name:'Alubia blanca cocida · frasco de 570 g', description:'Alubias blancas cocidas en conserva, listas para consumir.', image:D+'luengo-alubia-blanca-cocida.png', width:473, height:900, alt:'Frasco de alubia blanca cocida Luengo'},
+        {name:'Alubia de granja cocida · frasco de 570 g', description:'Alubias de granja cocidas en conserva.', image:'assets/despensa/extra/luengo_alubia-de-granja-cocida-frasco-570g.png', width:720, height:720, alt:'Luengo Alubia de granja cocida frasco 570 g'},
+        {name:'Alubia roja cocida · frasco de 570 g', description:'Alubias rojas cocidas en conserva.', image:'assets/despensa/extra/luengo_alubia-roja-cocida-frasco-570g.png', width:720, height:720, alt:'Luengo Alubia roja cocida frasco 570 g'},
+        {name:'Garbanzos cocidos · frasco de 570 g', description:'Garbanzos cocidos en conserva, listos para añadir a guisos o ensaladas.', image:D+'luengo-garbanzo-cocido.png', width:473, height:900, alt:'Frasco de garbanzos cocidos Luengo'},
+        {name:'Lentejas cocidas · frasco de 570 g', description:'Lentejas cocidas en conserva, listas para consumir.', image:D+'luengo-lentejas-cocidas-570g.png', width:473, height:900, alt:'Luengo Lentejas cocidas frasco 570 g'},
+        {name:'Alubia blanca cocida · lata de 3 kg', description:'Alubias blancas cocidas en formato de hostelería.', image:'assets/despensa/extra/luengo_alubia-blanca-cocida-lata-3kg.png', width:720, height:720, alt:'Luengo Alubia blanca cocida lata 3 kg'},
+        {name:'Garbanzos cocidos · lata de 3 kg', description:'Garbanzos cocidos en formato de hostelería.', image:'assets/despensa/extra/luengo_garbanzos-cocidos-lata-3kg.png', width:719, height:719, alt:'Luengo Garbanzos cocidos lata 3 kg'},
+        {name:'Alubia blanca · 5 kg', description:'Alubia blanca seca, de grano alargado, en formato de 5 kg.', image:D+'luengo-alubia-blanca-5kg.png', width:458, height:458, alt:'Alubia blanca larga Luengo de 5 kg'},
+        {name:'Garbanzo castellano · 5 kg', description:'Garbanzo seco en formato de 5 kg.', image:'assets/despensa/extra/luengo_garbanzo-castellano-5kg.png', width:720, height:720, alt:'Luengo Garbanzo castellano 5 kg'},
+        {name:'Garbanzo pedrosillano · 5 kg', description:'Garbanzo pedrosillano seco en formato de 5 kg.', image:'assets/despensa/extra/luengo_garbanzo-pedrosillano-5kg.png', width:720, height:720, alt:'Luengo Garbanzo pedrosillano 5 kg'},
+        {name:'Lenteja castellana · 5 kg', description:'Lenteja castellana seca, de grano grande, en formato de 5 kg.', image:'assets/despensa/extra/luengo_lenteja-castellana-5kg.png', width:720, height:720, alt:'Luengo Lenteja castellana 5 kg'},
+        {name:'Lenteja pardina · 5 kg', description:'Lenteja pardina seca, de grano pequeño y piel fina, en formato de 5 kg.', image:D+'luengo-lenteja-pardina-5kg.png', width:264, height:510, alt:'Lentejas pardina Luengo'}
       ]
     },
     {
@@ -132,14 +132,14 @@ window.ProductWorld.init({
       eyebrow: 'Frutos secos y aperitivos', title: 'Borges, para la barra y la cocina.',
       note: 'Borges Professional dice: «Ponemos en tu cocina lo mejor del Mediterráneo» y habla de soluciones para sala y para cocina. Imagen de la gama en formato comercial · puede diferir del formato de hostelería',
       variants: [
-        {name:'Cóctel barbacoa · 1 kg', description:'Mezcla de frutos secos con sabor barbacoa, en formato de 1 kg.', image:'assets/despensa/extra/borges_coctel-barbacoa-1kg.webp', width:540, height:540, alt:'Borges Cóctel barbacoa 1 kg'},
-        {name:'Mix frito · cubo de 2 kg', description:'Mezcla de frutos secos fritos para servir como aperitivo, en cubo de 2 kg.', image:D+'borges-mix-frito-cubo-2kg.webp', width:375, height:434, alt:'Mix frito cubo de 2 kg'},
-        {name:'Cacahuetes · cubo de 2,5 kg', description:'Cacahuetes en formato grande para hostelería y servicio de aperitivos.', image:D+'borges-cacahuetes-cubo-2-5kg.webp', width:375, height:434, alt:'Cacahuetes cubo de 2,5 kg'},
-        {name:'Mix barbacoa · cubo de 1,75 kg', description:'Mezcla de aperitivo con sabor barbacoa, en cubo de 1,75 kg.', image:D+'borges-mix-barbacoa-cubo-1-75kg.webp', width:375, height:434, alt:'Mix barbacoa cubo de 1,75 kg'},
-        {name:'Cacahuete frito · 1 kg', description:'Cacahuetes fritos en formato de 1 kg para aperitivos y hostelería.', image:D+'borges-cacahuetes.webp', width:319, height:400, alt:'Bolsa Borges Selección de cacahuetes fritos y salados, imagen de la gama'},
-        {name:'Nuez en grano · 1 kg', description:'Nueces sin cáscara en formato de 1 kg, listas para utilizar en cocina y repostería.', image:D+'borges-nueces.webp', width:309, height:395, alt:'Bolsa Borges Selección de nueces de California en grano, imagen de la gama'},
-        {name:'Pasas sultanas · 1 kg', description:'Pasas sultanas en formato de 1 kg, apropiadas para recetas, ensaladas y repostería.', image:'assets/despensa/extra/borges_pasas-sultanas-1kg.webp', width:540, height:540, alt:'Borges Pasas sultanas 1 kg'},
-        {name:'Cóctel para ensaladas · 1 kg', description:'Mezcla de frutos secos para añadir a ensaladas, en formato de 1 kg.', image:'assets/despensa/extra/borges_coctel-para-ensaladas-1kg.webp', width:540, height:540, alt:'Borges Cóctel para ensaladas 1 kg'},
+        {name:'Cóctel barbacoa · 1 kg', description:'Mezcla de frutos secos con sabor barbacoa, en formato de 1 kg.', image:'assets/despensa/extra/borges_coctel-barbacoa-1kg.png', width:540, height:540, alt:'Borges Cóctel barbacoa 1 kg'},
+        {name:'Mix frito · cubo de 2 kg', description:'Mezcla de frutos secos fritos para servir como aperitivo, en cubo de 2 kg.', image:D+'borges-mix-frito-cubo-2kg.png', width:375, height:434, alt:'Mix frito cubo de 2 kg'},
+        {name:'Cacahuetes · cubo de 2,5 kg', description:'Cacahuetes en formato grande para hostelería y servicio de aperitivos.', image:D+'borges-cacahuetes-cubo-2-5kg.png', width:375, height:434, alt:'Cacahuetes cubo de 2,5 kg'},
+        {name:'Mix barbacoa · cubo de 1,75 kg', description:'Mezcla de aperitivo con sabor barbacoa, en cubo de 1,75 kg.', image:D+'borges-mix-barbacoa-cubo-1-75kg.png', width:375, height:434, alt:'Mix barbacoa cubo de 1,75 kg'},
+        {name:'Cacahuete frito · 1 kg', description:'Cacahuetes fritos en formato de 1 kg para aperitivos y hostelería.', image:D+'borges-cacahuetes.png', width:319, height:400, alt:'Bolsa Borges Selección de cacahuetes fritos y salados, imagen de la gama'},
+        {name:'Nuez en grano · 1 kg', description:'Nueces sin cáscara en formato de 1 kg, listas para utilizar en cocina y repostería.', image:D+'borges-nueces.png', width:309, height:395, alt:'Bolsa Borges Selección de nueces de California en grano, imagen de la gama'},
+        {name:'Pasas sultanas · 1 kg', description:'Pasas sultanas en formato de 1 kg, apropiadas para recetas, ensaladas y repostería.', image:'assets/despensa/extra/borges_pasas-sultanas-1kg.png', width:540, height:540, alt:'Borges Pasas sultanas 1 kg'},
+        {name:'Cóctel para ensaladas · 1 kg', description:'Mezcla de frutos secos para añadir a ensaladas, en formato de 1 kg.', image:'assets/despensa/extra/borges_coctel-para-ensaladas-1kg.png', width:540, height:540, alt:'Borges Cóctel para ensaladas 1 kg'},
       ]
     },
     {
@@ -147,12 +147,12 @@ window.ProductWorld.init({
       eyebrow: 'Siropes Exquizito · 1 kg', title: 'El toque final del postre.',
       note: 'La gama Exquizito de Borges, «la solución más dulce para darle el toque final» a postres, helados y copas, en botella de 1 kg.',
       variants: [
-        {name:'Sirope de caramelo · 1 kg', description:'Sirope de caramelo para acompañar y decorar postres, helados y otras elaboraciones.', image:D+'borges-sirope-caramelo.webp', width:178, height:510, alt:'Botella de sirope de caramelo Borges Exquizito'},
-        {name:'Sirope de chocolate · 1 kg', description:'Sirope de chocolate para acompañar y decorar postres y helados.', image:D+'borges-sirope-chocolate.webp', width:178, height:510, alt:'Botella de sirope de chocolate Borges Exquizito'},
-        {name:'Sirope de frutos rojos · 1 kg', description:'Sirope de frutos rojos para dar sabor y decorar postres y helados.', image:D+'borges-sirope-frutos-rojos.webp', width:179, height:510, alt:'Botella de sirope de frutos rojos Borges Exquizito'},
-        {name:'Sirope de moka · 1 kg', description:'Sirope de moka para acompañar y decorar postres, helados y bebidas.', image:D+'borges-sirope-moka.webp', width:178, height:510, alt:'Botella de sirope de moka Borges Exquizito'},
-        {name:'Sirope de galleta caramelizada · 1 kg', description:'Sirope de galleta caramelizada, también conocido como sabor speculoos, para postres y helados.', image:D+'borges-sirope-galleta-1kg.webp', width:178, height:510, alt:'Sirope de galleta caramelizada 1 kg'},
-        {name:'Sirope de caramelo y mantequilla salada · 1 kg', description:'Sirope de caramelo con mantequilla salada para decorar postres y helados.', image:D+'borges-sirope-caramelo-mantequilla.webp', width:178, height:510, alt:'Botella de sirope de caramelo y mantequilla salada Borges Exquizito'}
+        {name:'Sirope de caramelo · 1 kg', description:'Sirope de caramelo para acompañar y decorar postres, helados y otras elaboraciones.', image:D+'borges-sirope-caramelo.png', width:178, height:510, alt:'Botella de sirope de caramelo Borges Exquizito'},
+        {name:'Sirope de chocolate · 1 kg', description:'Sirope de chocolate para acompañar y decorar postres y helados.', image:D+'borges-sirope-chocolate.png', width:178, height:510, alt:'Botella de sirope de chocolate Borges Exquizito'},
+        {name:'Sirope de frutos rojos · 1 kg', description:'Sirope de frutos rojos para dar sabor y decorar postres y helados.', image:D+'borges-sirope-frutos-rojos.png', width:179, height:510, alt:'Botella de sirope de frutos rojos Borges Exquizito'},
+        {name:'Sirope de moka · 1 kg', description:'Sirope de moka para acompañar y decorar postres, helados y bebidas.', image:D+'borges-sirope-moka.png', width:178, height:510, alt:'Botella de sirope de moka Borges Exquizito'},
+        {name:'Sirope de galleta caramelizada · 1 kg', description:'Sirope de galleta caramelizada, también conocido como sabor speculoos, para postres y helados.', image:D+'borges-sirope-galleta-1kg.png', width:178, height:510, alt:'Sirope de galleta caramelizada 1 kg'},
+        {name:'Sirope de caramelo y mantequilla salada · 1 kg', description:'Sirope de caramelo con mantequilla salada para decorar postres y helados.', image:D+'borges-sirope-caramelo-mantequilla.png', width:178, height:510, alt:'Botella de sirope de caramelo y mantequilla salada Borges Exquizito'}
       ]
     }
   ]

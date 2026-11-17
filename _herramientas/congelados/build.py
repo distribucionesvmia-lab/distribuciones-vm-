@@ -71,7 +71,7 @@ def prepare(m):
         if bb:
             im = im.crop(bb)
     im.thumbnail((620, 620), Image.LANCZOS)
-    fn = f"{m['ref']}-{slug(m['catalogo'])}.webp"
+    fn = f"{m['ref']}-{slug(m['catalogo'])}.png"
     im.save(os.path.join(OUT_IMG, fn), 'WEBP', quality=86, method=6)
     done[key] = (f'assets/congelados/{fn}', im.width, im.height)
     return done[key]

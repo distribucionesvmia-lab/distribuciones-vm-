@@ -17,7 +17,7 @@ SITE = 'Distribuciones Valentín'
 DEFAULT_IMG = ('assets/portada.webp', 1792, 1008, 'Furgoneta de reparto frente al Castillo de la Mota, en Medina del Campo')
 # página -> imagen para compartir (ruta, ancho, alto, texto alternativo); sin entrada usa DEFAULT_IMG
 IMAGES = {
-    'cafe-mocay.html': ('assets/marcas/mocay-cafe-arabica.webp', 515, 515, 'Café Mocay Maestro Colombia'),
+    'cafe-mocay.html': ('assets/marcas/mocay-cafe-arabica.png', 515, 515, 'Café Mocay Maestro Colombia'),
     'menaje.html': ('assets/menaje/og-menaje.jpg', 1200, 630, 'Mesa de restaurante preparada con copas, platos y servilletas bajo una luz cálida'),
 }
 PAGES = ['index.html', 'cafe-mocay.html', 'pascual.html', 'vinos.html', 'agua.html',

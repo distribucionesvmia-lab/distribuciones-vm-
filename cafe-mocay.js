@@ -94,7 +94,7 @@
       var depth = rnd();
       var size = ((mob ? 38 : 46) + depth * (mob ? 90 : 150)) * 0.8;
       var img = document.createElement('img');
-      img.src = 'assets/grano-cafe.webp'; img.alt = ''; img.className = 'm-bean';
+      img.src = 'assets/grano-cafe.png'; img.alt = ''; img.className = 'm-bean';
       img.width = 201; img.height = 280;
       img.style.width = size + 'px'; img.style.height = 'auto';
       var blur = depth > 0.82 ? (depth - 0.82) * 30 : (depth < 0.25 ? (0.25 - depth) * 12 : 0);
