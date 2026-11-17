@@ -11,7 +11,7 @@
     coche:'<path d="M10 34l8-12h30l14 12h18v10H10z" fill="#c8372d"/><path d="M22 24h12v10H17zM37 24h10l10 10H37z" fill="#cfe6ee"/><circle cx="26" cy="44" r="7" fill="#251d1a"/><circle cx="68" cy="44" r="7" fill="#251d1a"/><circle cx="26" cy="44" r="3" fill="#bbb"/><circle cx="68" cy="44" r="3" fill="#bbb"/>',
     electrico:'<path d="M6 14h56a6 6 0 0 1 6 6v22H6z" fill="#f7f3ea"/><path d="M62 20h12l10 12v10H62z" fill="#2f8f5b"/><path d="M66 24h7l7 8H66z" fill="#cfe6ee"/><path d="M36 18l-8 12h7l-3 10 11-14h-7z" fill="#2f8f5b"/><circle cx="22" cy="44" r="7" fill="#251d1a"/><circle cx="70" cy="44" r="7" fill="#251d1a"/><circle cx="22" cy="44" r="3" fill="#bbb"/><circle cx="70" cy="44" r="3" fill="#bbb"/>'
   };
-  var IMG={pegaso:'Pegaso J4',dkv:'dkv-ram',mb180:'mb180d',mb410:'mb410',mocay:'mocay',fe:'furgon-electrico'};var LEFT={fe:1};IMG.pegaso='pegaso';
+  var IMG={pegaso:'Pegaso J4',dkv:'dkv-ram',mb180:'mb180d',mb410:'mb410',mocay:'mocay',fe:'furgon-electrico',ford:'ford-transit'};var LEFT={fe:1,ford:1};IMG.pegaso='pegaso';
   var veh=document.createElement('div');veh.className='hi-vehicle';veh.setAttribute('aria-hidden','true');
   var fl=document.createElement('div');fl.className='flip';veh.appendChild(fl);
   Object.keys(VEH).forEach(function(k){var d=document.createElement('div');d.className='v';d.dataset.k=k;d.innerHTML='<svg viewBox="0 0 90 56">'+VEH[k]+'</svg>';fl.appendChild(d)});
@@ -56,9 +56,9 @@
     var tilt=Math.max(-14,Math.min(14,th*.4));
     veh.style.transform='translate('+p.x+'px,'+p.y+'px) rotate('+tilt+'deg)';
     var idx=0;pts.forEach(function(s,i){if(s.y<=p.y+20)idx=i});
-    var kk=stops[idx].dataset.veh;fl.style.transform=((dx<0)!==!!LEFT[kk])?'scaleX(-1)':'none';
+    var fin=p.y>pts[pts.length-1].y+70;var kk=fin?'fe':stops[idx].dataset.veh;fl.style.transform=((dx<0)!==!!LEFT[kk])?'scaleX(-1)':'none';
     ruta.classList.toggle('is90',idx===stops.length-1);
-    if(idx!==cur){cur=idx;var k=stops[idx].dataset.veh;[].forEach.call(fl.children,function(c){c.classList.toggle('on',c.dataset&&c.dataset.k===k)});cap.textContent=stops[idx].dataset.vcap||''}
+    var st=fin?-2:idx;if(st!==cur){cur=st;[].forEach.call(fl.children,function(c){c.classList.toggle('on',c.dataset&&c.dataset.k===kk)});cap.textContent=fin?'Citroën ë-Jumpy · hoy':(stops[idx].dataset.vcap||'')}
   }
   if('IntersectionObserver' in window&&!reduce){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
