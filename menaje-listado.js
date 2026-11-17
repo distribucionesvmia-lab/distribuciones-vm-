@@ -16,7 +16,7 @@
   data.forEach(function (d) { if (groups.indexOf(d.g) < 0) groups.push(d.g); });
   var active = 'Todos';
 
-  filters.innerHTML = ['Todos'].concat(groups).map(function (g) {
+  filters.innerHTML = groups.concat(['Todos']).map(function (g) {
     var n = g === 'Todos' ? data.length : data.filter(function (d) { return d.g === g; }).length;
     return '<button type="button" data-group="' + esc(g) + '" aria-pressed="' + (g === 'Todos') + '">' + esc(g) + ' <span>' + n + '</span></button>';
   }).join('');

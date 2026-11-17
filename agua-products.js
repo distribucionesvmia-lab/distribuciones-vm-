@@ -57,7 +57,7 @@ window.ProductWorld.init({
     {
       template:'video', family:'Pedras · Vídeo', color:'#dcead3', ink:'#173b30',
       eyebrow:'Vídeo de la marca', title:'Ser natural da frutos.',
-      note:'Pedras Sabores, en movimiento. Rótulos en español.',
+      note:'Pedras Sabores, con el audio original y subtítulos en castellano. Pulsa el altavoz para activar el sonido.',
       video:{src:'assets/video/pedras-sabores.mp4', poster:'assets/video/pedras-poster.png', title:'Pedras Sabores: ser natural da frutos', author:'Pedras'}
     },
     {

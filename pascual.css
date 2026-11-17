@@ -15,3 +15,11 @@
 /* Zumos Essential: una sola foto, a ancho de composición */
 .pw-c[style*="--scene:#ffedda"] .pw-c-grid{grid-template-columns:minmax(0,820px)}
 .pw-c[style*="--scene:#ffedda"] .pw-c-photo{height:clamp(320px,38vw,560px)}
+
+/* Zumos Essential: escenas de ambiente a todo color (sin multiply) */
+#zumos .pw-e-multi{mix-blend-mode:normal;border-radius:18px;box-shadow:0 22px 44px rgba(60,30,10,.28);max-width:min(40vw,620px);max-height:82%;object-fit:cover}
+#zumos .pw-e-disc{display:none}
+/* Yogures: fotos algo más grandes */
+#yogures .pw-e-multi[alt^="Pack"]{width:clamp(300px,26vw,390px);height:auto;max-width:none;max-height:none}
+#yogures .pw-e-multi[alt^="Envase"]{height:min(78%,560px);width:auto;max-width:none;max-height:none}
+@media(max-width:760px){#yogures .pw-e-multi[alt^="Pack"]{width:min(78vw,340px)}}
