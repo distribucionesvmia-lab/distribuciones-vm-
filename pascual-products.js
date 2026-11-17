@@ -1,7 +1,7 @@
 /* Sustituye image, width, height y alt al recibir fotografías originales. */
 window.ProductWorld.init({
   mount: '#familias',
-  order: ['Leche','Vivesoy','Batidos','Natas','Mantequillas','Bebidas Pascual','Bifrutas','Yogikids','Yogures','Postres','Natillas'],
+  order: ['Leche Intense|','Leche Pascual|','Leche Classic|','Leche Extra','Leche Alimentación|','Leche en brik|','Leche Sin Lactosa|','Leche Movit|','Vivesoy','Leche Sin Lactosa Barista|','Batidos','Natas','Mantequillas','Bebidas Pascual','Bifrutas','Yogikids','Yogures','Postres','Natillas'],
   sections: [
     {
       template: 'hero', id: 'leche-intense', family: 'Leche Intense', color: '#e8e0d6', ink: '#2b2a3a',
