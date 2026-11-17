@@ -174,8 +174,7 @@ window.ProductWorld.init({
         {name:'Essential Uva · 200 ml', description:'Zumo Pascual Essential de uva, en botella de vidrio de 200 ml.', image:'assets/pascual/zumo-essential-uva.png', width:900, height:675, alt:'Botella de vidrio de zumo Pascual Essential uva con un vaso de zumo sobre la barra de un bar'},
         {name:'Essential Piña · 200 ml', description:'Zumo Pascual Essential de piña, en botella de vidrio de 200 ml.', image:'assets/pascual/zumo-essential-pina.png', width:900, height:675, alt:'Botella de vidrio de zumo Pascual Essential piña con un vaso de zumo sobre la barra de un bar'},
         {name:'Essential Melocotón · 200 ml', description:'Zumo Pascual Essential de melocotón, en botella de vidrio de 200 ml.', image:'assets/pascual/zumo-essential-melocoton.png', width:900, height:675, alt:'Botella de vidrio de zumo Pascual Essential melocotón con un vaso de zumo sobre la barra de un bar'},
-        {name:'Essential Tomate · 200 ml', description:'Zumo Pascual Essential de tomate, en botella de vidrio de 200 ml.', image:'assets/pascual/zumo-essential-tomate.png', width:900, height:675, alt:'Botella de vidrio de zumo Pascual Essential tomate con un vaso de zumo sobre la barra de un bar'},
-        {name:'Essential Manzana · 200 ml', description:'Zumo Pascual Essential de manzana, en botella de vidrio de 200 ml.', image:'assets/pascual/zumo-essential-manzana.png', width:900, height:675, alt:'Botella de vidrio de zumo Pascual Essential manzana con un vaso de zumo sobre la barra de un bar'}
+        {name:'Essential Tomate · 200 ml', description:'Zumo Pascual Essential de tomate, en botella de vidrio de 200 ml.', image:'assets/pascual/zumo-essential-tomate.png', width:900, height:675, alt:'Botella de vidrio de zumo Pascual Essential tomate con un vaso de zumo sobre la barra de un bar'}
       ]
     },
     {
