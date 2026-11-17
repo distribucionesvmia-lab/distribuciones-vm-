@@ -1,6 +1,6 @@
 window.ProductWorld.init({
   mount: '#familias',
-  order: ['Bezoya','Pedras','Aquarel','S.Pellegrino','Perrier'],
+  order: ['Pedras','Bezoya','S.Pellegrino','Aquarel','Perrier'],
   sections: [
     {
       template:'hero', family:'Bezoya', color:'#cceef4', ink:'#103b50',
@@ -48,11 +48,17 @@ window.ProductWorld.init({
       template:'story', family:'Pedras', color:'#dcead3', ink:'#173b30',
       eyebrow:'Agua con gas y sabores', title:'Un agua con gas 100 % natural.',
       frames:[
-        {name:'Pedras Salgadas',description:'Pedras Salgadas, «un agua con gas 100 % natural», de origen natural. El vidrio forma parte de su propuesta para la restauración. La gama sigue con Limão, Frutos vermelhos y Tangerina.',image:'assets/agua/pedras-75-alt.webp',width:800,height:1200,alt:'Botella Pedras Salgadas de 75 centilitros',color:'#dcead3'},
         {name:'Pedras Limão',description:'Una propuesta con limón para ampliar la carta de bebidas.',image:'assets/agua/pedras-limao-botella.webp',width:126,height:408,alt:'Botella Pedras con limón',color:'#f1e9aa'},
         {name:'Frutos vermelhos',description:'Pedras con frutos rojos, otra expresión de la gama.',image:'assets/agua/pedras-frutos-vermelhos-botella.webp',width:133,height:428,alt:'Botella Pedras Frutos Vermelhos con frutos rojos',color:'#e8d8d9'},
-        {name:'Pedras Tangerina',description:'Pedras con mandarina, otra expresión de la gama.',image:'assets/agua/pedras-tangerina-botella.webp',width:133,height:428,alt:'Botella Pedras Tangerina con mandarina',color:'#f8e0bd'}
+        {name:'Pedras Tangerina',description:'Pedras con mandarina, otra expresión de la gama.',image:'assets/agua/pedras-tangerina-botella.webp',width:133,height:428,alt:'Botella Pedras Tangerina con mandarina',color:'#f8e0bd'},
+        {name:'Pedras Salgadas',description:'Pedras Salgadas, «un agua con gas 100 % natural», de origen natural. El vidrio forma parte de su propuesta para la restauración. Es el agua base de los sabores anteriores.',image:'assets/agua/pedras-75-alt.webp',width:800,height:1200,alt:'Botella Pedras Salgadas de 75 centilitros',color:'#dcead3'}
       ]
+    },
+    {
+      template:'video', family:'Pedras · Vídeo', color:'#dcead3', ink:'#173b30',
+      eyebrow:'Vídeo de la marca', title:'Ser natural da frutos.',
+      note:'Pedras Sabores, en movimiento. Rótulos en español.',
+      video:{src:'assets/video/pedras-sabores.mp4', poster:'assets/video/pedras-poster.webp', title:'Pedras Sabores: ser natural da frutos', author:'Pedras'}
     },
     {
       template:'range', family:'Perrier', color:'#d9efdc', ink:'#0d4a2a',
