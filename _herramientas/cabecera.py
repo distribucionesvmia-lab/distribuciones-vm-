@@ -75,6 +75,17 @@ def header(page):
             f'</header>')
 
 
+# Subpáginas de «Conócenos»: barra bajo la cabecera (solo en esas páginas)
+SUBMENU = [('Quiénes somos', 'quienes-somos.html'), ('Historia', 'historia.html')]
+SUB_PAGES = ('quienes-somos.html', 'historia.html')
+SUB_RE = re.compile(r'<!-- subnav -->.*?<!-- /subnav -->\n?', re.S)
+
+
+def subnav(page):
+    items = ''.join(f'<a href="{h}"' + (' aria-current="page"' if h == page else '') + f'>{t}</a>' for t, h in SUBMENU)
+    return f'<!-- subnav -->\n<nav class="sh-sub" aria-label="Conócenos"><span>Conócenos</span>{items}</nav>\n<!-- /subnav -->\n'
+
+
 HEADER_RE = re.compile(r'<header class="(?:top|m-top|pw-header|site-header)[^"]*"[^>]*>.*?</header>', re.S)
 
 for page in PAGES:
@@ -84,6 +95,9 @@ for page in PAGES:
     if not HEADER_RE.search(h):
         raise SystemExit(f'{page}: no se encontró la cabecera')
     h = HEADER_RE.sub(lambda m: new, h, count=1)
+    h = SUB_RE.sub('', h)
+    if page in SUB_PAGES:
+        h = h.replace('</header>', '</header>\n' + subnav(page).rstrip('\n'), 1)
     if CALL_RE.search(h):
         h = CALL_RE.sub(lambda m: CALL_HTML, h, count=1)
     else:

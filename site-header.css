@@ -79,3 +79,10 @@
 .pedido-banda--oscura{background:rgba(243,242,239,.08);color:#f3f2ef;box-shadow:none;border:1px solid rgba(243,242,239,.2)}
 @media(max-width:640px){.pedido-banda{flex-direction:column;align-items:stretch;text-align:left}.pedido-banda .btn-pedido{width:100%}}
 @media(max-width:640px){.hero .actions .btn-pedido{width:100%}}
+
+/* Subpáginas de Conócenos */
+.sh-sub{display:flex;align-items:center;justify-content:center;gap:clamp(14px,2vw,30px);padding:10px 22px;background:#efe6d6;border-bottom:1px solid #e0d3bb;font-size:.9rem}
+.sh-sub span{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
+.sh-sub a{color:#251d1a;text-decoration:none;font-weight:600;padding:4px 2px;border-bottom:2px solid transparent}
+.sh-sub a[aria-current]{color:#c61819;border-bottom-color:#c61819}
+@media(hover:hover) and (pointer:fine){.sh-sub a:hover{color:#c61819}}
