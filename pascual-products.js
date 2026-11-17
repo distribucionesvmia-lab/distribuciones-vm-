@@ -138,7 +138,6 @@ window.ProductWorld.init({
       variants: [
         {name:'Mantequilla en pastilla · 250 g', description:'Mantequilla Pascual en pastilla de 250 g.', image:'assets/pascual/mantequilla-pastilla-250g.png', width:232, height:131, alt:'Pastilla de mantequilla Pascual de 250 g'},
         {name:'Mantequilla en pastilla · 500 g', description:'Mantequilla Pascual en pastilla de 500 g.', image:'assets/pascual/mantequilla-pastilla-500g.png', width:237, height:153, alt:'Pastilla de mantequilla Pascual de 500 g'},
-        {name:'Mantequilla en tarrina · con sal', description:'Mantequilla Pascual en tarrina, con sal.', image:'assets/pascual/mantequilla-tarrina-con-sal.png', width:234, height:127, alt:'Tarrina de mantequilla Pascual con sal'},
         {name:'Mantequilla en tarrina · sin sal', description:'Mantequilla Pascual en tarrina, sin sal.', image:'assets/pascual/mantequilla-tarrina-sin-sal.png', width:235, height:127, alt:'Tarrina de mantequilla Pascual sin sal'}
       ]
     },
