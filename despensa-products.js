@@ -56,7 +56,7 @@ window.ProductWorld.init({
       ],
       bottom: '05 — Gama de salsas',
       logo: {image:D+'prima-logo.webp', width:430, height:280, alt:'Prima'},
-      product: {name:'Gama de salsas Prima', image:D+'prima-gama.webp', width:1425, height:330, wide:true, alt:'Gama de salsas Prima: mayonesas, kétchup, mostazas y otras salsas'}
+      product: {name:'Gama de salsas Prima', image:D+'prima-gama.webp', width:2694, height:690, wide:true, alt:'Gama de salsas Prima: mayonesas, kétchup, mostazas y otras salsas'}
     },
     {
       template: 'range', family: 'Carbonell · Koipe', color: '#fff8e6', ink: '#1f6b43',
