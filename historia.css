@@ -50,3 +50,12 @@
 .hi-vehicle .v.img img{position:absolute;left:0;bottom:0;width:100%;height:100%;object-fit:contain;object-position:bottom;filter:drop-shadow(0 5px 4px rgba(0,0,0,.28))}
 .hi-vehicle .v:not(.img) svg{padding:10px 8px 0}
 .hi-gal figure.veh{background:#e9dfcc}.hi-mini.veh{height:84px}
+
+.hi-deco{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.hi-d{position:absolute;opacity:.95}
+.hi-d svg{display:block;width:100%;height:auto}
+.hi-d.sm{opacity:.85}
+.hi-t{position:absolute}
+.hi-t svg{display:block;width:100%;height:100%}
+@media(prefers-reduced-motion:no-preference){.hi-d svg{transform-origin:50% 100%;animation:hi-sway 7s ease-in-out infinite alternate}.hi-d:nth-child(even) svg{animation-duration:9s}}
+@keyframes hi-sway{from{transform:rotate(-.8deg)}to{transform:rotate(.8deg)}}
