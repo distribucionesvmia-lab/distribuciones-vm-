@@ -101,7 +101,7 @@
     {group:'Quesos',brand:'Reny Picot',name:'Queso rallado hilo fundido · 1 kg',blk:'quesos',uso:'',cod:'17011',image:'assets/refrigerados/extra/reny-picot_quesos-rallados.png',w:720,h:720,alt:'Quesos rallados Reny Picot'},
     {group:'Quesos',brand:'Reny Picot',name:'Mozzarella · 150 g',blk:'quesos',uso:'',cod:'17004',image:'assets/refrigerados/extra/reny-picot_mozzarella-150g.png',w:720,h:720,alt:'Mozzarella Reny Picot, 150 g'},
     {group:'Quesos',brand:'Reny Picot',name:'Queso para untar · 2 kg',blk:'quesos',uso:'',cod:'17020',image:'assets/refrigerados/reny-crema-2kg.png',w:1000,h:1000,alt:'Cubo de queso crema natural Reny Picot de 2 kg'},
-    {group:'Quesos',brand:'Reny Picot',name:'Queso para untar · cubo de 5 kg',blk:'quesos',uso:'',cod:'17018'},
+    {group:'Quesos',brand:'Reny Picot',name:'Queso para untar · cubo de 5 kg',blk:'quesos',uso:'',cod:'17018',image:X+'reny-picot_queso-crema-5kg.png',w:404,h:386,alt:'Cubo de queso crema para untar Reny Picot de 5 kg'},
     {group:'Quesos',brand:'Tranchetes',name:'Tranchetes · 7 lonchas, 131 g',blk:'quesos',uso:'',cod:'30000',image:'assets/refrigerados/extra/sin-marca-confirmada_queso-fundido-en-lonchas-131g.png',w:720,h:720,alt:'Queso fundido en lonchas, 131 g'},
     {group:'El Pozo',brand:'El Pozo',name:'Barqueta de bacon · 1 kg',blk:'pozo',uso:'h',cod:'20001'},
     {group:'El Pozo',brand:'El Pozo',name:'Fiambre de paleta para sándwich · 4 kg',blk:'pozo',uso:'h',cod:'20004'},
