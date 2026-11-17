@@ -129,7 +129,8 @@ window.ProductWorld.init({
         {name:'Nata para montar · 500 ml', description:'Nata Pascual para montar, con un 35 % de materia grasa, en formato de 500 ml.', image:'assets/pascual/nata-montar-500ml.png', width:198, height:328, alt:'Brik de nata Pascual para montar de 500 ml'},
         {name:'Nata para montar · 1 L', description:'Nata Pascual para montar, con un 35 % de materia grasa, en formato de 1 litro.', image:'assets/pascual/nata-montar-1l.png', width:173, height:504, alt:'Brik de nata Pascual para montar de 1 litro'},
         {name:'Nata repostera · 1 L · 38 % M.G.', description:'Nata UHT repostera de Pascual Profesional, con un 38 % de materia grasa, en formato de 1 litro (caja de 6). Para repostería y obradores: al tener más grasa, según la ficha del fabricante, monta mejor y es más estable.', image:'assets/pascual/nata-liquida-1l-38.png', width:146, height:422, alt:'Brik de nata especial repostería Pascual Profesional de 1 litro con un 38 por ciento de materia grasa'},
-        {name:'Nata montada · spray', description:'Nata montada azucarada Pascual en spray, lista para usar.', image:'assets/pascual/nata-montada-spray.png', width:123, height:496, alt:'Spray de nata montada azucarada Pascual'}
+        {name:'Nata montada · spray · 250 g', description:'Nata montada azucarada Pascual en spray, lista para usar, en formato de 250 g.', image:'assets/pascual/nata-montada-spray.png', width:123, height:496, alt:'Spray de nata montada azucarada Pascual de 250 g'},
+        {name:'Nata montada · spray · 500 g', description:'Nata montada azucarada Pascual en spray, lista para usar, en formato de 500 g.', image:'assets/pascual/nata-montada-spray.png', width:123, height:496, alt:'Spray de nata montada azucarada Pascual de 500 g'}
       ]
     },
     {
