@@ -1,0 +1,45 @@
+/* Historia: ruta en zig-zag sobre un mapa ilustrado de Medina del Campo (radio 50 km). Ilustración, no a escala. */
+.hi-world{background:#f7f3ea;color:#251d1a}
+.hi-hero{padding:clamp(48px,9vh,110px) var(--side) clamp(30px,5vh,60px);max-width:1180px;margin:0 auto}
+.hi-hero h1{font-size:clamp(2.8rem,7vw,6rem);font-weight:600;letter-spacing:-.055em;line-height:.95;margin:20px 0 16px}
+.hi-hero p{max-width:620px;font-size:1.12rem;line-height:1.55;margin:0 0 10px}
+.hi-hero .hi-links{font-size:.95rem}
+.hi-hero a{color:var(--red);text-underline-offset:3px}
+.hi-ruta{position:relative;overflow:hidden;padding:30px var(--side) 90px;--lane:0}
+.hi-mapa{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hi-road{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:visible}
+.hi-stops{position:relative;z-index:2;list-style:none;margin:0 auto;padding:0;max-width:1180px}
+.hi-stop{position:relative;width:38%;margin:0 0 clamp(60px,9vw,120px);opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.hi-stop:nth-child(even){margin-left:auto}
+.hi-stop.in{opacity:1;transform:none}
+.hi-card{background:#fffdf8;border-radius:18px;padding:22px 24px 24px;box-shadow:0 14px 34px rgba(37,29,26,.12);border:1px solid #eadfcb}
+.hi-year{display:block;font-size:clamp(2rem,3.4vw,3rem);font-weight:650;letter-spacing:-.05em;line-height:1;color:var(--red)}
+.hi-stop.minor .hi-year{font-size:clamp(1.5rem,2.4vw,2rem)}
+.hi-card h2{margin:8px 0 8px;font-size:clamp(1.25rem,1.9vw,1.6rem);font-weight:600;letter-spacing:-.03em;line-height:1.15}
+.hi-stop.minor h2{font-size:1.08rem}
+.hi-card p{margin:0 0 8px;font-size:1rem;line-height:1.55}
+.hi-veh{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;opacity:.7;margin-top:10px!important}
+.hi-gal{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:14px -4px 0;padding:0 4px 6px}
+.hi-gal figure{flex:0 0 78%;scroll-snap-align:start;margin:0;aspect-ratio:4/3;border-radius:12px;background:#efe6d6;display:grid;place-items:center;overflow:hidden;position:relative}
+.hi-gal img{width:100%;height:100%;object-fit:contain;padding:10px;display:block}
+.hi-gal .ph{border:2px dashed #c9b79a;background:#f3ecdd;text-align:center;padding:12px;font-size:.88rem;line-height:1.35;align-content:center}
+.hi-mini{display:block;height:64px;width:auto;margin-top:10px}
+.hi-ruta .por-confirmar{display:inline-block;background:#ffe08a;color:#4a3300;padding:.05em .4em;border-radius:5px;font-weight:600;font-size:.86em}
+.hi-vehicle{position:absolute;z-index:3;left:0;top:0;width:96px;height:56px;margin:-38px 0 0 -48px;will-change:transform;pointer-events:none}
+.hi-vehicle .v{position:absolute;inset:0;opacity:0;transition:opacity .5s}
+.hi-vehicle .v.on{opacity:1}
+.hi-vehicle svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 6px 5px rgba(0,0,0,.25))}
+.hi-vehicle .flip{position:absolute;inset:0;transition:transform .3s}
+.hi-vcap{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:4px;white-space:nowrap;background:#251d1a;color:#f7f3ea;font-size:.68rem;padding:3px 9px;border-radius:99px}
+.hi-fin{background:#241d1b;color:#f9f5ed;text-align:center;padding:70px var(--side)}
+.hi-fin h2{font-size:clamp(2rem,4vw,3.2rem);margin:0 0 12px;letter-spacing:-.04em}
+.hi-fin p{max-width:520px;margin:0 auto 18px;line-height:1.5}
+.hi-fin a{color:#fff;background:var(--red);padding:12px 22px;border-radius:99px;text-decoration:none;font-weight:600}
+@media(max-width:760px){
+ .hi-stop{width:auto;margin-left:0!important;padding-left:78px}
+ .hi-ruta{padding-bottom:60px}
+ .hi-vehicle{width:76px;height:44px;margin:-30px 0 0 -38px}
+ .hi-gal figure{flex-basis:84%}
+ .hi-vcap{left:30px;transform:none;font-size:.62rem}
+}
+@media(prefers-reduced-motion:reduce){.hi-stop{opacity:1;transform:none;transition:none}.hi-vehicle .v{transition:none}}
