@@ -84,3 +84,5 @@
 
 .hi-pair{display:flex;align-items:flex-end;gap:16px;margin-top:10px}.hi-pair .hi-mini{margin-top:0;width:auto}.hi-pair .hi-mini[src*='bornos-etiqueta']{height:120px}.hi-pair .hi-mini[src*='bornos-brut']{height:230px}
 @media(max-width:760px){.hi-pair .hi-mini[src*='bornos-etiqueta']{height:100px}.hi-pair .hi-mini[src*='bornos-brut']{height:190px}}
+
+.hi-gal figure{position:relative}.hi-gal figure>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
