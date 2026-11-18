@@ -25,7 +25,11 @@ MENU = [
     ('Conócenos', 'quienes-somos.html'),   # subpáginas: Quiénes somos e Historia (se enlazan entre sí)
 ]
 # Icono (assets/iconos/*.png) de cada entrada del menú. Para volver a las letras, vacía este diccionario y ejecuta el script.
-ICONOS = {'Conócenos': 'conocenos'}
+ICONOS = {
+    'Inicio': 'inicio', 'Café Mocay': 'cafe-mocay', 'Pascual': 'pascual', 'Vinos': 'vinos', 'Aguas': 'aguas',
+    'Despensa': 'despensa', 'Refrigerados': 'refrigerados', 'Congelados': 'congelados', 'Menaje': 'menaje',
+    'Catálogo': 'catalogo', 'Conócenos': 'conocenos',
+}
 # Botón fijo «Llamar» (solo se ve en móvil; se escribe igual en todas las páginas)
 ORDER_URL = 'https://distribucionesvm-pedidos.tailc4a490.ts.net/cliente'   # zona de pedidos de clientes (se abre en una pestaña nueva)
 ORDER_ICON = ('<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 7h12l-1 13H7L6 7zm3 0a3 3 0 0 1 6 0"/></svg>')
