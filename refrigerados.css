@@ -156,5 +156,5 @@
 .rf-card.has-peek:focus{outline:2px solid #173b3c;outline-offset:2px}
 @media(prefers-reduced-motion:reduce){.rf-peek{transition:none}}
 
-.rf-peek{max-width:calc(100vw - 48px)}
+.rf-peek{max-width:min(440px,calc(100vw - 48px))}
 @media(max-width:560px){.rf-peek{height:min(340px,52vh);right:6px}}
