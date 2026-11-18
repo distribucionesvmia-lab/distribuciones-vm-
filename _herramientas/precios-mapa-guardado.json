@@ -1203,27 +1203,23 @@
   "cod": "26050",
   "u": "ud."
  },
- "refrigerados|Navidul alimentación|Lomo embuchado · 40 g · PVP 1,20 €": {
+ "refrigerados|Navidul alimentación|Lomo embuchado · 40 g": {
   "cod": "26317",
   "u": "ud."
  },
- "refrigerados|Navidul alimentación|Jamón curado · 45 g · PVP 1 €": {
+ "refrigerados|Navidul alimentación|Jamón curado · 45 g": {
   "cod": "26300",
   "u": "ud."
  },
- "refrigerados|Navidul alimentación|Salchichón ibérico · 40 g · PVP 1,10 €": {
+ "refrigerados|Navidul alimentación|Salchichón ibérico · 40 g": {
   "cod": "26051",
   "u": "ud."
  },
- "refrigerados|Navidul alimentación|Chorizo ibérico · 40 g · PVP 1,10 €": {
-  "cod": "260511",
-  "u": "ud."
- },
- "refrigerados|Navidul alimentación|Lonchas de queso semicurado · 100 g · PVP 2 €": {
+ "refrigerados|Navidul alimentación|Lonchas de queso semicurado · 100 g": {
   "cod": "26148",
   "u": "ud."
  },
- "refrigerados|Navidul alimentación|Taquitos de jamón · 100 g · PVP 2 €": {
+ "refrigerados|Navidul alimentación|Taquitos de jamón · 100 g": {
   "cod": "26094",
   "u": "ud."
  },
@@ -1271,23 +1267,23 @@
   "cod": "26201",
   "u": "ud."
  },
- "refrigerados|Campofrío|Chopped en lonchas · 95 g · PVP 1 €": {
+ "refrigerados|Campofrío|Chopped en lonchas · 95 g": {
   "cod": "26307",
   "u": "ud."
  },
- "refrigerados|Campofrío|Jamón cocido · PVP 1 €": {
+ "refrigerados|Campofrío|Jamón cocido": {
   "cod": "260541",
   "u": "ud."
  },
- "refrigerados|Campofrío|Mortadela clásica · 95 g · PVP 1 €": {
+ "refrigerados|Campofrío|Mortadela clásica · 95 g": {
   "cod": "26055",
   "u": "ud."
  },
- "refrigerados|Campofrío|Mortadela con aceitunas · PVP 1 €": {
+ "refrigerados|Campofrío|Mortadela con aceitunas": {
   "cod": "26056",
   "u": "ud."
  },
- "refrigerados|Campofrío|Pechuga de pavo · PVP 1 €": {
+ "refrigerados|Campofrío|Pechuga de pavo": {
   "cod": "26309",
   "u": "ud."
  },
@@ -1299,19 +1295,19 @@
   "cod": "26022",
   "u": "ud."
  },
- "refrigerados|Revilla|Chorizo · 65 g · PVP 1 €": {
+ "refrigerados|Revilla|Chorizo · 65 g": {
   "cod": "26304",
   "u": "ud."
  },
- "refrigerados|Revilla|Chorizo Pamplona · 65 g · PVP 1 €": {
+ "refrigerados|Revilla|Chorizo Pamplona · 65 g": {
   "cod": "260651",
   "u": "ud."
  },
- "refrigerados|Revilla|Salami · 65 g · PVP 1 €": {
+ "refrigerados|Revilla|Salami · 65 g": {
   "cod": "263051",
   "u": "ud."
  },
- "refrigerados|Revilla|Salchichón · 65 g · PVP 1 €": {
+ "refrigerados|Revilla|Salchichón · 65 g": {
   "cod": "26303",
   "u": "ud."
  },
@@ -1419,15 +1415,15 @@
   "cod": "20033",
   "u": "ud."
  },
- "refrigerados|El Pozo|Taquitos de jamón · PVP 1 €": {
+ "refrigerados|El Pozo|Taquitos de jamón": {
   "cod": "20028",
   "u": "ud."
  },
- "refrigerados|El Pozo|Jamón curado · 80 g · PVP 1,50 €": {
+ "refrigerados|El Pozo|Jamón curado · 80 g": {
   "cod": "20025",
   "u": "ud."
  },
- "refrigerados|El Pozo|Jamón cocido «1954» · 150 g · PVP 2 €": {
+ "refrigerados|El Pozo|Jamón cocido «1954» · 150 g": {
   "cod": "20024",
   "u": "ud."
  },

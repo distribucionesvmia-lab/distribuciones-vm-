@@ -151,3 +151,7 @@
 .hi-gal.hi-fade figure>img{object-fit:contain}
 
 .hi-vehicle{will-change:transform;backface-visibility:hidden}
+
+/* textos de las tarjetas: versión resumida solo en móvil */
+.hi-card p.hi-s{display:none}
+@media(max-width:760px){.hi-card p.hi-l{display:none}.hi-card p.hi-s{display:block}}
