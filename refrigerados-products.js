@@ -44,7 +44,6 @@
       media:[{src:X+'elpozo_bacon-paleta-taquitos-y-salchichas.png', w:720, h:720, alt:'Productos El Pozo', cls:'rf-m-hero'}] }
   ];
   const products = [
-    {group:'Navidul',brand:'Navidul',name:'Centro de jamón ibérico · kg',blk:'navidul',uso:'h',cod:'20007'},
     {group:'Navidul',brand:'Navidul',name:'Chorizo cular ibérico · kg',blk:'navidul',uso:'h',cod:'26009',peek:'assets/refrigerados/extra/navidul_chorizo-cular-iberico.png',pw:391,ph:255,peekAlt:'Chorizo cular ibérico de Navidul, pieza entera con unas lonchas cortadas'},
     {group:'Navidul',brand:'Navidul',name:'Centro gran rendimiento · kg',blk:'navidul',uso:'h',cod:'26007'},
     {group:'Navidul',brand:'Navidul',name:'Jamón 4 Estaciones Reserva · pieza',blk:'navidul',uso:'h',cod:'26129',peek:'assets/refrigerados/extra/navidul_jamon-4-estaciones-reserva.png',pw:192,ph:557,peekAlt:'Jamón curado Reserva Cuatro Estaciones de Navidul, pieza entera con su etiqueta'},
