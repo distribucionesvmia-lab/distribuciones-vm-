@@ -47,7 +47,7 @@
     {group:'Navidul',brand:'Navidul',name:'Centro de jamón ibérico · kg',blk:'navidul',uso:'h',cod:'20007'},
     {group:'Navidul',brand:'Navidul',name:'Chorizo cular ibérico · kg',blk:'navidul',uso:'h',cod:'26009'},
     {group:'Navidul',brand:'Navidul',name:'Centro gran rendimiento · kg',blk:'navidul',uso:'h',cod:'26007'},
-    {group:'Navidul',brand:'Navidul',name:'Jamón 4 Estaciones Reserva · pieza',blk:'navidul',uso:'h',cod:'26129'},
+    {group:'Navidul',brand:'Navidul',name:'Jamón 4 Estaciones Reserva · pieza',blk:'navidul',uso:'h',cod:'26129',peek:'assets/refrigerados/extra/navidul_jamon-4-estaciones-reserva.png',pw:192,ph:557,peekAlt:'Jamón curado Reserva Cuatro Estaciones de Navidul, pieza entera con su etiqueta'},
     {group:'Navidul',brand:'Navidul',name:'Jamón asado ahumado · kg',blk:'navidul',uso:'h',cod:'26106'},
     {group:'Navidul',brand:'Navidul',name:'Jamón cebo ibérico · pieza de 7,5-8 kg',blk:'navidul',uso:'h',cod:'26027'},
     {group:'Navidul',brand:'Navidul',name:'Lonchas de jamón curado · 500 g',blk:'navidul',uso:'h',cod:'26008'},
@@ -127,7 +127,7 @@
     const i = p.name.indexOf(' · ');
     const title = i < 0 ? p.name : p.name.slice(0, i);
     const fmt = i < 0 ? '' : p.name.slice(i + 3);
-    return `<li class="rf-card${p.image ? ' has-img' : ''}${p.plato ? ' has-plato' : ''}">${p.image ? `<figure class="rf-thumb"><img src="${esc(p.image)}" alt="${esc(p.alt || p.name)}" width="${p.w || 600}" height="${p.h || 600}" loading="lazy" decoding="async">${p.cap ? `<figcaption>${esc(p.cap)}</figcaption>` : ''}</figure>` : ''}<div class="rf-card-body">${showBrand ? `<span class="rf-brand">${esc(p.brand)}</span>` : ''}<h4>${esc(title)}</h4>${fmt ? `<p class="rf-fmt">${esc(fmt)}</p>` : ''}${p.plato ? `<p class="rf-plato"><b>Sugerencia de plato:</b> ${esc(p.plato)}</p>` : ''}${price(p)}</div></li>`;
+    return `<li class="rf-card${p.image ? ' has-img' : ''}${p.plato ? ' has-plato' : ''}${p.peek ? ' has-peek' : ''}"${p.peek ? ' tabindex="0"' : ''}>${p.image ? `<figure class="rf-thumb"><img src="${esc(p.image)}" alt="${esc(p.alt || p.name)}" width="${p.w || 600}" height="${p.h || 600}" loading="lazy" decoding="async">${p.cap ? `<figcaption>${esc(p.cap)}</figcaption>` : ''}</figure>` : ''}<div class="rf-card-body">${showBrand ? `<span class="rf-brand">${esc(p.brand)}</span>` : ''}<h4>${esc(title)}</h4>${fmt ? `<p class="rf-fmt">${esc(fmt)}</p>` : ''}${p.plato ? `<p class="rf-plato"><b>Sugerencia de plato:</b> ${esc(p.plato)}</p>` : ''}${price(p)}</div>${p.peek ? `<figure class="rf-peek" aria-hidden="true"><img src="${esc(p.peek)}" alt="${esc(p.peekAlt || p.name)}" width="${p.pw || 200}" height="${p.ph || 600}" loading="lazy" decoding="async"></figure>` : ''}</li>`;
   };
   const list = (items, showBrand) => `<ul class="rf-grid">${items.map(p => card(p, showBrand)).join('')}</ul>`;
   const media = b => `<div class="rf-media${b.mosaic ? ' is-mosaic' : ''}">${b.media.map(m => `<img class="${esc(m.cls || '')}" src="${esc(m.src)}" alt="${esc(m.alt)}" width="${m.w}" height="${m.h}" loading="lazy" decoding="async">`).join('')}</div>`;
