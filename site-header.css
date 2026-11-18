@@ -93,8 +93,8 @@
 /* Icono del equipo en lugar de la palabra «Conócenos» (hereda el color del menú y se pone rojo en la página activa) */
 .sh-ico-link{display:inline-flex;align-items:center;margin:-8px 0}
 .sh-ico{display:inline-block;width:28px;height:28px;background:currentColor;-webkit-mask:var(--ico) center/contain no-repeat;mask:var(--ico) center/contain no-repeat}
-[style*="iconos/pascual.png"]{width:58px;height:22px}
-@media(max-width:760px){.sh-ico{width:24px;height:24px}[style*="iconos/pascual.png"]{width:50px;height:19px}}
+[style*="iconos/pascual.png"]{width:52px;height:22px;-webkit-mask-size:100% 100%;mask-size:100% 100%}
+@media(max-width:760px){.sh-ico{width:24px;height:24px}[style*="iconos/pascual.png"]{width:45px;height:19px;-webkit-mask-size:100% 100%;mask-size:100% 100%}}
 
 .site-header nav{gap:clamp(14px,1.6vw,26px)}
 @media(max-width:760px){.site-header nav{gap:18px}}
