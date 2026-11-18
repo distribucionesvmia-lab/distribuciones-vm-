@@ -259,3 +259,10 @@
 .pw-a-showcase img{width:100%;height:100%;object-fit:contain;display:block}
 @media(min-width:1000px){.pw-a.is-wide .pw-a-showcase{position:absolute;z-index:3;left:calc(50% + 2vw);top:clamp(150px,24vh,240px);width:min(470px,33vw);margin:0}}
 @media(max-width:999px){.pw-a.is-wide .pw-scene-inner{display:flex;flex-direction:column}.pw-a.is-wide .pw-a-copy{order:1}.pw-a.is-wide .pw-a-showcase{order:2;margin:6px 0 18px}.pw-a.is-wide .pw-a-art{order:3}.pw-a.is-wide .pw-scene-label{order:0}}
+
+/* Escenas principales con texto largo: el bloque de texto se ajusta a la altura de la ventana para no pisar el rótulo de abajo */
+@media(min-width:761px){
+ .pw-a:not(.is-wide) .pw-a-copy{margin-top:clamp(24px,5vh,80px)}
+ .pw-a:not(.is-wide) h2{font-size:clamp(3rem,min(7vw,9.6vh),8.3rem);margin:10px 0 18px}
+ .pw-a:not(.is-wide) .pw-description{font-size:clamp(.95rem,min(1.45vw,2.2vh),1.35rem);max-width:480px;line-height:1.42}
+}

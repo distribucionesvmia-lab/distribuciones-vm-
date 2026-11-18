@@ -46,10 +46,10 @@ window.ProductWorld.init({
     {
       template:'lineup', family:'Palacio de Bornos', color:'#f3ead6', ink:'#2f2a1c',
       eyebrow:'Palacio de Bornos · Espumosos', title:'Para brindar. Pioneros en Castilla y León.',
-      note:'Espumosos de Palacio de Bornos (Brut, Nature, Semiseco y Rosado), elaborados por quien, según la propia bodega, fue «la primera» en hacer espumoso en Castilla y León, en 1978. Una imagen por variedad',
+      note:'Espumosos de Palacio de Bornos (Nature, Brut, Semiseco y Rosado), elaborados por quien, según la propia bodega, fue «la primera» en hacer espumoso en Castilla y León, en 1978. Una imagen por variedad',
       variants:[
-        {name:'Espumoso Palacio de Bornos Brut', description:'Vino espumoso Brut de Palacio de Bornos.', image:B+'bornos-espumoso-brut.png', width:208, height:756, alt:'Botella Palacio de Bornos Verdejo Brut, espumoso de Rueda'},
         {name:'Espumoso Palacio de Bornos Nature', description:'Vino espumoso Nature de Palacio de Bornos.', image:B+'bornos-espumoso-brut-nature.png', width:222, height:755, alt:'Botella Palacio de Bornos Verdejo Brut Nature, espumoso de Rueda'},
+        {name:'Espumoso Palacio de Bornos Brut', description:'Vino espumoso Brut de Palacio de Bornos.', image:B+'bornos-espumoso-brut.png', width:208, height:756, alt:'Botella Palacio de Bornos Verdejo Brut, espumoso de Rueda'},
         {name:'Espumoso Palacio de Bornos Semiseco', description:'Vino espumoso semiseco de Palacio de Bornos.', image:B+'bornos-espumoso-semiseco.png', width:208, height:755, alt:'Botella Palacio de Bornos Verdejo Semiseco, espumoso de Rueda'},
         {name:'Espumoso Palacio de Bornos Rosado', description:'Vino espumoso rosado de Palacio de Bornos.', image:B+'bornos-espumoso-rosado-semiseco.png', width:208, height:755, alt:'Botella Palacio de Bornos Rosado Semiseco, espumoso de Rueda'}
       ]
