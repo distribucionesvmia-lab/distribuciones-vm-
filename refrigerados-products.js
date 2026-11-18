@@ -151,3 +151,18 @@
   render();
   if (location.hash.length > 1) setTimeout(() => { const t = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (t) t.scrollIntoView(); }, 120);
 })();
+
+/* La foto escondida sale al lado de la tarjeta: a la derecha si cabe y, si no, a la izquierda */
+(function () {
+  function place(e) {
+    var c = e.target && e.target.closest && e.target.closest('.rf-card.has-peek');
+    if (!c) return;
+    var pk = c.querySelector('.rf-peek');
+    if (!pk) return;
+    var r = c.getBoundingClientRect(), w = pk.offsetWidth + 20, vw = document.documentElement.clientWidth;
+    var right = vw - r.right, left = r.left;
+    if (right >= w || right >= left) delete c.dataset.peek; else c.dataset.peek = 'left';
+  }
+  document.addEventListener('mouseover', place);
+  document.addEventListener('focusin', place);
+})();

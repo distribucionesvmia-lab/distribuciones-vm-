@@ -158,3 +158,10 @@
 
 .rf-peek{max-width:min(440px,calc(100vw - 48px))}
 @media(max-width:560px){.rf-peek{height:min(340px,52vh);right:6px}}
+/* En pantallas anchas la foto sale al lado de la tarjeta (no encima del texto); si no hay sitio a la derecha, a la izquierda */
+@media(min-width:561px){
+  .rf-peek{right:auto;bottom:auto;left:calc(100% + 12px);top:50%;transform:translate(-10px,-50%) scale(.96);transform-origin:0 50%}
+  .rf-card[data-peek="left"] .rf-peek{left:auto;right:calc(100% + 12px);transform:translate(10px,-50%) scale(.96);transform-origin:100% 50%}
+  .rf-card.has-peek:hover .rf-peek,.rf-card.has-peek:focus-visible .rf-peek,.rf-card.has-peek:focus .rf-peek{transform:translateY(-50%)}
+}
+.rf{overflow-x:clip}
