@@ -135,3 +135,6 @@
 .hi-tl button.maj:not(.on):not(.past){color:#7a6a3a}
 @media(max-width:760px){.hi-stop.major .hi-card{padding:32px 20px 22px}.hi-stop.major .hi-card::before{left:20px}.hi-stop.major .hi-card::after{right:14px}.hi-tl button:not(.maj){font-size:.7rem}}
 @media(max-width:760px){.hi-stop.major .hi-card::before{content:"★★★★★" / "";letter-spacing:.08em;font-size:.78rem}.hi-stop.major .hi-card::after{content:"Principal" / "";font-size:.58rem;padding:3px 8px}}
+
+.hi-logo{display:block;width:min(210px,70%);height:auto;margin:12px 0 2px}
+.hi-gal.hi-slide figure.ph-cover>img{object-fit:cover}
