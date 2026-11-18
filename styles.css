@@ -320,3 +320,7 @@ form{margin-top:48px;display:grid;gap:10px;grid-template-columns:1fr 1fr 1fr}
 .ent-furgon{margin:clamp(48px,7vw,96px) 0 0}
 .ent-furgon img{width:100%;height:auto;border-radius:var(--r,12px);background:#eceef0}
 .ent-furgon figcaption{margin-top:12px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+
+/* tarjeta Café del catálogo: cartel vertical de Mocay, sin recortar su frase */
+.card-cafe img{object-fit:cover}
+@media(max-width:760px){.card-cafe{min-height:0;aspect-ratio:4/5}}
