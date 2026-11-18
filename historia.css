@@ -149,3 +149,5 @@
 .hi-stop.hi-pin .hi-card{position:sticky;top:calc(var(--hh,90px) + 70px)}
 @media(max-width:760px){.hi-stop.hi-pin .hi-card{top:calc(var(--hh,90px) + 56px)}}
 .hi-gal.hi-fade figure>img{object-fit:contain}
+
+.hi-vehicle{will-change:transform;backface-visibility:hidden}

@@ -94,13 +94,16 @@
     prog=path('','#c8372d',3);
     road=rd;
     base=document.createElementNS(NS,'path');base.setAttribute('d',d);base.setAttribute('fill','none');base.setAttribute('stroke','none');road.appendChild(base);
+    var prevLen=len;
     len=base.getTotalLength();prog.setAttribute('stroke-dasharray',len);
+    sample();lastRev=-1;
     mk=[];pts.forEach(function(p,i){
       var major=stops[i].classList.contains('major');
       var c=document.createElementNS(NS,'circle');c.setAttribute('cx',p.x);c.setAttribute('cy',p.y);c.setAttribute('r',major?(mob?10:14):(mob?6:8));c.setAttribute('fill',major?'#c8372d':'#f7f3ea');c.setAttribute('stroke',major?'#fff':'#c8372d');c.setAttribute('stroke-width',major?4:3);c.setAttribute('opacity',reduce?1:.3);road.appendChild(c);mk.push(c);
     });
     document.documentElement.style.setProperty('--hh',(document.querySelector('.site-header')||{offsetHeight:90}).offsetHeight+'px');
     buildDeco(w,mob);
+    if(curL!==null&&prevLen>0)curL=curL*len/prevLen; /* al reconstruir (imagen que carga, giro de pantalla) el vehículo conserva su posición relativa y no salta */
     update();
   }
   /* tarjeta con cambio de foto por scroll: la primera se funde con la segunda al avanzar */
@@ -131,25 +134,63 @@
       for(var i=0;i<n;i++)f[i].style.opacity=Math.max(0,1-Math.abs(p-i));
     });
   }
-  function atYv(L){return base.getPointAtLength(L).y+10}
-  function atY(y){var lo=0,hi=len;for(var i=0;i<22;i++){var m=(lo+hi)/2;if(base.getPointAtLength(m).y<y)lo=m;else hi=m}return lo}
+  /* Tabla de la carretera: se calcula una vez al construir y evita llamar a getPointAtLength en cada fotograma */
+  var SX=[],SY=[],SL=[],STEP=4;
+  function sample(){
+    SX=[];SY=[];SL=[];
+    for(var l=0;l<=len;l+=STEP){var q=base.getPointAtLength(l);SL.push(l);SX.push(q.x);SY.push(q.y)}
+    var e=base.getPointAtLength(len);SL.push(len);SX.push(e.x);SY.push(e.y);
+  }
+  function ptAt(L){
+    L=Math.max(0,Math.min(len,L));var i=Math.min(SL.length-2,Math.floor(L/STEP)),t=(L-SL[i])/((SL[i+1]-SL[i])||1);
+    return {x:SX[i]+(SX[i+1]-SX[i])*t,y:SY[i]+(SY[i+1]-SY[i])*t};
+  }
+  function atY(y){
+    var lo=0,hi=SY.length-1;
+    while(lo<hi){var m=(lo+hi)>>1;if(SY[m]<y)lo=m+1;else hi=m}
+    return SL[lo];
+  }
+  var targetL=0,curL=null,looping=false,lastRev=-1,hhCache=90,tilt0=0;
+  /* En cada scroll solo se calcula hasta dónde debe llegar el vehículo; el movimiento lo suaviza el bucle de abajo */
   function update(){
     if(!base)return;
     updateFade();updateSlide();
     var rr=ruta.getBoundingClientRect(),y=innerHeight*0.55-rr.top;
-    var L=reduce?len:Math.max(0,Math.min(len,atY(y)));
+    targetL=reduce?len:Math.max(0,Math.min(len,atY(y)));
+    if(curL===null||reduce)curL=targetL;
+    if(!looping){looping=true;requestAnimationFrame(frame)}
+  }
+  function frame(){
+    var diff=targetL-curL;
+    if(Math.abs(diff)<0.4){curL=targetL;looping=false}
+    else{
+      /* acercamiento suave con velocidad máxima: nunca «salta», aunque el scroll sea brusco */
+      var step=diff*0.16;var maxs=70;if(step>maxs)step=maxs;if(step<-maxs)step=-maxs;curL+=step;
+    }
+    paint(curL);
+    if(looping)requestAnimationFrame(frame);
+  }
+  function paint(L){
     prog.setAttribute('stroke-dashoffset',len-L);
-    clipRect.setAttribute('height',Math.max(0,reduce?9e5:atYv(L)));
-    var p=base.getPointAtLength(L),q=base.getPointAtLength(Math.min(len,L+4)),o=base.getPointAtLength(Math.max(0,L-4));
-    var dx=q.x-o.x,dy=q.y-o.y,th=Math.atan2(dx,dy)*180/Math.PI;
-    var tilt=Math.max(-14,Math.min(14,th*.4));
-    veh.style.transform='translate('+p.x+'px,'+p.y+'px) rotate('+tilt+'deg)';
-    var idx=0;pts.forEach(function(s,i){if(s.y<=p.y+20)idx=i});
+    var p=ptAt(L);
+    clipRect.setAttribute('height',Math.max(0,reduce?9e5:p.y+10));
+    var q=ptAt(L+4),o=ptAt(L-4);
+    var th=Math.atan2(q.x-o.x,q.y-o.y)*180/Math.PI;
+    var tl_=Math.max(-14,Math.min(14,th*.4));tilt0+=(tl_-tilt0)*0.25;
+    veh.style.transform='translate3d('+p.x.toFixed(1)+'px,'+p.y.toFixed(1)+'px,0) rotate('+tilt0.toFixed(2)+'deg)';
+    var idx=0;for(var i=0;i<pts.length;i++){if(pts[i].y<=p.y+20)idx=i}
     var fin=p.y>pts[pts.length-1].y+70;var kk=fin?'fe':stops[idx].dataset.veh;fl.style.transform='none'; /* sin espejo: los rótulos y las puertas deben verse siempre bien */
+    var rev=Math.floor(p.y/40);
+    if(rev!==lastRev){
+      lastRev=rev;
+      mk.forEach(function(c,i){c.setAttribute('opacity',(reduce||pts[i].y<=p.y+20)?1:.3)});
+      decoEls.forEach(function(d){if(reduce||p.y>=d._y-80)d.classList.add('on')});
+    }
     ruta.classList.toggle('is90',idx>=SAL);
-    mk.forEach(function(c,i){c.setAttribute('opacity',(reduce||pts[i].y<=p.y+20)?1:.3)});
-    decoEls.forEach(function(d){if(reduce||p.y>=d._y-80)d.classList.add('on')});
-    if(tl){tlChips.forEach(function(c,i){c.classList.toggle('on',i===idx);c.classList.toggle('past',i<idx)});tlFill.style.width=(L/len*100)+'%';if(idx!==tl._cur){tl._cur=idx;var c=tlChips[idx];tl.querySelector('.hi-tl-in').scrollTo({left:c.offsetLeft-(tin.clientWidth-c.offsetWidth)/2,behavior:reduce?'auto':'smooth'})}}
+    if(tl){
+      tlFill.style.width=(L/len*100).toFixed(2)+'%';
+      if(idx!==tl._cur){tl._cur=idx;tlChips.forEach(function(c,i){c.classList.toggle('on',i===idx);c.classList.toggle('past',i<idx)});var c=tlChips[idx];tl.querySelector('.hi-tl-in').scrollTo({left:c.offsetLeft-(tin.clientWidth-c.offsetWidth)/2,behavior:reduce?'auto':'smooth'})}
+    }
     var st=fin?-2:idx;if(st!==cur){cur=st;[].forEach.call(fl.children,function(c){c.classList.toggle('on',c.dataset&&c.dataset.k===kk)});cap.textContent=fin?'Citroën ë-Jumpy · hoy':(stops[idx].dataset.vcap||'')}
   }
   if('IntersectionObserver' in window&&!reduce){
