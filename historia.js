@@ -62,23 +62,25 @@
     var cols=['#4d8a4a','#5f9a55','#3f7f45','#7aa65a'];
     var n=Math.floor(len/(mob?130:110));
     for(var q=0;q<n;q++){
-      var L=(q+0.5)*len/n,pp=base.getPointAtLength(L),a=base.getPointAtLength(Math.min(len,L+2)),b2=base.getPointAtLength(Math.max(0,L-2));
+      var L=(q+0.5)*len/n,pp=ptAt(L),a=ptAt(Math.min(len,L+2)),b2=ptAt(Math.max(0,L-2));
       var tx=a.x-b2.x,ty=a.y-b2.y,m=Math.sqrt(tx*tx+ty*ty)||1,nx=-ty/m,ny2=tx/m,side=q%2?1:-1,off=(mob?20:30)*side+ (q%3)*3;
       var sz=(mob?14:18)+(q%3)*3;
       tinyTree(pp.x+nx*off-sz/2,pp.y+ny2*off-sz*1.2,sz,cols[q%4]);
     }
   }
+  var lastSig='';
+  function sig(){var r=ruta.getBoundingClientRect();return Math.round(r.width)+'|'+Math.round(r.height)+'|'+stops.map(function(s){return Math.round(s.getBoundingClientRect().top-r.top)}).join(',')}
   function build(){
-    var rr=ruta.getBoundingClientRect(),w=rr.width,mob=w<=760;
+    var rr=ruta.getBoundingClientRect(),w=rr.width,mob=w<=760;lastSig=sig();
     pts=stops.map(function(s,i){
       var r=s.getBoundingClientRect(),y=r.top-rr.top+(mob?44:50),x;
       if(mob)x=(i%2?42:30)+parseFloat(getComputedStyle(ruta).paddingLeft);
       else x=w*(i%2?0.585:0.415);
       return {x:x,y:y};
     });
-    var d='M'+pts[0].x+' '+(pts[0].y-90),prev={x:pts[0].x,y:pts[0].y-90};
-    pts.forEach(function(p){var dy=p.y-prev.y;d+=' C'+prev.x+' '+(prev.y+dy*.55)+' '+p.x+' '+(p.y-dy*.55)+' '+p.x+' '+p.y;prev=p});
-    var end={x:pts[pts.length-1].x,y:pts[pts.length-1].y+130};d+=' C'+prev.x+' '+(prev.y+60)+' '+end.x+' '+(end.y-60)+' '+end.x+' '+end.y;
+    var d='M'+pts[0].x+' '+(pts[0].y-90),prev={x:pts[0].x,y:pts[0].y-90};segs=[];
+    pts.forEach(function(p){var dy=p.y-prev.y;d+=' C'+prev.x+' '+(prev.y+dy*.55)+' '+p.x+' '+(p.y-dy*.55)+' '+p.x+' '+p.y;segs.push([prev.x,prev.y,prev.x,prev.y+dy*.55,p.x,p.y-dy*.55,p.x,p.y]);prev=p});
+    var end={x:pts[pts.length-1].x,y:pts[pts.length-1].y+130};d+=' C'+prev.x+' '+(prev.y+60)+' '+end.x+' '+(end.y-60)+' '+end.x+' '+end.y;segs.push([prev.x,prev.y,prev.x,prev.y+60,end.x,end.y-60,end.x,end.y]);
     road.setAttribute('viewBox','0 0 '+w+' '+rr.height);
     road.innerHTML='';
     var lw=mob?12:18;
@@ -101,7 +103,7 @@
       var major=stops[i].classList.contains('major');
       var c=document.createElementNS(NS,'circle');c.setAttribute('cx',p.x);c.setAttribute('cy',p.y);c.setAttribute('r',major?(mob?10:14):(mob?6:8));c.setAttribute('fill',major?'#c8372d':'#f7f3ea');c.setAttribute('stroke',major?'#fff':'#c8372d');c.setAttribute('stroke-width',major?4:3);c.setAttribute('opacity',reduce?1:.3);road.appendChild(c);mk.push(c);
     });
-    document.documentElement.style.setProperty('--hh',(document.querySelector('.site-header')||{offsetHeight:90}).offsetHeight+'px');
+    hhCache=(document.querySelector('.site-header')||{offsetHeight:90}).offsetHeight;document.documentElement.style.setProperty('--hh',hhCache+'px');[].forEach.call(ruta.querySelectorAll('.hi-pin'),function(e){e._H=0});
     buildDeco(w,mob);
     if(curL!==null&&prevLen>0)curL=curL*len/prevLen; /* al reconstruir (imagen que carga, giro de pantalla) el vehículo conserva su posición relativa y no salta */
     update();
@@ -124,7 +126,7 @@
       var vh=innerHeight,p,li=g.closest('.hi-pin');
       if(li){
         /* tarjeta fijada: las fotos pasan mientras la tarjeta se queda quieta y la carretera sigue */
-        var hh=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hh'))||90,H=parseFloat(getComputedStyle(li,'::after').height)||1;
+        var hh=hhCache,H=li._H||(li._H=parseFloat(getComputedStyle(li,'::after').height)||1);
         p=Math.max(0,Math.min(1,(hh+70-li.getBoundingClientRect().top)/H))*(n-1);
       }else{
         var r=g.getBoundingClientRect(),st=n===2?0.78:0.85,en=n===2?0.40:0.25;
@@ -136,10 +138,27 @@
   }
   /* Tabla de la carretera: se calcula una vez al construir y evita llamar a getPointAtLength en cada fotograma */
   var SX=[],SY=[],SL=[],STEP=4;
+  var segs=[];
+  /* Muestreo de la carretera sin llamar a getPointAtLength (era lo más caro de la página): se evalúan las curvas Bézier directamente */
   function sample(){
+    var PX=[],PY=[],PL=[],acc=0,N=48,px=0,py=0,first=true;
+    segs.forEach(function(g){
+      for(var k=first?0:1;k<=N;k++){
+        var t=k/N,u=1-t,a=u*u*u,b=3*u*u*t,c=3*u*t*t,e=t*t*t;
+        var x=a*g[0]+b*g[2]+c*g[4]+e*g[6],y=a*g[1]+b*g[3]+c*g[5]+e*g[7];
+        if(!first)acc+=Math.sqrt((x-px)*(x-px)+(y-py)*(y-py));
+        PX.push(x);PY.push(y);PL.push(acc);px=x;py=y;first=false;
+      }
+    });
+    var sc=acc?len/acc:1;
     SX=[];SY=[];SL=[];
-    for(var l=0;l<=len;l+=STEP){var q=base.getPointAtLength(l);SL.push(l);SX.push(q.x);SY.push(q.y)}
-    var e=base.getPointAtLength(len);SL.push(len);SX.push(e.x);SY.push(e.y);
+    var j=0;
+    for(var l=0;l<=len;l+=STEP){
+      var tgt=l/sc;while(j<PL.length-2&&PL[j+1]<tgt)j++;
+      var f=(tgt-PL[j])/((PL[j+1]-PL[j])||1);if(f<0)f=0;if(f>1)f=1;
+      SL.push(l);SX.push(PX[j]+(PX[j+1]-PX[j])*f);SY.push(PY[j]+(PY[j+1]-PY[j])*f);
+    }
+    SL.push(len);SX.push(PX[PX.length-1]);SY.push(PY[PY.length-1]);
   }
   function ptAt(L){
     L=Math.max(0,Math.min(len,L));var i=Math.min(SL.length-2,Math.floor(L/STEP)),t=(L-SL[i])/((SL[i+1]-SL[i])||1);
@@ -200,6 +219,6 @@
   var t;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(build,150)});
   addEventListener('scroll',function(){requestAnimationFrame(update)},{passive:true});
   addEventListener('load',build);
-  [].forEach.call(ruta.querySelectorAll('img'),function(i){i.addEventListener('load',function(){clearTimeout(t);t=setTimeout(build,100)})});
+  [].forEach.call(ruta.querySelectorAll('img'),function(i){i.addEventListener('load',function(){clearTimeout(t);t=setTimeout(function(){if(sig()!==lastSig)build()},120)})});
   build();
 })();
