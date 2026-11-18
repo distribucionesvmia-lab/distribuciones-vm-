@@ -16,7 +16,7 @@
   var fl=document.createElement('div');fl.className='flip';veh.appendChild(fl);
   Object.keys(VEH).forEach(function(k){var d=document.createElement('div');d.className='v';d.dataset.k=k;d.innerHTML='<svg viewBox="0 0 90 56">'+VEH[k]+'</svg>';fl.appendChild(d)});
   Object.keys(IMG).forEach(function(k){var d=document.createElement('div');d.className='v img';d.dataset.k=k;d.innerHTML='<img src="assets/historia/'+IMG[k]+'.png" alt="" width="720" height="400">';fl.appendChild(d)});
-  var cap=document.createElement('span');cap.className='hi-vcap';veh.appendChild(cap);
+  var cap=document.createElement('span');cap.className='hi-vcap'; /* el nombre del vehículo ya no se muestra bajo el avatar */
   ruta.appendChild(veh);
   var SAL=stops.findIndex(function(s){return /Salamanca/.test(s.textContent)});if(SAL<0)SAL=stops.length;
   var base,prog,clipRect,pts=[],len=0,cur=-1,mk=[],decoEls=[],tl,tlChips=[],tlFill;
