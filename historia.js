@@ -104,11 +104,12 @@
   /* tarjeta con cambio de foto por scroll: la primera se funde con la segunda al avanzar */
   function updateFade(){
     [].forEach.call(ruta.querySelectorAll('.hi-fade'),function(g){
-      var f=g.children;if(f.length<2)return;
+      var f=g.children,n=f.length;if(n<2)return;
       var r=g.getBoundingClientRect(),vh=innerHeight;
-      var t=Math.max(0,Math.min(1,(vh*0.78-r.top)/(vh*0.38)));
-      if(reduce)t=t>0.5?1:0;
-      f[0].style.opacity=1-t;f[1].style.opacity=t;
+      var span=n===2?0.38:0.34*(n-1);
+      var p=Math.max(0,Math.min(1,(vh*0.78-r.top)/(vh*span)))*(n-1);
+      if(reduce)p=Math.round(p);
+      for(var i=0;i<n;i++)f[i].style.opacity=Math.max(0,1-Math.abs(p-i));
     });
   }
   function atYv(L){return base.getPointAtLength(L).y+10}
