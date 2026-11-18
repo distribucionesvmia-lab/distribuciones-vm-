@@ -143,3 +143,9 @@
 .hi-gal.hi-slide.hi-tight{aspect-ratio:1/1;background:#14100d}
 .hi-gal.hi-slide.hi-tight figure>img{object-fit:cover;padding:0}
 .hi-gal.hi-slide.hi-tight figure:nth-child(n+2){transform:translateX(calc(100% + 6px))}
+
+/* tarjeta de 1993: se queda fija mientras pasan las seis fotos, a un ritmo lento */
+.hi-stop.hi-pin::after{content:"";display:block;height:calc(var(--pin-n,5) * 30svh)}
+.hi-stop.hi-pin .hi-card{position:sticky;top:calc(var(--hh,90px) + 70px)}
+@media(max-width:760px){.hi-stop.hi-pin .hi-card{top:calc(var(--hh,90px) + 56px)}}
+.hi-gal.hi-fade figure>img{object-fit:contain}

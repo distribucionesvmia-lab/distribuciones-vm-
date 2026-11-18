@@ -118,9 +118,15 @@
   function updateFade(){
     [].forEach.call(ruta.querySelectorAll('.hi-fade'),function(g){
       var f=g.children,n=f.length;if(n<2)return;
-      var r=g.getBoundingClientRect(),vh=innerHeight;
-      var st=n===2?0.78:0.85,en=n===2?0.40:0.25;
-      var p=Math.max(0,Math.min(1,(vh*st-r.top)/(vh*(st-en))))*(n-1);
+      var vh=innerHeight,p,li=g.closest('.hi-pin');
+      if(li){
+        /* tarjeta fijada: las fotos pasan mientras la tarjeta se queda quieta y la carretera sigue */
+        var hh=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hh'))||90,H=parseFloat(getComputedStyle(li,'::after').height)||1;
+        p=Math.max(0,Math.min(1,(hh+70-li.getBoundingClientRect().top)/H))*(n-1);
+      }else{
+        var r=g.getBoundingClientRect(),st=n===2?0.78:0.85,en=n===2?0.40:0.25;
+        p=Math.max(0,Math.min(1,(vh*st-r.top)/(vh*(st-en))))*(n-1);
+      }
       if(reduce)p=Math.round(p);
       for(var i=0;i<n;i++)f[i].style.opacity=Math.max(0,1-Math.abs(p-i));
     });
