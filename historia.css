@@ -138,3 +138,8 @@
 
 .hi-logo{display:block;width:min(210px,70%);height:auto;margin:12px 0 2px}
 .hi-gal.hi-slide figure.ph-cover>img{object-fit:cover}
+
+/* menaje: fotos a sangre y casi pegadas entre sí, sin huecos de fondo entre una y otra */
+.hi-gal.hi-slide.hi-tight{aspect-ratio:1/1;background:#14100d}
+.hi-gal.hi-slide.hi-tight figure>img{object-fit:cover;padding:0}
+.hi-gal.hi-slide.hi-tight figure:nth-child(n+2){transform:translateX(calc(100% + 6px))}

@@ -290,3 +290,14 @@ button,a{-webkit-tap-highlight-color:transparent}
 .m-compl-dulces .m-premium img{height:auto;max-height:280px;width:auto;max-width:100%;margin:0 auto}
 .m-compl-dulces .m-premium figcaption{display:grid;gap:3px;justify-items:center}
 .m-compl-dulces .m-premium figcaption small{font-size:.74rem;font-weight:500;opacity:.75;letter-spacing:.02em}
+
+/* Portada con el cartel «Que tus clientes repitan»: el cartel va entero a la izquierda y el texto a la derecha, para no tapar su frase */
+.m-photo{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);column-gap:clamp(28px,4vw,72px);align-items:center}
+.m-photo::before{background:none}
+.m-photo .m-hero-photo{position:relative;inset:auto;z-index:0;grid-column:1;width:100%;max-width:560px;height:auto;max-height:calc(100svh - 170px);aspect-ratio:4/5;object-fit:cover;object-position:50% 50%;justify-self:end;border-radius:18px;box-shadow:0 30px 70px rgba(0,0,0,.55)}
+.m-photo .m-hero-copy{grid-column:2}
+@media(max-width:1100px){.m-photo{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}}
+@media(max-width:760px){
+ .m-photo .m-hero-photo{order:-1;width:100vw;max-width:none;max-height:none;height:auto;aspect-ratio:4/5;margin:0 0 -4px calc(50% - 50vw);border-radius:0;box-shadow:none;object-position:50% 50%;-webkit-mask-image:none;mask-image:none;justify-self:auto}
+ .m-photo .m-hero-copy{grid-column:auto}
+}

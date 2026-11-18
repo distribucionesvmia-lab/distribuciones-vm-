@@ -111,7 +111,8 @@
       var st=n===2?0.62:0.76,en=0.22;
       var p=Math.max(0,Math.min(1,(vh*st-r.top)/(vh*(st-en))))*(n-1);
       if(reduce)p=Math.round(p);
-      for(var i=0;i<n;i++)f[i].style.transform='translateX('+((i-p)*100).toFixed(1)+'%)';
+      var gap=g.classList.contains('hi-tight')?6:0;
+      for(var i=0;i<n;i++)f[i].style.transform='translateX(calc('+((i-p)*100).toFixed(1)+'% + '+((i-p)*gap).toFixed(1)+'px))';
     });
   }
   function updateFade(){
