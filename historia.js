@@ -101,10 +101,21 @@
     buildDeco(w,mob);
     update();
   }
+  /* tarjeta con cambio de foto por scroll: la primera se funde con la segunda al avanzar */
+  function updateFade(){
+    [].forEach.call(ruta.querySelectorAll('.hi-fade'),function(g){
+      var f=g.children;if(f.length<2)return;
+      var r=g.getBoundingClientRect(),vh=innerHeight;
+      var t=Math.max(0,Math.min(1,(vh*0.78-r.top)/(vh*0.38)));
+      if(reduce)t=t>0.5?1:0;
+      f[0].style.opacity=1-t;f[1].style.opacity=t;
+    });
+  }
   function atYv(L){return base.getPointAtLength(L).y+10}
   function atY(y){var lo=0,hi=len;for(var i=0;i<22;i++){var m=(lo+hi)/2;if(base.getPointAtLength(m).y<y)lo=m;else hi=m}return lo}
   function update(){
     if(!base)return;
+    updateFade();
     var rr=ruta.getBoundingClientRect(),y=innerHeight*0.55-rr.top;
     var L=reduce?len:Math.max(0,Math.min(len,atY(y)));
     prog.setAttribute('stroke-dashoffset',len-L);
