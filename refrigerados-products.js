@@ -45,7 +45,7 @@
   ];
   const products = [
     {group:'Navidul',brand:'Navidul',name:'Chorizo cular ibérico · kg',blk:'navidul',uso:'h',cod:'26009',peek:'assets/refrigerados/extra/navidul_chorizo-cular-iberico.png',pw:391,ph:255,peekAlt:'Chorizo cular ibérico de Navidul, pieza entera con unas lonchas cortadas'},
-    {group:'Navidul',brand:'Navidul',name:'Centro gran rendimiento · kg',blk:'navidul',uso:'h',cod:'26007'},
+    {group:'Navidul',brand:'Navidul',name:'Centro gran rendimiento · kg',blk:'navidul',uso:'h',cod:'26007',peek:'assets/refrigerados/extra/navidul_centro-gran-rendimiento.png',pw:218,ph:335,peekAlt:'Centro de jamón curado Gran Rendimiento de Navidul, pieza con su etiqueta'},
     {group:'Navidul',brand:'Navidul',name:'Jamón 4 Estaciones Reserva · pieza',blk:'navidul',uso:'h',cod:'26129',peek:'assets/refrigerados/extra/navidul_jamon-4-estaciones-reserva.png',pw:192,ph:557,peekAlt:'Jamón curado Reserva Cuatro Estaciones de Navidul, pieza entera con su etiqueta'},
     {group:'Navidul',brand:'Navidul',name:'Jamón asado ahumado · kg',blk:'navidul',uso:'h',cod:'26106',peek:'assets/refrigerados/extra/navidul_jamon-asado-ahumado.png',pw:213,ph:505,peekAlt:'Jamón asado ahumado natural al horno de Navidul, pieza entera con su etiqueta'},
     {group:'Navidul',brand:'Navidul',name:'Jamón cebo ibérico · pieza de 7,5-8 kg',blk:'navidul',uso:'h',cod:'26027',peek:'assets/refrigerados/extra/navidul_jamon-cebo-iberico.png',pw:192,ph:566,peekAlt:'Jamón de cebo ibérico 50 % raza ibérica de Navidul, pieza entera con su etiqueta'},
