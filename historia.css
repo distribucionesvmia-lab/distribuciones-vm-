@@ -91,3 +91,9 @@
 .hi-gal.hi-fade{display:block;position:relative;aspect-ratio:1/1;max-width:340px;overflow:hidden;scroll-snap-type:none;margin:14px 0 0;padding:0;border-radius:12px;background:#efe6d6}
 .hi-gal.hi-fade figure{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;flex:none;margin:0;opacity:0;transition:opacity .12s linear}
 .hi-gal.hi-fade figure:first-child{opacity:1}
+
+/* tarjeta de Pinna Fidelis: la botella como protagonista, con la bodega de fondo */
+.hi-pinna{position:relative;margin:14px 0 0;aspect-ratio:4/3.1;border-radius:12px;overflow:hidden;background:#3b2a20}
+.hi-pinna .pn-w{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:35% 50%;filter:brightness(.62) saturate(1.05)}
+.hi-pinna .pn-b{position:absolute;z-index:1;left:50%;bottom:0;height:96%;width:auto;transform:translateX(-50%);filter:drop-shadow(0 14px 18px rgba(0,0,0,.55))}
+@media(max-width:760px){.hi-pinna{aspect-ratio:1/1.05}}
