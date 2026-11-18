@@ -35,8 +35,10 @@
   var PLAN=['castle','village','vine','colegiata','pines','plaza','bridge','village','vine','wheat','pines','village'];
 
   tl=document.createElement('nav');tl.className='hi-tl';tl.setAttribute('aria-label','Línea de tiempo');
-  tl.innerHTML='<div class="hi-tl-in"></div><span class="hi-tl-bar"><i></i></span>';
+  tl.innerHTML='<div class="hi-tl-row"><div class="hi-tl-in"></div></div><span class="hi-tl-bar"><i></i></span>';
   tlFill=tl.querySelector('i');var tin=tl.querySelector('.hi-tl-in');
+  /* las dos subpáginas de Conócenos pasan a la derecha de la línea de tiempo: una sola barra fija en vez de dos */
+  var subnav=document.querySelector('.sh-sub');if(subnav){subnav.classList.add('in-tl');tl.querySelector('.hi-tl-row').appendChild(subnav);}
   stops.forEach(function(s,i){var y=s.dataset.chip||s.querySelector('.hi-year').textContent;var b=document.createElement('button');b.type='button';b.textContent=y;b.className=s.classList.contains('major')?'maj':'';b.setAttribute('aria-label','Ir a '+y+': '+s.querySelector('h2').textContent);b.addEventListener('click',function(){var hh=parseFloat(getComputedStyle(ruta).getPropertyValue('--hh'))||90;scrollTo({top:s.getBoundingClientRect().top+scrollY-hh-70,behavior:reduce?'auto':'smooth'})});tin.appendChild(b);tlChips.push(b)});
   ruta.insertBefore(tl,ruta.firstChild);
   var deco=document.createElement('div');deco.className='hi-deco';deco.setAttribute('aria-hidden','true');ruta.insertBefore(deco,road);
@@ -97,7 +99,7 @@
       var major=stops[i].classList.contains('major');
       var c=document.createElementNS(NS,'circle');c.setAttribute('cx',p.x);c.setAttribute('cy',p.y);c.setAttribute('r',major?(mob?10:14):(mob?6:8));c.setAttribute('fill',major?'#c8372d':'#f7f3ea');c.setAttribute('stroke',major?'#fff':'#c8372d');c.setAttribute('stroke-width',major?4:3);c.setAttribute('opacity',reduce?1:.3);road.appendChild(c);mk.push(c);
     });
-    ruta.style.setProperty('--hh',((document.querySelector('.site-header')||{offsetHeight:90}).offsetHeight+(document.querySelector('.sh-sub')||{offsetHeight:0}).offsetHeight)+'px');
+    ruta.style.setProperty('--hh',(document.querySelector('.site-header')||{offsetHeight:90}).offsetHeight+'px');
     buildDeco(w,mob);
     update();
   }
@@ -130,7 +132,7 @@
     ruta.classList.toggle('is90',idx>=SAL);
     mk.forEach(function(c,i){c.setAttribute('opacity',(reduce||pts[i].y<=p.y+20)?1:.3)});
     decoEls.forEach(function(d){if(reduce||p.y>=d._y-80)d.classList.add('on')});
-    if(tl){tlChips.forEach(function(c,i){c.classList.toggle('on',i===idx);c.classList.toggle('past',i<idx)});tlFill.style.width=(L/len*100)+'%';if(idx!==tl._cur){tl._cur=idx;var c=tlChips[idx];tl.querySelector('.hi-tl-in').scrollTo({left:c.offsetLeft-(tl.clientWidth-c.offsetWidth)/2,behavior:reduce?'auto':'smooth'})}}
+    if(tl){tlChips.forEach(function(c,i){c.classList.toggle('on',i===idx);c.classList.toggle('past',i<idx)});tlFill.style.width=(L/len*100)+'%';if(idx!==tl._cur){tl._cur=idx;var c=tlChips[idx];tl.querySelector('.hi-tl-in').scrollTo({left:c.offsetLeft-(tin.clientWidth-c.offsetWidth)/2,behavior:reduce?'auto':'smooth'})}}
     var st=fin?-2:idx;if(st!==cur){cur=st;[].forEach.call(fl.children,function(c){c.classList.toggle('on',c.dataset&&c.dataset.k===kk)});cap.textContent=fin?'Citroën ë-Jumpy · hoy':(stops[idx].dataset.vcap||'')}
   }
   if('IntersectionObserver' in window&&!reduce){

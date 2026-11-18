@@ -101,3 +101,12 @@
 
 .hi-gal.hi-fade figure.fl-small{background:#7a2a1a}
 .hi-gal.hi-fade figure.fl-small>img{inset:auto;left:50%;top:50%;width:auto;height:auto;max-width:44%;max-height:44%;transform:translate(-50%,-50%);image-rendering:auto}
+
+/* barra única: años a la izquierda y subpáginas de Conócenos a la derecha, más baja que antes */
+.hi-tl-row{display:flex;align-items:center}
+.hi-tl-row .hi-tl-in{flex:1 1 auto;min-width:0;padding:4px 8px 5px var(--side);justify-content:flex-start}
+.hi-tl button{padding:4px 10px;font-size:.8rem}
+.hi-tl .sh-sub.in-tl{position:static;flex:none;display:flex;align-items:center;gap:6px;padding:0 var(--side) 0 12px;margin-left:4px;background:none;border:0;border-left:1px solid #d9ccb2;backdrop-filter:none;-webkit-backdrop-filter:none;font-size:.82rem;z-index:auto}
+.hi-tl .sh-sub.in-tl a{padding:4px 8px;border-bottom:0;border-radius:99px;white-space:nowrap}
+.hi-tl .sh-sub.in-tl a[aria-current]{background:#c61819;color:#fff}
+@media(max-width:760px){.hi-tl .sh-sub.in-tl{padding-right:12px;gap:2px;font-size:.74rem}.hi-tl .sh-sub.in-tl a{padding:4px 6px}.hi-tl button{padding:4px 8px;font-size:.76rem}.hi-tl-row .hi-tl-in{padding-left:12px}}
