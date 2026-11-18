@@ -86,6 +86,6 @@
 .sh-sub a[aria-current]{color:#c61819;border-bottom-color:#c61819}
 @media(hover:hover) and (pointer:fine){.sh-sub a:hover{color:#c61819}}
 
-.sh-brand .sh-vm{color:#c61819;font-weight:800}
+.sh-brand .sh-vm{color:#c61819;font-weight:800;font-size:1.2em}
 
 .sh-brand .sh-dist{font-family:Georgia,serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.02em;font-size:1.22em}
