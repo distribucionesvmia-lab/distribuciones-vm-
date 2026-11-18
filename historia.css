@@ -25,7 +25,7 @@
 .hi-gal .ph{border:2px dashed #c9b79a;background:#f3ecdd;text-align:center;padding:12px;font-size:.88rem;line-height:1.35;align-content:center}
 .hi-mini{display:block;height:64px;width:auto;margin-top:10px}
 .hi-ruta .por-confirmar{display:inline-block;background:#ffe08a;color:#4a3300;padding:.05em .4em;border-radius:5px;font-weight:600;font-size:.86em}
-.hi-vehicle{position:absolute;z-index:3;left:0;top:0;width:120px;height:68px;margin:-50px 0 0 -60px;will-change:transform;pointer-events:none}
+.hi-vehicle{position:absolute;z-index:3;left:0;top:0;width:150px;height:85px;margin:-64px 0 0 -75px;will-change:transform;pointer-events:none}
 .hi-vehicle .v{position:absolute;inset:0;opacity:0;transition:opacity .5s}
 .hi-vehicle .v.on{opacity:1}
 .hi-vehicle svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 6px 5px rgba(0,0,0,.25))}
@@ -36,9 +36,9 @@
 .hi-fin p{max-width:520px;margin:0 auto 18px;line-height:1.5}
 .hi-fin a{color:#fff;background:var(--red);padding:12px 22px;border-radius:99px;text-decoration:none;font-weight:600}
 @media(max-width:760px){
- .hi-stop{width:auto;margin-left:0!important;padding-left:78px}
+ .hi-stop{width:auto;margin-left:0!important;padding-left:96px}
  .hi-ruta{padding-bottom:60px}
- .hi-vehicle{width:112px;height:64px;margin:-46px 0 0 -56px}
+ .hi-vehicle{width:124px;height:70px;margin:-50px 0 0 -62px}
  .hi-gal figure{flex-basis:84%}
  .hi-vcap{left:30px;transform:none;font-size:.62rem}
 }

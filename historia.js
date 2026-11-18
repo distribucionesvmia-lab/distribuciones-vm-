@@ -70,7 +70,7 @@
     var rr=ruta.getBoundingClientRect(),w=rr.width,mob=w<=760;
     pts=stops.map(function(s,i){
       var r=s.getBoundingClientRect(),y=r.top-rr.top+(mob?44:50),x;
-      if(mob)x=(i%2?44:26)+parseFloat(getComputedStyle(ruta).paddingLeft)-0;
+      if(mob)x=(i%2?42:30)+parseFloat(getComputedStyle(ruta).paddingLeft);
       else x=w*(i%2?0.585:0.415);
       return {x:x,y:y};
     });
