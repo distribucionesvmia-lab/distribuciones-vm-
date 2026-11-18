@@ -114,7 +114,7 @@
     var tilt=Math.max(-14,Math.min(14,th*.4));
     veh.style.transform='translate('+p.x+'px,'+p.y+'px) rotate('+tilt+'deg)';
     var idx=0;pts.forEach(function(s,i){if(s.y<=p.y+20)idx=i});
-    var fin=p.y>pts[pts.length-1].y+70;var kk=fin?'fe':stops[idx].dataset.veh;fl.style.transform=((dx<0)!==!!LEFT[kk])?'scaleX(-1)':'none';
+    var fin=p.y>pts[pts.length-1].y+70;var kk=fin?'fe':stops[idx].dataset.veh;fl.style.transform='none'; /* sin espejo: los rótulos y las puertas deben verse siempre bien */
     ruta.classList.toggle('is90',idx>=SAL);
     mk.forEach(function(c,i){c.setAttribute('opacity',(reduce||pts[i].y<=p.y+20)?1:.3)});
     decoEls.forEach(function(d){if(reduce||p.y>=d._y-80)d.classList.add('on')});
