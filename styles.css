@@ -159,8 +159,6 @@ select option{color:#14100d}
 .contacto .big{max-width:12ch}
 .con-datos{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:6px;font-size:1.0625rem}
 .con-datos a{text-decoration:none}
-.con-datos .con-mail{display:inline-flex;align-items:center;gap:8px}
-.con-datos .con-mail svg{flex:none}
 .con-datos address,.foot address{font-style:normal}
 @media (hover:hover) and (pointer:fine){.con-datos a:hover{text-decoration:underline;text-underline-offset:4px}}
 .con-sub{font-size:var(--f-lead);line-height:1.2;margin-top:24px;max-width:26ch}
