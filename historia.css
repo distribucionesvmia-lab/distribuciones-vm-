@@ -67,7 +67,7 @@
 @keyframes hi-smoke{0%{transform:translate(0,0) scale(.5);opacity:.85}100%{transform:translate(10px,-34px) scale(1.7);opacity:0}}
 @media(prefers-reduced-motion:reduce){.hi-d,.hi-t{transition:none;transform:none}.hi-d .pf{animation:none;opacity:0}}
 /* línea de tiempo fija */
-.hi-tl{position:sticky;top:var(--hh,90px);z-index:8;margin:0 calc(var(--side) * -1);padding:0;background:rgba(247,243,234,.93);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid #e0d3bb}
+.hi-tl{position:sticky;top:var(--hh,90px);z-index:8;margin:0;padding:0;background:rgba(247,243,234,.93);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid #e0d3bb}
 .hi-tl-in{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:8px var(--side) 9px;justify-content:center}
 .hi-tl-in::-webkit-scrollbar{display:none}
 .hi-tl button{flex:none;border:0;background:transparent;font:inherit;font-weight:600;font-size:.82rem;color:#8a7d6d;padding:5px 11px;border-radius:99px;cursor:pointer;transition:background .2s,color .2s}
