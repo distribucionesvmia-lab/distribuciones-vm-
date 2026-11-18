@@ -79,3 +79,5 @@
 .hi-tl-bar{display:block;height:3px;background:#e7ddc9}
 .hi-tl-bar i{display:block;height:100%;width:0;background:#c61819;transition:width .2s}
 @media(max-width:760px){.hi-tl-in{justify-content:flex-start}}
+
+.hi-veh a{color:var(--red);text-decoration:underline;text-underline-offset:3px;text-transform:none;letter-spacing:0}
