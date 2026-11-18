@@ -31,7 +31,7 @@ BUSINESS = {
     'alternateName': SITE,
     'description': 'Distribución para hostelería: alimentación, bebidas y menaje de primeras marcas, desde Medina del Campo y hasta 90 km a la redonda.',
     'url': BASE,
-    'logo': BASE + 'assets/logo.png',
+    'logo': BASE + 'assets/logo-tile.png',
     'image': BASE + 'assets/portada.webp',
     'telephone': '+34636971266',
     'email': 'oficina@distribucionesvm.es',
