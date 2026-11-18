@@ -5,7 +5,7 @@
 .hi-hero p{max-width:620px;font-size:1.12rem;line-height:1.55;margin:0 0 10px}
 .hi-hero .hi-links{font-size:.95rem}
 .hi-hero a{color:var(--red);text-underline-offset:3px}
-.hi-ruta{position:relative;overflow:hidden;padding:30px var(--side) 90px;--lane:0}
+.hi-ruta{position:relative;overflow:hidden;overflow:clip;padding:30px var(--side) 90px;--lane:0}
 .hi-mapa{position:absolute;inset:0;width:100%;height:100%;z-index:0}
 .hi-road{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:visible}
 .hi-stops{position:relative;z-index:2;list-style:none;margin:0 auto;padding:0;max-width:1180px}
@@ -59,3 +59,23 @@
 .hi-t svg{display:block;width:100%;height:100%}
 @media(prefers-reduced-motion:no-preference){.hi-d svg{transform-origin:50% 100%;animation:hi-sway 7s ease-in-out infinite alternate}.hi-d:nth-child(even) svg{animation-duration:9s}}
 @keyframes hi-sway{from{transform:rotate(-.8deg)}to{transform:rotate(.8deg)}}
+
+/* la ruta se pinta: los dibujos brotan al pasar el vehículo */
+.hi-d,.hi-t{opacity:0;transform:translateY(16px) scale(.72);transform-origin:50% 100%;transition:opacity .7s,transform .9s cubic-bezier(.2,.9,.3,1.25)}
+.hi-d.on{opacity:.95;transform:none}.hi-d.sm.on{opacity:.85}.hi-t.on{opacity:1;transform:none}
+.hi-d .pf{transform-box:fill-box;transform-origin:center;animation:hi-smoke 3.3s ease-out infinite}
+@keyframes hi-smoke{0%{transform:translate(0,0) scale(.5);opacity:.85}100%{transform:translate(10px,-34px) scale(1.7);opacity:0}}
+@media(prefers-reduced-motion:reduce){.hi-d,.hi-t{transition:none;transform:none}.hi-d .pf{animation:none;opacity:0}}
+/* línea de tiempo fija */
+.hi-tl{position:sticky;top:var(--hh,90px);z-index:8;margin:0 calc(var(--side) * -1);padding:0;background:rgba(247,243,234,.93);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid #e0d3bb}
+.hi-tl-in{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:8px var(--side) 9px;justify-content:center}
+.hi-tl-in::-webkit-scrollbar{display:none}
+.hi-tl button{flex:none;border:0;background:transparent;font:inherit;font-weight:600;font-size:.82rem;color:#8a7d6d;padding:5px 11px;border-radius:99px;cursor:pointer;transition:background .2s,color .2s}
+.hi-tl button.maj{font-weight:700}
+.hi-tl button.past{color:#251d1a}
+.hi-tl button.on{background:#c61819;color:#fff}
+.hi-tl button:focus-visible{outline:2px solid #c61819;outline-offset:2px}
+@media(hover:hover) and (pointer:fine){.hi-tl button:hover:not(.on){color:#c61819}}
+.hi-tl-bar{display:block;height:3px;background:#e7ddc9}
+.hi-tl-bar i{display:block;height:100%;width:0;background:#c61819;transition:width .2s}
+@media(max-width:760px){.hi-tl-in{justify-content:flex-start}}
