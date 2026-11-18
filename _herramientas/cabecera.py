@@ -68,7 +68,7 @@ def header(page):
     contact = '#contacto' if home else 'index.html#contacto'
     cls = 'site-header is-fixed' if fixed else 'site-header'
     return (f'<header class="{cls}" id="top">\n'
-            f'  <a class="sh-brand" href="{brand}" aria-label="Distribuciones Valentín, inicio"><img src="assets/logo.png" width="400" height="400" alt=""><span>Distribuciones Valentín</span></a>\n'
+            f'  <a class="sh-brand" href="{brand}" aria-label="Distribuciones Valentín, inicio"><img src="assets/logo.png" width="400" height="400" alt=""><span>Distribuciones <b class="sh-vm">VM</b></span></a>\n'
             f'  <nav aria-label="Principal">{"".join(links)}</nav>\n'
             f'  <div class="sh-actions"><a class="sh-order" href="{ORDER_URL}" target="_blank" rel="noopener">{ORDER_ICON}<span>Hacer pedido</span></a>'
             f'<a class="sh-contact" href="{contact}">Contactar</a></div>\n'

@@ -85,3 +85,5 @@
 .sh-sub a{color:#251d1a;text-decoration:none;font-weight:600;padding:4px 2px;border-bottom:2px solid transparent}
 .sh-sub a[aria-current]{color:#c61819;border-bottom-color:#c61819}
 @media(hover:hover) and (pointer:fine){.sh-sub a:hover{color:#c61819}}
+
+.sh-brand .sh-vm{color:#c61819;font-weight:800}
