@@ -63,6 +63,9 @@ def header(page):
         cur = ' aria-current="page"' if text == active else ''
         if text == active and not home:
             href = '#contenido'
+        if text == 'Conócenos':   # prueba: icono en lugar de la palabra (con etiqueta para lectores de pantalla y texto al pasar el cursor)
+            links.append(f'<a class="sh-ico-link" href="{href}"{cur} aria-label="Conócenos" title="Conócenos"><span class="sh-ico" aria-hidden="true"></span></a>')
+            continue
         links.append(f'<a href="{href}"{cur}>{text}</a>')
     brand = '#inicio' if home else 'index.html#inicio'
     contact = '#contacto' if home else 'index.html#contacto'

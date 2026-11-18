@@ -89,3 +89,8 @@
 .sh-brand .sh-vm{color:#c61819;font-weight:800;font-size:1.2em}
 
 .sh-brand .sh-dist{font-family:Georgia,serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.02em;font-size:1.22em}
+
+/* Icono del equipo en lugar de la palabra «Conócenos» (hereda el color del menú y se pone rojo en la página activa) */
+.sh-ico-link{display:inline-flex;align-items:center;margin:-8px 0}
+.sh-ico{display:inline-block;width:28px;height:28px;background:currentColor;-webkit-mask:url('assets/icono-equipo.png') center/contain no-repeat;mask:url('assets/icono-equipo.png') center/contain no-repeat}
+@media(max-width:760px){.sh-ico{width:24px;height:24px}}
