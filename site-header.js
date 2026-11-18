@@ -11,6 +11,16 @@
   centerNav();
   window.addEventListener('load', centerNav);
   window.addEventListener('resize', centerNav);
+  /* Alturas de la cabecera y de la subcabecera (si existe): las usan los elementos que se quedan fijos debajo. */
+  function setHeights() {
+    var h = document.querySelector('.site-header'), s = document.querySelector('.sh-sub'), r = document.documentElement.style;
+    var hh = h ? h.offsetHeight : 0;
+    r.setProperty('--sh-h', hh + 'px');
+    r.setProperty('--sh-total', (hh + (s ? s.offsetHeight : 0)) + 'px');
+  }
+  setHeights();
+  window.addEventListener('load', setHeights);
+  window.addEventListener('resize', setHeights);
 })();
 
 /* Índice de marcas: en las páginas de producto con muchas escenas, un botón abre la lista de marcas y salta a cada una. */

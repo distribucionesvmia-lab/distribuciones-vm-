@@ -83,7 +83,7 @@ SUB_RE = re.compile(r'<!-- subnav -->.*?<!-- /subnav -->\n?', re.S)
 
 def subnav(page):
     items = ''.join(f'<a href="{h}"' + (' aria-current="page"' if h == page else '') + f'>{t}</a>' for t, h in SUBMENU)
-    return f'<!-- subnav -->\n<nav class="sh-sub" aria-label="Conócenos"><span>Conócenos</span>{items}</nav>\n<!-- /subnav -->\n'
+    return f'<!-- subnav -->\n<nav class="sh-sub" aria-label="Conócenos">{items}</nav>\n<!-- /subnav -->\n'
 
 
 HEADER_RE = re.compile(r'<header class="(?:top|m-top|pw-header|site-header)[^"]*"[^>]*>.*?</header>', re.S)

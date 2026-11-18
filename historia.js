@@ -97,7 +97,7 @@
       var major=stops[i].classList.contains('major');
       var c=document.createElementNS(NS,'circle');c.setAttribute('cx',p.x);c.setAttribute('cy',p.y);c.setAttribute('r',major?(mob?10:14):(mob?6:8));c.setAttribute('fill',major?'#c8372d':'#f7f3ea');c.setAttribute('stroke',major?'#fff':'#c8372d');c.setAttribute('stroke-width',major?4:3);c.setAttribute('opacity',reduce?1:.3);road.appendChild(c);mk.push(c);
     });
-    ruta.style.setProperty('--hh',(document.querySelector('.site-header')||{offsetHeight:90}).offsetHeight+'px');
+    ruta.style.setProperty('--hh',((document.querySelector('.site-header')||{offsetHeight:90}).offsetHeight+(document.querySelector('.sh-sub')||{offsetHeight:0}).offsetHeight)+'px');
     buildDeco(w,mob);
     update();
   }
