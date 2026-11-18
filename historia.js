@@ -11,7 +11,7 @@
     coche:'<path d="M10 34l8-12h30l14 12h18v10H10z" fill="#c8372d"/><path d="M22 24h12v10H17zM37 24h10l10 10H37z" fill="#cfe6ee"/><circle cx="26" cy="44" r="7" fill="#251d1a"/><circle cx="68" cy="44" r="7" fill="#251d1a"/><circle cx="26" cy="44" r="3" fill="#bbb"/><circle cx="68" cy="44" r="3" fill="#bbb"/>',
     electrico:'<path d="M6 14h56a6 6 0 0 1 6 6v22H6z" fill="#f7f3ea"/><path d="M62 20h12l10 12v10H62z" fill="#2f8f5b"/><path d="M66 24h7l7 8H66z" fill="#cfe6ee"/><path d="M36 18l-8 12h7l-3 10 11-14h-7z" fill="#2f8f5b"/><circle cx="22" cy="44" r="7" fill="#251d1a"/><circle cx="70" cy="44" r="7" fill="#251d1a"/><circle cx="22" cy="44" r="3" fill="#bbb"/><circle cx="70" cy="44" r="3" fill="#bbb"/>'
   };
-  var IMG={pegaso:'Pegaso J4',dkv:'dkv-ram',mb180:'mb180d',mb410:'mb410',mocay:'mocay',fe:'furgon-electrico',ford:'ford-transit'};var LEFT={fe:1,ford:1};IMG.pegaso='pegaso';
+  var IMG={pegaso:'Pegaso J4',dkv:'dkv-ram',mb180:'mb180d',mb410:'mb410',mocay:'mocay',fe:'furgon-electrico',ford:'ford-transit',ibiza:'ibiza-mocay'};var LEFT={fe:1,ford:1};IMG.pegaso='pegaso';
   var veh=document.createElement('div');veh.className='hi-vehicle';veh.setAttribute('aria-hidden','true');
   var fl=document.createElement('div');fl.className='flip';veh.appendChild(fl);
   Object.keys(VEH).forEach(function(k){var d=document.createElement('div');d.className='v';d.dataset.k=k;d.innerHTML='<svg viewBox="0 0 90 56">'+VEH[k]+'</svg>';fl.appendChild(d)});
