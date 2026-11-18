@@ -50,7 +50,7 @@
     {group:'Navidul',brand:'Navidul',name:'Jamón 4 Estaciones Reserva · pieza',blk:'navidul',uso:'h',cod:'26129',peek:'assets/refrigerados/extra/navidul_jamon-4-estaciones-reserva.png',pw:192,ph:557,peekAlt:'Jamón curado Reserva Cuatro Estaciones de Navidul, pieza entera con su etiqueta'},
     {group:'Navidul',brand:'Navidul',name:'Jamón asado ahumado · kg',blk:'navidul',uso:'h',cod:'26106'},
     {group:'Navidul',brand:'Navidul',name:'Jamón cebo ibérico · pieza de 7,5-8 kg',blk:'navidul',uso:'h',cod:'26027',peek:'assets/refrigerados/extra/navidul_jamon-cebo-iberico.png',pw:192,ph:566,peekAlt:'Jamón de cebo ibérico 50 % raza ibérica de Navidul, pieza entera con su etiqueta'},
-    {group:'Navidul',brand:'Navidul',name:'Lonchas de jamón curado · 500 g',blk:'navidul',uso:'h',cod:'26008',peek:'assets/refrigerados/extra/navidul_jamon-curado-loncheado.png',pw:674,ph:676,peekAlt:'Jamón curado loncheado de Navidul, envase con lonchas'},
+    {group:'Navidul',brand:'Navidul',name:'Lonchas de jamón curado · 500 g',blk:'navidul',uso:'h',cod:'26008',peek:'assets/refrigerados/extra/navidul_jamon-curado-500-horeca.png',pw:604,ph:900,peekAlt:'Lonchas de jamón curado de Navidul para hostelería, envase de 500 g con 26 lonchas'},
     {group:'Navidul',brand:'Navidul',name:'Salchichón cular ibérico · kg',blk:'navidul',uso:'h',cod:'26010'},
     {group:'Navidul alimentación',brand:'Navidul',name:'Chorizo ibérico · 40 g',blk:'navidul-alimentacion',uso:'a',cod:'26050'},
     {group:'Navidul alimentación',brand:'Navidul',name:'Lomo embuchado · 40 g',blk:'navidul-alimentacion',uso:'a',cod:'26317'},
