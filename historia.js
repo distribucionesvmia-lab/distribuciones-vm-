@@ -104,6 +104,15 @@
     update();
   }
   /* tarjeta con cambio de foto por scroll: la primera se funde con la segunda al avanzar */
+  function updateSlide(){
+    [].forEach.call(ruta.querySelectorAll('.hi-slide'),function(g){
+      var f=g.children,n=f.length;if(n<2)return;
+      var r=g.getBoundingClientRect(),vh=innerHeight;
+      var p=Math.max(0,Math.min(1,(vh*0.62-r.top)/(vh*(n===2?0.4:0.3*(n-1)))))*(n-1);
+      if(reduce)p=Math.round(p);
+      for(var i=0;i<n;i++)f[i].style.transform='translateX('+((i-p)*100).toFixed(1)+'%)';
+    });
+  }
   function updateFade(){
     [].forEach.call(ruta.querySelectorAll('.hi-fade'),function(g){
       var f=g.children,n=f.length;if(n<2)return;
@@ -118,7 +127,7 @@
   function atY(y){var lo=0,hi=len;for(var i=0;i<22;i++){var m=(lo+hi)/2;if(base.getPointAtLength(m).y<y)lo=m;else hi=m}return lo}
   function update(){
     if(!base)return;
-    updateFade();
+    updateFade();updateSlide();
     var rr=ruta.getBoundingClientRect(),y=innerHeight*0.55-rr.top;
     var L=reduce?len:Math.max(0,Math.min(len,atY(y)));
     prog.setAttribute('stroke-dashoffset',len-L);

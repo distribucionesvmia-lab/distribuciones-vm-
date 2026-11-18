@@ -110,3 +110,8 @@
 .hi-tl .sh-sub.in-tl a{padding:4px 8px;border-bottom:0;border-radius:99px;white-space:nowrap}
 .hi-tl .sh-sub.in-tl a[aria-current]{background:#c61819;color:#fff}
 @media(max-width:760px){.hi-tl .sh-sub.in-tl{padding-right:12px;gap:2px;font-size:.74rem}.hi-tl .sh-sub.in-tl a{padding:4px 6px}.hi-tl button{padding:4px 8px;font-size:.76rem}.hi-tl-row .hi-tl-in{padding-left:12px}}
+
+/* fotos que se desplazan de derecha a izquierda al hacer scroll (tarjeta de Bornos) */
+.hi-gal.hi-slide{display:block;position:relative;aspect-ratio:4/3;max-width:380px;overflow:hidden;scroll-snap-type:none;margin:14px 0 0;padding:0;border-radius:12px;background:#efe6d6}
+.hi-gal.hi-slide figure{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;flex:none;margin:0;background:transparent;will-change:transform}
+.hi-gal.hi-slide figure:nth-child(2){transform:translateX(100%)}
