@@ -81,3 +81,6 @@
 @media(max-width:760px){.hi-tl-in{justify-content:flex-start}}
 
 .hi-veh a{color:var(--red);text-decoration:underline;text-underline-offset:3px;text-transform:none;letter-spacing:0}
+
+.hi-pair{display:flex;align-items:flex-end;gap:16px;margin-top:10px}.hi-pair .hi-mini{margin-top:0;width:auto}.hi-pair .hi-mini[src*='bornos-etiqueta']{height:120px}.hi-pair .hi-mini[src*='bornos-brut']{height:230px}
+@media(max-width:760px){.hi-pair .hi-mini[src*='bornos-etiqueta']{height:100px}.hi-pair .hi-mini[src*='bornos-brut']{height:190px}}
