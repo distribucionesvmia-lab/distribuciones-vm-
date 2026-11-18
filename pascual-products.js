@@ -1,7 +1,7 @@
 /* Sustituye image, width, height y alt al recibir fotografías originales. */
 window.ProductWorld.init({
   mount: '#familias',
-  order: ['Leche Intense|','Leche Pascual|','Leche Classic|','Leche Extra','Leche Alimentación|','Leche en brik|','Leche Sin Lactosa|','Leche Movit|','Vivesoy','Leche Sin Lactosa Barista|','Batidos','Natas','Mantequillas','Bebidas Pascual','Bifrutas','Yogikids','Yogures','Postres','Natillas'],
+  order: ['Leche Intense|','Leche Pascual|','Leche Classic|','Leche Extra','Vivesoy','Leche Alimentación|','Leche en brik|','Leche Sin Lactosa|','Leche Movit|','Batidos','Natas','Mantequillas','Bebidas Pascual','Bifrutas','Yogikids','Yogures','Postres','Natillas'],
   sections: [
     {
       template: 'hero', id: 'leche-intense', family: 'Leche Intense', color: '#e8e0d6', ink: '#2b2a3a',
@@ -72,13 +72,6 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'hero', id: 'sin-lactosa-barista', family: 'Leche Sin Lactosa Barista', color: '#efe5d8', ink: '#2f3a2a',
-      eyebrow: 'Pascual Profesional · Sin lactosa', title: 'Sin lactosa Barista. Para tu barra.',
-      description: 'Leche sin lactosa semidesnatada Barista, para hostelería. Emulsiona mejor en el vaporizador de la cafetera que la leche sin lactosa normal.',
-      backword: 'BARISTA', bottom: 'Leche sin lactosa Barista · semidesnatada · para cafeterías y bares',
-      product: {name:'Leche Pascual Profesional Sin Lactosa · semidesnatada · 1 L', image:'assets/pascual/sinlactosa-barista.png', width:444, height:1212, alt:'Brik de leche Pascual Profesional sin lactosa semidesnatada de 1 litro'}
-    },
-    {
       template: 'lineup', id: 'sin-lactosa', family: 'Leche Sin Lactosa', color: '#ebe2f1', ink: '#44245e',
       eyebrow: 'Brik · sin lactosa para el hogar', title: 'Leche sin lactosa, en brik.',
       note: 'Una imagen por variedad',
@@ -144,13 +137,14 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'range', id: 'vivesoy', family: 'Vivesoy Barista', color: '#e9eacb', ink: '#214b32',
-      eyebrow: 'Tres variedades, una misma barra', title: 'Vivesoy Barista. «Más cerca. Sabe mejor.»',
-      description: 'Tres bebidas 100 % de cultivo en España, pensadas para el café: soja, avena y almendras.',
+      template: 'range', id: 'vivesoy', family: 'Vivesoy Barista', label: 'Baristas', color: '#e9eacb', ink: '#214b32',
+      eyebrow: 'Nueva tendencia de consumo en HORECA', title: 'Baristas. Para tu barra.',
+      description: 'El café con bebida vegetal o sin lactosa es la nueva tendencia de consumo en HORECA, y la barra tiene que estar preparada para servirlo. Vivesoy Barista, tres bebidas 100 % de cultivo en España (soja, avena y almendras), y la leche sin lactosa semidesnatada Barista de Pascual Profesional, que emulsiona mejor en el vaporizador de la cafetera que la leche sin lactosa normal.',
       products: [
         {name:'Barista Soja', description:'Bebida de soja Vivesoy Barista.', image:'assets/pascual/vivesoy-barista-soja.png', width:154, height:428, alt:'Envase original Vivesoy Barista Soja de 1 litro'},
         {name:'Barista Avena', description:'Bebida de avena Vivesoy Barista.', image:'assets/pascual/vivesoy-barista-avena.png', width:154, height:428, alt:'Envase original Vivesoy Barista Avena de 1 litro'},
-        {name:'Barista Almendras', description:'Bebida de almendras sin azúcar Vivesoy Barista.', image:'assets/pascual/vivesoy-barista-almendras.png', width:151, height:422, alt:'Envase original Vivesoy Barista Almendras sin azúcar de 1 litro'}
+        {name:'Barista Almendras', description:'Bebida de almendras sin azúcar Vivesoy Barista.', image:'assets/pascual/vivesoy-barista-almendras.png', width:151, height:422, alt:'Envase original Vivesoy Barista Almendras sin azúcar de 1 litro'},
+        {name:'Sin lactosa Barista', kicker:'Pascual Profesional', description:'Leche Pascual Profesional sin lactosa semidesnatada Barista, 1 L.', image:'assets/pascual/sinlactosa-barista.png', width:444, height:1212, alt:'Brik de leche Pascual Profesional sin lactosa semidesnatada Barista de 1 litro'}
       ]
     },
     {

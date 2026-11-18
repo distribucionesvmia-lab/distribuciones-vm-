@@ -10,7 +10,7 @@
   const number = index => String(index + 1).padStart(2, '0');
   let total = 4;
   const dark = item => item.dark ? ' is-dark' : '';
-  const label = (item, index) => `<p class="pw-scene-label"><span>${number(index)} / ${String(total).padStart(2, '0')}</span><span>${esc(item.family)}</span></p>`;
+  const label = (item, index) => `<p class="pw-scene-label"><span>${number(index)} / ${String(total).padStart(2, '0')}</span><span>${esc(item.label || item.family)}</span></p>`;
   /* Precios de tarifa: viven en precios.js (los genera _herramientas/precios.py desde el Excel de artículos). Clave: página|familia|nombre. */
   const page = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '') || 'index';
   const fmt = n => Number(n).toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -34,7 +34,7 @@
       return `<section${sid(item)} class="pw-scene pw-b${dark(item)}" style="--n:${item.products.length};--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
         <div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
           <div class="pw-b-head"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2><p>${esc(item.description)}</p></div>
-          <div class="pw-b-window"><div class="pw-b-track">${item.products.map((p,i) => `<article class="pw-b-panel"><span class="pw-panel-number">${number(i)} / ${String(item.products.length).padStart(2,'0')}</span><div class="pw-b-image">${img(p,'',true)}</div><div class="pw-b-copy"><p class="pw-panel-kicker">${esc(item.family)}</p><h3>${esc(p.name)}</h3><p>${esc(p.description)}</p>${price(item.family,p)}</div></article>`).join('')}</div></div>
+          <div class="pw-b-window"><div class="pw-b-track">${item.products.map((p,i) => `<article class="pw-b-panel"><span class="pw-panel-number">${number(i)} / ${String(item.products.length).padStart(2,'0')}</span><div class="pw-b-image">${img(p,'',true)}</div><div class="pw-b-copy"><p class="pw-panel-kicker">${esc(p.kicker || item.family)}</p><h3>${esc(p.name)}</h3><p>${esc(p.description)}</p>${price(item.family,p)}</div></article>`).join('')}</div></div>
           <div class="pw-b-bottom"><span>Desliza para recorrer la gama →</span><span class="pw-progress"><i></i></span></div>
         </div></div></section>`;
     },
