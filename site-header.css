@@ -156,3 +156,11 @@
 @keyframes nov-sube{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
 @media(max-width:700px){.nov-win{grid-template-columns:1fr}.nov-win-foto{min-height:260px;padding:26px}.nov-win-foto img{max-height:40svh}.nov-win-txt{padding:22px 22px 26px}}
 @media(prefers-reduced-motion:reduce){.nov-modal.is-open,.nov-win,.nov-win-estrella{animation:none}}
+
+/* Nombre del icono del menú: aparece casi al instante al pasar el cursor (el «title» del navegador tarda ~1 s) */
+@media(hover:hover) and (pointer:fine){
+  .sh-ico-link{position:relative}
+  .sh-ico-link::after{content:attr(data-tip);position:absolute;left:50%;top:calc(100% + 6px);transform:translate(-50%,-4px);z-index:80;padding:5px 10px;border-radius:8px;background:#251d1a;color:#f7f3ea;font-size:.78rem;font-weight:600;line-height:1.2;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .08s ease,transform .08s ease}
+  .sh-ico-link:hover::after,.sh-ico-link:focus-visible::after{opacity:1;transform:translate(-50%,0);transition-delay:0s}
+}
+@media(hover:hover) and (pointer:fine) and (min-width:1100px){.site-header nav{overflow:visible}}

@@ -72,7 +72,7 @@ def header(page):
             href = '#contenido'
         slug = ICONOS.get(text)
         if slug:   # el menú se muestra con iconos; el nombre queda como etiqueta accesible y como texto al pasar el cursor
-            links.append(f'<a class="sh-ico-link" href="{href}"{cur} aria-label="{text}" title="{text}"><span class="sh-ico" style="--ico:url(assets/iconos/{slug}.png)" aria-hidden="true"></span></a>')
+            links.append(f'<a class="sh-ico-link" href="{href}"{cur} aria-label="{text}" data-tip="{text}"><span class="sh-ico" style="--ico:url(assets/iconos/{slug}.png)" aria-hidden="true"></span></a>')
             continue
         links.append(f'<a href="{href}"{cur}>{text}</a>')
     brand = '#inicio' if home else 'index.html#inicio'
