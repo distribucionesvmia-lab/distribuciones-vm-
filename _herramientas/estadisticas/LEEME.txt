@@ -1,0 +1,80 @@
+ESTADISTICAS DE LA WEB - DISTRIBUCIONES VM
+==========================================
+
+Es un contador de visitas PROPIO: se instala en un ordenador de la empresa que esta siempre encendido, no usa
+cookies y no depende de ningun servicio de terceros. Solo ves datos agrupados (cuanta gente, a que hora, que
+paginas, si llegan por un QR...), nunca personas. No se guarda la direccion de internet de nadie.
+
+
+PASO 1 - Copiar y arrancar (5 minutos)
+--------------------------------------
+1. Descomprime esta carpeta en el ordenador, por ejemplo en  C:\estadisticas-dvm
+2. Haz doble clic en  iniciar.bat
+   - Windows puede avisar: "Windows protegio su PC". Es normal (el programa no esta firmado). Pulsa
+     "Mas informacion" y luego "Ejecutar de todas formas". El codigo fuente esta en la carpeta codigo-fuente.
+   - Se abre una ventana negra. Esa ventana ES el contador: minimizala, NO la cierres.
+3. La primera vez crea el archivo  config.json  con tu CONTRASENA del panel (abrelo con el Bloc de notas).
+4. Haz doble clic en  abrir-panel.bat  y entra con usuario  admin  y esa contrasena. Veras el panel vacio:
+   ya esta funcionando, solo faltan visitas.
+
+
+PASO 2 - Que la web pueda hablar con el contador (Tailscale Funnel)
+-------------------------------------------------------------------
+Las visitas llegan desde internet, asi que hace falta una direccion publica hacia este ordenador. Como ya usais
+Tailscale para los pedidos, se hace igual:
+
+1. Instala Tailscale en ESTE ordenador (tailscale.com/download/windows) y entra con la MISMA cuenta que usais para
+   el ordenador de pedidos.
+2. En el panel de administracion de Tailscale (login.tailscale.com/admin) comprueba que esta activado HTTPS
+   ("DNS" > "HTTPS Certificates") y que Funnel esta permitido.
+3. Abre PowerShell (boton derecho en Inicio) y escribe:
+
+       tailscale funnel --bg 8787
+
+   Si pide permiso con un enlace, abrelo y acepta. Si dice que el comando no existe, actualiza Tailscale.
+4. Te dira una direccion parecida a  https://nombre-del-pc.tailc4a490.ts.net
+   Comprueba que funciona abriendo  esa-direccion/salud  en el navegador: debe poner  ok
+5. PASAME ESA DIRECCION. Yo la pongo en la web (es una sola linea) y actualizo la politica de privacidad antes de
+   encenderlo.
+
+IMPORTANTE: solo se publica el contador (puerto 8787). El PANEL (puerto 8788) NO sale a internet: solo se ve en
+este ordenador. Si quieres verlo desde el movil, dimelo y te lo preparo con seguridad.
+
+
+PASO 3 - Que arranque solo con Windows
+--------------------------------------
+1. Pulsa las teclas Windows + R, escribe  shell:startup  y pulsa Intro. Se abre una carpeta.
+2. Copia dentro un acceso directo a  iniciar.bat  (boton derecho en iniciar.bat > "Crear acceso directo", y
+   arrastra el acceso directo a esa carpeta).
+3. En Windows: Configuracion > Sistema > Inicio/apagado y suspension > "Suspender": NUNCA (si el ordenador se
+   duerme, no cuenta visitas). La web sigue funcionando igual aunque este ordenador este apagado; solo se pierden
+   las visitas de ese rato.
+
+
+QUE SE VE EN EL PANEL
+---------------------
+- Paginas vistas y visitantes (cada dia cuenta una vez).
+- A que hora entran, que dia de la semana, visitas por dia.
+- Paginas mas vistas, de donde vienen, movil u ordenador.
+- Que hace la gente: pulsan en llamar, en el correo, envian el formulario, abren el asistente
+  (solo se cuenta que lo abren, nunca lo que escriben).
+- Visitas que llegan por un QR, separadas por el sitio donde esta el QR.
+- Boton para descargar todos los datos en Excel.
+
+
+LOS QR
+------
+Cada QR lleva a la web con una marca, por ejemplo  .../?o=furgoneta,  .../?o=tarjeta,  .../?o=carta.
+El panel cuenta cuantas visitas trae cada uno. Los QR son permanentes (no caducan, no dependen de nadie).
+Yo los genero cuando tengamos la direccion definitiva de la web; no imprimas ninguno antes.
+
+
+COPIA DE SEGURIDAD Y DATOS
+--------------------------
+- Todas las visitas estan en la carpeta  datos  (un archivo por mes). Copiala de vez en cuando a un pendrive.
+- Si cambias la contrasena, edita config.json y reinicia el programa (cierra la ventana negra y abre iniciar.bat).
+
+PARA NO CONTARTE A TI MISMO
+---------------------------
+Abre una vez la web con  ?estadisticas=no  al final (por ejemplo  tuweb.es/?estadisticas=no ) en cada aparato
+tuyo. Para volver a contarte:  ?estadisticas=si
