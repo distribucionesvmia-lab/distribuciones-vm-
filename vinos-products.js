@@ -80,7 +80,8 @@ window.ProductWorld.init({
       template:'lineup', family:'Pinna Fidelis', color:'#f4f0e9', ink:'#29231f',
       eyebrow:'Pinna Fidelis · Peñafiel', title:'Pinna Fidelis, de Peñafiel a la copa.',
       variants:[
-        {name:'Pinna Fidelis Roble', description:'Pinna Fidelis Roble, Ribera del Duero.', image:B+'pinna-fidelis-roble.png', width:573, height:1300, alt:'Botella Pinna Fidelis Roble, Ribera del Duero'},
+        {name:'Pinna Fidelis Roble · botella normal', description:'Pinna Fidelis Roble, Ribera del Duero, en botella de 75 cl.', image:B+'pinna-fidelis-roble-normal.png', width:219, height:659, alt:'Botella normal de Pinna Fidelis Roble, Ribera del Duero'},
+        {name:'Pinna Fidelis Roble · magnum', description:'Pinna Fidelis Roble, Ribera del Duero, en formato magnum (1,5 L).', image:B+'pinna-fidelis-roble-magnum.png', width:573, height:1300, alt:'Botella magnum de Pinna Fidelis Roble, Ribera del Duero'},
         {name:'Pinna Fidelis Crianza', description:'Crianza de Pinna Fidelis, Ribera del Duero.', image:B+'pinna-fidelis-crianza.png', width:260, height:639, alt:'Botella Pinna Fidelis Crianza, Ribera del Duero'},
         {name:'Pinna Fidelis Roble · botella 3/8 con estuche', description:'Pinna Fidelis Roble, Ribera del Duero, en botella de 3/8 (37,5 cl) con estuche blanco.', image:B+'pinna-fidelis-roble-pequena-estuche.png', width:739, height:1300, alt:'Botella pequeña de Pinna Fidelis Roble con su estuche blanco'},
         {name:'Pinna Fidelis · estuche de regalo', description:'Pinna Fidelis, Ribera del Duero, presentado en estuche de regalo negro.', image:B+'pinna-fidelis-estuche-regalo.png', width:366, height:900, alt:'Pinna Fidelis, Ribera del Duero, en estuche de regalo negro'},
