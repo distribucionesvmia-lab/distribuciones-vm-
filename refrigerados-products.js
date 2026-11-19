@@ -79,7 +79,7 @@
     {group:'Revilla',brand:'Revilla',name:'Chorizo Pamplona · 65 g',blk:'revilla',uso:'a',cod:'260651'},
     {group:'Revilla',brand:'Revilla',name:'Salami · 65 g',blk:'revilla',uso:'a',cod:'263051'},
     {group:'Revilla',brand:'Revilla',name:'Salchichón · 65 g',blk:'revilla',uso:'a',cod:'26303'},
-    {group:'Smart Solutions',brand:'Rogusa',name:'Callos a la madrileña · 2,5 kg',blk:'smart-solutions',uso:'',cod:'14001',plato:'callos a la madrileña con garbanzos, servidos en cazuela de barro.',image:'assets/refrigerados/extra/rogusa_plato-callos.png',w:674,h:549,alt:'Plato de callos a la madrileña',cap:'Sugerencia de plato. Imagen de Rogusa, no del envase de 2,5 kg'},
+    {group:'Smart Solutions',brand:'Rogusa',name:'Callos a la madrileña · 2,5 kg',blk:'smart-solutions',uso:'',cod:'14001',plato:'callos a la madrileña con garbanzos, servidos en cazuela de barro.',image:'assets/refrigerados/extra/rogusa_plato-callos.png',w:674,h:549,alt:'Plato de callos a la madrileña',cap:'Sugerencia de plato. Imagen de Rogusa, no del envase de 2,5 kg',peek:'assets/refrigerados/extra/rogusa_callos-2-5kg.png',pw:816,ph:863,peekAlt:'Callos de ternera preparados de Rogusa, envase de 2,5 kg'},
     {group:'Smart Solutions',brand:'Campofrío',name:'Ensaladilla rusa · 2 kg',blk:'smart-solutions',uso:'',cod:'26118'},
     {group:'Smart Solutions',brand:'Campofrío',name:'Fuet en lonchas · 500 g',blk:'smart-solutions',uso:'',cod:'26122'},
     {group:'Smart Solutions',brand:'Campofrío',name:'Tortilla de patata con cebolla · 500 g',blk:'smart-solutions',uso:'',cod:'261181',image:'assets/refrigerados/extra/campofrio_tortilla-patata-cebolla-500g.png',w:720,h:731,alt:'Tortilla de patata con cebolla Campofrío'},
