@@ -2,7 +2,7 @@
 const B = 'assets/vinos/';
 window.ProductWorld.init({
   mount: '#familias',
-  order: ['Bodega Palacio','Ribera del Duero','Blancos','Frizzantes','Espumosos','Pinna Fidelis','Pazos','Bag in box','Otras'],
+  order: ['Bodega Palacio','Blancos','Ribera del Duero','Frizzantes','Espumosos','Pinna Fidelis','Pazos','Bag in box','Otras'],
   sections: [
     {
       template:'hero', family:'Palacio de Bornos', color:'#eba061', ink:'#251d17',
