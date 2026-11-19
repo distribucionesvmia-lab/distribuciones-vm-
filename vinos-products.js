@@ -79,7 +79,6 @@ window.ProductWorld.init({
     {
       template:'lineup', family:'Pinna Fidelis', color:'#f4f0e9', ink:'#29231f',
       eyebrow:'Pinna Fidelis · Peñafiel', title:'Pinna Fidelis, de Peñafiel a la copa.',
-      note:'Pinna Fidelis resume su casa en «de nuestros viñedos a tu copa». Una imagen por variedad',
       variants:[
         {name:'Pinna Fidelis Roble', description:'Pinna Fidelis Roble, Ribera del Duero.', image:B+'pinna-fidelis-roble.png', width:573, height:1300, alt:'Botella Pinna Fidelis Roble, Ribera del Duero'},
         {name:'Pinna Fidelis Crianza', description:'Crianza de Pinna Fidelis, Ribera del Duero.', image:B+'pinna-fidelis-crianza.png', width:260, height:639, alt:'Botella Pinna Fidelis Crianza, Ribera del Duero'},
