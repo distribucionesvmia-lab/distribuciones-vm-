@@ -41,13 +41,13 @@
   }
 
   var f = document.getElementById('f'), st = document.getElementById('st');
-  var EMAIL = ''; // pendiente: correo de la empresa
+  var EMAIL = 'administracion@distribucionesvm.es'; // el formulario de contacto de la portada se envía a administración
   if (f) {
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!f.nombre.value.trim() || !f.ok.checked) { st.textContent = 'Indica tu nombre y acepta el consentimiento para continuar.'; return; }
-      if (!EMAIL) { st.textContent = 'El envío del formulario está en preparación.'; return; }
       var body = 'Nombre: ' + f.nombre.value + '\nContacto: ' + f.contacto.value + '\n\n' + f.mensaje.value;
+      st.textContent = 'Se abrirá tu programa de correo con el mensaje preparado. Si no se abre, escríbenos a ' + EMAIL + '.';
       window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Consulta desde la web') + '&body=' + encodeURIComponent(body);
     });
   }
