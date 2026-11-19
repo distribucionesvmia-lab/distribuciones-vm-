@@ -37,8 +37,8 @@
 .nov-wide .nov-foto{height:auto;min-height:340px;position:relative;padding:18px 18px 54px}
 .nov-multi .nov-im{position:absolute;inset:0;width:100%;height:100%;max-height:none;object-fit:contain;padding:18px 18px 54px;box-sizing:border-box;background:#fff;opacity:0}
 .nov-dots{z-index:3;position:absolute;left:0;right:0;bottom:18px;display:flex;justify-content:center;gap:8px}
-.nov-dots i{width:9px;height:9px;border-radius:50%;background:rgba(37,29,26,.25);transition:background .2s,transform .2s}
-.nov-dots i.is-on{background:#c61819;transform:scale(1.3)}
+.nov-dots button{width:14px;height:14px;padding:0;border:0;border-radius:50%;background:rgba(37,29,26,.25);cursor:pointer;transition:background .2s,transform .2s}
+.nov-dots button.is-on{background:#c61819;transform:scale(1.25)}
 .nov-wide .nov-txt{justify-content:center;overflow:auto;max-height:calc(100svh - var(--sh-h,110px) - 32px)}
 @media(max-width:760px){
   .nov-card.nov-wide{grid-template-columns:1fr;grid-template-rows:42svh 1fr;min-height:0;max-height:calc(100svh - var(--sh-h,110px) - 24px)}

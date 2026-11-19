@@ -15,7 +15,7 @@
     var multi = fs.length > 1;
     var foto = fs.length
       ? '<div class="nov-foto' + (multi ? ' nov-multi' : '') + '">' + fs.map(function (f, i) { return '<img class="nov-im' + (i === 0 ? ' is-on' : '') + '" src="' + esc(f) + '" alt="' + (i === 0 ? esc(n.nombre) : '') + '" loading="lazy" decoding="async">'; }).join('') +
-        (multi ? '<div class="nov-dots" aria-hidden="true">' + fs.map(function (f, i) { return '<i' + (i === 0 ? ' class="is-on"' : '') + '></i>'; }).join('') + '</div>' : '') + '</div>'
+        (multi ? '<div class="nov-dots">' + fs.map(function (f, i) { return '<button type="button" data-i="' + i + '" aria-label="Ver foto ' + (i + 1) + '"' + (i === 0 ? ' class="is-on"' : '') + '></button>'; }).join('') + '</div>' : '') + '</div>'
       : '<div class="nov-foto nov-sin"><span aria-hidden="true">✦</span></div>';
     var meta = [n.marca, n.formato].filter(Boolean).map(esc).join(' · ');
     var enlace = n.enlace ? '<a class="nov-ver" href="' + esc(n.enlace) + '">Ver en el catálogo →</a>' : '<a class="nov-ver" href="index.html#contacto">Pedir información →</a>';
@@ -37,7 +37,7 @@
     var cs = getComputedStyle(document.documentElement);
     var top = parseFloat(cs.getPropertyValue('--sh-h')) || 110;
     tracks.forEach(function (t) {
-      var card = t.firstElementChild, ims = t.querySelectorAll('.nov-im'), dots = t.querySelectorAll('.nov-dots i');
+      var card = t.firstElementChild, ims = t.querySelectorAll('.nov-im'), dots = t.querySelectorAll('.nov-dots button');
       var r = t.getBoundingClientRect();
       var total = Math.max(1, (r.height - card.offsetHeight - 16) * 0.8);
       var p = Math.min(1, Math.max(0, (top + 16 - r.top) / total));
@@ -51,6 +51,16 @@
       dots.forEach(function (d, i) { d.classList.toggle('is-on', Math.round(pos) === i); });
     });
   }
+  /* Pulsar un punto lleva el scroll hasta esa foto (por si no se quiere hacer scroll) */
+  grid.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.nov-dots button');
+    if (!b) return;
+    var t = b.closest('.nov-track'), card = t.firstElementChild, n = t.querySelectorAll('.nov-im').length;
+    var top = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--sh-h')) || 110;
+    var r = t.getBoundingClientRect(), total = Math.max(1, (r.height - card.offsetHeight - 16) * 0.8);
+    var p = Number(b.getAttribute('data-i')) / (n - 1);
+    window.scrollTo({ top: window.scrollY + r.top - (top + 16 - p * total) + (p === 1 ? 4 : 0), behavior: 'smooth' });
+  });
   function pide() { if (!ticking) { ticking = true; requestAnimationFrame(pinta); } }
   window.addEventListener('scroll', pide, { passive: true });
   window.addEventListener('resize', pide);
