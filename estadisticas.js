@@ -23,12 +23,18 @@
     try { fetch(url, { method: 'POST', body: cuerpo, keepalive: true, mode: 'no-cors' }); } catch (e) { /* no pasa nada */ }
   }
 
+  /* solo se cuenta si el visitante ha aceptado en el aviso de cookies (cookies.js) */
+  function aceptado() { return !!(window.DVM_COOKIES && window.DVM_COOKIES.estado() === 'si'); }
   var origen = (q.get('o') || '').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 30);
   var viene = '';
   try { viene = document.referrer ? new URL(document.referrer).hostname : ''; } catch (e) { viene = ''; }
-  enviar({ k: 'v', o: origen, r: viene });
+  var contada = false;
+  function contarVisita() { if (contada || !aceptado()) return; contada = true; enviar({ k: 'v', o: origen, r: viene }); }
+  contarVisita();
+  document.addEventListener('dvm-cookies', function () { contarVisita(); });
 
   document.addEventListener('click', function (e) {
+    if (!aceptado()) return;
     var a = e.target.closest && e.target.closest('a,button');
     if (!a) return;
     var h = a.getAttribute('href') || '';
@@ -39,6 +45,7 @@
 
   /* formularios (portada y Menaje): se cuenta solo si pasa la validación y se prepara el correo */
   document.addEventListener('submit', function () {
+    if (!aceptado()) return;
     setTimeout(function () {
       var st = document.getElementById('st') || document.querySelector('.menaje-status');
       if (st && /Se abrirá/.test(st.textContent)) enviar({ k: 'e', e: 'formulario' });
