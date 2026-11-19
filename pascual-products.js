@@ -60,7 +60,7 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'lineup', id: 'leche-brik', family: 'Leche en brik', color: '#dde8f5', ink: '#12305a',
+      template: 'lineup', flip: true, id: 'leche-brik', family: 'Leche en brik', color: '#dde8f5', ink: '#12305a',
       eyebrow: 'Brik · alimentación y hogar', title: 'Leche en brik, para el día a día.',
       note: 'Una imagen por variedad',
       variants: [

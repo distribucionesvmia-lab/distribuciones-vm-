@@ -48,7 +48,7 @@
     lineup(item, index) {
       const n = item.variants.length;
       const multi = item.variants.some(v => v.image);
-      return `<section${sid(item)} class="pw-scene pw-e${n>8?' is-long':''}${n>10?' is-scroll':''}${item._flip?' is-flip':''}${dark(item)}" style="--n:${n};--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
+      return `<section${sid(item)} class="pw-scene pw-e${n>8?' is-long':''}${n>10?' is-scroll':''}${(item._flip||item.flip)?' is-flip':''}${dark(item)}" style="--n:${n};--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
         <div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
           <div class="pw-e-grid">
             <div class="pw-e-head"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2></div>
