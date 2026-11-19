@@ -227,7 +227,7 @@ window.ASISTENTE_FAQ = [
     seg: ['¿Horario?', '¿Dónde estáis?'] },
   { id: 'soy-robot',
     q: ['¿eres una persona?', '¿eres un robot?', '¿eres humano?', '¿hablo con una persona?', '¿eres una máquina?', '¿hay alguien ahí?', '¿eres inteligencia artificial?', '¿eres una IA?', '¿eres un bot?', '¿quién eres?', '¿cómo te llamas?', '¿cómo te llamas tú?', '¿qué eres?', '¿eres real?'],
-    a: 'Soy el <b>Asistente DVM</b>, el asistente virtual de Distribuciones VM: un programa con <b>respuestas automáticas</b>, no una persona. No guardo lo que escribes en ningún servidor. Si prefieres hablar con una persona: llama al {TEL} (7:00 a 15:00) o escribe a {MAIL}.',
+    a: 'Soy <b>Ana</b>, la secretaria virtual de Distribuciones VM: un programa con <b>respuestas automáticas</b>, no una persona. No guardo lo que escribes en ningún servidor. Si prefieres hablar con una persona: llama al {TEL} (7:00 a 15:00) o escribe a {MAIL}.',
     seg: ['¿Qué sabes hacer?', '¿Horario?'] },
   { id: 'que-sabes',
     q: ['¿qué sabes hacer?', '¿en qué puedes ayudarme?', '¿qué puedo preguntarte?', '¿para qué sirves?', 'ayuda', 'necesito ayuda', '¿cómo funcionas?', '¿qué haces?', '¿qué sabes?', '¿cómo te uso?', '¿qué me puedes contar?', '¿con qué me ayudas?'],

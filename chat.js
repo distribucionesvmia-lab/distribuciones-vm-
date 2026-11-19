@@ -1,4 +1,4 @@
-/* Asistente de Distribuciones VM: icono flotante abajo a la izquierda en todas las páginas, aviso breve («Hola, soy el Asistente DVM…») y panel de chat.
+/* Asistente de Distribuciones VM: icono flotante abajo a la izquierda en todas las páginas, aviso breve («Hola, soy Ana…») y panel de chat.
    Funciona en el navegador, sin servidor ni servicios externos, y no envía ni guarda en ningún servidor lo que se escribe
    (solo recuerda en la pestaña, hasta que se cierra, el pueblo, el negocio y la lista de interés).
    - Entiende conjugaciones y erratas (compara por raíces y tolera una letra de diferencia).
@@ -15,9 +15,9 @@
       '<button type="button" id="vmc-launcher" class="vmc-launcher" aria-label="Abrir el asistente de Distribuciones VM" aria-expanded="false" aria-controls="chat">' +
         '<img src="assets/asistente-dvm.png" width="64" height="64" alt="" decoding="async">' +
         '<span class="vmc-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M12 3C6.9 3 3 6.4 3 10.6c0 2.2 1 4.1 2.7 5.5-.1 1.2-.5 2.3-1.3 3.3a.5.5 0 0 0 .5.8c1.9-.2 3.4-.9 4.5-1.6.8.2 1.6.3 2.6.3 5.1 0 9-3.4 9-7.6S17.100 3 12 3Z"/></svg></span></button>' +
-      '<div class="vmc-teaser" id="vmc-teaser" hidden><button type="button" class="vmc-teaser-txt">Hola, soy el <b>Asistente DVM</b>. ¿Te ayudo?</button><button type="button" class="vmc-teaser-x" aria-label="Cerrar el aviso">×</button></div>' +
+      '<div class="vmc-teaser" id="vmc-teaser" hidden><button type="button" class="vmc-teaser-txt">Hola, soy <b>Ana</b>, la secretaria virtual. ¿Te ayudo?</button><button type="button" class="vmc-teaser-x" aria-label="Cerrar el aviso">×</button></div>' +
       '<section class="chat vmc" id="chat" role="dialog" aria-modal="false" aria-labelledby="chat-title" tabindex="-1" hidden>' +
-        '<header class="vmc-head"><span class="vmc-avatar" aria-hidden="true"><img src="assets/asistente-dvm.png" width="44" height="44" alt="" decoding="async"></span><div><h3 id="chat-title">Asistente DVM</h3><p class="chat-note">Distribuciones VM · respuestas automáticas. No guardamos lo que escribes.</p></div><button type="button" class="vmc-close" aria-label="Cerrar el asistente">×</button></header>' +
+        '<header class="vmc-head"><span class="vmc-avatar" aria-hidden="true"><img src="assets/asistente-dvm.png" width="44" height="44" alt="" decoding="async"></span><div><h3 id="chat-title">Ana · secretaria</h3><p class="chat-note">Distribuciones VM · respuestas automáticas. No guardamos lo que escribes.</p></div><button type="button" class="vmc-close" aria-label="Cerrar el asistente">×</button></header>' +
         '<div class="chat-log" role="log" aria-live="polite" aria-label="Conversación"></div>' +
         '<div class="chat-chips" role="group" aria-label="Preguntas frecuentes">' +
           ['¿A dónde repartís?', '¿Qué días repartís?', '¿Cuánto tardáis?', '¿Cuándo me llega?', '¿Qué leche me recomendáis?', '¿Hay pedido mínimo?', '¿Cómo me hago cliente?', '¿Formas de pago?', '¿Horario?'].map(function (q) { return '<button type="button" data-q="' + q + '">' + q + '</button>'; }).join('') + '</div>' +
@@ -1089,5 +1089,5 @@
   mostrar = function (h, q) { mostrarOrig(h, q); guardar(); };
   log.addEventListener('click', function () { setTimeout(guardar, 0); });
 
-  add('bot', '¡Hola! Soy el <b>Asistente DVM</b>, el asistente virtual de Distribuciones VM. Te ayudo con el <b>reparto</b>, los <b>plazos</b>, el <b>horario</b>, las <b>formas de pago</b>, <b>hacerte cliente</b> o a buscar un <b>producto</b> y apuntarlo en tu lista. Prueba con: «¿repartís en Rueda?» o «¿qué leche me recomendáis para café?».' + (state.lista.length ? '<br><br>Sigo teniendo tu lista de interés (<b>' + state.lista.length + '</b>). Escribe «ver mi lista» para verla.' : ''), true);
+  add('bot', '¡Hola! Soy <b>Ana</b>, la secretaria virtual de Distribuciones VM. Te ayudo con el <b>reparto</b>, los <b>plazos</b>, el <b>horario</b>, las <b>formas de pago</b>, <b>hacerte cliente</b> o a buscar un <b>producto</b> y apuntarlo en tu lista. Prueba con: «¿repartís en Rueda?» o «¿qué leche me recomendáis para café?».' + (state.lista.length ? '<br><br>Sigo teniendo tu lista de interés (<b>' + state.lista.length + '</b>). Escribe «ver mi lista» para verla.' : ''), true);
 })();
