@@ -22,7 +22,7 @@
 
   const templates = {
     hero(item, index) {
-      return `<section${sid(item)} class="pw-scene pw-a${item.product.wide?' is-wide':''}${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
+      return `<section${sid(item)} class="pw-scene pw-a${item.product.wide?' is-wide':''}${item.mirror?' is-mirror':''}${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
         <div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
           <div class="pw-a-copy"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2><p class="pw-description">${esc(item.description)}</p>${price(item.family,item.product)}${button(item)}</div>
           <div class="pw-a-art">${item.logo?`<img class="pw-a-logo" src="${esc(item.logo.image)}" alt="${esc(item.logo.alt)}" width="${Number(item.logo.width)}" height="${Number(item.logo.height)}">`:''}<span class="pw-a-ring" aria-hidden="true"></span><span class="pw-a-backword" aria-hidden="true">${esc(item.backword || item.family)}</span>${img(item.product,'pw-a-product')}<p class="pw-product-note">${esc(item.product.name)}</p></div>

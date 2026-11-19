@@ -43,7 +43,7 @@ window.ProductWorld.init({
       product: {name:'Leche Pascual Classic · 1,5 L', image:'assets/pascual/classic-botella-1-5l.png', width:168, height:512, alt:'Botella de Leche Pascual Profesional Classic de 1,5 litros'}
     },
     {
-      template: 'hero', id: 'leche-extra-creme', family: 'Leche Extra Crème', color: '#efe3d6', ink: '#2e1c14',
+      template: 'hero', id: 'leche-extra-creme', family: 'Leche Extra Crème', color: '#1d130d', ink: '#f6ead7', dark: true, mirror: true,
       eyebrow: 'Pascual Profesional · Botella de 1,5 litros', title: 'Leche Extra Creme Hostelería',
       description: 'La mejor Leche para el mejor café. Una leche única que le aporta al café con leche un especial aspecto, textura y sabor gracias a su extra de proteína. Fácil y rápida emulsión para una mayor cremosidad.',
       backword: 'EXTRA', bottom: 'Leche Extra Crème · 1,5 L · más proteína láctea · especial hostelería',
