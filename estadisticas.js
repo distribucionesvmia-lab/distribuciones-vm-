@@ -5,7 +5,7 @@
    ACTIVAR: poner abajo la dirección del contador (la que da Tailscale Funnel). Vacía = apagado. */
 (function () {
   'use strict';
-  var CONTADOR = ''; /* p. ej. 'https://nombre-del-pc.tailc4a490.ts.net' */
+  var CONTADOR = 'https://distribucionesvm-pedidos.tailc4a490.ts.net:8443';
   if (!CONTADOR) return;
   if (navigator.doNotTrack === '1' || navigator.globalPrivacyControl) return;
   try { if (localStorage.getItem('dvm-sin-contar') === '1') return; } catch (e) { /* sin almacenamiento: se cuenta igual */ }
