@@ -81,9 +81,9 @@ window.ProductWorld.init({
       eyebrow:'Pinna Fidelis · Peñafiel', title:'Pinna Fidelis, de Peñafiel a la copa.',
       note:'Pinna Fidelis resume su casa en «de nuestros viñedos a tu copa». Una imagen por variedad',
       variants:[
-        {name:'Pinna Fidelis Roble', description:'Pinna Fidelis Roble, Ribera del Duero.', image:B+'pinna-fidelis-roble-2020.png', width:153, height:494, alt:'Botella Pinna Fidelis Roble 2020, Ribera del Duero'},
-        {name:'Pinna Fidelis Crianza', description:'Crianza de Pinna Fidelis, Ribera del Duero.', image:B+'pinna-fidelis-crianza.png', width:140, height:560, alt:'Botella Pinna Fidelis Crianza, Ribera del Duero'},
-        {name:'Pinna Fidelis Roble · botella 3/8 con estuche', description:'Pinna Fidelis Roble, Ribera del Duero, en botella de 3/8 (37,5 cl) con estuche blanco.', image:B+'pinna-fidelis-roble-pequena-estuche.png', width:377, height:660, alt:'Botella pequeña de Pinna Fidelis Roble con su estuche blanco'},
+        {name:'Pinna Fidelis Roble', description:'Pinna Fidelis Roble, Ribera del Duero.', image:B+'pinna-fidelis-roble-2020.png', width:573, height:1300, alt:'Botella Pinna Fidelis Roble, Ribera del Duero'},
+        {name:'Pinna Fidelis Crianza', description:'Crianza de Pinna Fidelis, Ribera del Duero.', image:B+'pinna-fidelis-crianza.png', width:260, height:639, alt:'Botella Pinna Fidelis Crianza, Ribera del Duero'},
+        {name:'Pinna Fidelis Roble · botella 3/8 con estuche', description:'Pinna Fidelis Roble, Ribera del Duero, en botella de 3/8 (37,5 cl) con estuche blanco.', image:B+'pinna-fidelis-roble-pequena-estuche.png', width:739, height:1300, alt:'Botella pequeña de Pinna Fidelis Roble con su estuche blanco'},
         {name:'Pinna Fidelis · estuche de regalo', description:'Pinna Fidelis, Ribera del Duero, presentado en estuche de regalo negro.', image:B+'pinna-fidelis-estuche-regalo.png', width:366, height:900, alt:'Pinna Fidelis, Ribera del Duero, en estuche de regalo negro'},
         {name:'De tiros largos · Pinna Fidelis · Ribera del Duero', description:'Tinto de Pinna Fidelis, 100 % Tinta del País, D.O. Ribera del Duero.', image:B+'de-tiros-largos.png', width:150, height:607, alt:'Botella De tiros largos, tinto de Pinna Fidelis, Ribera del Duero'}
       ]
