@@ -98,6 +98,14 @@
 
 .site-header nav{gap:clamp(14px,1.6vw,26px)}
 @media(max-width:760px){.site-header nav{gap:18px}}
+/* Móvil: la barra de iconos desplaza en horizontal (overflow-x) y eso recorta también en vertical.
+   Sin margen negativo y con altura propia, los iconos se ven enteros; el último queda alcanzable. */
+@media(max-width:760px){
+  .site-header nav{padding:2px 14px 2px 0}
+  .sh-ico-link{margin:0;min-height:36px;padding:0 2px}
+}
+/* La cabecera móvil es ahora más alta: las secciones fijadas cuelgan de su altura real (--sh-h la mide site-header.js) */
+@media(max-width:760px){.pw-sticky{top:var(--sh-h,93px);height:calc(100svh - var(--sh-h,93px))}}
 .con-mail{display:inline-flex;align-items:center;gap:8px}
 .con-mail svg{flex:none}
 
