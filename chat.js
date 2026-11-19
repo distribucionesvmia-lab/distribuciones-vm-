@@ -690,7 +690,7 @@
     return NO_ENTIENDO + '<br><br>¿Querías preguntar alguna de estas?<div class="chat-follow">' + r.map(function (x) { var p = x.f.q[0]; return '<button type="button" data-q="' + esc(p) + '">' + esc(p) + '</button>'; }).join('') + '</div>';
   }
   function faqTexto(f) {
-    return String(f.a).replace(/\{TEL\}/g, TEL).replace(/\{MAIL\}/g, MAIL).replace(/\{PERSONA\}/g, PERSONA).replace(/\{PLAZO\}/g, PLAZO).replace(/\{NEG_TIP\}/g, function () { return consejoNegocio(); });
+    return String(f.a).replace(/\{TEL\}/g, TEL).replace(/\{MAIL\}/g, MAIL).replace(/\{PERSONA\}/g, PERSONA).replace(/\{PLAZO\}/g, PLAZO).replace(/\{PEDIDO_VIA\}/g, PEDIDO_VIA()).replace(/\{NEG_TIP\}/g, function () { return consejoNegocio(); });
   }
   function faqRespuesta(f) {
     state.cur = 'faq'; state.faqId = f.id; state.segPropio = f.seg || null;
@@ -980,6 +980,9 @@
 
 
   /* ---------- enlace para hacer pedido: se añade a cualquier respuesta cuando el cliente dice que quiere comprar o pedir ---------- */
+  /* PEDIDO_VISIBLE: el botón «Hacer pedido» está OCULTO (no borrado). Para volver a mostrarlo en las respuestas del asistente: true (y quitar el bloque «Hacer pedido oculto» de site-header.css para el resto de la web). */
+  var PEDIDO_VISIBLE = false;
+  function PEDIDO_VIA() { return PEDIDO_VISIBLE ? 'puedes <b>hacer tu pedido con el botón «Hacer pedido»</b>; también ' : 'puedes hacer tu pedido '; }
   var PEDIDO_URL = 'https://distribucionesvm-pedidos.tailc4a490.ts.net/cliente';
   var PEDIDO_ICONO = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 7h12l-1 13H7L6 7zm3 0a3 3 0 0 1 6 0"/></svg>';
   var QUIERE_COMPRAR = /\b(compr(ar|o|a|amos|ais|an|e|as)|comprarlo|comprarla|comprarlos|hacer (un |el |mi |otro )?pedido|hacemos (un |el )?pedido|hago (un |el |mi )?pedido|realizar (un |el |mi )?pedido|poner (un |el |mi )?pedido|encargar|encargo|como (pido|pedir)|donde (pido|pedir)|(quiero|quisiera|queremos|necesito|necesitamos|voy a|vamos a|me gustaria|nos gustaria) pedir|pedir (algo|genero|mercancia|productos|material)|hacer (la )?compra|tienda online|tienda virtual|pedidos? online|pedir online|comprar por internet)\b/;
@@ -988,6 +991,7 @@
     return '<div class="chat-pedido"><p>' + lead + '</p><a class="chat-order" href="' + PEDIDO_URL + '" target="_blank" rel="noopener">' + PEDIDO_ICONO + '<span>Hacer pedido</span></a></div>';
   }
   function conPedido(texto, html) {
+    if (!PEDIDO_VISIBLE) return html;
     if (!html || typeof html !== 'string' || html.indexOf('pedidos.tailc4a490') >= 0) return html;
     var t = limpiar(texto);
     var quiere = (QUIERE_COMPRAR.test(t) && !NO_COMPRAR.test(t)) || state.cur === 'pedido';

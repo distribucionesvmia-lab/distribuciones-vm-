@@ -100,3 +100,8 @@
 @media(max-width:760px){.site-header nav{gap:18px}}
 .con-mail{display:inline-flex;align-items:center;gap:8px}
 .con-mail svg{flex:none}
+
+/* ---- «Hacer pedido» OCULTO (no borrado) ----
+   Oculta el botón de la cabecera, el flotante del móvil, los botones de las páginas y la banda de pedido.
+   Para volver a mostrarlo: borrar este bloque (y poner PEDIDO_VISIBLE = true en chat.js para el asistente). */
+.sh-order,.order-float,.btn-pedido,.pedido-banda{display:none!important}
