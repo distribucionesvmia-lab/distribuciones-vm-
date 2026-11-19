@@ -28,10 +28,11 @@ window.ProductWorld.init({
     {
       template:'range', family:'S.Pellegrino', color:'#d7eef3', ink:'#0c3447',
       eyebrow:'Más formatos', title:'Para cada servicio.',
-      description:'Además del 75 cl, S.Pellegrino en botella de vidrio de 25 cl y de 50 cl.',
+      description:'Más formatos en botella de vidrio: S.Pellegrino en 25 cl y en 50 cl, y Pedras Salgadas en 75 cl.',
       products:[
         {name:'25 cl',description:'Botella de vidrio individual.',image:'assets/agua/sanpellegrino-25cl.png',width:186,height:560,alt:'Botella de vidrio S.Pellegrino de 25 centilitros'},
-        {name:'50 cl',description:'Botella de vidrio de formato medio.',image:'assets/agua/sanpellegrino-50cl.png',width:245,height:900,alt:'Botella de vidrio S.Pellegrino de 50 centilitros'}
+        {name:'50 cl',description:'Botella de vidrio de formato medio.',image:'assets/agua/sanpellegrino-50cl.png',width:245,height:900,alt:'Botella de vidrio S.Pellegrino de 50 centilitros'},
+        {name:'Pedras Salgadas · 75 cl',kicker:'Pedras',description:'Botella de vidrio de 75 cl, con gas natural, para compartir en la mesa.',image:'assets/agua/pedras-75-alt.png',width:700,height:1050,alt:'Botella de vidrio Pedras Salgadas de 75 centilitros'}
       ]
     },
     {
