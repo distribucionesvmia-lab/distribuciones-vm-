@@ -194,3 +194,7 @@
 
 .news-tag{white-space:nowrap}
 @media(max-width:700px){.news-tag{font-size:.72rem;padding:3px 9px}.news-btn{font-size:.85rem}}
+
+.nov-precio{margin:2px 0 0!important;display:flex;align-items:baseline;gap:8px}
+.nov-precio b{font-size:1.9rem;letter-spacing:-.03em;color:#251d1a}
+.nov-precio span{font-size:.85rem;opacity:.75;text-transform:uppercase;letter-spacing:.08em}

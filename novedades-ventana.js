@@ -25,7 +25,7 @@
         (fs.length ? '<img class="nov-win-img" src="' + esc(fs[0]) + '" alt="' + esc(n.nombre) + '">' : '<span class="nov-win-estrella" aria-hidden="true">✦</span>') +
         (fs.length > 1 ? '<div class="nov-win-thumbs">' + fs.map(function (f, i) { return '<button type="button" class="nov-th' + (i === 0 ? ' is-on' : '') + '" data-src="' + esc(f) + '" aria-label="Ver foto ' + (i + 1) + '"><img src="' + esc(f) + '" alt=""></button>'; }).join('') + '</div>' : '') + '</div>';
       txt = '<div class="nov-win-txt">' + (n.fecha ? '<p class="nov-win-meta">' + esc(n.fecha) + '</p>' : '') +
-        '<h2 id="nov-win-t">' + esc(n.nombre) + '</h2>' + (n.destacado ? '<p class="nov-win-dest">✦ ' + esc(n.destacado) + '</p>' : '') + (meta ? '<p class="nov-win-meta">' + meta + '</p>' : '') +
+        '<h2 id="nov-win-t">' + esc(n.nombre) + '</h2>' + (n.destacado ? '<p class="nov-win-dest">✦ ' + esc(n.destacado) + '</p>' : '') + (n.precio ? '<p class="nov-precio"><b>' + esc(n.precio) + '</b> <span>' + esc(n.precioNota || '') + '</span></p>' : '') + (meta ? '<p class="nov-win-meta">' + meta + '</p>' : '') +
         (n.texto ? '<p>' + esc(n.texto) + '</p>' : '') +
         (n.ficha && n.ficha.length ? '<dl class="nov-ficha">' + n.ficha.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' : '') +
         '<div class="nov-win-acc">' + (n.enlace ? '<a href="' + esc(n.enlace) + '">Ver en el catálogo</a>' : '<a href="index.html#contacto">Pedir información</a>') +

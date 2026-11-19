@@ -15,7 +15,7 @@
     var meta = [n.marca, n.formato].filter(Boolean).map(esc).join(' · ');
     var enlace = n.enlace ? '<a class="nov-ver" href="' + esc(n.enlace) + '">Ver en el catálogo →</a>' : '<a class="nov-ver" href="index.html#contacto">Pedir información →</a>';
     return '<article class="nov-card"><span class="nov-nuevo">' + esc(n.etiqueta || 'Nuevo') + '</span>' + foto + '<div class="nov-txt">' +
-      (n.fecha ? '<p class="nov-fecha">' + esc(n.fecha) + '</p>' : '') + '<h2>' + esc(n.nombre) + '</h2>' + (n.destacado ? '<p class="nov-dest">✦ ' + esc(n.destacado) + '</p>' : '') +
+      (n.fecha ? '<p class="nov-fecha">' + esc(n.fecha) + '</p>' : '') + '<h2>' + esc(n.nombre) + '</h2>' + (n.destacado ? '<p class="nov-dest">✦ ' + esc(n.destacado) + '</p>' : '') + (n.precio ? '<p class="nov-precio"><b>' + esc(n.precio) + '</b> <span>' + esc(n.precioNota || '') + '</span></p>' : '') +
       (meta ? '<p class="nov-meta">' + meta + '</p>' : '') + (n.texto ? '<p>' + esc(n.texto) + '</p>' : '') +
       (n.ficha && n.ficha.length ? '<dl class="nov-ficha">' + n.ficha.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' : '') + enlace + '</div></article>';
   }).join('');

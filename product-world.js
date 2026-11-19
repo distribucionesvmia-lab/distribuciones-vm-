@@ -15,6 +15,7 @@
   const page = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '') || 'index';
   const fmt = n => Number(n).toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const price = (family, p) => {
+    if (p && p.precio != null) return `<span class="pw-price"><span class="pw-price-n">${fmt(p.precio)} €</span> <span class="pw-price-u">${esc(p.precioNota || 'IVA incluido')}</span></span>`;
     const e = window.PRECIOS && p && window.PRECIOS[`${page}|${family}|${p.name}`];
     return e ? `<span class="pw-price"><span class="pw-price-n">${fmt(e.p)} €</span> <span class="pw-price-u">${esc(e.u || 'ud.')}</span></span>` : '';
   };

@@ -6,6 +6,7 @@
    marca:   marca del artículo
    nombre:  nombre del artículo (obligatorio)
    etiqueta: (opcional) sello sobre la foto; si no se pone, «Nuevo»
+   precio:  (opcional) por ejemplo '59 €'; precioNota: por ejemplo 'IVA incluido'
    destacado: (opcional) línea destacada bajo el nombre, por ejemplo «Edición limitada · Ideal para Navidad»
    anuncio: (opcional) frase para la barra roja de arriba; se usa la del primer artículo que la tenga
    formato: formato o peso, por ejemplo '75 cl' o 'Caja de 6 uds.'
@@ -23,10 +24,10 @@
 */
 window.DVM_NOVEDADES = [
   {
-    etiqueta: 'Novedad exclusiva', destacado: 'Edición limitada · Ideal para estas Navidades',
-    anuncio: 'Novedad exclusiva: Lleiroso 25 Aniversario, edición limitada para brindar en Navidad',
+    etiqueta: 'Novedad', destacado: 'Edición limitada · Ideal para estas Navidades',
+    anuncio: 'Novedad: Lleiroso 25 Aniversario, edición limitada para brindar en Navidad',
     marca: 'Lleiroso · D.O. Ribera del Duero', nombre: 'Lleiroso Reserva 25 Aniversario', formato: 'Edición limitada · 75 cl · con estuche',
-    texto: 'Una edición limitada y exclusiva, ideal para regalar y brindar en estas fechas navideñas. Conmemora 2001-2026 y nace de cuatro barricas excepcionales. Solo 1.188 botellas numeradas, elaboradas y embotelladas en Valbuena de Duero.',
+    texto: 'Una edición limitada, ideal para regalar y brindar en estas fechas navideñas. Conmemora 2001-2026 y nace de cuatro barricas excepcionales. Solo 1.188 botellas numeradas, elaboradas y embotelladas en Valbuena de Duero.',
     ficha: [
       ['Uva', '100 % Tempranillo'],
       ['Cosecha', '2018'],
@@ -36,6 +37,7 @@ window.DVM_NOVEDADES = [
       ['Servir a', '16-18 ºC'],
       ['Maridaje', 'Carnes a la brasa, carnes rojas y caza, quesos curados, guisos tradicionales y postres de frutos rojos, queso o cacao']
     ],
+    precio: '59 €', precioNota: 'IVA incluido',
     enlace: 'vinos.html#lleiroso',
     fotos: ['assets/novedades/lleiroso-25-aniversario.png', 'assets/novedades/lleiroso-25-aniversario-abierta.png']
   }
