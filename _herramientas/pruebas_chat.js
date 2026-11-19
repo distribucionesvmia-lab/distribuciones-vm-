@@ -205,7 +205,7 @@ const FAQ_CASOS = [
   ['¿arregláis cafeteras?', /asistencia técnica/i], ['mi cafetera no funciona', /asistencia técnica/i], ['¿tenéis infusiones?', /pirámide/i],
   ['¿tenéis pan precocido?', /Panamar/i], ['¿tenéis aceite en garrafa?', /garrafa/i], ['¿tenéis cava?', /no tenemos publicadas/i], ['¿tenéis Mahou?', /no tenemos publicadas/i],
   ['¿tenéis vino de Ribera del Duero?', /Dominio de Bornos/i], ['¿qué aguas tenéis?', /Bezoya[\s\S]*Perrier/i], ['¿tenéis fiambre?', /Campofrío/i],
-  ['¿eres un robot?', /respuestas automáticas/i], ['¿eres una persona?', /no una persona/i], ['¿cómo te llamas?', /Pablo/], ['¿qué sabes hacer?', /Reparto/i],
+  ['¿eres un robot?', /respuestas automáticas/i], ['¿eres una persona?', /no una persona/i], ['¿cómo te llamas?', /Asistente DVM/], ['¿qué sabes hacer?', /Reparto/i],
   ['¿guardáis mis datos?', /no se envía a ningún servidor/i], ['¿buscáis personal?', /empleo/i], ['quiero que distribuyáis mi marca', /proponernos/i],
   ['¿puedo recoger en el almacén?', /Labradores/i], ['quiero poner una queja', /queja/i], ['¿puedo llamar por la tarde?', /Valentín en su móvil/i],
   ['¿servís a colegios?', /hostelería/i], ['¿vendéis a particulares?', /distribuidor para hostelería/i], ['quiero cambiar mi pedido', /cambiar, ampliar o cancelar/i],
