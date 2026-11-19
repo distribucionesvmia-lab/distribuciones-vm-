@@ -108,7 +108,7 @@
       var major=stops[i].classList.contains('major');
       var c=document.createElementNS(NS,'circle');c.setAttribute('cx',p.x);c.setAttribute('cy',p.y);c.setAttribute('r',major?(mob?10:14):(mob?6:8));c.setAttribute('fill',major?'#c8372d':'#f7f3ea');c.setAttribute('stroke',major?'#fff':'#c8372d');c.setAttribute('stroke-width',major?4:3);c.setAttribute('opacity',reduce?1:.3);road.appendChild(c);mk.push(c);
     });
-    hhCache=(document.querySelector('.site-header')||{offsetHeight:90}).offsetHeight;document.documentElement.style.setProperty('--hh',hhCache+'px');[].forEach.call(ruta.querySelectorAll('.hi-pin'),function(e){e._H=0});
+    hhCache=(document.querySelector('.site-header')||{offsetHeight:90}).offsetHeight+((document.querySelector('.news-bar')||{offsetHeight:0}).offsetHeight);document.documentElement.style.setProperty('--hh',hhCache+'px');[].forEach.call(ruta.querySelectorAll('.hi-pin'),function(e){e._H=0});
     buildDeco(w,mob);
     if(cartel&&endPt){cartel.style.left=(endPt.x+(mob?44:76))+'px';cartel.style.top=(endPt.y-cartel.offsetHeight-34)+'px'}
     if(curL!==null&&prevLen>0)curL=curL*len/prevLen; /* al reconstruir (imagen que carga, giro de pantalla) el vehículo conserva su posición relativa y no salta */

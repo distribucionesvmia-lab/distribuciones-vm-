@@ -1,5 +1,5 @@
 /* Cabecera común a todas las páginas. Se genera con _herramientas/cabecera.py: no editar el HTML a mano. */
-.site-header{position:sticky;top:0;z-index:60;box-sizing:border-box;width:100%;min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px clamp(22px,5.5vw,104px);background:rgba(247,243,234,.95);color:#251d1a;border-bottom:1px solid rgba(50,36,27,.17);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);font-family:Jost,Arial,sans-serif;line-height:1.2;transform:none}
+.site-header{position:sticky;top:0;z-index:60;box-sizing:border-box;width:100%;min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:5px clamp(22px,5.5vw,104px);background:rgba(247,243,234,.95);color:#251d1a;border-bottom:1px solid rgba(50,36,27,.17);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);font-family:Jost,Arial,sans-serif;line-height:1.2;transform:none}
 .site-header.is-fixed{position:fixed;inset:0 0 auto 0}
 .site-header *{box-sizing:border-box}
 .sh-brand{display:flex;align-items:center;gap:10px;min-width:0;color:inherit;text-decoration:none;font-size:.86rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
@@ -18,7 +18,7 @@
 .site-header a:focus-visible{outline:2px solid #c61819;outline-offset:3px;border-radius:4px}
 @media(max-width:1560px){
   .site-header{flex-wrap:wrap;gap:4px 15px}
-  .site-header nav{order:3;width:100%;justify-content:center;overflow-x:auto;padding:8px 0;scrollbar-width:none}
+  .site-header nav{order:3;width:100%;justify-content:center;overflow-x:auto;padding:4px 0;scrollbar-width:none}
   .site-header nav::-webkit-scrollbar{display:none}
 }
 @media(max-width:760px){
@@ -35,7 +35,7 @@
   .sh-brand span{max-width:115px;white-space:normal;line-height:1.1}
 }
 /* las secciones fijadas con scroll cuelgan de la cabecera cuando es de dos filas */
-@media(max-width:1560px){.pw-sticky{top:111px;height:calc(100svh - 111px)}}
+@media(max-width:1560px){.pw-sticky{top:calc(93px + var(--nb,0px));height:calc(100svh - 93px - var(--nb,0px))}}
 /* Botones fijos de móvil: «Hacer pedido» (principal) y «Llamar» (se generan con _herramientas/cabecera.py) */
 .call-bar{display:none}
 @media(max-width:760px){
@@ -119,7 +119,7 @@
 @media(prefers-reduced-motion:reduce){.dvm-cookies{transition:none}}
 
 /* Barra «Novedades» encima del menú y ventana central con el artículo nuevo */
-.news-bar{position:relative;z-index:61;display:flex;align-items:center;justify-content:center;gap:12px;box-sizing:border-box;min-height:38px;padding:6px 16px;background:linear-gradient(100deg,#a51213 0%,#c61819 45%,#e0462f 100%);background-size:200% 100%;color:#fff;text-decoration:none;font-family:Jost,Arial,sans-serif;font-size:.9rem;line-height:1.2;animation:news-brillo 6s ease-in-out infinite}
+.news-bar{position:sticky;top:0;z-index:62;display:flex;align-items:center;justify-content:center;gap:12px;box-sizing:border-box;min-height:38px;padding:6px 16px;background:linear-gradient(100deg,#a51213 0%,#c61819 45%,#e0462f 100%);background-size:200% 100%;color:#fff;text-decoration:none;font-family:Jost,Arial,sans-serif;font-size:.9rem;line-height:1.2;animation:news-brillo 6s ease-in-out infinite}
 .news-bar:hover{filter:brightness(1.08)}
 .news-ico{display:inline-grid;place-items:center;color:#ffe08a;animation:news-pulso 1.8s ease-in-out infinite}
 .news-tag{font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.8rem;background:#fff;color:#c61819;padding:3px 10px;border-radius:999px}
@@ -164,3 +164,6 @@
   .sh-ico-link:hover::after,.sh-ico-link:focus-visible::after{opacity:1;transform:translate(-50%,0);transition-delay:0s}
 }
 @media(hover:hover) and (pointer:fine) and (min-width:1100px){.site-header nav{overflow:visible}}
+
+.site-header{top:var(--nb,0px)}
+.site-header.is-fixed{top:var(--nb,0px);inset:var(--nb,0px) 0 auto 0}

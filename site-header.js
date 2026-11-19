@@ -14,7 +14,9 @@
   /* Alturas de la cabecera y de la subcabecera (si existe): las usan los elementos que se quedan fijos debajo. */
   function setHeights() {
     var h = document.querySelector('.site-header'), s = document.querySelector('.sh-sub'), r = document.documentElement.style;
-    var hh = h ? h.offsetHeight : 0;
+    var nb = document.querySelector('.news-bar'), nh = nb ? nb.offsetHeight : 0;
+    var hh = (h ? h.offsetHeight : 0) + nh;
+    r.setProperty('--nb', nh + 'px');
     r.setProperty('--sh-h', hh + 'px');
     r.setProperty('--sh-total', (hh + (s ? s.offsetHeight : 0)) + 'px');
   }

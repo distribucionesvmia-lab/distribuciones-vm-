@@ -49,11 +49,4 @@
   function cierra() { if (!modal) return; modal.classList.remove('is-open'); document.documentElement.style.overflow = ''; if (previo && previo.focus) previo.focus(); }
   bar.addEventListener('click', function (e) { if (e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) return; e.preventDefault(); abre(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal && modal.classList.contains('is-open')) cierra(); });
-
-  /* La cabecera fija de la portada y de Café Mocay se coloca debajo de la barra mientras esta se ve */
-  var fija = document.querySelector('.site-header.is-fixed');
-  if (fija) {
-    var pos = function () { fija.style.top = Math.max(0, bar.getBoundingClientRect().bottom) + 'px'; };
-    pos(); window.addEventListener('scroll', pos, { passive: true }); window.addEventListener('resize', pos);
-  }
 })();
