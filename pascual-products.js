@@ -82,7 +82,13 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'lineup', id: 'movit', family: 'Leche Movit', color: '#f3dfe6', ink: '#6b1e3d',
+      template: 'lineup', id: 'movit', family: 'Leche Movit', color: '#9f1650', ink: '#fff4f7', dark: true,
+      virtudesTitulo: 'Nutrientes de Movit',
+      virtudes: [
+        {sym:'Ca', name:'Calcio', desc:'Huesos'}, {sym:'P', name:'Fósforo', desc:'Huesos'}, {sym:'Zn', name:'Zinc', desc:'Huesos'},
+        {sym:'K', name:'Vitamina K', desc:'Huesos'}, {sym:'Pro', name:'Proteínas', desc:'Aumento masa muscular'}, {sym:'Mg', name:'Magnesio', desc:'Mantenimiento masa muscular'},
+        {sym:'D', name:'Vitamina D', desc:'Mantenimiento masa muscular'}, {sym:'C', name:'Vitamina C', desc:'Formación normal de colágeno (cartílagos)'}, {sym:'Mn', name:'Manganeso', desc:'Tejido conectivo'}
+      ],
       eyebrow: 'Con calcio · consumo en el hogar', title: 'Movit. «Mucho más que una leche con calcio.»',
       note: 'Según la marca, nutrientes para la movilidad integral. Leche para el desayuno y la alimentación diaria. Una imagen por variedad',
       variants: [
@@ -91,7 +97,7 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'lineup', id: 'batidos-vidrio', family: 'Batidos Pascual', color: '#fbd9e4', ink: '#7a1d3c',
+      template: 'lineup', id: 'batidos-vidrio', family: 'Batidos Pascual', color: '#f8efdb', ink: '#4a2a1a',
       eyebrow: 'Batidos para hostelería · vidrio', title: 'Batidos Pascual, un formato único para el canal Horeca.',
       note: 'Una imagen por variedad',
       variants: [
@@ -102,7 +108,7 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'lineup', id: 'batidos-brik', family: 'Batidos en brik', color: '#f6e4d8', ink: '#5a2e1b',
+      template: 'lineup', id: 'batidos-brik', family: 'Batidos en brik', color: '#f5ead2', ink: '#4a2a1a',
       eyebrow: 'Brik de 200 ml · alimentación', title: 'Batidos en brik, para llevar.',
       note: 'Una imagen por variedad',
       variants: [

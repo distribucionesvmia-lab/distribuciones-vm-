@@ -342,3 +342,24 @@
   .pw-e-image{max-height:70%}
   .pw-e-note{font-size:.62rem}
 }
+
+/* Virtudes de un producto (Movit): fichas con símbolo y beneficio */
+.pw-virt{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:640px}
+.pw-virt li{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:12px;background:rgba(255,255,255,.96);color:#8a1245}
+.pw-virt-s{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#c43a6e;color:#fff;font-family:Georgia,serif;font-weight:700;font-size:.85rem}
+.pw-virt b{display:block;font-size:.88rem;line-height:1.1}
+.pw-virt small{display:block;font-size:.72rem;line-height:1.15;opacity:.85}
+.pw-virt li:nth-child(4n+1) .pw-virt-s{background:#a3194f}.pw-virt li:nth-child(4n+3) .pw-virt-s{background:#d65b8a}
+@media(max-width:760px){.pw-virt{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:340px){.pw-virt{grid-template-columns:1fr}}
+#movit .pw-e-head h2{font-size:clamp(2rem,3.6vw,3.9rem);line-height:.95}
+#movit .pw-virt{margin-top:12px;gap:6px}
+#movit .pw-e-disc{background:rgba(255,244,247,.93)}
+/* Batidos: nata y chocolate */
+#batidos-vidrio,#batidos-brik{background:linear-gradient(180deg,#f8efdb 0%,#f2e4c7 100%)}
+#batidos-vidrio .pw-e-disc,#batidos-brik .pw-e-disc{background:rgba(74,42,26,.1)}
+#batidos-vidrio .pw-overline,#batidos-brik .pw-overline{color:#7a4a2a}
+#batidos-vidrio .pw-e-list li.is-current b,#batidos-brik .pw-e-list li.is-current b,#batidos-vidrio h2,#batidos-brik h2{color:#4a2a1a}
+#movit .pw-e-disc{background:#fff0f4!important;opacity:.95}
+#movit .pw-e-art:has(.pw-e-multi) .pw-e-disc{display:block!important}
+#movit .pw-e-image{mix-blend-mode:normal;filter:drop-shadow(10px 18px 14px rgba(60,0,25,.35))}
