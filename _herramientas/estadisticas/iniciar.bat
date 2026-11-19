@@ -6,5 +6,5 @@ cd /d "%~dp0"
 estadisticas-dvm.exe
 echo.
 echo El programa se ha parado. Se vuelve a poner en marcha en 5 segundos...
-timeout /t 5 >nul
+ping -n 6 127.0.0.1 >nul
 goto inicio

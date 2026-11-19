@@ -41,14 +41,16 @@ IMPORTANTE: solo se publica el contador (puerto 8787). El PANEL (puerto 8788) NO
 este ordenador. Si quieres verlo desde el movil, dimelo y te lo preparo con seguridad.
 
 
-PASO 3 - Que arranque solo con Windows
---------------------------------------
-1. Pulsa las teclas Windows + R, escribe  shell:startup  y pulsa Intro. Se abre una carpeta.
-2. Copia dentro un acceso directo a  iniciar.bat  (boton derecho en iniciar.bat > "Crear acceso directo", y
-   arrastra el acceso directo a esa carpeta).
-3. En Windows: Configuracion > Sistema > Inicio/apagado y suspension > "Suspender": NUNCA (si el ordenador se
-   duerme, no cuenta visitas). La web sigue funcionando igual aunque este ordenador este apagado; solo se pierden
-   las visitas de ese rato.
+PASO 3 - Que arranque solo con Windows (y sin ventana)
+------------------------------------------------------
+1. Cierra la ventana negra del contador si la tienes abierta.
+2. Clic derecho sobre  instalar-arranque-automatico.bat  y elige "Ejecutar como administrador".
+3. Al terminar pone LISTO. Desde ese momento el contador arranca solo cada vez que se enciende el ordenador,
+   sin ventana y sin que nadie inicie sesion, y se vuelve a poner en marcha si se para. Tambien evita que el
+   ordenador se suspenda.
+4. Para ver el panel:  abrir-panel.bat  (o http://localhost:8788 en el navegador).
+5. Para quitarlo:  desinstalar-arranque-automatico.bat  (como administrador).
+Tailscale Funnel, una vez puesto con "--bg", se queda guardado y tambien vuelve solo al reiniciar.
 
 
 QUE SE VE EN EL PANEL
