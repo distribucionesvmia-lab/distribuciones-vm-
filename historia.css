@@ -5,7 +5,7 @@
 .hi-hero p{max-width:620px;font-size:1.12rem;line-height:1.55;margin:0 0 10px}
 .hi-hero .hi-links{font-size:.95rem}
 .hi-hero a{color:var(--red);text-underline-offset:3px}
-.hi-ruta{position:relative;overflow:hidden;overflow:clip;padding:30px var(--side) 90px;--lane:0}
+.hi-ruta{position:relative;overflow:hidden;overflow:clip;padding:30px var(--side) 210px;--lane:0}
 .hi-mapa{position:absolute;inset:0;width:100%;height:100%;z-index:0}
 .hi-road{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:visible}
 .hi-stops{position:relative;z-index:2;list-style:none;margin:0 auto;padding:0;max-width:1180px}
@@ -31,10 +31,10 @@
 .hi-vehicle svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 6px 5px rgba(0,0,0,.25))}
 .hi-vehicle .flip{position:absolute;inset:0;transition:transform .3s}
 .hi-vcap{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:4px;white-space:nowrap;background:#251d1a;color:#f7f3ea;font-size:.68rem;padding:3px 9px;border-radius:99px}
-.hi-fin{background:#241d1b;color:#f9f5ed;text-align:center;padding:70px var(--side)}
-.hi-hoy{display:inline-block;margin:0 0 16px;padding:6px 16px;border:1px solid rgba(249,245,237,.35);border-radius:99px;font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#f3d9a0}
-.hi-fin h2{font-size:clamp(2rem,4vw,3.2rem);margin:0 0 12px;letter-spacing:-.04em}
-.hi-fin p{max-width:520px;margin:0 auto 18px;line-height:1.5}
+.hi-fin{position:relative;z-index:2;width:calc(min(100%,1180px)*.36);margin:0 0 0 calc((100% - min(100%,1180px))/2);background:#fffdf8;color:#251d1a;border:1px solid #eadfcb;border-radius:18px;box-shadow:0 14px 34px rgba(37,29,26,.12);text-align:left;padding:26px 26px 28px}
+.hi-hoy{display:inline-block;margin:0 0 14px;padding:6px 14px;border:1px solid #d9a93a;border-radius:99px;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a5a00;background:#fff4dc}
+.hi-fin h2{font-size:clamp(1.7rem,3vw,2.4rem);margin:0 0 12px;letter-spacing:-.04em}
+.hi-fin p{margin:0 0 18px;line-height:1.5;font-size:.98rem}
 .hi-fin a{color:#fff;background:var(--red);padding:12px 22px;border-radius:99px;text-decoration:none;font-weight:600}
 @media(max-width:760px){
  .hi-stop{width:auto;margin-left:0!important;padding-left:96px}
@@ -156,3 +156,15 @@
 /* textos de las tarjetas: versión resumida solo en móvil */
 .hi-card p.hi-s{display:none}
 @media(max-width:760px){.hi-card p.hi-l{display:none}.hi-card p.hi-s{display:block}}
+
+/* cartel con la fecha de hoy al final del camino, donde se detiene el vehículo */
+.hi-cartel{position:absolute;z-index:3;left:0;top:0;min-width:168px;padding:10px 18px 12px;background:#173b3c;color:#fff;border:3px solid #fff;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.25);text-align:center;line-height:1.15}
+.hi-cartel span{display:block;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#f3d9a0}
+.hi-cartel b{display:block;margin-top:4px;font-size:1.05rem;font-weight:700}
+.hi-cartel::after{content:"";position:absolute;left:50%;top:100%;width:9px;height:34px;margin-left:-4.5px;background:#8a6a45;border-radius:0 0 3px 3px;box-shadow:inset -2px 0 0 rgba(0,0,0,.2)}
+@media(max-width:760px){
+ .hi-fin{width:auto;margin-left:96px;padding:22px 20px 24px}
+ .hi-ruta{padding-bottom:190px}
+ .hi-cartel{min-width:140px;padding:8px 14px 10px}
+ .hi-cartel b{font-size:.92rem}
+}

@@ -18,8 +18,10 @@
   Object.keys(IMG).forEach(function(k){var d=document.createElement('div');d.className='v img';d.dataset.k=k;d.innerHTML='<img src="assets/historia/'+IMG[k]+'.png" alt="" width="720" height="400">';fl.appendChild(d)});
   var cap=document.createElement('span');cap.className='hi-vcap'; /* el nombre del vehículo ya no se muestra bajo el avatar */
   ruta.appendChild(veh);
+  var cartel=ruta.querySelector('.hi-cartel'),fecha=cartel&&cartel.querySelector('.hi-fecha');
+  if(fecha){try{fecha.textContent=new Date().toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric'})}catch(e){}}
   var SAL=stops.findIndex(function(s){return /Salamanca/.test(s.textContent)});if(SAL<0)SAL=stops.length;
-  var base,prog,clipRect,pts=[],len=0,cur=-1,mk=[],decoEls=[],tl,tlChips=[],tlFill;
+  var base,prog,clipRect,pts=[],endPt=null,len=0,cur=-1,mk=[],decoEls=[],tl,tlChips=[],tlFill;
 
   var DECO={
     castle:'<svg viewBox="0 0 300 160"><rect x="56" y="84" width="214" height="40" fill="#bf936c"/><rect x="60" y="78" width="8" height="6" fill="#bf936c"/><rect x="74" y="78" width="8" height="6" fill="#bf936c"/><rect x="88" y="78" width="8" height="6" fill="#bf936c"/><rect x="102" y="78" width="8" height="6" fill="#bf936c"/><rect x="116" y="78" width="8" height="6" fill="#bf936c"/><rect x="130" y="78" width="8" height="6" fill="#bf936c"/><rect x="144" y="78" width="8" height="6" fill="#bf936c"/><rect x="158" y="78" width="8" height="6" fill="#bf936c"/><rect x="172" y="78" width="8" height="6" fill="#bf936c"/><rect x="186" y="78" width="8" height="6" fill="#bf936c"/><rect x="200" y="78" width="8" height="6" fill="#bf936c"/><rect x="214" y="78" width="8" height="6" fill="#bf936c"/><rect x="232" y="62" width="40" height="62" fill="#b98b63"/><rect x="234" y="56" width="7" height="6" fill="#b98b63"/><rect x="246" y="56" width="7" height="6" fill="#b98b63"/><rect x="258" y="56" width="7" height="6" fill="#b98b63"/><rect x="0" y="122" width="300" height="30" fill="#c9a07a"/><rect x="2" y="116" width="9" height="6" fill="#c9a07a"/><rect x="18" y="116" width="9" height="6" fill="#c9a07a"/><rect x="34" y="116" width="9" height="6" fill="#c9a07a"/><rect x="50" y="116" width="9" height="6" fill="#c9a07a"/><rect x="66" y="116" width="9" height="6" fill="#c9a07a"/><rect x="82" y="116" width="9" height="6" fill="#c9a07a"/><rect x="98" y="116" width="9" height="6" fill="#c9a07a"/><rect x="114" y="116" width="9" height="6" fill="#c9a07a"/><rect x="130" y="116" width="9" height="6" fill="#c9a07a"/><rect x="146" y="116" width="9" height="6" fill="#c9a07a"/><rect x="162" y="116" width="9" height="6" fill="#c9a07a"/><rect x="178" y="116" width="9" height="6" fill="#c9a07a"/><rect x="194" y="116" width="9" height="6" fill="#c9a07a"/><rect x="210" y="116" width="9" height="6" fill="#c9a07a"/><rect x="226" y="116" width="9" height="6" fill="#c9a07a"/><rect x="242" y="116" width="9" height="6" fill="#c9a07a"/><rect x="258" y="116" width="9" height="6" fill="#c9a07a"/><rect x="274" y="116" width="9" height="6" fill="#c9a07a"/><rect x="6" y="14" width="56" height="112" fill="#d2ab86"/><rect x="6" y="14" width="56" height="112" fill="none" stroke="#b98b63" stroke-width="2"/><rect x="2" y="12" width="64" height="12" fill="#c9a07a"/><rect x="10" y="5" width="8" height="6" fill="#c9a07a"/><rect x="23" y="5" width="8" height="6" fill="#c9a07a"/><rect x="36" y="5" width="8" height="6" fill="#c9a07a"/><rect x="49" y="5" width="8" height="6" fill="#c9a07a"/><rect x="0" y="4" width="14" height="30" rx="7" fill="#c9a07a"/><rect x="54" y="4" width="14" height="30" rx="7" fill="#c9a07a"/><rect x="29" y="52" width="9" height="12" fill="#5a3a26"/><g fill="#a97b55"><circle cx="16" cy="40" r="1.6"/><circle cx="26" cy="40" r="1.6"/><circle cx="36" cy="40" r="1.6"/><circle cx="46" cy="40" r="1.6"/><circle cx="52" cy="74" r="1.6"/><circle cx="14" cy="80" r="1.6"/><circle cx="24" cy="92" r="1.6"/><circle cx="44" cy="96" r="1.6"/><circle cx="34" cy="110" r="1.6"/><circle cx="16" cy="104" r="1.6"/></g><rect x="112" y="98" width="52" height="54" fill="#d2ab86"/><rect x="112" y="92" width="8" height="6" fill="#d2ab86"/><rect x="124" y="92" width="8" height="6" fill="#d2ab86"/><rect x="136" y="92" width="8" height="6" fill="#d2ab86"/><rect x="148" y="92" width="8" height="6" fill="#d2ab86"/><rect x="104" y="108" width="14" height="44" rx="7" fill="#c9a07a"/><rect x="158" y="108" width="14" height="44" rx="7" fill="#c9a07a"/><path d="M128 152v-22a10 10 0 0 1 20 0v22z" fill="#5a3a26"/><rect x="132" y="104" width="12" height="12" fill="#c8372d"/><rect x="262" y="108" width="34" height="44" rx="4" fill="#cfa782"/><rect x="262" y="102" width="8" height="6" fill="#cfa782"/><rect x="274" y="102" width="8" height="6" fill="#cfa782"/><rect x="286" y="102" width="8" height="6" fill="#cfa782"/><rect x="0" y="150" width="300" height="8" rx="4" fill="#bdb07a"/></svg>',
@@ -80,7 +82,10 @@
     });
     var d='M'+pts[0].x+' '+(pts[0].y-90),prev={x:pts[0].x,y:pts[0].y-90};segs=[];
     pts.forEach(function(p){var dy=p.y-prev.y;d+=' C'+prev.x+' '+(prev.y+dy*.55)+' '+p.x+' '+(p.y-dy*.55)+' '+p.x+' '+p.y;segs.push([prev.x,prev.y,prev.x,prev.y+dy*.55,p.x,p.y-dy*.55,p.x,p.y]);prev=p});
-    var end={x:pts[pts.length-1].x,y:pts[pts.length-1].y+130};d+=' C'+prev.x+' '+(prev.y+60)+' '+end.x+' '+(end.y-60)+' '+end.x+' '+end.y;segs.push([prev.x,prev.y,prev.x,prev.y+60,end.x,end.y-60,end.x,end.y]);
+    /* el camino sigue hasta el borde inferior de la ruta (justo encima del pie de la web) y allí se detiene el vehículo, junto al cartel con la fecha de hoy */
+    var lastP=pts[pts.length-1],endY=Math.max(lastP.y+260,rr.height-(mob?34:44)),endX=lastP.x+(mob?0:w*0.07),dyE=endY-prev.y;
+    var end={x:endX,y:endY};endPt=end;
+    d+=' C'+prev.x+' '+(prev.y+dyE*.4)+' '+end.x+' '+(end.y-dyE*.4)+' '+end.x+' '+end.y;segs.push([prev.x,prev.y,prev.x,prev.y+dyE*.4,end.x,end.y-dyE*.4,end.x,end.y]);
     road.setAttribute('viewBox','0 0 '+w+' '+rr.height);
     road.innerHTML='';
     var lw=mob?12:18;
@@ -105,6 +110,7 @@
     });
     hhCache=(document.querySelector('.site-header')||{offsetHeight:90}).offsetHeight;document.documentElement.style.setProperty('--hh',hhCache+'px');[].forEach.call(ruta.querySelectorAll('.hi-pin'),function(e){e._H=0});
     buildDeco(w,mob);
+    if(cartel&&endPt){cartel.style.left=(endPt.x+(mob?44:76))+'px';cartel.style.top=(endPt.y-cartel.offsetHeight-34)+'px'}
     if(curL!==null&&prevLen>0)curL=curL*len/prevLen; /* al reconstruir (imagen que carga, giro de pantalla) el vehículo conserva su posición relativa y no salta */
     update();
   }
@@ -175,6 +181,11 @@
     if(!base)return;
     updateFade();updateSlide();
     var rr=ruta.getBoundingClientRect(),y=innerHeight*0.55-rr.top;
+    if(endPt){ /* en el último tramo de scroll se suma lo que falta para que el vehículo llegue al final del camino cuando se llega al pie de la página */
+      var maxS=document.documentElement.scrollHeight-innerHeight,rem=Math.max(0,maxS-scrollY),R=innerHeight*0.7;
+      var y0max=innerHeight*0.55-(rr.top+scrollY-maxS),B=Math.max(0,endPt.y-y0max);
+      if(rem<R)y+=B*(1-rem/R);
+    }
     targetL=reduce?len:Math.max(0,Math.min(len,atY(y)));
     if(curL===null||reduce)curL=targetL;
     if(!looping){looping=true;requestAnimationFrame(frame)}
