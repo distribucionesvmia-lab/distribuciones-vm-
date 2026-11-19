@@ -88,7 +88,7 @@
 
 .sh-brand .sh-vm{color:#c61819;font-weight:800;font-size:1.2em}
 
-.sh-brand .sh-dist{font-family:Raleway,Jost,Arial,sans-serif;font-style:normal;font-weight:600;text-transform:none;letter-spacing:-.01em;font-size:1.1em}
+.sh-brand .sh-dist{font-family:Raleway,Jost,Arial,sans-serif;font-style:italic;font-weight:300;text-transform:none;letter-spacing:-.005em;font-size:1.2em}
 
 /* Icono del equipo en lugar de la palabra «Conócenos» (hereda el color del menú y se pone rojo en la página activa) */
 .sh-ico-link{display:inline-flex;align-items:center;margin:-8px 0}

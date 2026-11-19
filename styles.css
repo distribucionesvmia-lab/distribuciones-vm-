@@ -324,4 +324,4 @@ form{margin-top:48px;display:grid;gap:10px;grid-template-columns:1fr 1fr 1fr}
 /* tarjeta Café del catálogo: cartel vertical de Mocay, sin recortar su frase */
 .card-cafe img{object-fit:cover}
 @media(max-width:760px){.card-cafe{min-height:0;aspect-ratio:4/5}}
-.hero h1 .hero-dist{font-family:Raleway,Jost,Arial,sans-serif;font-weight:600;letter-spacing:-.045em}
+.hero h1 .hero-dist{font-family:Raleway,Jost,Arial,sans-serif;font-style:italic;font-weight:300;letter-spacing:-.04em}
