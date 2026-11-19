@@ -325,3 +325,10 @@ form{margin-top:48px;display:grid;gap:10px;grid-template-columns:1fr 1fr 1fr}
 .card-cafe img{object-fit:cover}
 @media(max-width:760px){.card-cafe{min-height:0;aspect-ratio:4/5}}
 .hero h1 .hero-dist{font-family:Raleway,Jost,Arial,sans-serif;font-style:italic;font-weight:300;letter-spacing:-.04em;font-size:.8em}
+
+/* Portadas del catálogo: al pasar el cursor se elevan y flotan suavemente antes de pulsar */
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .card{will-change:transform;transition:transform 260ms var(--ease),background-color 260ms var(--ease),box-shadow 260ms var(--ease)}
+  .card:hover{transform:translateY(-10px);box-shadow:0 28px 46px -14px rgba(20,12,6,.42);animation:card-flota 2.6s ease-in-out .25s infinite alternate}
+}
+@keyframes card-flota{from{transform:translateY(-10px)}to{transform:translateY(-16px)}}
