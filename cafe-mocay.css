@@ -31,7 +31,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 .m-hero{position:relative;min-height:100svh;padding:clamp(116px,17vh,170px) var(--gutter) 88px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;overflow:hidden;isolation:isolate}
 .m-hero::before{content:"";position:absolute;z-index:-2;inset:0;background:radial-gradient(circle at 70% 43%,#fffdf6 0%,var(--paper) 44%,#e8e5df 100%)}
-.m-hero-grain{position:absolute;inset:0;z-index:-1;opacity:.11;background-image:url('assets/macro-close-up-look-of-roasted-coffee.webp');background-size:cover;background-position:center;mix-blend-mode:multiply;mask-image:linear-gradient(90deg,transparent 36%,black 100%)}
+.m-hero-grain{position:absolute;inset:0;z-index:-1;opacity:.11;background-image:url('assets/macro-close-up-look-of-roasted-coffee.png');background-size:cover;background-position:center;mix-blend-mode:multiply;mask-image:linear-gradient(90deg,transparent 36%,black 100%)}
 .m-hero-copy{position:relative;z-index:3;max-width:720px}
 .m-hero-copy .m-eyebrow{margin:0 0 8px}
 .m-wordmark{width:200px;height:200px;max-width:none;object-fit:contain;margin:-45px 0 -43px -53px}
