@@ -48,7 +48,7 @@
     lineup(item, index) {
       const n = item.variants.length;
       const multi = item.variants.some(v => v.image);
-      return `<section${sid(item)} class="pw-scene pw-e${n>8?' is-long':''}${n>10?' is-scroll':''}${dark(item)}" style="--n:${n};--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
+      return `<section${sid(item)} class="pw-scene pw-e${n>8?' is-long':''}${n>10?' is-scroll':''}${item._flip?' is-flip':''}${dark(item)}" style="--n:${n};--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
         <div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
           <div class="pw-e-grid">
             <div class="pw-e-head"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2></div>
@@ -83,6 +83,8 @@
       config.sections = config.sections.map((sec, i) => ({ sec, i })).sort((a, b) => rank(a.sec) - rank(b.sec) || a.i - b.i).map(x => x.sec);
     }
     total = config.sections.length;
+    /* config.alternar: los lineup van alternando de lado (foto a la izquierda, foto a la derecha…) para no repetir siempre la misma composición */
+    if (config.alternar) { let k = 0; config.sections.forEach(sec => { if (sec.template === 'lineup') sec._flip = (k++ % 2) === 1; }); }
     mount.innerHTML = config.sections.map((item, index) => {
       if (!templates[item.template]) throw new Error(`Plantilla desconocida: ${item.template}`);
       return templates[item.template](item, index);

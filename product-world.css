@@ -294,3 +294,10 @@
 @media(prefers-reduced-motion:reduce){
   .pw-c-side-frames{gap:22px}.pw-c-side-frame{grid-area:auto;opacity:1;visibility:visible;transform:none}.pw-c-side-rail{display:none}
 }
+
+/* lineup alternado (config.alternar): en escritorio, la foto pasa a la derecha y el título con la lista a la izquierda */
+@media(min-width:761px){
+  .pw-e.is-flip .pw-e-grid{grid-template-columns:1.1fr .9fr}
+  .pw-e.is-flip .pw-e-art{grid-column:2}
+  .pw-e.is-flip .pw-e-head,.pw-e.is-flip .pw-e-list{grid-column:1}
+}

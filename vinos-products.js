@@ -2,6 +2,7 @@
 const B = 'assets/vinos/';
 window.ProductWorld.init({
   mount: '#familias',
+  alternar: true,
   order: ['Bodega Palacio','Blancos','Ribera del Duero','Frizzantes','Espumosos','Pinna Fidelis','Pazos','Bag in box','Otras'],
   sections: [
     {

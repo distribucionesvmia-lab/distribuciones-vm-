@@ -3,7 +3,7 @@
 Estado de la web: rediseño fotográfico (sin 3D artificial). La versión anterior con almacén 3D está en `_version-3d/` y la primera en `_version-anterior/`.
 
 ## Marcas y productos verificados (aparecen en la web actual del cliente)
-Café Mocay · Grupo Leche Pascual · Bodega Palacio de Bornos · Campofrío · Conservas Calvo · Pedras Salgadas y Pedras Limão (imagen en su web).
+Café Mocay · Grupo Leche Pascual · Bodega Palacio de Bornos · Campofrío · Conservas Calvo · Pedras Salgadas y Pedras Limón (imagen en su web).
 Categorías: café, lácteos, vinos, aguas, salsas/conservas/AOVE, refrigerados, congelados, menaje.
 
 Comprobado en fuentes públicas: Mocay es una marca de Calidad Pascual (catálogo profesional 2023 en pascualprofesional.com, con gama de café, máquinas, Mocay Academy y complementos).
