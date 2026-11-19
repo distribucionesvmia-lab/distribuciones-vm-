@@ -56,6 +56,7 @@ PAGES = {
     'historia.html': ('Conócenos', False),
     'aviso-legal.html': (None, False),
     'privacidad.html': (None, False),
+    'novedades.html': (None, False),
 }
 
 
@@ -96,6 +97,13 @@ def subnav(page):
     return f'<!-- subnav -->\n<nav class="sh-sub" aria-label="Conócenos">{items}</nav>\n<!-- /subnav -->\n'
 
 
+# Barra de «Novedades» encima del menú (se ve en todas las páginas; no se queda fija al hacer scroll)
+NEWS_HTML = ('<!-- novedades -->\n<a class="news-bar" href="novedades.html"><span class="news-ico" aria-hidden="true">'
+             '<svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 1.5l2.4 6.1 6.1 2.4-6.1 2.4L12 18.5l-2.4-6.1L3.5 10l6.1-2.4zM19 14l1.1 2.9L23 18l-2.9 1.1L19 22l-1.1-2.9L15 18l2.9-1.1z"/></svg></span>'
+             '<span class="news-tag">Novedades</span><span class="news-txt">Los artículos nuevos de la distribuidora, antes que nadie</span>'
+             '<span class="news-btn">Descúbrelos <b aria-hidden="true">→</b></span></a>\n<!-- /novedades -->\n')
+NEWS_RE = re.compile(r'<!-- novedades -->.*?<!-- /novedades -->\n?', re.S)
+
 HEADER_RE = re.compile(r'<header class="(?:top|m-top|pw-header|site-header)[^"]*"[^>]*>.*?</header>', re.S)
 
 for page in PAGES:
@@ -106,6 +114,8 @@ for page in PAGES:
         raise SystemExit(f'{page}: no se encontró la cabecera')
     h = HEADER_RE.sub(lambda m: new, h, count=1)
     h = SUB_RE.sub('', h)
+    h = NEWS_RE.sub('', h)
+    h = HEADER_RE.sub(lambda m: NEWS_HTML + m.group(0), h, count=1)
     if page in SUB_PAGES:
         h = h.replace('</header>', '</header>\n' + subnav(page).rstrip('\n'), 1)
     if CALL_RE.search(h):
@@ -118,6 +128,8 @@ for page in PAGES:
         h = h.replace('</head>', '<link rel="stylesheet" href="chat.css?v=1">\n</head>', 1)
     if 'chat.js' not in h:
         h = h.replace('</body>', '<script src="chat.js?v=1" defer></script>\n</body>', 1)
+    if 'novedades-ventana.js' not in h:
+        h = h.replace('</body>', '<script src="novedades-datos.js?v=1" defer></script>\n<script src="novedades-ventana.js?v=1" defer></script>\n</body>', 1)
     if 'site-header.js' not in h:
         h = h.replace('</body>', '<script src="site-header.js?v=1" defer></script>\n</body>', 1)
     open(p, 'w', encoding='utf-8').write(h)

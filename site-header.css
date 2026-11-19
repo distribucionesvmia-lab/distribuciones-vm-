@@ -117,3 +117,42 @@
 .dvm-cookies-b button:focus-visible,.dvm-cookies a:focus-visible{outline:3px solid #f3d9a0;outline-offset:3px}
 @media(max-width:560px){.dvm-cookies{bottom:0;width:100vw;border-radius:18px 18px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom))}}
 @media(prefers-reduced-motion:reduce){.dvm-cookies{transition:none}}
+
+/* Barra «Novedades» encima del menú y ventana central con el artículo nuevo */
+.news-bar{position:relative;z-index:61;display:flex;align-items:center;justify-content:center;gap:12px;box-sizing:border-box;min-height:38px;padding:6px 16px;background:linear-gradient(100deg,#a51213 0%,#c61819 45%,#e0462f 100%);background-size:200% 100%;color:#fff;text-decoration:none;font-family:Jost,Arial,sans-serif;font-size:.9rem;line-height:1.2;animation:news-brillo 6s ease-in-out infinite}
+.news-bar:hover{filter:brightness(1.08)}
+.news-ico{display:inline-grid;place-items:center;color:#ffe08a;animation:news-pulso 1.8s ease-in-out infinite}
+.news-tag{font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.8rem;background:#fff;color:#c61819;padding:3px 10px;border-radius:999px}
+.news-txt{font-weight:500}
+.news-btn{font-weight:700;border:1.5px solid rgba(255,255,255,.85);border-radius:999px;padding:3px 13px;white-space:nowrap}
+.news-bar:hover .news-btn{background:#fff;color:#c61819}
+@keyframes news-pulso{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.28) rotate(18deg)}}
+@keyframes news-brillo{0%,100%{background-position:0 0}50%{background-position:100% 0}}
+@media(max-width:700px){.news-txt{display:none}.news-bar{gap:10px}}
+@media(prefers-reduced-motion:reduce){.news-bar,.news-ico{animation:none}}
+
+.nov-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(20,12,8,.62);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.nov-modal.is-open{display:flex;animation:nov-fade .25s ease}
+.nov-win{position:relative;box-sizing:border-box;width:min(880px,100%);max-height:calc(100svh - 36px);overflow:auto;display:grid;grid-template-columns:1fr 1fr;background:#fbf7ef;color:#251d1a;border-radius:24px;box-shadow:0 30px 90px rgba(0,0,0,.5);font-family:Jost,Arial,sans-serif;animation:nov-sube .3s ease}
+.nov-win-foto{position:relative;display:grid;place-items:center;min-height:340px;padding:34px;background:radial-gradient(circle at 50% 45%,#fff 0%,#f1e6d3 100%)}
+.nov-win-foto img{max-width:100%;max-height:min(420px,52svh);object-fit:contain;filter:drop-shadow(14px 20px 14px rgba(60,30,20,.2))}
+.nov-win-estrella{font-size:5rem;color:#c61819;animation:news-pulso 2.4s ease-in-out infinite}
+.nov-win-tag{position:absolute;top:16px;left:16px;background:#c61819;color:#fff;font-weight:800;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.nov-win-txt{display:flex;flex-direction:column;justify-content:center;gap:10px;padding:38px 34px}
+.nov-win-txt h2{margin:0;font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:600;letter-spacing:-.04em;line-height:1}
+.nov-win-txt p{margin:0;line-height:1.5}
+.nov-win-meta{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.nov-win-acc{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.nov-win-acc a{display:inline-block;text-decoration:none;font-weight:700;padding:11px 20px;border-radius:999px;background:#c61819;color:#fff}
+.nov-win-acc a:hover{background:#a51213}
+.nov-win-acc a.sec{background:transparent;color:#c61819;border:1.5px solid #c61819}
+.nov-win-acc a.sec:hover{background:#c61819;color:#fff}
+.nov-win-cerrar{position:absolute;top:10px;right:12px;z-index:3;width:38px;height:38px;border:0;border-radius:50%;background:rgba(37,29,26,.08);color:#251d1a;font-size:1.4rem;line-height:1;cursor:pointer}
+.nov-win-cerrar:hover{background:rgba(37,29,26,.18)}
+.nov-win-nav{display:flex;align-items:center;gap:8px;margin-top:6px}
+.nov-win-nav button{width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(37,29,26,.3);background:#fff;cursor:pointer;font-size:1rem}
+.nov-win-nav span{font-size:.85rem;opacity:.7}
+@keyframes nov-fade{from{opacity:0}to{opacity:1}}
+@keyframes nov-sube{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@media(max-width:700px){.nov-win{grid-template-columns:1fr}.nov-win-foto{min-height:260px;padding:26px}.nov-win-foto img{max-height:40svh}.nov-win-txt{padding:22px 22px 26px}}
+@media(prefers-reduced-motion:reduce){.nov-modal.is-open,.nov-win,.nov-win-estrella{animation:none}}
