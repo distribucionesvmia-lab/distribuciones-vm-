@@ -21,19 +21,18 @@ window.ProductWorld.init({
       template: 'editorial', id: 'bag-in-box-10l', family: 'Leche Classic', color: '#f1e6da', ink: '#3a2418',
       eyebrow: 'Nuevo formato para hostelería', title: 'Bag in box de 10 litros.',
       description: 'Leche Classic en caja de 10 litros, para llenar el enfriador de leche con una sola acción.',
+      side: {
+        eyebrow: 'Ventajas del formato · según Pascual Profesional', title: 'Por qué el bag in box.',
+        frames: [
+          {name:'Menos residuos, más sostenible', description:'Los números no engañan: 49 % menos de residuos y 7 % menos de CO2 por litro movido (vs. botella de 1,5 L).', image:'assets/pascual/ventaja-residuos.png', width:270, height:270, alt:'Icono de reciclaje', color:'#3a2418'},
+          {name:'Mayor rentabilidad', description:'Mejor precio, como la emulsión de la leche es mejor, tu rentabilidad puede aumentar hasta un 33 % (comprobado por nuestros maestros baristas).', image:'assets/pascual/ventaja-rentabilidad.png', width:213, height:237, alt:'Icono del euro', color:'#4a2e20'},
+          {name:'Almacenamiento más eficiente', description:'Hemos pensado que una forma cúbica sería la mejor y más óptima manera de poder almacenar nuestra leche.', image:'assets/pascual/ventaja-almacenamiento.png', width:273, height:273, alt:'Icono de estantería con cajas', color:'#3a2418'},
+          {name:'Mayor rapidez en la operación', description:'Ya no tendrás que ir abriendo mil botellas una a una: a partir de ahora, con una sola acción llenarás tu enfriador con 10 L de nuestra mejor leche.', image:'assets/pascual/ventaja-rapidez.png', width:291, height:291, alt:'Icono de reloj', color:'#4a2e20'}
+        ]
+      },
       products: [
         {name:'Bag in box · 10 L', description:'La caja de 10 L de Leche Classic junto al enfriador de leche, la taza y la jarra Classic.', image:'assets/pascual/classic-bag-in-box.png', width:1400, height:787, cover:true, alt:'Nuevo formato para hostelería: caja bag in box de Leche Classic de 10 L, enfriador de leche, taza y jarra roja'},
         {name:'Enfriador de leche', description:'Con una sola acción llenas tu enfriador con 10 L de nuestra mejor leche.', image:'assets/pascual/classic-enfriador.png', width:640, height:640, cover:true, alt:'Enfriador de leche Pascual'}
-      ]
-    },
-    {
-      template: 'story', id: 'ventajas-bag-in-box', family: 'Leche Classic', color: '#3a2418', ink: '#f5ead9', dark: true,
-      eyebrow: 'Ventajas del formato · según Pascual Profesional', title: 'Por qué el bag in box.',
-      frames: [
-        {name:'Menos residuos, más sostenible', description:'Los números no engañan: 49 % menos de residuos y 7 % menos de CO2 por litro movido (vs. botella de 1,5 L).', image:'assets/pascual/ventaja-residuos.png', width:270, height:270, alt:'Icono de reciclaje', color:'#3a2418'},
-        {name:'Mayor rentabilidad', description:'Mejor precio, como la emulsión de la leche es mejor, tu rentabilidad puede aumentar hasta un 33 % (comprobado por nuestros maestros baristas).', image:'assets/pascual/ventaja-rentabilidad.png', width:213, height:237, alt:'Icono del euro', color:'#4a2e20'},
-        {name:'Almacenamiento más eficiente', description:'Hemos pensado que una forma cúbica sería la mejor y más óptima manera de poder almacenar nuestra leche.', image:'assets/pascual/ventaja-almacenamiento.png', width:273, height:273, alt:'Icono de estantería con cajas', color:'#3a2418'},
-        {name:'Mayor rapidez en la operación', description:'Ya no tendrás que ir abriendo mil botellas una a una: a partir de ahora, con una sola acción llenarás tu enfriador con 10 L de nuestra mejor leche.', image:'assets/pascual/ventaja-rapidez.png', width:291, height:291, alt:'Icono de reloj', color:'#4a2e20'}
       ]
     },
     {

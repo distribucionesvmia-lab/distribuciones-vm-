@@ -39,9 +39,11 @@
         </div></div></section>`;
     },
     editorial(item, index) {
-      return `<section${sid(item)} class="pw-scene pw-c${item.columns===3?' is-3':''}${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}"><div class="pw-c-inner">${label(item,index)}
+      /* tarjeta lateral opcional (item.side): se queda fija a un lado y, al hacer scroll, van pasando sus ventajas */
+      const side = item.side ? `<aside class="pw-c-side" style="--frame-color:${esc(item.side.frames[0].color || item.color)}" aria-label="${esc(item.side.title)}"><p class="pw-overline">${esc(item.side.eyebrow)}</p><h3 class="pw-c-side-title">${esc(item.side.title)}</h3><div class="pw-c-side-frames">${item.side.frames.map((f,i)=>`<div class="pw-c-side-frame${i===0?' is-current':''}" style="--frame-color:${esc(f.color || item.color)}"><div class="pw-c-side-icon">${img(f)}</div><div class="pw-c-side-copy"><span>${number(i)} / ${String(item.side.frames.length).padStart(2,'0')}</span><h4>${esc(f.name)}</h4><p>${esc(f.description)}</p></div></div>`).join('')}</div><div class="pw-c-side-rail" aria-hidden="true">${item.side.frames.map((_,i)=>`<i${i===0?' class="is-current"':''}></i>`).join('')}</div></aside>` : '';
+      return `<section${sid(item)} class="pw-scene pw-c${item.columns===3?' is-3':''}${item.side?' has-side':''}${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}"><div class="pw-c-inner">${label(item,index)}
         <div class="pw-c-title"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2><p>${esc(item.description)}</p></div>
-        <div class="pw-c-grid">${item.products.map((p,i) => `<article class="pw-c-item"><div class="pw-c-photo${p.cover?' is-cover':''}"${p.cover?` style="--ar:${Number(p.width)||4}/${Number(p.height)||3}"`:''}>${img(p)}</div><div class="pw-c-caption"><span>${number(i)}</span><div><h3>${esc(p.name)}</h3><p>${esc(p.description)}</p>${price(item.family,p)}</div></div></article>`).join('')}</div>${button(item)}</div></section>`;
+        <div class="pw-c-grid">${item.products.map((p,i) => `<article class="pw-c-item"><div class="pw-c-photo${p.cover?' is-cover':''}"${p.cover?` style="--ar:${Number(p.width)||4}/${Number(p.height)||3}"`:''}>${img(p)}</div><div class="pw-c-caption"><span>${number(i)}</span><div><h3>${esc(p.name)}</h3><p>${esc(p.description)}</p>${price(item.family,p)}</div></div></article>`).join('')}</div>${button(item)}${side}</div></section>`;
     },
     lineup(item, index) {
       const n = item.variants.length;
@@ -99,6 +101,33 @@
     });
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     const mobile = window.matchMedia('(max-width: 760px)');
+    /* tarjeta lateral con ventajas: la ventaja activa depende de lo que se ha recorrido de la sección (en pantallas estrechas o con «reducir animaciones» se ven todas seguidas) */
+    (function setupSide() {
+      const sides = [...mount.querySelectorAll('.pw-c-side')];
+      if (!sides.length) return;
+      const estrecha = window.matchMedia('(max-width: 900px)');
+      let pendiente = false;
+      function actualizar() {
+        pendiente = false;
+        sides.forEach(side => {
+          const frames = [...side.querySelectorAll('.pw-c-side-frame')];
+          if (estrecha.matches || reduce.matches) { frames.forEach(f => f.classList.add('is-current')); return; }
+          const ir = side.closest('.pw-c-inner').getBoundingClientRect(), sr = side.getBoundingClientRect();
+          const tope = parseFloat(getComputedStyle(side).top) || 0;
+          const p = Math.min(1, Math.max(0, (tope - ir.top) / Math.max(1, ir.height - sr.height)));
+          const activa = Math.min(frames.length - 1, Math.floor(p * frames.length * 0.9999));
+          frames.forEach((f, i) => f.classList.toggle('is-current', i === activa));
+          side.querySelectorAll('.pw-c-side-rail i').forEach((d, i) => d.classList.toggle('is-current', i === activa));
+          side.style.setProperty('--frame-color', frames[activa].style.getPropertyValue('--frame-color'));
+        });
+      }
+      const pedir = () => { if (!pendiente) { pendiente = true; requestAnimationFrame(actualizar); } };
+      window.addEventListener('scroll', pedir, { passive: true });
+      window.addEventListener('resize', pedir);
+      estrecha.addEventListener('change', pedir);
+      reduce.addEventListener('change', pedir);
+      actualizar();
+    })();
     let triggers = [];
 
     /* móvil: aparición progresiva, paralaje suave del producto y, en las gamas con lista, imagen fija que cambia con la variedad activa */
