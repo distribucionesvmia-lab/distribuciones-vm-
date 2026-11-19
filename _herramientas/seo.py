@@ -3,7 +3,7 @@
 
 Uso (desde la raíz del repositorio):  python3 -I _herramientas/seo.py
 
-BASE es la dirección del sitio, con barra final. Mientras la web esté oculta incluye la carpeta privada\ny las páginas llevan noindex; para abrirla al público, BASE vuelve a ser solo el dominio y se quita el noindex. Cuando la web pase a un dominio propio
+BASE es la dirección del sitio, con barra final. La web está abierta al público (INDEXAR = True): BASE es solo el dominio, las páginas se pueden indexar, y se generan robots.txt y sitemap.xml. Para volver a ocultarla, BASE incluye la carpeta privada e INDEXAR = False. Cuando la web pase a un dominio propio
 (por ejemplo IONOS), cámbiala aquí y vuelve a ejecutar el script.
 """
 import json
@@ -12,7 +12,8 @@ import re
 from html import unescape
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-BASE = 'https://distribucionesvm.es/vm-2fe82817c8/'
+BASE = 'https://distribucionesvm.es/'
+INDEXAR = True
 SITE = 'Distribuciones Valentín'
 DEFAULT_IMG = ('assets/portada.webp', 1792, 1008, 'Furgoneta de reparto frente al Castillo de la Mota, en Medina del Campo')
 # página -> imagen para compartir (ruta, ancho, alto, texto alternativo); sin entrada usa DEFAULT_IMG
@@ -21,7 +22,7 @@ IMAGES = {
     'menaje.html': ('assets/menaje/og-menaje.jpg', 1200, 630, 'Mesa de restaurante preparada con copas, platos y servilletas bajo una luz cálida'),
 }
 PAGES = ['index.html', 'cafe-mocay.html', 'pascual.html', 'vinos.html', 'agua.html',
-         'despensa.html', 'refrigerados.html', 'congelados.html', 'menaje.html', 'quienes-somos.html', 'historia.html', 'aviso-legal.html', 'privacidad.html']
+         'despensa.html', 'refrigerados.html', 'congelados.html', 'menaje.html', 'novedades.html', 'quienes-somos.html', 'historia.html', 'aviso-legal.html', 'privacidad.html']
 
 BUSINESS = {
     '@context': 'https://schema.org',
@@ -85,7 +86,7 @@ def block(page, html):
     lines = [
         '<!-- seo -->',
         f'<link rel="canonical" href="{url}">',
-        '<meta name="robots" content="noindex,nofollow,noarchive">',
+        '<meta name="robots" content="index,follow,max-image-preview:large">' if INDEXAR else '<meta name="robots" content="noindex,nofollow,noarchive">',
         '<meta property="og:type" content="website">',
         '<meta property="og:locale" content="es_ES">',
         f'<meta property="og:site_name" content="{SITE}">',
@@ -117,8 +118,15 @@ for page in PAGES:
     open(p, 'w', encoding='utf-8').write(h)
     print('ok', page)
 
-open(os.path.join(ROOT, 'robots.txt'), 'w', encoding='utf-8').write('User-agent: *\nDisallow: /\n')
-sm = os.path.join(ROOT, 'sitemap.xml')
-if os.path.exists(sm):
-    os.remove(sm)
-print('ok robots.txt (sin indexar) y sin sitemap')
+if INDEXAR:
+    open(os.path.join(ROOT, 'robots.txt'), 'w', encoding='utf-8').write(f'User-agent: *\nAllow: /\n\nSitemap: {BASE}sitemap.xml\n')
+    urls = ''.join(f'  <url><loc>{BASE if pg == "index.html" else BASE + pg}</loc></url>\n' for pg in PAGES)
+    open(os.path.join(ROOT, 'sitemap.xml'), 'w', encoding='utf-8').write(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + '</urlset>\n')
+    print('ok robots.txt (indexable) y sitemap.xml')
+else:
+    open(os.path.join(ROOT, 'robots.txt'), 'w', encoding='utf-8').write('User-agent: *\nDisallow: /\n')
+    sm = os.path.join(ROOT, 'sitemap.xml')
+    if os.path.exists(sm):
+        os.remove(sm)
+    print('ok robots.txt (sin indexar) y sin sitemap')
