@@ -326,9 +326,13 @@ form{margin-top:48px;display:grid;gap:10px;grid-template-columns:1fr 1fr 1fr}
 @media(max-width:760px){.card-cafe{min-height:0;aspect-ratio:4/5}}
 .hero h1 .hero-dist{font-family:Raleway,Jost,Arial,sans-serif;font-style:italic;font-weight:300;letter-spacing:-.04em;font-size:.8em}
 
-/* Portadas del catálogo: al pasar el cursor se elevan y flotan suavemente antes de pulsar */
+/* Portadas del catálogo: al pasar el cursor se acercan y se ven en relieve (luz en el borde, sombra profunda y foto con efecto de profundidad) */
 @media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
-  .card{will-change:transform;transition:transform 260ms var(--ease),background-color 260ms var(--ease),box-shadow 260ms var(--ease)}
-  .card:hover{transform:translateY(-10px);box-shadow:0 28px 46px -14px rgba(20,12,6,.42);animation:card-flota 2.6s ease-in-out .25s infinite alternate}
+  .card{will-change:scale;transition:scale 300ms var(--ease),transform 260ms var(--ease),background-color 260ms var(--ease),box-shadow 300ms var(--ease)}
+  .card:hover{scale:1.05!important;z-index:2;
+    box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 -3px 8px rgba(0,0,0,.28) inset,0 6px 10px -2px rgba(20,12,6,.32),0 28px 48px -12px rgba(20,12,6,.55)}
+  .card::after{content:"";position:absolute;inset:0;z-index:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity 300ms var(--ease);
+    background:linear-gradient(135deg,rgba(255,255,255,.3) 0%,rgba(255,255,255,0) 40%,rgba(0,0,0,.16) 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
+  .card:hover::after{opacity:1}
+  .card:hover img{transform:scale(1.1) translate(var(--px,0px),var(--py,0px))}
 }
-@keyframes card-flota{from{transform:translateY(-10px)}to{transform:translateY(-16px)}}
