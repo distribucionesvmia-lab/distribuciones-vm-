@@ -167,3 +167,7 @@
 
 .site-header{top:var(--nb,0px)}
 .site-header.is-fixed{top:var(--nb,0px);inset:var(--nb,0px) 0 auto 0}
+
+/* Pie de foto del furgón eléctrico: hoja con rayo en verde */
+.eco-cap{display:flex;align-items:center;gap:9px}
+.eco-cap .eco-ico{flex:none;color:#2e9a4f;width:22px;height:22px}
