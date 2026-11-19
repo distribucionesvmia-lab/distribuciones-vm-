@@ -5,9 +5,14 @@
    fecha:   mes de llegada, en texto, por ejemplo 'Diciembre 2026'
    marca:   marca del artículo
    nombre:  nombre del artículo (obligatorio)
+   etiqueta: (opcional) sello sobre la foto; si no se pone, «Nuevo»
+   destacado: (opcional) línea destacada bajo el nombre, por ejemplo «Edición limitada · Ideal para Navidad»
+   anuncio: (opcional) frase para la barra roja de arriba; se usa la del primer artículo que la tenga
    formato: formato o peso, por ejemplo '75 cl' o 'Caja de 6 uds.'
    texto:   frase corta sobre el artículo (solo datos reales)
    foto:    ruta de la foto en PNG, por ejemplo 'assets/novedades/nombre.png'
+   ficha:   (opcional) datos en filas: [['Uva', '100 % Tempranillo'], ['Cosecha', '2018']]
+   fotos:   (opcional) varias fotos: ['assets/novedades/a.png', 'assets/novedades/b.png']; la primera es la principal
    enlace:  página de la web donde se ve, por ejemplo 'vinos.html'
 
    Ejemplo de artículo (cópialo fuera de este comentario para usarlo):
@@ -17,4 +22,21 @@
    },
 */
 window.DVM_NOVEDADES = [
+  {
+    etiqueta: 'Novedad exclusiva', destacado: 'Edición limitada · Ideal para estas Navidades',
+    anuncio: 'Novedad exclusiva: Lleiroso 25 Aniversario, edición limitada para brindar en Navidad',
+    marca: 'Lleiroso · D.O. Ribera del Duero', nombre: 'Lleiroso Reserva 25 Aniversario', formato: 'Edición limitada · 75 cl · con estuche',
+    texto: 'Una edición limitada y exclusiva, ideal para regalar y brindar en estas fechas navideñas. Conmemora 2001-2026 y nace de cuatro barricas excepcionales. Solo 1.188 botellas numeradas, elaboradas y embotelladas en Valbuena de Duero.',
+    ficha: [
+      ['Uva', '100 % Tempranillo'],
+      ['Cosecha', '2018'],
+      ['Graduación', '14,5 %'],
+      ['Crianza', '15 meses en barrica de roble francés y 70 meses en botella'],
+      ['Cata', 'Rojo picota profundo con ribete rubí; fruta negra madura, sotobosque, tostados y especiados'],
+      ['Servir a', '16-18 ºC'],
+      ['Maridaje', 'Carnes a la brasa, carnes rojas y caza, quesos curados, guisos tradicionales y postres de frutos rojos, queso o cacao']
+    ],
+    enlace: 'vinos.html#lleiroso',
+    fotos: ['assets/novedades/lleiroso-25-aniversario.png', 'assets/novedades/lleiroso-25-aniversario-abierta.png']
+  }
 ];

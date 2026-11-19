@@ -7,7 +7,7 @@
 .nov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
 .nov-card{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid rgba(50,36,27,.14);border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(50,36,27,.07)}
 .nov-nuevo{position:absolute;z-index:2;top:12px;left:12px;background:#c61819;color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
-.nov-foto{height:230px;display:grid;place-items:center;background:#f3ece0;padding:18px}
+.nov-foto{height:230px;display:grid;place-items:center;background:#fff;padding:18px}
 .nov-foto img{max-width:100%;max-height:100%;object-fit:contain}
 .nov-sin span{font-size:3rem;color:#c61819}
 .nov-txt{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
@@ -24,3 +24,7 @@
 .nov-btn:hover{background:#a51213}
 @keyframes nov-gira{0%,100%{transform:rotate(0) scale(1)}50%{transform:rotate(90deg) scale(1.18)}}
 @media(prefers-reduced-motion:reduce){.nov-estrella{animation:none}}
+
+.nov-foto img{max-height:194px}
+.nov-card .nov-ficha{font-size:.8rem;margin-top:8px}
+.nov-dest{font-weight:700;color:#c61819}

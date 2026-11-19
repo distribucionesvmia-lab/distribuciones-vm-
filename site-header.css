@@ -177,3 +177,20 @@
   .site-header{padding-top:8px;padding-bottom:4px}
   .site-header nav{padding:6px 0;min-height:38px;align-items:center}
 }
+
+.nov-win-thumbs{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:8px}
+.nov-th{width:46px;height:46px;padding:2px;border:2px solid transparent;border-radius:10px;background:#fff;cursor:pointer;overflow:hidden}
+.nov-th img{width:100%;height:100%;object-fit:cover;border-radius:6px;display:block}
+.nov-th.is-on{border-color:#c61819}
+.nov-win-foto{padding-bottom:70px}
+.nov-win-img{mix-blend-mode:multiply;filter:none!important}
+
+.nov-ficha{margin:6px 0 0;display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:.84rem;line-height:1.35}
+.nov-ficha dt{font-weight:700;color:#c61819}
+.nov-ficha dd{margin:0}
+
+.nov-win-dest{font-weight:700;color:#c61819;letter-spacing:.02em}
+.news-bar .news-txt{font-weight:600}
+
+.news-tag{white-space:nowrap}
+@media(max-width:700px){.news-tag{font-size:.72rem;padding:3px 9px}.news-btn{font-size:.85rem}}
