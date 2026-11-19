@@ -32,6 +32,7 @@
 .hi-vehicle .flip{position:absolute;inset:0;transition:transform .3s}
 .hi-vcap{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:4px;white-space:nowrap;background:#251d1a;color:#f7f3ea;font-size:.68rem;padding:3px 9px;border-radius:99px}
 .hi-fin{background:#241d1b;color:#f9f5ed;text-align:center;padding:70px var(--side)}
+.hi-hoy{display:inline-block;margin:0 0 16px;padding:6px 16px;border:1px solid rgba(249,245,237,.35);border-radius:99px;font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#f3d9a0}
 .hi-fin h2{font-size:clamp(2rem,4vw,3.2rem);margin:0 0 12px;letter-spacing:-.04em}
 .hi-fin p{max-width:520px;margin:0 auto 18px;line-height:1.5}
 .hi-fin a{color:#fff;background:var(--red);padding:12px 22px;border-radius:99px;text-decoration:none;font-weight:600}
