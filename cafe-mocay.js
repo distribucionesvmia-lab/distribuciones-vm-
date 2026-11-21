@@ -8,6 +8,15 @@
   var index = document.getElementById('m-stage-index');
   var reduce = window.VM_REDUCE || window.matchMedia('(prefers-reduced-motion: reduce)');
   var ticking = false;
+
+  /* altura real de la cabecera (barra de novedades + menú): el escenario pegajoso se coloca justo debajo y no queda tapado */
+  function setHeaderH() {
+    var h = document.querySelector('.site-header');
+    if (h) document.documentElement.style.setProperty('--sh-h', Math.round(h.getBoundingClientRect().bottom) + 'px');
+  }
+  setHeaderH();
+  window.addEventListener('resize', setHeaderH);
+  window.addEventListener('load', setHeaderH);
   var centers = [];
   var lastActive = -1;
 
