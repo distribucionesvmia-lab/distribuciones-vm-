@@ -169,7 +169,7 @@ window.ASISTENTE_FAQ = [
     neg: true, seg: ['¿Hacéis mantenimiento de cafeteras?', '¿Tenéis café ecológico?'] },
   { id: 'cafe-ecologico',
     q: ['¿tenéis café ecológico?', '¿hay café bio?', '¿tenéis café orgánico?', '¿tenéis café de Colombia?', '¿hay café de comercio justo?', '¿tenéis café de especialidad?', '¿hay café de origen?'],
-    a: 'Sí: en la gama <b>Maestro</b> de Mocay hay <b>Maestro Ecológico</b> y <b>Maestro Colombia</b>, 100 % arábica. Míralo en <a href="cafe-mocay.html#gamas">Café Mocay</a>. Para otras certificaciones, consúltanos en el {TEL}.',
+    a: 'Sí: en la gama <b>Maestro</b> de Mocay hay <b>Maestro</b>, <b>Maestro Colombia</b> y <b>Maestro Ecológico</b>, 100 % arábica. Míralo en <a href="cafe-mocay.html#gamas">Café Mocay</a>. Para otras certificaciones, consúltanos en el {TEL}.',
     seg: ['¿Qué café me recomendáis para mi bar?', '¿Tenéis cápsulas?'] },
   { id: 'cafeteras-servicio',
     q: ['¿hacéis mantenimiento de cafeteras?', '¿arregláis cafeteras?', '¿tenéis servicio técnico?', '¿reparáis molinos?', '¿tenéis SAT?', '¿se me ha estropeado la cafetera, ¿qué hago?', '¿puedo conseguir una cafetera?', '¿vendéis cafeteras?', '¿alquiláis cafeteras?', '¿cedéis cafeteras si compro café?', '¿vendéis molinos de café?', '¿hay asistencia técnica?', 'mi cafetera no funciona'],
