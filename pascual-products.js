@@ -5,9 +5,9 @@ window.ProductWorld.init({
   sections: [
     {
       template: 'hero', id: 'leche-intense', family: 'Leche Intense', color: '#e8e0d6', ink: '#2b2a3a',
-      eyebrow: 'Pascual Profesional · Botella de 1,5 litros', title: 'Leche Pascual Intense Hostelería',
+      eyebrow: 'Pascual Profesional · Botella de 1,5 litros', title: 'Leche Pascual Intense',
       description: 'Leche de Bienestar Animal con sabor intenso, envasada en un práctico formato botella de 1,5 l, ofreciendo al profesional de hostelería la mejor relación calidad/precio, así como comodidad en el uso y conservación. La leche Intense/Entera, es ideal para los amantes de la leche por tener un sabor más intenso. Tapón abre fácil «girar y servir» sin aluminio. Las nuevas «estrías» permiten una mayor rigidez y agarre de la botella.',
-      backword: 'INTENSE', bottom: '01 — Leche Intense · 1,5 L · para hostelería',
+      backword: 'INTENSE', bottom: '01 — Leche Intense · 1,5 L',
       product: {name:'Leche Pascual Intense · 1,5 L', image:'assets/pascual/intense-cutout.png', width:240, height:688, alt:'Botella de Leche Pascual Profesional Intense de 1,5 litros'}
     },
     {
