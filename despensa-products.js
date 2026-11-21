@@ -20,7 +20,7 @@ window.ProductWorld.init({
     {
       template: 'range', family: 'Calvo · Formatos', color: '#dce8f2', ink: '#143a5e',
       eyebrow: 'Del plato a la barra', title: 'Formatos que aguantan la rotación.',
-      description: 'Bolsas y latas de gran formato Calvo e Isabel, pensadas para abrirse fácil, ocupar menos y servir con ritmo. Isabel, en bolsa de 1 kg, habla de «sabor y calidad de primera».',
+      description: 'Bolsas y latas de gran formato Calvo e Isabel, pensadas para abrirse fácil, ocupar menos y servir con ritmo. Isabel, en bolsa de 1 kg: «sabor y calidad de primera».',
       products: [
         {name:'Atún Eureka', description:'Atún en trozos en aceite de girasol.', image:D+'calvo-hosteleria-eureka.png', width:332, height:477, alt:'Bolsa Eureka de atún en trozos en aceite de girasol'},
         {name:'Atún Isabel · bolsa de 1 kg', description:'Atún en aceite de girasol en bolsa de 1 kg, para cocina profesional.', image:D+'isabel-atun-bolsa-1kg.png', width:350, height:480, alt:'Bolsa Isabel de atún en aceite de girasol de 1 kg'},
@@ -32,7 +32,7 @@ window.ProductWorld.init({
     {
       template: 'editorial', family: 'Helios', color: '#c7c9b3', ink: '#1b3d25', columns: 3,
       eyebrow: 'Helios', title: 'El sabor del origen.',
-      description: 'Porque, para Helios, origen es sinónimo de calidad. Por eso seleccionan solo las mejores materias primas procedentes de cultivo local. En hostelería, Helios habla de «el producto adecuado para cada necesidad», en porciones, dispensador y tarro.',
+      description: '«Origen es sinónimo de calidad.» En hostelería, «el producto adecuado para cada necesidad», en porciones, dispensador y tarro.',
       products: [
         {name:'Mermeladas y confituras', description:'Gama de mermeladas y confituras Helios.', image:D+'helios-mermeladas.png', width:421, height:302, cover:true, alt:'Tarro de mermelada de fresa Helios'},
         {name:'Tomate frito y salsas pasta', description:'Tomate frito mediterráneo y salsas para pasta.', image:D+'helios-tomate-frito.png', width:425, height:302, cover:true, alt:'Tarro de tomate frito mediterráneo Helios'},
@@ -130,7 +130,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', family: 'Borges · Hostelería', color: '#f4e4d0', ink: '#6a1d12',
       eyebrow: 'Frutos secos y aperitivos', title: 'Borges, para la barra y la cocina.',
-      note: 'Borges Professional dice: «Ponemos en tu cocina lo mejor del Mediterráneo» y habla de soluciones para sala y para cocina. Imagen de la gama en formato comercial · puede diferir del formato de hostelería',
+      note: 'Borges Professional: «Ponemos en tu cocina lo mejor del Mediterráneo». Imagen de la gama en formato comercial · puede diferir del formato de hostelería',
       variants: [
         {name:'Cóctel barbacoa · 1 kg', description:'Mezcla de frutos secos con sabor barbacoa, en formato de 1 kg.', image:'assets/despensa/extra/borges_coctel-barbacoa-1kg.png', width:540, height:540, alt:'Borges Cóctel barbacoa 1 kg'},
         {name:'Mix frito · cubo de 2 kg', description:'Mezcla de frutos secos fritos para servir como aperitivo, en cubo de 2 kg.', image:D+'borges-mix-frito-cubo-2kg.png', width:375, height:434, alt:'Mix frito cubo de 2 kg'},

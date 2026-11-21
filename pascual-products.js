@@ -104,7 +104,7 @@ window.ProductWorld.init({
         {name:'Batido de vainilla · vidrio de 200 ml', description:'Batido Pascual Intense de vainilla en botella de vidrio, para hostelería.', image:'assets/pascual/batido-vidrio-vainilla.png', width:211, height:729, alt:'Botella de vidrio de batido Pascual Intense de vainilla'},
         {name:'Batido de chocolate · vidrio de 200 ml', description:'Batido Pascual Intense de chocolate en botella de vidrio. Con la fórmula mejorada, elaborado con leche semidesnatada: textura más cremosa y sabor más intenso.', image:'assets/pascual/batido-vidrio-chocolate.png', width:211, height:729, alt:'Botella de vidrio de batido Pascual Intense de chocolate'},
         {name:'Batido de fresa · vidrio de 200 ml', description:'Batido Pascual Intense de fresa en botella de vidrio, para hostelería.', image:'assets/pascual/batido-vidrio-fresa.png', width:212, height:730, alt:'Botella de vidrio de batido Pascual Intense de fresa'},
-        {name:'ColaCao · vidrio de 195 cc', description:'Batido ColaCao en botella de vidrio, para hostelería. La marca lo resume en «Eso tan tuyo».', image:'assets/pascual/batido-vidrio-colacao.png', width:221, height:730, alt:'Botella de vidrio de batido ColaCao'}
+        {name:'ColaCao · vidrio de 195 cc', description:'Batido ColaCao en botella de vidrio, para hostelería. «Eso tan tuyo».', image:'assets/pascual/batido-vidrio-colacao.png', width:221, height:730, alt:'Botella de vidrio de batido ColaCao'}
       ]
     },
     {
@@ -181,7 +181,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', id: 'yogures', family: 'Yogures Pascual', color: '#fbe8e6', ink: '#7a1218',
       eyebrow: 'Packs de 4 × 120 g y Yogikids de 80 g', title: 'Un yogur para cada sabor.',
-      note: 'Sobre Yogikids, la ficha de Pascual dice: «La merienda, si es con yogur + fruta mejor.» Una imagen por variedad',
+      note: 'Yogikids: «La merienda, si es con yogur + fruta mejor.» Una imagen por variedad',
       variants: [
         {name:'Yogur de fresa', description:'Yogur Pascual de fresa en pack de cuatro unidades.', image:'assets/pascual/yogur-pack-fresa.png', width:248, height:202, alt:'Pack de cuatro yogur de fresa de Pascual'},
         {name:'Yogur de limón', description:'Yogur Pascual con sabor a limón en pack de cuatro unidades.', image:'assets/pascual/yogur-pack-limon.png', width:249, height:204, alt:'Pack de cuatro yogur de limón de Pascual'},

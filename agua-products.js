@@ -5,7 +5,7 @@ window.ProductWorld.init({
     {
       template:'hero', family:'Bezoya', color:'#cceef4', ink:'#103b50',
       eyebrow:'Agua mineral natural', title:'Ligera desde el origen.',
-      description:'Bezoya, agua mineral natural de mineralización muy débil (residuo seco 27 mg/l), de manantiales de Segovia. La marca lo resume en «Dar lo mejor». En esta selección, el formato de 1,5 L, para acompañar comidas y cenas.',
+      description:'Bezoya, agua mineral natural de mineralización muy débil (residuo seco 27 mg/l), de manantiales de Segovia. «Dar lo mejor». En esta selección, el formato de 1,5 L, para acompañar comidas y cenas.',
       backword:'BEZOYA', bottom:'01 — Agua sin gas',
       product:{name:'Bezoya · 1,5 L', image:'assets/agua/bezoya-cutout.png', width:1254, height:1254, alt:'Botella Bezoya de 1,5 litros'}
     },
@@ -22,7 +22,7 @@ window.ProductWorld.init({
     {
       template:'hero', family:'S.Pellegrino', color:'#69c5d7', ink:'#082d3e',
       eyebrow:'Alta restauración', title:'Lo que se trae a la mesa.',
-      description:'S.Pellegrino dice que «lo que cuenta es lo que cada uno trae a la mesa». Agua mineral natural con gas, en la botella de vidrio de la alta restauración: 25 cl, 50 cl y 75 cl.',
+      description:'«Lo que cuenta es lo que cada uno trae a la mesa.» Agua mineral natural con gas, en la botella de vidrio de la alta restauración: 25 cl, 50 cl y 75 cl.',
       backword:'ITALIA', bottom:'03 — S.Pellegrino · 75 cl',
       product:{name:'S.Pellegrino · 75 cl',image:'assets/agua/sanpellegrino-75cl.png',width:248,height:895,alt:'Botella de vidrio S.Pellegrino de 75 centilitros'}
     },
@@ -65,7 +65,7 @@ window.ProductWorld.init({
     {
       template:'range', family:'Perrier', color:'#d9efdc', ink:'#0d4a2a',
       eyebrow:'Agua mineral natural con gas', title:'La burbuja Perrier.',
-      description:'Perrier, en su botella de vidrio verde de 33 cl y 75 cl. La marca lo asocia a un espíritu efervescente y lo propone también para cócteles y mocktails.',
+      description:'Perrier, en su botella de vidrio verde de 33 cl y 75 cl.',
       products:[
         {name:'33 cl',description:'Botella de vidrio individual.',image:'assets/agua/perrier-33cl.png',width:328,height:900,alt:'Botella de vidrio Perrier de 33 centilitros'},
         {name:'75 cl',description:'Botella de vidrio de 75 cl.',image:'assets/agua/perrier-botella-grande.png',width:286,height:900,alt:'Botella de vidrio Perrier de 75 centilitros'}

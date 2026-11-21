@@ -543,7 +543,7 @@
         var ar = DATOS.cafe.filter(function (x) { return x.a && /Grano/.test(x.g); }).map(function (x) { return '<li>' + esc(x.n) + '</li>'; }).join('');
         var cap = DATOS.cafe.filter(function (x) { return x.a && /Cápsulas/.test(x.g); })[0];
         state.cur = 'arabica';
-        return 'Según <b>Mocay</b>, la gama <b>Maestro</b> es «100 % arábica, de los orígenes más exóticos»:<ul>' + ar + '</ul>' + (cap ? 'Y en cápsulas: <b>' + esc(cap.n) + '</b>. ' : '') + 'De la gama Barista y de los descafeinados no tengo la composición de la mezcla; pregúntanos en el ' + TEL + '. <a href="cafe-mocay.html#gamas">Ver las gamas de Café Mocay</a>.';
+        return 'Gama <b>Maestro</b> de Mocay: «100 % arábica, de los orígenes más exóticos»:<ul>' + ar + '</ul>' + (cap ? 'Y en cápsulas: <b>' + esc(cap.n) + '</b>. ' : '') + 'De la gama Barista y de los descafeinados no tengo la composición de la mezcla; pregúntanos en el ' + TEL + '. <a href="cafe-mocay.html#gamas">Ver las gamas de Café Mocay</a>.';
       });
     }
     if (hayCafe && /(descafeinad|decaf)/.test(t)) {

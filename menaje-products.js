@@ -43,7 +43,7 @@ window.ProductWorld.init({
       eyebrow: 'Barra y sala', title: 'Cristalería a prueba de cada servicio.',
       product: {name:'Copa de pie alto con una bebida y espuma sobre una barra, mientras un barman ralla especias encima', image:D+'cristaleria-copas-talladas.png', width:1000, height:1381, lazy:true, alt:'Barman rallando especias sobre una copa de pie alto con una bebida ámbar y espuma en una barra'},
       variants: [
-        {name:'Vasos y copas', description:'Copas y vasos de Arcoroc y Vicrila, pensados para barra y sala. Arcoroc lo llama «Everyday Proof»; Vicrila habla de durabilidad, diseño y eficiencia operativa.'},
+        {name:'Vasos y copas', description:'Copas y vasos de Arcoroc y Vicrila, pensados para barra y sala. Arcoroc: «Everyday Proof».'},
         {name:'Según lo que sirves', description:'Agua, vino, cerveza o refrescos piden vasos y copas distintos. Cuéntanos tu carta.'},
         {name:'Tu local, tu pedido', description:'Dinos cuántas mesas tienes y qué bebidas sirves, y te asesoramos.'}
       ],

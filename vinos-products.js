@@ -8,14 +8,14 @@ window.ProductWorld.init({
     {
       template:'hero', family:'Palacio de Bornos', color:'#eba061', ink:'#251d17',
       eyebrow:'Bodega Palacio de Bornos', title:'Verdejo. El alma máter de Rueda.',
-      description:'Palacio de Bornos Verdejo, D.O. Rueda, en botella de 75 cl (también con tapón de rosca). La bodega lo presenta como el vino que «captura la esencia de la D.O. Rueda» y como «el alma máter de la bodega». Desde aquí, el resto de la casa: blancos, frizzantes, tintos del grupo en Ribera y espumosos.',
+      description:'Palacio de Bornos Verdejo, D.O. Rueda, en botella de 75 cl (también con tapón de rosca). «Captura la esencia de la D.O. Rueda»; «el alma máter de la bodega». Desde aquí, el resto de la casa: blancos, frizzantes, tintos del grupo en Ribera y espumosos.',
       backword:'RUEDA', bottom:'01 — Palacio de Bornos',
       product:{name:'Palacio de Bornos Verdejo 2025 · 75 cl', image:'assets/marcas/bornos-verdejo.png', width:187, height:622, alt:'Botella original de Palacio de Bornos Verdejo'}
     },
     {
       template:'lineup', family:'Palacio de Bornos', color:'#efe5d3', ink:'#392b1f',
       eyebrow:'Palacio de Bornos · Blancos', title:'Los blancos de Rueda.',
-      note:'Una colección que, en palabras de la bodega, «equilibra tradición e innovación». Una imagen por variedad',
+      note:'Colección: «equilibra tradición e innovación». Una imagen por variedad',
       variants:[
         {name:'La Caprichosa · Verdejo 2025', description:'Verdejo sobre lías de Palacio de Bornos.', image:B+'la-caprichosa-verdejo.png', width:119, height:478, alt:'Botella La Caprichosa Verdejo sobre lías'},
         {name:'Verdejo fermentado en barrica · 2023', description:'Blanco de Palacio de Bornos fermentado en barrica.', image:'assets/marcas/bornos-fermentado.png', width:270, height:612, alt:'Botella Palacio de Bornos Verdejo fermentado en barrica'},
@@ -25,18 +25,18 @@ window.ProductWorld.init({
     {
       template:'lineup', family:'Palacio de Bornos', color:'#f9dcb6', ink:'#281c16',
       eyebrow:'Palacio de Bornos · Frizzantes', title:'Frizzante, fresco y ligero.',
-      note:'Bornos Frizzante Verdejo y Rosado (5,5º) y Laué, el frizzante de Palacio de Bornos en lata. La bodega presenta Laué como «una actitud: fresca, vibrante y auténtica». Una imagen por variedad',
+      note:'Bornos Frizzante Verdejo y Rosado (5,5º) y Laué, el frizzante de Palacio de Bornos en lata. Laué: «una actitud: fresca, vibrante y auténtica». Una imagen por variedad',
       variants:[
         {name:'Bornos Frizzante Verdejo · 5,5 º', description:'Frizzante Verdejo de Palacio de Bornos.', image:B+'bornos-frizzante-cutout.png', width:430, height:1070, alt:'Botella Palacio de Bornos Frizzante Verdejo'},
         {name:'Bornos Rosado Frizzante · 5,5 º', description:'Frizzante rosado de Palacio de Bornos.', image:B+'bornos-rosado-frizzante.png', width:206, height:746, alt:'Botella Bornos Frizzante Rosado 5,5 grados'},
-        {name:'Laué Frizzante Verdejo · lata de 250 ml', description:'Laué, frizzante Verdejo de Palacio de Bornos en lata. La bodega lo presenta como «una actitud: fresca, vibrante y auténtica».', image:B+'laue-lata.png', width:251, height:714, alt:'Lata Laué Frizzante Verdejo'},
+        {name:'Laué Frizzante Verdejo · lata de 250 ml', description:'Laué, frizzante Verdejo de Palacio de Bornos en lata. «Una actitud: fresca, vibrante y auténtica».', image:B+'laue-lata.png', width:251, height:714, alt:'Lata Laué Frizzante Verdejo'},
         {name:'Laué Frizzante Verdejo · pack de 4 latas de 250 ml', description:'Pack de cuatro latas de Laué Frizzante Verdejo.', image:B+'laue-pack-4.png', width:529, height:711, alt:'Pack de 4 latas Laué Frizzante Verdejo'}
       ]
     },
     {
       template:'lineup', id:'lleiroso', family:'Bornos · Ribera del Duero', color:'#e8ddd0', ink:'#3a1f1a',
       eyebrow:'Grupo Bornos · Ribera del Duero', title:'Tintos de Ribera. Dominio de Bornos y Lleiroso.',
-      note:'Dos bodegas del grupo Bornos en la D.O. Ribera del Duero: el Roble de Dominio de Bornos, «la frescura del Tempranillo en su forma más franca», y Lleiroso Crianza y Reserva, que la bodega sitúa en la «máxima expresión de la elegancia e intensidad» de la Ribera. Una imagen por variedad',
+      note:'Dos bodegas del grupo Bornos en la D.O. Ribera del Duero: el Roble de Dominio de Bornos, «la frescura del Tempranillo en su forma más franca», y Lleiroso Crianza y Reserva: «máxima expresión de la elegancia e intensidad». Una imagen por variedad',
       variants:[
         {name:'Lleiroso 25 Aniversario · Edición limitada', description:'Novedad, ideal para regalar en Navidad. Reserva 100 % Tempranillo de la añada 2018: 15 meses en barrica de roble francés y 70 meses en botella. Solo 1.188 botellas numeradas, con estuche.', image:B+'lleiroso-25-aniversario.png', width:448, height:955, alt:'Botella Lleiroso 25 Aniversario, edición limitada, Ribera del Duero, con su colgante'},
         {name:'Dominio de Bornos Roble · 2024', description:'Tinto roble 2024 de Dominio de Bornos.', image:B+'dominio-de-bornos-roble.png', width:128, height:494, alt:'Botella Dominio de Bornos Roble, Ribera del Duero'},
@@ -48,7 +48,7 @@ window.ProductWorld.init({
     {
       template:'lineup', family:'Palacio de Bornos', color:'#f3ead6', ink:'#2f2a1c',
       eyebrow:'Palacio de Bornos · Espumosos', title:'Para brindar. Pioneros en Castilla y León.',
-      note:'Espumosos de Palacio de Bornos (Nature, Brut, Semiseco y Rosado), elaborados por quien, según la propia bodega, fue «la primera» en hacer espumoso en Castilla y León, en 1978. Una imagen por variedad',
+      note:'Espumosos de Palacio de Bornos (Nature, Brut, Semiseco y Rosado), «La primera» en hacer espumoso en Castilla y León, en 1978. Una imagen por variedad',
       variants:[
         {name:'Espumoso Palacio de Bornos Nature', description:'Vino espumoso Nature de Palacio de Bornos.', image:B+'bornos-espumoso-brut-nature.png', width:222, height:755, alt:'Botella Palacio de Bornos Verdejo Brut Nature, espumoso de Rueda'},
         {name:'Espumoso Palacio de Bornos Brut', description:'Vino espumoso Brut de Palacio de Bornos.', image:B+'bornos-espumoso-brut.png', width:208, height:756, alt:'Botella Palacio de Bornos Verdejo Brut, espumoso de Rueda'},
@@ -59,7 +59,7 @@ window.ProductWorld.init({
     {
       template:'lineup', family:'Pazos de Baró', color:'#dfe7d0', ink:'#2b3320',
       eyebrow:'Pazos de Baró · Vinos', title:'Pazos de Baró. Carácter y personalidad.',
-      note:'Pingoleta, de Ribera del Duero, busca «un equilibrio que despierta los sentidos»; el Godello, de IGP Castilla y León, se presenta como «un vino con carácter y personalidad». Pink-goleta, el clarete de la casa, completa el trío. Una imagen por variedad',
+      note:'Pingoleta, de Ribera del Duero: «un equilibrio que despierta los sentidos»; el Godello, de IGP Castilla y León: «un vino con carácter y personalidad». Pink-goleta, el clarete de la casa, completa el trío. Una imagen por variedad',
       variants:[
         {name:'Pingoleta · Ribera del Duero · 10 meses · 2024', description:'Tinto de Pazos de Baró, de la D.O. Ribera del Duero, con diez meses de crianza.', image:B+'pingoleta-ribera-10-meses.png', width:130, height:530, alt:'Botella Pingoleta de Pazos de Baró, Ribera del Duero 10 meses'},
         {name:'Pink-goleta · Clarete · 75 cl · 2025', description:'Clarete de Pazos de Baró, de tempranillo y godello.', image:B+'pink-goleta-clarete.png', width:153, height:589, alt:'Botella Pink-goleta Clarete de Pazos de Baró'},
