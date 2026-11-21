@@ -136,8 +136,8 @@ window.ProductWorld.init({
       eyebrow: 'Pastilla, tarrina y porciones', title: 'Mantequilla, miel y mermelada.',
       note: 'Una imagen por variedad',
       variants: [
-        {name:'Mantequilla en pastilla · 250 g', description:'Mantequilla Pascual en pastilla de 250 g.', image:'assets/pascual/mantequilla-pastilla-250g.png', width:232, height:131, alt:'Pastilla de mantequilla Pascual de 250 g'},
-        {name:'Mantequilla en pastilla · 500 g', description:'Mantequilla Pascual en pastilla de 500 g.', image:'assets/pascual/mantequilla-pastilla-500g.png', width:237, height:153, alt:'Pastilla de mantequilla Pascual de 500 g'},
+        {name:'Mantequilla en pastilla · 250 g', description:'Mantequilla Pascual en pastilla de 250 g.', image:'assets/pascual/mantequilla-pastilla-250g.png?v=2', width:510, height:288, alt:'Pastilla de mantequilla Pascual de 250 g'},
+        {name:'Mantequilla en pastilla · 500 g', description:'Mantequilla Pascual en pastilla de 500 g.', image:'assets/pascual/mantequilla-pastilla-500g.png?v=2', width:521, height:337, alt:'Pastilla de mantequilla Pascual de 500 g'},
         {name:'Mantequilla Original en bloque · 5 kg', description:'Mantequilla Pascual Original en bloque de 5 kg, en caja.', image:'assets/pascual/mantequilla-bloque-5kg.png?v=2', width:1082, height:698, alt:'Caja de 5 kg de mantequilla Pascual Original en bloque'},
         {name:'Mantequilla en tarrina · sin sal', description:'Mantequilla Pascual en tarrina, sin sal.', image:'assets/pascual/mantequilla-tarrina-sin-sal.png', width:235, height:127, alt:'Tarrina de mantequilla Pascual sin sal'},
         {name:'Mantequilla micro · tarrina de 10 g', description:'Mantequilla Pascual Original en tarrina individual de 10 g. Caja de 280 unidades (2,8 kg).', image:'assets/pascual/mantequilla-micro-caja-tarrina.png', width:1000, height:766, alt:'Caja de 280 tarrinas de mantequilla Pascual y, delante, una tarrina individual de 10 g'},
