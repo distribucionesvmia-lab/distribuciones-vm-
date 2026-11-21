@@ -37,7 +37,7 @@ window.DVM_NOVEDADES = [
       ['Servir a', '16-18 ºC'],
       ['Maridaje', 'Carnes a la brasa, carnes rojas y caza, quesos curados, guisos tradicionales y postres de frutos rojos, queso o cacao']
     ],
-    precio: '59 €', precioNota: 'IVA incluido',
+    precio: '49,90 €', precioNota: '+ IVA',
     enlace: 'vinos.html#lleiroso',
     fotos: ['assets/novedades/lleiroso-25-aniversario.png', 'assets/novedades/lleiroso-25-aniversario-abierta.png']
   }
