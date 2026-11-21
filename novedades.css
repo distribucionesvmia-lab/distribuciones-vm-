@@ -39,7 +39,10 @@
 .nov-dots{z-index:3;position:absolute;left:0;right:0;bottom:18px;display:flex;justify-content:center;gap:8px}
 .nov-dots button{width:14px;height:14px;padding:0;border:0;border-radius:50%;background:rgba(37,29,26,.25);cursor:pointer;transition:background .2s,transform .2s}
 .nov-dots button.is-on{background:#c61819;transform:scale(1.25)}
-.nov-wide .nov-txt{justify-content:center;overflow:auto;max-height:calc(100svh - var(--sh-h,110px) - 32px)}
+.nov-wide .nov-txt{justify-content:flex-start;overflow:auto;max-height:calc(100svh - var(--sh-h,110px) - 32px)}
+/* centrado seguro: si el texto no cabe, empieza arriba (antes se cortaban el título y el precio) */
+.nov-wide .nov-txt>:first-child{margin-top:auto}
+.nov-wide .nov-txt>:last-child{margin-bottom:auto}
 @media(max-width:760px){
   .nov-card.nov-wide{grid-template-columns:1fr;grid-template-rows:42svh 1fr;min-height:0;max-height:calc(100svh - var(--sh-h,110px) - 24px)}
   .nov-wide .nov-foto{min-height:0}
