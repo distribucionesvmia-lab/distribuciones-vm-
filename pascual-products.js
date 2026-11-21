@@ -133,13 +133,16 @@ window.ProductWorld.init({
     },
     {
       template: 'lineup', id: 'mantequillas', family: 'Mantequillas Pascual', color: '#f7ecc4', ink: '#5a4310',
-      eyebrow: 'Pastilla y tarrina', title: 'Mantequilla, en pastilla y en tarrina.',
+      eyebrow: 'Pastilla, tarrina y porciones', title: 'Mantequilla, miel y mermelada.',
       note: 'Una imagen por variedad',
       variants: [
         {name:'Mantequilla en pastilla · 250 g', description:'Mantequilla Pascual en pastilla de 250 g.', image:'assets/pascual/mantequilla-pastilla-250g.png', width:232, height:131, alt:'Pastilla de mantequilla Pascual de 250 g'},
         {name:'Mantequilla en pastilla · 500 g', description:'Mantequilla Pascual en pastilla de 500 g.', image:'assets/pascual/mantequilla-pastilla-500g.png', width:237, height:153, alt:'Pastilla de mantequilla Pascual de 500 g'},
         {name:'Mantequilla Original en bloque · 5 kg', description:'Mantequilla Pascual Original en bloque de 5 kg, en caja.', image:'assets/pascual/mantequilla-bloque-5kg.png?v=2', width:1082, height:698, alt:'Caja de 5 kg de mantequilla Pascual Original en bloque'},
-        {name:'Mantequilla en tarrina · sin sal', description:'Mantequilla Pascual en tarrina, sin sal.', image:'assets/pascual/mantequilla-tarrina-sin-sal.png', width:235, height:127, alt:'Tarrina de mantequilla Pascual sin sal'}
+        {name:'Mantequilla en tarrina · sin sal', description:'Mantequilla Pascual en tarrina, sin sal.', image:'assets/pascual/mantequilla-tarrina-sin-sal.png', width:235, height:127, alt:'Tarrina de mantequilla Pascual sin sal'},
+        {name:'Miel de flores · porción de 15 g', description:'Porción individual de miel de flores Pascual Essential.', image:'assets/pascual/porcion-miel-flores-15g.png', width:413, height:248, alt:'Porción de miel de flores Pascual Essential de 15 g'},
+        {name:'Mermelada de melocotón · porción de 25 g', description:'Porción individual de mermelada extra de melocotón Pascual Essential.', image:'assets/pascual/porcion-mermelada-melocoton-25g.png', width:410, height:248, alt:'Porción de mermelada de melocotón Pascual Essential de 25 g'},
+        {name:'Mermelada de fresa · porción de 25 g', description:'Porción individual de mermelada extra de fresa Pascual Essential.', image:'assets/pascual/porcion-mermelada-fresa-25g.png', width:410, height:248, alt:'Porción de mermelada de fresa Pascual Essential de 25 g'}
       ]
     },
     {
