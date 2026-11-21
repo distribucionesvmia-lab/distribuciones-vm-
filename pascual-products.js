@@ -1,7 +1,7 @@
 /* Sustituye image, width, height y alt al recibir fotografías originales. */
 window.ProductWorld.init({
   mount: '#familias',
-  order: ['Leche Intense|','Leche Pascual|','Leche Classic|','Leche Extra','Vivesoy','Leche Alimentación|','Leche en brik|','Leche Sin Lactosa|','Leche Movit|','Batidos','Natas','Mantequillas','Bebidas Pascual','Bifrutas','Yogikids','Yogures','Postres','Natillas'],
+  order: ['Leche Intense|','Leche Pascual|','Leche Classic|','Leche Extra','Vivesoy','Leche Alimentación|','Leche en brik|','Leche Sin Lactosa|','Leche Movit|','Batidos','Natas','Mantequillas','Bebidas Pascual','Bifrutas','Yogikids','Yogures','Postres'],
   sections: [
     {
       template: 'hero', id: 'leche-intense', family: 'Leche Intense', color: '#e8e0d6', ink: '#2b2a3a',
@@ -201,17 +201,11 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'hero', id: 'flan', family: 'Postres Pascual', color: '#fff0c4', ink: '#59330f',
-      eyebrow: 'Flan de huevo', title: 'El postre de siempre.',
-      description: 'Postre Pascual de flan de huevo, presentado en cuatro unidades individuales.',
-      backword: 'FLAN', bottom: 'Pack de 4 × 100 g',
-      product: {name:'Flan de huevo · pack de 4 × 100 g', image:'assets/pascual/flan-huevo.png', width:391, height:533, alt:'Flan de huevo Pascual, imagen de la gama'}
-    },
-    {
-      template: 'lineup', id: 'natillas', family: 'Natillas Pascual', color: '#ead9cb', ink: '#4a2a1b',
-      eyebrow: 'Vaso individual de 120 g', title: 'Natillas, a cucharadas.',
+      template: 'lineup', id: 'flan-natillas', family: 'Postres Pascual', color: '#f3e3c0', ink: '#4a2a1b',
+      eyebrow: 'Postres de cuchara', title: 'Flan y natillas, a cucharadas.',
       note: 'Una imagen por variedad',
       variants: [
+        {name:'Flan de huevo · pack de 4 × 100 g', description:'Postre Pascual de flan de huevo, presentado en cuatro unidades individuales.', image:'assets/pascual/flan-huevo.png', width:391, height:533, alt:'Flan de huevo Pascual, imagen de la gama'},
         {name:'Natillas de vainilla · 120 g', description:'Natillas Pascual de vainilla en vaso individual.', image:'assets/pascual/natillas-vainilla.png', width:699, height:616, alt:'Vaso de natillas de vainilla Pascual'},
         {name:'Natillas de chocolate · 120 g', description:'Natillas Pascual de chocolate en vaso individual.', image:'assets/pascual/natillas-chocolate.png', width:700, height:615, alt:'Vaso de natillas de chocolate Pascual'}
       ]
