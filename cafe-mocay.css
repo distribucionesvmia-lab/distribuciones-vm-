@@ -290,3 +290,5 @@ button,a{-webkit-tap-highlight-color:transparent}
 .m-compl-dulces .m-premium img{height:auto;max-height:280px;width:auto;max-width:100%;margin:0 auto}
 .m-compl-dulces .m-premium figcaption{display:grid;gap:3px;justify-items:center}
 .m-compl-dulces .m-premium figcaption small{font-size:.74rem;font-weight:500;opacity:.75;letter-spacing:.02em}
+.m-compl-dulces .m-solo{grid-column:1/-1}
+.m-compl-dulces .m-solo img{width:auto;max-width:min(100%,300px);margin:0 auto}
