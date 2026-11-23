@@ -371,5 +371,8 @@
 /* Bodegón de formatos de hostelería (Prima): todos los envases juntos, como la gama de 400 g */
 .pw-a-bodegon{margin:22px 0 0;padding:0}
 .pw-a-bodegon img{display:block;width:100%;height:auto;filter:drop-shadow(0 10px 12px rgba(60,0,10,.30))}
-@media(min-width:1000px){.pw-a.is-wide .pw-a-bodegon{position:absolute;z-index:3;left:calc(50% - 8vw);top:clamp(180px,27vh,280px);width:min(520px,37vw);margin:0}}
+@media(min-width:1000px){.pw-a.is-wide .pw-a-bodegon{position:absolute;z-index:3;left:calc(50% - 12vw);top:clamp(200px,30vh,300px);width:min(600px,42vw);margin:0}}
 @media(max-width:999px){.pw-a.is-wide .pw-a-bodegon{order:2;margin:10px 0 18px}}
+
+/* Gama de 400 g de Prima: ahora es más estrecha; se alinea a la derecha y baja un poco para no pisar el texto */
+@media(min-width:1000px){.pw-a.is-wide .pw-a-product{object-position:right bottom;max-height:86%}}
