@@ -367,3 +367,9 @@
 /* Miniaturas de producto sobre fondo de color (Prima): sin baldosa blanca, el producto va directo sobre el color de la sección */
 .pw-a-showcase li{background:transparent;box-shadow:none;border-radius:0;padding:2px;overflow:visible}
 .pw-a-showcase img{filter:drop-shadow(0 8px 10px rgba(60,0,10,.38))}
+
+/* Bodegón de formatos de hostelería (Prima): todos los envases juntos, como la gama de 400 g */
+.pw-a-bodegon{margin:22px 0 0;padding:0}
+.pw-a-bodegon img{display:block;width:100%;height:auto;filter:drop-shadow(0 10px 12px rgba(60,0,10,.30))}
+@media(min-width:1000px){.pw-a.is-wide .pw-a-bodegon{position:absolute;z-index:3;left:calc(50% - 8vw);top:clamp(170px,26vh,270px);width:min(560px,38vw);margin:0}}
+@media(max-width:999px){.pw-a.is-wide .pw-a-bodegon{order:2;margin:10px 0 18px}}

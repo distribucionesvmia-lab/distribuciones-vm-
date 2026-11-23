@@ -45,15 +45,7 @@ window.ProductWorld.init({
       template: 'hero', family: 'Prima', color: '#cf0122', ink: '#ffffff', dark: true,
       eyebrow: 'Salsas Prima', title: 'Salseo del bueno.',
       description: 'Una amplia variedad de deliciosas salsas elaboradas de forma responsable con tu salud, con ingredientes de aquí y la experiencia de más de 40 años a tu lado, acompañando tus platos y trabajando para mejorar cada día. Formatos Prima pensados para hostelería, con el sabor de siempre y tomate 100 % origen España.',
-      showcase: [
-        {image:'assets/despensa/prima/prima-ketchup.png', alt:'Kétchup Prima · bote de 1,8 kg'},
-        {image:'assets/despensa/prima/prima-brava.png', alt:'Salsa brava Prima · 1,8 kg'},
-        {image:'assets/despensa/prima/prima-mayonesa-1800.png', alt:'Mayonesa Prima · cubo de 1.800 ml'},
-        {image:'assets/despensa/prima/prima-cheddar-1850.png', alt:'Salsa cheddar Prima · cubo de 1.850 g'},
-        {image:'assets/despensa/prima/prima-alioli.png', alt:'Alioli Prima · cubo de 1,8 kg'},
-        {image:'assets/despensa/prima/prima-mayonesa-2900.png', alt:'Mayonesa Prima · cubo de 2.900 ml'},
-        {image:'assets/despensa/prima/prima-mayonesa-4400.png', alt:'Mayonesa Prima · cubo de 4,4 kg'}
-      ],
+      bodegon: {image:'assets/despensa/prima/prima-bodegon-hosteleria.png', width:1284, height:386, alt:'Formatos de hostelería de Prima: mayonesa de 4,4 kg y de 1,8 kg, kétchup, salsa brava, alioli, cheddar y mayonesa de 2,9 kg'},
       bottom: '05 — Gama de salsas',
       logo: {image:D+'prima-logo.png', width:430, height:280, alt:'Prima'},
       product: {name:'Gama de salsas Prima', image:D+'prima-gama.png', width:2694, height:690, wide:true, alt:'Gama de salsas Prima: mayonesas, kétchup, mostazas y otras salsas'}
