@@ -27,7 +27,7 @@
         <div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
           <div class="pw-a-copy"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2><p class="pw-description">${esc(item.description)}</p>${price(item.family,item.product)}${button(item)}</div>
           <div class="pw-a-art">${item.logo?`<img class="pw-a-logo" src="${esc(item.logo.image)}" alt="${esc(item.logo.alt)}" width="${Number(item.logo.width)}" height="${Number(item.logo.height)}">`:''}<span class="pw-a-ring" aria-hidden="true"></span><span class="pw-a-backword" aria-hidden="true">${esc(item.backword || item.family)}</span>${img(item.product,'pw-a-product')}<p class="pw-product-note">${esc(item.product.name)}</p></div>
-          ${item.bodegon?`<figure class="pw-a-bodegon"><img src="${esc(item.bodegon.image)}" alt="${esc(item.bodegon.alt)}" width="${Number(item.bodegon.width)||1284}" height="${Number(item.bodegon.height)||386}" loading="lazy" decoding="async"></figure>`:''}
+          ${item.bodegon?`<figure class="pw-a-bodegon"><img src="${esc(item.bodegon.image)}" alt="${esc(item.bodegon.alt)}" width="${Number(item.bodegon.width)||1284}" height="${Number(item.bodegon.height)||406}" loading="lazy" decoding="async"></figure>`:''}
           ${item.showcase?`<ul class="pw-a-showcase" aria-label="Formatos industriales">${item.showcase.map(f=>`<li><img src="${esc(f.image)}" alt="${esc(f.alt)}" title="${esc(f.alt)}" width="320" height="320" loading="lazy" decoding="async"></li>`).join('')}</ul>`:''}
           <p class="pw-scene-bottom">${esc(item.bottom || '')}</p>
         </div></div></section>`;
