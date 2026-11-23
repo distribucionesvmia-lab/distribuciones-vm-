@@ -363,3 +363,7 @@
 #movit .pw-e-disc{background:#fff0f4!important;opacity:.95}
 #movit .pw-e-art:has(.pw-e-multi) .pw-e-disc{display:block!important}
 #movit .pw-e-image{mix-blend-mode:normal;filter:drop-shadow(10px 18px 14px rgba(60,0,25,.35))}
+
+/* Miniaturas de producto sobre fondo de color (Prima): sin baldosa blanca, el producto va directo sobre el color de la sección */
+.pw-a-showcase li{background:transparent;box-shadow:none;border-radius:0;padding:2px;overflow:visible}
+.pw-a-showcase img{filter:drop-shadow(0 8px 10px rgba(60,0,10,.38))}
