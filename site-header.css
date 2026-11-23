@@ -16,7 +16,7 @@
 .sh-contact{flex:none;border:0;border-radius:100px;padding:11px 20px;background:#173b3c;color:#fff;white-space:nowrap;font-size:.92rem;font-weight:700;letter-spacing:.01em;box-shadow:0 6px 16px rgba(23,59,60,.28);transition:background .2s,transform .2s,box-shadow .2s}
 @media(hover:hover) and (pointer:fine){.site-header nav a:hover{color:#c61819}.sh-contact:hover{background:#0f2a2b;color:#fff;transform:translateY(-2px);box-shadow:0 10px 20px rgba(23,59,60,.36)}.site-header .sh-contact{color:#fff}}
 .site-header a:focus-visible{outline:2px solid #c61819;outline-offset:3px;border-radius:4px}
-@media(max-width:1560px){
+@media(max-width:1299px){
   .site-header{flex-wrap:wrap;gap:4px 15px}
   .site-header nav{order:3;width:100%;justify-content:center;overflow-x:auto;padding:4px 0;scrollbar-width:none}
   .site-header nav::-webkit-scrollbar{display:none}
@@ -35,7 +35,7 @@
   .sh-brand span{max-width:115px;white-space:normal;line-height:1.1}
 }
 /* las secciones fijadas con scroll cuelgan de la cabecera cuando es de dos filas */
-@media(max-width:1560px){.pw-sticky{top:calc(93px + var(--nb,0px));height:calc(100svh - 93px - var(--nb,0px))}}
+@media(max-width:1299px){.pw-sticky{top:calc(93px + var(--nb,0px));height:calc(100svh - 93px - var(--nb,0px))}}
 /* Botones fijos de móvil: «Hacer pedido» (principal) y «Llamar» (se generan con _herramientas/cabecera.py) */
 .call-bar{display:none}
 @media(max-width:760px){
@@ -198,3 +198,11 @@
 .nov-precio{margin:2px 0 0!important;display:flex;align-items:baseline;gap:8px}
 .nov-precio b{font-size:1.9rem;letter-spacing:-.03em;color:#251d1a}
 .nov-precio span{font-size:.85rem;opacity:.75;text-transform:uppercase;letter-spacing:.08em}
+
+/* Cabecera de ordenador: marca a la izquierda, iconos del menú centrados de verdad en la página y «Contactar» a la derecha */
+@media(min-width:1300px){
+  .site-header{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px}
+  .site-header .sh-brand{justify-self:start}
+  .site-header nav{justify-self:center;gap:clamp(10px,1vw,22px)}
+  .site-header .sh-actions{justify-self:end}
+}
