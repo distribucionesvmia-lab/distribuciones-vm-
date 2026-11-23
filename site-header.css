@@ -206,3 +206,9 @@
   .site-header nav{justify-self:center;gap:clamp(10px,1vw,22px)}
   .site-header .sh-actions{justify-self:end}
 }
+
+/* Pie de foto del furgón eléctrico: centrado bajo la foto y con el icono más grande */
+.eco-cap{justify-content:center;text-align:center;gap:12px}
+.eco-cap .eco-ico{width:40px;height:40px}
+.eco-cap span{font-size:1.05rem;font-weight:600;letter-spacing:.1em}
+@media(max-width:560px){.eco-cap{gap:9px}.eco-cap .eco-ico{width:34px;height:34px}.eco-cap span{font-size:.9rem;letter-spacing:.07em}}
