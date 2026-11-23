@@ -336,3 +336,6 @@ form{margin-top:48px;display:grid;gap:10px;grid-template-columns:1fr 1fr 1fr}
   .card:hover::after{opacity:1}
   .card:hover img{transform:scale(1.1) translate(var(--px,0px),var(--py,0px))}
 }
+
+/* Portada de «Aceite y conservas»: la foto lleva el logotipo de Prima y «FOOD SERVICE» dentro; el velo oscuro es más bajo para que se lean bien */
+.card-desp::before{background:linear-gradient(to top,rgba(14,10,7,.86) 0%,rgba(14,10,7,.62) 22%,rgba(14,10,7,0) 42%)}
