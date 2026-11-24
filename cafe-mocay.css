@@ -34,7 +34,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .m-hero-grain{position:absolute;inset:0;z-index:-1;opacity:.11;background-image:url('assets/macro-close-up-look-of-roasted-coffee.png');background-size:cover;background-position:center;mix-blend-mode:multiply;mask-image:linear-gradient(90deg,transparent 36%,black 100%)}
 .m-hero-copy{position:relative;z-index:3;max-width:720px}
 .m-hero-copy .m-eyebrow{margin:0 0 8px}
-.m-wordmark{width:200px;height:200px;max-width:none;object-fit:contain;margin:-45px 0 -43px -53px}
+.m-wordmark{width:120px;height:120px;max-width:none;object-fit:contain;margin:0 0 18px}
 .m-hero h1{font-size:clamp(4rem,1.7rem + 7.6vw,9.6rem);line-height:.89;font-weight:500;letter-spacing:-.065em;margin:0 0 32px;white-space:nowrap}
 .m-hero h1 em{font-style:normal;color:var(--red)}
 .m-lead{font-size:clamp(1.18rem,1rem + .75vw,1.65rem);line-height:1.25;max-width:33ch;margin:0 0 32px;letter-spacing:-.015em}
@@ -147,7 +147,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   .m-brand span{font-size:.88rem;max-width:140px;line-height:1.1;white-space:normal}
   .m-top-cta{padding:9px 13px;font-size:.85rem}
   .m-hero{display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;min-height:100svh;padding-top:94px;padding-bottom:65px}
-  .m-wordmark{width:155px;height:155px;margin:-38px 0 -34px -40px}
+  .m-wordmark{width:96px;height:96px;margin:0 0 14px}
   .m-hero-copy{order:1}
   .m-hero h1{font-size:clamp(3.5rem,12.2vw,6rem);margin-bottom:20px}
   .m-lead{font-size:1.1rem;max-width:36ch;margin-bottom:22px}
