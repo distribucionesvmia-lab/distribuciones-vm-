@@ -2,7 +2,7 @@
 const D = 'assets/despensa/';
 window.ProductWorld.init({
   mount: '#familias',
-  order: ['Carbonell','Helios','Calvo','Villa Campo','Luengo','Prima','Borges','Carmencita','La Ballena'],
+  order: ['Carbonell','Gallina Blanca','Helios','Calvo','Villa Campo','Luengo','Prima','Borges','Carmencita','La Ballena'],
   sections: [
     {
       template: 'editorial', family: 'Calvo', color: '#fbf6e8', ink: '#1f5a3a', columns: 3,
@@ -27,6 +27,13 @@ window.ProductWorld.init({
         {name:'Calamares en tinta', description:'Calvo, calamares en tinta en formato bolsa.', image:D+'calvo-hosteleria-calamares-tinta.png', width:671, height:956, alt:'Bolsa Calvo de calamares en tinta'},
         {name:'Calamares en salsa americana', description:'Calvo, calamares en salsa americana en formato bolsa.', image:D+'calvo-hosteleria-calamares-americana.png', width:334, height:478, alt:'Bolsa Calvo de calamares en salsa americana'},
         {name:'Atún en aceite de oliva · lata de 750 g', description:'Atún Calvo en aceite de oliva, en lata de gran formato de 750 g.', image:D+'calvo-hosteleria-atun-lata-750g.png', width:364, height:271, alt:'Lata de gran formato de atún Calvo'}
+      ]
+    },
+    {
+      template: 'lineup', id: 'gallina-blanca', family: 'Gallina Blanca', color: '#fff0b8', ink: '#6b1a12',
+      eyebrow: 'Caldos', title: 'Gallina Blanca. Caldos profesionales.',
+      variants: [
+        {name:'Caldo de carne · bolsa de 0,5 L', description:'Caldo de carne concentrado profesional, sin gluten: 0,5 L de concentrado + 3,5 L de agua = 4 L de caldo reconstituido. Agitar antes de usar. Verter el contenido en un recipiente, añadir 3,5 litros de agua y calentar removiendo de vez en cuando.', image:D+'gallina-blanca-caldo-carne-0-5l.png', width:450, height:710, alt:'Bolsa de 0,5 L de Caldo de carne profesional Gallina Blanca, sin gluten, con rendimiento de 4 L'}
       ]
     },
     {

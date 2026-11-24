@@ -461,3 +461,6 @@
   .pw-b-panel.is-duo .pw-b-copy h3{font-size:clamp(1.9rem,3vw,3.7rem);margin:10px 0 12px}
   .pw-b-panel.is-duo .pw-b-copy{padding-right:clamp(18px,2.5vw,40px)}
 }
+
+/* Gallina Blanca: la bolsa se ve con su color real (sin mezclar con el fondo amarillo) */
+#gallina-blanca .pw-e-multi{mix-blend-mode:normal;filter:drop-shadow(12px 18px 14px rgba(70,30,10,.22))}
