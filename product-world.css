@@ -508,3 +508,17 @@
 /* Logo de marca al principio de una escena editorial (p. ej. Helios) */
 .pw-c-logo{display:block;width:clamp(130px,14vw,200px);height:auto;margin:0 0 16px}
 @media(max-width:760px){.pw-c-logo{width:140px;margin-bottom:12px}}
+
+/* El rondo gira dentro de su zona: lo que sobresale al girar ya no ensancha la página (se movía de lado y la cabecera quedaba cortada) */
+.pw-a.has-orbit .pw-a-art{overflow:clip}
+.pw-a.has-orbit{overflow-x:clip}
+
+/* Textos que tapaban las botellas: en móvil el texto de la sección va debajo del título, y el rótulo de la botella (repetido) se quita */
+.pw-e-note-m{display:none}
+@media(max-width:760px){
+  .pw-a .pw-product-note{display:none}
+  .pw-e-art .pw-e-note{display:none!important}
+  .pw-e-note-m{display:block;margin:10px 0 0;font-size:.82rem;line-height:1.4;letter-spacing:.03em;opacity:.88}
+  /* encuadre de la portada de Despensa: «FOOD SERVICE» entero */
+  .pw-photo .pw-opening-bg[src*="portada-despensa"]{object-position:55% 50%}
+}
