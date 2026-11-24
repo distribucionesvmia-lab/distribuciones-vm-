@@ -173,15 +173,18 @@
     return sec.querySelector('.m-machine[data-machine="' + w.getAttribute('data-machine') + '"]');
   });
   if (!words.length) return;
+  var canHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
   function off() { sec.removeAttribute('data-machine-on'); words.forEach(function (w) { w.classList.remove('is-on'); }); }
   function on(k) { sec.setAttribute('data-machine-on', k); words.forEach(function (w) { w.classList.toggle('is-on', w.getAttribute('data-machine') === k); }); }
   words.forEach(function (w) {
     var k = w.getAttribute('data-machine');
     w.classList.add('is-live'); w.setAttribute('tabindex', '0'); w.setAttribute('role', 'button');
-    w.addEventListener('mouseenter', function () { on(k); });
-    w.addEventListener('mouseleave', off);
-    w.addEventListener('focus', function () { on(k); });
-    w.addEventListener('blur', off);
+    if (canHover) {
+      w.addEventListener('mouseenter', function () { on(k); });
+      w.addEventListener('mouseleave', off);
+      w.addEventListener('focus', function () { on(k); });
+      w.addEventListener('blur', off);
+    }
     w.addEventListener('click', function (e) { e.preventDefault(); if (sec.getAttribute('data-machine-on') === k && w.classList.contains('is-tap')) { w.classList.remove('is-tap'); off(); } else { words.forEach(function (x) { x.classList.remove('is-tap'); }); w.classList.add('is-tap'); on(k); } });
   });
   document.addEventListener('click', function (e) { if (!e.target.closest || !e.target.closest('.m-hover-word')) { words.forEach(function (x) { x.classList.remove('is-tap'); }); off(); } });
