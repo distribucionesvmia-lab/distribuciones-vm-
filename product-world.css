@@ -477,3 +477,17 @@
 .pw-e-cartel:before,.pw-e-cartel:after{content:"";position:absolute;top:50%;width:.42em;height:.42em;margin-top:-.21em;border-radius:50%;background:radial-gradient(circle at 35% 30%,#d9d2c7,#6b6459 70%);box-shadow:0 1px 1px rgba(30,12,2,.5);font-size:clamp(.9rem,1.4vw,1.3rem)}
 .pw-e-cartel:before{left:.42em}.pw-e-cartel:after{right:.42em}
 @media(max-width:760px){.pw-e-cartel{margin:2% 2% 0 0;padding:.4em .9em .48em}.pw-e-cartel span{font-size:1.15rem}}
+
+/* El cartel cuelga de dos cuerdas trenzadas atadas a un clavo */
+.pw-e-cartel{margin-top:clamp(58px,8vh,84px);--cuerda:clamp(56px,8vh,86px)}
+.pw-cuerda{position:absolute;bottom:calc(100% - 3px);width:6px;height:var(--cuerda);border-radius:3px;background:repeating-linear-gradient(160deg,#d3ad72 0 3px,#8a6034 3px 6px);box-shadow:1px 0 2px rgba(50,25,8,.35);z-index:-1}
+.pw-cuerda:before{content:"";position:absolute;left:50%;top:-6px;width:13px;height:13px;margin-left:-6.5px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e0d9cd,#5f584d 72%);box-shadow:0 1px 2px rgba(30,12,2,.5)}
+.pw-cuerda:nth-of-type(1){left:13%;rotate:2deg}
+.pw-cuerda:nth-of-type(2){right:13%;rotate:-2deg}
+@media(max-width:760px){.pw-e-cartel{margin-top:44px;--cuerda:40px}.pw-cuerda{width:4px}.pw-cuerda:before{width:10px;height:10px;margin-left:-5px;top:-5px}}
+@media(max-width:760px){
+  .pw-e-cartel{margin:26px 0 0 0;--cuerda:26px;padding:.32em .8em .4em}
+  .pw-e-cartel span{font-size:1rem}
+  .pw-cuerda{width:3px}
+  .pw-e-cartel{justify-self:end;margin-right:-2%}
+}
