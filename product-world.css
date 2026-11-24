@@ -406,3 +406,28 @@
   .pw-d-image{padding:calc(var(--sh-h,66px) + 190px) 5vw 6vh}
   .pw-d-image img{max-height:calc(100svh - var(--sh-h,66px) - 260px);transform:translateY(10px) scale(.96)}
 }
+
+
+/* Rondo: fotos de formatos que giran alrededor del producto principal (cada botella siempre derecha) */
+.pw-a.has-orbit .pw-a-art{display:grid;place-items:center}
+.pw-a-orbit{position:absolute;inset:0;margin:auto;list-style:none;padding:0;width:min(100%,calc(100svh - var(--sh-h,66px) - 150px));aspect-ratio:1;max-height:100%;pointer-events:none;animation:pw-orbit 42s linear infinite;z-index:2}
+.pw-a-orbit li{position:absolute;inset:0;--a:calc(var(--i) * (360deg / var(--n)));rotate:var(--a)}
+.pw-a-orbit li img{position:absolute;left:50%;top:0;width:27%;height:auto;translate:-50% 0;rotate:calc(var(--a) * -1);animation:pw-orbit-img 42s linear infinite;filter:drop-shadow(8px 12px 10px rgba(16,59,80,.18))}
+@keyframes pw-orbit{to{rotate:360deg}}
+@keyframes pw-orbit-img{from{rotate:calc(var(--a) * -1)}to{rotate:calc(var(--a) * -1 - 360deg)}}
+.pw-a.has-orbit .pw-a-product{max-width:34%;max-height:58%;width:auto;height:auto}
+.pw-a.has-orbit .pw-a-ring{width:min(100%,calc(100svh - var(--sh-h,66px) - 150px));opacity:.55}
+.pw-a.has-orbit .pw-a-orbit:hover,.pw-a.has-orbit:hover .pw-a-orbit,.pw-a.has-orbit:hover .pw-a-orbit li img{animation-play-state:running}
+@media(max-width:760px){
+  .pw-a-orbit{width:min(94vw,430px);inset:auto}
+  .pw-a.has-orbit .pw-a-ring{width:min(94vw,430px)}
+  .pw-a.has-orbit .pw-a-product{max-width:36%;max-height:56%}
+}
+@media(prefers-reduced-motion:reduce){.pw-a-orbit,.pw-a-orbit li img{animation:none}}
+.pw-a.has-orbit .pw-a-product{transform:scale(calc(.9 + var(--progress,0) * .14));filter:drop-shadow(14px 18px 14px rgba(16,59,80,.18))}
+.pw-mobile-anim .pw-a.has-orbit .pw-a-product{transform:none}
+.pw-a.has-orbit .pw-a-product{max-height:44%;max-width:30%}
+@media(max-width:760px){.pw-a.has-orbit .pw-a-product{max-height:42%;max-width:32%}}
+
+.pw-a.has-orbit .pw-a-product{max-height:56%;max-width:24%;mix-blend-mode:normal}
+@media(max-width:760px){.pw-a.has-orbit .pw-a-product{max-height:54%;max-width:26%}}

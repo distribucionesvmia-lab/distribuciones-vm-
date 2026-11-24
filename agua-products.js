@@ -7,7 +7,16 @@ window.ProductWorld.init({
       eyebrow:'Agua mineral natural', title:'Ligera desde el origen.',
       description:'Agua Mineral Natural de Mineralización **muy débil** procedente de los manantiales de Bezoya y Bezoya Trescasas, ubicados en Segovia.',
       backword:'BEZOYA', bottom:'01 — Agua sin gas',
-      product:{name:'Bezoya · 1,5 L', image:'assets/agua/bezoya-cutout.png', width:1254, height:1254, alt:'Botella Bezoya de 1,5 litros'}
+      product:{name:'Bezoya · botella de vidrio', image:'assets/agua/bezoya-vidrio.png', width:299, height:975, alt:'Botella de vidrio Bezoya'},
+      orbitLabel:'Formatos Bezoya',
+      orbit:[
+        {name:'Bezoya · 33 cl', image:'assets/agua/bezoya-330cl.png', width:420, height:420, alt:'Botella Bezoya de 33 cl'},
+        {name:'Bezoya · 33 cl con tapón sport', image:'assets/agua/bezoya-330cl-sport.png', width:420, height:420, alt:'Botella Bezoya de 33 cl con tapón sport'},
+        {name:'Bezoya · 50 cl', image:'assets/agua/bezoya-50cl.png', width:420, height:420, alt:'Botella Bezoya de 50 cl'},
+        {name:'Bezoya · 50 cl con tapón sport', image:'assets/agua/bezoya-50cl-sport.png', width:420, height:420, alt:'Botella Bezoya de 50 cl con tapón sport'},
+        {name:'Bezoya · 5 L', image:'assets/agua/bezoya-5l.png', width:420, height:420, alt:'Garrafa Bezoya de 5 litros'},
+        {name:'Bezoya · bag in box de 8 L', image:'assets/agua/bezoya-bib-8l.png', width:420, height:420, alt:'Bag in box Bezoya de 8 litros'}
+      ]
     },
     {
       template:'range', family:'Nestlé Aquarel', color:'#e8f3e7', ink:'#194a43',
