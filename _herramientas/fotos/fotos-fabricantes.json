@@ -135,6 +135,38 @@
   "tipo": "Aproximada: atún claro en oliva Vuelca Fácil, pack 3 × 65 g",
   "local": "_herramientas/fotos/fabricantes/calvo/ATUN-CLARO-OLIVA-V-EXTRA-REAL-PEEL-3x65-LA-ESPANOLA.jpg"
  },
+ "261091": {
+  "fabricante": "Campofrío (campofrio.es)",
+  "url": "https://admin.campofrio.es/sites/default/files/import/images/624x413_Paleta_Rhin.png",
+  "w": 624,
+  "h": 413,
+  "tipo": "Exacta (paleta Rhin)",
+  "local": "_herramientas/fotos/fabricantes/campofrio/624x413_Paleta_Rhin.png"
+ },
+ "26109": {
+  "fabricante": "Campofrío (campofrio.es)",
+  "url": "https://admin.campofrio.es/sites/default/files/import/images/624x413_Bpaleta_cocida.png",
+  "w": 624,
+  "h": 413,
+  "tipo": "Aproximada (paleta cocida)",
+  "local": "_herramientas/fotos/fabricantes/campofrio/624x413_Bpaleta_cocida.png"
+ },
+ "26111": {
+  "fabricante": "Campofrío (campofrio.es)",
+  "url": "https://admin.campofrio.es/sites/default/files/import/images/624x413_Pechuga-de-Pavo-Braseada_02_Ret.png",
+  "w": 624,
+  "h": 413,
+  "tipo": "Aproximada (pechuga de pavo)",
+  "local": "_herramientas/fotos/fabricantes/campofrio/624x413_Pechuga-de-Pavo-Braseada_02_Ret.png"
+ },
+ "26309": {
+  "fabricante": "Campofrío (campofrio.es)",
+  "url": "https://admin.campofrio.es/sites/default/files/2026-01/pechuga%20pavo%2090.png",
+  "w": 624,
+  "h": 413,
+  "tipo": "Aproximada (pechuga de pavo 90 %)",
+  "local": "_herramientas/fotos/fabricantes/campofrio/pechuga_pavo_90.png"
+ },
  "19515": {
   "fabricante": "Mahou (mahou.es)",
   "url": "https://www.mahou.es/wp-content/uploads/2024/10/mahou_cinco_estrellas_xl_2024.png",
