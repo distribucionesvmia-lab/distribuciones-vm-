@@ -307,3 +307,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .m-inf-expo{grid-column:span 2}
 .m-inf-expo img{max-width:min(100%,460px);mix-blend-mode:normal}
 @media(max-width:1000px){.m-inf-expo{grid-column:1 / -1}.m-inf-expo img{max-width:min(100%,400px)}}
+
+/* Servicio: encuadre de la foto de Mocay Academy (copa y logo enteros) */
+.m-service-image>img{object-position:82% 50%}
+@media(max-width:760px){.m-service-image>img{object-position:62% 50%}}

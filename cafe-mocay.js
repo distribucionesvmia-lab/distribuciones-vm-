@@ -135,8 +135,8 @@
     scrollTrigger: { trigger: '.m-hero', start: 'top top', end: 'bottom top', scrub: .5 }
   });
 
-  gsap.fromTo('.m-service-image img', { scale: 1.08, yPercent: -3 }, {
-    scale: 1.08, yPercent: 3, ease: 'none',
+  gsap.fromTo('.m-service-image>img', { scale: 1.04, yPercent: -2 }, {
+    scale: 1.04, yPercent: 2, ease: 'none',
     scrollTrigger: { trigger: '.m-service', start: 'top bottom', end: 'bottom top', scrub: true }
   });
 
