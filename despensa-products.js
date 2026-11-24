@@ -5,7 +5,7 @@ window.ProductWorld.init({
   order: ['Carbonell','Gallina Blanca','Helios','Calvo','Villa Campo','Luengo','Prima','Borges','Carmencita','La Ballena'],
   sections: [
     {
-      template: 'editorial', id: 'calvo', family: 'Calvo', color: '#fbf6e8', ink: '#1f5a3a', columns: 3,
+      template: 'editorial', id: 'calvo', gridId: 'calvo-recetas', family: 'Calvo', color: '#fbf6e8', ink: '#1f5a3a', columns: 3,
       eyebrow: 'La colección en la mesa', title: 'Conservas con receta.',
       description: 'Las referencias de la edición limitada, presentadas junto a platos pensados para cada una.',
       products: [

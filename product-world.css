@@ -500,3 +500,7 @@
 /* Logo de marca encima del título de una escena (p. ej. Gallina Blanca) */
 .pw-e-logo{display:block;width:clamp(120px,13vw,190px);height:auto;margin:0 0 14px;filter:drop-shadow(0 4px 6px rgba(50,20,5,.25))}
 @media(max-width:760px){.pw-e-logo{width:130px;margin-bottom:10px}}
+
+/* Enlaces directos a las tarjetas de una escena de recetas (p. ej. Calvo): quedan justo bajo la cabecera */
+.pw-c-grid[id]{scroll-margin-top:calc(66px + var(--nb,0px) + 18px)}
+@media(max-width:1299px){.pw-c-grid[id]{scroll-margin-top:calc(94px + var(--nb,0px) + 18px)}}
