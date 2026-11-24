@@ -393,3 +393,10 @@
 
 /* Gama de 400 g de Prima: altura limitada y pegada a la derecha para que no pise el texto ni el bodegón */
 @media(min-width:1000px){.pw-a.is-wide .pw-a-product{left:auto;right:3%;width:auto;max-width:94%;max-height:min(38vh,330px)}}
+
+/* Movit: el brik cabe dentro del círculo (antes era tan alto como él y sobresalía) y, en móvil, la nota ya no se monta sobre el envase */
+#movit .pw-e-multi{max-height:min(74%,calc(min(40vw,540px) * .8));max-width:min(26vw,360px)}
+@media(max-width:760px){
+  #movit .pw-e-multi{max-height:calc(min(60vw,260px) * .98);max-width:56%;margin-top:34px}
+  .pw-mobile-anim #movit .pw-e-art,.pw-mobile-anim#movit .pw-e-art{padding-bottom:50px}
+}
