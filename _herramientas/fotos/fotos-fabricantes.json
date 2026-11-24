@@ -167,6 +167,22 @@
   "tipo": "Aproximada (pechuga de pavo 90 %)",
   "local": "_herramientas/fotos/fabricantes/campofrio/pechuga_pavo_90.png"
  },
+ "2083": {
+  "fabricante": "DYC (dyc.es)",
+  "url": "https://www.dyc.es/sites/default/files/2025-04/bottle-whisky-classic-dyc_0.png",
+  "w": 1500,
+  "h": 1500,
+  "tipo": "Exacta (DYC clásico)",
+  "local": "_herramientas/fotos/fabricantes/dyc/dyc5.png"
+ },
+ "2229": {
+  "fabricante": "DYC (dyc.es)",
+  "url": "https://www.dyc.es/sites/default/files/2025-04/bottle-whisky-8-year-dyc.png",
+  "w": 1500,
+  "h": 1500,
+  "tipo": "Exacta (DYC 8 años)",
+  "local": "_herramientas/fotos/fabricantes/dyc/dyc8.png"
+ },
  "19515": {
   "fabricante": "Mahou (mahou.es)",
   "url": "https://www.mahou.es/wp-content/uploads/2024/10/mahou_cinco_estrellas_xl_2024.png",
