@@ -508,14 +508,6 @@ window.HELIOS_SECTIONS = [
     "width": 302,
     "height": 463,
     "alt": "Pisto casero · 300 g, Helios"
-   },
-   {
-    "name": "Pisto casero · caja de 12 × 300 g",
-    "description": "Caja de doce unidades de pisto casero de 300 g.",
-    "image": "assets/despensa/helios/pisto-300g.png",
-    "width": 302,
-    "height": 463,
-    "alt": "Pisto casero · caja de 12 × 300 g, Helios"
    }
   ]
  },
