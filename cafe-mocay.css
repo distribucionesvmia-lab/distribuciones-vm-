@@ -296,7 +296,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 /* Servicio: al pasar el cursor (o tocar) «Cafeteras» / «Molinos» aparece la máquina sobre la foto */
 .m-machine{position:absolute;inset:0;z-index:2;display:grid;place-items:center;padding:clamp(24px,5vw,70px);background:#34211600;background:rgb(52,33,22);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility 0s linear .35s;pointer-events:none}
-.m-machine img{width:100%;height:auto;max-height:100%;object-fit:contain;transform:scale(.94) translateY(10px);transition:transform .5s cubic-bezier(.23,1,.32,1);filter:drop-shadow(0 24px 30px rgba(0,0,0,.35))}
+.m-machine img{width:100%;height:auto;max-height:100%;object-fit:contain;transform:scale(.94) translateY(10px);transition:transform .5s cubic-bezier(.23,1,.32,1)}
 .m-service[data-machine-on="cafetera"] .m-machine[data-machine="cafetera"],.m-service[data-machine-on="molino"] .m-machine[data-machine="molino"]{opacity:1;visibility:visible;transition:opacity .35s ease,visibility 0s}
 .m-service[data-machine-on="cafetera"] .m-machine[data-machine="cafetera"] img,.m-service[data-machine-on="molino"] .m-machine[data-machine="molino"] img{transform:none}
 .m-hover-word.is-live{cursor:pointer;text-decoration:underline dotted rgba(232,199,179,.8);text-underline-offset:.2em;text-decoration-thickness:1.5px;transition:color .2s}
@@ -314,7 +314,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 /* Galería de máquinas: las tres de cada palabra a la vez, en una fila y juntas (en móvil, dos columnas y la tercera centrada) */
 .m-machine{gap:clamp(2px,.5vw,8px);grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:auto;align-content:center;align-items:center;padding:clamp(14px,2vw,28px)}
-.m-machine img{width:100%;height:auto;max-height:100%;min-width:0;object-fit:contain;filter:drop-shadow(0 14px 18px rgba(0,0,0,.32))}
+.m-machine img{width:100%;height:auto;max-height:100%;min-width:0;object-fit:contain}
 @media(max-width:760px){
   .m-machine:has(img:nth-of-type(2)){grid-template-columns:repeat(2,minmax(0,1fr));padding:clamp(24px,6vw,48px) 12px}
   .m-machine img:last-child:nth-child(odd){grid-column:1 / -1;width:56%;justify-self:center}
@@ -334,6 +334,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 }
 
 /* Icono de mano que señala junto a «Cafeteras» y «Molinos»: indica que se pueden pulsar */
-.m-hover-word.is-live::after{content:"";display:inline-block;width:1.05em;height:1.05em;margin-left:.32em;vertical-align:-.16em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 14a8 8 0 0 1-8 8'/%3E%3Cpath d='M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2'/%3E%3Cpath d='M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1'/%3E%3Cpath d='M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10'/%3E%3Cpath d='M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 14a8 8 0 0 1-8 8'/%3E%3Cpath d='M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2'/%3E%3Cpath d='M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1'/%3E%3Cpath d='M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10'/%3E%3Cpath d='M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15'/%3E%3C/svg%3E") center/contain no-repeat;transform-origin:30% 80%;animation:m-tap 2.6s ease-in-out infinite}
+.m-service-list .m-hover-word.is-live::after{content:"";display:inline-block;width:1.05em;height:1.05em;margin-left:.32em;vertical-align:-.16em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 14a8 8 0 0 1-8 8'/%3E%3Cpath d='M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2'/%3E%3Cpath d='M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1'/%3E%3Cpath d='M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10'/%3E%3Cpath d='M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 14a8 8 0 0 1-8 8'/%3E%3Cpath d='M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2'/%3E%3Cpath d='M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1'/%3E%3Cpath d='M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10'/%3E%3Cpath d='M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15'/%3E%3C/svg%3E") center/contain no-repeat;transform-origin:30% 80%;animation:m-tap 2.6s ease-in-out infinite}
 @keyframes m-tap{0%,60%,100%{transform:translate(0,0) rotate(0)}70%{transform:translate(-2px,-3px) rotate(-8deg)}80%{transform:translate(0,1px) rotate(2deg)}}
-@media(prefers-reduced-motion:reduce){.m-hover-word.is-live::after{animation:none}}
+@media(prefers-reduced-motion:reduce){.m-service-list .m-hover-word.is-live::after{animation:none}}
