@@ -167,6 +167,14 @@
   "tipo": "Aproximada (pechuga de pavo 90 %)",
   "local": "_herramientas/fotos/fabricantes/campofrio/pechuga_pavo_90.png"
  },
+ "110633": {
+  "fabricante": "Cola Cao (colacao.es)",
+  "url": "https://www.colacao.es/bundles/colacaoweb/images/products/colacao-on-the-go-vaso.png",
+  "w": 422,
+  "h": 600,
+  "tipo": "Aproximada (vaso «On the go», mismo formato que el Shake de 200 ml)",
+  "local": "_herramientas/fotos/fabricantes/colacao/colacao-on-the-go-vaso.png"
+ },
  "2083": {
   "fabricante": "DYC (dyc.es)",
   "url": "https://www.dyc.es/sites/default/files/2025-04/bottle-whisky-classic-dyc_0.png",
