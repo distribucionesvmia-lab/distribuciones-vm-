@@ -466,7 +466,7 @@
 #gallina-blanca .pw-e-multi{mix-blend-mode:normal;filter:drop-shadow(12px 18px 14px rgba(70,30,10,.22))}
 
 /* Ilustración decorativa detrás del producto (no es un artículo): p. ej. la marmita de los caldos */
-.pw-e-ilus{grid-area:1/1;position:relative;z-index:0;justify-self:end;align-self:end;width:min(46%,320px);height:auto;margin:0 3% 7% 0;opacity:.96;filter:drop-shadow(10px 16px 12px rgba(60,28,8,.24));pointer-events:none}
+.pw-e-ilus{grid-area:1/1;position:relative;z-index:0;justify-self:end;align-self:end;width:min(46%,320px);height:auto;margin:0 3% 7% 0;opacity:.96;pointer-events:none}
 .pw-e-art:has(.pw-e-ilus) .pw-e-multi{z-index:1}
 #gallina-blanca .pw-e-multi{justify-self:start;margin-left:8%}
 @media(max-width:760px){.pw-e-ilus{display:none}#gallina-blanca .pw-e-multi{justify-self:center;margin-left:0}}
@@ -496,3 +496,7 @@
 #gallina-blanca .pw-e-art:has(.pw-e-multi[src*="avecrem"].is-current) .pw-e-ilus,#gallina-blanca .pw-e-art:has(.pw-e-multi[src*="avecrem"].is-current) .pw-e-cartel{opacity:0;transition:opacity .35s}
 #gallina-blanca .pw-e-multi[src*="avecrem"]{max-width:min(46vw,640px);max-height:58%;justify-self:center;margin-left:0;align-self:center}
 #gallina-blanca .pw-e-multi[src*="avecrem"].is-current{filter:drop-shadow(14px 20px 14px rgba(70,30,10,.25))}
+
+/* Logo de marca encima del título de una escena (p. ej. Gallina Blanca) */
+.pw-e-logo{display:block;width:clamp(120px,13vw,190px);height:auto;margin:0 0 14px;filter:drop-shadow(0 4px 6px rgba(50,20,5,.25))}
+@media(max-width:760px){.pw-e-logo{width:130px;margin-bottom:10px}}
