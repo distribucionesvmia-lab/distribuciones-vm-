@@ -34,6 +34,7 @@ window.DVM_NOVEDADES = [
       ['Aniversario', '85 años de historia, desde 1940'],
       ['Ideal para', 'Cestas navideñas, tiendas gourmet y alta rotación en el lineal']
     ],
+    precio: '12,41 €', precioNota: 'por unidad + 10 % IVA',
     enlace: 'despensa.html',
     fotos: ['assets/novedades/calvo-lata-vintage-banner.png', 'assets/novedades/calvo-lata-vintage-mejillones-sardinillas.png', 'assets/novedades/calvo-lata-vintage-lata-ventresca.png']
   },
