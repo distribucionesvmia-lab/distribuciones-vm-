@@ -47,7 +47,7 @@ window.ProductWorld.init({
       eyebrow: 'Pascual Profesional · Botella de 1,5 litros', title: 'Leche Extra Creme Hostelería',
       description: 'La mejor Leche para el mejor café. Una leche única que le aporta al café con leche un especial aspecto, textura y sabor gracias a su extra de proteína. Fácil y rápida emulsión para una mayor cremosidad.',
       backword: 'EXTRA', bottom: 'Leche Extra Crème · 1,5 L · más proteína láctea · especial hostelería',
-      product: {name:'Leche Pascual Extra Crème · 1,5 L, con jarra de leche', image:'assets/pascual/extra-creme-botella-jarra-v2.png', width:766, height:1000, alt:'Botella de Leche Pascual Profesional Extra Crème de 1,5 litros y, a su lado, una jarra negra de espumar con el logo Leche Pascual uperisada Extra Creme Selección'}
+      product: {name:'Leche Pascual Extra Crème · 1,5 L, con jarra de leche', image:'assets/pascual/extra-creme-botella-jarra-v3.png', width:766, height:1000, alt:'Botella de Leche Pascual Profesional Extra Crème de 1,5 litros y, a su lado, una jarra negra de espumar con el logo Leche Pascual uperisada Extra Creme Selección'}
     },
     {
       template: 'lineup', id: 'leche-hogar', family: 'Leche Alimentación', color: '#e4ecf6', ink: '#12305a',
