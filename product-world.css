@@ -448,3 +448,16 @@
 .pw-faq-d{margin:18px 0 0;max-width:38em}
 .pw-faq-d summary{font-weight:700;text-align:left;line-height:1.3}
 .pw-faq-d p{margin:8px 0 0;font-size:.95rem;line-height:1.45}
+
+/* Escenas con tarjetas en fila (Baristas…): el párrafo de la cabecera es más ancho y ocupa menos alto, para que las tarjetas quepan enteras en cualquier pantalla de PC */
+@media(min-width:1000px){
+  .pw-b-head>p:last-child{max-width:min(520px,34vw);font-size:.92rem;line-height:1.32}
+}
+
+/* Tarjetas con jarra (Baristas): el título es más pequeño y la foto se limita al alto de la tarjeta en cualquier pantalla de PC */
+@media(min-width:1000px){
+  .pw-b-panel.is-duo .pw-b-image{padding:30px 8px 10px}
+  .pw-b-panel.is-duo .pw-b-image img{height:auto;max-height:calc(var(--ph) - 42px)}
+  .pw-b-panel.is-duo .pw-b-copy h3{font-size:clamp(1.9rem,3vw,3.7rem);margin:10px 0 12px}
+  .pw-b-panel.is-duo .pw-b-copy{padding-right:clamp(18px,2.5vw,40px)}
+}
