@@ -240,14 +240,6 @@ window.HELIOS_SECTIONS = [
   "note": "Imagen del catálogo oficial de Helios",
   "variants": [
    {
-    "name": "Mermelada de albaricoque · porciones de 25 g",
-    "description": "Porciones individuales de mermelada de albaricoque.",
-    "image": "assets/despensa/helios/pack-mermelada-albaricoque.png",
-    "width": 466,
-    "height": 295,
-    "alt": "Mermelada de albaricoque · porciones de 25 g, Helios"
-   },
-   {
     "name": "Mermelada de melocotón · porciones de 25 g",
     "description": "Porciones individuales de mermelada de melocotón.",
     "image": "assets/despensa/helios/pack-mermelada-melocoton.png",
