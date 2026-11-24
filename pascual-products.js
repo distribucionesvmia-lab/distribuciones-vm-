@@ -47,7 +47,7 @@ window.ProductWorld.init({
       eyebrow: 'Pascual Profesional · Botella de 1,5 litros', title: 'Leche Extra Creme Hostelería',
       description: 'La mejor Leche para el mejor café. Una leche única que le aporta al café con leche un especial aspecto, textura y sabor gracias a su extra de proteína. Fácil y rápida emulsión para una mayor cremosidad.',
       backword: 'EXTRA', bottom: 'Leche Extra Crème · 1,5 L · más proteína láctea · especial hostelería',
-      product: {name:'Leche Pascual Extra Crème · 1,5 L, con jarra de leche', image:'assets/pascual/extra-creme-botella-jarra.png?v=5', width:687, height:1000, alt:'Botella de Leche Pascual Profesional Extra Crème de 1,5 litros y, delante, una jarra negra de leche con el logo Pascual Profesional Extra Crème'}
+      product: {name:'Leche Pascual Extra Crème · 1,5 L, con jarra de leche', image:'assets/pascual/extra-creme-botella-jarra-v2.png', width:766, height:1000, alt:'Botella de Leche Pascual Profesional Extra Crème de 1,5 litros y, a su lado, una jarra negra de espumar con el logo Leche Pascual uperisada Extra Creme Selección'}
     },
     {
       template: 'lineup', id: 'leche-hogar', family: 'Leche Alimentación', color: '#e4ecf6', ink: '#12305a',
@@ -152,7 +152,7 @@ window.ProductWorld.init({
       description: 'El café con bebida vegetal o sin lactosa es la nueva tendencia de consumo en HORECA, y la barra tiene que estar preparada para servirlo. Vivesoy Barista, tres bebidas 100 % de cultivo en España (soja, avena y almendras), y la leche sin lactosa semidesnatada Barista de Pascual Profesional, que emulsiona mejor en el vaporizador de la cafetera que la leche sin lactosa normal.',
       products: [
         {name:'Barista Soja', description:'Bebida de soja Vivesoy Barista.', image:'assets/pascual/vivesoy-barista-soja.png', width:154, height:428, alt:'Envase original Vivesoy Barista Soja de 1 litro'},
-        {name:'Barista Avena', description:'Bebida de avena Vivesoy Barista.', image:'assets/pascual/vivesoy-barista-avena.png', width:154, height:428, alt:'Envase original Vivesoy Barista Avena de 1 litro'},
+        {name:'Barista Avena', duo:true, description:'Bebida de avena Vivesoy Barista.', image:'assets/pascual/vivesoy-barista-avena-jarra.png', width:935, height:856, alt:'Envase original Vivesoy Barista Avena de 1 litro y, a su lado, una jarra de espumar con el logo Vivesoy bebida de avena'},
         {name:'Barista Almendras', description:'Bebida de almendras sin azúcar Vivesoy Barista.', image:'assets/pascual/vivesoy-barista-almendras.png', width:151, height:422, alt:'Envase original Vivesoy Barista Almendras sin azúcar de 1 litro'},
         {name:'Sin lactosa Barista', kicker:'Pascual Profesional', description:'Leche Pascual Profesional sin lactosa semidesnatada Barista, 1 L.', image:'assets/pascual/sinlactosa-barista.png', width:444, height:1212, alt:'Brik de leche Pascual Profesional sin lactosa semidesnatada Barista de 1 litro'}
       ]

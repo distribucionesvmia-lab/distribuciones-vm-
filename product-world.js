@@ -36,7 +36,7 @@
       return `<section${sid(item)} class="pw-scene pw-b${dark(item)}" style="--n:${item.products.length};--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
         <div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
           <div class="pw-b-head"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2><p>${esc(item.description)}</p></div>
-          <div class="pw-b-window"><div class="pw-b-track">${item.products.map((p,i) => `<article class="pw-b-panel"><span class="pw-panel-number">${number(i)} / ${String(item.products.length).padStart(2,'0')}</span><div class="pw-b-image">${img(p,'',true)}</div><div class="pw-b-copy"><p class="pw-panel-kicker">${esc(p.kicker || item.family)}</p><h3>${esc(p.name)}</h3><p>${esc(p.description)}</p>${price(item.family,p)}</div></article>`).join('')}</div></div>
+          <div class="pw-b-window"><div class="pw-b-track">${item.products.map((p,i) => `<article class="pw-b-panel${p.duo?' is-duo':''}"><span class="pw-panel-number">${number(i)} / ${String(item.products.length).padStart(2,'0')}</span><div class="pw-b-image">${img(p,'',true)}</div><div class="pw-b-copy"><p class="pw-panel-kicker">${esc(p.kicker || item.family)}</p><h3>${esc(p.name)}</h3><p>${esc(p.description)}</p>${price(item.family,p)}</div></article>`).join('')}</div></div>
           <div class="pw-b-bottom"><span>Desliza para recorrer la gama →</span><span class="pw-progress"><i></i></span></div>
         </div></div></section>`;
     },
