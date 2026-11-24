@@ -87,7 +87,6 @@ window.ProductWorld.init({
     {
       template: 'lineup', family: 'La Ballena', color: '#e2edf8', ink: '#12365e',
       eyebrow: 'Sal marina · 1 kg', title: 'La Ballena, sal marina para tu cocina.',
-      note: 'Una imagen por variedad',
       variants: [
         {name:'Sal marina gruesa · 1 kg', description:'Sal marina de grano grueso para cocinar y sazonar alimentos.', image:D+'ballena-sal-gruesa.png', width:278, height:389, alt:'Caja de sal marina gruesa La Ballena de 1 kg'},
         {name:'Sal marina fina · 1 kg', description:'Sal marina de grano fino para sazonar alimentos y utilizar en la cocina diaria.', image:D+'ballena-sal-fina.png', width:296, height:409, alt:'Caja de sal marina fina La Ballena de 1 kg'},

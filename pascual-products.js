@@ -52,7 +52,6 @@ window.ProductWorld.init({
     {
       template: 'lineup', id: 'leche-hogar', family: 'Leche Alimentación', color: '#e4ecf6', ink: '#12305a',
       eyebrow: 'Botella de 1,5 litros · para el hogar', title: 'Leche Pascual para el hogar.',
-      note: 'Una imagen por variedad',
       variants: [
         {name:'Leche entera · botella de 1,5 L', description:'Leche entera Pascual en botella de 1,5 litros, para el consumo en el hogar.', image:'assets/pascual/hogar-botella-entera.png', width:249, height:786, alt:'Botella de leche entera Pascual de 1,5 litros'},
         {name:'Leche semidesnatada · botella de 1,5 L', description:'Leche semidesnatada Pascual en botella de 1,5 litros, para el consumo en el hogar.', image:'assets/pascual/hogar-botella-semidesnatada.png', width:249, height:787, alt:'Botella de leche semidesnatada Pascual de 1,5 litros'},
@@ -62,7 +61,6 @@ window.ProductWorld.init({
     {
       template: 'lineup', flip: true, id: 'leche-brik', family: 'Leche en brik', color: '#dde8f5', ink: '#12305a',
       eyebrow: 'Brik · alimentación y hogar', title: 'Leche en brik, para el día a día.',
-      note: 'Una imagen por variedad',
       variants: [
         {name:'Leche entera · brik de 1 L', description:'Leche entera Pascual en brik de 1 litro, para el hogar.', image:'assets/pascual/brik-entera-1l.png', width:188, height:513, alt:'Brik de leche entera Pascual de 1 litro'},
         {name:'Leche semidesnatada · brik de 1 L', description:'Leche semidesnatada Pascual en brik de 1 litro, para el hogar.', image:'assets/pascual/brik-semidesnatada-1l.png', width:181, height:510, alt:'Brik de leche semidesnatada Pascual de 1 litro'},
@@ -73,7 +71,6 @@ window.ProductWorld.init({
     {
       template: 'lineup', id: 'sin-lactosa', family: 'Leche Sin Lactosa', color: '#ebe2f1', ink: '#44245e',
       eyebrow: 'Brik · sin lactosa para el hogar', title: 'Leche sin lactosa, en brik.',
-      note: 'Una imagen por variedad',
       variants: [
         {name:'Sin lactosa entera · brik de 1 L', description:'Leche entera sin lactosa Pascual en brik de 1 litro, para el hogar.', image:'assets/pascual/sinlactosa-entera-1l.png', width:180, height:507, alt:'Brik de leche entera sin lactosa Pascual de 1 litro'},
         {name:'Sin lactosa semidesnatada · brik de 1 L', description:'Leche semidesnatada sin lactosa Pascual en brik de 1 litro, para el hogar.', image:'assets/pascual/sinlactosa-semidesnatada-1l.png', width:190, height:506, alt:'Brik de leche semidesnatada sin lactosa Pascual de 1 litro'},
@@ -90,7 +87,7 @@ window.ProductWorld.init({
         {sym:'D', name:'Vitamina D', desc:'Mantenimiento masa muscular'}, {sym:'C', name:'Vitamina C', desc:'Formación normal de colágeno (cartílagos)'}, {sym:'Mn', name:'Manganeso', desc:'Tejido conectivo'}
       ],
       eyebrow: 'Con calcio · consumo en el hogar', title: 'Movit. «Mucho más que una leche con calcio.»',
-      note: 'Según la marca, nutrientes para la movilidad integral. Leche para el desayuno y la alimentación diaria. Una imagen por variedad',
+      note: 'Según la marca, nutrientes para la movilidad integral. Leche para el desayuno y la alimentación diaria',
       variants: [
         {name:'Movit semidesnatada · brik de 1 L', description:'Leche semidesnatada Movit con calcio, para el consumo en el hogar.', image:'assets/pascual/movit-semidesnatada.png?v=2', width:308, height:900, alt:'Brik de leche Movit semidesnatada con calcio de 1 litro'},
         {name:'Movit desnatada · brik de 1 L', description:'Leche desnatada Movit con calcio, para el consumo en el hogar.', image:'assets/pascual/movit-desnatada.png?v=2', width:309, height:900, alt:'Brik de leche Movit desnatada con calcio de 1 litro'}
@@ -99,7 +96,6 @@ window.ProductWorld.init({
     {
       template: 'lineup', id: 'batidos-vidrio', family: 'Batidos Pascual', color: '#f8efdb', ink: '#4a2a1a',
       eyebrow: 'Batidos para hostelería · vidrio', title: 'Batidos Pascual, un formato único para el canal Horeca.',
-      note: 'Una imagen por variedad',
       variants: [
         {name:'Batido de vainilla · vidrio de 200 ml', description:'Batido Pascual Intense de vainilla en botella de vidrio, para hostelería.', image:'assets/pascual/batido-vidrio-vainilla.png', width:211, height:729, alt:'Botella de vidrio de batido Pascual Intense de vainilla'},
         {name:'Batido de chocolate · vidrio de 200 ml', description:'Batido Pascual Intense de chocolate en botella de vidrio. Con la fórmula mejorada, elaborado con leche semidesnatada: textura más cremosa y sabor más intenso.', image:'assets/pascual/batido-vidrio-chocolate.png', width:211, height:729, alt:'Botella de vidrio de batido Pascual Intense de chocolate'},
@@ -110,7 +106,6 @@ window.ProductWorld.init({
     {
       template: 'lineup', id: 'batidos-brik', family: 'Batidos en brik', color: '#f5ead2', ink: '#4a2a1a',
       eyebrow: 'Brik de 200 ml · alimentación', title: 'Batidos en brik, para llevar.',
-      note: 'Una imagen por variedad',
       variants: [
         {name:'Batido de chocolate · brik de 200 ml', description:'Batido Pascual de chocolate en brik de 200 ml.', image:'assets/pascual/batido-brik-chocolate-200ml.png', width:225, height:440, alt:'Brik de batido Pascual de chocolate de 200 ml'},
         {name:'Batido de fresa y plátano · brik de 200 ml', description:'Batido Pascual de fresa y plátano en brik de 200 ml.', image:'assets/pascual/batido-brik-fresa-platano-200ml.png', width:223, height:439, alt:'Brik de batido Pascual de fresa y plátano de 200 ml'}
@@ -119,7 +114,6 @@ window.ProductWorld.init({
     {
       template: 'lineup', id: 'natas', family: 'Natas Pascual', color: '#e6eef7', ink: '#17305a',
       eyebrow: 'Para cocinar y para montar', title: 'Natas, para cocinar y para montar.',
-      note: 'Una imagen por variedad',
       variants: [
         {name:'Nata para cocinar · 200 ml', description:'Nata Pascual para cocinar, con un 18 % de materia grasa, en formato de 200 ml.', image:'assets/pascual/nata-cocinar-200ml.png', width:173, height:338, alt:'Brik de nata Pascual para cocinar de 200 ml'},
         {name:'Nata para cocinar · 500 ml', description:'Nata Pascual para cocinar, con un 18 % de materia grasa, en formato de 500 ml.', image:'assets/pascual/nata-cocinar-500ml.png', width:198, height:328, alt:'Brik de nata Pascual para cocinar de 500 ml'},
@@ -134,7 +128,6 @@ window.ProductWorld.init({
     {
       template: 'lineup', id: 'mantequillas', family: 'Mantequillas Pascual', color: '#f7ecc4', ink: '#5a4310',
       eyebrow: 'Pastilla, tarrina y porciones', title: 'Mantequilla, miel y mermelada.',
-      note: 'Una imagen por variedad',
       variants: [
         {name:'Mantequilla en pastilla · 250 g', description:'Mantequilla Pascual en pastilla de 250 g.', image:'assets/pascual/mantequilla-pastilla-250g.png?v=2', width:510, height:288, alt:'Pastilla de mantequilla Pascual de 250 g'},
         {name:'Mantequilla en pastilla · 500 g', description:'Mantequilla Pascual en pastilla de 500 g.', image:'assets/pascual/mantequilla-pastilla-500g.png?v=2', width:521, height:337, alt:'Pastilla de mantequilla Pascual de 500 g'},
@@ -160,7 +153,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', id: 'bifrutas', family: 'Bifrutas', color: '#ffd9b0', ink: '#6b2f0e',
       eyebrow: 'Sabor Original', title: 'Bifrutas. «El de siempre.»',
-      note: 'En Tropical, Paraíso, Pacífico y Mediterráneo. Una imagen por variedad',
+      note: 'En Tropical, Paraíso, Pacífico y Mediterráneo',
       variants: [
         {name:'Tropical · 330 ml', description:'Bifrutas Sabor Original Tropical, con vitaminas A, C y E, en brik de 330 ml.', image:'assets/pascual/bifrutas-tropical-330ml.png', width:216, height:508, alt:'Brik de Bifrutas Sabor Original Tropical de 330 ml'},
         {name:'Tropical · 200 ml', description:'Bifrutas Sabor Original Tropical, con vitaminas A, C y E, en brik de 200 ml.', image:'assets/pascual/bifrutas-tropical-200ml.png', width:206, height:400, alt:'Brik pequeño de Bifrutas Sabor Original Tropical de 200 ml'},
@@ -173,7 +166,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', id: 'zumos', family: 'Bebidas Pascual', color: '#ffedda', ink: '#512f1c',
       eyebrow: 'Zumos Essential · botella de vidrio', title: 'Essential. El zumo en su botella de vidrio.',
-      note: 'Zumos Pascual Essential, «sin azúcar añadido», en botella de vidrio de 200 ml para hostelería. Una imagen por sabor; el ambiente es ilustrativo',
+      note: 'Zumos Pascual Essential, «sin azúcar añadido», en botella de vidrio de 200 ml para hostelería. El ambiente es ilustrativo',
       variants: [
         {name:'Essential Naranja · 200 ml', description:'Zumo Pascual Essential de naranja, en botella de vidrio de 200 ml.', image:'assets/pascual/zumo-essential-naranja.png', width:900, height:675, alt:'Botella de vidrio de zumo Pascual Essential naranja con un vaso de zumo sobre la barra de un bar'},
         {name:'Essential Multifrutas ACE · 200 ml', description:'Zumo Pascual Essential multifrutas ACE, en botella de vidrio de 200 ml.', image:'assets/pascual/zumo-essential-multifrutas-ace.png', width:900, height:675, alt:'Botella de vidrio de zumo Pascual Essential multifrutas ace con un vaso de zumo sobre la barra de un bar'},
@@ -186,7 +179,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', id: 'yogures', family: 'Yogures Pascual', color: '#fbe8e6', ink: '#7a1218',
       eyebrow: 'Packs de 4 × 120 g y Yogikids de 80 g', title: 'Un yogur para cada sabor.',
-      note: 'Yogikids: «La merienda, si es con yogur + fruta mejor.» Una imagen por variedad',
+      note: 'Yogikids: «La merienda, si es con yogur + fruta mejor.»',
       variants: [
         {name:'Yogur de fresa', description:'Yogur Pascual de fresa en pack de cuatro unidades.', image:'assets/pascual/yogur-pack-fresa.png', width:248, height:202, alt:'Pack de cuatro yogur de fresa de Pascual'},
         {name:'Yogur de limón', description:'Yogur Pascual con sabor a limón en pack de cuatro unidades.', image:'assets/pascual/yogur-pack-limon.png', width:249, height:204, alt:'Pack de cuatro yogur de limón de Pascual'},
@@ -208,7 +201,6 @@ window.ProductWorld.init({
     {
       template: 'lineup', id: 'flan-natillas', family: 'Postres Pascual', color: '#f3e3c0', ink: '#4a2a1b',
       eyebrow: 'Postres de cuchara', title: 'Flan y natillas, a cucharadas.',
-      note: 'Una imagen por variedad',
       variants: [
         {name:'Flan de huevo · pack de 4 × 100 g', description:'Postre Pascual de flan de huevo, presentado en cuatro unidades individuales.', image:'assets/pascual/flan-huevo.png', width:391, height:533, alt:'Flan de huevo Pascual, imagen de la gama'},
         {name:'Natillas de vainilla · 120 g', description:'Natillas Pascual de vainilla en vaso individual.', image:'assets/pascual/natillas-vainilla.png', width:699, height:616, alt:'Vaso de natillas de vainilla Pascual'},
