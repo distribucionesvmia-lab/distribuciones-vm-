@@ -231,6 +231,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .m-photo{color:#fff;background:#14100d}
 .m-photo::before{background:linear-gradient(90deg,rgba(14,10,7,.88) 0%,rgba(14,10,7,.7) 40%,rgba(14,10,7,.15) 75%,rgba(14,10,7,.05) 100%),linear-gradient(0deg,rgba(14,10,7,.55) 0%,rgba(14,10,7,0) 30%)}
 .m-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%;z-index:-3}
+.m-photo .m-hero-photo{transform:scale(1.1);transform-origin:80% 50%}
 .m-photo .m-hero-grain,.m-photo .m-hero-stage,.m-photo .m-scroll{display:none}
 .m-photo .m-hero-copy{text-shadow:0 2px 18px rgba(0,0,0,.35)}
 .m-photo .m-eyebrow,.m-photo .m-lead,.m-photo h1{color:#fff}
@@ -239,7 +240,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 @media(max-width:760px){
  .m-photo{justify-content:flex-start;padding-top:0}
  .m-photo::before{display:none}
- .m-photo .m-hero-photo{position:relative;inset:auto;z-index:0;order:-1;width:100vw;max-width:none;margin:0 0 -52px calc(50% - 50vw);height:44svh;min-height:260px;object-position:78% 50%;-webkit-mask-image:linear-gradient(to bottom,#000 0,#000 52%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0,#000 52%,transparent 100%)}
+ .m-photo .m-hero-photo{transform:scale(1.12);transform-origin:80% 50%;position:relative;inset:auto;z-index:0;order:-1;width:100vw;max-width:none;margin:0 0 -52px calc(50% - 50vw);height:44svh;min-height:260px;object-position:78% 50%;-webkit-mask-image:linear-gradient(to bottom,#000 0,#000 52%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0,#000 52%,transparent 100%)}
  .m-photo .m-hero-copy{padding-top:0}
 }
 
