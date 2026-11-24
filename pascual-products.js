@@ -92,7 +92,7 @@ window.ProductWorld.init({
       eyebrow: 'Con calcio · consumo en el hogar', title: 'Movit. «Mucho más que una leche con calcio.»',
       note: 'Según la marca, nutrientes para la movilidad integral. Leche para el desayuno y la alimentación diaria. Una imagen por variedad',
       variants: [
-        {name:'Movit semidesnatada · brik de 1 L', description:'Leche semidesnatada Movit con calcio, para el consumo en el hogar.', image:'assets/pascual/movit-semidesnatada.png', width:177, height:504, alt:'Brik de leche Movit semidesnatada con calcio de 1 litro'},
+        {name:'Movit semidesnatada · brik de 1 L', description:'Leche semidesnatada Movit con calcio, para el consumo en el hogar.', image:'assets/pascual/movit-semidesnatada.png?v=2', width:308, height:900, alt:'Brik de leche Movit semidesnatada con calcio de 1 litro'},
         {name:'Movit desnatada · brik de 1 L', description:'Leche desnatada Movit con calcio, para el consumo en el hogar.', image:'assets/pascual/movit-desnatada.png?v=2', width:309, height:900, alt:'Brik de leche Movit desnatada con calcio de 1 litro'}
       ]
     },
