@@ -1,6 +1,8 @@
 (function () {
   'use strict';
   var html = document.documentElement;
+  /* El scroll suave del navegador estropea el cálculo de las secciones fijadas de GSAP (el furgón quedaba congelado y salía en blanco al abrir #catalogo y subir): en la portada va siempre instantáneo. */
+  html.style.scrollBehavior = 'auto';
   var reduce = window.VM_REDUCE ? window.VM_REDUCE.matches : window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var dbg = location.search;
   window.addEventListener('error', function (e) { window.__err = e.message + ' @' + e.lineno; });
