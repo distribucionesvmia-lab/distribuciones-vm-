@@ -5,7 +5,7 @@ window.ProductWorld.init({
     {
       template:'hero', family:'Bezoya', color:'#cceef4', ink:'#103b50',
       eyebrow:'Agua mineral natural', title:'Ligera desde el origen.',
-      description:'Bezoya, agua mineral natural de mineralización muy débil (residuo seco 27 mg/l), de manantiales de Segovia. «Dar lo mejor». En esta selección, el formato de 1,5 L, para acompañar comidas y cenas.',
+      description:'Bezoya, agua mineral natural de mineralización **muy débil** (residuo seco 27 mg/l), de manantiales de Segovia. En esta selección, el formato de 1,5 L, para acompañar comidas y cenas.',
       backword:'BEZOYA', bottom:'01 — Agua sin gas',
       product:{name:'Bezoya · 1,5 L', image:'assets/agua/bezoya-cutout.png', width:1254, height:1254, alt:'Botella Bezoya de 1,5 litros'}
     },

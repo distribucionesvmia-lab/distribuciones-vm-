@@ -7,6 +7,8 @@
   /* identificador estable de cada escena (enlaces con #): item.id o, si falta, familia + título */
   const slug = t => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 48);
   const sid = item => ` id="${esc(item.id || slug((item.family || '') + ' ' + (item.title || '')))}"`;
+  /* texto escapado con negrita opcional: **así** */
+  const rich = value => esc(value).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
   const number = index => String(index + 1).padStart(2, '0');
   let total = 4;
   const dark = item => item.dark ? ' is-dark' : '';
@@ -25,7 +27,7 @@
     hero(item, index) {
       return `<section${sid(item)} class="pw-scene pw-a${item.product.wide?' is-wide':''}${item.mirror?' is-mirror':''}${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
         <div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
-          <div class="pw-a-copy"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2><p class="pw-description">${esc(item.description)}</p>${price(item.family,item.product)}${button(item)}</div>
+          <div class="pw-a-copy"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2><p class="pw-description">${rich(item.description)}</p>${price(item.family,item.product)}${button(item)}</div>
           <div class="pw-a-art">${item.logo?`<img class="pw-a-logo" src="${esc(item.logo.image)}" alt="${esc(item.logo.alt)}" width="${Number(item.logo.width)}" height="${Number(item.logo.height)}">`:''}<span class="pw-a-ring" aria-hidden="true"></span><span class="pw-a-backword" aria-hidden="true">${esc(item.backword || item.family)}</span>${img(item.product,'pw-a-product')}<p class="pw-product-note">${esc(item.product.name)}</p></div>
           ${item.bodegon?`<figure class="pw-a-bodegon"><img src="${esc(item.bodegon.image)}" alt="${esc(item.bodegon.alt)}" width="${Number(item.bodegon.width)||1055}" height="${Number(item.bodegon.height)||406}" loading="lazy" decoding="async"></figure>`:''}
           ${item.showcase?`<ul class="pw-a-showcase" aria-label="Formatos industriales">${item.showcase.map(f=>`<li><img src="${esc(f.image)}" alt="${esc(f.alt)}" title="${esc(f.alt)}" width="320" height="320" loading="lazy" decoding="async"></li>`).join('')}</ul>`:''}
