@@ -32,6 +32,7 @@ window.ProductWorld.init({
     {
       template: 'lineup', id: 'gallina-blanca', family: 'Gallina Blanca', color: '#fff0b8', ink: '#6b1a12',
       eyebrow: 'Caldos', title: 'Gallina Blanca. Caldos profesionales.',
+      cartel: 'Hay caldo',
       ilustracion: {image:D+'ilustracion-marmita-sopa.png', width:330, height:546},
       variants: [
         {name:'Caldo de carne · bolsa de 0,5 L', description:'Caldo de carne concentrado profesional, sin gluten: 0,5 L de concentrado + 3,5 L de agua = 4 L de caldo reconstituido. Agitar antes de usar. Verter el contenido en un recipiente, añadir 3,5 litros de agua y calentar removiendo de vez en cuando.', image:D+'gallina-blanca-caldo-carne-0-5l.png', width:450, height:710, alt:'Bolsa de 0,5 L de Caldo de carne profesional Gallina Blanca, sin gluten, con rendimiento de 4 L'}

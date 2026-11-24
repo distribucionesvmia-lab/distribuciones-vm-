@@ -470,3 +470,10 @@
 .pw-e-art:has(.pw-e-ilus) .pw-e-multi{z-index:1}
 #gallina-blanca .pw-e-multi{justify-self:start;margin-left:8%}
 @media(max-width:760px){.pw-e-ilus{display:none}#gallina-blanca .pw-e-multi{justify-self:center;margin-left:0}}
+
+/* Cartel de madera con texto tallado (p. ej. «Hay caldo») */
+.pw-e-cartel{grid-area:1/1;justify-self:end;align-self:start;position:relative;z-index:2;margin:3% 5% 0 0;rotate:-3deg;padding:.5em 1.15em .58em;border-radius:7px;border:3px solid #6a3f1d;background:repeating-linear-gradient(91deg,rgba(255,240,210,.07) 0 2px,rgba(60,30,10,.07) 2px 5px,rgba(255,240,210,.04) 5px 8px),repeating-linear-gradient(0deg,rgba(60,30,10,.1) 0 1px,transparent 1px 11px),linear-gradient(180deg,#c68e50 0%,#a9723a 48%,#bb8043 100%);box-shadow:inset 0 2px 0 rgba(255,236,200,.4),inset 0 -4px 8px rgba(60,30,10,.4),0 12px 20px rgba(60,28,8,.32);pointer-events:none}
+.pw-e-cartel span{display:block;font-weight:800;font-size:clamp(1.5rem,2.7vw,2.8rem);letter-spacing:.07em;line-height:1;text-transform:uppercase;color:#3a1d0a;text-shadow:0 1px 0 rgba(255,232,196,.5),0 -1px 0 rgba(30,12,2,.3)}
+.pw-e-cartel:before,.pw-e-cartel:after{content:"";position:absolute;top:50%;width:.42em;height:.42em;margin-top:-.21em;border-radius:50%;background:radial-gradient(circle at 35% 30%,#d9d2c7,#6b6459 70%);box-shadow:0 1px 1px rgba(30,12,2,.5);font-size:clamp(.9rem,1.4vw,1.3rem)}
+.pw-e-cartel:before{left:.42em}.pw-e-cartel:after{right:.42em}
+@media(max-width:760px){.pw-e-cartel{margin:2% 2% 0 0;padding:.4em .9em .48em}.pw-e-cartel span{font-size:1.15rem}}
