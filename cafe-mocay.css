@@ -293,3 +293,12 @@ button,a{-webkit-tap-highlight-color:transparent}
 .m-compl-dulces .m-premium figcaption small{font-size:.74rem;font-weight:500;opacity:.75;letter-spacing:.02em}
 .m-compl-dulces .m-solo{grid-column:1/-1}
 .m-compl-dulces .m-solo img{width:auto;max-width:min(100%,300px);margin:0 auto}
+
+/* Servicio: al pasar el cursor (o tocar) «Cafeteras» / «Molinos» aparece la máquina sobre la foto */
+.m-machine{position:absolute;inset:0;z-index:2;display:grid;place-items:center;padding:clamp(24px,5vw,70px);background:rgba(52,33,22,.9);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility 0s linear .35s;pointer-events:none}
+.m-machine img{width:100%;height:auto;max-height:100%;object-fit:contain;transform:scale(.94) translateY(10px);transition:transform .5s cubic-bezier(.23,1,.32,1);filter:drop-shadow(0 24px 30px rgba(0,0,0,.35))}
+.m-service[data-machine-on="cafetera"] .m-machine[data-machine="cafetera"],.m-service[data-machine-on="molino"] .m-machine[data-machine="molino"]{opacity:1;visibility:visible;transition:opacity .35s ease,visibility 0s}
+.m-service[data-machine-on="cafetera"] .m-machine[data-machine="cafetera"] img,.m-service[data-machine-on="molino"] .m-machine[data-machine="molino"] img{transform:none}
+.m-hover-word.is-live{cursor:pointer;text-decoration:underline dotted rgba(232,199,179,.8);text-underline-offset:.2em;text-decoration-thickness:1.5px;transition:color .2s}
+.m-hover-word.is-live:hover,.m-hover-word.is-live:focus-visible,.m-hover-word.is-live.is-on{color:#ffd9b0;text-decoration-style:solid;outline:0}
+@media(prefers-reduced-motion:reduce){.m-machine,.m-machine img{transition:none}}

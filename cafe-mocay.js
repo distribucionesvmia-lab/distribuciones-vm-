@@ -163,3 +163,26 @@
     if (sec) { var n = document.createElement('p'); n.className = 'm-inf-note'; n.textContent = 'Precios de tarifa por formato de venta. Pide tu tarifa personalizada, sin compromiso.'; sec.appendChild(n); }
   }
 })();
+
+/* Servicio: al pasar el cursor, enfocar o tocar «Cafeteras» / «Molinos» se muestra la máquina (solo si hay foto de esa máquina) */
+(function () {
+  'use strict';
+  var sec = document.getElementById('servicio');
+  if (!sec) return;
+  var words = Array.prototype.filter.call(sec.querySelectorAll('.m-hover-word'), function (w) {
+    return sec.querySelector('.m-machine[data-machine="' + w.getAttribute('data-machine') + '"]');
+  });
+  if (!words.length) return;
+  function off() { sec.removeAttribute('data-machine-on'); words.forEach(function (w) { w.classList.remove('is-on'); }); }
+  function on(k) { sec.setAttribute('data-machine-on', k); words.forEach(function (w) { w.classList.toggle('is-on', w.getAttribute('data-machine') === k); }); }
+  words.forEach(function (w) {
+    var k = w.getAttribute('data-machine');
+    w.classList.add('is-live'); w.setAttribute('tabindex', '0'); w.setAttribute('role', 'button');
+    w.addEventListener('mouseenter', function () { on(k); });
+    w.addEventListener('mouseleave', off);
+    w.addEventListener('focus', function () { on(k); });
+    w.addEventListener('blur', off);
+    w.addEventListener('click', function (e) { e.preventDefault(); if (sec.getAttribute('data-machine-on') === k && w.classList.contains('is-tap')) { w.classList.remove('is-tap'); off(); } else { words.forEach(function (x) { x.classList.remove('is-tap'); }); w.classList.add('is-tap'); on(k); } });
+  });
+  document.addEventListener('click', function (e) { if (!e.target.closest || !e.target.closest('.m-hover-word')) { words.forEach(function (x) { x.classList.remove('is-tap'); }); off(); } });
+})();
