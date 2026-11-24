@@ -56,7 +56,7 @@
     {group:'Navidul alimentación',brand:'Navidul',name:'Jamón curado · 45 g',blk:'navidul-alimentacion',uso:'a',cod:'26300',peek:'assets/refrigerados/extra/navidul_jamon-curado-45g.png',pw:197,ph:388,peekAlt:'Jamón curado bodega de Navidul en lonchas, sobre de 45 g'},
     {group:'Navidul alimentación',brand:'Navidul',name:'Salchichón ibérico · 40 g',blk:'navidul-alimentacion',uso:'a',cod:'26051',peek:'assets/refrigerados/extra/navidul_salchichon-iberico-40g.png',pw:305,ph:549,peekAlt:'Salchichón ibérico Gran Selección de Navidul en lonchas, sobre de 40 g'},
     {group:'Navidul alimentación',brand:'Navidul',name:'Lonchas de queso semicurado · 100 g',blk:'navidul-alimentacion',uso:'a',cod:'26148',peek:'assets/refrigerados/extra/navidul_queso-semicurado-100.png',pw:420,ph:639,peekAlt:'Lonchas de queso semicurado Navidul, envase de 100 g'},
-    {group:'Navidul alimentación',brand:'Navidul',name:'Taquitos de jamón · 100 g',blk:'navidul-alimentacion',uso:'a',cod:'26094'},
+    {group:'Navidul alimentación',brand:'Navidul',name:'Taquitos de jamón · 100 g',blk:'navidul-alimentacion',uso:'a',cod:'26094',peek:'assets/refrigerados/extra/navidul_taquitos-jamon.png',pw:480,ph:436,peekAlt:'Taquitos de jamón curado Navidul, envase de dos barquetas'},
     {group:'Campofrío',brand:'Campofrío',name:'Jamón cocido 11×11 · pieza de 4 kg',blk:'campofrio',uso:'h',cod:'26119',peek:'assets/refrigerados/extra/campofrio_jamon-cocido-11x11-4kg.png',pw:181,ph:511,peekAlt:'Jamón cocido Todo Sabor 11×11 de Campofrío, pieza de 4 kg'},
     {group:'Campofrío',brand:'Campofrío',name:'Bacon costilla al vacío · kg',blk:'campofrio',uso:'h',cod:'26120'},
     {group:'Campofrío',brand:'Campofrío',name:'Bacon práctico · kg',blk:'campofrio',uso:'h',cod:'26095'},
