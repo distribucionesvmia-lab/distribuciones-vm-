@@ -42,6 +42,7 @@ window.ProductWorld.init({
     },
     {
       template: 'editorial', family: 'Helios', color: '#c7c9b3', ink: '#1b3d25', columns: 3,
+      logo: {image:D+'helios-logo.png', width:524, height:194, alt:'Helios'},
       eyebrow: 'Helios', title: 'El sabor del origen.',
       description: '«Origen es sinónimo de calidad.» En hostelería, «el producto adecuado para cada necesidad», en porciones, dispensador y tarro.',
       products: [

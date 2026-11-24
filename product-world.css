@@ -504,3 +504,7 @@
 /* Enlaces directos a las tarjetas de una escena de recetas (p. ej. Calvo): quedan justo bajo la cabecera */
 .pw-c-grid[id]{scroll-margin-top:calc(66px + var(--nb,0px) + 18px)}
 @media(max-width:1299px){.pw-c-grid[id]{scroll-margin-top:calc(94px + var(--nb,0px) + 18px)}}
+
+/* Logo de marca al principio de una escena editorial (p. ej. Helios) */
+.pw-c-logo{display:block;width:clamp(130px,14vw,200px);height:auto;margin:0 0 16px}
+@media(max-width:760px){.pw-c-logo{width:140px;margin-bottom:12px}}
