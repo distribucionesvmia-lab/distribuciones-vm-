@@ -57,12 +57,6 @@ window.ProductWorld.init({
       ]
     },
     {
-      template:'video', family:'Pedras · Vídeo', color:'#dcead3', ink:'#173b30',
-      eyebrow:'Vídeo de la marca', title:'Ser natural da frutos.',
-      note:'Pedras Sabores, con el audio original y subtítulos en castellano. Pulsa el altavoz para activar el sonido.',
-      video:{src:'assets/video/pedras-sabores.mp4', poster:'assets/video/pedras-poster.png', title:'Pedras Sabores: ser natural da frutos', author:'Pedras'}
-    },
-    {
       template:'range', family:'Perrier', color:'#d9efdc', ink:'#0d4a2a',
       eyebrow:'Agua mineral natural con gas', title:'La burbuja Perrier.',
       description:'Perrier, en su botella de vidrio verde de 33 cl y 75 cl.',
