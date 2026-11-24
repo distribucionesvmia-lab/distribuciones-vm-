@@ -181,7 +181,7 @@
         var mob = c.conditions.mob, vf = document.getElementById('van-fig'), steps = gsap.utils.toArray('.van-step');
         var vw = function () { return window.innerWidth; };
         var home = 0;
-        var tlV = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: '.van-world', start: 'top top', end: '+=' + (mob ? 420 : 480) + '%', pin: '.van-stage', scrub: 0.9, invalidateOnRefresh: true } });
+        var tlV = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: '.van-world', start: 'top top', end: '+=' + (mob ? 380 : 420) + '%', pin: '.van-stage', scrub: 0.9, invalidateOnRefresh: true } });
         gsap.set(vf, { x: function () { return vw() * 1.15; }, rotation: 0.6, transformOrigin: '50% 90%' });
         gsap.set(steps, { autoAlpha: 0, y: 40 });
         tlV.fromTo('.van-title', { y: 60, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1.6, ease: 'power3.out' }, 0);
