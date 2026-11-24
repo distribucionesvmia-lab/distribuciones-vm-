@@ -24,6 +24,20 @@
 */
 window.DVM_NOVEDADES = [
   {
+    etiqueta: 'Edición limitada', destacado: 'Edición limitada · Campaña de Navidad',
+    marca: 'Calvo · Luis Calvo', nombre: 'Lata de colección vintage Luis Calvo', formato: 'Estuche metálico de colección',
+    texto: 'El homenaje gourmet a 85 años de historia (desde 1940). Un surtido exclusivo que reúne las 5 recetas tradicionales de la conservera gallega en un estuche metálico de colección.',
+    ficha: [
+      ['Contenido', '5 recetas: Mejillones en salsa gallega, Mejillones al albariño, Ventresca de atún claro escabechada, Sardinillas con cebolla pochada y Sardinillas con tomate seco'],
+      ['Presentación', 'Estuche metálico de colección'],
+      ['Edición', 'Limitada, para la campaña de Navidad'],
+      ['Aniversario', '85 años de historia, desde 1940'],
+      ['Ideal para', 'Cestas navideñas y tiendas gourmet']
+    ],
+    enlace: 'despensa.html',
+    fotos: ['assets/novedades/calvo-lata-vintage-banner.png', 'assets/novedades/calvo-lata-vintage-mejillones-sardinillas.png', 'assets/novedades/calvo-lata-vintage-lata-ventresca.png']
+  },
+  {
     etiqueta: 'Novedad', destacado: 'Edición limitada · Ideal para estas Navidades',
     anuncio: 'Novedad: Lleiroso 25 Aniversario, edición limitada para brindar en Navidad',
     marca: 'Lleiroso · D.O. Ribera del Duero', nombre: 'Lleiroso Reserva 25 Aniversario', formato: 'Edición limitada · 75 cl · con estuche',
