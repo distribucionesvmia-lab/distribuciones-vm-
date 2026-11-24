@@ -35,7 +35,7 @@ window.DVM_NOVEDADES = [
       ['Ideal para', 'Cestas navideñas, tiendas gourmet y alta rotación en el lineal']
     ],
     precio: '12,41 €', precioNota: 'por unidad + 10 % IVA',
-    enlace: 'despensa.html',
+    enlace: 'despensa.html#calvo',
     fotos: ['assets/novedades/calvo-lata-vintage-banner.png', 'assets/novedades/calvo-lata-vintage-mejillones-sardinillas.png', 'assets/novedades/calvo-lata-vintage-lata-ventresca.png']
   },
   {
