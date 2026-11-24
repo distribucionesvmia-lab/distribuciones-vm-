@@ -8,6 +8,7 @@ window.ProductWorld.init({
       description:'Agua Mineral Natural de Mineralización **muy débil** procedente de los manantiales de Bezoya y Bezoya Trescasas, ubicados en Segovia.',
       backword:'BEZOYA', bottom:'01 — Agua sin gas',
       product:{name:'Bezoya · botella de vidrio', image:'assets/agua/bezoya-vidrio.png', width:299, height:975, alt:'Botella de vidrio Bezoya'},
+      faq:{q:'¿En qué se diferencia Bezoya del resto de aguas minerales?', a:'Bezoya es un agua de mineralización muy débil con muy bajo residuo seco (27mg/l), lo que la diferencia de la gran mayoría de las aguas, y en especial de las de mineralización débil, cuyo residuo seco oscila entre los 50 y los 500mg/l.'},
       orbitLabel:'Formatos Bezoya',
       orbit:[
         {name:'Bezoya · 33 cl', image:'assets/agua/bezoya-330cl.png', width:420, height:420, alt:'Botella Bezoya de 33 cl'},
