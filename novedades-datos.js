@@ -32,7 +32,7 @@ window.DVM_NOVEDADES = [
       ['Presentación', 'Estuche metálico de colección'],
       ['Edición', 'Limitada, para la campaña de Navidad'],
       ['Aniversario', '85 años de historia, desde 1940'],
-      ['Ideal para', 'Cestas navideñas y tiendas gourmet']
+      ['Ideal para', 'Cestas navideñas, tiendas gourmet y alta rotación en el lineal']
     ],
     enlace: 'despensa.html',
     fotos: ['assets/novedades/calvo-lata-vintage-banner.png', 'assets/novedades/calvo-lata-vintage-mejillones-sardinillas.png', 'assets/novedades/calvo-lata-vintage-lata-ventresca.png']
