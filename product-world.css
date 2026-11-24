@@ -400,3 +400,9 @@
   #movit .pw-e-multi{max-height:calc(min(60vw,260px) * .98);max-width:56%;margin-top:34px}
   .pw-mobile-anim #movit .pw-e-art,.pw-mobile-anim#movit .pw-e-art{padding-bottom:50px}
 }
+
+/* Escenas «story» (Pedras…): en PC, la botella queda siempre por debajo del título (antes lo tapaba en pantallas bajas) */
+@media(min-width:761px){
+  .pw-d-image{padding:calc(var(--sh-h,66px) + 190px) 5vw 6vh}
+  .pw-d-image img{max-height:calc(100svh - var(--sh-h,66px) - 260px);transform:translateY(10px) scale(.96)}
+}
