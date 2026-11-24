@@ -50,11 +50,17 @@
     lineup(item, index) {
       const n = item.variants.length;
       const multi = item.variants.some(v => v.image);
-      return `<section${sid(item)} class="pw-scene pw-e${n>8?' is-long':''}${n>10?' is-scroll':''}${(item._flip||item.flip)?' is-flip':''}${dark(item)}" style="--n:${n};--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
+      /* una «ranura» por foto: una referencia puede llevar fotos extra (v.extra) que se van mostrando una tras otra con el scroll */
+      const slots = [];
+      item.variants.forEach((v, i) => {
+        if (v.image) { slots.push({ v: i, s: 0, o: v }); (v.extra || []).forEach((e, k) => slots.push({ v: i, s: k + 1, o: e })); }
+        else slots.push({ v: i, s: 0, o: null });
+      });
+      return `<section${sid(item)} class="pw-scene pw-e${n>8?' is-long':''}${n>10?' is-scroll':''}${(item._flip||item.flip)?' is-flip':''}${dark(item)}" style="--n:${slots.length};--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
         <div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
           <div class="pw-e-grid">
             <div class="pw-e-head"><p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2>${item.virtudes ? `<ul class="pw-virt" aria-label="${esc(item.virtudesTitulo||'Virtudes')}">${item.virtudes.map(v=>`<li><span class="pw-virt-s" aria-hidden="true">${esc(v.sym)}</span><span><b>${esc(v.name)}</b><small>${esc(v.desc)}</small></span></li>`).join('')}</ul>` : ''}</div>
-            <div class="pw-e-art"><span class="pw-e-disc" aria-hidden="true"></span>${multi ? item.variants.map((v,i) => v.image ? img(v,`pw-e-image pw-e-multi${i===0?' is-current':''}`,i<2) : `<span class="pw-e-image pw-e-multi pw-e-pending${i===0?' is-current':''}" role="img" aria-label="Imagen pendiente">Imagen pendiente</span>`).join('') : item.product ? img(item.product,'pw-e-image',!item.product.lazy) : '<span class="pw-e-image pw-e-pending is-current" role="img" aria-label="Imagen pendiente">Imagen pendiente</span>'}<p class="pw-e-note">${esc(item.note || '')}</p></div>
+            <div class="pw-e-art"><span class="pw-e-disc" aria-hidden="true"></span>${multi ? slots.map((sl,k) => sl.o ? img(sl.o,`pw-e-image pw-e-multi${k===0?' is-current':''}`,k<2).replace('<img ',`<img data-v="${sl.v}" data-s="${sl.s}" `) : `<span data-v="${sl.v}" data-s="0" class="pw-e-image pw-e-multi pw-e-pending${k===0?' is-current':''}" role="img" aria-label="Imagen pendiente">Imagen pendiente</span>`).join('') : item.product ? img(item.product,'pw-e-image',!item.product.lazy) : '<span class="pw-e-image pw-e-pending is-current" role="img" aria-label="Imagen pendiente">Imagen pendiente</span>'}<p class="pw-e-note">${esc(item.note || '')}</p></div>
               <ol class="pw-e-list">${item.variants.map((v,i) => `<li${i===0?' class="is-current"':''}><span class="pw-e-num">${number(i)}</span><b>${esc(v.name)}</b><small>${esc(v.description)}${price(item.family,v)}</small>${multi && v.image ? `<img class="pw-e-thumb" src="${esc(v.image)}" alt="${esc(v.alt || v.name)}" width="${Number(v.width) || 300}" height="${Number(v.height) || 300}" loading="lazy" decoding="async">` : ''}</li>`).join('')}</ol>${item.cta ? `<div class="pw-e-cta">${button(item)}</div>` : ''}
           </div>
         </div></div></section>`;
@@ -148,8 +154,9 @@
         if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
       }), { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
       mount.querySelectorAll('.pw-a-copy,.pw-a-art,.pw-b-head,.pw-b-panel,.pw-c-title,.pw-c-item,.pw-d-head,.pw-d-frame,.pw-e-head,.pw-e-list li').forEach(el => io.observe(el));
+      const showSub = L => L.multi.forEach(m => m.classList.toggle('is-current', Number(m.dataset.v) === L.cur && Number(m.dataset.s) === L.sub));
       const lineups = [...mount.querySelectorAll('.pw-e')].map(scene => ({
-        scene, art: scene.querySelector('.pw-e-art'), cur: 0,
+        scene, art: scene.querySelector('.pw-e-art'), cur: 0, sub: 0,
         rows: [...scene.querySelectorAll('.pw-e-list li')],
         multi: [...scene.querySelectorAll('.pw-e-multi')]
       }));
@@ -172,17 +179,21 @@
           let a = 0;
           L.rows.forEach((li, i) => { if (li.getBoundingClientRect().top <= focus) a = i; });
           if (a !== L.cur) {
-            L.cur = a;
+            L.cur = a; L.sub = 0;
             L.rows.forEach((li, i) => li.classList.toggle('is-current', i === a));
-            L.multi.forEach((m, i) => m.classList.toggle('is-current', i === a));
+            showSub(L);
           }
         });
       };
       const on = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+      const cycle = setInterval(() => lineups.forEach(L => {
+        const k = L.multi.filter(m => Number(m.dataset.v) === L.cur).length;
+        if (k > 1) { L.sub = (L.sub + 1) % k; showSub(L); }
+      }), 2300);
       window.addEventListener('scroll', on, { passive: true });
       window.addEventListener('resize', on);
       update();
-      mobileOff = () => { io.disconnect(); window.removeEventListener('scroll', on); window.removeEventListener('resize', on); };
+      mobileOff = () => { clearInterval(cycle); io.disconnect(); window.removeEventListener('scroll', on); window.removeEventListener('resize', on); };
     }
     function reset() {
       triggers.forEach(t => t.kill()); triggers = [];
@@ -217,9 +228,11 @@
           }
           if (scene.classList.contains('pw-e')) {
             const rows=[...scene.querySelectorAll('.pw-e-list li')];
-            const active=Math.min(rows.length-1,Math.floor(Math.min(.9999,p)*rows.length));
+            const ms=[...scene.querySelectorAll('.pw-e-multi')];
+            const slot=ms.length?Math.min(ms.length-1,Math.floor(Math.min(.9999,p)*ms.length)):0;
+            const active=ms.length?Number(ms[slot].dataset.v):Math.min(rows.length-1,Math.floor(Math.min(.9999,p)*rows.length));
             rows.forEach((r,i)=>r.classList.toggle('is-current',i===active));
-            scene.querySelectorAll('.pw-e-multi').forEach((m,i)=>m.classList.toggle('is-current',i===active));
+            ms.forEach((m,i)=>m.classList.toggle('is-current',i===slot));
             const list=scene.querySelector('.pw-e-list');
             if (scene.classList.contains('is-scroll') && list) { const dy=rows[active].getBoundingClientRect().top-list.getBoundingClientRect().top+list.scrollTop; list.scrollTop=Math.max(0,dy-list.clientHeight*.38); }
           }

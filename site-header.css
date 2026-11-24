@@ -216,7 +216,7 @@
 /* Tablet (761–1299 px): el menú de iconos va en la misma fila que el logo y los botones, no en una segunda fila debajo */
 @media(min-width:761px) and (max-width:1299px){
   .site-header{flex-wrap:nowrap;gap:12px;padding-block:6px}
-  .site-header nav{order:0;width:auto;flex:1 1 auto;min-width:0;min-height:36px;padding:0;gap:clamp(9px,1.4vw,18px)}
+  .site-header nav{order:0;width:auto;flex:1 1 auto;min-width:0;min-height:42px;padding:0;gap:clamp(9px,1.4vw,18px)}
   .sh-order{padding:9px 14px;font-size:.85rem}
   .pw-sticky{top:calc(var(--sh-h,66px) + var(--nb,0px));height:calc(100svh - var(--sh-h,66px) - var(--nb,0px))}
 }
