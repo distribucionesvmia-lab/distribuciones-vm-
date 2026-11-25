@@ -164,12 +164,12 @@ window.ProductWorld.init({
       ]
     },
     {
-      template: 'ambiente', id: 'zumos-gama', family: 'Bebidas Pascual', color: '#ffedda', ink: '#512f1c',
+      template: 'ambiente', id: 'zumos-gama', family: 'Bebidas Pascual', label: 'Zumos Essential', color: '#ffcf7a', ink: '#512f1c',
       image: 'assets/pascual/zumos-essential-gama.png', width: 1226, height: 473,
       alt: 'La gama de zumos Pascual Essential en botella de vidrio'
     },
     {
-      template: 'lineup', id: 'zumos', family: 'Bebidas Pascual', label: 'Zumos Essential', color: '#ffedda', ink: '#512f1c',
+      template: 'lineup', id: 'zumos', family: 'Bebidas Pascual', label: 'Zumos Essential', sinRotulo: true, color: '#ffcf7a', ink: '#512f1c',
       eyebrow: 'Zumos Essential · botella de vidrio', title: 'Essential. El zumo en su botella de vidrio.',
       note: 'Zumos Pascual Essential, «sin azúcar añadido», en botella de vidrio de 200 ml para hostelería. El ambiente es ilustrativo',
       variants: [
