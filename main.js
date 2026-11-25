@@ -197,26 +197,26 @@
         var mob = c.conditions.mob, vf = document.getElementById('van-fig'), steps = gsap.utils.toArray('.van-step');
         var vw = function () { return window.innerWidth; };
         var home = 0;
-        var tlV = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: '.van-world', start: 'top top', end: '+=' + (mob ? 380 : 420) + '%', pin: '.van-stage', scrub: 0.9, invalidateOnRefresh: true } });
-        gsap.set(vf, { x: function () { return vw() * 1.15; }, rotation: 0.6, transformOrigin: '50% 90%' });
+        var tlV = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: '.van-world', start: 'top top', end: '+=' + (mob ? 280 : 300) + '%', pin: '.van-stage', scrub: 0.9, invalidateOnRefresh: true } });
+        // entrada: no depende del scroll; sale sola en cuanto la sección asoma, para que no haya un vacío al llegar a ella
+        gsap.set('.van-title', { y: 60, autoAlpha: 0 });
+        gsap.set(vf, { x: function () { return vw() * 1.15; }, rotation: 1.2, scale: 0.9, filter: 'blur(7px)', transformOrigin: '50% 90%' });
         gsap.set(steps, { autoAlpha: 0, y: 40 });
-        tlV.fromTo('.van-title', { y: 60, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1.6, ease: 'power3.out' }, 0);
-        // entrada desde la derecha: frena poco a poco, con ligero cabeceo y desenfoque de movimiento
-        tlV.to(vf, { x: home, duration: 4, ease: 'power3.out' }, 0.6);
-        tlV.fromTo(vf, { filter: 'blur(7px)' }, { filter: 'blur(0px)', duration: 3.2, ease: 'power2.out' }, 0.6);
-        tlV.fromTo(vf, { rotation: 1.2 }, { rotation: 0, duration: 4, ease: 'power3.out' }, 0.6);
-        tlV.fromTo(vf, { scale: 0.9 }, { scale: 1, duration: 4, ease: 'power2.out' }, 0.6);
-        tlV.to('.van-title', { autoAlpha: 0.14, y: -20, duration: 1.6 }, 5);
+        var entrada = gsap.timeline({ paused: true });
+        entrada.to('.van-title', { y: 0, autoAlpha: 1, duration: 0.9, ease: 'power3.out' }, 0);
+        entrada.to(vf, { x: home, rotation: 0, scale: 1, filter: 'blur(0px)', duration: 1.5, ease: 'power3.out' }, 0.1);
+        ScrollTrigger.create({ trigger: '.van-world', start: 'top 88%', once: true, onEnter: function () { entrada.play(); } });
+        // recorrido fijado: el título se atenúa, aparecen los tres pasos y la furgoneta sigue su camino hacia la izquierda
+        tlV.fromTo('.van-title', { autoAlpha: 1, y: 0 }, { autoAlpha: 0.14, y: -20, duration: 1.2, immediateRender: false }, 0.6);
         steps.forEach(function (s, i) {
-          tlV.to(s, { autoAlpha: 1, y: 0, duration: 1.2, ease: 'power3.out' }, 5.4 + i * 1.5);
-          if (mob) tlV.to(s, { autoAlpha: 0, y: -24, duration: 0.5 }, 5.4 + i * 1.5 + 1.0);
+          tlV.to(s, { autoAlpha: 1, y: 0, duration: 1.2, ease: 'power3.out' }, 1 + i * 1.5);
+          if (mob) tlV.to(s, { autoAlpha: 0, y: -24, duration: 0.5 }, 1 + i * 1.5 + 1.0);
         });
         tlV.to({}, { duration: 1 });
-        // salida: la información se desvanece y la furgoneta sigue su camino hacia la izquierda
-        if (!mob) tlV.to(steps, { autoAlpha: 0, y: -28, duration: 1.1, stagger: 0.1 }, 10.8);
-        tlV.to('.van-title', { autoAlpha: 0, duration: 1 }, 11.2);
-        tlV.fromTo(vf, { filter: 'blur(0px)' }, { filter: 'blur(6px)', duration: 2.4, ease: 'power2.in', immediateRender: false }, 11.4);
-        tlV.to(vf, { x: function () { return -vw() * 1.2; }, duration: 3.2, ease: 'power2.in' }, 11.4);
+        if (!mob) tlV.to(steps, { autoAlpha: 0, y: -28, duration: 1.1, stagger: 0.1 }, 6.4);
+        tlV.to('.van-title', { autoAlpha: 0, duration: 1 }, 6.8);
+        tlV.fromTo(vf, { filter: 'blur(0px)' }, { filter: 'blur(6px)', duration: 2.4, ease: 'power2.in', immediateRender: false }, 7);
+        tlV.fromTo(vf, { x: 0 }, { x: function () { return -vw() * 1.2; }, duration: 3.2, ease: 'power2.in', immediateRender: false }, 7);
         var dv = (/[?&]van=([0-9.]+)/.exec(dbg) || [])[1];
         if (dv) { var st3 = document.createElement('style'); st3.textContent = 'main>section:not(.van-world),.site-header,.foot{display:none!important}'; document.head.appendChild(st3); tlV.scrollTrigger.kill(true); tlV.progress(parseFloat(dv)); }
       });
