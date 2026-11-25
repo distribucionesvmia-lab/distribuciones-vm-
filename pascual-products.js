@@ -178,7 +178,7 @@ window.ProductWorld.init({
     },
     {
       template: 'ambiente', id: 'zumos-gama', family: 'Bebidas Pascual', color: '#ffedda', ink: '#512f1c',
-      image: 'assets/pascual/zumos-essential-gama.png', width: 1230, height: 480,
+      image: 'assets/pascual/zumos-essential-gama.png', width: 1226, height: 473,
       alt: 'La gama de zumos Pascual Essential en botella de vidrio'
     },
     {
