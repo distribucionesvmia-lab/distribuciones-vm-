@@ -371,4 +371,15 @@ form{margin-top:48px;display:grid;gap:10px;grid-template-columns:1fr 1fr 1fr}
 @media(max-width:760px){.van-world+.catalogo{margin-top:calc(-1 * clamp(200px,38svh,320px));border-radius:22px 22px 0 0}}
 
 /* Tarjetas de novedades y promociones: ocupan dos columnas cada una, así la última fila queda completa */
-@media(min-width:1000px){.card-novedades,.card-promo{grid-column:span 2}.card-novedades img{object-position:50% 40%}}
+@media(min-width:1000px){.card-novedades,.card-promo{grid-column:span 2}}
+/* Novedades: la tarjeta se parte en dos y enseña las dos últimas novedades */
+.card-novedades{padding:0;display:grid;grid-template-columns:1fr 1fr;gap:3px;align-items:stretch;background:#fffdf8}
+.nov-mitad{position:relative;display:flex;align-items:flex-end;overflow:hidden;min-height:inherit;padding:clamp(12px,1.6vw,22px);color:#fff;isolation:isolate}
+.nov-mitad::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(14,10,7,.82),rgba(14,10,7,0) 58%)}
+.nov-mitad img{object-position:50% 40%}
+.nov-mitad[data-nov="1"] img{object-fit:cover;object-position:50% 30%}
+.nov-et{display:block;font-size:clamp(1.05rem,.9rem + .55vw,1.5rem);line-height:1.1;letter-spacing:-.02em;font-weight:600}
+.nov-et small{display:block;margin-bottom:4px;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ffe08a}
+.nov-tit{position:absolute;z-index:3;top:clamp(12px,1.4vw,18px);left:clamp(12px,1.4vw,18px);display:inline-flex;align-items:center;gap:7px;padding:5px 13px 5px 10px;border-radius:999px;background:linear-gradient(100deg,#a51213,#e0462f);color:#fff;font-size:.82rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.nov-ver{position:absolute;z-index:3;top:clamp(12px,1.4vw,18px);right:clamp(12px,1.4vw,18px);padding:5px 13px;border-radius:999px;background:#fff;color:#a51213;font-size:.82rem;font-weight:700;white-space:nowrap}
+@media(max-width:520px){.nov-ver{display:none}.nov-et{font-size:1rem}}
