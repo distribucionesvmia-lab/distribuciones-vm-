@@ -49,3 +49,6 @@
   .nov-track .nov-card{top:calc(var(--sh-h,110px) + 8px)}
 }
 @media(prefers-reduced-motion:reduce){.nov-multi .nov-im{transition:none}}
+
+/* Anclas de cada novedad (#nov-0, #nov-1…): que no queden tapadas por la cabecera */
+.nov-track,.nov-card{scroll-margin-top:calc(var(--sh-h,110px) + 12px)}
