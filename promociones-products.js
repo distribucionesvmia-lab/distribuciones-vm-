@@ -1,4 +1,4 @@
-/* Promociones: espumosos Palacio de Bornos (D.O. Rueda). Sin precio: «con 5 botellas, una de regalo». */
+/* Promociones: espumosos Palacio de Bornos (D.O. Rueda). Sin precio: «con 5 unidades, una de regalo». */
 window.ProductWorld.init({
   mount: '#familias',
   sections: [
