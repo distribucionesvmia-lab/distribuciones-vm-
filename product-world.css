@@ -516,3 +516,7 @@
 .pw-amb-label{width:100%;padding:0 var(--side)}
 .pw-amb img{align-self:center;margin-top:clamp(10px,2vw,28px)}
 .pw-amb{padding-bottom:0}
+
+/* Las fotos apiladas de un listado no deben interceptar el clic derecho: solo la visible se puede guardar */
+.pw-e-multi{pointer-events:none}
+.pw-e-multi.is-current{pointer-events:auto}
