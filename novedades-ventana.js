@@ -8,6 +8,18 @@
   /* La barra roja anuncia el primer artículo que tenga «anuncio» */
   var anun = lista.filter(function (n) { return n.anuncio; })[0];
   if (anun) { var tx = bar.querySelector('.news-txt'); if (tx) tx.textContent = anun.anuncio; var tg = bar.querySelector('.news-tag'); if (tg && anun.etiqueta) tg.textContent = anun.etiqueta; }
+  /* Tarjeta de la portada: enseña las dos primeras novedades de la lista */
+  var tarj = document.querySelector('.card-novedades');
+  if (tarj) {
+    tarj.querySelectorAll('.nov-mitad').forEach(function (m, k) {
+      var n = lista[k];
+      if (!n) { m.hidden = true; return; }
+      var f = (n.fotos && n.fotos[0]) || n.foto, im = m.querySelector('img'), et = m.querySelector('.nov-et');
+      if (f && im) im.src = f;
+      if (et) { var mc = String(n.marca || '').split('·')[0].trim(); et.innerHTML = '<small></small><span></span>'; et.firstChild.textContent = mc; et.lastChild.textContent = n.nombre; }
+    });
+    if (lista.length < 2) tarj.style.gridTemplateColumns = '1fr';
+  }
   var enPagina = /novedades\.html$/.test(location.pathname);
   var idx = 0, modal = null, previo = null;
   function esc(t) { return String(t == null ? '' : t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
