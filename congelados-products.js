@@ -5,6 +5,7 @@ window.ProductWorld.init({
   sections: [
  {
   "template": "lineup",
+  "flip": true,
   "family": "Congelados · Panes y barras",
   "color": "#f6e7d0",
   "ink": "#5a3112",
