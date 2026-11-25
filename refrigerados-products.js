@@ -37,7 +37,7 @@
       lead:'Queso para untar, queso de Burgos, mozzarella, rallados y lonchas. Y, de Reny Picot, natillas y chocolate a la taza.',
       media:[
         {src:B+'reny-picot-logo.png', w:212, h:62, alt:'Reny Picot', cls:'rf-m-brand'},
-        {src:B+'reny-picot-bodegon.png', w:1096, h:600, alt:'Reny Picot de hostelería: queso crema para untar en cubos de 2 y 5 kg, queso fresco de 1 kg, queso rallado, natillas de vainilla y chocolate a la taza', cls:'rf-m-hero rf-m-cut'}
+        {src:B+'reny-picot-bodegon.png', w:1256, h:610, alt:'Reny Picot de hostelería: queso crema para untar en cubos de 2 y 5 kg, queso fresco de 1 kg, queso de Burgos en pack de 4, queso rallado, natillas de vainilla y chocolate a la taza', cls:'rf-m-hero rf-m-cut'}
       ] },
     { id:'pozo', n:'08', chip:'El Pozo', kicker:'El Pozo', title:'El Pozo',
       lead:'Bacon, paleta, taquitos de jamón y salchichas para hostelería, y jamón en formato sobre para alimentación.',
@@ -95,7 +95,7 @@
     {group:'Salchichas',brand:'El Pozo',name:'Salchichas cocktail · 1 kg',blk:'salchichas,pozo',uso:'h',cod:'20120',peek:'assets/refrigerados/extra/elpozo_salchichas-cocktail-1kg.png',pw:634,ph:625,peekAlt:'Salchichas cocktail de ElPozo, bolsa de 1 kg (100 unidades)'},
     {group:'Salchichas',brand:'Oscar Mayer',name:'Salchichas Jumbo · 350 g',blk:'salchichas',uso:'',cod:'26121',image:'assets/refrigerados/extra/oscar-mayer_salchichas-jumbo-y-bacon-en-lonchas.png',w:720,h:720,alt:'Salchichas Jumbo Oscar Mayer'},
     {group:'Quesos',brand:'Reny Picot',name:'Queso de Burgos · brik de 1 kg',blk:'quesos',uso:'',cod:'17050',image:'assets/refrigerados/extra/reny-picot_queso-fresco-1kg.png',w:357,h:238,alt:'Queso fresco Reny Picot, brik de 1.000 g'},
-    {group:'Quesos',brand:'Reny Picot',name:'Queso de Burgos · 4 × 62,5 g',blk:'quesos',uso:'',cod:'17002'},
+    {group:'Quesos',brand:'Reny Picot',name:'Queso de Burgos · 4 × 62,5 g',blk:'quesos',uso:'',cod:'17002',image:'assets/refrigerados/extra/reny-picot_queso-burgos-4x62-5g.png',w:441,h:309,alt:'Queso de Burgos Reny Picot, pack de 4 unidades de 62,5 g'},
     {group:'Quesos',brand:'Reny Picot',name:'Queso en lonchas · 8 unidades',blk:'quesos',uso:'',cod:'17080',image:'assets/refrigerados/extra/reny-picot_queso-en-lonchas.png',w:720,h:720,alt:'Queso en lonchas Reny Picot'},
     {group:'Quesos',brand:'Reny Picot',name:'Emmental rallado · 60 g',blk:'quesos',uso:'',cod:'17005',image:'assets/refrigerados/extra/reny-picot_quesos-rallados.png',w:720,h:720,alt:'Quesos rallados Reny Picot'},
     {group:'Quesos',brand:'Reny Picot',name:'Queso rallado en polvo · 100 g',blk:'quesos',uso:'',cod:'17006',image:'assets/refrigerados/extra/reny-picot_quesos-rallados.png',w:720,h:720,alt:'Quesos rallados Reny Picot'},
