@@ -69,7 +69,7 @@ window.ProductWorld.init({
       products: [
         {name:'Virgen Extra · 5 L', description:'Carbonell, aceite de oliva virgen extra en formato ahorro.', image:D+'carbonell-virgen-extra-5l.png', width:233, height:613, alt:'Garrafa Carbonell Virgen Extra de 5 litros'},
         {name:'Carbonell Profesional', description:'Aceite de la gama profesional Carbonell.', image:D+'carbonell-carbonell-profesional.png', width:110, height:286, alt:'Garrafa Carbonell Profesional'},
-        {name:'Koipe Profesional', description:'Aceite de la gama profesional Koipe.', image:D+'carbonell-koipe-profesional.png', width:103, height:289, alt:'Garrafa Koipe Profesional'},
+        {name:'Koipe Profesional', description:'Aceite alto oleico, especial para freidora.', image:D+'carbonell-koipe-profesional.png', width:103, height:289, alt:'Garrafa Koipe Profesional'},
         {name:'Koipe Sol', description:'Aceite de girasol Koipe Sol.', image:D+'carbonell-koipe-sol.png', width:103, height:287, alt:'Garrafa Koipe Sol'}
       ]
     },
