@@ -493,7 +493,7 @@
 }
 
 /* Gallina Blanca: con la segunda ficha (botes de 1 kg) se ocultan la marmita y el cartel y los botes ocupan la zona de foto */
-#gallina-blanca .pw-e-art:has(.pw-e-multi[src*="avecrem"].is-current) .pw-e-ilus,#gallina-blanca .pw-e-art:has(.pw-e-multi[src*="avecrem"].is-current) .pw-e-cartel{opacity:0;transition:opacity .35s}
+#gallina-blanca .pw-e-art:has(.pw-e-multi[src*="solera"].is-current) .pw-e-ilus,#gallina-blanca .pw-e-art:has(.pw-e-multi[src*="solera"].is-current) .pw-e-cartel,#gallina-blanca .pw-e-art:has(.pw-e-multi[src*="avecrem"].is-current) .pw-e-ilus,#gallina-blanca .pw-e-art:has(.pw-e-multi[src*="avecrem"].is-current) .pw-e-cartel{opacity:0;transition:opacity .35s}
 #gallina-blanca .pw-e-multi[src*="avecrem"]{max-width:min(46vw,640px);max-height:58%;justify-self:center;margin-left:0;align-self:center}
 #gallina-blanca .pw-e-multi[src*="avecrem"].is-current{filter:drop-shadow(14px 20px 14px rgba(70,30,10,.25))}
 
