@@ -522,8 +522,3 @@
   /* encuadre de la portada de Despensa: «FOOD SERVICE» entero */
   .pw-photo .pw-opening-bg[src*="portada-despensa"]{object-position:55% 50%}
 }
-
-/* Zumos Essential: la gama de botellas de ambiente, tenue y detrás del contenido */
-#zumos .pw-sticky{position:relative;isolation:isolate;overflow:hidden}
-#zumos .pw-sticky::before{content:"";position:absolute;left:0;right:0;bottom:0;height:50%;z-index:-1;background:url("assets/pascual/zumos-essential-gama-ambiente.png") center bottom/contain no-repeat;opacity:.16;pointer-events:none}
-@media(max-width:760px){#zumos .pw-sticky::before{display:none}}
