@@ -57,6 +57,7 @@ PAGES = {
     'aviso-legal.html': (None, False),
     'privacidad.html': (None, False),
     'novedades.html': (None, False),
+    'promociones.html': (None, False),
 }
 
 
@@ -98,10 +99,11 @@ def subnav(page):
 
 
 # Barra de «Novedades» encima del menú (se ve en todas las páginas; no se queda fija al hacer scroll)
-NEWS_HTML = ('<!-- novedades -->\n<a class="news-bar" href="novedades.html"><span class="news-ico" aria-hidden="true">'
+NEWS_HTML = ('<!-- novedades -->\n<div class="news-wrap"><a class="news-bar" href="novedades.html"><span class="news-ico" aria-hidden="true">'
              '<svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 1.5l2.4 6.1 6.1 2.4-6.1 2.4L12 18.5l-2.4-6.1L3.5 10l6.1-2.4zM19 14l1.1 2.9L23 18l-2.9 1.1L19 22l-1.1-2.9L15 18l2.9-1.1z"/></svg></span>'
              '<span class="news-tag">Novedades</span><span class="news-txt">Los artículos nuevos de la distribuidora, antes que nadie</span>'
-             '<span class="news-btn">Descúbrelos <b aria-hidden="true">→</b></span></a>\n<!-- /novedades -->\n')
+             '<span class="news-btn">Descúbrelos <b aria-hidden="true">→</b></span></a>'
+             '<a class="news-promo" href="promociones.html"><span class="news-promo-tag">Promociones</span><b aria-hidden="true">→</b></a></div>\n<!-- /novedades -->\n')
 NEWS_RE = re.compile(r'<!-- novedades -->.*?<!-- /novedades -->\n?', re.S)
 
 HEADER_RE = re.compile(r'<header class="(?:top|m-top|pw-header|site-header)[^"]*"[^>]*>.*?</header>', re.S)
