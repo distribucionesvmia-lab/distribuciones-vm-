@@ -508,3 +508,7 @@
 /* Logo de marca al principio de una escena editorial (p. ej. Helios) */
 .pw-c-logo{display:block;width:clamp(130px,14vw,200px);height:auto;margin:0 0 16px}
 @media(max-width:760px){.pw-c-logo{width:140px;margin-bottom:12px}}
+
+/* Escena de ambiente: una imagen sola, sin ficha de producto */
+.pw-amb{display:flex;justify-content:center;align-items:center;min-height:0;padding:clamp(18px,4vw,56px) 16px;background:var(--scene)}
+.pw-amb img{display:block;width:min(100%,900px);height:auto}
