@@ -35,7 +35,7 @@ window.ProductWorld.init({
       logo: {image:D+'gallina-blanca-logo.png', width:726, height:185, alt:'Gallina Blanca'},
       cartel: 'Hay caldo',
       sugerencia: {title:'Te recomendamos: Solera', text:'Por costumbre de la zona, al caldo se le echa un chorrito de vino. Para tenerlo siempre a mano en la cocina, Solera: un blanco envejecido en bag in box de 5 litros.', image:'assets/despensa/bib-solera-5l-recorte.png', width:498, height:599, alt:'Caja de bag in box de vino blanco Solera de 5 litros'},
-      ilustracion: {image:D+'ilustracion-marmita-sopa.png?v=3', width:330, height:546, pie:'Marmita de sugerencia, no incluida.'},
+      ilustracion: {image:D+'ilustracion-marmita-sopa.png?v=3', width:330, height:546, pie:'Marmita ejemplo, no incluida.'},
       variants: [
         {name:'Caldo de carne · bolsa de 0,5 L', description:'Caldo de carne concentrado profesional, sin gluten: 0,5 L de concentrado + 3,5 L de agua = 4 L de caldo reconstituido. Agitar antes de usar. Verter el contenido en un recipiente, añadir 3,5 litros de agua y calentar removiendo de vez en cuando.', image:D+'gallina-blanca-caldo-carne-0-5l.png', width:450, height:710, alt:'Bolsa de 0,5 L de Caldo de carne profesional Gallina Blanca, sin gluten, con rendimiento de 4 L'},
         {name:'Avecrem · caldos en polvo · envase de 1 kg', description:'Caldos Gallina Blanca en polvo, envase de 1 kg y sin gluten: Caldo de ave (código 13002), Caldo de pescado (13001) y Avecrem de pollo (13000). En la foto, junto a ellos, el de verduras.', image:D+'avecrem-botes-1kg.png', width:987, height:569, alt:'Botes de Avecrem de Gallina Blanca de 1 kg: caldo de verduras, de carne, de pollo y de pescado, sin gluten'}
