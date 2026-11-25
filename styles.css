@@ -369,3 +369,6 @@ form{margin-top:48px;display:grid;gap:10px;grid-template-columns:1fr 1fr 1fr}
 /* Tras salir el furgón no queda una pantalla en blanco: el catálogo sube y ocupa ese hueco */
 .van-world+.catalogo{margin-top:calc(-1 * clamp(300px,58svh,540px));position:relative;z-index:2;border-radius:28px 28px 0 0;box-shadow:0 -18px 40px rgba(37,29,26,.07)}
 @media(max-width:760px){.van-world+.catalogo{margin-top:calc(-1 * clamp(200px,38svh,320px));border-radius:22px 22px 0 0}}
+
+/* Tarjetas de novedades y promociones: ocupan dos columnas cada una, así la última fila queda completa */
+@media(min-width:1000px){.card-novedades,.card-promo{grid-column:span 2}.card-novedades img{object-position:50% 40%}}
