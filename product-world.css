@@ -520,3 +520,9 @@
 /* Las fotos apiladas de un listado no deben interceptar el clic derecho: solo la visible se puede guardar */
 .pw-e-multi{pointer-events:none}
 .pw-e-multi.is-current{pointer-events:auto}
+
+/* Sugerencia dentro de una sección: tarjeta pequeña, no es una referencia del listado */
+.pw-e-sug{display:flex;align-items:center;gap:16px;max-width:620px;margin:22px 0 0;padding:12px 16px;border:1px dashed currentColor;border-radius:14px;background:rgba(255,255,255,.35)}
+.pw-e-sug img{flex:none;width:72px;height:auto;filter:drop-shadow(0 6px 8px rgba(0,0,0,.18))}
+.pw-e-sug p{margin:0;font-size:.92rem;line-height:1.4}
+.pw-e-sug b{display:block;margin-bottom:2px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
