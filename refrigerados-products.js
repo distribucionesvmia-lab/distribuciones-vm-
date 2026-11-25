@@ -37,7 +37,7 @@
       lead:'Queso para untar, queso de Burgos, mozzarella, rallados y lonchas. Y, de Reny Picot, natillas y chocolate a la taza.',
       media:[
         {src:B+'reny-picot-logo.png', w:212, h:62, alt:'Reny Picot', cls:'rf-m-brand'},
-        {src:B+'reny-picot-bodegon.png', w:1120, h:572, alt:'Reny Picot de hostelería: queso crema en cubos de 5 y 2 kg, queso fresco de 1 kg, queso en hilo, mozzarella, lonchas, natillas de vainilla y chocolate a la taza', cls:'rf-m-hero rf-m-cut'}
+        {src:B+'reny-picot-bodegon.png', w:1096, h:600, alt:'Reny Picot de hostelería: queso crema para untar en cubos de 2 y 5 kg, queso fresco de 1 kg, queso rallado, natillas de vainilla y chocolate a la taza', cls:'rf-m-hero rf-m-cut'}
       ] },
     { id:'pozo', n:'08', chip:'El Pozo', kicker:'El Pozo', title:'El Pozo',
       lead:'Bacon, paleta, taquitos de jamón y salchichas para hostelería, y jamón en formato sobre para alimentación.',
@@ -94,7 +94,7 @@
     {group:'Salchichas',brand:'Campofrío',name:'Salchichas Frankfurt · pack de 4 × 140 g',blk:'salchichas',uso:'',cod:'26084',image:'assets/refrigerados/extra/campofrio_salchichas-frankfurt-4x140g.png',w:720,h:720,alt:'Salchichas Frankfurt La Original de Campofrío, pack de 4 sobres de 140 g'},
     {group:'Salchichas',brand:'El Pozo',name:'Salchichas cocktail · 1 kg',blk:'salchichas,pozo',uso:'h',cod:'20120',peek:'assets/refrigerados/extra/elpozo_salchichas-cocktail-1kg.png',pw:634,ph:625,peekAlt:'Salchichas cocktail de ElPozo, bolsa de 1 kg (100 unidades)'},
     {group:'Salchichas',brand:'Oscar Mayer',name:'Salchichas Jumbo · 350 g',blk:'salchichas',uso:'',cod:'26121',image:'assets/refrigerados/extra/oscar-mayer_salchichas-jumbo-y-bacon-en-lonchas.png',w:720,h:720,alt:'Salchichas Jumbo Oscar Mayer'},
-    {group:'Quesos',brand:'Reny Picot',name:'Queso de Burgos · brik de 1 kg',blk:'quesos',uso:'',cod:'17050',peek:'assets/refrigerados/extra/reny-picot_queso-fresco-1kg.png',pw:358,ph:240,peekAlt:'Queso fresco Reny Picot, brik de 1.000 g'},
+    {group:'Quesos',brand:'Reny Picot',name:'Queso de Burgos · brik de 1 kg',blk:'quesos',uso:'',cod:'17050',image:'assets/refrigerados/extra/reny-picot_queso-fresco-1kg.png',w:358,h:240,alt:'Queso fresco Reny Picot, brik de 1.000 g'},
     {group:'Quesos',brand:'Reny Picot',name:'Queso de Burgos · 4 × 62,5 g',blk:'quesos',uso:'',cod:'17002'},
     {group:'Quesos',brand:'Reny Picot',name:'Queso en lonchas · 8 unidades',blk:'quesos',uso:'',cod:'17080',image:'assets/refrigerados/extra/reny-picot_queso-en-lonchas.png',w:720,h:720,alt:'Queso en lonchas Reny Picot'},
     {group:'Quesos',brand:'Reny Picot',name:'Emmental rallado · 60 g',blk:'quesos',uso:'',cod:'17005',image:'assets/refrigerados/extra/reny-picot_quesos-rallados.png',w:720,h:720,alt:'Quesos rallados Reny Picot'},
@@ -103,8 +103,8 @@
     {group:'Quesos',brand:'Reny Picot',name:'Mozzarella · 150 g',blk:'quesos',uso:'',cod:'17004',image:'assets/refrigerados/extra/reny-picot_mozzarella-150g.png',w:720,h:720,alt:'Mozzarella Reny Picot, 150 g'},
     {group:'Quesos',brand:'Reny Picot',name:'Queso para untar · 2 kg',blk:'quesos',uso:'',cod:'17020',image:'assets/refrigerados/reny-crema-2kg.png',w:1000,h:1000,alt:'Cubo de queso crema natural Reny Picot de 2 kg'},
     {group:'Quesos',brand:'Reny Picot',name:'Queso para untar · cubo de 5 kg',blk:'quesos',uso:'',cod:'17018',image:X+'reny-picot_queso-crema-5kg.png',w:404,h:386,alt:'Cubo de queso crema para untar Reny Picot de 5 kg'},
-    {group:'Quesos',brand:'Reny Picot',name:'Natillas de vainilla · listas para tomar',blk:'quesos',uso:'',peek:'assets/refrigerados/extra/reny-picot_natillas-vainilla.png',pw:441,ph:900,peekAlt:'Natillas de vainilla Reny Picot, brik listo para tomar y sin gluten'},
-    {group:'Quesos',brand:'Reny Picot',name:'Chocolate a la taza · caliente o frío',blk:'quesos',uso:'',peek:'assets/refrigerados/extra/reny-picot_chocolate-a-la-taza.png',pw:298,ph:496,peekAlt:'Chocolate a la taza Reny Picot, brik listo para tomar, caliente o frío'},
+    {group:'Quesos',brand:'Reny Picot',name:'Natillas de vainilla · listas para tomar',blk:'quesos',uso:'',image:'assets/refrigerados/extra/reny-picot_natillas-vainilla.png',w:441,h:900,alt:'Natillas de vainilla Reny Picot, brik listo para tomar y sin gluten'},
+    {group:'Quesos',brand:'Reny Picot',name:'Chocolate a la taza · caliente o frío',blk:'quesos',uso:'',image:'assets/refrigerados/extra/reny-picot_chocolate-a-la-taza.png',w:298,h:496,alt:'Chocolate a la taza Reny Picot, brik listo para tomar, caliente o frío'},
     {group:'Quesos',brand:'Tranchetes',name:'Tranchetes · 7 lonchas, 131 g',blk:'quesos',uso:'',cod:'30000',image:'assets/refrigerados/extra/sin-marca-confirmada_queso-fundido-en-lonchas-131g.png',w:720,h:720,alt:'Queso fundido en lonchas, 131 g'},
     {group:'El Pozo',brand:'El Pozo',name:'Barqueta de bacon · 1 kg',blk:'pozo',uso:'h',cod:'20001',peek:'assets/refrigerados/extra/elpozo_bacon-1kg.png',pw:423,ph:276,peekAlt:'Bacon en lonchas, barqueta doble de 1 kg'},
     {group:'El Pozo',brand:'El Pozo',name:'Fiambre de paleta para sándwich · 4 kg',blk:'pozo',uso:'h',cod:'20004',peek:'assets/refrigerados/extra/elpozo_paleta-sandwich-4kg.png',pw:650,ph:1000,peekAlt:'Fiambre de paleta para sándwich de ElPozo, pieza de 4 kg'},
