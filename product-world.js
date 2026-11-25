@@ -59,7 +59,7 @@
         else slots.push({ v: i, s: 0, o: null });
       });
       return `<section${sid(item)} class="pw-scene pw-e${n>8?' is-long':''}${n>10?' is-scroll':''}${(item._flip||item.flip)?' is-flip':''}${dark(item)}" style="--n:${slots.length};--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}">
-        <div class="pw-sticky"><div class="pw-scene-inner">${label(item,index)}
+        <div class="pw-sticky"><div class="pw-scene-inner">${item.sinRotulo?'':label(item,index)}
           <div class="pw-e-grid">
             <div class="pw-e-head">${item.logo?`<img class="pw-e-logo" src="${esc(item.logo.image)}" alt="${esc(item.logo.alt)}" width="${Number(item.logo.width)||300}" height="${Number(item.logo.height)||80}" decoding="async">`:''}<p class="pw-overline">${esc(item.eyebrow)}</p><h2 id="pw-scene-${index}">${esc(item.title)}</h2>${item.note?`<p class="pw-e-note-m">${esc(item.note)}</p>`:''}${item.virtudes ? `<ul class="pw-virt" aria-label="${esc(item.virtudesTitulo||'Virtudes')}">${item.virtudes.map(v=>`<li><span class="pw-virt-s" aria-hidden="true">${esc(v.sym)}</span><span><b>${esc(v.name)}</b><small>${esc(v.desc)}</small></span></li>`).join('')}</ul>` : ''}</div>
             <div class="pw-e-art"><span class="pw-e-disc" aria-hidden="true"></span>${item.ilustracion?`<img class="pw-e-ilus" src="${esc(item.ilustracion.image)}" alt="" aria-hidden="true" width="${Number(item.ilustracion.width)||400}" height="${Number(item.ilustracion.height)||400}" loading="lazy" decoding="async">`:''}${item.cartel?`<div class="pw-e-cartel" role="img" aria-label="${esc(item.cartel)}"><i class="pw-cuerda" aria-hidden="true"></i><i class="pw-cuerda" aria-hidden="true"></i><span aria-hidden="true">${esc(item.cartel)}</span></div>`:''}${multi ? slots.map((sl,k) => sl.o ? img(sl.o,`pw-e-image pw-e-multi${k===0?' is-current':''}`,k<2).replace('<img ',`<img data-v="${sl.v}" data-s="${sl.s}" `) : `<span data-v="${sl.v}" data-s="0" class="pw-e-image pw-e-multi pw-e-pending${k===0?' is-current':''}" role="img" aria-label="Imagen pendiente">Imagen pendiente</span>`).join('') : item.product ? img(item.product,'pw-e-image',!item.product.lazy) : '<span class="pw-e-image pw-e-pending is-current" role="img" aria-label="Imagen pendiente">Imagen pendiente</span>'}<p class="pw-e-note">${esc(item.note || '')}</p></div>
@@ -67,8 +67,8 @@
           </div>
         </div></div></section>`;
     },
-    ambiente(item) {
-      return `<section${sid(item)} class="pw-scene pw-amb" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-label="${esc(item.alt)}"><img src="${esc(item.image)}" alt="${esc(item.alt)}" width="${Number(item.width)||1200}" height="${Number(item.height)||500}" loading="lazy" decoding="async"></section>`;
+    ambiente(item, index) {
+      return `<section${sid(item)} class="pw-scene pw-amb" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-label="${esc(item.alt)}">${item.label?`<div class="pw-amb-label">${label(item,index)}</div>`:''}<img src="${esc(item.image)}" alt="${esc(item.alt)}" width="${Number(item.width)||1200}" height="${Number(item.height)||500}" loading="lazy" decoding="async"></section>`;
     },
     video(item, index) {
       const v = item.video;
