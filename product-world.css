@@ -508,8 +508,3 @@
 /* Logo de marca al principio de una escena editorial (p. ej. Helios) */
 .pw-c-logo{display:block;width:clamp(130px,14vw,200px);height:auto;margin:0 0 16px}
 @media(max-width:760px){.pw-c-logo{width:140px;margin-bottom:12px}}
-
-/* Zumos Essential: la gama de botellas de ambiente, tenue y detrás del contenido */
-#zumos .pw-sticky{position:relative;isolation:isolate;overflow:hidden}
-#zumos .pw-sticky::before{content:"";position:absolute;left:0;right:0;bottom:0;height:50%;z-index:-1;background:url("assets/pascual/zumos-essential-gama-ambiente.png") center bottom/contain no-repeat;opacity:.16;pointer-events:none}
-@media(max-width:760px){#zumos .pw-sticky::before{display:none}}
