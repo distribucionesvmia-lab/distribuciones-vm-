@@ -158,7 +158,7 @@ window.ProductWorld.init({
    },
    {
     "name": "Rustic Cristal Burger · 110 g",
-    "description": "Panecillo tipo burger de estilo rústico, listo para descongelar y servir.",
+    "description": "Panecillo tipo burger de estilo rústico. Descongelar y listo (DyL).",
     "image": "assets/congelados/13799-rustic-cristal-burger-12cm-dyl-110g.png",
     "width": 321,
     "height": 229,
@@ -284,7 +284,7 @@ window.ProductWorld.init({
    },
    {
     "name": "Berlina Blanca Rayada · 115 g",
-    "description": "Berlina dulce decorada con líneas; lista para descongelar y servir.",
+    "description": "Berlina dulce decorada con líneas. Descongelar y listo (DyL).",
     "image": "assets/congelados/130577-berliblanca-rayada-115g.png",
     "width": 258,
     "height": 205,
@@ -292,7 +292,7 @@ window.ProductWorld.init({
    },
    {
     "name": "Berlina Súper Choco · 90 g",
-    "description": "Berlina de chocolate, lista para descongelar y servir.",
+    "description": "Berlina de chocolate. Descongelar y listo (DyL).",
     "image": "assets/congelados/130949-berlina-super-choco-90g.png",
     "width": 278,
     "height": 235,
@@ -300,7 +300,7 @@ window.ProductWorld.init({
    },
    {
     "name": "Cookie Doble Chocolate · 80 g",
-    "description": "Galleta de doble chocolate, lista para descongelar y servir.",
+    "description": "Galleta de doble chocolate. Descongelar y listo (DyL).",
     "image": "assets/congelados/131059-cookie-doble-chocolate-80g.png",
     "width": 270,
     "height": 267,
@@ -348,7 +348,7 @@ window.ProductWorld.init({
    },
    {
     "name": "Pepito de Chocolate Azucarado · 110 g",
-    "description": "Pieza de bollería rellena de chocolate y cubierta de azúcar; lista para servir.",
+    "description": "Pieza de bollería rellena de chocolate y cubierta de azúcar. Descongelar y listo (DyL).",
     "image": "assets/congelados/13325-pepito-choco-azucarado-110g.png",
     "width": 328,
     "height": 181,
@@ -356,7 +356,7 @@ window.ProductWorld.init({
    },
    {
     "name": "Pepito de Crema Azucarado · 110 g",
-    "description": "Pieza de bollería rellena de crema y cubierta de azúcar; lista para servir.",
+    "description": "Pieza de bollería rellena de crema y cubierta de azúcar. Descongelar y listo (DyL).",
     "image": "assets/congelados/13324-pepito-crema-azucarado-110g.png",
     "width": 322,
     "height": 171,
