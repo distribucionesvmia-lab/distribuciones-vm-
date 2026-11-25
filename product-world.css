@@ -522,3 +522,7 @@
   /* encuadre de la portada de Despensa: «FOOD SERVICE» entero */
   .pw-photo .pw-opening-bg[src*="portada-despensa"]{object-position:55% 50%}
 }
+
+/* Escena de ambiente: una imagen sola, sin ficha de producto */
+.pw-amb{display:flex;justify-content:center;align-items:center;min-height:0;padding:clamp(18px,4vw,56px) 16px;background:var(--scene)}
+.pw-amb img{display:block;width:min(100%,900px);height:auto}

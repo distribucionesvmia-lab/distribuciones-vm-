@@ -67,6 +67,9 @@
           </div>
         </div></div></section>`;
     },
+    ambiente(item) {
+      return `<section${sid(item)} class="pw-scene pw-amb" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-label="${esc(item.alt)}"><img src="${esc(item.image)}" alt="${esc(item.alt)}" width="${Number(item.width)||1200}" height="${Number(item.height)||500}" loading="lazy" decoding="async"></section>`;
+    },
     video(item, index) {
       const v = item.video;
       return `<section${sid(item)} class="pw-scene pw-v${dark(item)}" style="--scene:${esc(item.color)};--ink:${esc(item.ink)}" aria-labelledby="pw-scene-${index}"><div class="pw-v-inner">${label(item,index)}
