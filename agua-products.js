@@ -15,6 +15,7 @@ window.ProductWorld.init({
         {name:'Bezoya · 33 cl con tapón sport', image:'assets/agua/bezoya-330cl-sport.png', width:420, height:420, alt:'Botella Bezoya de 33 cl con tapón sport'},
         {name:'Bezoya · 50 cl', image:'assets/agua/bezoya-50cl.png', width:420, height:420, alt:'Botella Bezoya de 50 cl'},
         {name:'Bezoya · 50 cl con tapón sport', image:'assets/agua/bezoya-50cl-sport.png', width:420, height:420, alt:'Botella Bezoya de 50 cl con tapón sport'},
+        {name:'Bezoya · 1,5 L', image:'assets/agua/bezoya-150cl.png', width:420, height:420, alt:'Botella Bezoya de 1,5 litros'},
         {name:'Bezoya · 5 L', image:'assets/agua/bezoya-5l.png', width:420, height:420, alt:'Garrafa Bezoya de 5 litros'},
         {name:'Bezoya · bag in box de 8 L', image:'assets/agua/bezoya-bib-8l.png', width:420, height:420, alt:'Bag in box Bezoya de 8 litros'}
       ]
