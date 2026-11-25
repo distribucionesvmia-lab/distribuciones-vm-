@@ -49,6 +49,8 @@ window.ProductWorld.init({
       template:'lineup', family:'Palacio de Bornos', color:'#f3ead6', ink:'#2f2a1c',
       eyebrow:'Palacio de Bornos · Espumosos', title:'Para brindar. Pioneros en Castilla y León.',
       note:'Espumosos de Palacio de Bornos (Nature, Brut, Semiseco y Rosado), «La primera» en hacer espumoso en Castilla y León, en 1978',
+      /* Promoción de Navidad: la mención se muestra solo hasta el 9 de enero de 2027 y desaparece sola el 10. Para quitarla antes, borrar esta línea. */
+      sugerencia: (new Date() < new Date(2027, 0, 10)) ? {href:'promociones.html', clase:'pw-e-sug--promo', title:'Promoción de Navidad', text:'En los espumosos de Palacio de Bornos, con 5 unidades, una de regalo. Ver la promoción →'} : null,
       variants:[
         {name:'Espumoso Palacio de Bornos Nature', description:'Vino espumoso Nature de Palacio de Bornos.', image:B+'bornos-espumoso-brut-nature.png', width:222, height:755, alt:'Botella Palacio de Bornos Verdejo Brut Nature, espumoso de Rueda'},
         {name:'Espumoso Palacio de Bornos Brut', description:'Vino espumoso Brut de Palacio de Bornos.', image:B+'bornos-espumoso-brut.png', width:208, height:756, alt:'Botella Palacio de Bornos Verdejo Brut, espumoso de Rueda'},
