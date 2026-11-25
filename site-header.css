@@ -93,8 +93,9 @@
 /* Icono del equipo en lugar de la palabra «Conócenos» (hereda el color del menú y se pone rojo en la página activa) */
 .sh-ico-link{display:inline-flex;align-items:center;margin:-8px 0}
 .sh-ico{display:inline-block;width:28px;height:28px;background:currentColor;-webkit-mask:var(--ico) center/contain no-repeat;mask:var(--ico) center/contain no-repeat}
-[style*="iconos/pascual.png"]{width:47px;height:22px;-webkit-mask-size:100% 100%;mask-size:100% 100%}
-@media(max-width:760px){.sh-ico{width:24px;height:24px}[style*="iconos/pascual.png"]{width:41px;height:19px;-webkit-mask-size:100% 100%;mask-size:100% 100%}}
+[style*="iconos/pascual.png"]{width:42px;height:22px;-webkit-mask-size:100% 100%;mask-size:100% 100%}
+[style*="iconos/cafe-mocay.png"],[style*="iconos/despensa.png"]{width:32px;height:32px}
+@media(max-width:760px){.sh-ico{width:24px;height:24px}[style*="iconos/cafe-mocay.png"],[style*="iconos/despensa.png"]{width:28px;height:28px}[style*="iconos/pascual.png"]{width:37px;height:19px;-webkit-mask-size:100% 100%;mask-size:100% 100%}}
 
 .site-header nav{gap:clamp(14px,1.6vw,26px)}
 @media(max-width:760px){.site-header nav{gap:18px}}
