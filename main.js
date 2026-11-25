@@ -70,8 +70,21 @@
     }, { threshold: 0.35 }).observe(v);
   }
 
+  /* vídeo de fondo de «Un solo proveedor…»: solo corre mientras se ve esa sección */
+  function armWhyVideo() {
+    var v = document.querySelector('.why-bg');
+    if (!v || v.dataset.armed) return;
+    v.dataset.armed = '1';
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches || (navigator.connection && navigator.connection.saveData)) return;
+    new IntersectionObserver(function (en) {
+      en.forEach(function (x) {
+        if (x.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause();
+      });
+    }, { rootMargin: '120px 0px', threshold: 0.01 }).observe(v.parentNode);
+  }
+
   function start() {
-    if (!window.gsap || !window.ScrollTrigger || reduce) { html.classList.add('static'); armVideo(); return; }
+    if (!window.gsap || !window.ScrollTrigger || reduce) { html.classList.add('static'); armVideo(); armWhyVideo(); return; }
     var gsap = window.gsap, ScrollTrigger = window.ScrollTrigger;
     gsap.registerPlugin(ScrollTrigger);
     html.classList.add('gsap');
@@ -130,6 +143,7 @@
 
     // vídeo: arranca solo al verse
     try { armVideo();     } catch (e) { window.__err = 'vid: ' + e.message; }
+    try { armWhyVideo();  } catch (e) { window.__err = 'why: ' + e.message; }
 
     // recorrido: escenas ilustradas con zoom y fundido controlados por el scroll
     (function () {
