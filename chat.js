@@ -980,8 +980,8 @@
 
 
   /* ---------- enlace para hacer pedido: se añade a cualquier respuesta cuando el cliente dice que quiere comprar o pedir ---------- */
-  /* PEDIDO_VISIBLE: el botón «Hacer pedido» está OCULTO (no borrado). Para volver a mostrarlo en las respuestas del asistente: true (y quitar el bloque «Hacer pedido oculto» de site-header.css para el resto de la web). */
-  var PEDIDO_VISIBLE = false;
+  /* PEDIDO_VISIBLE: el botón «Hacer pedido» está VISIBLE. Para ocultarlo otra vez (sin borrarlo) en las respuestas del asistente: false (y añadir en site-header.css «.sh-order,.order-float,.btn-pedido,.pedido-banda{display:none!important}» para el resto de la web). */
+  var PEDIDO_VISIBLE = true;
   function PEDIDO_VIA() { return PEDIDO_VISIBLE ? 'puedes <b>hacer tu pedido con el botón «Hacer pedido»</b>; también ' : 'puedes hacer tu pedido '; }
   var PEDIDO_URL = 'https://distribucionesvm-pedidos.tailc4a490.ts.net/cliente';
   var PEDIDO_ICONO = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 7h12l-1 13H7L6 7zm3 0a3 3 0 0 1 6 0"/></svg>';
