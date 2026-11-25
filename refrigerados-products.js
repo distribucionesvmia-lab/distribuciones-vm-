@@ -41,7 +41,10 @@
       ] },
     { id:'pozo', n:'08', chip:'El Pozo', kicker:'El Pozo', title:'El Pozo',
       lead:'Bacon, paleta, taquitos de jamón y salchichas para hostelería, y jamón en formato sobre para alimentación.',
-      media:[{src:X+'elpozo_bacon-paleta-taquitos-y-salchichas.png', w:720, h:720, alt:'Productos El Pozo', cls:'rf-m-hero'}] }
+      media:[
+        {src:B+'elpozo-logo.png', w:520, h:218, alt:'El Pozo', cls:'rf-m-brand'},
+        {src:X+'elpozo_bacon-paleta-taquitos-y-salchichas.png', w:720, h:720, alt:'Productos El Pozo', cls:'rf-m-hero'}
+      ] }
   ];
   const products = [
     {group:'Navidul',brand:'Navidul',name:'Chorizo cular ibérico · kg',blk:'navidul',uso:'h',cod:'26009',peek:'assets/refrigerados/extra/navidul_chorizo-cular-iberico.png',pw:391,ph:255,peekAlt:'Chorizo cular ibérico de Navidul, pieza entera con unas lonchas cortadas'},
