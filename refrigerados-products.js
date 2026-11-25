@@ -105,7 +105,7 @@
     {group:'El Pozo',brand:'El Pozo',name:'Fiambre de paleta para sándwich · 4 kg',blk:'pozo',uso:'h',cod:'20004',peek:'assets/refrigerados/extra/elpozo_paleta-sandwich-4kg.png',pw:650,ph:1000,peekAlt:'Fiambre de paleta para sándwich de ElPozo, pieza de 4 kg'},
     {group:'El Pozo',brand:'El Pozo',name:'Taquitos de jamón · 500 g',blk:'pozo',uso:'h',cod:'20014',peek:'assets/refrigerados/extra/elpozo_taquitos-jamon-500g.png',pw:756,ph:1000,peekAlt:'Taquitos de jamón curado de ElPozo, bandeja de 500 g'},
     {group:'El Pozo',brand:'El Pozo',name:'Salchichas hot dog · 1 kg (20 salchichas)',blk:'pozo',uso:'h',cod:'20033',peek:'assets/refrigerados/extra/elpozo_salchichas-hot-dog-1kg.png',pw:1000,ph:805,peekAlt:'Salchichas hot dog de ElPozo, paquete de 1 kg'},
-    {group:'El Pozo',brand:'El Pozo',name:'Taquitos de jamón · 130 g',blk:'pozo',uso:'a',cod:'20028'},
+    {group:'El Pozo',brand:'El Pozo',name:'Taquitos de jamón · 130 g',blk:'pozo',uso:'a',cod:'20028',peek:'assets/refrigerados/extra/elpozo_taquitos-jamon-130g.png',pw:550,ph:432,peekAlt:'Taquitos de jamón curado 1954 de El Pozo, envase de dos barquetas de 130 g'},
     {group:'El Pozo',brand:'El Pozo',name:'Jamón curado · 80 g',blk:'pozo',uso:'a',cod:'20025'},
     {group:'El Pozo',brand:'El Pozo',name:'Jamón cocido «1954» · 150 g',blk:'pozo',uso:'a',cod:'20024'}
   ];
