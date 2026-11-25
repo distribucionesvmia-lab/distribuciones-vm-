@@ -223,3 +223,11 @@
 @media(min-width:761px) and (max-width:899px){
   .sh-brand span{display:none}
 }
+
+/* Barra superior con dos entradas: novedades (ancha, roja) y promociones (corta, vino y oro) */
+.news-wrap{position:sticky;top:0;z-index:62;display:flex;align-items:stretch}
+.news-wrap .news-bar{position:relative;top:auto;flex:1 1 auto;min-width:0}
+.news-promo{flex:none;display:flex;align-items:center;gap:7px;box-sizing:border-box;padding:6px 16px;background:#3a0f1a;color:#f0c96a;text-decoration:none;font-family:Jost,Arial,sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;border-left:2px solid #f0c96a}
+.news-promo:hover{background:#f0c96a;color:#3a0f1a}
+.news-promo b{font-weight:700}
+@media(max-width:700px){.news-promo{padding:6px 12px;font-size:.74rem;letter-spacing:.04em}.news-wrap .news-btn{display:none}}
