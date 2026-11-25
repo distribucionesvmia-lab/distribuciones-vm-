@@ -61,7 +61,7 @@
     {group:'Campofrío',brand:'Campofrío',name:'Bacon costilla al vacío · kg',blk:'campofrio',uso:'h',cod:'26120'},
     {group:'Campofrío',brand:'Campofrío',name:'Bacon práctico · kg',blk:'campofrio',uso:'h',cod:'26095',peek:'assets/refrigerados/extra/campofrio_bacon-practico-kg.png',pw:716,ph:326,peekAlt:'Bacon práctico de Campofrío, pieza envasada al vacío'},
     {group:'Campofrío',brand:'Campofrío',name:'Fiambre de lomo adobado · kg',blk:'campofrio',uso:'h',cod:'26105',peek:'assets/refrigerados/extra/campofrio_lomo-adobado-kg.png',pw:631,ph:285,peekAlt:'Lomo adobado de Campofrío, pieza envasada al vacío'},
-    {group:'Campofrío',brand:'Campofrío',name:'Fiambre de paleta · kg',blk:'campofrio',uso:'h',cod:'26109'},
+    {group:'Campofrío',brand:'Campofrío',name:'Fiambre de paleta · kg',blk:'campofrio',uso:'h',cod:'26109',peek:'assets/refrigerados/extra/campofrio_paleta-sandwich-kg.png',pw:203,ph:544,peekAlt:'Fiambre de paleta cocida Sandwich de Campofrío, pieza entera con su red'},
     {group:'Campofrío',brand:'Campofrío',name:'Lonchas de paleta cocida · 500 g',blk:'campofrio',uso:'h',cod:'26013',peek:'assets/refrigerados/extra/campofrio_paleta-cocida-500g.png',pw:480,ph:393,peekAlt:'Lonchas de paleta cocida de Campofrío, envase de 500 g'},
     {group:'Campofrío',brand:'Campofrío',name:'Medallón de pato · 1,2 kg',blk:'campofrio',uso:'h',cod:'26117'},
     {group:'Campofrío',brand:'Campofrío',name:'Pechuga de pavo · kg',blk:'campofrio',uso:'h',cod:'26111',peek:'assets/refrigerados/extra/campofrio_pechuga-pavo-kg.png',pw:362,ph:398,peekAlt:'Pechuga de pavo La Original Pavofrío de Campofrío, pieza envasada, baja en grasa'},
