@@ -58,6 +58,10 @@ section{position:relative}
 
 /* por qué elegirnos */
 .why{padding:clamp(80px,13vw,200px) 0 clamp(64px,10vw,150px);background:var(--paper)}
+/* El vídeo de inicio gira por detrás, tapado por una cortina translúcida */
+.why{position:relative;isolation:isolate;overflow:hidden}
+.why-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;pointer-events:none}
+.why::before{content:"";position:absolute;inset:0;z-index:-1;background:color-mix(in srgb,var(--paper) 84%,transparent);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
 .why .big{max-width:14ch}
 .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,48px);margin-top:clamp(56px,8vw,120px)}
 .why-item h3{font-size:clamp(1.5rem,1.1rem + 1vw,2rem);letter-spacing:-.025em;margin-bottom:14px}
