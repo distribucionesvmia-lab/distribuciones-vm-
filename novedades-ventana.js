@@ -14,8 +14,9 @@
     tarj.querySelectorAll('.nov-mitad').forEach(function (m, k) {
       var n = lista[k];
       if (!n) { m.hidden = true; return; }
-      var f = (n.fotos && n.fotos[0]) || n.foto, im = m.querySelector('img'), et = m.querySelector('.nov-et');
+      var f = n.tarjeta || (n.fotos && n.fotos[0]) || n.foto, im = m.querySelector('img'), et = m.querySelector('.nov-et');
       if (f && im) im.src = f;
+      m.classList.toggle('is-lata', !!n.tarjeta);
       if (et) { var mc = String(n.marca || '').split('·')[0].trim(); et.innerHTML = '<small></small><span></span>'; et.firstChild.textContent = mc; et.lastChild.textContent = n.nombre; }
     });
     if (lista.length < 2) tarj.style.gridTemplateColumns = '1fr';

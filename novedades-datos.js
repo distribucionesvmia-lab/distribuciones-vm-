@@ -36,6 +36,7 @@ window.DVM_NOVEDADES = [
     ],
     precio: '12,41 €', precioNota: 'por unidad + 10 % IVA',
     enlace: 'despensa.html#calvo-recetas',
+    tarjeta: 'assets/novedades/calvo-lata-vintage-frontal.png', /* foto de la tarjeta de Novedades de la portada (si no hay, se usa la primera de «fotos») */
     fotos: ['assets/novedades/calvo-lata-vintage-banner.png', 'assets/novedades/calvo-lata-vintage-mejillones-sardinillas.png', 'assets/novedades/calvo-lata-vintage-lata-ventresca.png', 'assets/novedades/calvo-lata-vintage-coleccion-mesa.png']
   },
   {
