@@ -94,7 +94,7 @@
     {group:'Salchichas',brand:'Campofrío',name:'Salchichas Frankfurt · pack de 4 × 140 g',blk:'salchichas',uso:'',cod:'26084',image:'assets/refrigerados/extra/campofrio_salchichas-frankfurt-4x140g.png',w:720,h:720,alt:'Salchichas Frankfurt La Original de Campofrío, pack de 4 sobres de 140 g'},
     {group:'Salchichas',brand:'El Pozo',name:'Salchichas cocktail · 1 kg',blk:'salchichas,pozo',uso:'h',cod:'20120',peek:'assets/refrigerados/extra/elpozo_salchichas-cocktail-1kg.png',pw:634,ph:625,peekAlt:'Salchichas cocktail de ElPozo, bolsa de 1 kg (100 unidades)'},
     {group:'Salchichas',brand:'Oscar Mayer',name:'Salchichas Jumbo · 350 g',blk:'salchichas',uso:'',cod:'26121',image:'assets/refrigerados/extra/oscar-mayer_salchichas-jumbo-y-bacon-en-lonchas.png',w:720,h:720,alt:'Salchichas Jumbo Oscar Mayer'},
-    {group:'Quesos',brand:'Reny Picot',name:'Queso de Burgos · brik de 1 kg',blk:'quesos',uso:'',cod:'17050'},
+    {group:'Quesos',brand:'Reny Picot',name:'Queso de Burgos · brik de 1 kg',blk:'quesos',uso:'',cod:'17050',peek:'assets/refrigerados/extra/reny-picot_queso-fresco-1kg.png',pw:358,ph:240,peekAlt:'Queso fresco Reny Picot, brik de 1.000 g'},
     {group:'Quesos',brand:'Reny Picot',name:'Queso de Burgos · 4 × 62,5 g',blk:'quesos',uso:'',cod:'17002'},
     {group:'Quesos',brand:'Reny Picot',name:'Queso en lonchas · 8 unidades',blk:'quesos',uso:'',cod:'17080',image:'assets/refrigerados/extra/reny-picot_queso-en-lonchas.png',w:720,h:720,alt:'Queso en lonchas Reny Picot'},
     {group:'Quesos',brand:'Reny Picot',name:'Emmental rallado · 60 g',blk:'quesos',uso:'',cod:'17005',image:'assets/refrigerados/extra/reny-picot_quesos-rallados.png',w:720,h:720,alt:'Quesos rallados Reny Picot'},
