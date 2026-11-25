@@ -137,7 +137,7 @@ window.ProductWorld.init({
       variants: [
         {name:'Cóctel barbacoa · 1 kg', description:'Mezcla de frutos secos con sabor barbacoa, en formato de 1 kg.', image:'assets/despensa/extra/borges_coctel-barbacoa-1kg.png', width:540, height:540, alt:'Borges Cóctel barbacoa 1 kg'},
         {name:'Mix frito · cubo de 2 kg', description:'Mezcla de frutos secos fritos para servir como aperitivo, en cubo de 2 kg.', image:D+'borges-mix-frito-cubo-2kg.png', width:375, height:434, alt:'Mix frito cubo de 2 kg'},
-        {name:'Cacahuetes · cubo de 2,5 kg', description:'Cacahuetes en formato grande para hostelería y servicio de aperitivos.', image:D+'borges-cacahuetes-cubo-2-5kg.png', width:375, height:434, alt:'Cacahuetes cubo de 2,5 kg'},
+        {name:'Cacahuetes · cubo de 2,5 kg', description:'Cacahuetes en formato grande para hostelería y servicio de aperitivos.', image:D+'borges-cacahuetes-cubo-2-5kg.png', width:434, height:504, alt:'Cacahuetes cubo de 2,5 kg'},
         {name:'Mix barbacoa · cubo de 1,75 kg', description:'Mezcla de aperitivo con sabor barbacoa, en cubo de 1,75 kg.', image:D+'borges-mix-barbacoa-cubo-1-75kg.png', width:375, height:434, alt:'Mix barbacoa cubo de 1,75 kg'},
         {name:'Cacahuete frito · 1 kg', description:'Cacahuetes fritos en formato de 1 kg para aperitivos y hostelería.', image:D+'borges-cacahuetes.png', width:319, height:400, alt:'Bolsa Borges Selección de cacahuetes fritos y salados, imagen de la gama'},
         {name:'Nuez en grano · 1 kg', description:'Nueces sin cáscara en formato de 1 kg, listas para utilizar en cocina y repostería.', image:D+'borges-nueces.png', width:309, height:395, alt:'Bolsa Borges Selección de nueces de California en grano, imagen de la gama'},
