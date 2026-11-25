@@ -13,6 +13,7 @@
   if (tarj) {
     tarj.querySelectorAll('.nov-mitad').forEach(function (m, k) {
       var n = lista[k];
+      m.addEventListener('click', function (e) { if (e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1 || !lista[k]) return; e.preventDefault(); abre(k); });
       if (!n) { m.hidden = true; return; }
       var f = n.tarjeta || (n.fotos && n.fotos[0]) || n.foto, im = m.querySelector('img'), et = m.querySelector('.nov-et');
       if (f && im) im.src = f;
@@ -48,7 +49,7 @@
     return '<button type="button" class="nov-win-cerrar" aria-label="Cerrar">×</button>' + foto + txt;
   }
   function pinta() { modal.querySelector('.nov-win').innerHTML = contenido(); var c = modal.querySelector('.nov-win-cerrar'); if (c) c.focus(); }
-  function abre() {
+  function abre(k) {
     if (!modal) {
       modal = document.createElement('div');
       modal.className = 'nov-modal';
@@ -64,7 +65,7 @@
         else if (t.closest('.nov-win-acc a') && enPagina) { cierra(); }
       });
     }
-    previo = document.activeElement; idx = 0; pinta();
+    previo = document.activeElement; idx = k > 0 && k < lista.length ? k : 0; pinta();
     modal.classList.add('is-open'); document.documentElement.style.overflow = 'hidden';
   }
   function cierra() { if (!modal) return; modal.classList.remove('is-open'); document.documentElement.style.overflow = ''; if (previo && previo.focus) previo.focus(); }
