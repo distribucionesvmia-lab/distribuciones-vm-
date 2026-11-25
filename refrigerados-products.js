@@ -107,7 +107,7 @@
     {group:'El Pozo',brand:'El Pozo',name:'Salchichas hot dog · 1 kg (20 salchichas)',blk:'pozo',uso:'h',cod:'20033',peek:'assets/refrigerados/extra/elpozo_salchichas-hot-dog-1kg.png',pw:1000,ph:805,peekAlt:'Salchichas hot dog de ElPozo, paquete de 1 kg'},
     {group:'El Pozo',brand:'El Pozo',name:'Taquitos de jamón · 130 g',blk:'pozo',uso:'a',cod:'20028',peek:'assets/refrigerados/extra/elpozo_taquitos-jamon-130g.png',pw:550,ph:432,peekAlt:'Taquitos de jamón curado 1954 de El Pozo, envase de dos barquetas de 130 g'},
     {group:'El Pozo',brand:'El Pozo',name:'Jamón curado · 80 g',blk:'pozo',uso:'a',cod:'20025'},
-    {group:'El Pozo',brand:'El Pozo',name:'Jamón cocido «1954» · 120 g',blk:'pozo',uso:'a',cod:'20024'}
+    {group:'El Pozo',brand:'El Pozo',name:'Jamón cocido «1954» · 120 g',blk:'pozo',uso:'a',cod:'20024',peek:'assets/refrigerados/extra/elpozo_jamon-cocido-1954-120g.png',pw:596,ph:552,peekAlt:'Jamón cocido extra Edición 1954 de El Pozo, envase de 4 lonchas de 120 g'}
   ];
 
   const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
