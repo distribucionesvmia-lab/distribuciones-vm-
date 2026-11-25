@@ -64,7 +64,7 @@
     {group:'Campofrío',brand:'Campofrío',name:'Fiambre de paleta · kg',blk:'campofrio',uso:'h',cod:'26109'},
     {group:'Campofrío',brand:'Campofrío',name:'Lonchas de paleta cocida · 500 g',blk:'campofrio',uso:'h',cod:'26013',peek:'assets/refrigerados/extra/campofrio_paleta-cocida-500g.png',pw:480,ph:393,peekAlt:'Lonchas de paleta cocida de Campofrío, envase de 500 g'},
     {group:'Campofrío',brand:'Campofrío',name:'Medallón de pato · 1,2 kg',blk:'campofrio',uso:'h',cod:'26117'},
-    {group:'Campofrío',brand:'Campofrío',name:'Pechuga de pavo · kg',blk:'campofrio',uso:'h',cod:'26111'},
+    {group:'Campofrío',brand:'Campofrío',name:'Pechuga de pavo · kg',blk:'campofrio',uso:'h',cod:'26111',peek:'assets/refrigerados/extra/campofrio_pechuga-pavo-kg.png',pw:362,ph:398,peekAlt:'Pechuga de pavo La Original Pavofrío de Campofrío, pieza envasada, baja en grasa'},
     {group:'Campofrío',brand:'Campofrío',name:'Queso en barra para sándwich · 3,3 kg',blk:'campofrio',uso:'h',cod:'26203'},
     {group:'Campofrío',brand:'Campofrío',name:'Queso edam en lonchas · 1 kg',blk:'campofrio',uso:'h',cod:'26200',peek:'assets/refrigerados/extra/campofrio_queso-edam-lonchas-1kg.png',pw:581,ph:401,peekAlt:'Lonchas de queso edam de Campofrío, envase de 1 kg'},
     {group:'Campofrío',brand:'Campofrío',name:'Queso en lonchas para sándwich · 1 kg',blk:'campofrio',uso:'h',cod:'26201',peek:'assets/refrigerados/extra/campofrio_queso-lonchas-sandwich-1kg.png',pw:811,ph:540,peekAlt:'Lonchas de queso sandwich edam de Campofrío, envase de 1 kg'},
