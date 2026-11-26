@@ -2,32 +2,32 @@
 .nov-world .nov{padding:clamp(48px,9vh,110px) var(--side) clamp(64px,10vh,120px)}
 .nov-in{max-width:1180px;margin:0 auto}
 .nov h1{font-size:clamp(2.6rem,6vw,5.2rem);font-weight:600;letter-spacing:-.05em;line-height:.95;margin:20px 0 14px}
-.nov h1 em{font-family:Georgia,serif;font-weight:400;color:#c61819;letter-spacing:-.04em}
+.nov h1 em{font-family:Georgia,serif;font-weight:400;color:#d41317;letter-spacing:-.04em}
 .nov-sub{margin:0 0 40px;font-size:1.12rem;line-height:1.5;max-width:640px;opacity:.82}
 .nov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
 .nov-card{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid rgba(50,36,27,.14);border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(50,36,27,.07)}
-.nov-nuevo{position:absolute;z-index:2;top:12px;left:12px;background:#c61819;color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+.nov-nuevo{position:absolute;z-index:2;top:12px;left:12px;background:#d41317;color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
 .nov-foto{height:230px;display:grid;place-items:center;background:#fff;padding:18px}
 .nov-foto img{max-width:100%;max-height:100%;object-fit:contain}
-.nov-sin span{font-size:3rem;color:#c61819}
+.nov-sin span{font-size:3rem;color:#d41317}
 .nov-txt{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
 .nov-txt h2{margin:0;font-size:1.3rem;font-weight:600;letter-spacing:-.02em;line-height:1.15}
 .nov-txt p{margin:0;font-size:.98rem;line-height:1.45}
 .nov-fecha,.nov-meta{font-size:.78rem!important;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
-.nov-ver{margin-top:auto;padding-top:10px;color:#c61819;font-weight:600;text-decoration:none}
+.nov-ver{margin-top:auto;padding-top:10px;color:#d41317;font-weight:600;text-decoration:none}
 .nov-ver:hover{text-decoration:underline}
 .nov-vacio{grid-column:1/-1;text-align:center;padding:clamp(40px,8vh,90px) 20px;border:2px dashed rgba(198,24,25,.35);border-radius:22px;background:#fff8f2}
 .nov-vacio h2{margin:8px 0;font-size:clamp(1.8rem,3.4vw,2.6rem);letter-spacing:-.03em}
 .nov-vacio p{margin:0 0 22px;font-size:1.1rem}
-.nov-estrella{display:inline-block;font-size:2.6rem;color:#c61819;animation:nov-gira 3.2s ease-in-out infinite}
-.nov-btn{display:inline-block;background:#c61819;color:#fff;font-weight:700;text-decoration:none;padding:13px 26px;border-radius:999px}
+.nov-estrella{display:inline-block;font-size:2.6rem;color:#d41317;animation:nov-gira 3.2s ease-in-out infinite}
+.nov-btn{display:inline-block;background:#d41317;color:#fff;font-weight:700;text-decoration:none;padding:13px 26px;border-radius:999px}
 .nov-btn:hover{background:#a51213}
 @keyframes nov-gira{0%,100%{transform:rotate(0) scale(1)}50%{transform:rotate(90deg) scale(1.18)}}
 @media(prefers-reduced-motion:reduce){.nov-estrella{animation:none}}
 
 .nov-foto img{max-height:194px}
 .nov-card .nov-ficha{font-size:.8rem;margin-top:8px}
-.nov-dest{font-weight:700;color:#c61819}
+.nov-dest{font-weight:700;color:#d41317}
 
 /* Tarjeta con varias fotos: fija mientras se hace scroll; las fotos pasan de una a otra */
 .nov-grid:has(.nov-track){grid-template-columns:1fr}
@@ -38,7 +38,7 @@
 .nov-multi .nov-im{position:absolute;inset:0;width:100%;height:100%;max-height:none;object-fit:contain;padding:18px 18px 54px;box-sizing:border-box;background:#fff;opacity:0}
 .nov-dots{z-index:3;position:absolute;left:0;right:0;bottom:18px;display:flex;justify-content:center;gap:8px}
 .nov-dots span{width:10px;height:10px;border-radius:50%;background:rgba(37,29,26,.25);transition:background .2s,transform .2s}
-.nov-dots span.is-on{background:#c61819;transform:scale(1.25)}
+.nov-dots span.is-on{background:#d41317;transform:scale(1.25)}
 .nov-wide .nov-txt{justify-content:flex-start;overflow:auto;max-height:calc(100svh - var(--sh-h,110px) - 32px)}
 /* centrado seguro: si el texto no cabe, empieza arriba (antes se cortaban el título y el precio) */
 .nov-wide .nov-txt>:first-child{margin-top:auto}
