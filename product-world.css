@@ -566,3 +566,8 @@ a.pw-e-sug:hover{transform:translateY(-2px)}
   .pw-e-head h2{margin:4px 0 8px}
   .pw-e.is-scroll .pw-e-list{min-height:140px;max-height:calc(100svh - 66px - var(--nb,0px) - 300px)}
 }
+
+/* lineup: la foto de la variedad nunca pasa de la línea de la sección ni del borde de la ventana, aunque el envase sea muy alto (spray, brik) */
+@media(min-width:761px){
+  .pw-e-image,.pw-e-multi{max-height:min(74%,calc(100svh - 66px - var(--nb,0px) - 240px))}
+}
