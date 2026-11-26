@@ -122,7 +122,9 @@ window.ProductWorld.init({
         {name:'Nata para cocinar · 500 ml', description:'Nata Pascual para cocinar, con un 18 % de materia grasa, en formato de 500 ml.', image:'assets/pascual/nata-cocinar-500ml.png', width:198, height:328, alt:'Brik de nata Pascual para cocinar de 500 ml'},
         {name:'Nata para cocinar · 200 ml', description:'Nata Pascual para cocinar, con un 18 % de materia grasa, en formato de 200 ml.', image:'assets/pascual/nata-cocinar-200ml.png', width:173, height:338, alt:'Brik de nata Pascual para cocinar de 200 ml'},
         {name:'Nata montada · spray · 500 g', description:'Nata montada azucarada Pascual en spray, lista para usar, en formato de 500 g.', image:'assets/pascual/nata-montada-spray-500g.png', width:186, height:886, alt:'Spray de nata montada azucarada Pascual de 500 g'},
-        {name:'Nata montada · spray · 250 g', description:'Nata montada azucarada Pascual en spray, lista para usar, en formato de 250 g.', image:'assets/pascual/nata-montada-spray.png', width:123, height:496, alt:'Spray de nata montada azucarada Pascual de 250 g'}
+        {name:'Nata montada · spray · 250 g', description:'Nata montada azucarada Pascual en spray, lista para usar, en formato de 250 g.', image:'assets/pascual/nata-montada-spray.png', width:123, height:496, alt:'Spray de nata montada azucarada Pascual de 250 g'},
+        {name:'Huevo líquido pasteurizado · Hostelería', description:'Huevo líquido pasteurizado Pascual Hostelería, elaborado sólo con huevos y sin conservantes. Equivale a unos 20 huevos. Conservar en refrigeración entre 0 y 4 °C.', image:'assets/pascual/huevo-liquido.png', width:242, height:391, alt:'Brik de huevo líquido pasteurizado Pascual Hostelería'},
+        {name:'Yema líquida pasteurizada · Hostelería', description:'Yema líquida pasteurizada Pascual Hostelería, elaborada sólo con huevos y sin conservantes. Equivale a unas 60 yemas de huevo. Conservar en refrigeración entre 0 y 4 °C.', image:'assets/pascual/huevo-yema-liquida.png', width:242, height:391, alt:'Brik de yema líquida pasteurizada Pascual Hostelería'}
       ]
     },
     {
