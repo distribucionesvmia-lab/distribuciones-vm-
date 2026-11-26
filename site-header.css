@@ -11,7 +11,7 @@
 .sh-actions{display:flex;align-items:center;gap:10px;flex:none}
 .sh-order{display:inline-flex;align-items:center;gap:8px;flex:none;white-space:nowrap;padding:11px 20px;border-radius:100px;background:#d41317;color:#fff;text-decoration:none;font-size:.92rem;font-weight:700;letter-spacing:.01em;box-shadow:0 6px 18px rgba(198,24,25,.3);transition:background .2s,transform .2s,box-shadow .2s}
 .sh-order svg{flex:none}
-@media(hover:hover) and (pointer:fine){.sh-order:hover{background:#a80f0a;transform:translateY(-2px);box-shadow:0 10px 22px rgba(198,24,25,.38)}}
+@media(hover:hover) and (pointer:fine){.sh-order:hover{background:#a30e12;transform:translateY(-2px);box-shadow:0 10px 22px rgba(198,24,25,.38)}}
 .sh-order:focus-visible,.sh-contact:focus-visible{outline:3px solid #251d1a;outline-offset:3px}
 .sh-contact{flex:none;border:0;border-radius:100px;padding:11px 20px;background:#173b3c;color:#fff;white-space:nowrap;font-size:.92rem;font-weight:700;letter-spacing:.01em;box-shadow:0 6px 16px rgba(23,59,60,.28);transition:background .2s,transform .2s,box-shadow .2s}
 @media(hover:hover) and (pointer:fine){.site-header nav a:hover{color:#d41317}.sh-contact:hover{background:#0f2a2b;color:#fff;transform:translateY(-2px);box-shadow:0 10px 20px rgba(23,59,60,.36)}.site-header .sh-contact{color:#fff}}
@@ -68,7 +68,7 @@
 .btn-pedido{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:999px;background:#d41317;color:#fff!important;text-decoration:none;font:700 1.05rem/1 Jost,Arial,sans-serif;letter-spacing:.01em;box-shadow:0 10px 26px rgba(198,24,25,.34);transition:background .2s,transform .2s,box-shadow .2s;cursor:pointer}
 .btn-pedido svg{flex:none}
 .btn-pedido--lg{min-height:60px;padding:0 34px;font-size:1.12rem}
-@media(hover:hover) and (pointer:fine){.btn-pedido:hover{background:#a80f0a;transform:translateY(-3px);box-shadow:0 16px 32px rgba(198,24,25,.42)}}
+@media(hover:hover) and (pointer:fine){.btn-pedido:hover{background:#a30e12;transform:translateY(-3px);box-shadow:0 16px 32px rgba(198,24,25,.42)}}
 .btn-pedido:focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px #d41317}
 .btn-pedido:active{transform:scale(.98)}
 .pw-end .btn-pedido,.m-end .btn-pedido{margin:4px 0 18px}
