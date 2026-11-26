@@ -18,7 +18,7 @@
       location.reload();
     });
     var st = document.createElement('style');
-    st.textContent = '.vm-motion-btn{position:fixed;z-index:60;left:16px;bottom:16px;padding:11px 18px;border:0;border-radius:999px;background:#d41317;color:#fff;font:500 .9rem/1 Jost,Arial,sans-serif;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25)}.vm-motion-btn:hover{background:#a30e12}';
+    st.textContent = '.vm-motion-btn{position:fixed;z-index:60;left:16px;bottom:16px;padding:11px 18px;border:0;border-radius:999px;background:#d41317;color:#fff;font:500 .9rem/1 Jost,Arial,sans-serif;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25)}.vm-motion-btn:hover{background:#951112}';
     document.head.appendChild(st);
     document.body.appendChild(b);
   });
