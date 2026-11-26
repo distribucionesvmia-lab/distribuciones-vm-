@@ -234,8 +234,9 @@
           if (scene.classList.contains('pw-e')) {
             const rows=[...scene.querySelectorAll('.pw-e-list li')];
             const ms=[...scene.querySelectorAll('.pw-e-multi')];
-            const slot=ms.length?Math.min(ms.length-1,Math.floor(Math.min(.9999,p)*ms.length)):0;
-            const active=ms.length?Number(ms[slot].dataset.v):Math.min(rows.length-1,Math.floor(Math.min(.9999,p)*rows.length));
+            const slot=ms.length?Math.min(ms.length-1,Math.floor(Math.min(.9999,p/.86)*ms.length)):0;
+            const q=Math.min(.9999,p/.86); /* la última variedad se alcanza antes del final, para que se lea con calma antes de que entre la siguiente sección */
+            const active=ms.length?Number(ms[slot].dataset.v):Math.min(rows.length-1,Math.floor(q*rows.length));
             rows.forEach((r,i)=>r.classList.toggle('is-current',i===active));
             ms.forEach((m,i)=>m.classList.toggle('is-current',i===slot));
             const list=scene.querySelector('.pw-e-list');
