@@ -119,7 +119,7 @@ window.ProductWorld.init({
       variants: [
         {name:'Alubia blanca · 5 kg', description:'Alubia blanca seca, de grano alargado, en formato de 5 kg.', image:D+'luengo-alubia-blanca-5kg.png', width:458, height:458, alt:'Alubia blanca larga Luengo de 5 kg'},
         {name:'Garbanzo castellano · 5 kg', description:'Garbanzo seco en formato de 5 kg.', image:'assets/despensa/extra/luengo_garbanzo-castellano-5kg.png', width:720, height:720, alt:'Luengo Garbanzo castellano 5 kg'},
-        {name:'Garbanzo pedrosillano · 5 kg', description:'Garbanzo pedrosillano seco en formato de 5 kg.', image:'assets/despensa/extra/luengo_garbanzo-pedrosillano-5kg.png', width:720, height:720, alt:'Luengo Garbanzo pedrosillano 5 kg'},
+        {name:'Garbanzo pedrosillano · 5 kg', description:'Garbanzo pedrosillano seco en formato de 5 kg.', image:D+'luengo-garbanzo-pedrosillano-5kg.png', width:233, height:400, alt:'Saco de garbanzo pedrosillano Luengo de 5 kg'},
         {name:'Lenteja castellana · 5 kg', description:'Lenteja castellana seca, de grano grande, en formato de 5 kg.', image:'assets/despensa/extra/luengo_lenteja-castellana-5kg.png', width:720, height:720, alt:'Luengo Lenteja castellana 5 kg'},
         {name:'Lenteja pardina · 5 kg', description:'Lenteja pardina seca, de grano pequeño y piel fina, en formato de 5 kg.', image:D+'luengo-lenteja-pardina-5kg.png', width:264, height:510, alt:'Lentejas pardina Luengo'},
         {name:'Alubia blanca cocida · frasco de 570 g', description:'Alubias blancas cocidas en conserva, listas para consumir.', image:D+'luengo-alubia-blanca-cocida-570g.png', width:640, height:1144, alt:'Frasco de alubia blanca cocida Luengo'},
