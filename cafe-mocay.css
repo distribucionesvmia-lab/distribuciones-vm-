@@ -1,6 +1,6 @@
 :root{
   --ink:#14100d;--paper:#f3f2ef;--paper-2:#e6e5e1;--red:#d41317;--red-deep:#a30e12;
-  --coffee:#342116;--blue:#007cb3;--green:#679c2e;--muted:#3d3d3d;
+  --coffee:#342116;--blue:#007cb3;--green:#679c2e;--muted:#5b5753;
   --font:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
   --ease:cubic-bezier(.23,1,.32,1);--gutter:clamp(20px,3.2vw,52px);
 }
