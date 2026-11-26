@@ -31,7 +31,7 @@
 .chat-msg{max-width:92%;padding:11px 15px;border-radius:16px;font-size:1rem;line-height:1.4}
 .chat-msg ul,.chat-msg ol{margin:8px 0 0;padding-left:1.2em}
 .chat-msg li{margin:3px 0}
-.chat-msg a{color:#a80f0a;text-underline-offset:3px}
+.chat-msg a{color:#a30e12;text-underline-offset:3px}
 .chat-msg small{color:#4a4541}
 .chat-bot{align-self:flex-start;background:#f3f2ef;border-bottom-left-radius:4px}
 .chat-user{align-self:flex-end;background:#14100d;color:#fff;border-bottom-right-radius:4px}
@@ -40,7 +40,7 @@
 .chat-chips button:active{transform:scale(.97)}
 .chat .chat-form{flex:none;margin:0;padding:10px 14px max(14px,env(safe-area-inset-bottom));display:flex;gap:8px;grid-template-columns:none;border-top:1px solid rgba(20,16,13,.1)}
 .chat-input{flex:1;min-width:0;font:inherit;font-size:1rem;padding:12px 14px;min-height:48px;border:1px solid rgba(20,16,13,.35);border-radius:12px;background:#fff;color:inherit}
-.chat-send{font:inherit;font-weight:600;padding:0 20px;min-height:48px;border:0;border-radius:12px;background:#a80f0a;color:#fff;cursor:pointer}
+.chat-send{font:inherit;font-weight:600;padding:0 20px;min-height:48px;border:0;border-radius:12px;background:#a30e12;color:#fff;cursor:pointer}
 .chat-send:active{transform:scale(.97)}
 .chat :focus-visible{outline:3px solid #14100d;outline-offset:2px}
 .vmc-head :focus-visible{outline-color:#fff}
@@ -50,7 +50,7 @@
 .chat-follow,.chat-pers{display:flex;flex-wrap:wrap;gap:8px}
 .chat-follow button{font:inherit;font-size:.88rem;font-weight:500;padding:8px 13px;min-height:44px;border-radius:999px;border:1px solid rgba(20,16,13,.3);background:#fff;color:inherit;cursor:pointer}
 .chat-act{display:inline-flex;align-items:center;font-size:.88rem;font-weight:600;padding:8px 14px;min-height:44px;border-radius:999px;background:#14100d;color:#fff!important;text-decoration:none}
-.chat-act+.chat-act{background:#a80f0a}
+.chat-act+.chat-act{background:#a30e12}
 .chat-fuera{margin:0;font-size:.85rem;line-height:1.35;color:#4a4541;max-width:48ch}
 .chat-mini{font:inherit;font-size:.82rem;font-weight:600;padding:5px 11px;min-height:32px;border-radius:999px;border:1px solid rgba(20,16,13,.35);background:#fff;color:inherit;cursor:pointer;margin-left:4px}
 @media(hover:hover) and (pointer:fine){.chat-chips button:hover,.chat-follow button:hover,.chat-mini:hover{background:#f3f2ef}.chat-send:hover{background:#860b07}.vmc-launcher:hover{background:#a81314}.vmc-close:hover{background:rgba(255,255,255,.32)}}
@@ -68,5 +68,5 @@
 .chat-pedido{margin:12px 0 2px;padding-top:10px;border-top:1px solid rgba(20,16,13,.12)}
 .chat-pedido p{margin:0 0 8px;font-weight:600}
 .chat-order{display:inline-flex;align-items:center;gap:9px;min-height:46px;padding:0 20px;border-radius:999px;background:#d41317;color:#fff!important;text-decoration:none!important;font-weight:700;font-size:.98rem;box-shadow:0 6px 16px rgba(198,24,25,.3)}
-.chat-order:hover{background:#a80f0a}
+.chat-order:hover{background:#a30e12}
 .chat-order:focus-visible{outline:3px solid #14100d;outline-offset:3px}
