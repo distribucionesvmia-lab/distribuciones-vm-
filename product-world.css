@@ -554,3 +554,15 @@ a.pw-e-sug:hover{transform:translateY(-2px)}
   #gallina-blanca .pw-e-sug img{width:46px}
   #gallina-blanca .pw-e-sug p{font-size:.82rem;line-height:1.3}
 }
+
+/* pantallas bajas (portátiles con barra de marcadores): el lineup se compacta y se centra para que la lista entera quepa en la ventana */
+@media(max-height:780px) and (min-width:761px){
+  .pw-e .pw-sticky{min-height:0}
+  .pw-e .pw-scene-inner{padding-top:18px}
+  .pw-e-grid{grid-template-rows:auto auto;align-content:center;height:calc(100% - 40px)}
+  .pw-e-art{grid-row:1 / 3}
+  .pw-e-head{grid-row:1}
+  .pw-e-list{grid-row:2}
+  .pw-e-head h2{margin:4px 0 8px}
+  .pw-e.is-scroll .pw-e-list{min-height:140px;max-height:calc(100svh - 66px - var(--nb,0px) - 300px)}
+}
