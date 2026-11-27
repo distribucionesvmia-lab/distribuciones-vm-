@@ -364,3 +364,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 /* molinos: fotos estrechas y altas; se limita la altura para que entren enteros en el panel */
 @media(min-width:761px){.m-machine[data-machine="molino"] img{width:auto;max-width:100%;max-height:clamp(300px,64vh,560px);justify-self:center}}
+
+/* tres cafeteras: se reparten el panel en tres columnas, como los molinos */
+@media(min-width:761px){.m-machine[data-machine="cafetera"]:has(img:nth-of-type(3)){grid-template-columns:repeat(3,minmax(0,1fr))}.m-machine[data-machine="cafetera"]:has(img:nth-of-type(3)) img{width:100%;max-width:100%;height:auto;max-height:100%}}
