@@ -69,9 +69,11 @@ window.ProductWorld.init({
       description: 'Virgen Extra 5 L y gama profesional, en el formato que pide tu negocio. Koipe, al lado, para cuando la cocina pide aceite de semillas (Koipe Profesional y Koipe Sol).',
       products: [
         {name:'Virgen Extra · 5 L', description:'Carbonell, aceite de oliva virgen extra en formato ahorro.', image:D+'carbonell-virgen-extra-5l.png', width:233, height:613, alt:'Garrafa Carbonell Virgen Extra de 5 litros'},
+        {name:'Aceite de oliva virgen extra · 120 cápsulas de 10 ml', description:'Carbonell, aceite de oliva virgen extra en cápsulas monodosis de 10 ml. Caja de 120 unidades, para desayunos, bufés y catering.', image:D+'carbonell-capsulas-120.png?v=b8f172e1', width:1497, height:1243, alt:'Caja de 120 cápsulas de 10 ml de aceite de oliva virgen extra Carbonell y una cápsula'},
         {name:'Carbonell Profesional', description:'Aceite de la gama profesional Carbonell.', image:D+'carbonell-carbonell-profesional.png', width:110, height:286, alt:'Garrafa Carbonell Profesional'},
         {name:'Koipe Profesional', description:'Aceite alto oleico, especial para freidora.', image:D+'carbonell-koipe-profesional.png', width:103, height:289, alt:'Garrafa Koipe Profesional'},
-        {name:'Koipe Sol', description:'Aceite de girasol Koipe Sol.', image:D+'carbonell-koipe-sol.png', width:103, height:287, alt:'Garrafa Koipe Sol'}
+        {name:'Koipe Sol', description:'Aceite de girasol Koipe Sol.', image:D+'carbonell-koipe-sol.png', width:103, height:287, alt:'Garrafa Koipe Sol'},
+        {name:'Vinagre de vino blanco · Carbonell Procer', description:'Vinagre de vino blanco Carbonell Procer, acidez 6º, en botella PET.', image:D+'carbonell-vinagre-blanco.png', width:436, height:1500, alt:'Botella de vinagre de vino blanco Carbonell Procer'}
       ]
     },
     {
