@@ -357,3 +357,10 @@ button,a{-webkit-tap-highlight-color:transparent}
 .m-rtd-card .m-rtd-int{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#14100d}
 @media(max-width:900px){.m-rtd-in{grid-template-columns:minmax(0,1fr)}.m-rtd-hero{justify-self:start;max-width:400px}.m-rtd-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}.m-rtd-band{background:linear-gradient(180deg,#14100d 0,#14100d 4%,#c79a4a 4.4%,#d6aa55 52%,#8e6424 100%);padding-top:24px}}
 @media(max-width:520px){.m-rtd-card img{height:180px}}
+
+/* una sola cafetera: ocupa todo el panel en vez de la primera de tres columnas */
+.m-machine[data-machine="cafetera"]:not(:has(img:nth-of-type(2))){grid-template-columns:minmax(0,1fr)}
+.m-machine[data-machine="cafetera"]:not(:has(img:nth-of-type(2))) img{max-width:min(100%,620px);margin:0 auto}
+
+/* molinos: fotos estrechas y altas; se limita la altura para que entren enteros en el panel */
+@media(min-width:761px){.m-machine[data-machine="molino"] img{width:auto;max-width:100%;max-height:clamp(300px,64vh,560px);justify-self:center}}
