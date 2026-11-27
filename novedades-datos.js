@@ -37,7 +37,7 @@ window.DVM_NOVEDADES = [
     precio: '12,41 €', precioNota: 'por unidad + 10 % IVA',
     enlace: 'despensa.html#calvo-recetas',
     tarjeta: 'assets/novedades/calvo-lata-vintage-frontal.png', /* foto de la tarjeta de Novedades de la portada (si no hay, se usa la primera de «fotos») */
-    fotos: ['assets/novedades/calvo-lata-vintage-banner.png', 'assets/novedades/calvo-lata-vintage-mejillones-sardinillas.png', 'assets/novedades/calvo-lata-vintage-lata-ventresca.png', 'assets/novedades/calvo-lata-vintage-coleccion-mesa.png']
+    fotos: ['assets/novedades/calvo-lata-vintage-banner.png', 'assets/novedades/calvo-lata-vintage-mejillones-sardinillas.png', 'assets/novedades/calvo-lata-vintage-lata-ventresca.png', 'assets/novedades/calvo-lata-vintage-coleccion-mesa.png', 'assets/novedades/calvo-lata-vintage-receta-sardinillas-tomate-seco.png', 'assets/novedades/calvo-lata-vintage-receta-sardinillas-cebolla-pochada.png', 'assets/novedades/calvo-lata-vintage-receta-ventresca-escabechada.png', 'assets/novedades/calvo-lata-vintage-receta-mejillones-salsa-gallega.png', 'assets/novedades/calvo-lata-vintage-receta-mejillones-albarino.png']
   },
   {
     etiqueta: 'Novedad', destacado: 'Edición limitada · Ideal para estas Navidades',
